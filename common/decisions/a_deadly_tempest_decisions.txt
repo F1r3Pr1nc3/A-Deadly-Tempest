@@ -1,0 +1,99 @@
+##########################################################################
+# Decisions
+##########################################################################
+
+# Open L-Cluster
+decision_open_lcluster = {
+	owned_planets_only = yes
+	icon = decision_open_lcluster
+
+	resources = {
+		category = decisions
+		cost = {
+			minor_artifacts = 1
+			influence = 50
+		}
+	}
+	
+	potential = {
+		has_global_flag = lcluster_closed
+		is_capital = yes
+		exists = owner
+		from = { 
+			can_set_lcluster_policiy = yes
+			controls_lcluster = yes
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "lcluster_policy_cannot_set_name"
+			NOR = {
+				has_global_flag = lcluster_closed
+				has_modifier = "artifact_lgate_insight_cooldown"
+				from = { controls_lcluster = yes }
+			}
+		}
+	}
+	
+	effect = {
+		# Make city-planet
+		custom_tooltip = decision_open_lcluster_effects
+		hidden_effect = {
+			owner = { country_event = { id = l_cluster_access.1 } }
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 15 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Close L-Cluster
+decision_close_lcluster = {
+	owned_planets_only = yes
+	icon = decision_close_lcluster
+
+	resources = {
+		category = decisions
+		cost = {
+			minor_artifacts = 1
+			influence = 50
+		}
+	}
+	
+	potential = {
+		has_global_flag = l_cluster_opened
+		is_capital = yes
+		exists = owner
+		from = { 
+			can_set_lcluster_policiy = yes
+			controls_lcluster = yes
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "lcluster_policy_cannot_set_name"
+			NOR = {
+				has_global_flag = l_cluster_opened
+				has_modifier = "artifact_lgate_insight_cooldown"
+				from = { controls_lcluster = yes }
+			}
+		}
+	}
+	
+	effect = {
+		# Make city-planet
+		custom_tooltip = decision_close_lcluster_effects
+		hidden_effect = {
+			owner = { country_event = { id = l_cluster_access.2 } }
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 15 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

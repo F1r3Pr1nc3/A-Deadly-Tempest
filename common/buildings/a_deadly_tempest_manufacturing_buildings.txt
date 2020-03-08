@@ -1,0 +1,323 @@
+#############
+# Resource buildings
+#############
+
+building_nanite_plant_1 = {
+	base_buildtime = 480
+
+	category = manufacturing
+	
+	upgrades = {
+		building_nanite_plant_2
+	}
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_nanite_forger_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_nanite_forger_drone_add = 3
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}	
+		upkeep = {
+			energy = 9
+		}
+	}	
+	
+	prerequisites = { "tech_nanite_transmutation" }
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_nanite_forger_effect_desc
+	}	
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_nanite_forger_drone_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+
+	ai_resource_production = {
+		nanites = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+building_nanite_plant_2 = {
+	base_buildtime = 480
+	icon = building_nanite_plant_1
+	can_build = no
+	category = manufacturing
+	
+	upgrades = {
+		building_nanite_plant_3
+	}
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_nanite_forger_add = 5
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_nanite_forger_drone_add = 5
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 750
+			nanites = 50
+		}	
+		upkeep = {
+			energy = 12
+		}
+	}	
+	
+	prerequisites = { "tech_nanite_transmutation" }
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_nanite_forger_effect_desc
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_nanite_forger_drone_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+
+	ai_resource_production = {
+		nanites = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+building_nanite_plant_3 = {
+	base_buildtime = 480
+	icon = building_nanite_plant_1
+	can_build = no
+	category = manufacturing
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_nanite_forger_add = 8
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_nanite_forger_drone_add = 8
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			nanites = 100
+		}	
+		upkeep = {
+			energy = 15
+		}
+	}	
+	
+	prerequisites = { "tech_nanite_transmutation" }
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_nanite_forger_effect_desc
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_nanite_forger_drone_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+
+	ai_resource_production = {
+		nanites = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+####################
+# Nanite Replicators
+####################
+
+building_nanite_industrial_replicator_1 = {
+	base_buildtime = 600
+
+	category = manufacturing
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }	
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 750
+			nanites = 50
+		}
+		produces = {
+			minerals = 40
+		}
+		upkeep = {
+			nanites = 5
+			energy = 20
+		}
+	}
+	
+	prerequisites = { "tech_nanite_transmutation" }
+	
+	ai_weight = {
+		weight = 2
+	}
+
+	ai_resource_production = {
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+building_nanite_food_replicator = {
+	base_buildtime = 600
+	icon = building_nanite_food_replicator
+
+	category = manufacturing
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }	
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 750
+			nanites = 50
+		}
+		produces = {
+			food = 40
+		}
+		upkeep = {
+			nanites = 5
+			energy = 20
+		}
+	}
+	
+	prerequisites = { "tech_nanite_transmutation" }
+	
+	ai_weight = {
+		weight = 2
+	}
+
+	ai_resource_production = {
+		food = 2
+		trigger = {
+			always = yes
+		}
+	}
+}

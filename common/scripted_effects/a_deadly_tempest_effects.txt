@@ -1,0 +1,79 @@
+
+create_nanite_shoal = {
+	create_ship = {
+		name = random
+		design = "NAME_Nanite_Mothership"
+		graphical_culture = "pirate_01"
+	}
+	while = {
+		count = 5
+		create_ship = {
+			name = random
+			design = "NAME_Nanite_Interdictor"
+			graphical_culture = "pirate_01"
+		}
+	}
+}
+
+create_nanite_shoal_1 = {
+	create_ship = {
+		name = random
+		design = "NAME_Nanite_Mothership"
+		graphical_culture = "pirate_01"
+	}
+	while = {
+		count = 20
+		create_ship = {
+			name = random
+			design = "NAME_Nanite_Interdictor"
+			graphical_culture = "pirate_01"
+		}
+	}
+}
+
+create_nanite_shoal_2 = {
+	create_ship = {
+		name = random
+		design = "NAME_Nanite_Mothership"
+		graphical_culture = "pirate_01"
+	}
+	while = {
+		count = 40
+		create_ship = {
+			name = random
+			design = "NAME_Nanite_Interdictor"
+			graphical_culture = "pirate_01"
+		}
+	}
+}
+
+create_nanite_warship = {
+	while = {
+		count = 1
+		create_ship = {
+			name = random
+			design = "NAME_Nanite_Warship"
+			prefix = no
+			graphical_culture = "pirate_01"
+		}
+	}
+}
+
+activate_lgate = {
+	activate_gateway = this
+	set_megastructure_flag = lgate_activated
+	upgrade_megastructure_to = lgate_open
+	finish_upgrade = yes
+}
+
+ariphaos_patch_remove_habitat = {
+	save_event_target_as = habitat_to_remove
+	solar_system= { 
+		random_system_planet = { 
+		limit = { any_moon = { is_planet = event_target:habitat_to_remove } } 
+			remove_planet_flag = has_megastructure 
+		} 
+	}
+	#destroy_colony = yes
+	remove_planet = yes
+}

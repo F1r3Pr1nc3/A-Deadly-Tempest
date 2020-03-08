@@ -1,0 +1,108 @@
+# ## physics technologies
+
+tech_nanoactuators = {
+	area = physics
+	tier = 5
+	cost = @tier4cost1
+	category = { computing }
+	prerequisites = { "tech_self_aware_logic" }
+	weight = @tier4weight1
+	
+	modifier = {
+		all_technology_research_speed = 0.10
+	}
+	
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+}
+
+# ##################
+# Shields and related techs
+# ##################
+
+tech_nanite_shield_rechargers = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "tech_shields_5" }
+	weight = @tier5weight3
+	
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+	
+	modifier = {
+		ship_shield_mult = 0.25
+	}
+}
+
+# ##################
+# Nanite lgate
+# ##################
+
+tech_lcluster_access = {
+	cost = @tier5cost2
+	area = physics
+	tier = 5
+	is_rare = yes
+	category = { particles }
+	weight = @tier5cost2
+	
+	feature_flags = { lgate_access }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "TECH_UNLOCK_L_GATE_ACCESS_TITLE"
+			desc = "TECH_UNLOCK_L_GATE_ACCESS_DESC"
+		}
+	}
+	
+	potential = {
+		has_global_flag = lgates_activated_globally
+		NOT = {
+			has_global_flag = active_gray_goo
+		}
+	}
+
+	weight_modifier = {
+		factor = 20
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+
+
+tech_lgate_construction = {
+	cost = @tier5cost3
+	area = physics
+	tier = 5
+	category = { particles }
+	is_rare = yes
+	weight = @tier5cost3
+	prerequisites = { "tech_gateway_construction" "tech_mega_engineering" }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "TECH_UNLOCK_L_GATE_TITLE"
+			desc = "TECH_UNLOCK_L_GATE_DESC"
+		}
+	}
+	
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+}

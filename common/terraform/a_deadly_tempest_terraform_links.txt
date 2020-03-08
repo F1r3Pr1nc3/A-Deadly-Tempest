@@ -1,0 +1,196 @@
+@gaiaCost = 10000
+@gaiaTime = 7200
+
+@machineCost = 10000
+@machineTime = 7200
+
+terraform_link = {
+	from = pc_gray_goo
+																to = pc_gaia
+	condition = {
+		has_ascension_perk = ap_world_shaper
+		has_technology = "tech_nanite_terraforming"
+	}
+	energy = 7500
+	duration = 900
+	
+	ai_weight = {
+		weight = 10
+		# TODO: Fix
+		#modifier = {
+		#	factor = 0		
+		#	from = { sector_controlled = yes }
+		#}
+		modifier = {
+			factor = 0
+			OR = {
+				is_mechanical_empire = yes
+				is_cyborg_empire = yes
+				has_authority = auth_machine_intelligence
+			}
+		}
+	}
+}
+
+terraform_link = {
+	from = pc_gray_goo
+																to = pc_machine
+	condition = {
+		has_ascension_perk = ap_machine_worlds
+		has_technology = "tech_nanite_terraforming"
+	}
+	energy = 7500
+	duration = 900
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			from = {
+				any_owned_pop = {
+					NOR = {
+						has_trait = trait_machine_unit
+						has_trait = trait_mechanical
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+terraform_link = {
+	from = pc_gray_goo
+																to = pc_desert
+	condition = {
+		has_technology = "tech_climate_restoration"
+		has_technology = "tech_nanite_terraforming"
+	}
+	energy = 7500
+	duration = 900
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+terraform_link = {
+	from = pc_gray_goo
+																to = pc_arid
+	condition = {
+		has_technology = "tech_climate_restoration"
+		has_technology = "tech_nanite_terraforming"
+	}
+	energy = 7500
+	duration = 900
+}
+
+terraform_link = {
+	from = pc_gray_goo
+																to = pc_savannah
+	condition = {
+		has_technology = "tech_climate_restoration"
+		has_technology = "tech_nanite_terraforming"
+	}
+	energy = 7500
+	duration = 900
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+terraform_link = {
+	from = pc_gray_goo
+																to = pc_ocean
+	condition = {
+		has_technology = "tech_climate_restoration"
+		has_technology = "tech_nanite_terraforming"
+	}
+	energy = 7500
+	duration = 900
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+terraform_link = {
+	from = pc_gray_goo
+																to = pc_continental
+	condition = {
+		has_technology = "tech_climate_restoration"
+		has_technology = "tech_nanite_terraforming"
+	}
+	energy = 7500
+	duration = 900
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+terraform_link = {
+	from = pc_gray_goo
+																to = pc_tropical
+	condition = {
+		has_technology = "tech_climate_restoration"
+		has_technology = "tech_nanite_terraforming"
+	}
+	energy = 7500
+	duration = 900
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+terraform_link = {
+	from = pc_gray_goo
+																to = pc_arctic
+	condition = {
+		has_technology = "tech_climate_restoration"
+		has_technology = "tech_nanite_terraforming"
+	}
+	energy = 7500
+	duration = 900
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+terraform_link = {
+	from = pc_gray_goo
+																to = pc_alpine
+	condition = {
+		has_technology = "tech_climate_restoration"
+		has_technology = "tech_nanite_terraforming"
+	}
+	energy = 7500
+	duration = 900
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+terraform_link = {
+	from = pc_gray_goo
+																to = pc_tundra
+	condition = {
+		has_technology = "tech_climate_restoration"
+		has_technology = "tech_nanite_terraforming"
+	}
+	energy = 7500
+	duration = 900
+	
+	ai_weight = {
+		weight = 5
+	}
+}

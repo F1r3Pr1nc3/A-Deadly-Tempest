@@ -1,0 +1,43 @@
+
+nanite_yards = {
+	icon = "GFX_spaceport_module_colossus_assembly_yard"
+	construction_days = 720
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_nanite_ships }		
+	}
+	
+	possible = {
+		has_starbase_module = shipyard
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 1500
+			nanites = 100
+		}
+
+		upkeep = {
+			energy = 50
+			nanites = 5
+		}
+	}
+	
+	custom_tooltip = sm_nanite_yards_desc_modifier
+	show_in_tech = "tech_nanite_ships"
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 0
+			count_starbase_modules = {
+				type = shipyard
+				count < 3
+			}
+		}
+	}
+}

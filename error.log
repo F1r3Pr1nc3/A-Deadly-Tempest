@@ -1,0 +1,94 @@
+[21:03:37][pdx_ugc.cpp:49]: No UGC backend available for current platform.
+[21:04:17][texturehandler.cpp:167]: Texture Handler encountered missing texture file: gfx/interface/icons/jobs/job_replicator_worker_farmer.dds
+[21:04:17][texturehandler.cpp:313]: Couldn't find texture file: gfx/interface/icons/jobs/job_replicator_worker_farmer.dds.
+[21:04:17][spritetype.cpp:316]: Error initialising texture: gfx/interface/icons/jobs/job_replicator_worker_farmer.dds for spritetype GFX_text_job_replicator_worker_farmer
+[21:04:17][texturehandler.cpp:167]: Texture Handler encountered missing texture file: gfx/interface/icons/jobs/job_replicator_drone_farmer.dds
+[21:04:17][texturehandler.cpp:313]: Couldn't find texture file: gfx/interface/icons/jobs/job_replicator_drone_farmer.dds.
+[21:04:17][spritetype.cpp:316]: Error initialising texture: gfx/interface/icons/jobs/job_replicator_drone_farmer.dds for spritetype GFX_text_job_replicator_drone_farmer
+[21:04:17][game_singleobjectdatabase.h:147]: Object with key: gray_army already exists
+[21:04:18][modifier.cpp:544]: Missing modifier icon "gfx/interface/icons/modifiers/mod_job_nanite_forger_add.dds"
+[21:04:18][modifier.cpp:544]: Missing modifier icon "gfx/interface/icons/modifiers/mod_job_nanite_forger_drone_add.dds"
+[21:04:18][ship_design_templates.cpp:241]: duplicate section template found. Multiple sections are named [nanite_mothership_key].  file: common/section_templates/gray_goo.txt line: 103
+[21:04:18][ship_design_templates.cpp:241]: duplicate section template found. Multiple sections are named [gray_warship_key].  file: common/section_templates/gray_goo.txt line: 205
+[21:04:18][ship_design_templates.cpp:241]: duplicate section template found. Multiple sections are named [nanite_interdictor_key].  file: common/section_templates/gray_goo.txt line: 260
+[21:04:19][designer_database.cpp:71]: A ship design named "Nanite Mothership" already exists!  file: common/global_ship_designs/event_ship_designs_distant_stars.txt line: 511
+[21:04:19][designer_database.cpp:71]: A ship design named "Nanite Interdictor" already exists!  file: common/global_ship_designs/event_ship_designs_distant_stars.txt line: 729
+[21:04:19][designer_database.cpp:71]: A ship design named "Unthra" already exists!  file: common/global_ship_designs/event_ship_designs_distant_stars.txt line: 866
+[21:04:19][designer_database.cpp:71]: A ship design named "Wirsik" already exists!  file: common/global_ship_designs/event_ship_designs_distant_stars.txt line: 949
+[21:04:19][eventmanager.cpp:193]: an event with id [distar.8000] already exists!  file: events/distant_stars_events.txt line: 19242
+[21:04:19][eventmanager.cpp:193]: an event with id [distar.10950] already exists!  file: events/distant_stars_events.txt line: 19466
+[21:04:19][eventmanager.cpp:193]: an event with id [distar.13000] already exists!  file: events/distant_stars_events.txt line: 20182
+[21:04:20][empire_flag.cpp:887]: could not find normal-sized texture "flags/just-more-empires-expanded/flag_tellusian_mindflower.dds"  file: user_empire_designs.txt line: 37
+[21:04:20][empire_flag.cpp:891]: could not find map-sized texture "flags/just-more-empires-expanded/map/flag_tellusian_mindflower.dds"  file: user_empire_designs.txt line: 37
+[21:04:20][empire_flag.cpp:887]: could not find normal-sized texture "flags/backgrounds/fabric_half_black_circle.dds"  file: user_empire_designs.txt line: 41
+[21:04:20][job_type.cpp:532]: Missing job Localization Key: job_replicator_worker
+[21:04:20][job_type.cpp:532]: Missing job Localization Key: job_replicator_worker_desc
+[21:04:20][job_type.cpp:532]: Missing job Localization Key: job_replicator_drone
+[21:04:20][job_type.cpp:532]: Missing job Localization Key: job_replicator_drone_desc
+[21:04:20][job_type.cpp:532]: Missing job Localization Key: job_replicator_worker_farmer
+[21:04:20][job_type.cpp:532]: Missing job Localization Key: job_replicator_worker_farmer_desc
+[21:04:20][job_type.cpp:584]: Job replicator_worker_farmer is missing texture gfx/interface/icons/jobs/job_replicator_worker_farmer.dds
+[21:04:20][job_type.cpp:532]: Missing job Localization Key: job_replicator_drone_farmer
+[21:04:20][job_type.cpp:532]: Missing job Localization Key: job_replicator_drone_farmer_desc
+[21:04:20][job_type.cpp:584]: Job replicator_drone_farmer is missing texture gfx/interface/icons/jobs/job_replicator_drone_farmer.dds
+[21:04:20][megastructure_type.cpp:27]: Missing localization key [lgate_final] for mega structure
+[21:04:20][megastructure_type.cpp:27]: Missing localization key [lgate_final_DESC] for mega structure
+[21:04:20][megastructure_type.cpp:27]: Missing localization key [lgate_final_MEGASTRUCTURE_DETAILS] for mega structure
+[21:04:21][modifier.cpp:544]: Missing modifier icon "gfx/interface/icons/modifiers/mod_job_replicator_worker_add.dds"
+[21:04:21][modifier.cpp:544]: Missing modifier icon "gfx/interface/icons/modifiers/mod_job_replicator_drone_add.dds"
+[21:04:21][modifier.cpp:544]: Missing modifier icon "gfx/interface/icons/modifiers/mod_job_replicator_worker_farmer_add.dds"
+[21:04:21][modifier.cpp:544]: Missing modifier icon "gfx/interface/icons/modifiers/mod_job_replicator_drone_farmer_add.dds"
+[21:04:25][empire_flag.cpp:887]: could not find normal-sized texture "flags/just-more-empires-expanded/flag_tellusian_mindflower.dds"  file: save games/earthcustodianship_-1585140336/autosave_2303.07.01.sav/gamestate line: 763961
+[21:04:25][empire_flag.cpp:891]: could not find map-sized texture "flags/just-more-empires-expanded/map/flag_tellusian_mindflower.dds"  file: save games/earthcustodianship_-1585140336/autosave_2303.07.01.sav/gamestate line: 763961
+[21:04:25][empire_flag.cpp:887]: could not find normal-sized texture "flags/backgrounds/fabric_half_black_circle.dds"  file: save games/earthcustodianship_-1585140336/autosave_2303.07.01.sav/gamestate line: 763965
+[21:04:25][ship_design.cpp:225]: Couldn't find a name for ship size starbase_starport
+[21:04:25][ship_design.cpp:225]: Couldn't find a name for ship size starbase_starhold
+[21:04:25][ship_design.cpp:225]: Couldn't find a name for ship size starbase_outpost
+[21:04:25][ship_design.cpp:225]: Couldn't find a name for ship size mining_station
+[21:04:25][ship_design.cpp:225]: Couldn't find a name for ship size research_station
+[21:04:25][ship_design.cpp:225]: Couldn't find a name for ship size observation_station
+[21:04:25][ship_design.cpp:225]: Couldn't find a name for ship size military_station_medium
+[21:04:25][ship_design.cpp:225]: Couldn't find a name for ship size military_station_large
+[21:04:25][ship_design.cpp:225]: Couldn't find a name for ship size starbase_starfortress
+[21:04:25][ship_design.cpp:225]: Couldn't find a name for ship size starbase_citadel
+[21:04:25][ship_design.cpp:225]: Couldn't find a name for ship size sponsored_colonizer
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 250 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 258 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 266 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 315 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 323 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 331 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 129 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 138 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 147 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 159 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 172 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 181 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 190 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 202 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 215 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 223 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 231 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 242 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 302 line: 1, Scope: 
+
+[21:04:30][trigger_impl.cpp:799]: Script Error: Invalid context switch[species], file:  file: common/pop_categories/02_other_categories.txt line: 308 line: 1, Scope: 
+

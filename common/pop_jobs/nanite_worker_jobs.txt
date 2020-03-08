@@ -1,0 +1,290 @@
+###################
+# Basic Jobs
+###################
+
+replicator_worker = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_crystal_mines
+	clothes_texture_index = 2
+
+	possible = {
+		hidden_trigger = { exists = owner }
+		worker_job_check_trigger = yes
+		owner = {
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+		}
+	}
+
+	resources = {
+		category = planet_miners
+		produces = {
+			minerals = 4
+		}
+		upkeep = {
+			energy = 6
+		}
+	}
+	
+	weight = {
+		weight = @worker_job_weight
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_industrious
+				has_trait = trait_robot_power_drills
+			}		
+		}
+		modifier = {
+			factor = 10
+			is_enslaved = yes
+			can_take_servant_job = no
+		}	
+		modifier = {
+			factor = 2
+			OR = {	
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}	
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}		
+		modifier = {
+			factor = 2
+			species = {
+				has_species_flag = racket_species_flag
+			}
+		}		
+		modifier = {
+			factor = 1.2
+			has_trait = trait_very_strong
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_strong
+		}	
+		modifier = {
+			factor = 0.9
+			has_trait = trait_weak
+		}
+	}
+}
+
+replicator_drone = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_crystal_mines
+	clothes_texture_index = 2
+
+	possible = {
+		drone_job_check_trigger = yes
+	}
+
+	resources = {
+		category = planet_miners
+		produces = {
+			minerals = 4
+		}
+		upkeep = {
+			energy = 6
+		}
+	}
+	
+	weight = {
+		weight = @worker_job_weight
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_industrious
+				has_trait = trait_robot_power_drills
+			}		
+		}
+		modifier = {
+			factor = 10
+			is_enslaved = yes
+			can_take_servant_job = no
+		}	
+		modifier = {
+			factor = 2
+			OR = {	
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}	
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}		
+		modifier = {
+			factor = 2
+			species = {
+				has_species_flag = racket_species_flag
+			}
+		}		
+		modifier = {
+			factor = 1.2
+			has_trait = trait_very_strong
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_strong
+		}	
+		modifier = {
+			factor = 0.9
+			has_trait = trait_weak
+		}
+	}
+}
+
+replicator_worker_farmer = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_food_processing_facility
+	clothes_texture_index = 2
+	
+	possible = {
+		hidden_trigger = { exists = owner }
+		worker_job_check_trigger = yes
+		owner = { 
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+		}
+	}
+
+	resources = {
+		category = planet_farmers
+		produces = {
+			food = 6
+		}
+		upkeep = {
+			energy = 8
+		}
+	}			
+	
+	weight = {
+		weight = @worker_job_weight
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robot_harvesters
+				has_trait = trait_agrarian
+			}
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = {
+			factor = 10
+			is_enslaved = yes
+			can_take_servant_job = no
+		}	
+		modifier = {
+			factor = 2
+			OR = {	
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}	
+		modifier = {
+			factor = 2
+			has_trait = trait_syncretic_proles
+		}	
+		modifier = {
+			factor = 1.2
+			has_trait = trait_very_strong
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_strong
+		}	
+		modifier = {
+			factor = 0.9
+			has_trait = trait_weak
+		}			
+	}
+}
+
+replicator_drone_farmer = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_food_processing_facility
+	clothes_texture_index = 2
+	
+	possible = {
+		hidden_trigger = { exists = owner }
+		worker_job_check_trigger = yes
+		owner = { 
+			is_gestalt = no
+			is_fallen_empire_spiritualist = no
+		}
+	}
+
+	resources = {
+		category = planet_farmers
+		produces = {
+			food = 6
+		}
+		upkeep = {
+			energy = 8
+		}
+	}
+	
+	weight = {
+		weight = @worker_job_weight
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robot_harvesters
+				has_trait = trait_agrarian
+			}
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = {
+			factor = 10
+			is_enslaved = yes
+			can_take_servant_job = no
+		}	
+		modifier = {
+			factor = 2
+			OR = {	
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}	
+		modifier = {
+			factor = 2
+			has_trait = trait_syncretic_proles
+		}	
+		modifier = {
+			factor = 1.2
+			has_trait = trait_very_strong
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_strong
+		}	
+		modifier = {
+			factor = 0.9
+			has_trait = trait_weak
+		}			
+	}
+}

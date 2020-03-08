@@ -1,0 +1,21 @@
+namespace = distar
+# L-Cluster outcome on_game_start
+event = {
+	id = distar.8000
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_list = {
+			70 = {
+				set_global_flag = gray_goo_crisis_set
+				set_global_flag = active_gray_goo
+				set_global_flag = dragon_season
+			}
+			30 = {
+				set_global_flag = gray_goo_empire_set
+				set_global_flag = dragon_season
+			}
+		}
+	}
+}
+

@@ -1,0 +1,448 @@
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes. 
+#############
+#	POWER	#
+#############
+
+@corvette_power_1 = 75
+@corvette_power_2 = 100
+@corvette_power_3 = 130
+@corvette_power_4 = 170
+@corvette_power_5 = 220
+@corvette_power_6 = 285
+
+@destroyer_power_1 = 140
+@destroyer_power_2 = 180
+@destroyer_power_3 = 240
+@destroyer_power_4 = 320
+@destroyer_power_5 = 430
+@destroyer_power_6 = 550
+
+@cruiser_power_1 = 280
+@cruiser_power_2 = 360
+@cruiser_power_3 = 480
+@cruiser_power_4 = 620
+@cruiser_power_5 = 800
+@cruiser_power_6 = 1030
+
+@battleship_power_1 = 550
+@battleship_power_2 = 720
+@battleship_power_3 = 950
+@battleship_power_4 = 1250
+@battleship_power_5 = 1550
+@battleship_power_6 = 2000
+
+@titan_power_1 = 1100
+@titan_power_2 = 1450
+@titan_power_3 = 1900
+@titan_power_4 = 2500
+@titan_power_5 = 3200
+@titan_power_6 = 4200
+
+@colossus_power = 10000
+
+@starbase_power = 10000
+
+@platform_power_1 = 200
+@platform_power_2 = 260
+@platform_power_3 = 340
+@platform_power_4 = 440
+@platform_power_5 = 575
+@platform_power_6 = 750
+
+#############
+#	COST	#
+#############
+
+@corvette_cost_1 = 20
+@corvette_cost_2 = 25
+@corvette_cost_3 = 30
+@corvette_cost_4 = 35
+@corvette_cost_5 = 40
+@corvette_cost_6 = 45
+
+@destroyer_cost_1 = 40
+@destroyer_cost_2 = 50
+@destroyer_cost_3 = 60
+@destroyer_cost_4 = 70
+@destroyer_cost_5 = 80
+@destroyer_cost_6 = 90
+
+@cruiser_cost_1 = 100
+@cruiser_cost_2 = 130
+@cruiser_cost_3 = 160
+@cruiser_cost_4 = 190
+@cruiser_cost_5 = 220
+@cruiser_cost_6 = 250
+
+@battleship_cost_1 = 200
+@battleship_cost_2 = 260
+@battleship_cost_3 = 320
+@battleship_cost_4 = 380
+@battleship_cost_5 = 440
+@battleship_cost_6 = 500
+
+@titan_cost_1 = 400
+@titan_cost_2 = 450
+@titan_cost_3 = 500
+@titan_cost_4 = 550
+@titan_cost_5 = 1054
+@titan_cost_6 = 1370
+
+@colossus_cost_1 = 0
+
+@platform_cost_1 = 40
+@platform_cost_2 = 50
+@platform_cost_3 = 60
+@platform_cost_4 = 70
+@platform_cost_5 = 80
+@platform_cost_6 = 90
+
+#############
+#  REACTORS #
+#############
+
+########################
+# Fission Reactors
+########################
+
+utility_component_template = {
+	key = "INTERDICTOR_FISSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_1"
+	icon_frame = 1
+	power = @cruiser_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 1
+		}
+		upkeep = {
+			energy = 0.40
+			nanites = 0.04
+		}
+	}
+	
+	prerequisites = { "tech_fission_power" }
+	component_set = "power_core"
+	size_restriction = { graygoo_interdictor }
+	upgrades_to = "INTERDICTOR_FUSION_REACTOR"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "GREYGOO_MOTHERSHIP_FISSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_1"
+	icon_frame = 1
+	power = @titan_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 2
+		}
+		upkeep = {
+			energy = 1.60
+			nanites = 0.16
+		}
+	}
+	
+	prerequisites = { "tech_fission_power" }
+	component_set = "power_core"
+	size_restriction = { graygoo_mothership }
+	upgrades_to = "TITAN_FUSION_REACTOR"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+########################
+# Fusion Reactors
+########################
+
+utility_component_template = {
+	key = "INTERDICTOR_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_2"
+	icon_frame = 1
+	power = @cruiser_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 2
+		}
+		upkeep = {
+			energy = 0.52
+			nanites = 0.052
+		}
+	}
+	
+	prerequisites = { "tech_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { graygoo_interdictor }
+	upgrades_to = "INTERDICTOR_COLD_FUSION_REACTOR"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "GREYGOO_MOTHERSHIP_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_2"
+	icon_frame = 1
+	power = @titan_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 4
+		}
+		upkeep = {
+			energy = 2.08
+			nanites = 0.208
+		}
+	}
+	
+	prerequisites = { "tech_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { graygoo_mothership }
+	upgrades_to = "TITAN_COLD_FUSION_REACTOR"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+########################
+# Cold Fusion Reactors
+########################
+
+utility_component_template = {
+	key = "INTERDICTOR_COLD_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = @cruiser_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 3
+		}
+		upkeep = {
+			energy = 0.68
+			nanites = 0.068
+		}
+	}
+	
+	prerequisites = { "tech_cold_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { graygoo_interdictor }
+	upgrades_to = "INTERDICTOR_ANTIMATTER_REACTOR"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "GREYGOO_MOTHERSHIP_COLD_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = @titan_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 6
+		}
+		upkeep = {
+			energy = 2.70
+			nanites = 0.270
+		}
+	}
+	
+	prerequisites = { "tech_cold_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { graygoo_mothership }
+	upgrades_to = "TITAN_ANTIMATTER_REACTOR"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+########################
+# Antimatter Reactors
+########################
+
+utility_component_template = {
+	key = "INTERDICTOR_ANTIMATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_4"
+	icon_frame = 1
+	power = @cruiser_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 4
+		}
+		upkeep = {
+			energy = 0.88
+			nanites = 0.088
+		}
+	}
+	
+	prerequisites = { "tech_antimatter_power" }
+	component_set = "power_core"
+	size_restriction = { graygoo_interdictor }
+	upgrades_to = "INTERDICTOR_ZERO_POINT_REACTOR"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+utility_component_template = {
+	key = "GREYGOO_MOTHERSHIP_ANTIMATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_4"
+	icon_frame = 1
+	power = @titan_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 8
+		}
+		upkeep = {
+			energy = 3.51
+			nanites = 0.351
+		}
+	}
+	
+	prerequisites = { "tech_antimatter_power" }
+	component_set = "power_core"
+	size_restriction = { graygoo_mothership }
+	upgrades_to = "TITAN_ZERO_POINT_REACTOR"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+########################
+# Zero-Point Reactors
+########################
+
+utility_component_template = {
+	key = "INTERDICTOR_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @cruiser_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 5
+		}
+		upkeep = {
+			energy = 1.14
+			nanites = 0.114
+		}
+	}
+	
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	size_restriction = { graygoo_interdictor }
+	upgrades_to = "INTERDICTOR_DARK_MATTER_REACTOR"
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "GREYGOO_MOTHERSHIP_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @titan_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 10
+		}
+		upkeep = {
+			energy = 4.56
+			nanites = 0.456
+		}
+	}
+	
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	size_restriction = { graygoo_mothership }
+	upgrades_to = "TITAN_DARK_MATTER_REACTOR"
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+####################
+# Engimatic Reactors
+####################
+
+utility_component_template = {
+	key = "INTERDICTOR_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @cruiser_power_6
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 6
+		}
+		upkeep = {
+			energy = 1.48
+			nanites = 0.148
+		}
+	}
+	
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { graygoo_interdictor }
+	
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "GREYGOO_MOTHERSHIP_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @titan_power_6
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 12
+		}
+		upkeep = {
+			energy = 5.93
+			nanites = 0.593
+		}
+	}
+	
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { graygoo_mothership }
+	
+	ai_weight = {
+		weight = 6
+	}
+}

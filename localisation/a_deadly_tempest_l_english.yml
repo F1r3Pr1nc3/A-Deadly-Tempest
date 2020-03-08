@@ -1,0 +1,255 @@
+﻿l_english:
+
+ ####################################
+ # A Deadly Tempest
+ ####################################
+ 
+ ### Events
+ mother_ship_hire:0 "Gray can create a Nanite mothership for our use however Gray will not create more than five for our empire; for a massive cost in resources to create the Nanites for the ship./n/These ships are capable of creating smaller ships to escort them but only if the mothership is still intact. but in times of great crisis they might be able to create more.../n/Gray can create these ships no matter what form it takes as long as Gray is not reforming."
+ 
+ a_deadly_tempest.82.name:0 "[From.GetName] Engulfed"
+ a_deadly_tempest.82.desc:0 "A fleet belonging to the §H[From.From.GetName]§! has massacred the population of §H[From.GetName]§!! After a massed and unrelenting orbital bombardment campaign, all population centers on the surface have been systematically wiped out, reducing the [From.GetPlanetMoon] to an lifeless husk that is now only covered in countless Nanite swarms."
+ a_deadly_tempest.82.a:0 "This atrocity must be avenged!"
+ a_deadly_tempest.83.desc:0 "Our forces report that they have concluded the orbital bombardment of §H[From.GetName]§!. All population centers have been systematically eradicated, and the surface [From.GetPlanetMoon] is now only covered in countless Nanite swarms."
+ 
+ 
+ ### Ship designs
+ 
+ NAME_shoal_Fleet:0 "Nanite Shoal"
+ NAME_Nanite_Warship:0 "Nanite Mothership"
+ NAME_Nanite_Interdictor_default:0 "Nanite Interdictor"
+ NAME_Nanite_Interdictor_Carrier:0 "Nanite Interdictor Carrier"
+ nanite_mothership_key:0 "Nanite Mothership"
+ nanite_mothership_battleship_key:0 "Nanite Mothership"
+ nanite_warship_battleship_key:0 "Nanite Warship"
+ gray_warship_key:0 "Nanite Warship"
+ nanite_interdictor_key:0 "Interdictor"
+ nanite_interdictor_alt_key:0 "Interdictor"
+ nanite_interdictor_combat_key:0 "Combat Interdictor"
+ nanite_interdictor_heavy_combat_key:0 "Assault Interdictor"
+ 
+ ### Ship Componates
+ 
+ # Combat computers
+ COMBAT_NANITE_COMPUTER_PICKET_BASIC:0 "Specialized Combat Computer (Picket)"
+ COMBAT_NANITE_COMPUTER_PICKET_ADVANCED:0 "Advanced Combat Computer (Picket)"
+ COMBAT_NANITE_COMPUTER_PICKET_SAPIENT:0 "Sapient Ship Intellect (Picket)"
+ COMBAT_NANITE_COMPUTER_PICKET_AUTONOMOUS:0 "Autonomus Ship Intellect (Picket)"
+ COMBAT_NANITE_COMPUTER_PICKET_PRECOG:0 "Precognitive Ship Interface (Picket)"
+ 
+ COMBAT_NANITE_COMPUTER_LINE_BASIC:0 "Specialized Combat Computer (Line)"
+ COMBAT_NANITE_COMPUTER_LINE_ADVANCED:0 "Advanced Combat Computer (Line)"
+ COMBAT_NANITE_COMPUTER_LINE_SAPIENT:0 "Sapient Ship Intellect (Line)"
+ COMBAT_NANITE_COMPUTER_LINE_AUTONOMOUS:0 "Autonomus Ship Intellect (Line)"
+ COMBAT_NANITE_COMPUTER_LINE_PRECOG:0 "Precognitive Ship Interface (Line)"
+ 
+ COMBAT_NANITE_COMPUTER_ARTILLERY_BASIC:0 "Specialized Combat Computer (Artillery)"
+ COMBAT_NANITE_COMPUTER_ARTILLERY_ADVANCED:0 "Advanced Combat Computer (Artillery)"
+ COMBAT_NANITE_COMPUTER_ARTILLERY_SAPIENT:0 "Sapient Ship Intellect (Artillery)"
+ COMBAT_NANITE_COMPUTER_ARTILLERY_AUTONOMOUS:0 "Autonomus Ship Intellect (Artillery)"
+ COMBAT_NANITE_COMPUTER_ARTILLERY_PRECOG:0 "Precognitive Ship Interface (Artillery)"
+ 
+ # Reactors
+ INTERDICTOR_FISSION_REACTOR:0 "Fission Reactor"
+ GREYGOO_MOTHERSHIP_FISSION_REACTOR:0 "Fission Reactor"
+ INTERDICTOR_FUSION_REACTOR:0 "Fusion Reactor"
+ GREYGOO_MOTHERSHIP_FUSION_REACTOR:0 "Fusion Reactor"
+ INTERDICTOR_COLD_FUSION_REACTOR:0 "Cold Fusion Reactor"
+ GREYGOO_MOTHERSHIP_COLD_FUSION_REACTOR:0 "Cold Fusion Reactor"
+ INTERDICTOR_ANTIMATTER_REACTOR:0 "Antimatter Reactor"
+ GREYGOO_MOTHERSHIP_ANTIMATTER_REACTOR:0 "Antimatter Reactor"
+ INTERDICTOR_ZERO_POINT_REACTOR:0 "Zero-Point Reactor"
+ GREYGOO_MOTHERSHIP_ZERO_POINT_REACTOR:0 "Zero-Point Reactor"
+ INTERDICTOR_DARK_MATTER_REACTOR:0 "Dark Matter Reactor"
+ GREYGOO_MOTHERSHIP_DARK_MATTER_REACTOR:0 "Dark Matter Reactor"
+ 
+ # Thrusters
+ INTERDICTOR_SHIP_THRUSTER_1:0 "Chemical Thrusters"
+ INTERDICTOR_SHIP_THRUSTER_2:0 "Ion Thrusters"
+ INTERDICTOR_SHIP_THRUSTER_3:0 "Plasma Thrusters"
+ INTERDICTOR_SHIP_THRUSTER_4:0 "Impulse Thrusters"
+ INTERDICTOR_SHIP_THRUSTER_5:0 "Dark Matter Thrusters"
+ 
+ GREYGOO_MOTHERSHIP_SHIP_THRUSTER_1:0 "Chemical Thrusters"
+ GREYGOO_MOTHERSHIP_SHIP_THRUSTER_2:0 "Ion Thrusters"
+ GREYGOO_MOTHERSHIP_SHIP_THRUSTER_3:0 "Plasma Thrusters"
+ GREYGOO_MOTHERSHIP_SHIP_THRUSTER_4:0 "Impulse Thrusters"
+ GREYGOO_MOTHERSHIP_SHIP_THRUSTER_5:0 "Dark Matter Thrusters"
+ 
+ # Weapons
+ 
+ ADT_NANITE_STRIKE_CRAFT:0 "Nanite Strike Craft"
+ ADT_STRIKE_CRAFT:0 "Nanite Strike Craft"
+ ADT_STRIKE_CRAFT_DESC:0 "Unlike normal strike craft a Nanite version can morph its weapons on the fly and the 'Hangers' are little more than factories that can spew out a near constant stream of the craft."
+ 
+ NANITE_ENERGY_MISSILE:0 "Energy Missile"
+ ENERGY_MISSILE_ADT:0 "Energy Missile"
+ ENERGY_MISSILE_ADT_DESC:0 "This energy sphere is capable of tracking its target with the benefit of being untargetable by point defense."
+ 
+ NANITE_BEAM:0 "Nanite Beam"
+ NANITE_BEAM_ADT:0 "Nanite Beam"
+ NANITE_BEAM_ADT_DESC:0 "This weapon works in a similar matter to a phase disruptor in which fires a quantum energy charge but is many times more destructive. In addition within this quantum beam is a stream of destructive Nanites as well. The Incredible damage with weapon can cause is almost unrivaled except for weapons found on titan class ships and similar sized ships and stations."
+ NANITE_ION_BEAM:0 "Nanite Beam"
+ NANITE_ION_BEAM_ADT:0 "Nanite Beam"
+ NANITE_ION_BEAM_ADT_DESC:0 "This weapon works in a similar matter to a phase disruptor in which fires a quantum energy charge but is many times more destructive. In addition within this quantum beam is a stream of destructive Nanites as well. The Incredible damage with weapon can cause is almost unrivaled except for weapons found on titan class ships and similar sized ships and stations."
+ 
+ ### Starbase buildings and modules
+ sm_nanite_yards:0 "Nanite Ship Foundry"
+ sm_nanite_yards_desc:0 "It takes more than just a humble shipyard to create a Nanite ship let alone a entire fleet of such vessels, it will take a specialised foundry to produce such Nanites in the needed quantities. Such a facility however is not cheap to create or maintain."
+ 
+ ### Bombardment
+ nanite_bombardment:0 "Nanite Bombardment"
+ bombardment_nanite_bombardment_desc:2 " $nanite_bombardment$ The planet is bombarded with destructive Nanites that break down anything they come in contact with into its base componates with the explicit aim of maximizing civilian casualties.\n- §RMassive§! damage to §YArmies§!\n- §RMassive§! damage to §YTiles§!\n- §RMassive§! damage to §YPops§!\n- Will bombard undefended planets\n- Can reduce planets to lifeless Nanite Worlds which can be terraformed with the right technology."
+ bombardment_nanite_bombardment:0 "Nanite"
+ orbital_nanite_bombardment:0 "Nanite"
+ orbital_nanite_bombardment_name:0 "Nanite Orbital Bombardment"
+ orbital_nanite_bombardment_desc:0 ""
+ 
+ 
+ ### Technology
+ 
+ # Weapons
+ tech_nanite_strike_craft:0 "Nanite Strike Craft"
+ tech_nanite_strike_craft_desc:0 "The effectiveness of rapidly creating strike craft should not be overlooked especially when they can be made in the middle of battle."
+ tech_adt_gg_beam:0 "Gatebuilder Titan weapon"
+ tech_adt_gg_beam_desc:0 "We can never be certain if it was the Gatebuilders or the Nanites who designed this weapon but one thing that will leave us to wonder. What kind of war required use of such a destructive weapon?."
+ tech_adt_energymissiles:0 "Gatebuilder energy spheres"
+ tech_adt_energymissiles_desc:0 "The Gatebuilders who ever they were had an understanding on how to create an energy sphere made of specialized neutrons that has the capacity to take it's target. While not as on par with an actual neutron launcher these spheres make excellent guided weapons."
+ 
+ # Phys
+ tech_lcluster_access:0 "L-Cluster Access Control"
+ tech_lcluster_access_desc:0 "After some time and study we have discovered the means to disable the L-Gate network when we need too for as long as we control the Terminal Egress system."
+ tech_lgate_construction:0 "L-Gate Construction"
+ tech_lgate_construction_desc:0 "Thanks to advances in Nanite technology we can start constructing our own L-Gates instead of just having to rely on existing gates."
+ tech_tactical_lgate_use:0 "Tactial L-Gate Use"
+ tech_tactical_lgate_use_desc:0 "The L-Gates keep us safe from the crisis at large however can we leave the galaxy to its fate? or will we ride out this storm? ever way maintaining a tactical doctrine of limited use of the L-Gates will allow us to strike at the those we deem a threat."
+ tech_nanoactuators:0 "Nanoactuators"
+ tech_nanoactuators_desc:0 "Simple but powerful nano-actuators, allowing for complex manipulations and experiments of mesoscopic scales."
+ tech_nanite_shield_rechargers:0 "Nanite Shield Cloud"
+ tech_nanite_shield_rechargers_desc:0 "By spreading a cloud of specialized Nanites which linger around the shields the Nanites increase the shield's strength before it collapses."
+ 
+ # Soc
+ tech_nanite_terraforming:0 "Nanite Terraforming"
+ tech_nanite_terraforming_desc:0 "Nanite worlds have the potential to be terraformed into any world we can imagine but it seems they can only do so under certain conditions...we can change that."
+ tech_nano_dust:0 "Nanodust"
+ tech_nano_dust_desc:0 "A slurry of elements reduced to particulate matter. Once distributed across a world, Gray Dust can be activated by nanomachines to rapidly alter planetary conditions."
+ tech_nano_scales:0 "Nanoscales"
+ tech_nano_scales_desc:0 "Concentrated artificial fertilizer designed to revive devastated biospheres"
+ 
+ # Eng
+ tech_nanite_bombardment:0 "Nanite Bombardment"
+ tech_nanite_bombardment_desc:0 "Unlessing the Gray Goo on a world will turn it into a useless Nanite world to our enemies. But with the right technology could turn it livable again..."
+ tech_nanite_build_speed:0 "Nanite Shipyards"
+ tech_nanite_build_speed_desc:0 "Ships are assembled quicker and faster with Nanites assisting the construction."
+ tech_nanite_hull:0 "Nanite Hulls"
+ tech_nanite_hull_desc:0 "By having spreading billions of Nanites on the surface of our ships they will reinforce both the hulls and armor in addition the Nanites will repair the hull and armor to the best of their ability."
+ tech_nanite_ships:0 "Nanite Warforms"
+ tech_nanite_ships_desc:0 "Having encountered Nanite warforms its understandable that we wish to create such vessels for our fleets. Each ships is comprised of untold numbers of Nanites and each is self sustaining. Though the designs may not be as flexable as we hope however..."
+ tech_nanite_living_metal:0 "Nanite Living Metal"
+ tech_nanite_living_metal_desc:0 "Thanks to our advances in nano-science we are now able to produce living metal by using Nanites."
+ tech_nanocrystals:0 "Nanocrystals"
+ tech_nanocrystals_desc:0 "The Crystalline by-product of certain nanobot activity exhibits curious interactions with other nanoscopic material, hinting at truth hidden beyond the Planck scale."
+ tech_nanite_star_base:0 "Nanite Stations"
+ tech_nanite_star_base_desc:0 "The warforms are impressive but now lets look into more defense means."
+ tech_nanite_modular_engineering:0 "Modular Nanites"
+ tech_nanite_modular_engineering_desc:0 "Modular templates for our starbases is fine but templates that can change themselves as needed are better."
+ tech_nanite_workers:0 "Nanite Constructs"
+ tech_nanite_workers_desc:0 "Networking certain groups of Nanites into separate networks which themselves have the capability to form what ever tool they need from their appendages combined with the processing power of countless Nanites puts them on par with if not greater than Synthetics."
+ tech_nanite_construction:0 "Nanite Construction"
+ tech_nanite_construction_desc:0 "Templates and modules to help construction is one thing...using Nanites which literally build the structure from the ground up is another..."
+ tech_nanite_mega_engineering:0 "Nanite Mega Engineering"
+ tech_nanite_mega_engineering_desc:0 "Combining Nanites and living metal was the best idea anyone has ever come upwith provided the Nanites don't go rampant...regardless our megastructures should now become built faster."
+ 
+ ### Policy
+ 
+ lcluster_policy:0 "L-Cluster Access"
+ policy_lcluster_policy:0 "L-Cluster Access"
+ policy_lcluster_policy_desc:0 "The L-Cluster offers more than just access to unique resources but control over an entire gate network. Now it is up to us to choose how we use it."
+ lcluster_policy_cannot_set_name:0 "Cannot Set L-Cluster Access"
+ lcluster_policy_cannot_set:0 "Cannot Set L-Cluster Policy"
+ lcluster_policy_cannot_set_desc:0 "Until we gain control of the Terminal Egress system in the L-Cluster we cannot control access to the Cluster."
+ lcluster_policy_open:0 "L-Cluster Open"
+ lcluster_policy_open_desc:0 "Let us keep the Cluster open the mobility it provides and ease of transport for our goods cannot be ignored it is a great asset to our empire"
+ lcluster_policy_closed:0 "L-Cluster Closed"
+ lcluster_policy_closed_desc:0 "The L-Cluster will remain closed let it serve as a place of refuge and last retreat when threatened with the extinction of our empire and perhaps the galaxy..."
+ 
+ ### Decisions
+ 
+ decision_open_lcluster:0 "Open L-Cluster"
+ decision_open_lcluster_desc:0 "The L-Cluster provides great mobility it provides and ease of transport for our goods cannot be ignored it is a great asset to our empire"
+ decision_open_lcluster_effects:0 "Will active the L-Gates allowing for their use."
+ 
+ decision_close_lcluster:0 "Close L-Cluster"
+ decision_close_lcluster_desc:0 "The L-Cluster will remain closed let it serve as a place of refuge and last retreat when threatened with the extinction of our empire and perhaps the galaxy..."
+ decision_close_lcluster_effects:0 "Will deactivate the L-Gates preventing their use."
+ 
+ ### Jobs
+ 
+ #Specialist
+ job_nanite_forger:0 "Nanicist"
+ job_nanite_forger_plural:0 "Nanicists"
+ job_nanite_forger_desc:1 "These specialists create the Nanites used by the empire which have many uses."
+ job_nanite_forger_desc:0 "job_nanite_forger $job_nanite_forger_plural$ produce £Nanites£ §Y$minerals$§!"
+ job_nanite_forger:0 "$job_nanite_forger$ Jobs"
+ mod_job_nanite_forger_per_pop:0 "§G+1§! $job_nanite_forger$ Job per $VALUE$ Pops"
+ mod_job_nanite_forger_per_pop_short:0 "\n§G+1§! £job_nanite_forger£ per $VALUE$ £pop£"
+ 
+ job_nanite_forger_drone:0 "Nanite Drone"
+ job_nanite_forger_drone_plural:0 "Nanite Drones"
+ job_nanite_forger_drone_desc:1 "These Drones create the Nanites used by the collective which the Nanites themselves have many uses."
+ job_nanite_forger_drone_desc:0 "job_nanite_forger_drone $job_nanite_forger_drone_plural$ produce £Nanites£ §Y$minerals$§!"
+ job_nanite_forger_drone:0 "$job_nanite_forger_drone$ Jobs"
+ mod_job_nanite_forger_drone_per_pop:0 "§G+1§! $job_nanite_forger_drone$ Job per $VALUE$ Pops"
+ mod_job_nanite_forger_drone_per_pop_short:0 "\n§G+1§! £job_nanite_forger_drone£ per $VALUE$ £pop£"
+ 
+ job_nanite_forger_effect_desc:0 "£job_nanite_forger£ $job_nanite_forger_plural$ turn £minerals£ §Y$minerals$§! into £Nanites£ §Y$Nanites$§!"
+ job_nanite_forger_drone_effect_desc:0 "£job_nanite_forger_drone£ $job_nanite_forger_drone_plural$ turn £minerals£ §Y$minerals$§! into £Nanites£ §Y$Nanites$§!"
+ 
+ # job_replicator_worker:0 ""
+ # job_replicator_worker_desc:0 ""
+ # job_replicator_drone:0 ""
+ # job_replicator_drone_desc:0 ""
+ # job_replicator_worker_farmer:0 ""
+ # job_replicator_worker_farmer_desc:0 ""
+ # job_replicator_drone_farmer:0 ""
+ # job_replicator_drone_farmer_desc:0 ""
+
+ 
+ ### Buildings
+ building_nanite_plant_1:0 "Nanite Foundries"
+ building_nanite_plant_1_desc:0 "Nanite Forgers work within these foundries to produce Nanites"
+ building_nanite_plant_2:0 "Nanite Mega-Forges"
+ building_nanite_plant_2_desc:0 "Production on a massive scale, these forges and workspaces create Nanites in great quantities."
+ building_nanite_plant_3:0 "Nanite Mega-Plants"
+ building_nanite_plant_3_desc:0 "Advanced manufacturing centers where Nanite production is greatly increased."
+ building_nanite_industrial_replicator_1:0 "Mineral Replicators"
+ building_nanite_industrial_replicator_1_desc:0 "These replicators create raw materials from energy molecules with the help of Nanites."
+ building_nanite_food_replicator:0 "Food Replicator"
+ building_nanite_food_replicator_desc:0 "These replicators create edible foodstuffs from energy molecules with the help of Nanites. Almost has the same taste as grown and raised foods."
+ 
+ ### Tooltips
+ 
+ not_in_lcluster:0 "Cannot Build in L-Cluster"
+ needs_terminal_egress:0 "We must control Terminal Egress to control access to the L-Cluster"
+ 
+ sm_nanite_yards_desc_modifier:0 "Allows for the creation of Nanite ships."
+ 
+ TECH_UNLOCK_NANITE_CONSTRUCTION_TITLE:0 "Unlock Nanite Ships"
+ TECH_UNLOCK_NANITE_CONSTRUCTION_DESC:0 "Nanite ships are self sufficient however due to the...'Unique' nature of these ships their designs seem hardcoded and may not be compatible with certain technologies."
+ bombed_to_nanite_world:0 "The world will need to be terraformed in order to be liveable again."
+ 
+ TECH_UNLOCK_NANITE_BOMBARDMENT_TITLE:0 "Unlock Nanite Bombardment"
+ TECH_UNLOCK_NANITE_BOMBARDMENT_DESC:0 "Unlock a new method of bombardment that will depopulate a world and turn it into a Nanite world."
+ 
+ TECH_UNLOCK_L_GATE_TITLE:0 "Unlock L-Gate Construction"
+ TECH_UNLOCK_L_GATE_DESC:0 "Unlock the ability to construct L-Gates"
+ 
+ TECH_UNLOCK_L_GATE_ACCESS_TITLE:0 "Unlock L-Cluster Access Controls"
+ TECH_UNLOCK_L_GATE_ACCESS_DESC:0 "Unlock the Policy that enables the ability to close or open the L-Cluster. Must control Terminal Egress to dictate policy."
+ 
+ TECH_UNLOCK_NANITE_TERRAFORMING_TITLE:0 "Unlock Nanite World Terraforming"
+ TECH_UNLOCK_NANITE_TERRAFORMING_DESC:0 "Once Nanite Worlds were though un-terraformable unless under certain conditions but all machines can be reprogrammed a Nanite is no different."
+ 
+ TECH_UNLOCK_L_GATE_TACTICAL_USE_TITLE:0 "Unlock Tactical L-Gate Use"
+ TECH_UNLOCK_L_GATE_TACTICAL_USE_DESC:0 "Unlock the ability use our L-Gates while the cluster is closed."
+ 

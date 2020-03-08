@@ -1,0 +1,103 @@
+# ##################
+# Nanite Weapons
+# ##################
+
+tech_adt_energymissiles = {
+	area = physics
+	cost = @tier5cost2
+	tier = 5
+	category = { particles }
+	ai_update_type = military	
+	prerequisites = { "tech_energy_torpedoes_2" "tech_missiles_5" }
+	is_reverse_engineerable = no
+	weight = @tier5weight2
+	
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+}
+
+# ##################
+# Nanite Strike Craft
+# ##################
+
+tech_nanite_strike_craft = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	ai_update_type = military
+	category = { voidcraft }
+	prerequisites = { "tech_strike_craft_3" }
+	is_reverse_engineerable = no
+	weight = @tier5weight2
+		
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+		
+	## unlock Nanite strike craft
+}
+
+##############
+# Nanite Beam
+##############
+
+tech_adt_gg_beam = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { particles }
+	ai_update_type = military	
+	prerequisites = { "tech_arc_emitter_2" "tech_energy_lance_2" "tech_disruptors_3" }
+	is_reverse_engineerable = no
+	weight = @tier5weight3
+	
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+}

@@ -1,0 +1,145 @@
+# ##################
+# Ship Sizes
+# ##################
+
+tech_nanite_ships = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { voidcraft }
+	prerequisites = { "tech_battleships" }
+	weight = @tier5weight1
+	
+	## unlock nanite ships
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_NANITE_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_NANITE_CONSTRUCTION_DESC"
+		}
+	}
+	
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+}
+
+# ##################
+# Nanite upgrades
+# ##################
+
+tech_nanite_build_speed = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { voidcraft }
+	weight = @tier5weight2
+	
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+	
+	modifier = {
+		starbase_shipyard_build_speed_mult = 0.20
+		starbase_shipyard_build_cost_mult = -0.10
+	}
+}
+
+tech_nanite_hull = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	category = { voidcraft }
+	prerequisites = { "tech_nanite_ships" }
+	weight = @tier5weight3
+	
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+	
+	modifier = {
+		ship_hull_mult = 0.25
+		ship_armor_mult = 0.25
+		ship_hull_regen_add_static = 1
+		ship_armor_regen_add_static = 2
+	}
+}
+
+# Nanite Living Metal
+tech_nanite_living_metal = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	category = { materials }
+	prerequisites = { "tech_mine_living_metal" }
+	weight = @tier5weight1
+	
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+	# add Living Metal
+	modifier = {
+		country_resource_max_sr_living_metal_add = 2
+	}
+}
+
+tech_nanocrystals = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	category = { materials }
+	weight = @tier5weight1
+	
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+	
+	modifier = {
+		weapon_type_explosive_weapon_damage_mult = 0.25
+		weapon_type_kinetic_weapon_damage_mult = 0.25
+		weapon_type_energy_weapon_damage_mult = 0.25
+	}
+}
+
+# ##################################
+# Nanite Starbases/stations upgrades
+# ##################################
+
+# Modular Engineering
+tech_nanite_modular_engineering = {
+	cost = @tier5cost3
+	area = engineering
+	category = { voidcraft }
+	tier = 5
+	prerequisites = { "tech_starbase_5" "tech_modular_engineering" }
+	is_rare = yes
+	weight = @tier5weight2
+	
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+	
+	modifier = {
+		starbase_building_build_speed_mult = -0.25
+		starbase_module_build_speed_mult = -0.25
+		starbase_upgrade_cost_mult = -0.15
+		starbase_upgrade_speed_mult = 0.25
+	}
+}

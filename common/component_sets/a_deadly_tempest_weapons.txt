@@ -1,0 +1,29 @@
+# Icons set here are the ones shown in component editor list.
+
+component_set = {
+	key = "ADT_STRIKE_CRAFT"
+	
+	icon = "GFX_ship_part_strike_craft_scout_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NANITE_BEAM_ADT"
+	
+	icon = "GFX_ship_part_space_whale_weapon_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NANITE_ION_BEAM_ADT"
+	
+	icon = "GFX_ship_part_space_whale_weapon_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "ENERGY_MISSILE_ADT"
+	
+	icon = "GFX_ship_part_space_whale_weapon_1"
+	icon_frame = 1	
+}

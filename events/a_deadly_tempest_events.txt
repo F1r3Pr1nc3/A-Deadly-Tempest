@@ -1,0 +1,501 @@
+############################
+#
+# Nanites Goo Events
+#
+# Written by His Dread Monarch
+#
+############################
+
+namespace = a_deadly_tempest
+
+####################################
+# Nanites spawn more ships over time
+####################################
+
+### Mid Game reinforcements
+# Reinforcements 1
+country_event = {
+	id = a_deadly_tempest.3
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_system = {
+			has_star_flag = graygoo_factory_system
+			any_ship_in_system = { is_ship_size = graygoo_factory }
+		}
+		mid_game_years_passed >= -10
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_system = {
+					has_star_flag = lcluster
+					any_ship_in_system = {
+						owner = { 
+							NOT = { is_same_value = root }
+						}
+					}
+				}
+			}
+			# Reinforce at factory if someone else is in the cluster...
+			country_event = { id = a_deadly_tempest.4 }
+			# Else spawn reinforcements...
+		}
+		else = {
+			every_system = {
+				limit = {
+					NOR = {
+						has_star_flag = lcluster_lgate
+						has_star_flag = lgate_originating_system
+					}
+					any_system_megastructure = { 
+						is_megastructure_type = lgate_base
+					}
+				}
+				random_system_megastructure = {
+					limit = {
+						is_megastructure_type = lgate_base
+					}
+					create_ambient_object = {
+						type = "horror_spawn_object"
+						location = THIS
+						use_3d_location = yes
+						duration = 10
+					}
+					create_fleet = {
+						name = "NAME_Tempest_Fleet"
+						effect = {
+							set_owner = event_target:graygoo_country
+							create_nanite_shoal_1 = yes
+							set_formation_scale = 2
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 250
+							set_location = {
+								target = prev
+								distance = 0
+								angle = 0
+							}
+							set_fleet_flag = nanite_mother_ship
+						}
+					}
+				}
+			}
+			country_event = { id = a_deadly_tempest.3 days = 4800 }
+		}
+	}
+}
+
+# Reinforcements 2
+country_event = {
+	id = a_deadly_tempest.4
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_ship = {
+			limit = { is_ship_size = graygoo_factory }
+			save_event_target_as = graygoo_factory
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				create_nanite_shoal_1 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 10
+					angle = random
+				}
+				set_fleet_flag = nanite_mother_ship
+			}
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				create_nanite_shoal_1 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 10
+					angle = random
+				}
+				set_fleet_flag = nanite_mother_ship
+			}
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				create_nanite_shoal_1 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 10
+					angle = random
+				}
+				set_fleet_flag = nanite_mother_ship
+			}
+		}
+	}
+}
+
+
+### Late Game reinforcements
+# Reinforcements 1
+country_event = {
+	id = a_deadly_tempest.5
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_system = {
+			has_star_flag = graygoo_factory_system
+			any_ship_in_system = { is_ship_size = graygoo_factory }
+		}
+		end_game_years_passed >= -10
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_system = {
+					has_star_flag = lcluster
+					any_ship_in_system = {
+						owner = { 
+							NOT = { is_same_value = root }
+						}
+					}
+				}
+			}
+			# Reinforce at factory if someone else is in the cluster...
+			country_event = { id = a_deadly_tempest.6 }
+			# Else spawn reinforcements...
+		}
+		else = {
+			every_system = {
+				limit = {
+					NOR = {
+						has_star_flag = lcluster_lgate
+						has_star_flag = lgate_originating_system
+					}
+					any_system_megastructure = { 
+						is_megastructure_type = lgate_base
+					}
+				}
+				random_system_megastructure = {
+					limit = {
+						is_megastructure_type = lgate_base
+					}
+					create_ambient_object = {
+						type = "horror_spawn_object"
+						location = THIS
+						use_3d_location = yes
+						duration = 10
+					}
+					create_fleet = {
+						name = "NAME_Tempest_Fleet"
+						effect = {
+							set_owner = event_target:graygoo_country
+							create_nanite_shoal_2 = yes
+							set_formation_scale = 2
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 250
+							set_location = {
+								target = prev
+								distance = 0
+								angle = 0
+							}
+							set_fleet_flag = nanite_mother_ship
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Reinforcements 2
+country_event = {
+	id = a_deadly_tempest.6
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_ship = {
+			limit = { is_ship_size = graygoo_factory }
+			save_event_target_as = graygoo_factory
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				create_nanite_shoal_2 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 10
+					angle = random
+				}
+				set_fleet_flag = nanite_mother_ship
+			}
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				create_nanite_shoal_2 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 10
+					angle = random
+				}
+				set_fleet_flag = nanite_mother_ship
+			}
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				create_nanite_shoal_2 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 10
+					angle = random
+				}
+				set_fleet_flag = nanite_mother_ship
+			}
+		}
+		country_event = { id = a_deadly_tempest.5 days = 7200 }
+	}
+}
+
+### Nanites
+# Mothership creates ships
+fleet_event = {
+	id = a_deadly_tempest.105
+	hide_window = yes
+	
+	trigger = {
+		has_fleet_flag = nanite_mother_ship
+		num_ships < 11
+		any_ship = { is_ship_size = graygoo_mothership }
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+		
+	immediate = {
+		create_ship = {
+			name = random
+			design = "NAME_Nanite_Interdictor"
+			upgradable = no
+		}
+	}
+}
+
+# Mothership creates ships
+fleet_event = {
+	id = a_deadly_tempest.106
+	hide_window = yes
+	
+	trigger = {
+		mid_game_years_passed >= -10
+		has_fleet_flag = nanite_mother_ship
+		num_ships < 21
+		any_ship = { is_ship_size = graygoo_mothership }
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+		
+	immediate = {
+		create_ship = {
+			name = random
+			design = "NAME_Nanite_Interdictor"
+			upgradable = no
+		}
+	}
+}
+
+# Motherships create increased ship numbers during galactic crisis
+fleet_event = {
+	id = a_deadly_tempest.107
+	hide_window = yes
+	
+	trigger = {
+		end_game_years_passed >= -10
+		has_fleet_flag = nanite_mother_ship
+		num_ships < 41
+		any_ship = { is_ship_size = graygoo_mothership }
+	}
+	 
+	mean_time_to_happen = {
+		months = 2
+	}
+		
+	immediate = {
+		random_list = {
+			5 = {
+				create_ship = {
+					name = random
+					design = "NAME_Nanite_Mothership"
+					graphical_culture = "swarm_01"
+					upgradable = no
+				}
+			}
+			95 = {
+				create_ship = {
+					name = random
+					design = "NAME_Nanite_Interdictor"
+					graphical_culture = "swarm_01"
+					upgradable = no
+				}
+			}
+		}
+	}
+}
+
+### Bombardment
+planet_event = {
+	id = a_deadly_tempest.81
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_orbital_bombardment_stance = nanite_bombardment
+		from = {
+			OR = {
+				is_country_type = default
+				#is_country_type = gray_goo
+				#is_country_type = gray
+				is_country_type = cybrex_empire
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+				#is_country_type = lost_empire?
+				#is_country_type = void_farers?
+				is_country_type = swarm
+				#is_country_type = vol
+			}
+		}
+		OR = {
+			habitable_planet = yes		
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_habitat	
+		}
+		planet_devastation >= 100
+	}
+	
+	immediate = {
+		every_owned_pop = {
+			kill_pop = yes
+		}
+		owner = { 
+			add_static_war_exhaustion = {
+				attacker = from
+				location = root
+				value_for_planet_destruction = 0.5
+			}
+			country_event = { id = a_deadly_tempest.82 }
+		}
+		from = { country_event = { id = a_deadly_tempest.83 } }
+		reroll_deposits = yes
+		remove_all_buildings = yes
+		#clear_blockers = yes
+		#remove_modifier = "natural_beauty"
+		#remove_modifier = "atmospheric_aphrodisiac"
+		#remove_modifier = "atmospheric_hallucinogen"
+		#remove_modifier = "lush_planet"		
+		#remove_modifier = "dangerous_wildlife"
+		#set_planet_flag = armageddon_nuked
+		if = {
+			limit = {
+				habitable_planet = yes	
+				NOR = {
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_habitat
+				}
+			}
+			change_pc = pc_gray_goo
+		}
+		else = {
+			if = {
+				limit = { is_planet_class = pc_ringworld_habitable }
+				change_pc = pc_ringworld_habitable_damaged
+				spawn_ringworld_cracker_effect = yes
+			}
+			if = {
+				limit = { is_planet_class = pc_habitat }
+				remove_planet = yes
+				spawn_habitat_cracker_effect = yes
+			}
+		}
+	}
+}
+
+# Planet is turned into Nanite world by Nanite bombing stance (former owner)
+country_event = {
+	id = a_deadly_tempest.82
+	title = "a_deadly_tempest.82.name"
+	picture = GFX_evt_gray_gooed_planet
+	desc = a_deadly_tempest.82.desc
+	show_sound = event_ghost_town
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = a_deadly_tempest.82.a
+		custom_tooltip = bombed_to_nanite_world
+	}
+}
+
+# Planet is turned into Nanite world by Nanite bombing stance (bombarder)
+country_event = {
+	id = a_deadly_tempest.83
+	title = "a_deadly_tempest.82.name"
+	picture = GFX_evt_gray_gooed_planet
+	desc = a_deadly_tempest.83.desc
+	show_sound = event_super_explosion
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		custom_tooltip = bombed_to_nanite_world
+	}
+}
+

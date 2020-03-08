@@ -1,0 +1,321 @@
+namespace = distar
+
+# country_event ? goodragonfriendship
+country_event = {
+	id = distar.13005
+	hide_window = yes
+	is_triggered_only = yes
+	diplomatic = no
+
+	immediate = {
+		random_country = {
+			# limit = { is_ai = yes }
+			# if = {
+			limit = {
+				OR = {
+					is_country_type = gray_goo
+					is_country_type = gate_builders
+				}
+			}
+			#save_event_target_as = goo_dragon_friends
+			# every_country = {
+			# 	if = {
+			#		limit = { is_country_type = ldragon_country }
+			log = "- Printing the current scopes (trigger) -"
+			log = "- This: [This.GetName]"
+			log = "- Root: [Root.GetName]"
+			log = "- Prev: [Prev.GetName]"
+			log = "- PrevPrev: [Prev.Prev.GetName]"
+			log = "- PrevPrevPrev: [Prev.Prev.Prev.GetName]"
+			log = "- PrevPrevPrevPrev: [Prev.Prev.Prev.Prev.GetName]"
+			log = "- From: [From.GetName]"
+			log = "- FromFrom: [From.From.GetName]"
+			log = "- FromFromFrom: [From.From.From.GetName]"
+			log = "- FromFromFromFrom: [From.From.From.From.GetName]"
+			log = "- This's Solar System: [This.GetStarName]"
+			log = "- This's Planet: [This.Planet.GetName]"
+			log = "- This's Sector: [This.Sector.GetName]"
+			log = "- Root's Owner's Name: [Root.Owner.GetName]"
+			log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
+			set_faction_hostility = {
+				set_hostile = no
+				set_neutral = no
+				set_friendly = yes
+				target = this
+				#target = event_target:goo_dragon_friends
+			}
+			set_faction_hostility = {
+				set_hostile = no
+				set_neutral = no
+				set_friendly = yes
+				target = prev
+			}
+
+				# }
+			# }
+		}
+	}
+}
+
+country_event = {
+	id = distar.10950
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = l_cluster_opener
+		set_global_flag = l_cluster_opened
+		# spawn L-Cluster
+		country_event = { id = distar.11000 }
+		# enable L-Gate
+		if = { limit = { exists = from.solar_system }
+			from.solar_system = {
+				if = {
+					# flag prevents the Tempest from using this gate,
+					# do not set the flag if there's only one l-gate system
+					limit = {
+						any_system = {
+							has_star_flag = lgate
+							NOT = { is_same_value = prev }
+						}
+					}
+					set_star_flag = lgate_originating_system
+				}
+				else = {
+					root = { set_country_flag = only_one_lgate }
+				}
+				random_system_megastructure = {
+					limit = {
+						is_megastructure_type = lgate_base
+						NOT = { has_megastructure_flag = lgate_activated }
+					}
+					activate_gateway = this
+					set_megastructure_flag = lgate_activated
+				}
+			}
+		}
+		# outcome, to be determined at game start
+		if = {
+			limit = { has_global_flag = gray_goo_crisis_set }
+			country_event = { id = graygoo.1 }
+			every_megastructure = {
+				limit = {
+					is_megastructure_type = lgate_base
+					NOT = { has_megastructure_flag = lgate_activated }
+				}
+				activate_gateway = this
+				set_megastructure_flag = lgate_activated
+			}
+		}
+		else_if = {
+			limit = { has_global_flag = gray_goo_empire_set }
+			country_event = { id = graygoo.100 }
+		}
+		if = {
+			limit = { has_global_flag = dragon_season }
+			country_event = { id = distar.13000 }
+		}
+		else = {
+			country_event = { id = distar.10951 }
+			# enable other L-Gates over time
+			random_country = {
+				limit = { is_country_type = global_event }
+				country_event = { id = distar.10960 days = 200 random = 500 }
+			}
+		}
+		# activated terminal egress l-gate
+		event_target:lcluster1 = {
+			random_system_megastructure = {
+				activate_gateway = this
+				set_megastructure_flag = lgate_activated
+			}
+		}
+		set_global_flag = lgates_activated_globally
+		every_playable_country = {
+			if = {
+				limit = { is_researching_technology = tech_lgate_activation }
+				give_technology = {
+					tech = tech_lgate_activation
+					message = no
+				}
+			}
+		}
+	}
+}
+
+# Dragons!
+# fired from opening event
+country_event = {
+	id = distar.13000
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		create_country = {
+			name = "NAME_Spawning_Dragons"
+			type = ldragon_country
+			effect = {
+				save_global_event_target_as = spawning_dragons
+				every_playable_country = {
+					establish_communications_no_message = prev
+				}
+			}
+		}
+		# event_target:spawning_dragons = {
+		# 	every_country = {
+		# 		limit = { is_ai = yes }
+		# 		if = {
+		# 			limit = {
+		# 				OR = {
+		# 					is_country_type = gray_goo
+		# 					is_country_type = gate_builders
+		# 				}
+		# 			}
+		# 			print_scope_effect = yes
+		# 			set_faction_hostility = {
+		# 				set_hostile = no
+		# 				#set_neutral = no
+		# 				set_friendly = yes
+		# 				target = event_target:spawning_dragons
+		# 			}
+		# 			set_faction_hostility = {
+		# 				set_hostile = no
+		# 				#set_neutral = no
+		# 				set_friendly = yes
+		# 				#target = this
+		# 			}
+		# 		}
+		# 	}
+		# }
+
+		while = {
+			limit = {
+				any_system = {
+					any_system_megastructure = {
+						is_megastructure_type = lgate_base
+						NOT = { has_megastructure_flag = lgate_activated }
+					}
+				}
+			}
+			random_system = {
+				limit = {
+					any_system_megastructure = {
+						is_megastructure_type = lgate_base
+						NOT = { has_megastructure_flag = lgate_activated }
+					}
+				}
+				# flip L-Gates
+				random_system_megastructure = {
+					limit = {
+						is_megastructure_type = lgate_base
+						NOT = { has_megastructure_flag = lgate_activated }
+					}
+					activate_gateway = this
+					set_megastructure_flag = lgate_activated
+				}
+				# set dragon spawning grounds
+				closest_system = {
+					min_steps = 3
+					limit = {
+						NOR = {
+							has_star_flag = dragon_point
+							any_system_planet = { is_colony = yes }
+						}
+					}
+					set_star_flag = dragon_point
+				}
+			}
+		}
+		# notify those without l-gate systems
+		every_playable_country = {
+			limit = {
+				NOT = { any_system_within_border = { has_star_flag = lgate } }
+			}
+			country_event = { id = distar.13011 }
+		}
+		while = {
+			limit = {
+				any_system = {
+					has_star_flag = lgate
+					NOT = { has_star_flag = young_dragon_spawned }
+				}
+			}
+			random_system = {
+				limit = {
+					has_star_flag = lgate
+					NOT = { has_star_flag = young_dragon_spawned }
+				}
+				set_star_flag = young_dragon_spawned
+				random_system_megastructure = {
+					closest_system = {
+						min_steps = 3
+						limit = {
+							has_star_flag = dragon_point
+							NOT = { has_star_flag = dragon_point_picked }
+						}
+						set_star_flag = dragon_point_picked
+						# notify re: destination
+						if = {
+							limit = {
+								prevprev = {
+									exists = owner
+								}
+							}
+							save_event_target_as = dragons_target
+							prevprev = {
+								save_event_target_as = dragons_current_system
+								owner = {
+									if = {
+										limit = { NOT = { is_same_value = root } }
+										set_country_flag = knows_ldragon
+										country_event = { id = distar.13010 }
+									}
+									else = {
+										root = { country_event = { id = distar.13010 } }
+									}
+								}
+							}
+						}
+						star = {
+							create_fleet = {
+								name = "NAME_Young_Dragon"
+								settings = {
+									is_boss = yes
+									spawn_debris = no
+									can_upgrade = no
+									can_disband = yes
+									can_change_composition = no
+									can_change_leader = no
+									uses_naval_capacity = no
+								}
+								effect = {
+									set_owner = event_target:spawning_dragons
+									create_ship = {
+										design = "NAME_Nanite_Dragon"
+										name = "NAME_Young_Dragon"
+										prefix = no
+										upgradable = no
+									}
+									set_location = prevprevprev # megastructure
+									set_fleet_stance = passive
+									set_aggro_range_measure_from = self
+									#set_aggro_range = 10
+									auto_move_to_planet = {
+										target = prev # dragon_point star
+										clear_auto_move_on_arrival = yes # hang around
+									}
+								}
+							}
+						}
+					}
+					create_ambient_object = {
+						location = this
+						type = horror_spawn_object
+					}
+				}
+			}
+		}
+		event_target:spawning_dragons = { country_event = { id = distar.13005 } }
+	}
+}

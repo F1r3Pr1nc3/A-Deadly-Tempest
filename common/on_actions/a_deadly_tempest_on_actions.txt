@@ -1,0 +1,105 @@
+# on_game_start = {
+# 	events = {
+# 	}
+# }
+# No scope, like on_game_start
+# on_monthly_pulse = {
+# 	events = {
+# 	}
+# }
+
+# No scope, like on_game_start
+# on_yearly_pulse = {
+	# events = {
+	# }
+# }
+
+# No scope, like on_game_start
+# on_bi_yearly_pulse = {
+# 	events = {
+# 	}
+# }
+
+# No scope, like on_game_start
+on_five_year_pulse = {
+	events = {
+		a_deadly_tempest.3
+	}
+}
+
+on_mid_game_pulse = {
+	events = {
+		a_deadly_tempest.3
+	}
+}
+
+on_late_game_pulse = {
+	events = {
+		a_deadly_tempest.5
+	}
+}
+
+# No scope, like on_game_start
+on_decade_pulse = {
+	events = {
+		a_deadly_tempest.5
+	}
+}
+
+# Triggers country_event for the attacker upon victory
+# (Before controller is switched)
+# This = country, leader attacker
+# From = country, planet owner
+# FromFrom = planet
+# IDENTITIES: attacker is the side that "IsHostile" to
+# the planet controller; e.g. spawned monster armies
+# are attackers, but if they win and the player attempts
+# to retake the planet, the player is the attacker
+# on_planet_attackers_win = {
+# 	events = {
+# 	}
+# }
+
+# Planet has reached 0 pops from orbital bombardment
+# This = Planet
+# From = Bombarder
+on_planet_zero_pops = {
+	events = {
+		a_deadly_tempest.81
+	}
+}
+
+# A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
+# This = Country
+# on_tech_increased = {
+# 	events = {
+# 	}
+# }
+
+# A Megastructure has been built
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+# FromFromFrom = Fleet
+# on_megastructure_built = {
+# 	events = {
+# 	}
+# }
+
+# A Megastructure has begun to be upgraded
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+# on_megastructure_upgrade_begin = {
+# 	events = {
+# 	}
+# }
+
+# A Megastructure has been upgraded
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+# on_megastructure_upgraded = {
+# 	events = {
+# 	}
+# }
