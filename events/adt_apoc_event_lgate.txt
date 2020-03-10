@@ -1,0 +1,58 @@
+
+# Apocalypse Event
+namespace = apoc
+
+# Encountered L-Gate
+ship_event = {
+	id = apoc.3
+	title = "apoc.1.name"
+	desc = {
+		text = apoc.3.desc
+		trigger = {
+			NOT = { 
+				owner = { has_country_flag = encountered_first_gateway }
+			}
+		}
+	}
+	desc = {
+		text = apoc.3.b.desc
+		trigger = {
+			owner = { has_country_flag = encountered_first_gateway }
+		}
+	}
+	picture = GFX_evt_l-gateway
+	show_sound = event_radio_chatter
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			NOR = { 
+				has_country_flag = encountered_first_lgate
+				has_event_chain = "l_cluster_chain"
+			}
+		}
+		FROM = {
+			has_star_flag = lgate
+			any_system_megastructure = {
+				OR = {
+					is_megastructure_type = lgate_base
+					is_megastructure_type = lgate_disabled
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		FROM = { save_event_target_as = gateway_system }
+		owner = { set_country_flag = encountered_first_lgate }
+	}	
+	
+	option = {
+		name = INTRIGUING
+		owner = {
+			start_lcluster_chain = yes
+		}
+	}
+}

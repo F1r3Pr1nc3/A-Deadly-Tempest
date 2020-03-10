@@ -52,12 +52,12 @@ country_event = {
 						has_star_flag = lgate_originating_system
 					}
 					any_system_megastructure = { 
-						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
 					}
 				}
 				random_system_megastructure = {
 					limit = {
-						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
 					}
 					create_ambient_object = {
 						type = "horror_spawn_object"
@@ -196,12 +196,12 @@ country_event = {
 						has_star_flag = lgate_originating_system
 					}
 					any_system_megastructure = { 
-						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
 					}
 				}
 				random_system_megastructure = {
 					limit = {
-						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
 					}
 					create_ambient_object = {
 						type = "horror_spawn_object"
@@ -399,15 +399,11 @@ planet_event = {
 		from = {
 			OR = {
 				is_country_type = default
-				#is_country_type = gray_goo
-				#is_country_type = gray
 				is_country_type = cybrex_empire
 				is_country_type = fallen_empire
 				is_country_type = awakened_fallen_empire
-				#is_country_type = lost_empire?
-				#is_country_type = void_farers?
 				is_country_type = swarm
-				#is_country_type = vol
+				is_country_type = vol
 			}
 		}
 		OR = {

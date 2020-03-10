@@ -36,7 +36,7 @@ has_lgate = {
 	any_system_within_border = {
 		OR = {
 			has_megastructure = lgate_base
-			has_megastructure = lgate_open
+			has_megastructure = lgate_disabled
 		}
 	}
 }

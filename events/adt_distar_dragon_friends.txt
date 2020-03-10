@@ -1,0 +1,551 @@
+namespace = distar
+
+# check for gateway within borders
+country_event = {
+	id = distar.10900
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				any_owned_megastructure = {
+					OR = {
+						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
+					}
+				}
+			}
+			random_owned_megastructure = {
+				limit = {
+					is_megastructure_type = lgate_disabled
+				}
+				save_event_target_as = candidate_gateway
+			}
+			country_event = { id = distar.10905 } # enable project
+		}
+		else = {
+			country_event = { id = distar.10901 } # looping check
+		}
+	}
+}
+
+# looping check for owning gateway, once every two months
+country_event = {
+	id = distar.10902
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = l_cluster_opened }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_owned_megastructure = {
+					is_megastructure_type = lgate_disabled
+				}
+				has_technology = tech_lgate_activation
+			}
+			random_owned_megastructure = {
+				limit = {
+					is_megastructure_type = lgate_disabled
+				}
+				save_event_target_as = candidate_gateway
+			}
+			country_event = { id = distar.10905 } # enable project
+		}
+		else = {
+			country_event = { id = distar.10902 days = 60 } # *THIS* looping check
+		}
+	}
+}
+
+country_event = {
+	id = distar.10950
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = lcluster_opener
+		set_global_flag = l_cluster_opened
+		# spawn L-Cluster
+		country_event = { id = distar.11000 }
+		# outcome, to be determined at game start
+		if = {
+			limit = { has_global_flag = gray_goo_crisis_set }
+			country_event = { id = graygoo.1 days = 1 }
+			# vanilla double call?
+			every_megastructure = {
+				limit = {
+					is_megastructure_type = lgate_disabled
+					NOT = { has_megastructure_flag = lgate_activated }
+				}
+				activate_lgate = yes
+			}
+		}
+		else_if = {
+			limit = { has_global_flag = gray_goo_empire_set }
+			country_event = { id = graygoo.100 days = 1 }
+		}
+		if = {
+			limit = { has_global_flag = dragon_season }
+			country_event = { id = distar.13000 }
+			country_event = { id = distar.13006 days = 1 }
+		}
+		# we don't need this anymore as we always open all gates immediately
+		#country_event = { id = distar.10951 }
+		# enable other L-Gates over time
+		random_country = {
+			limit = { is_country_type = global_event }
+			country_event = { id = distar.10960 days = 200 random = 500 }
+		}
+		# enable L-Gate
+		if = {
+			limit = { exists = from.solar_system }
+			from.solar_system = {
+				if = {
+					# flag prevents the Tempest from using this gate,
+					# do not set the flag if there's only one l-gate system
+					limit = {
+						any_system = {
+							has_star_flag = lgate
+							NOT = { is_same_value = prev }
+						}
+					}
+					set_star_flag = lgate_originating_system
+				}
+				else = {
+					root = { set_country_flag = only_one_lgate }
+				}
+				random_system_megastructure = {
+					limit = {
+						is_megastructure_type = lgate_disabled
+						NOT = { has_megastructure_flag = lgate_activated }
+					}
+					activate_lgate = yes
+				}
+			}
+			# activated terminal egress l-gate
+			event_target:lcluster1 = {
+				random_system_megastructure = {
+					limit = { is_megastructure_type = lgate_disabled }
+					activate_lgate = yes
+				}
+			}
+			set_global_flag = lgates_activated_globally
+			every_playable_country = {
+				if = {
+					limit = { is_researching_technology = tech_lgate_activation }
+					give_technology = {
+						tech = tech_lgate_activation
+						message = no
+					}
+				}
+			}
+		}
+	}
+}
+
+# Informed about AI being close to opening L-Gate (HIDDEN)
+event = {
+	id = distar.10955
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_playable_country = {
+			is_ai = no
+			OR = {
+				has_event_chain = l_cluster_chain
+				has_special_project = LCLUSTER_PROJECT
+			}
+			any_relation = {
+				is_country_type = default
+				has_communications = prev
+				has_event_chain = l_cluster_chain
+				NOT = { has_country_flag = lgate_warned@prev }
+				check_variable = {
+					which = num_lcluster_clues
+					value > 5
+				}
+				any_owned_megastructure = { is_megastructure_type = lgate_disabled }
+			}
+		}
+	}
+
+	immediate = {
+		random_playable_country = {
+			limit = {
+				is_ai = no
+				OR = {
+					has_event_chain = l_cluster_chain
+					has_special_project = LCLUSTER_PROJECT
+				}
+				any_relation = {
+					is_country_type = default
+					has_communications = prev
+					has_event_chain = l_cluster_chain
+					NOT = { has_country_flag = lgate_warned@prev }
+					check_variable = {
+						which = num_lcluster_clues
+						value > 5
+					}
+					any_owned_megastructure = { is_megastructure_type = lgate_disabled }
+				}
+			}
+			random_relation = {
+				limit = {
+					is_country_type = default
+					has_communications = prev
+					has_event_chain = l_cluster_chain
+					NOT = { has_country_flag = lgate_warned@prev }
+					check_variable = {
+						which = num_lcluster_clues
+						value > 5
+					}
+					any_owned_megastructure = { is_megastructure_type = lgate_disabled }
+				}
+				save_event_target_as = lgate_warning_country
+				set_country_flag = lgate_warned@prev
+			}
+			country_event = { id = distar.10956 }
+		}
+	}
+}
+
+# Enable L-Gates over time
+country_event = {
+	id = distar.10960
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_megastructure = {
+			is_megastructure_type = lgate_disabled
+		}
+	}
+
+	immediate = {
+		random_megastructure = {
+			limit = {
+				is_megastructure_type = lgate_disabled
+				NOT = { has_megastructure_flag = lgate_activated }
+			}
+			activate_lgate = yes
+		}
+		country_event = { id = distar.10960 days = 200 random = 500 }
+	}
+}
+
+# goo_dragon_friendship
+country_event = {
+	id = distar.13006
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { exists = event_target:spawning_dragons } }
+			every_country = {
+				if = {
+					limit = { is_country_type = ldragon_country }
+					save_global_event_target_as = spawning_dragons
+				}
+				else = { break = yes }
+			}
+		}
+		event_target:spawning_dragons = {
+			random_country = {
+				limit = {
+					OR = {
+						is_country_type = gray_goo
+						is_country_type = gate_builders
+					}
+				}
+				set_faction_hostility = {
+					set_hostile = no
+					#set_neutral = no
+					set_friendly = yes
+					target = prev # Dragons
+				}
+				prev = {
+					set_faction_hostility = {
+						set_hostile = no
+						#set_neutral = no
+						set_friendly = yes
+						target = prev # Gray Tempest
+					}
+				}
+			}
+		}
+	}
+}
+
+# Notification telling you where dragons are headed
+country_event = {
+	id = distar.13010
+	title = distar.13010.name
+	desc = {
+		text = distar.13010.desc.IOpened
+		trigger = { has_country_flag = lcluster_opener }
+	}
+	desc = {
+		text = distar.13010.desc.OtherOpened
+		trigger = { NOT = { is_same_value = from } }
+	}
+	picture = GFX_evt_space_dragon_young
+	location = event_target:dragons_current_system.star
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = ldragon_known
+		observer_event = { id = observer.63 }
+	}
+
+	option = {
+		name = distar.13010.a.homicidal
+		exclusive_trigger = {
+			is_homicidal = yes
+		}
+	}
+
+	option = {
+		name = ALARMING
+	}
+}
+
+country_event = {
+	id = distar.13011
+	title = distar.13011.name
+	desc = distar.13011.desc
+	picture = GFX_evt_space_dragon_young
+
+	is_triggered_only = yes
+
+	trigger = { NOT = { has_country_flag = knows_ldragon } }
+
+	immediate = {
+		capital_scope = {
+			closest_system = {
+				limit = { has_star_flag = lgate }
+				save_event_target_as = disturbance_system
+			}
+		}
+	}
+
+	option = {
+		name = distar.13011.a
+	}
+}
+
+# Killed dragon
+country_event = {
+	id = distar.13020
+	title = distar.13020.name
+	desc = {
+		text = distar.13020.desc.LDragonKnown
+		trigger = { has_country_flag = ldragon_known }
+	}
+	desc = {
+		text = distar.13020.desc.LDragonUnknown
+		trigger = { NOT = { has_country_flag = ldragon_known } }
+	}
+	picture = GFX_evt_space_dragon_young
+	location = fromfrom
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+		from = { is_country_type = ldragon_country }
+	}
+
+	option = {
+		name = distar.13020.a
+		trigger = {
+			NOT = { has_country_flag = ldragon_known }
+		}
+		add_monthly_resource_mult = {
+			resource = influence
+			value = @tier4materialreward
+			min = @tier4materialmin
+			max = @tier4materialmax
+		}
+		add_monthly_resource_mult = {
+			resource = minerals
+			value = @tier4materialreward
+			min = @tier4materialmin
+			max = @tier4materialmax
+		}
+	}
+
+	option = {
+		name = distar.13020.a
+		trigger = {
+			has_country_flag = ldragon_known
+		}
+		add_monthly_resource_mult = {
+			resource = influence
+			value = @tier4materialreward
+			min = @tier4materialmin
+			max = @tier4materialmax
+		}
+		add_monthly_resource_mult = {
+			resource = minerals
+			value = @tier4materialreward
+			min = @tier4materialmin
+			max = @tier4materialmax
+		}
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+}
+
+# Science Ship enters dragon system
+ship_event = {
+	id = distar.13030
+	title = distar.13030.name
+	desc = distar.13030.desc
+	picture = GFX_evt_space_dragon_young
+	location = from.star
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_ship_class = shipclass_science_ship
+		from = {
+			has_star_flag = dragon_point
+			NOT = { has_star_flag = visited_dragon_point@root.owner }
+			any_ship_in_system = {
+				is_ship_size = nanite_space_dragon_baby
+			}
+		}
+	}
+
+	immediate = {
+		from = { set_star_flag = visited_dragon_point@root.owner }
+	}
+
+	option = {
+		# enable special project
+		name = distar.13030.a
+		trigger = {
+			owner = {
+				NOR = {
+					is_homicidal = yes
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		solar_system.star = {
+			enable_special_project = {
+				name = TAME_LDRAGON_PROJECT
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+
+	option = {
+		name = distar.13030.b
+	}
+}
+
+# special project complete
+country_event = {
+	id = distar.13035
+	title = distar.13035.name
+	desc = distar.13035.desc
+	picture = GFX_evt_space_dragon_young
+	location = event_target:new_dragon
+
+	is_triggered_only = yes
+
+	immediate = {
+		from.solar_system = {
+			random_fleet_in_system = {
+				limit = {
+					exists = owner
+					owner = { is_country_type = ldragon_country }
+				}
+				save_event_target_as = new_dragon
+				set_owner = root
+			}
+		}
+	}
+
+	option = {
+		name = INTERESTING
+		fromfrom.solar_system = {
+			custom_tooltip = distar.13035.a.tooltip
+		}
+	}
+}
+
+country_event = {
+	id = distar.13080
+	title = "apoc.1.name"
+	desc = {
+		text = apoc.3.desc
+		trigger = {
+			NOT = {
+				has_country_flag = encountered_first_gateway
+			}
+		}
+	}
+	desc = {
+		text = apoc.3.b.desc
+		trigger = {
+			has_country_flag = encountered_first_gateway
+		}
+	}
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_radio_chatter
+	location = FROM
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { exists = fromfrom } # not surveyed by ship
+		NOR = {
+			has_country_flag = encountered_first_lgate
+			has_event_chain = "l_cluster_chain"
+		}
+		FROM = {
+			has_star_flag = lgate
+			any_system_megastructure = { 
+				OR = {
+					is_megastructure_type = lgate_base
+					is_megastructure_type = lgate_disabled
+				}
+			}
+		}
+	}
+
+	immediate = {
+		FROM = { save_event_target_as = gateway_system }
+		set_country_flag = encountered_first_lgate
+	}
+
+	option = {
+		name = INTRIGUING
+		start_lcluster_chain = yes
+	}
+}

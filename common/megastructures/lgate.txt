@@ -1,27 +1,25 @@
 # see README.txt for example
 
-# Disabled L-Gate
+# Active L-Gate
 lgate_base = {
-	entity = "deactivated_gatebuilder_gateway_entity"
-	# entity = "gatebuilder_01_gateway_entity"
+	entity = "gatebuilder_01_gateway_entity"
 	construction_entity = "gateway_portal_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	# build_outside_gravity_well = yes
+	#build_outside_gravity_well = yes
 	show_galactic_map_icon = no
 	
-	potential = {
-		always = no
-	}
-	upgrade_from = { lgate_open	}
+	potential = { always = no }
+	upgrade_from = { lgate_disabled }
 
 	construction_blocks_others = no
 
 	bypass_type = lgate
 }
 
-lgate_open = {
-	entity = "gatebuilder_01_gateway_entity"
+# Disabled L-Gate
+lgate_disabled = {
+	entity = "deactivated_gatebuilder_gateway_entity"
 	construction_entity = "gateway_portal_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
@@ -39,12 +37,7 @@ lgate_open = {
 	construction_blocks_others = no
 	construction_blocked_by_others = no
 
-	potential = { 
-		AND = {
-			has_technology = tech_gateway_construction
-			has_technology = tech_lgate_construction
-		}
-	}
+	potential = { has_technology = tech_lgate_construction }
 	
 	possible = {
 		exists = starbase
@@ -66,18 +59,16 @@ lgate_open = {
 		custom_tooltip = {
 			fail_text = "requires_no_existing_gateway"
 			NOR = {
+				has_megastructure = lgate_disabled
 				has_megastructure = lgate_base
 			}
 		}
 		custom_tooltip = {
 			fail_text = "requires_technology_gateway_construction"
-			from = {
-				has_technology = tech_lgate_construction
-			}
+			NOT = { from = { has_technology = tech_lgate_construction } }
 		}
 	}
-	upgrade_from = { lgate_base	}
-
+	# upgrade_from = { gateway_0 }
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -89,18 +80,33 @@ lgate_open = {
 		} # use these for all non-star megastructures
 	}
 
-	bypass_type = lgate
-	on_build_complete = {
-		random_system_megastructure = {
-			limit = {
-				is_megastructure_type = lgate_base
-				NOT = { has_megastructure_flag = lgate_activated }
-			}
-			is_megastructure_type = lgate_base
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 0
+			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
 		}
-		from = { 
-			country_event = { id = apoc.13 }
-			country_event = { id = apoc.11 }
+		modifier = {
+			factor = 0
+			any_neighbor_system = { 
+				OR = {
+					has_megastructure = lgate_disabled
+					has_megastructure = lgate_base
+				}
+			}
+		}
+	}
+
+	bypass_type = lgate	
+	on_build_complete = {
+		if = {
+			exists = owner
+			root = { 
+				random_system_megastructure = {
+					limit = { is_megastructure_type = lgate_disabled }
+					activate_lgate = yes
+				}
+			}
 		}
 		root = { set_star_flag = lgate }
 	}

@@ -1,0 +1,356 @@
+# L-Gate System
+distantstars_init_00 = {
+	class = sc_black_hole
+
+	flags = { hostile_system lgate }
+	
+	usage = misc_system_init
+	usage_odds = {
+		base = 0
+		modifier = {
+			has_distar = yes
+			add = 2
+		}
+		modifier = {
+			factor = 0
+			is_fe_cluster = yes
+		}
+		modifier = {
+			factor = 0
+			has_star_flag = empire_cluster
+		}
+		modifier = {
+			factor = 0										# we don't want gateways too close to each other
+			any_neighbor_system = {
+				OR = {
+					has_megastructure = lgate_disabled
+					has_megastructure = lgate_base
+					has_megastructure = gateway_ruined
+				}
+			}
+		}
+	}
+
+	max_instances = 9
+	scaled_spawn_chance = 10
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+	}
+	
+	change_orbit = 60
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		class = "pc_broken"
+		size = { min = 10 max = 15 }
+		
+		init_effect = { prevent_anomaly = yes }
+	}
+	
+	change_orbit = 30
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		class = "pc_barren_cold"
+		size = { min = 10 max = 20 }
+	}
+
+	init_effect = {
+		spawn_megastructure = {
+			type = lgate_disabled
+			orbit_angle = 225
+			orbit_distance = 30
+			location = solar_system
+		}
+	}
+}
+
+# Guaranteed L-Gate spawn
+distantstars_init_06 = {
+	class = sc_black_hole
+
+	flags = { hostile_system lgate lgate_guaranteed }
+	
+	usage = misc_system_init
+	usage_odds = {
+		base = 0
+		modifier = {
+			has_distar = yes
+			add = 99999
+		}
+		modifier = {
+			factor = 0
+			is_fe_cluster = yes
+		}
+		modifier = {
+			factor = 0
+			has_star_flag = empire_cluster
+		}
+		modifier = {
+			factor = 0										# we don't want gateways too close to each other
+			any_neighbor_system = {
+				OR = {
+					has_megastructure = lgate_disabled
+					has_megastructure = lgate_base
+					has_megastructure = gateway_ruined
+				}
+			}
+		}
+	}
+
+	max_instances = 1
+	spawn_chance = 100
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+	}
+	
+	change_orbit = 60
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		class = "pc_broken"
+		size = { min = 10 max = 15 }
+		
+		init_effect = { prevent_anomaly = yes }
+	}
+	
+	change_orbit = 30
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		class = "pc_barren_cold"
+		size = { min = 10 max = 20 }
+	}
+
+	init_effect = {
+		spawn_megastructure = {
+			type = lgate_disabled
+			orbit_angle = 225
+			orbit_distance = 30
+			location = solar_system
+		}
+	}
+}
+
+# L-Cluster Entrance
+distantstars_init_01 = {
+	class = "rl_standard_stars"
+	name = "NAME_Final_Egress"
+	
+	usage = misc_system_init
+	usage_odds = 0
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 190
+	}
+
+	flags = { hostile_system lcluster lcluster1 lcluster_lgate }
+
+	planet = {
+		name = "NAME_Final_Egress"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		name = "NAME_Sel-Ufaan"
+		class = "pc_shattered"
+		orbit_distance = 40
+		orbit_angle = 15
+		size = 10
+		has_ring = no
+	}
+	
+	planet = {
+		name = "NAME_Ten-Aard-Shel"
+		class = "pc_gray_goo"
+		orbit_distance = 25
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+	}
+	
+	planet = {
+		name = "NAME_Diim-Fu-Rem"
+		class = "pc_shattered"
+		orbit_distance = 25
+		orbit_angle = 120
+		size = 16
+		starting_planet = yes
+		has_ring = no
+		deposit_blockers = none
+		modifiers = none
+		flags = { planet_earth }
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		moon = {
+			name = "NAME_Dora-Fu-Rem"
+			class = "pc_broken"
+			size = { min = 8 max = 22 }
+			orbit_distance = 12
+			orbit_angle = 40
+			has_ring = no
+			entity = "cold_barren_planet_luna_entity"
+		}
+	}
+	
+	planet = {
+		name = "NAME_Naal-Di-Kor"
+		class = "pc_shattered"
+		orbit_distance = 25
+		orbit_angle = 60
+		size = 13
+		has_ring = no	
+	}
+	
+	planet = {
+		name = "NAME_Tao-Enar-Vi"
+		class = "pc_asteroid"
+		orbit_distance = 30
+		orbit_angle = -210
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "NAME_Tao-Fun-Vi"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -95
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "NAME_Tao-Arl-Vi"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = 285
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "NAME_Tao-Got-Vi"
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}
+	
+	planet = {
+		name = "NAME_Gol-Unda-Fiir"
+		class = "pc_gas_giant"
+		orbit_distance = 40
+		orbit_angle = -160
+		size = 35
+		has_ring = no
+		change_orbit = 6
+		
+		moon = {
+			name = "NAME_Dora-Enar-Fiir"
+			class = "pc_barren_cold"
+			size = { min = 8 max = 22 }
+			orbit_distance = 10
+			orbit_angle = 110
+			has_ring = no
+		}
+		moon = {
+			name = "NAME_Dora-Fun-Fiir"
+			class = "pc_shattered"
+			size = { min = 8 max = 22 }
+			orbit_distance = 4
+			orbit_angle = 100
+			has_ring = no
+		}
+		moon = {
+			name = "NAME_Dora-Arl-Fiir"
+			class = "pc_frozen"
+			size = { min = 8 max = 22 }
+			orbit_distance = 4
+			orbit_angle = 80
+			has_ring = no
+		}
+		moon = {
+			name = "NAME_Dora-Got-Fiir"
+			class = "pc_gray_goo"
+			size = { min = 8 max = 22 }
+			orbit_distance = 4
+			orbit_angle = -155
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "NAME_Gol-Umn-Toor"
+		class = "pc_gas_giant"
+		orbit_distance = 25
+		orbit_angle = 170
+		size = 30
+		has_ring = yes
+		entity = "gas_giant_05_entity"
+		change_orbit = 7
+		
+		moon = {
+			name = "NAME_Dora-Enar-Toor"
+			class = "pc_gray_goo"
+			size = { min = 8 max = 22 }
+			orbit_distance = 12
+			orbit_angle = 320
+			has_ring = no
+		}
+	}
+	
+	planet = {
+		name = "NAME_Gol-Salm-Ri"
+		class = "pc_gas_giant"
+		orbit_distance = 25
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+		entity = "gas_giant_03_entity"
+	}
+	
+	planet = {
+		name = "NAME_Gol-Mel-Rood"
+		class = "pc_gas_giant"
+		orbit_distance = 25
+		orbit_angle = -195
+		size = 20
+		has_ring = no
+		entity = "gas_giant_02_entity"
+		change_orbit = 4
+		
+		moon = {
+			name = "NAME_Dora-Enar-Rood"
+			class = "pc_broken"
+			size = { min = 8 max = 22 }
+			orbit_distance = 7
+			orbit_angle = 115
+			has_ring = no
+		}
+	}
+
+	init_effect = {
+		spawn_megastructure = {
+			type = lgate_disabled
+			orbit_angle = 225
+			orbit_distance = 360
+			location = solar_system
+		}
+	}
+}

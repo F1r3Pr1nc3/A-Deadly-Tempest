@@ -1,4 +1,4 @@
-version="0.6"
+version="0.9"
 tags={
 	"Events"
 	"Gameplay"
@@ -12,6 +12,5 @@ tags={
 	"Gate Builders"
 	"Nanites"
 }
-name="A-Deadly-Tempest"
+name="A Deadly Tempest"
 supported_version="2.5.1"
-path="C:/Users/Max/Documents/Paradox Interactive/Stellaris/mod/A-Deadly-Tempest"
