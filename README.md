@@ -1,4 +1,4 @@
-**A Deadly Tempest** is a mod for Stellaris (actual 2.5.1, initiated by [Spartan878](https://steamcommunity.com/profiles/76561198026342102)), focusing on a better and stronger mid-game L-Cluster event. It's also open source, so feel free to contribute!
+**A Deadly Tempest** is a mod for Stellaris (actual 2.5.1, initiated by [Spartan878](https://steamcommunity.com/profiles/76561198026342102)), focusing on a better and stronger mid-game L-Cluster event. It's also open source, so feel free to contribute! For more see the [workshop desc](/workspace/Steam_description/README.bbcode).
  
 ## How to contribute
  
