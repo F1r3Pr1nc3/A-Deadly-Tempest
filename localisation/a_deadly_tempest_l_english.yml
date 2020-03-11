@@ -107,7 +107,7 @@
  
  
  ### Technology
- 
+  
  # Weapons
  tech_nanite_strike_craft:0 "Nanite Strike Craft"
  tech_nanite_strike_craft_desc:0 "The effectiveness of rapidly creating strike craft should not be overlooked especially when they can be made in the middle of battle."
@@ -121,6 +121,7 @@
  tech_lcluster_access_desc:0 "After some time and study we have discovered the means to disable the L-Gate network when we need too for as long as we control the Terminal Egress system."
  tech_lgate_construction:0 "L-Gate Construction"
  tech_lgate_construction_desc:0 "Thanks to advances in nanite technology we can start constructing our own L-Gates instead of just having to rely on existing gates."
+ requires_tech_lgate_construction:0 "$TRIGGER_FAIL$Requires technology £physics£ §Y$tech_lgate_construction$§!."
  tech_tactical_lgate_use:0 "Tactial L-Gate Use"
  tech_tactical_lgate_use_desc:0 "The L-Gates keep us safe from the crisis at large however can we leave the galaxy to its fate? or will we ride out this storm? ever way maintaining a tactical doctrine of limited use of the L-Gates will allow us to strike at the those we deem a threat."
  tech_nanoactuators:0 "Nanoactuators"

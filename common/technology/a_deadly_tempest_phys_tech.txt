@@ -13,10 +13,7 @@ tech_nanoactuators = {
 	}
 	
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_resource = { type = nanites amount > 0 }
 	}
 }
 
@@ -34,10 +31,7 @@ tech_nanite_shield_rechargers = {
 	weight = @tier5weight3
 	
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_resource = { type = nanites amount > 0 }
 	}
 	
 	modifier = {
@@ -50,15 +44,15 @@ tech_nanite_shield_rechargers = {
 # ##################
 
 tech_lcluster_access = {
-	cost = @tier5cost2
 	area = physics
+	cost = @tier5cost2
 	tier = 5
-	is_rare = yes
 	category = { particles }
+	is_rare = yes
+	is_dangerous = yes
 	weight = @tier5cost2
-	
 	feature_flags = { lgate_access }
-	
+	prerequisites = { "tech_lgate_activation" }
 	prereqfor_desc = {
 		diplo_action = {
 			title = "TECH_UNLOCK_L_GATE_ACCESS_TITLE"
@@ -68,9 +62,7 @@ tech_lcluster_access = {
 	
 	potential = {
 		has_global_flag = lgates_activated_globally
-		NOT = {
-			has_global_flag = active_gray_goo
-		}
+		NOT = { has_global_flag = active_gray_goo }
 	}
 
 	weight_modifier = {
@@ -89,8 +81,11 @@ tech_lgate_construction = {
 	tier = 5
 	category = { particles }
 	is_rare = yes
+	is_reverse_engineerable = no
 	weight = @tier5cost3
-	prerequisites = { "tech_gateway_construction" "tech_mega_engineering" }
+	prerequisites = { "tech_gateway_construction" "tech_lgate_activation" }
+
+	feature_flags = { lgate_construction }
 	
 	prereqfor_desc = {
 		diplo_action = {
@@ -100,9 +95,61 @@ tech_lgate_construction = {
 	}
 	
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
+		has_resource = { type = nanites amount > 0 }
+	}
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = 0.1
+			NOR = {
+				research_leader = {
+					area = physics
+					has_trait = "leader_trait_expertise_particles"
+				}
+				research_leader = {
+					area = physics
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = physics
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = physics
+					has_trait = "leader_trait_maniacal"
+				}
+			}		
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_discovery_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 4
+			owns_any_bypass = lgate
+		}
+	}
+	
+	ai_weight = {
+		factor = 4 #FTL techs are good
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
 		}
 	}
 }

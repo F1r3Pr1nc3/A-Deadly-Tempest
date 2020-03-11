@@ -14,4 +14,4 @@ tags={
 }
 name="A Deadly Tempest"
 supported_version="2.5.1"
-path="A-Deadly-Tempest"
+path="mod/A-Deadly-Tempest"

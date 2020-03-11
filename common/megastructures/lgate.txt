@@ -64,8 +64,8 @@ lgate_disabled = {
 			}
 		}
 		custom_tooltip = {
-			fail_text = "requires_technology_gateway_construction"
-			NOT = { from = { has_technology = tech_lgate_construction } }
+			fail_text = "requires_tech_lgate_construction"
+			from = { has_technology = tech_lgate_construction }
 		}
 	}
 	# upgrade_from = { gateway_0 }
