@@ -68,7 +68,6 @@ lgate_disabled = {
 			from = { has_technology = tech_lgate_construction }
 		}
 	}
-	# upgrade_from = { gateway_0 }
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -97,7 +96,7 @@ lgate_disabled = {
 		}
 	}
 
-	bypass_type = lgate	
+	bypass_type = lgate
 	on_build_complete = {
 		# Works, but let's open the gate over the time event
 		# if = {
