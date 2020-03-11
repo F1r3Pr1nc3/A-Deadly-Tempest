@@ -19,17 +19,15 @@ You can get the mod from the Steam [workshop page](https://steamcommunity.com/sh
  
 You can also install by downloading this repository:
  
-
  - Choose the branch you want. We recommend you use the Staging branch, for the latest "stable" content.
  - Clone the branch into your local mod folder (see below), or download a zip and extract it there.
- - Rename the downloaded folder to "retile" if it is named anything else (such as "retile-staging")
- - Move the "retile.mod" file from the "retile" folder out into the mod folder.
+ - Rename the downloaded folder to "`A-Deadly-Tempest`" if it is named anything else (such as "A-Deadly-Tempest-staging")
+ - Move the "`A-Deadly-Tempest.mod`" file from the "`A-Deadly-Tempest`" folder out into the parent mod folder.
  - When you're finished, you should see the following paths:
-   - /mod/retile/readme.md
-   - /mod/retile.mod
+   - `/mod/A-Deadly-Tempest/README.md`
+   - `/mod/A-Deadly-Tempest.mod`
  - The mod should appear in your launcher. You may also need to unsubscribe from the workshop version of the mod for this to work properly.
 
 Default Mod Folder Locations:
- 
- - On Windows - %USERPROFILE%/Documents/Paradox Interactive/Stellaris/mod
- - On Linux - /home/{YOUR_USER}/.local/share/Paradox Interactive/Stellaris/mod
+ - On Windows - `%USERPROFILE%/Documents/Paradox Interactive/Stellaris/mod`
+ - On Linux - `/home/{YOUR_USER}/.local/share/Paradox Interactive/Stellaris/mod`
