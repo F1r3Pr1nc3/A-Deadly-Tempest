@@ -47,7 +47,7 @@ country_event = {
 					}
 				}
 				effect = {
-					save_event_target_as = graygoo_country
+					save_global_event_target_as = graygoo_country
 				}
 			}
 
@@ -224,7 +224,7 @@ country_event = {
 		}
 		random_country = {
 			limit = { is_country_type = gray_goo }
-			save_event_target_as = graygoo_country
+			save_global_event_target_as = graygoo_country
 			country_event = { id = graygoo.3 days = 3600 }
 		}
 		every_system = {
@@ -513,6 +513,7 @@ country_event = {
 		}
 		every_owned_fleet = { destroy_fleet = this }
 		destroy_country = yes
+		clear_global_event_target = graygoo_country
 	}
 }
 

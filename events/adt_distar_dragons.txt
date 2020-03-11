@@ -77,7 +77,7 @@ country_event = {
 		# outcome, to be determined at game start
 		if = {
 			limit = { has_global_flag = gray_goo_crisis_set }
-			country_event = { id = graygoo.1 days = 1 }
+			country_event = { id = graygoo.1 }
 			# vanilla double call?
 			every_megastructure = {
 				limit = {
@@ -89,14 +89,14 @@ country_event = {
 		}
 		else_if = {
 			limit = { has_global_flag = gray_goo_empire_set }
-			country_event = { id = graygoo.100 days = 1 }
+			country_event = { id = graygoo.100 days = 2 }
 		}
 		if = {
 			limit = { has_global_flag = dragon_season }
-			country_event = { id = distar.13000 }
+			country_event = { id = distar.13000 days = 1 }
 			country_event = { id = distar.13006 days = 1 }
 		}
-		# we don't need this anymore as we always open all gates immediately
+		# We don't need this really anymore, as we always open all gates immediately
 		#country_event = { id = distar.10951 }
 		# enable other L-Gates over time
 		random_country = {
@@ -243,7 +243,7 @@ country_event = {
 	}
 }
 
-# goo_dragon_friendship
+# UNUSED but working goo_dragon_friendship 
 country_event = {
 	id = distar.13006
 	hide_window = yes
