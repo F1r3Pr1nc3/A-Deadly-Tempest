@@ -1,4 +1,4 @@
-**A Deadly Tempest** is a Stellaris 2.5.1 mod, focusing on balance and gameplay of the mid-game L-Cluster event. It's also open source, so feel free to contribute!
+**A Deadly Tempest** is a mod for Stellaris (actual 2.5.1, initiated by [Spartan878](https://steamcommunity.com/profiles/76561198026342102)), focusing on balance and gameplay of the mid-game L-Cluster event. It's also open source, so feel free to contribute!
  
 ## How to contribute
  
@@ -31,5 +31,5 @@ You can also install by downloading this repository:
 
 Default Mod Folder Locations:
  
- - On Windows - C:/Users/{YOUR_USER}/Documents/Paradox Interactive/Stellaris/mod
+ - On Windows - %USERPROFILE%/Documents/Paradox Interactive/Stellaris/mod
  - On Linux - /home/{YOUR_USER}/.local/share/Paradox Interactive/Stellaris/mod

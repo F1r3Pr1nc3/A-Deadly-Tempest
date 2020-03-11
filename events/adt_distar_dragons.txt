@@ -243,7 +243,7 @@ country_event = {
 	}
 }
 
-# UNUSED but working goo_dragon_friendship 
+# goo_dragon_friendship 
 country_event = {
 	id = distar.13006
 	hide_window = yes
