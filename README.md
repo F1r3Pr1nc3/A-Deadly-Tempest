@@ -1,8 +1,8 @@
-**A Deadly Tempest** is a mod for Stellaris (actual 2.5.1, initiated by [Spartan878](https://steamcommunity.com/profiles/76561198026342102)), focusing on a better and stronger mid-game L-Cluster event. It's also open source, so feel free to contribute! For more see the [workshop desc](/README.bbcode).
+**A Deadly Tempest** is a mod for Stellaris (actual 2.5.1, initiated by [Spartan878](https://steamcommunity.com/profiles/76561198026342102)), focusing on a better mid-game L-Cluster event with all the consequences (new technologies and a more challenging Nanite Crisis). It's also open source, so feel free to contribute! For more see the [workshop desc](/README.bbcode).
  
 ## How to contribute
  
-Have an idea? Great! Head over to our [discord](https://discord.gg/srtb4z) to discuss it. You can also check out the issues page on [Github](https://github.com/FirePrince3/A-Deadly-Tempest/issues) and see if there is already talked about this!
+Have an idea? Great! Head over to our [discord](https://discordapp.com/channels/378985949373399040/445225961722478602) to discuss it. You can also check out the issues page on [Github](https://github.com/FirePrince3/A-Deadly-Tempest/issues) and see if there is already talked about this!
 
 ### Submitting pull requests
 If you aren't a member of the mod team, and want to contribute, that's awesome (and easy!). Just fork the repository (there should be a little button on the top right saying "fork"), clone it to your machine, make all the changes you want, commit and push back to GitHub.
