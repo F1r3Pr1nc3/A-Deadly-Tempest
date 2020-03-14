@@ -7,5 +7,5 @@ tags={
 }
 picture="thumbnail.png"
 supported_version="2.5.*"
-path="C:/Users/Thomas/Documents/Paradox Interactive/Stellaris/mod/1539768809"
+path="mod/ADeadlyTempest"
 remote_file_id="1539768809"
