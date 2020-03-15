@@ -69,17 +69,21 @@ gateway = {
 	country_can_use = {
 		custom_tooltip = {
 			fail_text = GATEWAY_COUNTRY_CANNOT_USE
-			NOT = { exists = from }
-			from = {
-				OR = {
-					is_same_value = root
-					is_in_federation_with = root
-					is_overlord_to = root
-					root = { is_overlord_to = from }
+			OR = {
+				NOT = { exists = from }
+				from = {
+					OR = {
+						is_same_value = root
+						is_in_federation_with = root
+						is_overlord_to = root
+						root = { is_overlord_to = from }
+					}
+					NOR = {
+						has_closed_borders = root
+						is_hostile = root
+					}
 				}
-				NOR = {
-					has_closed_borders = root
-					is_hostile = root
+				NAND = { 
 					is_country_type = tiyanki
 					is_country_type = amoeba
 				}
@@ -170,7 +174,7 @@ lgate = {
 				has_country_flag = lgates_activated
 				
 			}
-			NOR = { 
+			NAND = { 
 				is_country_type = tiyanki
 				is_country_type = amoeba
 			}
