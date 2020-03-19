@@ -64,7 +64,10 @@ graygoo_mothership = {
 	
 	construction_type = starbase_shipyard
 	
-	possible_starbase = {
+	potential_construction = {
+		is_scope_type = starbase
+	}
+	possible_construction = {
 		has_starbase_building = nanite_yards
 	}
 	
@@ -127,7 +130,10 @@ graygoo_interdictor = {
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
 	
-	possible_starbase = {
+	potential_construction = {
+		is_scope_type = starbase
+	}
+	possible_construction = {
 		has_starbase_building = nanite_yards
 	}
 	

@@ -58,7 +58,7 @@ strike_craft_component_template = {
 weapon_component_template = {
 	key = "NANITE_ENERGY_MISSILE"
 	size = torpedo
-	entity = "invisible_turret_entity"
+	#entity = "invisible_turret_entity"
 	type = missile
 	prio_projectile = yes
 	
@@ -100,7 +100,7 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "NANITE_BEAM"
 	size = titanic
-	entity = "invisible_turret_entity"
+	#entity = "invisible_turret_entity"
 	type = instant
 	prio_projectile = yes
 	
@@ -138,7 +138,7 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "NANITE_ION_BEAM"
 	size = titanic
-	entity = "invisible_turret_entity"
+	#entity = "invisible_turret_entity"
 	type = instant
 	prio_projectile = yes
 	
@@ -167,7 +167,6 @@ weapon_component_template = {
 	
 	firing_arc = 10.0
 	min_range = 0.0
-	static_rotation = yes
 	use_ship_kill_target = no
 	
 	prerequisites = { "tech_adt_gg_beam" }
