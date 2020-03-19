@@ -48,7 +48,7 @@ strike_craft_component_template = {
 	
 	prerequisites = { "tech_nanite_strike_craft" }
 	component_set = "ADT_STRIKE_CRAFT"
-	icon = "GFX_ship_part_strike_craft_scout_1"
+	icon = "GFX_ship_part_nhsc_strikecraft_nano"
 	icon_frame = 1
 	tags = { weapon_type_strike_craft }
 	ai_tag_weight = 0
@@ -62,7 +62,7 @@ weapon_component_template = {
 	type = missile
 	prio_projectile = yes
 	
-	icon = "GFX_ship_part_space_whale_weapon_1"
+	icon = "GFX_ship_part_nanite_energymissiles_1"
 	icon_frame = 1
 	
 	damage = { min = 100 max = 150 }
@@ -104,7 +104,7 @@ weapon_component_template = {
 	type = instant
 	prio_projectile = yes
 	
-	icon = "GFX_ship_part_space_whale_weapon_1"
+	icon = "GFX_ship_part_nanite_beam_1"
 	icon_frame = 1
 	
 	damage = { min = 1 max = 9999 }
@@ -142,7 +142,7 @@ weapon_component_template = {
 	type = instant
 	prio_projectile = yes
 	
-	icon = "GFX_ship_part_space_whale_weapon_1"
+	icon = "GFX_ship_part_nanite_beam_titanic"
 	icon_frame = 1
 	
 	damage = { min = 1 max = 9999 }

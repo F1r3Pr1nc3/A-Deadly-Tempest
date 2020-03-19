@@ -1,9 +1,17 @@
+version="1.1"
 name="A Deadly Tempest (2.5)"
 tags={
 	"Events"
 	"Gameplay"
 	"Technologies"
+	"Crisis"
 	"Spaceships"
+	"Gray Tempest"
+	"Gray Goo"
+	"L-Cluster"
+	"L-Gates"
+	"Gate Builders"
+	"Nanites"
 }
 picture="thumbnail.png"
 supported_version="2.5.*"

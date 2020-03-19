@@ -1,5 +1,25 @@
 namespace = distar
 
+# L-Cluster outcome on_game_start
+event = {
+	id = distar.8000
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_list = {
+			60 = {
+				set_global_flag = gray_goo_crisis_set
+				set_global_flag = active_gray_goo
+				set_global_flag = dragon_season
+			}
+			40 = {
+				set_global_flag = gray_goo_empire_set
+				set_global_flag = dragon_season
+			}
+		}
+	}
+}
+
 # check for gateway within borders
 country_event = {
 	id = distar.10900
@@ -419,7 +439,7 @@ country_event = {
 }
 
 # Science Ship enters dragon system
-ship_event = {
+fleet_event = {
 	id = distar.13030
 	title = distar.13030.name
 	desc = distar.13030.desc

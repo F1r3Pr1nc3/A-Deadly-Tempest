@@ -25,7 +25,7 @@ special_project = {
 				has_planet_flag = ldragon_recruited
 				AND = {
 					solar_system = {
-						any_ship_in_system = {
+						any_fleet_in_system = {
 							exists = owner
 							owner = { is_country_type = ldragon_country }
 							is_in_combat = yes

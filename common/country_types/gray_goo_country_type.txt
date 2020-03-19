@@ -10,6 +10,7 @@ gray_goo = {
 	needs_survey = no
 	has_complete_sensor = yes
 	can_have_their_comms_shared = yes
+	government = no
 	observable = no
 	ai = {
 		enabled = yes

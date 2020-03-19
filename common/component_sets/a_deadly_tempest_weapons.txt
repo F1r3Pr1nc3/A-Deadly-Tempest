@@ -3,27 +3,27 @@
 component_set = {
 	key = "ADT_STRIKE_CRAFT"
 	
-	icon = "GFX_ship_part_strike_craft_scout_1"
+	icon = "GFX_ship_part_nhsc_strikecraft_nano"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NANITE_BEAM_ADT"
 	
-	icon = "GFX_ship_part_space_whale_weapon_1"
+	icon = "GFX_ship_part_nanite_beam_1"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NANITE_ION_BEAM_ADT"
 	
-	icon = "GFX_ship_part_space_whale_weapon_1"
+	icon = "GFX_ship_part_nanite_beam_titanic"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "ENERGY_MISSILE_ADT"
 	
-	icon = "GFX_ship_part_space_whale_weapon_1"
+	icon = "GFX_ship_part_nanite_energymissiles_1"
 	icon_frame = 1	
 }

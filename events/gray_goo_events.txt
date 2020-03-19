@@ -233,7 +233,7 @@ country_event = {
 					has_star_flag = lcluster_lgate
 					has_star_flag = lgate_originating_system
 				}
-				any_system_megastructure = { 
+				any_system_megastructure = {
 					is_megastructure_type = lgate_base
 				}
 			}
@@ -262,30 +262,24 @@ country_event = {
 		country_event = { id = graygoo.10 }
 		every_playable_country = {
 			limit = {
-				has_special_project = LCLUSTER_PROJECT
-				NOT = { is_same_value = root }
-			}
-			country_event = { id = graygoo.11 }
-		}
-		every_playable_country = {
-			limit = {
-				NOR = {
-					has_special_project = LCLUSTER_PROJECT
-					is_same_value = root 
-				}
-				has_event_chain = l_cluster_chain
-			}
-			country_event = { id = graygoo.12 }
-		}
-		every_playable_country = {
-			limit = {
 				NOR = {
 					has_event_chain = l_cluster_chain
 					has_special_project = LCLUSTER_PROJECT
-					is_same_value = root 
+					is_same_value = root
 				}
 			}
 			country_event = { id = graygoo.13 }
+		}
+		every_playable_country = {
+			limit = {
+				OR = {
+					has_event_chain = l_cluster_chain
+					has_special_project = LCLUSTER_PROJECT
+				}
+				NOT = { is_same_value = root }
+			}
+			liquidate_clues = yes
+			country_event = { id = graygoo.11 }
 		}
 		observer_event = { id = observer.64 }
 	}
@@ -355,8 +349,8 @@ country_event = {
 			limit = {
 				any_system = {
 					has_star_flag = lcluster
-					any_ship_in_system = {
-						owner = { 
+					any_fleet_in_system = {
+						owner = {
 							NOT = { is_same_value = root }
 						}
 					}
@@ -373,7 +367,7 @@ country_event = {
 						has_star_flag = lcluster_lgate
 						has_star_flag = lgate_originating_system
 					}
-					any_system_megastructure = { 
+					any_system_megastructure = {
 						is_megastructure_type = lgate_base
 					}
 				}
@@ -383,7 +377,7 @@ country_event = {
 					}
 					create_ambient_object = {
 						type = "horror_spawn_object"
-						location = this
+						location = THIS
 						use_3d_location = yes
 						duration = 10
 					}
@@ -584,15 +578,15 @@ country_event = {
 	id = graygoo.12
 	title = "TRANSMISSION"
 	desc = "graygoo.12.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		room = no_video_feed_room
 	}
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = graygoo.12.a
 		response_text = graygoo.12.a.response
@@ -623,6 +617,10 @@ country_event = {
 	location = event_target:goo_slayer_ship.fleet
 
 	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = graygoo_defeated
+	}
 
 	option = {
 		name = graygoo.15.a
@@ -812,8 +810,6 @@ country_event = {
 					add_resource = { influence = 5000 }
 				}
 			}
-
-
 			create_fleet = {
 				effect = {
 					set_owner = event_target:graygoo_country
@@ -1182,7 +1178,7 @@ country_event = {
 					NOR = {
 						has_event_chain = l_cluster_chain
 						has_special_project = LCLUSTER_PROJECT
-						is_same_value = root 
+						is_same_value = root
 					}
 				}
 				country_event = { id = graygoo.112 }
@@ -1210,9 +1206,9 @@ country_event = {
 
 	immediate = {
 		if = {
-			limit = { 
+			limit = {
 				is_ai = no
-				NOT = { has_communications = from } 
+				NOT = { has_communications = from }
 			}
 			establish_communications_no_message = from
 		}
@@ -1239,9 +1235,9 @@ country_event = {
 
 	immediate = {
 		if = {
-			limit = { 
+			limit = {
 				is_ai = no
-				NOT = { has_communications = from } 
+				NOT = { has_communications = from }
 			}
 			establish_communications_no_message = from
 		}
@@ -1261,15 +1257,15 @@ country_event = {
 	id = graygoo.115
 	title = "TRANSMISSION"
 	desc = "graygoo.115.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = event_target:graygoo_country
 	}
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = graygoo.115.a
 		response_text = graygoo.115.a.response
@@ -1308,15 +1304,15 @@ country_event = {
 	id = graygoo.116
 	title = "TRANSMISSION"
 	desc = "graygoo.116.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = event_target:graygoo_country
 	}
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = graygoo.116.d
 	}
@@ -1347,18 +1343,18 @@ country_event = {
 	desc = {
 		text = graygoo.120.desc_07
 	}
-	
+
 	picture_event_data = {
 		portrait = from
 	}
-	
+
 	diplomatic = yes
 	force_open = yes
 	is_triggered_only = yes
 
 	trigger = {
 		from = { is_country_type = gate_builders }
-		NOR = { 
+		NOR = {
 			has_country_flag = gate_builder_diplomacy_engaged
 			has_country_flag = gate_builders_hostility
 		}
@@ -1372,7 +1368,7 @@ country_event = {
 	after = {
 		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
 	}
-	
+
 	option = {
 		name = graygoo.120.a
 		country_event = { id = graygoo.121 }
@@ -1408,11 +1404,11 @@ country_event = {
 	desc = {
 		text = graygoo.120.desc_07
 	}
-	
+
 	picture_event_data = {
 		portrait = event_target:gate_builders
 	}
-	
+
 	diplomatic = yes
 	force_open = yes
 	is_triggered_only = yes
@@ -1428,7 +1424,7 @@ country_event = {
 	after = {
 		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
 	}
-	
+
 	option = {
 		name = graygoo.120.a
 		country_event = { id = graygoo.121 }
@@ -1444,13 +1440,13 @@ country_event = {
 	id = graygoo.121
 	title = "graygoo.120_title"
 	desc = "graygoo.121.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = event_target:gate_builders
 	}
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1460,7 +1456,7 @@ country_event = {
 	after = {
 		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
 	}
-	
+
 	option = {
 		name = graygoo.121.a
 		response_text = graygoo.121.a.response
@@ -1496,13 +1492,13 @@ country_event = {
 	id = graygoo.122
 	title = "graygoo.120_title"
 	desc = "graygoo.122.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = event_target:gate_builders
 	}
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1512,7 +1508,7 @@ country_event = {
 	after = {
 		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
 	}
-	
+
 	option = {
 		name = graygoo.122.a
 		hidden_effect = {
@@ -1533,13 +1529,13 @@ country_event = {
 	id = graygoo.123
 	title = "graygoo.120_title"
 	desc = "graygoo.123.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = event_target:gate_builders
 	}
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1549,7 +1545,7 @@ country_event = {
 	after = {
 		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
 	}
-	
+
 	option = {
 		name = graygoo.123.a
 		hidden_effect = {
@@ -1570,13 +1566,13 @@ country_event = {
 	id = graygoo.124
 	title = "graygoo.120_title"
 	desc = "graygoo.124.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = event_target:gate_builders
 	}
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1586,7 +1582,7 @@ country_event = {
 	after = {
 		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
 	}
-	
+
 	option = {
 		name = graygoo.124.a
 		hidden_effect = {
@@ -1600,13 +1596,13 @@ country_event = {
 	id = graygoo.125
 	title = "graygoo.120_title"
 	desc = "graygoo.124.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = event_target:gate_builders
 	}
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1616,7 +1612,7 @@ country_event = {
 	after = {
 		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
 	}
-	
+
 	option = {
 		name = graygoo.125.a
 		hidden_effect = {
@@ -1630,13 +1626,13 @@ country_event = {
 	id = graygoo.126
 	title = "graygoo.120_title"
 	desc = "graygoo.126.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = event_target:gate_builders
 	}
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1655,7 +1651,7 @@ country_event = {
 	after = {
 		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
 	}
-	
+
 	option = {
 		name = graygoo.126.a
 	}
@@ -1666,13 +1662,13 @@ country_event = {
 	id = graygoo.130
 	title = "graygoo.120_title"
 	desc = "graygoo.130.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = from
 	}
-	
+
 	is_triggered_only = yes
 
 	trigger = {
@@ -1688,7 +1684,7 @@ country_event = {
 	after = {
 		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
 	}
-	
+
 	option = {
 		name = graygoo.130.a
 		response_text = graygoo.130.desc
@@ -1848,7 +1844,7 @@ ship_event = {
 	trigger = {
 		from = {
 			has_star_flag = graygoo_factory_system
-			any_ship_in_system = { 
+			any_ship_in_system = {
 				is_ship_size = graygoo_factory
 				owner = { is_country_type = gate_builders }
 			}
@@ -1915,12 +1911,12 @@ country_event = {
 
 	trigger = {
 		event_target:lcluster_factory_system = {
-			any_ship_in_system = {
+			any_fleet_in_system = {
 				owner = { is_same_value = root }
 			}
 		}
 		event_target:lcluster_factory_system = {
-			any_ship_in_system = { 
+			any_ship_in_system = {
 				is_ship_size = graygoo_factory
 				owner = { is_country_type = gate_builders }
 			}
@@ -1953,7 +1949,7 @@ country_event = {
 }
 
 # Entered Forbidden System (Second Time)
-ship_event = {
+fleet_event = {
 	id = graygoo.162
 	title = TRANSMISSION
 	desc = "graygoo.162.desc"
@@ -1969,7 +1965,7 @@ ship_event = {
 	trigger = {
 		from = {
 			has_star_flag = graygoo_factory_system
-			any_ship_in_system = { 
+			any_fleet_in_system = {
 				is_ship_size = graygoo_factory
 				owner = { is_country_type = gate_builders }
 			}

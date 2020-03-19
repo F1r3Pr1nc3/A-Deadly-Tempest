@@ -427,15 +427,15 @@ planet_event = {
 			country_event = { id = a_deadly_tempest.82 }
 		}
 		from = { country_event = { id = a_deadly_tempest.83 } }
-		reroll_deposits = yes
 		remove_all_buildings = yes
+		reroll_deposits = yes
 		#clear_blockers = yes
-		#remove_modifier = "natural_beauty"
+		remove_modifier = "natural_beauty"
 		#remove_modifier = "atmospheric_aphrodisiac"
 		#remove_modifier = "atmospheric_hallucinogen"
 		#remove_modifier = "lush_planet"		
-		#remove_modifier = "dangerous_wildlife"
-		#set_planet_flag = armageddon_nuked
+		remove_modifier = "dangerous_wildlife"
+		set_planet_flag = armageddon_nuked
 		if = {
 			limit = {
 				habitable_planet = yes	
@@ -461,7 +461,7 @@ planet_event = {
 	}
 }
 
-# Planet is turned into Nanite world by Nanite bombing stance (former owner)
+# Planet is turned into Nanite World by Nanite Bombing stance (former owner)
 country_event = {
 	id = a_deadly_tempest.82
 	title = "a_deadly_tempest.82.name"
@@ -478,7 +478,7 @@ country_event = {
 	}
 }
 
-# Planet is turned into Nanite world by Nanite bombing stance (bombarder)
+# Planet is turned into Nanite World by Nanite Bombing stance (bombarder)
 country_event = {
 	id = a_deadly_tempest.83
 	title = "a_deadly_tempest.82.name"
