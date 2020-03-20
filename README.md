@@ -11,7 +11,7 @@ Then, go back to our repository, click the "submit pull request" button (on the 
 
 ## Submitting bug reports
  
-Check out the issues page on [Github](https://github.com/FirePrince3/ADeadlyTempest/issues) and see if we've already talked about this! If not, please submit a report! The more info you give, the faster we can solve it. Its especially helpful if you tell us what kind of mods you use.
+Check out the issues page on [Github](https://github.com/FirePrince3/A-Deadly-Tempest/issues) and see if we've already talked about this! If not, please submit a report! The more info you give, the faster we can solve it. Its especially helpful if you tell us what kind of mods you use.
  
  ## Installation
 
