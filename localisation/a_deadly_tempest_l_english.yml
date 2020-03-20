@@ -184,14 +184,17 @@
  decision_close_lcluster_desc:0 "The L-Cluster will remain closed let it serve as a place of refuge and last retreat when threatened with the extinction of our empire and perhaps the galaxy..."
  decision_close_lcluster_effects:0 "Will deactivate the L-Gates preventing their use."
  
- ### Jobs
+ # ###################################
+ # Jobs
+ # ###################################
  
- #Specialist
+ # Specialist
  job_nanite_forger:0 "Nanicist"
  job_nanite_forger_plural:0 "Nanicists"
+ job_nanite_forger:1 "$job_nanite_forger$ Jobs"
  job_nanite_forger_desc:1 "These specialists create the nanites used by the empire which have many uses."
  job_nanite_forger_desc:0 "job_nanite_forger $job_nanite_forger_plural$ produce £nanites£ §Y$minerals$§!"
- job_nanite_forger:0 "$job_nanite_forger$ Jobs"
+ job_nanite_forger_effect_desc:0 "£job_nanite_forger£ $job_nanite_forger_plural$ turn £minerals£ §Y$minerals$§! into £nanites£ §Y$Nanites$§!"
  mod_job_nanite_forger_per_pop:0 "§G+1§! $job_nanite_forger$ Job per $VALUE$ Pops"
  mod_job_nanite_forger_per_pop_short:0 "\n§G+1§! £job_nanite_forger£ per $VALUE$ £pop£"
  
@@ -199,22 +202,43 @@
  job_nanite_forger_drone_plural:0 "Nanite Drones"
  job_nanite_forger_drone_desc:1 "These Drones create the nanites used by the collective which the nanites themselves have many uses."
  job_nanite_forger_drone_desc:0 "job_nanite_forger_drone $job_nanite_forger_drone_plural$ produce £nanites£ §Y$minerals$§!"
- job_nanite_forger_drone:0 "$job_nanite_forger_drone$ Jobs"
+ job_nanite_forger_drone:1 "$job_nanite_forger_drone$ Jobs"
+ job_nanite_forger_drone_effect_desc:0 "£job_nanite_forger_drone£ $job_nanite_forger_drone_plural$ turn £minerals£ §Y$minerals$§! into £nanites£ §Y$Nanites$§!"
  mod_job_nanite_forger_drone_per_pop:0 "§G+1§! $job_nanite_forger_drone$ Job per $VALUE$ Pops"
  mod_job_nanite_forger_drone_per_pop_short:0 "\n§G+1§! £job_nanite_forger_drone£ per $VALUE$ £pop£"
  
- job_nanite_forger_effect_desc:0 "£job_nanite_forger£ $job_nanite_forger_plural$ turn £minerals£ §Y$minerals$§! into £nanites£ §Y$Nanites$§!"
- job_nanite_forger_drone_effect_desc:0 "£job_nanite_forger_drone£ $job_nanite_forger_drone_plural$ turn £minerals£ §Y$minerals$§! into £nanites£ §Y$Nanites$§!"
+ # Worker
+ job_nanite_drone:0 "Nanite Mining Drone"
+ job_nanite_drone_plural:0 "Nanite Mining Drones"
+ job_nanite_drone_desc:1 "Equipped with modern power drills and advanced machinery, these drones extract and prepare valuable minerals for industrial, military, and consumer use."
+ job_nanite_drone_effect_desc:0 "£job_nanite_drone£ $job_nanite_drone_plural$ produce £minerals£ §Y$minerals$§!"
+ mod_job_nanite_drone_add:0 "$job_nanite_drone$ Jobs"
+ mod_job_nanite_drone_per_pop:0 "§G+1§! $job_nanite_drone$ Job per $VALUE$ Pops"
+ mod_job_nanite_drone_per_pop_short:0 "\n§G+1§! £mod_job_nanite_drone_add£ per $VALUE$ £pop£"
  
- # job_replicator_worker:0 ""
- # job_replicator_worker_desc:0 ""
- # job_replicator_drone:0 ""
- # job_replicator_drone_desc:0 ""
- # job_replicator_worker_farmer:0 ""
- # job_replicator_worker_farmer_desc:0 ""
- # job_replicator_drone_farmer:0 ""
- # job_replicator_drone_farmer_desc:0 ""
+ job_nanite_worker:0 "Nanite Mining Worker"
+ job_nanite_worker_plural:0 "Nanite Mining Worker"
+ job_nanite_worker_desc:1 "Equipped with modern power drills and advanced machinery, these workers extract and prepare valuable minerals for industrial, military, and consumer use."
+ job_nanite_worker_effect_desc:0 "£job_nanite_worker£ $job_nanite_worker_plural$ produce £minerals£ §Y$minerals$§!"
+ mod_job_nanite_worker_add:0 "$job_nanite_worker$ Jobs"
+ mod_job_nanite_worker_per_pop:0 "§G+1§! $job_nanite_worker$ Job per $VALUE$ Pops"
+ mod_job_nanite_worker_per_pop_short:0 "\n§G+1§! £mod_job_nanite_worker_add£ per $VALUE$ £pop£"
+ 
+ job_nanite_agri_drone:0 "Nanite Agri-Drone"
+ job_nanite_agri_drone_plural:0 "Nanite Agri-Drones"
+ job_nanite_agri_drone_desc:1 "Food production requires a variety of workers, from operators of planting and harvesting machinery, to watering, fertilizer and pesticide systems managers, to livestock handlers."
+ job_nanite_agri_drone_effect_desc:0 "£job_agri_drone£ $job_agri_drone_plural$ produce £food£ §Y$food$§!"
+ mod_job_nanite_agri_drone_add:0 "$job_agri_drone$ Jobs"
+ mod_job_nanite_agri_drone_per_pop:0 "§G+1§! $job_agri_drone$ Job per $VALUE$ Pops"
+ mod_job_nanite_agri_drone_per_pop_short:0 "\n§G+1§! £mod_job_agri_drone_add£ per $VALUE$ £pop£"
 
+ job_nanite_agri_worker:0 "Nanite Agri-Worker"
+ job_nanite_agri_worker_plural:0 "Nanite Agri-Workers"
+ job_nanite_agri_worker_desc:1 "$job_nanite_agri_drone_desc$"
+ job_nanite_agri_worker_effect_desc:0 "£job_nanite_agri_worker£ $job_nanite_agri_worker_plural$ produce £food£ §Y$food$§!"
+ mod_job_nanite_agri_worker_add:0 "$job_nanite_agri_worker$ Jobs"
+ mod_job_nanite_agri_worker_per_pop:0 "§G+1§! $job_nanite_agri_worker$ Job per $VALUE$ Pops"
+ mod_job_nanite_agri_worker_per_pop_short:0 "\n§G+1§! £mod_job_nanite_agri_worker_add£ per $VALUE$ £pop£"
  
  ### Buildings
  building_nanite_plant_1:0 "Nanite Foundries"

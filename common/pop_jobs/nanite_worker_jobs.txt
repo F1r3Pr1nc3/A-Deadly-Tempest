@@ -2,7 +2,7 @@
 # Basic Jobs
 ###################
 
-replicator_worker = {
+nanite_worker = {
 	category = worker
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_crystal_mines
@@ -74,7 +74,7 @@ replicator_worker = {
 	}
 }
 
-replicator_drone = {
+nanite_drone = {
 	category = worker
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_crystal_mines
@@ -141,7 +141,7 @@ replicator_drone = {
 	}
 }
 
-replicator_worker_farmer = {
+nanite_agri_worker = {
 	category = worker
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_food_processing_facility
@@ -211,11 +211,22 @@ replicator_worker_farmer = {
 		modifier = {
 			factor = 0.9
 			has_trait = trait_weak
-		}			
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_lithoid
+			owner = {
+				is_lithoid_empire = yes
+				has_monthly_income = {
+					resource = food
+					value >= 0
+				}
+			}
+		}
 	}
 }
 
-replicator_drone_farmer = {
+nanite_agri_drone = {
 	category = worker
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_food_processing_facility
@@ -285,6 +296,17 @@ replicator_drone_farmer = {
 		modifier = {
 			factor = 0.9
 			has_trait = trait_weak
-		}			
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_lithoid
+			owner = {
+				is_lithoid_empire = yes
+				has_monthly_income = {
+					resource = food
+					value >= 0
+				}
+			}
+		}		
 	}
 }

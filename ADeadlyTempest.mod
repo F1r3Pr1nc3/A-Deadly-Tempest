@@ -1,5 +1,5 @@
-version="1.1"
-name="A Deadly Tempest (2.5)"
+version="1.2"
+name="A Deadly Tempest 2.6"
 tags={
 	"Events"
 	"Gameplay"
@@ -14,6 +14,6 @@ tags={
 	"Nanites"
 }
 picture="thumbnail.png"
-supported_version="2.5.*"
+supported_version="2.6.1"
 path="mod/ADeadlyTempest"
 remote_file_id="1539768809"
