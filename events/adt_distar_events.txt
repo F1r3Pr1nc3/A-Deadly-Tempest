@@ -1,19 +1,22 @@
 namespace = distar
 
-# L-Cluster outcome on_game_start
+# Randomize L-Cluster outcome on_game_start
 event = {
 	id = distar.8000
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
 		random_list = {
-			60 = {
+			80 = {
 				set_global_flag = gray_goo_crisis_set
 				set_global_flag = active_gray_goo
 				set_global_flag = dragon_season
 			}
 			40 = {
 				set_global_flag = gray_goo_empire_set
+				set_global_flag = dragon_season
+			}
+			20 = {
 				set_global_flag = dragon_season
 			}
 		}
@@ -92,13 +95,13 @@ country_event = {
 	immediate = {
 		set_country_flag = lcluster_opener
 		set_global_flag = l_cluster_opened
-		# spawn L-Cluster
+		# Spawn L-Cluster
 		country_event = { id = distar.11000 }
 		# outcome, to be determined at game start
 		if = {
 			limit = { has_global_flag = gray_goo_crisis_set }
 			country_event = { id = graygoo.1 }
-			# vanilla double call?
+			# Vanilla double call?
 			every_megastructure = {
 				limit = {
 					is_megastructure_type = lgate_disabled
@@ -111,19 +114,21 @@ country_event = {
 			limit = { has_global_flag = gray_goo_empire_set }
 			country_event = { id = graygoo.100 days = 2 }
 		}
+		else = {
+			country_event = { id = distar.10951 }
+			# Enable other L-Gates over time
+			random_country = {
+				limit = { is_country_type = global_event }
+				country_event = { id = distar.10960 days = 200 random = 500 }
+			}
+		}
+		# Always Dragons!
 		if = {
 			limit = { has_global_flag = dragon_season }
 			country_event = { id = distar.13000 days = 1 }
 			country_event = { id = distar.13006 days = 1 }
 		}
-		# We don't need this really anymore, as we always open all gates immediately
-		#country_event = { id = distar.10951 }
-		# enable other L-Gates over time
-		random_country = {
-			limit = { is_country_type = global_event }
-			country_event = { id = distar.10960 days = 200 random = 500 }
-		}
-		# enable L-Gate
+		# Enable L-Gate
 		if = {
 			limit = { exists = from.solar_system }
 			from.solar_system = {
@@ -149,7 +154,7 @@ country_event = {
 					activate_lgate = yes
 				}
 			}
-			# activated terminal egress l-gate
+			# Activated terminal egress L-Gate
 			event_target:lcluster1 = {
 				random_system_megastructure = {
 					limit = { is_megastructure_type = lgate_disabled }
@@ -263,7 +268,7 @@ country_event = {
 	}
 }
 
-# goo_dragon_friendship 
+# goo_dragon_friendship
 country_event = {
 	id = distar.13006
 	hide_window = yes

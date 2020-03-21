@@ -1,5 +1,5 @@
 version="1.2"
-name="A Deadly Tempest 2.6"
+name="A Deadly Tempest (2.6 beta)"
 tags={
 	"Events"
 	"Gameplay"
@@ -16,4 +16,4 @@ tags={
 picture="thumbnail.png"
 supported_version="2.6.1"
 path="mod/ADeadlyTempest"
-remote_file_id="1539768809"
+remote_file_id="2028826064"
