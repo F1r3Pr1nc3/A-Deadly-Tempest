@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
 
  ####################################
  # A Deadly Tempest
@@ -160,6 +160,8 @@ l_english:
  tech_nanite_construction_desc:0 "Templates and modules to help construction is one thing...using nanites which literally build the structure from the ground up is another..."
  tech_nanite_mega_engineering:0 "Nanite Mega Engineering"
  tech_nanite_mega_engineering_desc:0 "Combining nanites and living metal is the best idea since imperialism! Provided the nanites don't go rogue and become an unstopable gray goo of death..."
+ 
+ mod_country_resource_max_sr_living_metal_add:0 "$tech_nanite_living_metal$ Storage Capacity"
  
  ### Policy
  

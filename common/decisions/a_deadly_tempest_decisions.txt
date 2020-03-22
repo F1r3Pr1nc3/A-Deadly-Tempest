@@ -16,7 +16,7 @@ decision_open_lcluster = {
 	}
 	
 	potential = {
-		has_global_flag = lcluster_closed
+		NOT = { has_global_flag = lgates_activated_globally }
 		is_capital = yes
 		exists = owner
 		from = { 
@@ -28,8 +28,8 @@ decision_open_lcluster = {
 	allow = {
 		custom_tooltip = {
 			fail_text = "lcluster_policy_cannot_set_name"
+			has_global_flag = lgates_activated_globally
 			NOR = {
-				has_global_flag = lcluster_closed
 				has_modifier = "artifact_lgate_insight_cooldown"
 				from = { controls_lcluster = yes }
 			}
@@ -40,7 +40,8 @@ decision_open_lcluster = {
 		# Make city-planet
 		custom_tooltip = decision_open_lcluster_effects
 		hidden_effect = {
-			owner = { country_event = { id = l_cluster_access.1 } }
+			set_global_flag = lgates_activated_globally
+			owner = { set_country_flag = lgates_activated }
 			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 15 }
 		}
 	}
@@ -64,7 +65,7 @@ decision_close_lcluster = {
 	}
 	
 	potential = {
-		has_global_flag = l_cluster_opened
+		has_global_flag = lgates_activated_globally
 		is_capital = yes
 		exists = owner
 		from = { 
@@ -77,7 +78,7 @@ decision_close_lcluster = {
 		custom_tooltip = {
 			fail_text = "lcluster_policy_cannot_set_name"
 			NOR = {
-				has_global_flag = l_cluster_opened
+				has_global_flag = lgates_activated_globally
 				has_modifier = "artifact_lgate_insight_cooldown"
 				from = { controls_lcluster = yes }
 			}
@@ -88,7 +89,8 @@ decision_close_lcluster = {
 		# Make city-planet
 		custom_tooltip = decision_close_lcluster_effects
 		hidden_effect = {
-			owner = { country_event = { id = l_cluster_access.2 } }
+			remove_global_flag = lgates_activated_globally
+			owner = { remove_country_flag = lgates_activated }
 			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 15 }
 		}
 	}

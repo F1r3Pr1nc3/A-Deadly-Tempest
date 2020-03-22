@@ -19,7 +19,13 @@ country_event = {
 		awaken_guardians_of_the_galaxy = yes
 		awaken_fallen_machine_empire = yes
 		set_global_flag = gray_goo_crisis_active
-
+		# double run?
+		# every_megastructure = {
+		# 	limit = {
+		# 		is_megastructure_type = lgate_base
+		# 	}
+		# 	activate_gateway = this
+		# }
 		random_system = {
 			limit = { has_star_flag = graygoo_factory_system }
 			random_system_planet = {
@@ -233,9 +239,10 @@ country_event = {
 					has_star_flag = lcluster_lgate
 					has_star_flag = lgate_originating_system
 				}
-				any_system_megastructure = {
-					is_megastructure_type = lgate_base
-				}
+				has_star_flag = lgate
+				# any_system_megastructure = {
+				# 	is_megastructure_type = lgate_base
+				# }
 			}
 			random_system_megastructure = {
 				limit = {

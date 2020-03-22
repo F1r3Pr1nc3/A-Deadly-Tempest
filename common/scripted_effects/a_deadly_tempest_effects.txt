@@ -1,4 +1,3 @@
-
 create_nanite_shoal = {
 	create_ship = {
 		name = random

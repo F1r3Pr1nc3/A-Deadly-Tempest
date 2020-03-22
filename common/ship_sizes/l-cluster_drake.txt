@@ -1,0 +1,30 @@
+# Baby Drake
+nanite_space_dragon_baby = {
+	is_space_object = yes
+	#graphical_culture = {  "guardian_01" }
+	graphical_culture = no
+	can_be_inspected = no
+	max_speed = 160
+	acceleration = 0.8
+	rotation_speed = 0.8
+	collision_radius = 7
+	modifier = {
+		ship_evasion_add = 45
+		ships_upkeep_mult = -1
+		ship_armor_add = 10000
+	}
+	max_hitpoints = 30000
+	size_multiplier = 16
+	fleet_slot_size = 16
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 0
+	is_space_station = no
+	icon_frame = 6
+	
+	class = shipclass_military
+	is_designable = no
+	required_component_set = "ftl_components"
+	required_component_set = "sensor_components"
+	required_component_set = "thruster_components"
+	required_component_set = "combat_computers"
+}

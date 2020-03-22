@@ -1,0 +1,93 @@
+# Nanite Dragon
+ship_design = {
+	name = "NAME_Nanite_Dragon"
+	ship_size = nanite_space_dragon_baby
+	is_event_design = yes
+
+	section = {
+		template = "nanite_space_dragon_baby_key"
+		slot = "mid"
+		
+		component = {
+			slot = "PRIMARY_GUN_01"
+			template = "DRAGON_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_01"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_02"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_03"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_04"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_05"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_06"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_07"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_08"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}		
+		component = {
+			slot = "TERTIARY_GUN_01"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_02"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_03"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_04"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}			
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="PSI_JUMP_DRIVE_1"
+	required_component="COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+	required_component="SHIP_THRUSTER_5"
+	required_component="SENSOR_4"
+}

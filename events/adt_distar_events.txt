@@ -100,7 +100,6 @@ country_event = {
 		# outcome, to be determined at game start
 		if = {
 			limit = { has_global_flag = gray_goo_crisis_set }
-			country_event = { id = graygoo.1 }
 			# Vanilla double call?
 			every_megastructure = {
 				limit = {
@@ -109,6 +108,7 @@ country_event = {
 				}
 				activate_lgate = yes
 			}
+			country_event = { id = graygoo.1 }
 		}
 		else_if = {
 			limit = { has_global_flag = gray_goo_empire_set }
@@ -161,6 +161,7 @@ country_event = {
 					activate_lgate = yes
 				}
 			}
+			set_country_flag = lgates_activated
 			set_global_flag = lgates_activated_globally
 			every_playable_country = {
 				if = {
