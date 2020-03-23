@@ -78,6 +78,8 @@ gateway = {
 						is_overlord_to = root
 						root = { is_overlord_to = from }
 					}
+				}
+				from = {
 					NOR = {
 						has_closed_borders = root
 						is_hostile = root

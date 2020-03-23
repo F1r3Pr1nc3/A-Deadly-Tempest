@@ -46,7 +46,8 @@ country_event = {
 						file = "sinus.dds"
 					}
 					colors={
-						"grey"
+						#grey
+						"teal"
 						"dark_grey"
 						"null"
 						"null"

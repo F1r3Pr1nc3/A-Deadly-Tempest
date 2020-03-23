@@ -101,3 +101,60 @@ tech_adt_gg_beam = {
 		}
 	}
 }
+
+# Nanite Torpedo
+tech_nanite_torpedo = {
+	area = engineering
+	cost = 25000
+	tier = 3
+	is_dangerous = yes
+	category = { propulsion }
+	weight = 25
+	is_reverse_engineerable = no
+	
+	prerequisites = { "tech_energy_torpedoes_2" "tech_missiles_5" }
+
+	prereqfor_desc = {
+		custom = {
+			title = tech_nanite_torpedo
+			desc = tech_nanite_torpedo_desc
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.1
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			factor = 1.2
+			has_ethic = ethic_fanatic_xenophile
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.1
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			factor = 1.2
+			has_ethic = ethic_fanatic_xenophile
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}

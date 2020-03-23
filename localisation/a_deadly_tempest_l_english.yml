@@ -78,21 +78,18 @@
  
  # Weapons
  
- ADT_NANITE_STRIKE_CRAFT:0 "Nanite Strike Craft"
- ADT_STRIKE_CRAFT:0 "Nanite Strike Craft"
- ADT_STRIKE_CRAFT_DESC:0 "Unlike conventional strike craft, a nanite model is capable of morphing its weapons on the fly, 'hangars' becoming glorified factories that can churn out a near constant stream of the craft."
- 
+ NANITE_STRIKE_CRAFT:0 "Nanite Strike Craft"
+ NANITE_STRIKE_CRAFT_DESC:0 "Unlike conventional strike craft, a nanite model is capable of morphing its weapons on the fly, 'hangars' becoming glorified factories that can churn out a near constant stream of the craft."
  NANITE_ENERGY_MISSILE:0 "Energy Missile"
- ENERGY_MISSILE_ADT:0 "Energy Missile"
- ENERGY_MISSILE_ADT_DESC:0 "This energy sphere is capable of tracking its target with the benefit of being untargetable by point defense."
- 
+ NANITE_ENERGY_MISSILE_DESC:0 "This energy sphere is capable of tracking its target with the benefit of being untargetable by point defense."
  NANITE_BEAM:0 "Nanite Beam"
- NANITE_BEAM_ADT:0 "Nanite Beam"
- NANITE_BEAM_ADT_DESC:0 "This weapon works in a similar fashion to a phase disruptor, weaponising a hyperquantum energy charge to rip through any target smaller than a planet, but is many times more destructive, as in tandem with this energy beam is a stream of destructive nanobots programmed to devour any matter unfortunate enough to come into contact."
+ NANITE_BEAM_DESC:0 "This weapon works in a similar fashion to a phase disruptor, weaponising a hyperquantum energy charge to rip through any target smaller than a planet, but is many times more destructive, as in tandem with this energy beam is a stream of destructive nanobots programmed to devour any matter unfortunate enough to come into contact."
  NANITE_ION_BEAM:0 "Nanite Beam"
- NANITE_ION_BEAM_ADT:0 "Nanite Beam"
- NANITE_ION_BEAM_ADT_DESC:0 "This weapon works in a similar fashion to a phase disruptor, weaponising a hyperquantum energy charge to rip through any target smaller than a planet, but is many times more destructive, as in tandem with this energy beam is a stream of destructive nanobots programmed to devour any matter unfortunate enough to come into contact."
- 
+ NANITE_ION_BEAM_DESC:0 "This weapon works in a similar fashion to a phase disruptor, weaponising a hyperquantum energy charge to rip through any target smaller than a planet, but is many times more destructive, as in tandem with this energy beam is a stream of destructive nanobots programmed to devour any matter unfortunate enough to come into contact."
+ NANITE_ENERGY_TORPEDO:0 "$tech_nanite_torpedo$"
+ NANITE_ENERGY_TORPEDO_DESC:0 "$tech_nanite_torpedo_desc$"
+
+
  ### Starbase buildings and modules
  sm_nanite_yards:0 "Nanite Ship Foundry"
  sm_nanite_yards_desc:0 "A standard shipyard lacks the specialised equipement and personnel required for the manufactoring of intelligent nanites ships. Uniquely designed orbital foundries, producing billions of nanites a minute, are necessary to achieve the height of engineering that is a fully armed and operational nanaite warform."
@@ -115,6 +112,8 @@
  tech_adt_gg_beam_desc:0 "The discussion over whether the Gatebuilders or the Gray origionally designed this weapon is significantly overshowed by the discussion over why such a grossly destructive weapon was neccessary in the first place."
  tech_adt_energymissiles:0 "Gatebuilder Energy Spheres"
  tech_adt_energymissiles_desc:0 "The Gatebuilders, whatever else they may have been, clearly had a deep enough understanding of nanomechanics to create energy spheres contained by specialized target-tracking nanites. While not on par with an actual neutron launcher, we could certainly use these spheres as excellent guided weapons."
+ tech_nanite_torpedo:0 "Nanite Warhead Torpedo"
+ tech_nanite_torpedo_desc:0 ""A torpedo that delivers a mass of disassembling nanities straight to the enemy ship."
  
  # Phys
  tech_lcluster_access:0 "L-Cluster Access Control"

@@ -10,63 +10,63 @@ ship_design = {
 	
 		component = {
 			slot = "TITAN_01"
-			template = "GG_BEAM_STATIC"
+			template = "NANITE_ION_BEAM"
 		}
 		component = {
 			slot = "TORPEDO_01"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_02"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_03"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_04"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_01"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_02"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_03"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_04"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_05"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_06"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_07"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_08"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_09"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_10"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 
 		component = {
@@ -151,55 +151,55 @@ ship_design = {
 		}	
 		component = {
 			slot = "TITAN_01"
-			template = "GG_BEAM_STATIC"
+			template = "NANITE_ION_BEAM"
 		}
 		component = {
 			slot = "TITAN_02"
-			template = "GG_BEAM_STATIC"
+			template = "NANITE_ION_BEAM"
 		}
 		component = {
 			slot = "TITAN_03"
-			template = "GG_BEAM_STATIC"
+			template = "NANITE_ION_BEAM"
 		}
 		component = {
 			slot = "TORPEDO_01"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_02"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_03"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_04"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_05"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_06"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_07"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_08"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_09"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_10"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "MEDIUM_GUN_01"
@@ -243,35 +243,35 @@ ship_design = {
 		}
 		component = {
 			slot = "LARGE_GUN_05"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "LARGE_GUN_06"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "LARGE_GUN_07"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "LARGE_GUN_08"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "LARGE_GUN_09"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "LARGE_GUN_10"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "LARGE_GUN_11"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "LARGE_GUN_12"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "PD_01"
@@ -392,31 +392,31 @@ ship_design = {
 		
 		component = {
 			slot = "TORPEDO_01"
-			template = "ENERGY_TORPEDO_2"
+			template = "NANITE_ENERGY_TORPEDO"
 		}
 		component = {
 			slot = "TORPEDO_02"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_03"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_04"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_01"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_02"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_03"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 
 		component = {
@@ -464,6 +464,182 @@ ship_design = {
 	required_component = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
 }
 
+# Factory
+ship_design = {
+	name = "NAME_Nanite_Factory"
+	ship_size = graygoo_factory
+	is_event_design = yes
+
+	section = {
+		template = "nanite_factory_key"
+		slot = "mid"
+		
+		component = {
+			slot = "TITAN_01"
+			template = "NANITE_BEAM"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_05"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_06"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_07"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_08"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_09"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_10"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_11"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_12"
+			template = "NANITE_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_07"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_08"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_09"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_10"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_11"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_12"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_13"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_14"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_15"
+			template = "NANITE_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
+	}
+	required_component="SENSOR_2"
+	required_component = "TITAN_ANTIMATTER_REACTOR"
+	required_component = "COMBAT_COMPUTER_PLATFORM_ADVANCED"
+}
+
 ### Dessanu Ships
 
 # Dessanu Mothership
@@ -478,63 +654,63 @@ ship_design = {
 	
 		component = {
 			slot = "TITAN_01"
-			template = "GG_BEAM_STATIC"
+			template = "NANITE_ION_BEAM"
 		}
 		component = {
 			slot = "TORPEDO_01"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_02"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_03"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_04"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_01"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_02"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_03"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_04"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_05"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_06"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_07"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_08"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_09"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_10"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 
 		component = {
@@ -612,31 +788,31 @@ ship_design = {
 		
 		component = {
 			slot = "TORPEDO_01"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_TORPEDO"
 		}
 		component = {
 			slot = "TORPEDO_02"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_03"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_04"
-			template = "GG_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_01"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_02"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_03"
-			template = "GG_STRIKE_CRAFT"
+			template = "NANITE_STRIKE_CRAFT"
 		}
 
 		component = {
