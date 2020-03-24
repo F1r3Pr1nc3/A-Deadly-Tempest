@@ -1,5 +1,5 @@
 version="1.2"
-name="A Deadly Tempest (2.6 beta)"
+name="A Deadly Tempest (2.6)"
 tags={
 	"Events"
 	"Gameplay"
@@ -10,10 +10,10 @@ tags={
 	"Gray Goo"
 	"L-Cluster"
 	"L-Gates"
-	"Gate Builders"
+	"Gatebuilders"
 	"Nanites"
 }
 picture="thumbnail.png"
-supported_version="2.6.1"
+supported_version="2.6.*"
 path="mod/ADeadlyTempest"
 remote_file_id="2028826064"

@@ -98,16 +98,16 @@ lgate_disabled = {
 
 	bypass_type = lgate
 	on_build_complete = {
-		# Works, but let's open the gate over the time event
-		# if = {
-		# 	limit = { exists = owner }
-		# 	root = { 
-		# 		random_system_megastructure = {
-		# 			limit = { is_megastructure_type = lgate_disabled }
-		# 			activate_lgate = yes
-		# 		}
-		# 	}
-		# }
+		# Works, but let's open the gate over the time event?
+		if = {
+			limit = { exists = owner }
+			root = { 
+				random_system_megastructure = {
+					limit = { is_megastructure_type = lgate_disabled }
+					activate_lgate = yes
+				}
+			}
+		}
 		root = { set_star_flag = lgate }
 	}
 }

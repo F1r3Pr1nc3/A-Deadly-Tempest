@@ -184,6 +184,8 @@
  decision_close_lcluster:0 "Close L-Cluster"
  decision_close_lcluster_desc:0 "The L-Cluster will remain closed. let it serve as a place of refuge and last retreat when wholesale extinction threatens our people, and perhaps the galaxy..."
  decision_close_lcluster_effects:0 "Will deactivate the L-Gates, preventing their use."
+
+ artifact_lgate_insight_cooldown_desc:0 "It will take some time to do this again."
  
  # ###################################
  # Jobs

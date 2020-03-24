@@ -61,7 +61,7 @@ tech_lcluster_access = {
 	}
 	
 	potential = {
-		has_global_flag = lgates_activated_globally
+		has_global_flag = l_cluster_opened
 		NOT = { has_global_flag = active_gray_goo }
 	}
 

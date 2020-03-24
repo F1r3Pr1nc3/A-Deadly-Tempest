@@ -19,13 +19,17 @@ country_event = {
 		awaken_guardians_of_the_galaxy = yes
 		awaken_fallen_machine_empire = yes
 		set_global_flag = gray_goo_crisis_active
-		# double run?
-		# every_megastructure = {
-		# 	limit = {
-		# 		is_megastructure_type = lgate_base
-		# 	}
-		# 	activate_gateway = this
-		# }
+		# maybe double call?
+		every_megastructure = {
+			limit = {
+				OR = {
+					is_megastructure_type = lgate_base
+					is_megastructure_type = lgate_disabled
+				}
+				NOT = { has_megastructure_flag = lgate_activated }
+			}
+			activate_lgate = yes
+		}
 		random_system = {
 			limit = { has_star_flag = graygoo_factory_system }
 			random_system_planet = {
@@ -810,6 +814,22 @@ country_event = {
 				ethos = {
 					ethic = "ethic_fanatic_xenophile"
 					ethic = "ethic_egalitarian"
+				}
+				flag = {
+					# icon= {
+					# 	category = "special"
+					# 	file = "gray_goo.dds"
+					# }
+					# background= {
+					# 	category = "backgrounds"
+					# 	file = "sinus.dds"
+					# }
+					colors= {
+						"teal"
+						"grey"
+						"null"
+						"null"
+					}
 				}
 				effect = {
 					save_event_target_as = graygoo_country

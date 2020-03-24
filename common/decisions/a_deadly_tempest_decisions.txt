@@ -21,18 +21,18 @@ decision_open_lcluster = {
 		exists = owner
 		from = { 
 			can_set_lcluster_policiy = yes
-			controls_lcluster = yes
+			# controls_lcluster = yes
 		}
 	}
 	
 	allow = {
 		custom_tooltip = {
 			fail_text = "lcluster_policy_cannot_set_name"
-			has_global_flag = lgates_activated_globally
 			NOR = {
+			#	has_global_flag = lgates_activated_globally
 				has_modifier = "artifact_lgate_insight_cooldown"
-				from = { controls_lcluster = yes }
 			}
+			from = { controls_lcluster = yes }
 		}
 	}
 	
@@ -42,7 +42,7 @@ decision_open_lcluster = {
 		hidden_effect = {
 			set_global_flag = lgates_activated_globally
 			owner = { set_country_flag = lgates_activated }
-			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 15 }
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
 		}
 	}
 	
@@ -70,18 +70,18 @@ decision_close_lcluster = {
 		exists = owner
 		from = { 
 			can_set_lcluster_policiy = yes
-			controls_lcluster = yes
+			# controls_lcluster = yes
 		}
 	}
 	
 	allow = {
 		custom_tooltip = {
 			fail_text = "lcluster_policy_cannot_set_name"
+			#has_global_flag = lgates_activated_globally
 			NOR = {
-				has_global_flag = lgates_activated_globally
 				has_modifier = "artifact_lgate_insight_cooldown"
-				from = { controls_lcluster = yes }
 			}
+			from = { controls_lcluster = yes }
 		}
 	}
 	
@@ -91,7 +91,7 @@ decision_close_lcluster = {
 		hidden_effect = {
 			remove_global_flag = lgates_activated_globally
 			owner = { remove_country_flag = lgates_activated }
-			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 15 }
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
 		}
 	}
 	
