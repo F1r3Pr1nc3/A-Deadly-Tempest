@@ -655,22 +655,22 @@ country_event = {
 	}
 }
 
-## Project Test 1
-country_event = {
-	id = graygoo.30
-	hide_window = yes
+# ## Project Test 1
+# country_event = {
+# 	id = graygoo.30
+# 	hide_window = yes
 
-	trigger = {
-		always = no
-	}
+# 	trigger = {
+# 		always = no
+# 	}
 
-	immediate = {
-		begin_event_chain = {
-			event_chain = l_cluster_chain
-			target = this
-		}
-	}
-}
+# 	immediate = {
+# 		begin_event_chain = {
+# 			event_chain = l_cluster_chain
+# 			target = this
+# 		}
+# 	}
+# }
 
 # Project Test 2
 country_event = {
@@ -784,7 +784,12 @@ country_event = {
 
 	immediate = {
 		every_megastructure = {
-			limit = { is_megastructure_type = lgate_disabled }
+			limit = { 
+				OR = {
+					is_megastructure_type = lgate_base
+					is_megastructure_type = lgate_disabled
+				}
+			 }
 			activate_lgate = yes
 		}
 		random_system = {
@@ -795,7 +800,8 @@ country_event = {
 			}
 			create_species = {
 				name = "NAME_Dessanu"
-				class = random_non_machine
+				#random_non_machine
+				class = ART
 				portrait = random
 				traits = random
 				homeworld = this
@@ -816,17 +822,17 @@ country_event = {
 					ethic = "ethic_egalitarian"
 				}
 				flag = {
-					# icon= {
-					# 	category = "special"
-					# 	file = "gray_goo.dds"
-					# }
-					# background= {
-					# 	category = "backgrounds"
-					# 	file = "sinus.dds"
-					# }
+					icon= {
+						category = "spherical"
+						file = "flag_spherical_2.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "sinus.dds"
+					}
 					colors= {
 						"teal"
-						"grey"
+						"dark_grey"
 						"null"
 						"null"
 					}

@@ -59,8 +59,11 @@ create_nanite_warship = {
 }
 
 activate_lgate = {
-	upgrade_megastructure_to = lgate_base
-	finish_upgrade = yes
+	if = {
+		limit = { is_megastructure_type = lgate_disabled }
+		upgrade_megastructure_to = lgate_base
+		finish_upgrade = yes
+	}
 	activate_gateway = this
 	set_megastructure_flag = lgate_activated
 }
