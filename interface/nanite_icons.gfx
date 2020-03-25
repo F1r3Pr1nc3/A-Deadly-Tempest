@@ -25,4 +25,8 @@ spriteTypes = {
 		name = "GFX_ship_part_nanite_hull"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_hull.dds"
 	}
+	spriteType = {
+		name = "GFX_ship_part_nanite_auto_repair"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_auto_repair.dds"
+	}
 }
