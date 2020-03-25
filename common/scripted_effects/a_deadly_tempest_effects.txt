@@ -21,7 +21,7 @@ create_nanite_shoal_1 = {
 		graphical_culture = "pirate_01"
 	}
 	while = {
-		count = 20
+		count = 15
 		create_ship = {
 			name = random
 			design = "NAME_Nanite_Interdictor"
@@ -37,7 +37,7 @@ create_nanite_shoal_2 = {
 		graphical_culture = "pirate_01"
 	}
 	while = {
-		count = 40
+		count = 30
 		create_ship = {
 			name = random
 			design = "NAME_Nanite_Interdictor"

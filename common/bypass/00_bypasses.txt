@@ -174,7 +174,12 @@ lgate = {
 			#has_global_flag = l_cluster_opened
 			OR = {
 				has_global_flag = lgates_activated_globally
-				has_country_flag = lgates_activated
+				if = { limit = { exists = owner }
+					owner = { has_country_flag = lgates_activated }
+				}
+				else_if = { limit = { is_scope_type = country } 
+					has_country_flag = lgates_activated
+				}
 			}
 		}
 	}

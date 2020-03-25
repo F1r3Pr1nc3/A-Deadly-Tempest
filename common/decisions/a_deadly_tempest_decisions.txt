@@ -10,7 +10,6 @@ decision_open_lcluster = {
 	resources = {
 		category = decisions
 		cost = {
-			#minor_artifacts = 1
 			influence = 50
 		}
 	}
@@ -59,8 +58,7 @@ decision_close_lcluster = {
 	resources = {
 		category = decisions
 		cost = {
-			#minor_artifacts = 1
-			influence = 50
+			influence = 100
 		}
 	}
 	

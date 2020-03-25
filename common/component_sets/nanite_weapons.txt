@@ -1,0 +1,31 @@
+# Icons set here are the ones shown in component editor list.
+
+component_set = {
+	key = "NANITE_STRIKE_CRAFT"
+	icon = "GFX_ship_part_nanite_strikecraft"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "NANITE_BEAM"
+	icon = "GFX_ship_part_nanite_beam_titanic"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "NANITE_ION_BEAM"
+	icon = "GFX_ship_part_nanite_beam_titanic"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "NANITE_ENERGY_MISSILE"
+	icon = "GFX_ship_part_nanite_energymissiles_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "NANITE_ENERGY_TORPEDO"
+	icon = "GFX_ship_part_nanite_energy_torpedo"
+	icon_frame = 1
+}
