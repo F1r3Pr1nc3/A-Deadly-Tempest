@@ -10,7 +10,7 @@ decision_open_lcluster = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			influence = 20
 		}
 	}
 	

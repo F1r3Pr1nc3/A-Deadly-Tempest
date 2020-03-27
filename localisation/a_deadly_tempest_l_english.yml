@@ -95,12 +95,11 @@
  sm_nanite_yards_desc:0 "A standard shipyard lacks the specialised equipement and personnel required for the manufactoring of intelligent nanites ships. Uniquely designed orbital foundries, producing billions of nanites a minute, are necessary to achieve the height of engineering that is a fully armed and operational nanaite warform."
  
  ### Bombardment
- nanite_bombardment:0 "Nanite Bombardment"
- bombardment_nanite_bombardment_desc:2 " $nanite_bombardment$ The planet is bombarded with destructive nanites that break down anything they come in contact with into its base components with the explicit aim of maximizing civilian casualties.\n- §RMassive§! damage to §YArmies§!\n- §RMassive§! damage to §YTiles§!\n- §RMassive§! damage to §YPops§!\n- Will bombard undefended planets\n- Can reduce planets to lifeless nanite Worlds which can be terraformed with the right technology."
- bombardment_nanite_bombardment:0 "Nanite"
- orbital_nanite_bombardment:0 "Nanite"
- orbital_nanite_bombardment_name:0 "Nanite Orbital Bombardment"
- orbital_nanite_bombardment_desc:0 ""
+ bombardment_nanitebombard:0 "Nanite"
+ bombardment_nanitebombard_desc:2 " $nanitebombard$ The planet is bombarded with destructive nanites that break down anything they come in contact with into its base components with the explicit aim of maximizing civilian casualties.\n- §RMassive§! damage to §YArmies§!\n- §RMassive§! damage to §YTiles§!\n- §RMassive§! damage to §YPops§!\n- Will bombard undefended planets\n- Can reduce planets to lifeless nanite Worlds which can be terraformed with the right technology."
+ orbital_nanitebombard:0 "Nanite"
+ orbital_nanitebombard_name:0 "Nanite Orbital Bombardment"
+ orbital_nanitebombard_desc:0 ""
  
  
  ### Technology

@@ -300,6 +300,7 @@ country_event = {
 # Colony Bombarded
 planet_event = {
 	id = graygoo.2
+	#hide_window = yes
 	title = "graygoo.2.name"
 	desc = "graygoo.2.desc"
 	picture = GFX_evt_gray_gooed_planet
@@ -309,7 +310,10 @@ planet_event = {
 
 	trigger = {
 		planet_devastation >= 100
-		FROM = { is_country_type = gray_goo }
+		OR = {
+			FROM = { is_country_type = gray_goo }
+			has_orbital_bombardment_stance = nanitebombard
+		}
 	}
 
 	immediate = {
@@ -334,6 +338,11 @@ planet_event = {
 				limit = { is_planet_class = pc_habitat }
 				ariphaos_patch_remove_habitat = yes
 			}
+		}
+		# Sets a short timed flag if bombardment is going on, so the planet can be appropriately nuked.
+		set_timed_planet_flag = {
+			flag = flag_nanite_bombardment
+			days = 7
 		}
 	}
 
@@ -520,6 +529,8 @@ country_event = {
 		every_owned_fleet = { destroy_fleet = this }
 		destroy_country = yes
 		clear_global_event_target = graygoo_country
+		# Fix vanilla federation resolution!?
+		remove_global_flag = gray_goo_crisis_active
 	}
 }
 
@@ -823,8 +834,8 @@ country_event = {
 				}
 				flag = {
 					icon= {
-						category = "spherical"
-						file = "flag_spherical_2.dds"
+						category = "paradox"
+						file = "paradox_logo.dds"
 					}
 					background= {
 						category = "backgrounds"

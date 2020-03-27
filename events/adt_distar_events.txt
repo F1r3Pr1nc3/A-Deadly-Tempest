@@ -42,7 +42,10 @@ country_event = {
 			}
 			random_owned_megastructure = {
 				limit = {
-					is_megastructure_type = lgate_disabled
+					OR = {
+						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
+					}
 				}
 				save_event_target_as = candidate_gateway
 			}
@@ -69,13 +72,19 @@ country_event = {
 		if = {
 			limit = {
 				any_owned_megastructure = {
-					is_megastructure_type = lgate_disabled
+					OR = {
+						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
+					}
 				}
 				has_technology = tech_lgate_activation
 			}
 			random_owned_megastructure = {
 				limit = {
-					is_megastructure_type = lgate_disabled
+					OR = {
+						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
+					}
 				}
 				save_event_target_as = candidate_gateway
 			}
@@ -88,7 +97,7 @@ country_event = {
 }
 
 country_event = {
-	# Changed by FirePrince
+	# Changed by FirePrince: Possibility of all random events at the same time
 	id = distar.10950
 	hide_window = yes
 	is_triggered_only = yes
@@ -104,7 +113,7 @@ country_event = {
 			# Vanilla double call?
 			# every_megastructure = {
 			# 	limit = {
-			# 		is_megastructure_type = lgate_disabled
+			# 		is_megastructure_type = lgate_base
 			# 		#NOT = { has_megastructure_flag = lgate_activated }
 			# 	}
 			# 	activate_lgate = yes
@@ -151,7 +160,10 @@ country_event = {
 				}
 				random_system_megastructure = {
 					limit = {
-						is_megastructure_type = lgate_disabled
+						OR = {
+							is_megastructure_type = lgate_base
+							is_megastructure_type = lgate_disabled
+						}
 						NOT = { has_megastructure_flag = lgate_activated }
 					}
 					activate_lgate = yes
@@ -160,7 +172,12 @@ country_event = {
 			# Activated terminal egress L-Gate
 			event_target:lcluster1 = {
 				random_system_megastructure = {
-					limit = { is_megastructure_type = lgate_disabled }
+					limit = {
+						OR = {
+							is_megastructure_type = lgate_base
+							is_megastructure_type = lgate_disabled
+						}
+					}
 					activate_lgate = yes
 				}
 			}
@@ -202,7 +219,10 @@ event = {
 					which = num_lcluster_clues
 					value > 5
 				}
-				any_owned_megastructure = { is_megastructure_type = lgate_disabled }
+				any_owned_megastructure = { OR = {
+					is_megastructure_type = lgate_base
+					is_megastructure_type = lgate_disabled
+				} }
 			}
 		}
 	}
@@ -224,7 +244,10 @@ event = {
 						which = num_lcluster_clues
 						value > 5
 					}
-					any_owned_megastructure = { is_megastructure_type = lgate_disabled }
+					any_owned_megastructure = { OR = {
+						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
+					} }
 				}
 			}
 			random_relation = {
@@ -237,7 +260,10 @@ event = {
 						which = num_lcluster_clues
 						value > 5
 					}
-					any_owned_megastructure = { is_megastructure_type = lgate_disabled }
+					any_owned_megastructure = { OR = {
+						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
+					} }
 				}
 				save_event_target_as = lgate_warning_country
 				set_country_flag = lgate_warned@prev
@@ -260,8 +286,6 @@ country_event = {
 				is_megastructure_type = lgate_base
 				is_megastructure_type = lgate_disabled
 			}
-			# Prevent endless call?
-			NOT = { has_megastructure_flag = lgate_activated }
 		}
 	}
 	immediate = {
@@ -274,8 +298,8 @@ country_event = {
 				NOT = { has_megastructure_flag = lgate_activated }
 			}
 			activate_lgate = yes
+			country_event = { id = distar.10960 days = 200 random = 500 }
 		}
-		country_event = { id = distar.10960 days = 200 random = 500 }
 	}
 }
 

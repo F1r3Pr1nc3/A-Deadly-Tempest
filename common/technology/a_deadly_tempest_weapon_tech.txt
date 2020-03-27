@@ -113,7 +113,6 @@ tech_nanite_torpedo = {
 	is_reverse_engineerable = no
 	
 	prerequisites = { "tech_energy_torpedoes_2" "tech_missiles_5" }
-
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_torpedo
@@ -121,6 +120,13 @@ tech_nanite_torpedo = {
 		}
 	}
 
+	potential = {
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+	}
+	
 	weight_modifier = {
 		modifier = {
 			factor = 1.1

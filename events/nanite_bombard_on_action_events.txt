@@ -1,0 +1,130 @@
+namespace = a_deadly_tempest
+
+### Bombardment
+planet_event = {
+	id = a_deadly_tempest.81
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_orbital_bombardment_stance = nanitebombard
+			has_planet_flag = flag_nanite_bombardment
+			any_fleet_in_orbit = {
+				owner = {
+					has_policy_flag = orbital_bombardment_armageddon
+					has_policy_flag = orbital_bombardment_indiscriminate
+					has_technology = tech_nanite_bombardment
+				}
+			}
+		}
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = cybrex_empire
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+				is_country_type = swarm
+				is_country_type = vol
+			}
+		}
+		OR = {
+			habitable_planet = yes
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_habitat
+		}
+		OR = {
+			planet_devastation >= 100
+			# num_pops <= 0
+		}
+	}
+	
+	immediate = {
+		every_owned_pop = {
+			kill_pop = yes
+		}
+		owner = { 
+			add_static_war_exhaustion = {
+				attacker = from
+				location = root
+				value_for_planet_destruction = 0.5
+			}
+			country_event = { id = a_deadly_tempest.82 }
+		}
+		from = { country_event = { id = a_deadly_tempest.83 } }
+		remove_all_buildings = yes
+		#reroll_deposits = yes
+		reset_planet = yes
+		clear_blockers = yes
+		#remove_modifier = "natural_beauty"
+		#remove_modifier = "atmospheric_aphrodisiac"
+		#remove_modifier = "atmospheric_hallucinogen"
+		#remove_modifier = "lush_planet"
+		# remove_modifier = "planet_population_control"
+		# remove_modifier = "planet_population_control_gestalt"
+		# remove_modifier = "planet_robot_assembly_control"
+		# remove_modifier = "planet_growth_discouraged"
+		# remove_modifier = "planet_food_boost"
+		# remove_modifier = "planet_prospected"
+		# remove_modifier = "planet_luxuries_boost"
+		# remove_modifier = "dangerous_wildlife"
+		set_planet_flag = armageddon_nuked
+		if = {
+			limit = {
+				habitable_planet = yes	
+				NOR = {
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_habitat
+				}
+			}
+			change_pc = pc_gray_goo
+		}
+		else = {
+			if = {
+				limit = { is_planet_class = pc_ringworld_habitable }
+				change_pc = pc_ringworld_habitable_damaged
+				spawn_ringworld_cracker_effect = yes
+			}
+			if = {
+				limit = { is_planet_class = pc_habitat }
+				ariphaos_patch_remove_habitat = yes
+				spawn_habitat_cracker_effect = yes
+			}
+		}
+	}
+}
+
+# Planet is turned into Nanite World by Nanite Bombing stance (former owner)
+country_event = {
+	id = a_deadly_tempest.82
+	title = "a_deadly_tempest.82.name"
+	picture = GFX_evt_gray_gooed_planet
+	desc = a_deadly_tempest.82.desc
+	show_sound = event_ghost_town
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = a_deadly_tempest.82.a
+		custom_tooltip = bombed_to_nanite_world
+	}
+}
+
+# Planet is turned into Nanite World by Nanite Bombing stance (bombarder)
+country_event = {
+	id = a_deadly_tempest.83
+	title = "a_deadly_tempest.82.name"
+	picture = GFX_evt_gray_gooed_planet
+	desc = a_deadly_tempest.83.desc
+	show_sound = event_super_explosion
+	location = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		custom_tooltip = bombed_to_nanite_world
+	}
+}
