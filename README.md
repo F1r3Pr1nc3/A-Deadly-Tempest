@@ -1,4 +1,4 @@
-**A Deadly Tempest** is a mod for Stellaris (actual 2.6.1, initiated by [Spartan878](https://steamcommunity.com/profiles/76561198026342102)), focusing on a better mid-game L-Cluster event with all the consequences (new technologies and a more challenging Nanite Crisis). It's also open source, so feel free to contribute! For more see the [workshop desc](/description.bbcode) (_[life](https://steamcommunity.com/sharedfiles/filedetails/?id=2028826064)_).
+**A Deadly Tempest** is a mod for Stellaris (initiated by [Spartan878](https://steamcommunity.com/profiles/76561198026342102)), focusing on a better mid-game L-Cluster event with all the consequences (new technologies and a more challenging Nanite Crisis). It's also open source, so feel free to contribute! For more see the [workshop desc](/description.bbcode) (_[life](https://steamcommunity.com/sharedfiles/filedetails/?id=2028826064)_).
  
 ## How to contribute
  
@@ -29,5 +29,5 @@ You can also install by downloading this repository:
  - The mod should appear in your launcher. You may also need to unsubscribe from the workshop version of the mod for this to work properly.
 
 Default Mod Folder Locations:
- - On Windows - `%USERPROFILE%/Documents/Paradox Interactive/Stellaris/mod`
+ - On Windows - `%USERPROFILE%//Documents//Paradox Interactive//Stellaris//mod`
  - On Linux - `/home/{YOUR_USER}/.local/share/Paradox Interactive/Stellaris/mod`
