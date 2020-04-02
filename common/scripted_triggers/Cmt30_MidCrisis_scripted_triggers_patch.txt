@@ -1,0 +1,29 @@
+#######################################################
+#####                                             #####
+#####    Crisis Manager                           #####
+#####    Comp Patch for A Deadly Tempest          #####
+#####    Scripted Triggers for Mid-Game Crisis    #####
+#####                                             #####
+#######################################################
+
+#######################
+###  L-Gate Common  ###
+#######################
+
+CmtTriggerIsClosedLgate = {
+	OR = {
+		is_megastructure_type = lgate_base
+		is_megastructure_type = lgate_disabled
+	}
+	NOT = { has_megastructure_flag = lgate_activated }
+}
+
+CmtTriggerIsOpenedLgate = {
+	is_megastructure_type = lgate_base
+	has_megastructure_flag = lgate_activated
+}
+
+CmtTriggerIsGalaxyLgateSystem = {
+	has_star_flag = lgate
+	NOT = { has_star_flag = lcluster_lgate }
+}

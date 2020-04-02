@@ -144,21 +144,13 @@ ship_design = {
 	section = {
 		template = "gray_warship_key"
 		slot = "mid"
-	
-		component = {
-			slot = "PLANET_KILLER_GUN_01"
-			template = "PLANET_KILLER_NEUTRON"
-		}	
+
 		component = {
 			slot = "TITAN_01"
 			template = "NANITE_ION_BEAM"
 		}
 		component = {
 			slot = "TITAN_02"
-			template = "NANITE_ION_BEAM"
-		}
-		component = {
-			slot = "TITAN_03"
 			template = "NANITE_ION_BEAM"
 		}
 		component = {
@@ -182,26 +174,6 @@ ship_design = {
 			template = "NANITE_ENERGY_MISSILE"
 		}
 		component = {
-			slot = "TORPEDO_06"
-			template = "NANITE_ENERGY_MISSILE"
-		}
-		component = {
-			slot = "TORPEDO_07"
-			template = "NANITE_ENERGY_MISSILE"
-		}
-		component = {
-			slot = "TORPEDO_08"
-			template = "NANITE_ENERGY_MISSILE"
-		}
-		component = {
-			slot = "TORPEDO_09"
-			template = "NANITE_ENERGY_MISSILE"
-		}
-		component = {
-			slot = "TORPEDO_10"
-			template = "NANITE_ENERGY_MISSILE"
-		}
-		component = {
 			slot = "MEDIUM_GUN_01"
 			template = "KINETIC_ARTILLERY_2"
 		}
@@ -211,7 +183,7 @@ ship_design = {
 		}
 		component = {
 			slot = "MEDIUM_GUN_03"
-			template = "KINETIC_ARTILLERY_2"
+			template = "MEDIUM_GAMMA_LASER"
 		}
 		component = {
 			slot = "MEDIUM_GUN_04"
@@ -223,11 +195,11 @@ ship_design = {
 		}
 		component = {
 			slot = "MEDIUM_GUN_06"
-			template = "KINETIC_ARTILLERY_2"
+			template = "MEDIUM_MASS_DRIVER_5"
 		}
 		component = {
 			slot = "LARGE_GUN_01"
-			template = "KINETIC_ARTILLERY_2"
+			template = "LARGE_GAMMA_LASER"
 		}
 		component = {
 			slot = "LARGE_GUN_02"
@@ -239,38 +211,14 @@ ship_design = {
 		}
 		component = {
 			slot = "LARGE_GUN_04"
-			template = "KINETIC_ARTILLERY_2"
+			template = "LARGE_MASS_DRIVER_5"
 		}
 		component = {
-			slot = "LARGE_GUN_05"
+			slot = "STRIKE_CRAFT_01"
 			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
-			slot = "LARGE_GUN_06"
-			template = "NANITE_STRIKE_CRAFT"
-		}
-		component = {
-			slot = "LARGE_GUN_07"
-			template = "NANITE_STRIKE_CRAFT"
-		}
-		component = {
-			slot = "LARGE_GUN_08"
-			template = "NANITE_STRIKE_CRAFT"
-		}
-		component = {
-			slot = "LARGE_GUN_09"
-			template = "NANITE_STRIKE_CRAFT"
-		}
-		component = {
-			slot = "LARGE_GUN_10"
-			template = "NANITE_STRIKE_CRAFT"
-		}
-		component = {
-			slot = "LARGE_GUN_11"
-			template = "NANITE_STRIKE_CRAFT"
-		}
-		component = {
-			slot = "LARGE_GUN_12"
+			slot = "STRIKE_CRAFT_02"
 			template = "NANITE_STRIKE_CRAFT"
 		}
 		component = {
@@ -279,14 +227,6 @@ ship_design = {
 		}
 		component = {
 			slot = "PD_02"
-			template = "POINT_DEFENCE_3"
-		}
-		component = {
-			slot = "PD_03"
-			template = "POINT_DEFENCE_3"
-		}
-		component = {
-			slot = "PD_04"
 			template = "POINT_DEFENCE_3"
 		}
 		component = {
@@ -359,7 +299,7 @@ ship_design = {
 		}
 		component = {
 			slot = "AUX_UTILITY_2"
-			template = "FIRE_CONTROL_1"
+			template = "SHIELD_BOOSTER"
 		}
 		component = {
 			slot = "AUX_UTILITY_3"
@@ -367,10 +307,6 @@ ship_design = {
 		}
 		component = {
 			slot = "AUX_UTILITY_4"
-			template = "AFTERBURNER_2"
-		}
-		component = {
-			slot = "AUX_UTILITY_5"
 			template = "AFTERBURNER_2"
 		}
 	}

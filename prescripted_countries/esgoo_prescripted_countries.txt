@@ -1,0 +1,62 @@
+"Grey Goo Erasers"
+={
+	key="Grey Goo Erasers"
+	ship_prefix="GRAY"
+	species={
+		class="ESGO"
+		portrait="esgoo"
+		name="Grey Goo"
+		plural="Grey Goos"
+		adjective="Grey Goo"
+		species_bio="They're worse than alien locusts. Grey Goo destroys resources by turning them into more grey goo - more nano machines or whatever matter the grey goo is composed of. It's The Virus for nonliving things - though it may be able to take down living things as well, and likely will turn them into nonliving things if they're in the wrong place (ie: outside). In theory, you can end up with a planetary body made of nothing but grey goo. Physical laws regarding energy, thermodynamics and the like are an obstacle, but even a partial success in this case is likely to suck for everyone involved."
+		name_list="MACHINE1"
+		trait="trait_machine_unit"
+		trait="trait_robot_recycled"
+		trait="trait_robot_high_maintenance"
+		trait="trait_robot_mass_produced"
+		trait="trait_robot_uncanny"
+	}
+	name="Grey Goo Erasers"
+	adjective="Grey Goo"
+	authority="auth_machine_intelligence"
+	government="gov_machine_terminator"
+	planet_name="0"
+	planet_class="pc_desert"
+	system_name="0"
+	initializer=""
+	graphical_culture="esgoo_01"
+	city_graphical_culture="esgoo_01"
+	empire_flag={
+		icon={
+			category="spherical"
+			file="flag_spherical_16.dds"
+		}
+		background={
+			category="backgrounds"
+			file="circle.dds"
+		}
+		colors={
+			"grey"
+			"grey"
+			"null"
+			"null"
+		}
+	}
+	ruler={
+		gender=female
+		name="Mainframe"
+		portrait="esgoo_female_01"
+		texture=0
+		hair=7
+		clothes=2
+	}
+	spawn_as_fallen=no
+	ignore_portrait_duplication=no
+	room="personality_erudite_explorers_room"
+	spawn_enabled=yes
+	ethic="ethic_gestalt_consciousness"
+	civics={
+		"civic_machine_replication"
+		"civic_machine_terminator"
+	}
+}

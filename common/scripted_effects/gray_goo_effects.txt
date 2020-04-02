@@ -1,4 +1,4 @@
-@ship_count = 10
+@ship_count = 15
 
 create_graygoo_ships_1 = {
 	create_ship = {

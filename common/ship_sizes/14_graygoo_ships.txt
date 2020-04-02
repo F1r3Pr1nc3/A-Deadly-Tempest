@@ -1,34 +1,3 @@
-@civilian_ships_combat_speed = 0.5
-@corvette_combat_speed = 1.5 	# assault ships
-@corvette_combat_rotation = 0.08
-@corvette_collision_radius = 2.0
-
-@destroyer_combat_speed = 1.0	 # picket ships, should stay with the battleships
-@destroyer_combat_rotation = 0.05
-@destroyer_collision_radius = 2.5
-
-@cruiser_combat_speed = 1.25	 # assault ships
-@cruiser_combat_rotation = 0.025
-@cruiser_collision_radius = 3
-
-@battleship_combat_speed = 0.75	
-@battleship_combat_rotation = 0.02
-@battleship_collision_radius = 3
-
-@titan_combat_speed = 0.75
-@titan_combat_rotation = 0.02
-@titan_collision_radius = 15
-
-@build_block_radius_none = 0
-@build_block_radius_civilian = 20
-@build_block_radius_military = 200
-
-@speed_very_slow = 80
-@speed_slow = 100
-@speed_default = 120
-@speed_fast = 140
-@speed_very_fast = 160
-
 # Gray Goo Mothership
 graygoo_mothership = {
 	graphical_culture = no
@@ -38,8 +7,8 @@ graygoo_mothership = {
 	rotation_speed = 0.15
 	collision_radius = 5
 	modifier = {
-		ship_shield_add = 10000
-		ship_armor_add = 10000
+		ship_shield_add = 5000
+		ship_armor_add = 5000
 		ship_evasion_add = 10
 		# ships_upkeep_mult = -1
 		ship_weapon_damage = 1
@@ -49,7 +18,7 @@ graygoo_mothership = {
 		ship_tracking_add = 25
 		ship_accuracy_add = 25
 	}
-	max_hitpoints = 40000
+	max_hitpoints = 20000
 	size_multiplier = 16
 	fleet_slot_size = 16
 	section_slots = { "mid" = { locator = "part1" } }
@@ -63,7 +32,8 @@ graygoo_mothership = {
 	base_buildtime = 1800
 	
 	construction_type = starbase_shipyard
-	
+	enable_default_design = no
+	prerequisites = { "tech_nanite_ships" }
 	potential_construction = {
 		is_scope_type = starbase
 	}
@@ -97,8 +67,8 @@ graygoo_interdictor = {
 	rotation_speed = 0.175
 	collision_radius = 4
 	modifier = {
-		ship_shield_add = 5000
-		ship_armor_add = 5000
+		ship_shield_add = 2000
+		ship_armor_add = 2000
 		ship_evasion_add = 20
 		# ships_upkeep_mult = -1
 		ship_weapon_damage = 1
@@ -109,7 +79,7 @@ graygoo_interdictor = {
 		ship_tracking_add = 25
 		ship_accuracy_add = 25
 	}
-	max_hitpoints = 10000
+	max_hitpoints = 5000
 	size_multiplier = 4
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
@@ -117,7 +87,8 @@ graygoo_interdictor = {
 	is_space_station = no
 	icon_frame = 4
 	class = shipclass_military
-	
+	enable_default_design = no
+	prerequisites = { "tech_nanite_ships" }
 	is_designable = yes
 	
 	base_buildtime = 200
@@ -174,7 +145,9 @@ graygoo_factory = {
 	num_target_locators = 0
 	is_space_station = yes
 	build_block_radius = @build_block_radius_civilian
-	
+
+	enable_default_design = no
+	prerequisites = { "tech_nanite_ships" }
 	class = shipclass_military_station
 	is_designable = no
 	

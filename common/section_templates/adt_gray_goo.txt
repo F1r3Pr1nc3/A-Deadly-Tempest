@@ -281,22 +281,12 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_mid"
 	
 	component_slot = {
-		name = "PLANET_KILLER_GUN_01"
-		template = "invisible_planet_killer_fixed"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
 		name = "TITAN_01"
 		template = "invisible_titanic_fixed"
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
 		name = "TITAN_02"
-		template = "invisible_titanic_fixed"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "TITAN_03"
 		template = "invisible_titanic_fixed"
 		locatorname = "xl_gun_01"
 	}
@@ -326,58 +316,33 @@ ship_section_template = {
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
-		name = "TORPEDO_06"
-		template = "invisible_missile_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "TORPEDO_07"
-		template = "invisible_missile_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "TORPEDO_08"
-		template = "invisible_missile_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "TORPEDO_09"
-		template = "invisible_missile_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "TORPEDO_10"
-		template = "invisible_missile_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
 		name = "MEDIUM_GUN_01"
-		template = "large_turret"
+		template = "medium_turret"
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
 		name = "MEDIUM_GUN_02"
-		template = "large_turret"
+		template = "medium_turret"
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
 		name = "MEDIUM_GUN_03"
-		template = "large_turret"
+		template = "medium_turret"
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
 		name = "MEDIUM_GUN_04"
-		template = "large_turret"
+		template = "medium_turret"
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
 		name = "MEDIUM_GUN_05"
-		template = "large_turret"
+		template = "medium_turret"
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
 		name = "MEDIUM_GUN_06"
-		template = "large_turret"
+		template = "medium_turret"
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
@@ -401,42 +366,12 @@ ship_section_template = {
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
-		name = "LARGE_GUN_05"
+		name = "STRIKE_CRAFT_01"
 		template = "large_strike_craft"
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
-		name = "LARGE_GUN_06"
-		template = "large_strike_craft"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "LARGE_GUN_07"
-		template = "large_strike_craft"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "LARGE_GUN_08"
-		template = "large_strike_craft"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "LARGE_GUN_09"
-		template = "large_strike_craft"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "LARGE_GUN_10"
-		template = "large_strike_craft"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "LARGE_GUN_11"
-		template = "large_strike_craft"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "LARGE_GUN_12"
+		name = "STRIKE_CRAFT_02"
 		template = "large_strike_craft"
 		locatorname = "xl_gun_01"
 	}
@@ -450,19 +385,9 @@ ship_section_template = {
 		template = "point_defence_turret"
 		locatorname = "xl_gun_01"
 	}
-	component_slot = {
-		name = "PD_03"
-		template = "point_defence_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "PD_04"
-		template = "point_defence_turret"
-		locatorname = "xl_gun_01"
-	}
 
 	large_utility_slots = 16
-	aux_utility_slots = 5
+	aux_utility_slots = 4
 }
 
 ship_section_template = {

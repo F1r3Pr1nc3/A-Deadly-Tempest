@@ -159,7 +159,9 @@
  tech_nanite_mega_engineering:0 "Nanite Mega Engineering"
  tech_nanite_mega_engineering_desc:0 "Combining nanites and living metal is the best idea since imperialism! Provided the nanites don't go rogue and become an unstopable gray goo of death..."
  
- mod_country_resource_max_sr_living_metal_add:0 "$tech_nanite_living_metal$ Storage Capacity"
+ mod_country_resource_max_sr_living_metal_add:0 "§HUnlocks Building:§! $building_machinedlc_nanite_living_metal_forge$"\nAdds $tech_nanite_living_metal$ Storage Capacity"
+ building_machinedlc_nanite_living_metal_forge:0 "Living Metal $nanites$ Forge"
+ building_machinedlc_nanite_living_metal_forge_desc:0 "Combine refined minerals with active $nanites$ into artificial living metals. These are synthetic but function exactly same as natural one."
  
  ### Policy
  

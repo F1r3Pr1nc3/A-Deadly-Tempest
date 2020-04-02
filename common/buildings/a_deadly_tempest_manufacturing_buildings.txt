@@ -12,8 +12,10 @@ building_nanite_plant_1 = {
 	}
 	
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
 	}
 	
 	allow = {
@@ -69,7 +71,7 @@ building_nanite_plant_1 = {
 	}
 	
 	ai_weight = {
-		weight = 2
+		weight = 0.5
 	}
 
 	ai_resource_production = {
@@ -91,8 +93,10 @@ building_nanite_plant_2 = {
 	}
 	
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
 	}
 	
 	allow = {
@@ -149,7 +153,7 @@ building_nanite_plant_2 = {
 	}
 	
 	ai_weight = {
-		weight = 2
+		weight = 0.5
 	}
 
 	ai_resource_production = {
@@ -167,8 +171,10 @@ building_nanite_plant_3 = {
 	category = manufacturing
 	
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
 	}
 	
 	allow = {
@@ -225,7 +231,7 @@ building_nanite_plant_3 = {
 	}
 	
 	ai_weight = {
-		weight = 2
+		weight = 0.5
 	}
 
 	ai_resource_production = {
@@ -268,7 +274,7 @@ building_nanite_industrial_replicator_1 = {
 	prerequisites = { "tech_nanite_transmutation" }
 	
 	ai_weight = {
-		weight = 2
+		weight = 0.5
 	}
 
 	ai_resource_production = {
@@ -311,7 +317,7 @@ building_nanite_food_replicator = {
 	prerequisites = { "tech_nanite_transmutation" }
 	
 	ai_weight = {
-		weight = 2
+		weight = 0.5
 	}
 
 	ai_resource_production = {
@@ -319,5 +325,56 @@ building_nanite_food_replicator = {
 		trigger = {
 			always = yes
 		}
+	}
+}
+
+building_machinedlc_nanite_living_metal_forge = {
+	base_buildtime = 600
+
+	category = manufacturing
+
+	prerequisites = { "tech_nanite_living_metal" "tech_alloys_2" }
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				# has_ascension_perk = ap_machinedlc_micro_machine_project
+				check_variable = { which = nano_forge_build_count value >= 1 }
+				is_fallen_empire = yes
+			}
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+
+	# destroy_trigger = {
+	# 	owner = { NOT = { has_ascension_perk = ap_machinedlc_micro_machine_project } }	
+	# }
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+			nanites = 100
+		}
+		produces = {
+			sr_living_metal = 2
+		}
+		upkeep = {
+			energy = 4
+			minerals = 4
+			nanites = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 0.5
 	}
 }

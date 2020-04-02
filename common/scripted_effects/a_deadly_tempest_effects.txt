@@ -58,6 +58,7 @@ create_nanite_warship = {
 	}
 }
 
+# dupe of CmtEffectOpenLgate 
 activate_lgate = {
 	if = {
 		limit = { is_megastructure_type = lgate_disabled }
@@ -66,16 +67,4 @@ activate_lgate = {
 	}
 	activate_gateway = this
 	set_megastructure_flag = lgate_activated
-}
-
-ariphaos_patch_remove_habitat = {
-	save_event_target_as = habitat_to_remove
-	solar_system= { 
-		random_system_planet = { 
-		limit = { any_moon = { is_planet = event_target:habitat_to_remove } } 
-			remove_planet_flag = has_megastructure 
-		} 
-	}
-	#destroy_colony = yes
-	remove_planet = yes
 }

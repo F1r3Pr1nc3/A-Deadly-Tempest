@@ -1,0 +1,9 @@
+ESGO = {
+	esgoo = {
+		name = "Grey Goo"
+		plural = "Grey Goos"
+		home_planet = 0
+		home_system = 0
+		name_list = "MACHINE3"
+	}	
+}

@@ -9,7 +9,8 @@ tech_nanite_ships = {
 	category = { voidcraft }
 	prerequisites = { "tech_battleships" }
 	weight = @tier5weight1
-	
+	is_rare = yes
+
 	## unlock nanite ships
 	prereqfor_desc = {
 		ship = {
@@ -36,7 +37,8 @@ tech_nanite_build_speed = {
 	tier = 5
 	category = { voidcraft }
 	weight = @tier5weight2
-	
+	is_rare = yes
+
 	potential = {
 		has_resource = {
 			type = nanites
@@ -57,7 +59,8 @@ tech_nanite_hull = {
 	category = { voidcraft }
 	prerequisites = { "tech_nanite_ships" }
 	weight = @tier5weight3
-	
+	is_rare = yes
+
 	potential = {
 		has_resource = {
 			type = nanites
@@ -81,7 +84,9 @@ tech_nanite_living_metal = {
 	category = { materials }
 	prerequisites = { "tech_mine_living_metal" }
 	weight = @tier5weight1
+	is_rare = yes
 	
+	# Unlocks nanite_living_metal_forge
 	potential = {
 		has_resource = {
 			type = nanites
@@ -90,7 +95,7 @@ tech_nanite_living_metal = {
 	}
 	# add Living Metal
 	modifier = {
-		country_resource_max_sr_living_metal_add = 2
+		country_resource_max_sr_living_metal_add = 2000
 	}
 }
 
@@ -100,7 +105,8 @@ tech_nanocrystals = {
 	tier = 5
 	category = { materials }
 	weight = @tier5weight1
-	
+	is_rare = yes
+
 	potential = {
 		has_resource = {
 			type = nanites
@@ -143,3 +149,25 @@ tech_nanite_modular_engineering = {
 		starbase_upgrade_speed_mult = 0.25
 	}
 }
+
+#Auto-Repair Module
+# tech_nanite_repair_system = {
+# 	area = engineering
+# 	cost = @tier5cost3
+# 	tier = 5
+# 	is_rare = yes
+# 	category = { voidcraft }
+# 	ai_update_type = military
+# 	weight = @tier5weight3
+
+# 	potential = {
+# 		has_resource = {
+# 			type = sr_living_metal
+# 			amount > 0
+# 		}
+# 	}
+
+# 	weight_modifier = {
+# 		factor = 0 		# Can only be reverse engineered from killing the Scavenger Bot
+# 	}
+# }

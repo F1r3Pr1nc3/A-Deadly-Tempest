@@ -188,12 +188,26 @@ weapon_component_template = {
 	
 	icon = "GFX_ship_part_nanite_energy_torpedo"
 	icon_frame = 1
-	
+	#color = { 0.1 1.0 0.4 1 }
+
+	power = -90.00
+	damage = { min = 468.00 max = 1040.00 }
+	hull_damage = 1.75
+	shield_damage = 0.50
+	shield_penetration = 1.50
+	armor_damage = 1.00
+	# armor_penetration = 0
+	windup = { min = 1.00 max = 19.00 }
+	total_fire_time = 150.00
+	range = 130.00
+	accuracy = 0.90
+	tracking = 0.50
+
 	prerequisites = { "tech_nanite_torpedo" }
 	component_set = "NANITE_ENERGY_TORPEDO"
 	projectile_gfx = "gatebuilder_torpedoes"
 	tags = { weapon_type_energy }
-	ai_tags = { weapon_role_artillery }
+	ai_tags = { weapon_role_artillery weapon_role_anti_hull weapon_role_anti_shield weapon_role_anti_armor }
 	ai_tag_weight = 0
 	resources = {
 		category = ship_components
@@ -216,6 +230,3 @@ weapon_component_template = {
 		}
 	}
 }
-
-
-

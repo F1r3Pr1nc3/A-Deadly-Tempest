@@ -1,0 +1,30 @@
+
+######################################################
+######################################################
+#####                                            #####
+#####    Crisis Manager                          #####
+#####                                            #####
+#####    Scripted Effects for Creating Leader    #####
+#####    of End-Game Crises                      #####
+#####                                            #####
+######################################################
+######################################################
+#
+# Information
+#	All scripts to creating leader in this file is scope free
+#
+#################
+###  Dessanu  ###
+#################
+
+CmtEffectCreateAdmiral_DessanuStandard = {
+	create_leader = {
+		class = admiral
+		species = owner_main_species
+		name = random
+		skill = 3
+		leader_age_min = 25
+		leader_age_max = 45
+		traits = { trait = random_trait }
+	}
+}

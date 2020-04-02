@@ -1,0 +1,65 @@
+
+##########################################
+##########################################
+#####                                #####
+#####    Crisis Manager              #####
+#####                                #####
+#####    Scripted Effects to         #####
+#####    Set Auxiliary Parameters    #####
+#####                                #####
+##########################################
+##########################################
+#
+# Information
+#	All script in this file require following scopes
+#	this = fleet
+#	prev = owner country
+#	prevprev = location for spawning fleet
+#	
+
+#################
+###  Dessanu  ###
+#################
+
+CmtFleetSetAuxParam_DessanuGarryson = {
+	set_formation_scale = 2
+	set_fleet_stance = aggressive
+	set_aggro_range_measure_from = self
+	set_aggro_range = 250
+	set_location = {
+		target = prevprev
+		distance = 15
+		angle = random
+	}
+	set_fleet_flag = nanite_mother_ship
+}
+
+#################
+###  Graygoo  ###
+#################
+
+CmtFleetSetAuxParam_GraygooGarryson = {
+	set_formation_scale = 2
+	set_fleet_stance = aggressive
+	set_aggro_range_measure_from = self
+	set_aggro_range = 250
+	set_location = {
+		target = prevprev
+		distance = 15
+		angle = random
+	}
+	set_fleet_flag = nanite_mother_ship
+}
+
+CmtFleetSetAuxParam_GraygooAttacker = {
+	set_formation_scale = 2
+	set_fleet_stance = aggressive
+	set_aggro_range_measure_from = self
+	set_aggro_range = 250
+	set_location = {
+		target = prevprev
+		distance = 0
+		angle = random
+	}
+	set_fleet_flag = trait_biothrall_tolerance
+}

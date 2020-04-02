@@ -1,0 +1,22 @@
+﻿l_english:
+
+####################################
+# Species Classes
+####################################
+
+ESGO:0 "Grey Goo"
+ESGO_desc:1 "Species Class has no effect on your Empire, but Gray Goo species may consider other Gray Goo to be less alien than other Species Classes."
+ESGO_plural:0 "Grey Goos"
+ESGO_insult_01:0 "beast"
+ESGO_insult_plural_01:0 "beasts"
+ESGO_compliment_01:0 "angel"
+ESGO_compliment_plural_01:0 "angels"
+ESGO_spawn:0 "maiden"
+ESGO_spawn_plural:0 "maidens"
+ESGO_sound_01:0 "growling"
+ESGO_sound_02:0 "grunting"
+ESGO_sound_03:0 "yapping"
+ESGO_sound_04:0 "yowling"
+ESGO_sound_05:0 "mewling"
+ESGO_organ:0 "stomach"
+ESGO_mouth:0 "mouth"

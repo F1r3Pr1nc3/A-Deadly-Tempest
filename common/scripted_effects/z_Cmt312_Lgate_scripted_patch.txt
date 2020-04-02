@@ -1,0 +1,68 @@
+
+
+####################################################
+####################################################
+#####                                          #####
+#####    Crisis Manager                        #####
+#####     Comp Patch for A Deadly Tempest      #####
+#####    Scripted Effects for L-Gate Events    #####
+#####                                          #####
+####################################################
+####################################################
+
+## Scope: this = megastructure (L-Gate)
+CmtEffectOpenLgate = {
+	if = {
+		limit = { is_megastructure_type = lgate_disabled }
+		upgrade_megastructure_to = lgate_base
+		finish_upgrade = yes
+	}
+	activate_gateway = this
+	set_megastructure_flag = lgate_activated
+}
+
+### End of Graygoo
+CmtEffectDestroyGraygoo = {
+	remove_global_flag = active_gray_goo
+	remove_global_flag = gray_goo_crisis_active
+	from = {
+		save_event_target_as = goo_slayer
+		country_event = { id = graygoo.15 }
+	}
+	every_playable_country = {
+		limit = {
+			is_ai = no
+			NOT = { is_same_value = event_target:goo_slayer }
+		}
+		country_event = { id = graygoo.16 }
+	}
+	observer_event = { id = observer.65 }
+	
+	event_target:CmtGlobalVar = {
+		if = {
+			limit = {
+				OR = {
+					check_variable = { which = CmtVarLgateTerraformNanite value = 3 }
+					check_variable = { which = CmtVarLgateTerraformNanite value = 5 }
+				}
+			}
+			every_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				add_modifier = { modifier = CmtModifierAutoTerraform days = -1 }
+				planet_event = { id = CrisisManagerControl.6211 days = 90 random = 450 }	## Auto-Terraform
+			}
+		} else_if = {
+			limit = { NOT = { check_variable = { which = CmtVarLgateTerraformNanite value = 1 } } }
+			every_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				add_modifier = { modifier = terraforming_candidate days = -1 }
+			}
+		}
+		country_event = { id = CrisisManagerControl.6202 }		## Open L-Gates
+	}
+	
+	event_target:graygoo_country = {
+		every_owned_fleet = { destroy_fleet = this }
+		destroy_country = yes
+	}
+}
