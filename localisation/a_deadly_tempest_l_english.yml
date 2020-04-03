@@ -208,9 +208,10 @@
  job_nanite_forger_drone_desc:0 "job_nanite_forger_drone $job_nanite_forger_drone_plural$ produce £nanites£ §Y$minerals$§!"
  job_nanite_forger_drone:1 "$job_nanite_forger_drone$ Jobs"
  job_nanite_forger_drone_effect_desc:0 "£job_nanite_forger_drone£ $job_nanite_forger_drone_plural$ turn £minerals£ §Y$minerals$§! into £nanites£ §Y$Nanites$§!"
+ mod_job_nanite_forger_drone_add:0 "$job_nanite_forger_drone$ Jobs"
  mod_job_nanite_forger_drone_per_pop:0 "§G+1§! $job_nanite_forger_drone$ Job per $VALUE$ Pops"
  mod_job_nanite_forger_drone_per_pop_short:0 "\n§G+1§! £job_nanite_forger_drone£ per $VALUE$ £pop£"
- 
+
  # Worker
  job_nanite_drone:0 "Nanite Mining Drone"
  job_nanite_drone_plural:0 "Nanite Mining Drones"

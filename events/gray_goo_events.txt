@@ -752,7 +752,7 @@ country_event = {
 	}
 }
 
-# Gray Tempest Empire Test Event
+# Gray Empire Test Event
 country_event = {
 	id = graygoo.30
 	hide_window = yes
@@ -2374,7 +2374,7 @@ country_event = {
 			flag = {
 				icon= {
 					category = "special"
-					file = "gray_goo_90.dds"
+					file = "gray_goo.dds"
 				}
 				background= {
 					category = "backgrounds"

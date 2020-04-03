@@ -1,5 +1,15 @@
 namespace = distar
 
+###############################################
+###############################################
+#####                                     #####
+#####     L-Gates Events and Graygoo      #####
+#####      Support A Deadly Tempest       #####
+#####    Semi support Crisis Manager      #####
+#####                                     #####
+###############################################
+###############################################
+
 # Randomize L-Cluster outcome on_game_start
 event = {
 	id = distar.8000
@@ -120,6 +130,12 @@ country_event = {
 			if = {
 				limit = { exists = from from = { is_scope_type = ship } }
 				from.solar_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
+			} else_if = {
+				limit = { exists = event_target:candidate_gateway_system }
+				event_target:candidate_gateway_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
+			} else_if = {
+				limit = { exists = event_target:candidate_gateway }
+				event_target:candidate_gateway = { solar_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem } }
 			} else = {
 				# If no valid scope search generally
 				every_system_within_border = {
@@ -142,7 +158,11 @@ country_event = {
 				limit = { NOT = { exists = event_target:CmtTargetLgateOrininatingSystem } }
 				random_megastructure = {
 					limit = { CmtTriggerIsClosedLgate = yes }
-					solar_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
+					save_event_target_as = candidate_gateway
+					solar_system = {
+						save_global_event_target_as = CmtTargetLgateOrininatingSystem
+						save_event_target_as = candidate_gateway_system
+					}
 				}
 			}
 		}
