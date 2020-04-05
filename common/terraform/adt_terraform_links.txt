@@ -1,26 +1,18 @@
-@gaiaCost = 10000
-@gaiaTime = 7200
-
-@machineCost = 10000
-@machineTime = 7200
+@naniteCost = 7500
+@naniteTime = 900
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_gaia
+	to = pc_gaia
 	condition = {
 		has_ascension_perk = ap_world_shaper
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = 7500
-	duration = 900
+	energy = @naniteCost
+	duration = @naniteTime
 	
 	ai_weight = {
 		weight = 10
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {
@@ -34,13 +26,13 @@ terraform_link = {
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_machine
+	to = pc_machine
 	condition = {
 		has_ascension_perk = ap_machine_worlds
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = 7500
-	duration = 900
+	energy = @naniteCost
+	duration = @naniteTime
 	
 	ai_weight = {
 		weight = 10
@@ -66,13 +58,13 @@ terraform_link = {
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_desert
+	to = pc_desert
 	condition = {
 		has_technology = "tech_climate_restoration"
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = 7500
-	duration = 900
+	energy = @naniteCost
+	duration = @naniteTime
 	
 	ai_weight = {
 		weight = 5
@@ -81,24 +73,24 @@ terraform_link = {
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_arid
+	to = pc_arid
 	condition = {
 		has_technology = "tech_climate_restoration"
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = 7500
-	duration = 900
+	energy = @naniteCost
+	duration = @naniteTime
 }
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_savannah
+	to = pc_savannah
 	condition = {
 		has_technology = "tech_climate_restoration"
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = 7500
-	duration = 900
+	energy = @naniteCost
+	duration = @naniteTime
 	
 	ai_weight = {
 		weight = 5
@@ -107,13 +99,13 @@ terraform_link = {
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_ocean
+	to = pc_ocean
 	condition = {
 		has_technology = "tech_climate_restoration"
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = 7500
-	duration = 900
+	energy = @naniteCost
+	duration = @naniteTime
 	
 	ai_weight = {
 		weight = 5
@@ -122,13 +114,13 @@ terraform_link = {
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_continental
+	to = pc_continental
 	condition = {
 		has_technology = "tech_climate_restoration"
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = 7500
-	duration = 900
+	energy = @naniteCost
+	duration = @naniteTime
 	
 	ai_weight = {
 		weight = 5
@@ -137,13 +129,13 @@ terraform_link = {
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_tropical
+	to = pc_tropical
 	condition = {
 		has_technology = "tech_climate_restoration"
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = 7500
-	duration = 900
+	energy = @naniteCost
+	duration = @naniteTime
 	
 	ai_weight = {
 		weight = 5
@@ -152,13 +144,13 @@ terraform_link = {
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_arctic
+	to = pc_arctic
 	condition = {
 		has_technology = "tech_climate_restoration"
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = 7500
-	duration = 900
+	energy = @naniteCost
+	duration = @naniteTime
 	
 	ai_weight = {
 		weight = 5
@@ -167,13 +159,13 @@ terraform_link = {
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_alpine
+	to = pc_alpine
 	condition = {
 		has_technology = "tech_climate_restoration"
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = 7500
-	duration = 900
+	energy = @naniteCost
+	duration = @naniteTime
 	
 	ai_weight = {
 		weight = 5
@@ -182,13 +174,13 @@ terraform_link = {
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_tundra
+	to = pc_tundra
 	condition = {
 		has_technology = "tech_climate_restoration"
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = 7500
-	duration = 900
+	energy = @naniteCost
+	duration = @naniteTime
 	
 	ai_weight = {
 		weight = 5

@@ -181,6 +181,9 @@ lgate = {
 					has_country_flag = lgates_activated
 				}
 			}
+			# invalid object?
+			# NOT = { is_country_type = tiyanki }
+			# NOT = { is_country_type = amoeba }
 		}
 	}
 	

@@ -46,9 +46,6 @@ country_event = {
 					trait = "trait_robot_loyalty_circuits"
 					trait = "trait_robot_mass_produced"
 					trait = "trait_robot_durable"
-					trait = "trait_robot_recycled"
-					trait = "trait_robot_high_maintenance"
-					trait = "trait_robot_uncanny"
 				}
 				homeworld = this
 				immortal = yes
@@ -626,25 +623,25 @@ country_event = {
 }
 
 # Tempest Defeated (Instigator)
-country_event = {
-	id = graygoo.15
-	title = "graygoo.15.name"
-	desc = "graygoo.15.desc"
-	picture = GFX_evt_large_explosion
-	show_sound = event_celebration
-	location = event_target:goo_slayer_ship.fleet
+# country_event = {
+# 	id = graygoo.15
+# 	title = "graygoo.15.name"
+# 	desc = "graygoo.15.desc"
+# 	picture = GFX_evt_large_explosion
+# 	show_sound = event_celebration
+# 	location = event_target:goo_slayer_ship.fleet
 
-	is_triggered_only = yes
+# 	is_triggered_only = yes
 
-	immediate = {
-		set_global_flag = graygoo_defeated
-	}
+# 	immediate = {
+# 		set_global_flag = graygoo_defeated
+# 	}
 
-	option = {
-		name = graygoo.15.a
-		custom_tooltip = graygoo.15.a.tooltip
-	}
-}
+# 	option = {
+# 		name = graygoo.15.a
+# 		custom_tooltip = graygoo.15.a.tooltip
+# 	}
+# }
 
 # Tempest Defeated (Others)
 country_event = {

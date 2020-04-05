@@ -43,38 +43,6 @@ tech_nanite_shield_rechargers = {
 # Nanite lgate
 # ##################
 
-tech_lcluster_access = {
-	area = physics
-	cost = @tier5cost2
-	tier = 5
-	category = { particles }
-	is_rare = yes
-	#is_dangerous = yes needs script
-	weight = @tier5cost2
-	feature_flags = { lgate_access }
-	prerequisites = { "tech_lgate_activation" }
-	prereqfor_desc = {
-		diplo_action = {
-			title = "TECH_UNLOCK_L_GATE_ACCESS_TITLE"
-			desc = "TECH_UNLOCK_L_GATE_ACCESS_DESC"
-		}
-	}
-	
-	potential = {
-		has_global_flag = l_cluster_opened
-		NOT = { has_global_flag = active_gray_goo }
-	}
-
-	weight_modifier = {
-		factor = 20
-	}
-	ai_weight = {
-		factor = 0
-	}
-}
-
-
-
 tech_lgate_construction = {
 	cost = @tier5cost3
 	area = physics

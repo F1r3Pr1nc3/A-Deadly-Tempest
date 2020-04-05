@@ -5,7 +5,7 @@
 ### Gray Goo Payload Torpedo
 projectile_gfx_ballistic = {
 	name = "gatebuilder_torpedoes"
-	color = {  0.5 		1.0		0.75 	0.85 }
+	color = {  0.1 		1.0		0.4 	0.85 }
 	hit_entity = "neutron_torpedoes_hit_entity"
 	shield_hit_entity = "neutron_torpedoes_shield_hit_entity"
 	muzzle_flash_entity = "neutron_torpedoes_muzzle_entity"

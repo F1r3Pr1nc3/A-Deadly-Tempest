@@ -188,7 +188,6 @@ weapon_component_template = {
 	
 	icon = "GFX_ship_part_nanite_energy_torpedo"
 	icon_frame = 1
-	#color = { 0.1 1.0 0.4 1 }
 
 	power = -90.00
 	damage = { min = 468.00 max = 1040.00 }

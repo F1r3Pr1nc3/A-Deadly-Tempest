@@ -1,0 +1,24 @@
+
+can_set_lcluster_policiy = {
+	has_technology = tech_lcluster_access
+	OR = {
+		has_technology = tech_gateway_activation
+		any_relation = {
+			has_communications = prev
+			OR = {
+				is_country_type = default
+				has_technology = tech_gateway_activation
+			}
+		}
+	}
+}
+
+controls_lcluster = {
+	any_system_within_border = {
+		has_star_flag = lcluster1
+	}
+	has_technology = tech_lcluster_access
+	NOT = {
+		has_global_flag = active_gray_goo
+	}
+}

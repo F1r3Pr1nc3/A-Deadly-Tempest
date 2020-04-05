@@ -112,16 +112,16 @@ country_event = {
 	id = distar.10950
 	hide_window = yes
 	is_triggered_only = yes
-
-	# trigger = { NOT = { has_global_flag = l_cluster_opened } }
 	
 	immediate = {
-		set_global_flag = l_cluster_opened
 		set_country_flag = lcluster_opener
 		set_country_flag = lgates_activated
 		set_global_flag = lgates_activated_globally
 		# Spawn L-Cluster
-		country_event = { id = distar.11000 }
+		if = { limit = { NOT = { has_global_flag = l_cluster_opened } }
+			set_global_flag = l_cluster_opened
+			country_event = { id = distar.11000 }
+		}
 
 		### Set 1st L-Gate as Target 
 		if = {
@@ -158,10 +158,8 @@ country_event = {
 				limit = { NOT = { exists = event_target:CmtTargetLgateOrininatingSystem } }
 				random_megastructure = {
 					limit = { CmtTriggerIsClosedLgate = yes }
-					save_event_target_as = candidate_gateway
 					solar_system = {
 						save_global_event_target_as = CmtTargetLgateOrininatingSystem
-						save_event_target_as = candidate_gateway_system
 					}
 				}
 			}
@@ -180,25 +178,29 @@ country_event = {
 				}
 				set_star_flag = lgate_originating_system
 			} else = { root = { set_country_flag = only_one_lgate } }
+			# also try to refresh the other posssible missing targets
+			save_event_target_as = candidate_gateway_system
 			random_system_megastructure = {
 				limit = { CmtTriggerIsClosedLgate = yes }
-				CmtEffectOpenLgate = yes
+				save_event_target_as = candidate_gateway
 			}
 		}
-		# Activated terminal egress L-Gate
-		event_target:lcluster1 = {
-			random_system_megastructure = {
-				#limit = { CmtTriggerIsClosedLgate = yes }
-				CmtEffectOpenLgate = yes
-			}
+		# Outcome, to be determined at game start
+		if = {
+			limit = { has_global_flag = dragon_season }
+			# All gates must not be deactivated, so call it first
+			country_event = { id = distar.13000 }
 		}
-		# outcome, to be determined at game start
 		if = {
 			limit = { has_global_flag = gray_goo_crisis_set }
 			country_event = { id = graygoo.1 days = 1 }
+			# Make friendly
+			country_event = { id = distar.13006 days = 1 }
 		} else_if = {
 			limit = { has_global_flag = gray_goo_empire_set }
 			country_event = { id = graygoo.100 days = 3 }
+			# Make friendly too?
+			country_event = { id = distar.13006 days = 3 }
 		} else = {
 			country_event = { id = distar.10951 }
 			# Enable other L-Gates over time
@@ -207,13 +209,20 @@ country_event = {
 				country_event = { id = distar.10960 days = 200 random = 500 }
 			}
 		}
-		if = {
-			limit = { has_global_flag = dragon_season }
-			# All gates must not be deactivated, so call it first
-			country_event = { id = distar.13000 }
-			# Make friendly
-			country_event = { id = distar.13006 days = 1 }
+		# Activate Terminal Egress L-Gate (if not already opened by other outcome)
+		event_target:lcluster1 = {
+			random_system_megastructure = {
+				limit = { CmtTriggerIsClosedLgate = yes }
+				CmtEffectOpenLgate = yes
+			}
 		}
+		# Activate originating L-Gate: Put AFTER distar.13000 (if not already opened by other outcome)
+		event_target:candidate_gateway = {
+			if = { limit = { CmtTriggerIsClosedLgate = yes }
+				CmtEffectOpenLgate = yes
+			}
+		}
+
 		### Technology Control: Put AFTER graygoo.100
 		every_playable_country = {
 			limit = { is_researching_technology = tech_lgate_activation }
@@ -366,7 +375,7 @@ country_event = {
 			}
 			random_system = {
 				limit = {
-					limit = { CmtTriggerIsGalaxyLgateSystem = yes }
+					CmtTriggerIsGalaxyLgateSystem = yes
 					any_system_megastructure = {
 						CmtTriggerIsClosedLgate = yes
 					}

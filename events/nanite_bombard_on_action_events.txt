@@ -34,10 +34,7 @@ planet_event = {
 			is_planet_class = pc_ringworld_habitable
 			is_planet_class = pc_habitat
 		}
-		OR = {
-			planet_devastation >= 100
-			# num_pops <= 0
-		}
+		planet_devastation >= 100
 	}
 	
 	immediate = {
@@ -54,21 +51,9 @@ planet_event = {
 		}
 		from = { country_event = { id = a_deadly_tempest.83 } }
 		remove_all_buildings = yes
-		#reroll_deposits = yes
 		reset_planet = yes
+		reroll_deposits = yes
 		clear_blockers = yes
-		#remove_modifier = "natural_beauty"
-		#remove_modifier = "atmospheric_aphrodisiac"
-		#remove_modifier = "atmospheric_hallucinogen"
-		#remove_modifier = "lush_planet"
-		# remove_modifier = "planet_population_control"
-		# remove_modifier = "planet_population_control_gestalt"
-		# remove_modifier = "planet_robot_assembly_control"
-		# remove_modifier = "planet_growth_discouraged"
-		# remove_modifier = "planet_food_boost"
-		# remove_modifier = "planet_prospected"
-		# remove_modifier = "planet_luxuries_boost"
-		# remove_modifier = "dangerous_wildlife"
 		set_planet_flag = armageddon_nuked
 		if = {
 			limit = {

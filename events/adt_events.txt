@@ -12,8 +12,7 @@ namespace = a_deadly_tempest
 # Nanites spawn more ships over time
 ####################################
 
-### Mid Game reinforcements
-# Reinforcements 1
+## Mid Game reinforcements 1
 country_event = {
 	id = a_deadly_tempest.3
 	hide_window = yes
@@ -89,7 +88,7 @@ country_event = {
 	}
 }
 
-# Reinforcements 2
+## Mid Game reinforcements 2
 country_event = {
 	id = a_deadly_tempest.4
 	hide_window = yes
@@ -156,8 +155,7 @@ country_event = {
 }
 
 
-### Late Game reinforcements
-# Reinforcements 1
+## Late Game reinforcements 1
 country_event = {
 	id = a_deadly_tempest.5
 	hide_window = yes
@@ -232,7 +230,7 @@ country_event = {
 	}
 }
 
-# Reinforcements 2
+## Late Game reinforcements 2
 country_event = {
 	id = a_deadly_tempest.6
 	hide_window = yes

@@ -39,6 +39,7 @@ lgate_disabled = {
 
 	potential = { has_technology = tech_lgate_construction }
 	
+	# trigger, scope: galactic object, from: country
 	possible = {
 		exists = starbase
 		custom_tooltip = {
@@ -59,55 +60,63 @@ lgate_disabled = {
 		custom_tooltip = {
 			fail_text = "requires_no_existing_gateway"
 			NOR = {
+				has_star_flag = lgate
 				has_megastructure = lgate_disabled
 				has_megastructure = lgate_base
 			}
 		}
 		custom_tooltip = {
+			fail_text = "not_in_lcluster"
+			NOT = { has_star_flag = lcluster }
+		}
+		custom_tooltip = {
 			fail_text = "requires_tech_lgate_construction"
 			from = { has_technology = tech_lgate_construction }
 		}
+
 	}
+	# root = system
+	# from = country
 	placement_rules = {
-		planet_possible = {
-			custom_tooltip = {
-				fail_text = "not_in_lcluster"
-				root = {
-					has_star_flag = lcluster
-				}
-			}
-		} # use these for all non-star megastructures
+		# those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
 	}
 
 	ai_weight = {
 		factor = 5
 		modifier = {
-			factor = 0
+			factor = 0.1
 			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
+		}	
+
+		modifier = {
+			factor = 0.1
+			any_neighbor_system = {
+				exists = owner
+				NOT = { 
+					owner = { is_same_value = from } 
+				}
+			}
 		}
 		modifier = {
 			factor = 0
 			any_neighbor_system = { 
-				OR = {
-					has_megastructure = lgate_disabled
-					has_megastructure = lgate_base
-				}
+				has_star_flag = lgate
 			}
+		}
+		modifier = {
+			factor = 3.0
+			is_star_class = sc_black_hole
 		}
 	}
 
 	bypass_type = lgate
+	#effects, scope: galactic object, from: country, fromfrom: megastructure instance
 	on_build_complete = {
 		# Works, but let's open the gate over the time event?
 		if = {
 			limit = { exists = owner }
-			root = { 
-				random_system_megastructure = {
-					limit = { is_megastructure_type = lgate_disabled }
-					activate_lgate = yes
-				}
-			}
+			fromfrom = { CmtEffectOpenLgate = yes }
 		}
-		root = { set_star_flag = lgate }
+		set_star_flag = lgate
 	}
 }

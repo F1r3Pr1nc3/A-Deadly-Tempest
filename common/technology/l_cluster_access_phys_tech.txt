@@ -1,0 +1,30 @@
+# Nanite lgate Access physics technology
+tech_lcluster_access = {
+	area = physics
+	cost = @tier5cost2
+	tier = 5
+	category = { particles }
+	is_rare = yes
+	weight = @tier5cost2
+	feature_flags = { lgate_access }
+	prerequisites = { "tech_lgate_activation" }
+	prereqfor_desc = {
+		diplo_action = {
+			title = "TECH_UNLOCK_L_GATE_ACCESS_TITLE"
+			desc = "TECH_UNLOCK_L_GATE_ACCESS_DESC"
+		}
+	}
+	
+	potential = {
+		has_global_flag = l_cluster_opened
+		NOT = { has_global_flag = active_gray_goo }
+		# has_resource = { type = nanites amount > 0 }
+	}
+
+	weight_modifier = {
+		factor = 20
+	}
+	ai_weight = {
+		factor = 0
+	}
+}

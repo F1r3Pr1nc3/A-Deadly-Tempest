@@ -1,0 +1,44 @@
+﻿l_english:
+
+ ####################################
+ # L-Cluster Accsess (former included in A Deadly Tempest) 
+ ####################################
+
+ # Technology
+ tech_lcluster_access:0 "L-Cluster Access Control"
+ tech_lcluster_access_desc:0 "After some time and study we have discovered the means to enable or disable the L-Gate network whenever we like, so long as we have access to the master control panel situated in the Terminal Egress system."
+
+ ### Policy
+
+ lcluster_policy:0 "L-Cluster Access"
+ policy_lcluster_policy:0 "L-Cluster Access"
+ policy_lcluster_policy_desc:0 "The L-Cluster offers more than just access to unique resources but control over an entire gate network. Now it is up to us to choose how we use it."
+ lcluster_policy_cannot_set_name:0 "Cannot Set L-Cluster Access"
+ lcluster_policy_cannot_set:0 "Cannot Set L-Cluster Policy"
+ lcluster_policy_cannot_set_desc:0 "Until we gain control of the Terminal Egress system in the L-Cluster we cannot control access to the Cluster."
+ lcluster_policy_open:0 "L-Cluster Open"
+ lcluster_policy_open_desc:0 "The L-Cluster will remain open. The unparalleled tactical mobility it provides, and the ease of transport for our goods, cannot be understated, and will be used to the benefit of our empire."
+ lcluster_policy_closed:0 "L-Cluster Closed"
+ lcluster_policy_closed_desc:0 "The L-Cluster will remain closed. let it serve as a place of refuge and last retreat when wholesale extinction threatens our people, and perhaps the galaxy..."
+
+  ### Decisions
+ 
+ decision_open_lcluster:0 "Open L-Cluster"
+ decision_open_lcluster_desc:0 "The L-Cluster will remain open. The unparalleled tactical mobility it provides, and the ease of transport for our goods, cannot be understated, and will be used to the benefit of our empire."
+ decision_open_lcluster_effects:0 "Will active the L-Gates, allowing for their use."
+ 
+ decision_close_lcluster:0 "Close L-Cluster"
+ decision_close_lcluster_desc:0 "The L-Cluster will remain closed. let it serve as a place of refuge and last retreat when wholesale extinction threatens our people, and perhaps the galaxy..."
+ decision_close_lcluster_effects:0 "Will deactivate the L-Gates, preventing their use." 
+ 
+ artifact_lgate_insight_cooldown_desc:0 "It will take some time to do this again."
+ 
+ ### Tooltips
+ 
+ not_in_lcluster:0 "Cannot build in L-Cluster"
+ needs_terminal_egress:0 "We must control Terminal Egress to control access to the L-Cluster"
+ 
+ 
+ TECH_UNLOCK_L_GATE_ACCESS_TITLE:0 "Unlock L-Cluster Access Controls"
+ TECH_UNLOCK_L_GATE_ACCESS_DESC:0 "Unlock the Policy that enables the ability to close or open the L-Cluster. Must control Terminal Egress to dictate policy."
+ 

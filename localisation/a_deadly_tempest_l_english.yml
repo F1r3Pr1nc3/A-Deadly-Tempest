@@ -115,8 +115,6 @@
  tech_nanite_torpedo_desc:0 ""A torpedo that delivers a mass of disassembling nanities straight to the enemy ship."
  
  # Phys
- tech_lcluster_access:0 "L-Cluster Access Control"
- tech_lcluster_access_desc:0 "After some time and study we have discovered the means to enable or disable the L-Gate network whenever we like, so long as we have access to the master control panel situated in the Terminal Egress system."
  tech_lgate_construction:0 "L-Gate Construction"
  tech_lgate_construction_desc:0 "Thanks to advances in nanite technology we can start constructing our own L-Gates instead of just having to rely on existing gates."
  requires_tech_lgate_construction:0 "$TRIGGER_FAIL$Requires technology £physics£ §Y$tech_lgate_construction$§!."
@@ -163,30 +161,7 @@
  building_machinedlc_nanite_living_metal_forge:0 "Living Metal $nanites$ Forge"
  building_machinedlc_nanite_living_metal_forge_desc:0 "Combine refined minerals with active $nanites$ into artificial living metals. These are synthetic but function exactly same as natural one."
  
- ### Policy
- 
- lcluster_policy:0 "L-Cluster Access"
- policy_lcluster_policy:0 "L-Cluster Access"
- policy_lcluster_policy_desc:0 "The L-Cluster offers more than just access to unique resources but control over an entire gate network. Now it is up to us to choose how we use it."
- lcluster_policy_cannot_set_name:0 "Cannot Set L-Cluster Access"
- lcluster_policy_cannot_set:0 "Cannot Set L-Cluster Policy"
- lcluster_policy_cannot_set_desc:0 "Until we gain control of the Terminal Egress system in the L-Cluster we cannot control access to the Cluster."
- lcluster_policy_open:0 "L-Cluster Open"
- lcluster_policy_open_desc:0 "The L-Cluster will remain open. The unparalleled tactical mobility it provides, and the ease of transport for our goods, cannot be understated, and will be used to the benefit of our empire."
- lcluster_policy_closed:0 "L-Cluster Closed"
- lcluster_policy_closed_desc:0 "The L-Cluster will remain closed. let it serve as a place of refuge and last retreat when wholesale extinction threatens our people, and perhaps the galaxy..."
- 
- ### Decisions
- 
- decision_open_lcluster:0 "Open L-Cluster"
- decision_open_lcluster_desc:0 "The L-Cluster will remain open. The unparalleled tactical mobility it provides, and the ease of transport for our goods, cannot be understated, and will be used to the benefit of our empire."
- decision_open_lcluster_effects:0 "Will active the L-Gates, allowing for their use."
- 
- decision_close_lcluster:0 "Close L-Cluster"
- decision_close_lcluster_desc:0 "The L-Cluster will remain closed. let it serve as a place of refuge and last retreat when wholesale extinction threatens our people, and perhaps the galaxy..."
- decision_close_lcluster_effects:0 "Will deactivate the L-Gates, preventing their use."
 
- artifact_lgate_insight_cooldown_desc:0 "It will take some time to do this again."
  
  # ###################################
  # Jobs
@@ -257,11 +232,7 @@
  building_nanite_food_replicator:0 "Food Replicator"
  building_nanite_food_replicator_desc:0 "These replicators create edible foodstuffs from energy molecules with the help of nanites. Almost has the same taste as grown and raised foods."
  
- ### Tooltips
- 
- not_in_lcluster:0 "Cannot Build in L-Cluster"
- needs_terminal_egress:0 "We must control Terminal Egress to control access to the L-Cluster"
- 
+
  sm_nanite_yards_desc_modifier:0 "Allows for the creation of nanite ships."
  
  TECH_UNLOCK_NANITE_CONSTRUCTION_TITLE:0 "Unlock Nanite Ships"
@@ -273,10 +244,7 @@
  
  TECH_UNLOCK_L_GATE_TITLE:0 "Unlock L-Gate Construction"
  TECH_UNLOCK_L_GATE_DESC:0 "Unlock the ability to construct L-Gates"
- 
- TECH_UNLOCK_L_GATE_ACCESS_TITLE:0 "Unlock L-Cluster Access Controls"
- TECH_UNLOCK_L_GATE_ACCESS_DESC:0 "Unlock the Policy that enables the ability to close or open the L-Cluster. Must control Terminal Egress to dictate policy."
- 
+  
  TECH_UNLOCK_NANITE_TERRAFORMING_TITLE:0 "Unlock Nanite World Terraforming"
  TECH_UNLOCK_NANITE_TERRAFORMING_DESC:0 "Once Nanite Worlds were though un-terraformable unless under certain conditions but all machines can be reprogrammed a nanite is no different."
  
