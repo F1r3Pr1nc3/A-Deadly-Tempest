@@ -384,3 +384,72 @@ fleet_event = {
 		}
 	}
 }
+
+# Gray Goo Friendship
+country_event = {
+	id = a_deadly_tempest.137
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:graygoo_country = {
+			# Pre-Ketlings
+			if = {
+				limit = { exists = event_target:ratling_pre_space_country }
+				set_faction_hostility = {
+					set_hostile = no
+					#set_neutral = no
+					set_friendly = yes
+					target = event_target:ratling_pre_space_country
+				}
+				event_target:ratling_pre_space_country = {
+					set_faction_hostility = {
+						set_hostile = no
+						#set_neutral = no
+						set_friendly = yes
+						target = prev
+					}
+				}
+			}
+			# Scrapperbot
+			if = {
+				limit = { exists = event_target:scavenger_bot_country }
+				set_faction_hostility = {
+					set_hostile = no
+					#set_neutral = no
+					set_friendly = yes
+					target = event_target:scavenger_bot_country
+				}
+				event_target:scavenger_bot_country = {
+					set_faction_hostility = {
+						set_hostile = no
+						#set_neutral = no
+						set_friendly = yes
+						target = prev
+					}
+				}
+			}
+			# Gatebuilders
+			if = {
+				limit = {
+					is_country_type = gate_builders
+					exists = event_target:ratling_country
+				}
+				set_faction_hostility = {
+					set_hostile = no
+					#set_neutral = no
+					set_friendly = yes
+					target = event_target:ratling_country
+				}
+				event_target:ratling_country = {
+					set_faction_hostility = {
+						set_hostile = no
+						#set_neutral = no
+						set_friendly = yes
+						target = prev
+					}
+				}
+			}
+		}
+	}
+}

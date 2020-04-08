@@ -795,7 +795,7 @@ country_event = {
 			}
 			create_species = {
 				name = "NAME_Dessanu"
-				class = ART #random_non_machine
+				class = FUN #random_non_machine
 				portrait = random
 				traits = random
 				homeworld = this
@@ -1102,6 +1102,53 @@ country_event = {
 					set_planet_flag = hidden_nanite_world
 					prevent_anomaly = yes
 					set_owner = event_target:graygoo_country
+					#TODO [CD]
+					#random_tile = {
+					#	limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
+					#	set_building = "building_capital_2"
+					#	set_deposit = d_energy_deposit
+					#}
+					#random_tile = {
+					#	limit = {
+					#		has_building = no
+					#		has_blocker = no
+					#	}
+					#	set_building = "building_hydroponics_farm_4"
+					#	set_deposit = d_farmland_deposit
+					#}
+					#while = {
+					#	count = 3
+					#	random_tile = {
+					#		limit = {
+					#			has_building = no
+					#			has_blocker = no
+					#		}
+					#		set_building = "building_power_plant_4"
+					#		set_deposit = d_energy_deposit
+					#	}
+					#}
+					#while = {
+					#	count = 2
+					#	random_tile = {
+					#		limit = {
+					#			has_building = no
+					#			has_blocker = no
+					#		}
+					#		set_building = "building_mining_network_4"
+					#		set_deposit = d_mineral_deposit
+					#	}
+					#}
+					#while = {
+					#	count = 1
+					#	random_tile = {
+					#		limit = {
+					#			has_building = no
+					#			has_blocker = no
+					#		}
+					#		set_building = "building_fortress"
+					#	}
+					#}
+
 					while = {
 						count = 8
 						create_pop = { species = owner_main_species }
