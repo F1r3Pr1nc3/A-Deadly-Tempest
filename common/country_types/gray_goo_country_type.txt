@@ -12,6 +12,7 @@ gray_goo = {
 	can_have_their_comms_shared = yes
 	government = no
 	observable = no
+	custom_starbase = starbase_gatebuilders
 	ai = {
 		enabled = yes
 		modules = {

@@ -119,13 +119,57 @@ graygoo_interdictor = {
 	}
 }
 
-# Nanite Factory
-graygoo_factory = {
-	graphical_culture = no
-	entity = gatebuilder_01_space_station_entity
+# Nanite Starbase
+starbase_gatebuilders = {
 	max_speed = 0.0
 	acceleration = 0.0
 	rotation_speed = 0.0
+	entity = gatebuilders_starbase_entity
+	modifier = {
+		ship_evasion_mult = -1
+		ship_shield_add = 10000
+		ship_armor_add = 10000
+	}
+	ship_modifier = {
+		ship_weapon_range_mult = 0.20
+	}
+	max_hitpoints = 20000
+	base_buildtime = 730
+	combat_size_multiplier = 50
+	size_multiplier = 4
+	fleet_slot_size = 2
+	section_slots = { "mid" = { locator = "part1" } }
+	is_designable = no
+	num_target_locators = 0
+	is_space_station = no
+	can_have_federation_design = no
+	is_civilian = no
+	components_add_to_cost = no
+	is_listed = no
+	can_disable = no
+
+	enable_default_design = no	#if yes, countries will have an auto-generated design at start
+	class = shipclass_starbase
+
+	required_component_set = "power_core"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+
+	build_block_radius = 20 #@build_block_radius_starbase
+	formation_priority = 1 #@starbase_formation_priority
+	icon_frame = -1
+}
+
+# Nanite Factory
+graygoo_factory = {
+	graphical_culture = no
+	# graphical_culture = { "ancient" }
+	# entity = gatebuilder_01_space_station_entity
+	entity = gatebuilder_02_space_station_entity
+	max_speed = 0.0
+	acceleration = 0.0
+	rotation_speed = 0.0
+	collision_radius = 17
 	modifier = {
 		ship_evasion_mult = -1
 		ship_armor_add = 50000
@@ -137,14 +181,16 @@ graygoo_factory = {
 		ship_fire_rate_mult = 1
 		ship_tracking_add = 50
 		ship_accuracy_add = 50
+		ship_evasion_mult = -1
 	}
 	max_hitpoints = 100000
-	size_multiplier = 32
-	fleet_slot_size = 4
+	combat_size_multiplier = 20
+	size_multiplier = 16
+	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
-	num_target_locators = 0
+	num_target_locators = 4
 	is_space_station = yes
-	build_block_radius = @build_block_radius_civilian
+	build_block_radius = 30
 
 	enable_default_design = no
 	prerequisites = { "tech_nanite_ships" }
@@ -153,4 +199,5 @@ graygoo_factory = {
 	
 	required_component_set = "combat_computers"
 	required_component_set = "sensor_components"
+	required_component_set = "station_large_aura_components"
 }

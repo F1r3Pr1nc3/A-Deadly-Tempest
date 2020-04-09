@@ -721,7 +721,6 @@ country_event = {
 	desc = distar.13035.desc
 	picture = GFX_evt_space_dragon_young
 	location = event_target:new_dragon
-
 	is_triggered_only = yes
 
 	immediate = {
