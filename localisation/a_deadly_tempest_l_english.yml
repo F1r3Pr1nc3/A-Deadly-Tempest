@@ -96,7 +96,7 @@
  
  ### Bombardment
  bombardment_nanitebombard:0 "Nanite"
- bombardment_nanitebombard_desc:2 " $nanitebombard$ The planet is bombarded with destructive nanites that break down anything they come in contact with into its base components with the explicit aim of maximizing civilian casualties.\n- §RMassive§! damage to §YArmies§!\n- §RMassive§! damage to §YTiles§!\n- §RMassive§! damage to §YPops§!\n- Will bombard undefended planets\n- Can reduce planets to lifeless nanite Worlds which can be terraformed with the right technology."
+ bombardment_nanitebombard_desc:0 "The planet is bombarded with destructive nanites that break down anything they come in contact with into its base components with the explicit aim of maximizing civilian casualties.\n- §RMassive§! damage to §YArmies§!\n- §RMassive§! damage to §YTiles§!\n- §RMassive§! damage to §YPops§!\n- Will bombard undefended planets\n- Can reduce planets to lifeless $pc_gray_goo$s which can be terraformed with the right technology."
  orbital_nanitebombard:0 "Nanite"
  orbital_nanitebombard_name:0 "Nanite Orbital Bombardment"
  orbital_nanitebombard_desc:0 ""
@@ -117,6 +117,9 @@
  # Phys
  tech_lgate_construction:0 "L-Gate Construction"
  tech_lgate_construction_desc:0 "Thanks to advances in nanite technology we can start constructing our own L-Gates instead of just having to rely on existing gates."
+ feature_lgate_construction:0 "$tech_lgate_construction$"
+ feature_lgate_construction_desc:0 "Allows us to rebuild and construct new L-Gates."
+ 
  requires_tech_lgate_construction:0 "$TRIGGER_FAIL$Requires technology £physics£ §Y$tech_lgate_construction$§!."
  tech_tactical_lgate_use:0 "Tactial L-Gate Use"
  tech_tactical_lgate_use_desc:0 "The L-Gates can keep us safe and secluded from the crisis currently burning the galaxy. But can we condemn the galaxy to its grim fate? Shall we not stand stalwart against the oncoming strom? Either way, maintaining a tactical doctrine of limited use of the L-Gates will allow us to strike at those we deem a threat."
@@ -127,7 +130,7 @@
  
  # Soc
  tech_nanite_terraforming:0 "Nanite Terraforming"
- tech_nanite_terraforming_desc:0 "Nanite worlds have the potential to be terraformed into any world we can imagine, but it seemed they could only do so under certain conditions... until now."
+ tech_nanite_terraforming_desc:0 "$pc_gray_goo$s have the potential to be terraformed into any world we can imagine, but it seemed they could only do so under certain conditions... until now."
  tech_nano_dust:0 "Nanodust"
  tech_nano_dust_desc:0 "A slurry of elements reduced to particulate matter. Once distributed across a world, Gray Dust can be activated by nanomachines to rapidly alter planetary conditions."
  tech_nano_scales:0 "Nanoscales"
@@ -135,7 +138,7 @@
  
  # Eng
  tech_nanite_bombardment:0 "Nanite Bombardment"
- tech_nanite_bombardment_desc:0 "Unleashing the Gray Tempest on a world will turn it into a useless nanite world to our enemies. But with the right technology, we might rerender it habitable..."
+ tech_nanite_bombardment_desc:0 "Unleashing the Gray Tempest on a world will turn it into a useless $pc_gray_goo$ to our enemies. But with the right technology, we might rerender it habitable..."
  tech_nanite_build_speed:0 "Nanite Shipyards"
  tech_nanite_build_speed_desc:0 "Ships are assembled quicker and faster with nanites assisting the construction."
  tech_nanite_hull:0 "Nanite Hulls"
@@ -161,7 +164,6 @@
  building_machinedlc_nanite_living_metal_forge:0 "Living Metal $nanites$ Forge"
  building_machinedlc_nanite_living_metal_forge_desc:0 "Combine refined minerals with active $nanites$ into artificial living metals. These are synthetic but function exactly same as natural one."
  
-
  
  # ###################################
  # Jobs
@@ -170,59 +172,58 @@
  # Specialist
  job_nanite_forger:0 "Nanicist"
  job_nanite_forger_plural:0 "Nanicists"
- job_nanite_forger:1 "$job_nanite_forger$ Jobs"
  job_nanite_forger_desc:1 "These specialists create the nanites used across our empire, for their many purposes."
- job_nanite_forger_desc:0 "job_nanite_forger $job_nanite_forger_plural$ produce £nanites£ §Y$minerals$§!"
- job_nanite_forger_effect_desc:0 "£job_nanite_forger£ $job_nanite_forger_plural$ turn £minerals£ §Y$minerals$§! into £nanites£ §Y$Nanites$§!"
+ job_nanite_forger_desc:0 "$job_nanite_forger_plural$ produce £nanites£ §Y$minerals$§!"
+ job_nanite_forger_effect_desc:0 "$job_nanite_forger_plural$ turn £minerals£ §Y$minerals$§! into £nanites£ §Y$Nanites$§!"
+ mod_job_nanite_forger_add:0 "$job_nanite_forger$ Jobs"
  mod_job_nanite_forger_per_pop:0 "§G+1§! $job_nanite_forger$ Job per $VALUE$ Pops"
  mod_job_nanite_forger_per_pop_short:0 "\n§G+1§! £job_nanite_forger£ per $VALUE$ £pop£"
  
  job_nanite_forger_drone:0 "Nanite Drone"
  job_nanite_forger_drone_plural:0 "Nanite Drones"
  job_nanite_forger_drone_desc:1 "These Drones create the nanites used by the collective."
- job_nanite_forger_drone_desc:0 "job_nanite_forger_drone $job_nanite_forger_drone_plural$ produce £nanites£ §Y$minerals$§!"
- job_nanite_forger_drone:1 "$job_nanite_forger_drone$ Jobs"
- job_nanite_forger_drone_effect_desc:0 "£job_nanite_forger_drone£ $job_nanite_forger_drone_plural$ turn £minerals£ §Y$minerals$§! into £nanites£ §Y$Nanites$§!"
+ job_nanite_forger_drone_desc:0 "$job_nanite_forger_drone_plural$ produce £nanites£ §Y$minerals$§!"
+ job_nanite_forger_drone_effect_desc:0 "$job_nanite_forger_drone_plural$ turn £minerals£ §Y$minerals$§! into £nanites£ §Y$Nanites$§!"
  mod_job_nanite_forger_drone_add:0 "$job_nanite_forger_drone$ Jobs"
  mod_job_nanite_forger_drone_per_pop:0 "§G+1§! $job_nanite_forger_drone$ Job per $VALUE$ Pops"
  mod_job_nanite_forger_drone_per_pop_short:0 "\n§G+1§! £job_nanite_forger_drone£ per $VALUE$ £pop£"
-
+ 
  # Worker
  job_nanite_drone:0 "Nanite Mining Drone"
  job_nanite_drone_plural:0 "Nanite Mining Drones"
- job_nanite_drone_desc:1 "Equipped with modern power drills and advanced machinery, these drones extract and prepare valuable minerals for industrial, military, and consumer use."
- job_nanite_drone_effect_desc:0 "£job_nanite_drone£ $job_nanite_drone_plural$ produce £minerals£ §Y$minerals$§!"
+ job_nanite_drone_desc:0 "Equipped with modern power drills and advanced machinery, these drones extract and prepare valuable minerals for industrial, military, and consumer use."
+ job_nanite_drone_effect_desc:0 "$job_nanite_drone_plural$ produce £minerals£ §Y$minerals$§!"
  mod_job_nanite_drone_add:0 "$job_nanite_drone$ Jobs"
  mod_job_nanite_drone_per_pop:0 "§G+1§! $job_nanite_drone$ Job per $VALUE$ Pops"
  mod_job_nanite_drone_per_pop_short:0 "\n§G+1§! £mod_job_nanite_drone_add£ per $VALUE$ £pop£"
  
  job_nanite_worker:0 "Nanite Mining Worker"
  job_nanite_worker_plural:0 "Nanite Mining Worker"
- job_nanite_worker_desc:1 "Equipped with modern power drills and advanced machinery, these workers extract and prepare valuable minerals for industrial, military, and consumer use."
- job_nanite_worker_effect_desc:0 "£job_nanite_worker£ $job_nanite_worker_plural$ produce £minerals£ §Y$minerals$§!"
+ job_nanite_worker_desc:0 "Equipped with modern power drills and advanced machinery, these workers extract and prepare valuable minerals for industrial, military, and consumer use."
+ job_nanite_worker_effect_desc:0 "$job_nanite_worker_plural$ produce £minerals£ §Y$minerals$§!"
  mod_job_nanite_worker_add:0 "$job_nanite_worker$ Jobs"
  mod_job_nanite_worker_per_pop:0 "§G+1§! $job_nanite_worker$ Job per $VALUE$ Pops"
  mod_job_nanite_worker_per_pop_short:0 "\n§G+1§! £mod_job_nanite_worker_add£ per $VALUE$ £pop£"
  
  job_nanite_agri_drone:0 "Nanite Agri-Drone"
  job_nanite_agri_drone_plural:0 "Nanite Agri-Drones"
- job_nanite_agri_drone_desc:1 "Food production requires a variety of workers, from operators of planting and harvesting machinery, to watering, fertilizer and pesticide systems managers, to livestock handlers."
- job_nanite_agri_drone_effect_desc:0 "£job_agri_drone£ $job_agri_drone_plural$ produce £food£ §Y$food$§!"
+ job_nanite_agri_drone_desc:0 "Food production requires a variety of workers, from operators of planting and harvesting machinery, to watering, fertilizer and pesticide systems managers, to livestock handlers."
+ job_nanite_agri_drone_effect_desc:0 "$job_agri_drone_plural$ produce £food£ §Y$food$§!"
  mod_job_nanite_agri_drone_add:0 "$job_agri_drone$ Jobs"
  mod_job_nanite_agri_drone_per_pop:0 "§G+1§! $job_agri_drone$ Job per $VALUE$ Pops"
  mod_job_nanite_agri_drone_per_pop_short:0 "\n§G+1§! £mod_job_agri_drone_add£ per $VALUE$ £pop£"
 
  job_nanite_agri_worker:0 "Nanite Agri-Worker"
  job_nanite_agri_worker_plural:0 "Nanite Agri-Workers"
- job_nanite_agri_worker_desc:1 "Food production requires a variety of workers, from operators of planting and harvesting machinery, to watering, fertilizer and pesticide systems managers, to livestock handlers."
- job_nanite_agri_worker_effect_desc:0 "£job_nanite_agri_worker£ $job_nanite_agri_worker_plural$ produce £food£ §Y$food$§!"
+ job_nanite_agri_worker_desc:0 "Food production requires a variety of workers, from operators of planting and harvesting machinery, to watering, fertilizer and pesticide systems managers, to livestock handlers."
+ job_nanite_agri_worker_effect_desc:0 "$job_nanite_agri_worker_plural$ produce £food£ §Y$food$§!"
  mod_job_nanite_agri_worker_add:0 "$job_nanite_agri_worker$ Jobs"
  mod_job_nanite_agri_worker_per_pop:0 "§G+1§! $job_nanite_agri_worker$ Job per $VALUE$ Pops"
  mod_job_nanite_agri_worker_per_pop_short:0 "\n§G+1§! £mod_job_nanite_agri_worker_add£ per $VALUE$ £pop£"
  
  ### Buildings
  building_nanite_plant_1:0 "Nanite Foundries"
- building_nanite_plant_1_desc:0 "Nanicists work within these foundries to produce nanites"
+ building_nanite_plant_1_desc:0 "$job_nanite_forger_plural$ work within these foundries to produce nanites."
  building_nanite_plant_2:0 "Nanite Mega-Forges"
  building_nanite_plant_2_desc:0 "Production on a massive scale, these forges and workspaces create nanites in great quantities."
  building_nanite_plant_3:0 "Nanite Mega-Plants"
@@ -232,7 +233,6 @@
  building_nanite_food_replicator:0 "Food Replicator"
  building_nanite_food_replicator_desc:0 "These replicators create edible foodstuffs from energy molecules with the help of nanites. Almost has the same taste as grown and raised foods."
  
-
  sm_nanite_yards_desc_modifier:0 "Allows for the creation of nanite ships."
  
  TECH_UNLOCK_NANITE_CONSTRUCTION_TITLE:0 "Unlock Nanite Ships"
@@ -240,13 +240,13 @@
  bombed_to_nanite_world:0 "The world will need to be terraformed in order to be liveable again."
  
  TECH_UNLOCK_NANITE_BOMBARDMENT_TITLE:0 "Unlock Nanite Bombardment"
- TECH_UNLOCK_NANITE_BOMBARDMENT_DESC:0 "Unlock a new method of bombardment that will depopulate a world and turn it into a nanite world."
+ TECH_UNLOCK_NANITE_BOMBARDMENT_DESC:0 "Unlock a new method of bombardment that will depopulate a world and turn it into a $pc_gray_goo$."
  
  TECH_UNLOCK_L_GATE_TITLE:0 "Unlock L-Gate Construction"
  TECH_UNLOCK_L_GATE_DESC:0 "Unlock the ability to construct L-Gates"
   
- TECH_UNLOCK_NANITE_TERRAFORMING_TITLE:0 "Unlock Nanite World Terraforming"
- TECH_UNLOCK_NANITE_TERRAFORMING_DESC:0 "Once Nanite Worlds were though un-terraformable unless under certain conditions but all machines can be reprogrammed a nanite is no different."
+ TECH_UNLOCK_NANITE_TERRAFORMING_TITLE:0 "Unlock $pc_gray_goo$ Terraforming"
+ TECH_UNLOCK_NANITE_TERRAFORMING_DESC:0 "Once $pc_gray_goo$s were though un-terraformable unless under certain conditions but all machines can be reprogrammed a nanite is no different."
  
  TECH_UNLOCK_L_GATE_TACTICAL_USE_TITLE:0 "Unlock Tactical L-Gate Use"
  TECH_UNLOCK_L_GATE_TACTICAL_USE_DESC:0 "Unlock the ability use our L-Gates while the cluster is closed."

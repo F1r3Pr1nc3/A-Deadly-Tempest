@@ -2,19 +2,15 @@
   
 esgoo_male_hair_01 = {
 	default = "gfx/models/portraits/esgoo/esiot21.dds"
-	
 	game_setup = {#will run with a limited country scope. species and government is set but the country does not actually exist
 		default = "gfx/models/portraits/esgoo/esiot21.dds"
 	}
-	
 	#species scope
 	species = { #generic portrait for a species
 		default = "gfx/models/portraits/esgoo/esiot21.dds"
 	}
-	
 	#pop scope
 	pop = { #for a specific pop
-	
 		default = "gfx/models/portraits/esgoo/esiot21.dds"
 
 		random = {
@@ -39,19 +35,12 @@ esgoo_male_hair_01 = {
 				"gfx/models/portraits/esgoo/esiot217.dds"
 				"gfx/models/portraits/esgoo/esiot218.dds"
 				"gfx/models/portraits/esgoo/esiot219.dds"
-				"gfx/models/portraits/esgoo/esiot220.dds"					
-	
-
+				"gfx/models/portraits/esgoo/esiot220.dds"
 			}
-		}	
+		}
 	}
-	
-	
-	
-	
 	#leader scope
 	leader = { #scientists, generals, admirals, governor
-	
 		random = {
 			trigger = { leader_class = general }
 			list = {
@@ -76,11 +65,9 @@ esgoo_male_hair_01 = {
 				"gfx/models/portraits/esgoo/esiot217.dds"
 				"gfx/models/portraits/esgoo/esiot218.dds"
 				"gfx/models/portraits/esgoo/esiot219.dds"
-				"gfx/models/portraits/esgoo/esiot220.dds"					
-
+				"gfx/models/portraits/esgoo/esiot220.dds"
 			}
-		}		
-		
+		}
 		random = {
 			trigger = { leader_class = admiral }
 			list = {
@@ -104,16 +91,12 @@ esgoo_male_hair_01 = {
 				"gfx/models/portraits/esgoo/esiot217.dds"
 				"gfx/models/portraits/esgoo/esiot218.dds"
 				"gfx/models/portraits/esgoo/esiot219.dds"
-				"gfx/models/portraits/esgoo/esiot220.dds"					
-
+				"gfx/models/portraits/esgoo/esiot220.dds"
 			}
-		}	
-		
+		}
 		random = {
 			trigger = { leader_class = scientist }
 			list = {
-				
-					
 				#type2 crystals
 				"gfx/models/portraits/esgoo/esiot21.dds"
 				"gfx/models/portraits/esgoo/esiot22.dds"
@@ -134,16 +117,12 @@ esgoo_male_hair_01 = {
 				"gfx/models/portraits/esgoo/esiot217.dds"
 				"gfx/models/portraits/esgoo/esiot218.dds"
 				"gfx/models/portraits/esgoo/esiot219.dds"
-				"gfx/models/portraits/esgoo/esiot220.dds"					
-
+				"gfx/models/portraits/esgoo/esiot220.dds"
 			}
-		}		
-		
+		}
 		random = {
 			trigger = { leader_class = governor }
 			list = {
-				
-					
 				#type2 crystals
 				"gfx/models/portraits/esgoo/esiot21.dds"
 				"gfx/models/portraits/esgoo/esiot22.dds"
@@ -164,19 +143,15 @@ esgoo_male_hair_01 = {
 				"gfx/models/portraits/esgoo/esiot217.dds"
 				"gfx/models/portraits/esgoo/esiot218.dds"
 				"gfx/models/portraits/esgoo/esiot219.dds"
-				"gfx/models/portraits/esgoo/esiot220.dds"					
-
+				"gfx/models/portraits/esgoo/esiot220.dds"
 			}
 		}
 	}
   
 	#leader scope 
 	ruler = { #for rulers
-		
-		random = {				
+		random = {
 			list = {
-				
-					
 				#type2 crystals
 				"gfx/models/portraits/esgoo/esiot21.dds"
 				"gfx/models/portraits/esgoo/esiot22.dds"
@@ -197,11 +172,8 @@ esgoo_male_hair_01 = {
 				"gfx/models/portraits/esgoo/esiot217.dds"
 				"gfx/models/portraits/esgoo/esiot218.dds"
 				"gfx/models/portraits/esgoo/esiot219.dds"
-				"gfx/models/portraits/esgoo/esiot220.dds"					
-
+				"gfx/models/portraits/esgoo/esiot220.dds"
 			}
-		}		
-		
-
+		}
 	}
 }

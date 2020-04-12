@@ -56,7 +56,6 @@ strike_craft_component_template = {
 	icon = "GFX_ship_part_nanite_strikecraft"
 	icon_frame = 1
 	tags = { weapon_type_strike_craft }
-	ai_tag_weight = 0
 }
 
 

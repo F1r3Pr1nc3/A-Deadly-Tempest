@@ -10,44 +10,19 @@
 
 portraits = {
 
-#esgoo female
-	esgoo_female_01 = {
-		entity = "portrait_esgoo_female_01_entity" clothes_selector = "esgoo_female_clothes_01" hair_selector = "esgoo_female_hair_01" greeting_sound = "robot_molluscoid_greetings"
-		character_textures = {
-			"gfx/models/portraits/esgoo/esbt119.dds"
-			"gfx/models/portraits/esgoo/esbt22.dds"
-			"gfx/models/portraits/esgoo/esbt32.dds"
-			"gfx/models/portraits/esgoo/esbt42.dds"
-			"gfx/models/portraits/esgoo/esbt52.dds"	
-			"gfx/models/portraits/esgoo/esbt62.dds"
-			"gfx/models/portraits/esgoo/esbt72.dds"
-			"gfx/models/portraits/esgoo/esbt82.dds"				
-		}
-	}	
-
-#esgoo male
-
+	#esgoo male
 	esgoo_male_01 = {
 		entity = "portrait_esgoo_male_01_entity" clothes_selector = "esgoo_male_clothes_01" hair_selector = "esgoo_male_hair_01" greeting_sound = "robot_molluscoid_greetings"
 		character_textures = {
 			"gfx/models/portraits/esgoo/esbt119.dds"
-			"gfx/models/portraits/esgoo/esbt22.dds"
-			"gfx/models/portraits/esgoo/esbt32.dds"
-			"gfx/models/portraits/esgoo/esbt42.dds"
-			"gfx/models/portraits/esgoo/esbt52.dds"	
-			"gfx/models/portraits/esgoo/esbt62.dds"
-			"gfx/models/portraits/esgoo/esbt72.dds"
-			"gfx/models/portraits/esgoo/esbt82.dds"			
 		}
 	}
 	# lithnanite
 	lithnanite = {	entity = "portrait_lithoid_nanite_entity" clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "robot_reptilian_greetings" 
 		character_textures = {
 			"gfx/models/portraits/lithoid/lithoid_07_portrait_ai.dds"
-
 		}
 	}	
-
 }
 
 portrait_groups = {
@@ -60,32 +35,15 @@ portrait_groups = {
 				}
 				portraits = {
 					esgoo_male_01
-
 				}
 			}
-			add = {
-				trigger = {
-					ruler = { gender = female }
-				}
-				portraits = {
-					esgoo_female_01
-
-				}
-			}
-			#set = {
-			#	trigger = { ... }
-			#	portraits = { ... }
-			#	#using "set =" instead of "add" will first clear any portraits already added
-			#}
 		}		
 		
 		#species scope
 		species = { #generic portrait for a species
 			add = {
 				portraits = {
-					esgoo_female_01
 					esgoo_male_01
-
 				}
 			}
 		}		
@@ -94,10 +52,7 @@ portrait_groups = {
 		pop = { #for a specific pop
 			add = {
 				portraits = {
-					esgoo_female_01
-
 					esgoo_male_01
-
 				}
 			}
 		}
@@ -106,43 +61,21 @@ portrait_groups = {
 		leader = { #scientists, generals, admirals, governor
 			add = {
 				trigger = {
-					gender = female
-				}
-				portraits = {
-					esgoo_female_01
-
-				}
-			}
-			add = {
-				trigger = {
 					gender = male
 				}
 				portraits = {
 					esgoo_male_01
-				
 				}
 			}
 		}
-
-			
 		#leader scope 
 		ruler = {
 			add = {
 				trigger = {
-					gender = female
-				}
-				portraits = {
-					esgoo_female_01
-				
-				}
-			}
-			add = {
-				trigger = {
 					gender = male
 				}
 				portraits = {
 					esgoo_male_01
-
 				}
 			}
 		}

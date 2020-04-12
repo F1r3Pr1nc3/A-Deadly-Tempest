@@ -1,0 +1,14 @@
+# When a notification modifier is added to a country, it will generate an entry in the list of country modifiers in the government screen,
+# consisting of a name, icon and a custom tooltip.
+#
+#my_notification_modifier = {	# key determines localisation key for name (<key>) and description (<key>_desc)
+#	icon = KEY					# optional, overrides icon path. default: gfx/interface/icons/notification_modifiers/<key>.dds
+#}
+
+#add_notification_modifier = key
+#remove_notification_modifier = key
+#has_notification_modifier = key
+
+lgate_access = {}
+	icon = "gfx/interface/icons/modifiers/mod_black_hole.dds"
+}

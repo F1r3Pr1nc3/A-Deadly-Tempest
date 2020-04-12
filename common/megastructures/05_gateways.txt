@@ -1,8 +1,8 @@
 # see README.txt for example
 
 gateway_0 = {
-	entity = "construction_platform_entity"
-	construction_entity = "construction_platform_entity"
+	entity = "deactivated_gateway_entity"
+	construction_entity = "deactivated_gateway_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = yes 						# indicates this will use "free" placement between the system's inner and outer ring
@@ -95,8 +95,8 @@ gateway_0 = {
 }
 
 gateway_final = {
-	entity = "gateway_entity"
-	construction_entity = "construction_platform_entity"
+	entity = "reactivated_gateway_entity"
+	construction_entity = "gateway_portal_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	# build_outside_gravity_well = yes 						# indicates this will use "free" placement between the system's inner and outer ring

@@ -8,6 +8,12 @@
  tech_lcluster_access:0 "L-Cluster Access Control"
  tech_lcluster_access_desc:0 "After some time and study we have discovered the means to enable or disable the L-Gate network whenever we like, so long as we have access to the master control panel situated in the Terminal Egress system."
 
+ feature_lgate_access:0 "$tech_lcluster_access$"
+ feature_lgate_access_desc:0 "Our empire can control the access to the Terminal Egress system."
+
+ lgate_access:0 "$tech_lcluster_access$"
+ lgate_access_desc:0 "This empire has control about the access to the Terminal Egress system in the L-Cluster."
+ 
  ### Policy
 
  lcluster_policy:0 "L-Cluster Access"

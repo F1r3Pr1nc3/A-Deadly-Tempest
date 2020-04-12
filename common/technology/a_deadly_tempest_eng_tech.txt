@@ -9,7 +9,7 @@ tech_nanite_ships = {
 	category = { voidcraft }
 	prerequisites = { "tech_battleships" }
 	weight = @tier5weight1
-	is_rare = yes
+	# is_rare = yes
 
 	## unlock nanite ships
 	prereqfor_desc = {

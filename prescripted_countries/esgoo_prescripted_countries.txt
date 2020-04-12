@@ -1,6 +1,5 @@
-"Grey Goo Erasers"
-={
-	key="Grey Goo Erasers"
+"Grey Goo Erasers" = {
+	name="Grey Goo Erasers"
 	ship_prefix="GRAY"
 	species={
 		class="ESGO"
@@ -8,7 +7,6 @@
 		name="Grey Goo"
 		plural="Grey Goos"
 		adjective="Grey Goo"
-		species_bio="They're worse than alien locusts. Grey Goo destroys resources by turning them into more grey goo - more nano machines or whatever matter the grey goo is composed of. It's The Virus for nonliving things - though it may be able to take down living things as well, and likely will turn them into nonliving things if they're in the wrong place (ie: outside). In theory, you can end up with a planetary body made of nothing but grey goo. Physical laws regarding energy, thermodynamics and the like are an obstacle, but even a partial success in this case is likely to suck for everyone involved."
 		name_list="MACHINE1"
 		trait="trait_machine_unit"
 		trait="trait_robot_recycled"
@@ -16,7 +14,7 @@
 		trait="trait_robot_mass_produced"
 		trait="trait_robot_uncanny"
 	}
-	name="Grey Goo Erasers"
+	species_bio="They're worse than alien locusts. Grey Goo destroys resources by turning them into more grey goo - more nano machines or whatever matter the grey goo is composed of. It's The Virus for nonliving things - though it may be able to take down living things as well, and likely will turn them into nonliving things if they're in the wrong place (ie: outside). In theory, you can end up with a planetary body made of nothing but grey goo. Physical laws regarding energy, thermodynamics and the like are an obstacle, but even a partial success in this case is likely to suck for everyone involved."
 	adjective="Grey Goo"
 	authority="auth_machine_intelligence"
 	government="gov_machine_terminator"
@@ -36,16 +34,16 @@
 			file="circle.dds"
 		}
 		colors={
-			"grey"
+			"teal"
 			"grey"
 			"null"
 			"null"
 		}
 	}
 	ruler={
-		gender=female
+		gender=male
 		name="Mainframe"
-		portrait="esgoo_female_01"
+		portrait="esgoo_male_01"
 		texture=0
 		hair=7
 		clothes=2

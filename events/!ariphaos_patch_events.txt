@@ -176,9 +176,9 @@ event = {
 }
 
 country_event = {
-    id = ariphaos_patch.9998
-    hide_window = yes
-    is_triggered_only = yes
+	id = ariphaos_patch.9998
+	hide_window = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		is_regular_empire = yes

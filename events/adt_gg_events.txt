@@ -14,288 +14,18 @@ namespace = a_deadly_tempest
 # Nanites spawn more ships over time
 ####################################
 
-## Mid Game reinforcements 1
-country_event = {
+## Reinforcements 1
+event = {
 	id = a_deadly_tempest.3
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
-		any_system = {
-			has_star_flag = graygoo_factory_system
-			any_ship_in_system = { is_ship_size = graygoo_factory }
-		}
-		mid_game_years_passed >= -10
+		exists = event_target:nanite_factory
+		event_target:nanite_factory = { is_ship_size = graygoo_factory }
 	}
-
 	immediate = {
-		if = {
-			limit = {
-				any_system = {
-					has_star_flag = lcluster
-					any_ship_in_system = {
-						owner = { 
-							NOT = { is_same_value = root }
-						}
-					}
-				}
-			}
-			# Reinforce at factory if someone else is in the cluster...
-			country_event = { id = a_deadly_tempest.4 }
-			# Else spawn reinforcements...
-		}
-		else = {
-			every_system = {
-				limit = {
-					NOR = {
-						has_star_flag = lcluster_lgate
-						has_star_flag = lgate_originating_system
-					}
-					any_system_megastructure = { 
-						is_megastructure_type = lgate_base
-					}
-				}
-				random_system_megastructure = {
-					limit = {
-						is_megastructure_type = lgate_base
-					}
-					create_ambient_object = {
-						type = "horror_spawn_object"
-						location = THIS
-						use_3d_location = yes
-						duration = 10
-					}
-					create_fleet = {
-						name = "NAME_Tempest_Fleet"
-						effect = {
-							set_owner = event_target:graygoo_country
-							create_nanite_shoal_1 = yes
-							set_formation_scale = 2
-							set_fleet_stance = aggressive
-							set_aggro_range_measure_from = self
-							set_aggro_range = 250
-							set_location = {
-								target = prev
-								distance = 0
-								angle = 0
-							}
-							set_fleet_flag = nanite_mother_ship
-						}
-					}
-				}
-			}
-			country_event = { id = a_deadly_tempest.3 days = 4800 }
-		}
-	}
-}
-
-## Mid Game reinforcements 2
-country_event = {
-	id = a_deadly_tempest.4
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	immediate = {
-		random_owned_ship = {
-			limit = { is_ship_size = graygoo_factory }
-			save_event_target_as = graygoo_factory
-		}
-		create_fleet = {
-			name = "NAME_Tempest_Fleet"
-			effect = {
-				set_owner = event_target:graygoo_country
-				create_nanite_shoal_1 = yes
-				set_formation_scale = 2
-				set_fleet_stance = aggressive
-				set_aggro_range_measure_from = self
-				set_aggro_range = 250
-				set_location = {
-					target = event_target:graygoo_factory
-					distance = 10
-					angle = random
-				}
-				set_fleet_flag = nanite_mother_ship
-			}
-		}
-		create_fleet = {
-			name = "NAME_Tempest_Fleet"
-			effect = {
-				set_owner = event_target:graygoo_country
-				create_nanite_shoal_1 = yes
-				set_formation_scale = 2
-				set_fleet_stance = aggressive
-				set_aggro_range_measure_from = self
-				set_aggro_range = 250
-				set_location = {
-					target = event_target:graygoo_factory
-					distance = 10
-					angle = random
-				}
-				set_fleet_flag = nanite_mother_ship
-			}
-		}
-		create_fleet = {
-			name = "NAME_Tempest_Fleet"
-			effect = {
-				set_owner = event_target:graygoo_country
-				create_nanite_shoal_1 = yes
-				set_formation_scale = 2
-				set_fleet_stance = aggressive
-				set_aggro_range_measure_from = self
-				set_aggro_range = 250
-				set_location = {
-					target = event_target:graygoo_factory
-					distance = 10
-					angle = random
-				}
-				set_fleet_flag = nanite_mother_ship
-			}
-		}
-	}
-}
-
-
-## Late Game reinforcements 1
-country_event = {
-	id = a_deadly_tempest.5
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	trigger = {
-		any_system = {
-			has_star_flag = graygoo_factory_system
-			any_ship_in_system = { is_ship_size = graygoo_factory }
-		}
-		end_game_years_passed >= -10
-	}
-
-	immediate = {
-		if = {
-			limit = {
-				any_system = {
-					has_star_flag = lcluster
-					any_ship_in_system = {
-						owner = { 
-							NOT = { is_same_value = root }
-						}
-					}
-				}
-			}
-			# Reinforce at factory if someone else is in the cluster...
-			country_event = { id = a_deadly_tempest.6 }
-			# Else spawn reinforcements...
-		}
-		else = {
-			every_system = {
-				limit = {
-					NOR = {
-						has_star_flag = lcluster_lgate
-						has_star_flag = lgate_originating_system
-					}
-					any_system_megastructure = { 
-						is_megastructure_type = lgate_base
-					}
-				}
-				random_system_megastructure = {
-					limit = {
-						is_megastructure_type = lgate_base
-					}
-					create_ambient_object = {
-						type = "horror_spawn_object"
-						location = THIS
-						use_3d_location = yes
-						duration = 10
-					}
-					create_fleet = {
-						name = "NAME_Tempest_Fleet"
-						effect = {
-							set_owner = event_target:graygoo_country
-							create_nanite_shoal_2 = yes
-							set_formation_scale = 2
-							set_fleet_stance = aggressive
-							set_aggro_range_measure_from = self
-							set_aggro_range = 250
-							set_location = {
-								target = prev
-								distance = 0
-								angle = 0
-							}
-							set_fleet_flag = nanite_mother_ship
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-## Late Game reinforcements 2
-country_event = {
-	id = a_deadly_tempest.6
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	immediate = {
-		random_owned_ship = {
-			limit = { is_ship_size = graygoo_factory }
-			save_event_target_as = graygoo_factory
-		}
-		create_fleet = {
-			name = "NAME_Tempest_Fleet"
-			effect = {
-				set_owner = event_target:graygoo_country
-				create_nanite_shoal_2 = yes
-				set_formation_scale = 2
-				set_fleet_stance = aggressive
-				set_aggro_range_measure_from = self
-				set_aggro_range = 250
-				set_location = {
-					target = event_target:graygoo_factory
-					distance = 10
-					angle = random
-				}
-				set_fleet_flag = nanite_mother_ship
-			}
-		}
-		create_fleet = {
-			name = "NAME_Tempest_Fleet"
-			effect = {
-				set_owner = event_target:graygoo_country
-				create_nanite_shoal_2 = yes
-				set_formation_scale = 2
-				set_fleet_stance = aggressive
-				set_aggro_range_measure_from = self
-				set_aggro_range = 250
-				set_location = {
-					target = event_target:graygoo_factory
-					distance = 10
-					angle = random
-				}
-				set_fleet_flag = nanite_mother_ship
-			}
-		}
-		create_fleet = {
-			name = "NAME_Tempest_Fleet"
-			effect = {
-				set_owner = event_target:graygoo_country
-				create_nanite_shoal_2 = yes
-				set_formation_scale = 2
-				set_fleet_stance = aggressive
-				set_aggro_range_measure_from = self
-				set_aggro_range = 250
-				set_location = {
-					target = event_target:graygoo_factory
-					distance = 10
-					angle = random
-				}
-				set_fleet_flag = nanite_mother_ship
-			}
-		}
-		country_event = { id = a_deadly_tempest.5 days = 7200 }
+		country_event = { id = graygoo.3 days = 3 }
+		#country_event = { id = a_deadly_tempest.3 days = 2800 }
 	}
 }
 
@@ -431,6 +161,24 @@ country_event = {
 					}
 				}
 			}
+			# mardak_vol
+			if = {
+				limit = { exists = event_target:mardak_vol_country }
+				set_faction_hostility = {
+					set_hostile = no
+					#set_neutral = no
+					set_friendly = yes
+					target = event_target:mardak_vol_country
+				}
+				event_target:mardak_vol_country = {
+					set_faction_hostility = {
+						set_hostile = no
+						#set_neutral = no
+						set_friendly = yes
+						target = prev
+					}
+				}
+			}
 			# Gatebuilders
 			if = {
 				limit = {
@@ -450,6 +198,38 @@ country_event = {
 						set_friendly = yes
 						target = prev
 					}
+				}
+			}
+		}
+	}
+}
+
+# Last battle ( graygoo.162)
+country_event = {
+	id = a_deadly_tempest.96
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:graygoo_country
+		exists = event_target:nanite_factory
+		event_target:nanite_factory = { is_ship_size = graygoo_factory }
+	}
+
+	immediate = {
+		event_target:graygoo_country = {
+			every_owned_fleet = {
+				limit = {
+					exists = solar_system
+					solar_system = {
+						has_star_flag = lcluster
+					}
+				}
+				remove_auto_move_target = yes
+				auto_move_to_planet = {
+					# event_target:lcluster_factory_system
+					target = event_target:nanite_factory.solar_system #main_star
+					clear_auto_move_on_arrival = no
+					# arrival_effect = fleet1_reset_journey
 				}
 			}
 		}

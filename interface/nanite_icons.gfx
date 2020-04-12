@@ -1,5 +1,5 @@
+## Nanites ##
 spriteTypes = {
-	#Nanites
 
 	spriteType = {
 		name = "GFX_ship_part_nanite_strikecraft"
@@ -29,6 +29,11 @@ spriteTypes = {
 		name = "GFX_ship_part_nanite_auto_repair"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_auto_repair.dds"
 	}
+	## Spaceport Modules ##
+	spriteType = {
+		name = "GFX_spaceport_module_nanite_yard"
+		texturefile = "gfx/interface/icons/modules/sm_nanite_yard.dds"
+	}
 
 	spriteType = {
 		name = "GFX_fleet_order_button_ground_support_nanitebombard_selected"
@@ -42,8 +47,8 @@ spriteTypes = {
 			animationlooping = yes
 			animationtime = 12.0
 			animationdelay = 0.0
-			animationblendmode = "overlay"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 			animationframes = { 1 2 3 }
@@ -62,8 +67,8 @@ spriteTypes = {
 			animationlooping = yes
 			animationtime = 12.0
 			animationdelay = 0.0
-			animationblendmode = "overlay"       #add, multiply, overlay
-			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 			animationframes = { 1 2 3 }

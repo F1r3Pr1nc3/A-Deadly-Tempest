@@ -1,27 +1,6 @@
 objectTypes = {
 
-#FEMALE
-	
-	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	
-	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
-	
-	
-	pdxmesh = {
-		name = "portrait_esgoo_female_01_mesh"
-		file = "gfx/models/portraits/esgoo/esgoo_female_01_portrait.mesh"
-		scale = 1.0
-		
-		animation = { id = "idle"	type = "esgoo_female_01_happy_animation" }
-		animation = { id = "idle2"	type = "esgoo_female_01_happy_2_animation" }
-	}	
-		
-		
-#MALE
-	
-#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	
-#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
-	
-		
+	#MALE
 	pdxmesh = {
 		name = "portrait_esgoo_male_01_mesh"
 		file = "gfx/models/portraits/esgoo/esgoo_male_01_portrait.mesh"
@@ -29,7 +8,6 @@ objectTypes = {
 		
 		animation = { id = "idle"	type = "esgoo_male_01_happy_animation" }
 		animation = { id = "idle2"	type = "esgoo_male_01_happy_2_animation" }
-	}	
-	
+	}
 	
 }

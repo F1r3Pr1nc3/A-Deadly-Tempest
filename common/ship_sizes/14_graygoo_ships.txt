@@ -121,6 +121,7 @@ graygoo_interdictor = {
 
 # Nanite Starbase
 starbase_gatebuilders = {
+	graphical_culture = no
 	max_speed = 0.0
 	acceleration = 0.0
 	rotation_speed = 0.0
@@ -141,7 +142,7 @@ starbase_gatebuilders = {
 	section_slots = { "mid" = { locator = "part1" } }
 	is_designable = no
 	num_target_locators = 0
-	is_space_station = no
+	is_space_station = yes
 	can_have_federation_design = no
 	is_civilian = no
 	components_add_to_cost = no

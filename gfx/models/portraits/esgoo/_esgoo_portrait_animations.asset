@@ -1,18 +1,3 @@
-
-############
-## FEMALE ##
-############
-
-animation = {
-		name = "esgoo_female_01_happy_animation"
-		file = "esgoo_female_01_portrait_happy.anim"
-}
-
-animation = {
-		name = "esgoo_female_01_happy_2_animation"
-		file = "esgoo_female_01_portrait_happy_2.anim"
-}
-
 ##########
 ## MALE ##
 ##########

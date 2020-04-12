@@ -278,6 +278,7 @@ building_nanite_industrial_replicator_1 = {
 	}
 
 	ai_resource_production = {
+		minerals = 5
 		trigger = {
 			always = yes
 		}

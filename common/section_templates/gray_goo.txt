@@ -593,7 +593,7 @@ ship_section_template = {
 	component_slot = {
 		name = "TITAN_01"
 		template = "invisible_titanic_turret"
-		locatorname = "large_gun_02"
+		locatorname = "large_gun_04"
 	}
 	component_slot = {
 		name = "TORPEDO_01"
@@ -603,12 +603,12 @@ ship_section_template = {
 	component_slot = {
 		name = "TORPEDO_02"
 		template = "invisible_missile_turret"
-		locatorname = "large_gun_03"
+		locatorname = "large_gun_02"
 	}
 	component_slot = {
 		name = "TORPEDO_03"
 		template = "invisible_missile_turret"
-		locatorname = "large_gun_04"
+		locatorname = "large_gun_03"
 	}
 	component_slot = {
 		name = "TORPEDO_04"
@@ -643,7 +643,7 @@ ship_section_template = {
 	component_slot = {
 		name = "TORPEDO_10"
 		template = "invisible_missile_turret"
-		locatorname = "large_gun_04"
+		locatorname = "large_gun_07"
 	}
 	component_slot = {
 		name = "TORPEDO_11"
@@ -663,7 +663,7 @@ ship_section_template = {
 	component_slot = {
 		name = "STRIKE_CRAFT_02"
 		template = "large_strike_craft"
-		locatorname = "target_locator_2"
+		locatorname = "target_locator_3"
 	}
 	component_slot = {
 		name = "STRIKE_CRAFT_03"
@@ -683,7 +683,7 @@ ship_section_template = {
 	component_slot = {
 		name = "STRIKE_CRAFT_06"
 		template = "large_strike_craft"
-		locatorname = "target_locator_2"
+		locatorname = "target_locator_1"
 	}
 	component_slot = {
 		name = "STRIKE_CRAFT_07"
@@ -698,12 +698,12 @@ ship_section_template = {
 	component_slot = {
 		name = "STRIKE_CRAFT_09"
 		template = "large_strike_craft"
-		locatorname = "target_locator_1"
+		locatorname = "target_locator_5"
 	}
 	component_slot = {
 		name = "STRIKE_CRAFT_10"
 		template = "large_strike_craft"
-		locatorname = "target_locator_2"
+		locatorname = "target_locator_1"
 	}
 	component_slot = {
 		name = "STRIKE_CRAFT_11"
@@ -718,12 +718,12 @@ ship_section_template = {
 	component_slot = {
 		name = "STRIKE_CRAFT_13"
 		template = "large_strike_craft"
-		locatorname = "target_locator_1"
+		locatorname = "target_locator_3"
 	}
 	component_slot = {
 		name = "STRIKE_CRAFT_14"
 		template = "large_strike_craft"
-		locatorname = "target_locator_2"
+		locatorname = "target_locator_4"
 	}
 	component_slot = {
 		name = "STRIKE_CRAFT_15"

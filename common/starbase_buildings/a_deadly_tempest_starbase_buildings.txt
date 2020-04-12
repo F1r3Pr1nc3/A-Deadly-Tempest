@@ -1,6 +1,6 @@
 
 nanite_yards = {
-	icon = "GFX_spaceport_module_colossus_assembly_yard"
+	icon = "GFX_spaceport_module_nanite_yard"
 	construction_days = 720
 	
 	potential = {

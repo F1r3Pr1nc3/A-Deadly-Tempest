@@ -1,35 +1,11 @@
-#FEMALE
-	
-	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	
-	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
-	
-@humanscale = 0.80
-
-entity = {
-	name = "portrait_esgoo_female_01_entity"
-	pdxmesh = "portrait_esgoo_female_01_mesh"
-	
-	default_state = "idle"
-	state = { name = "idle"       animation = "idle"    animation_blend_time = 0.5 chance = 3.0 looping = no next_state = idle}
-	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0.5 chance = 1.0 looping = no next_state = idle}
-	
-	scale = .95
-}
-
 #MALE
-	
-	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	
-	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
-
-
 entity = {
 	name = "portrait_esgoo_male_01_entity"
 	pdxmesh = "portrait_esgoo_male_01_mesh"
 	
 	default_state = "idle"
-	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 3.0 looping = no next_state = idle}
-	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle" animation = "idle" animation_blend_time = 0.5 chance = 3.0 looping = no next_state = idle}
+	state = { name = "idle" animation = "idle2" animation_blend_time = 0.5 chance = 1.0 looping = no next_state = idle}
 	
-	scale = .86
+	scale = .9
 }
-

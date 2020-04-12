@@ -1,5 +1,4 @@
 namespace = distar
-
 ###############################################
 ###############################################
 #####                                     #####
@@ -9,7 +8,6 @@ namespace = distar
 #####                                     #####
 ###############################################
 ###############################################
-
 # Randomize L-Cluster outcome on_game_start
 event = {
 	id = distar.8000
@@ -37,9 +35,7 @@ event = {
 country_event = {
 	id = distar.10900
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	immediate = {
 		if = {
 			limit = {
@@ -59,10 +55,14 @@ country_event = {
 				}
 				save_event_target_as = candidate_gateway
 			}
-			country_event = { id = distar.10905 } # enable project
+			country_event = {
+				id = distar.10905
+			}			# enable project
 		}
 		else = {
-			country_event = { id = distar.10901 } # looping check
+			country_event = {
+				id = distar.10901
+			}			# looping check
 		}
 	}
 }
@@ -71,13 +71,12 @@ country_event = {
 country_event = {
 	id = distar.10902
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
-		NOT = { has_global_flag = l_cluster_opened }
+		NOT = {
+			has_global_flag = l_cluster_opened
+		}
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -98,73 +97,189 @@ country_event = {
 				}
 				save_event_target_as = candidate_gateway
 			}
-			country_event = { id = distar.10905 } # enable project
+			country_event = {
+				id = distar.10905
+			}			# enable project
 		}
 		else = {
-			country_event = { id = distar.10902 days = 60 } # *THIS* looping check
+			country_event = {
+				id = distar.10902
+				days = 60
+			}			# *THIS* looping check
 		}
 	}
 }
 
 ### Open L-Gate
 country_event = {
-	# Changed by FirePrince: Possibility of all random events at the same time
+	# Changed by FirePrince: Possibility of all random events at the same time (+ Crisis Manager patch)
 	id = distar.10950
 	hide_window = yes
 	is_triggered_only = yes
-	
 	immediate = {
 		set_country_flag = lcluster_opener
 		set_country_flag = lgates_activated
 		set_global_flag = lgates_activated_globally
+		set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 3 }
 		# Spawn L-Cluster
-		if = { limit = { NOT = { has_global_flag = l_cluster_opened } }
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = l_cluster_opened
+				}
+			}
 			set_global_flag = l_cluster_opened
-			country_event = { id = distar.11000 }
+			country_event = {
+				id = distar.11000
+			}
 		}
-
 		### Set 1st L-Gate as Target 
 		if = {
-			limit = { NOT = { exists = event_target:CmtTargetLgateOrininatingSystem } }
+			limit = {
+				NOT = {
+					exists = event_target:CmtTargetLgateOrininatingSystem
+				}
+			}
 			# from = ship
 			if = {
-				limit = { exists = from from = { is_scope_type = ship } }
-				from.solar_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
-			} else_if = {
-				limit = { exists = event_target:candidate_gateway_system }
-				event_target:candidate_gateway_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
-			} else_if = {
-				limit = { exists = event_target:candidate_gateway }
-				event_target:candidate_gateway = { solar_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem } }
-			} else = {
+				limit = {
+					exists = from
+					from = {
+						is_scope_type = ship
+					}
+				}
+				from.solar_system = {
+					save_global_event_target_as = CmtTargetLgateOrininatingSystem
+				}
+			}
+			else_if = {
+				limit = {
+					exists = event_target:candidate_gateway_system
+				}
+				event_target:candidate_gateway_system = {
+					save_global_event_target_as = CmtTargetLgateOrininatingSystem
+				}
+			}
+			else_if = {
+				limit = {
+					exists = event_target:candidate_gateway
+				}
+				event_target:candidate_gateway = {
+					solar_system = {
+						save_global_event_target_as = CmtTargetLgateOrininatingSystem
+					}
+				}
+			}
+			else = {
 				# If no valid scope search generally
 				every_system_within_border = {
-					limit = { has_star_flag = lgate }
+					limit = {
+						has_star_flag = lgate
+					}
 					every_fleet_in_system = {
 						limit = {
 							exists = owner
 							exists = leader
 							exists = solar_system
-							owner = { is_same_value = root }
+							owner = {
+								is_same_value = root
+							}
 						}
 						every_ship = {
-							limit = { is_ship_class = shipclass_science_ship }
-							solar_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
+							limit = {
+								is_ship_class = shipclass_science_ship
+							}
+							solar_system = {
+								save_global_event_target_as = CmtTargetLgateOrininatingSystem
+							}
 						}
 					}
 				}
 			}
-			if = { # only last fallback
-				limit = { NOT = { exists = event_target:CmtTargetLgateOrininatingSystem } }
+			if = {
+				# only last fallback
+				limit = {
+					NOT = {
+						exists = event_target:CmtTargetLgateOrininatingSystem
+					}
+				}
 				random_megastructure = {
-					limit = { CmtTriggerIsClosedLgate = yes }
+					limit = {
+						CmtTriggerIsClosedLgate = yes
+					}
 					solar_system = {
 						save_global_event_target_as = CmtTargetLgateOrininatingSystem
 					}
 				}
 			}
 		}
-
+		### Change Outcome (Crisis Manager)
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_global_flag = CmtFlagLgateForbidSilence
+						NOR = {
+							has_global_flag = dragon_season
+							has_global_flag = gray_goo_empire_set
+							has_global_flag = gray_goo_crisis_set
+						}
+					}
+					AND = {
+						has_global_flag = CmtFlagLgateForbidLdrake
+						has_global_flag = dragon_season
+					}
+					AND = {
+						has_global_flag = CmtFlagLgateForbidDessanu
+						has_global_flag = gray_goo_empire_set
+					}
+					AND = {
+						has_global_flag = CmtFlagLgateForbidGraygoo
+						has_global_flag = gray_goo_crisis_set
+					}
+				}
+			}
+			remove_global_flag = dragon_season
+			remove_global_flag = gray_goo_empire_set
+			remove_global_flag = gray_goo_crisis_set
+			remove_global_flag = active_gray_goo
+			random_list = {
+				30 = {
+					modifier = {
+						factor = 0
+						has_global_flag = CmtFlagLgateForbidSilence
+						NAND = {
+							has_global_flag = CmtFlagLgateForbidSilence
+							has_global_flag = CmtFlagLgateForbidLdrake
+							has_global_flag = CmtFlagLgateForbidDessanu
+							has_global_flag = CmtFlagLgateForbidGraygoo
+						}
+					}
+				}
+				30 = {
+					modifier = {
+						factor = 0
+						has_global_flag = CmtFlagLgateForbidLdrake
+					}
+					set_global_flag = dragon_season
+				}
+				30 = {
+					modifier = {
+						factor = 0
+						has_global_flag = CmtFlagLgateForbidDessanu
+					}
+					set_global_flag = gray_goo_empire_set
+				}
+				50 = {
+					modifier = {
+						factor = 0
+						has_global_flag = CmtFlagLgateForbidGraygoo
+					}
+					set_global_flag = gray_goo_crisis_set
+					set_global_flag = active_gray_goo
+				}
+			}
+		}
 		### Activate L-Gate
 		event_target:CmtTargetLgateOrininatingSystem = {
 			if = {
@@ -173,62 +288,116 @@ country_event = {
 				limit = {
 					any_system = {
 						CmtTriggerIsGalaxyLgateSystem = yes
-						NOT = { is_same_value = prev }
+						NOT = {
+							is_same_value = prev
+						}
 					}
 				}
 				set_star_flag = lgate_originating_system
-			} else = { root = { set_country_flag = only_one_lgate } }
+			}
+			else = {
+				root = {
+					set_country_flag = only_one_lgate
+				}
+			}
 			# also try to refresh the other posssible missing targets
 			save_event_target_as = candidate_gateway_system
 			random_system_megastructure = {
-				limit = { CmtTriggerIsClosedLgate = yes }
+				limit = {
+					CmtTriggerIsClosedLgate = yes
+				}
 				save_event_target_as = candidate_gateway
 			}
 		}
 		# Outcome, to be determined at game start
 		if = {
-			limit = { has_global_flag = dragon_season }
+			limit = {
+				has_global_flag = dragon_season
+			}
 			# All gates must not be deactivated, so call it first
-			country_event = { id = distar.13000 }
+			country_event = {
+				id = distar.13000
+			}
 		}
 		if = {
-			limit = { has_global_flag = gray_goo_crisis_set }
-			country_event = { id = graygoo.1 days = 1 }
+			limit = {
+				has_global_flag = gray_goo_crisis_set
+			}
+			country_event = {
+				id = graygoo.1
+				days = 1
+			}
 			# Make friendly
-			country_event = { id = distar.13006 days = 1 }
-			country_event = { id = a_deadly_tempest.137 days = 24 }
-		} else_if = {
-			limit = { has_global_flag = gray_goo_empire_set }
-			country_event = { id = graygoo.100 days = 3 }
+			country_event = {
+				id = distar.13006
+				days = 1
+			}
+			country_event = {
+				id = a_deadly_tempest.137
+				days = 24
+			}
+		}
+		else_if = {
+			limit = {
+				has_global_flag = gray_goo_empire_set
+			}
+			country_event = {
+				id = graygoo.100
+				days = 3
+			}
 			# Make friendly too?
-			country_event = { id = distar.13006 days = 3 }
-			country_event = { id = a_deadly_tempest.137 days = 24 }
-		} else = {
-			country_event = { id = distar.10951 }
+			country_event = {
+				id = distar.13006
+				days = 3
+			}
+			country_event = {
+				id = a_deadly_tempest.137
+				days = 24
+			}
+		}
+		else = {
+			country_event = {
+				id = distar.10951
+			}
 		}
 		# Enable other L-Gates over time (anyway)
 		random_country = {
-			limit = { is_country_type = global_event }
-			country_event = { id = distar.10960 days = 200 random = 500 }
+			limit = {
+				is_country_type = global_event
+			}
+			country_event = {
+				id = distar.10960
+				days = 200
+				random = 500
+			}
 		}
 		# Activate Terminal Egress L-Gate (if not already opened by other outcome)
 		event_target:lcluster1 = {
 			random_system_megastructure = {
-				limit = { CmtTriggerIsClosedLgate = yes }
+				limit = {
+					CmtTriggerIsClosedLgate = yes
+				}
 				CmtEffectOpenLgate = yes
 			}
 		}
 		# Activate originating L-Gate: Put AFTER distar.13000 (if not already opened by other outcome)
 		event_target:candidate_gateway = {
-			if = { limit = { CmtTriggerIsClosedLgate = yes }
+			if = {
+				limit = {
+					CmtTriggerIsClosedLgate = yes
+				}
 				CmtEffectOpenLgate = yes
 			}
 		}
-
 		### Technology Control: Put AFTER graygoo.100
 		every_playable_country = {
-			limit = { is_researching_technology = tech_lgate_activation }
-			give_technology = { tech = tech_lgate_activation message = no }
+			limit = {
+				is_researching_technology = tech_lgate_activation
+			}
+			give_technology = {
+				tech = tech_lgate_activation
+				message = no
+			}
 		}
 	}
 }
@@ -237,9 +406,7 @@ country_event = {
 event = {
 	id = distar.10955
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
 		any_playable_country = {
 			is_ai = no
@@ -251,19 +418,22 @@ event = {
 				is_country_type = default
 				has_communications = prev
 				has_event_chain = l_cluster_chain
-				NOT = { has_country_flag = lgate_warned@prev }
+				NOT = {
+					has_country_flag = lgate_warned@prev
+				}
 				check_variable = {
 					which = num_lcluster_clues
 					value > 5
 				}
-				any_owned_megastructure = { OR = {
-					is_megastructure_type = lgate_base
-					is_megastructure_type = lgate_disabled
-				} }
+				any_owned_megastructure = {
+					OR = {
+						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
+					}
+				}
 			}
 		}
 	}
-
 	immediate = {
 		random_playable_country = {
 			limit = {
@@ -276,15 +446,19 @@ event = {
 					is_country_type = default
 					has_communications = prev
 					has_event_chain = l_cluster_chain
-					NOT = { has_country_flag = lgate_warned@prev }
+					NOT = {
+						has_country_flag = lgate_warned@prev
+					}
 					check_variable = {
 						which = num_lcluster_clues
 						value > 5
 					}
-					any_owned_megastructure = { OR = {
-						is_megastructure_type = lgate_base
-						is_megastructure_type = lgate_disabled
-					} }
+					any_owned_megastructure = {
+						OR = {
+							is_megastructure_type = lgate_base
+							is_megastructure_type = lgate_disabled
+						}
+					}
 				}
 			}
 			random_relation = {
@@ -292,20 +466,26 @@ event = {
 					is_country_type = default
 					has_communications = prev
 					has_event_chain = l_cluster_chain
-					NOT = { has_country_flag = lgate_warned@prev }
+					NOT = {
+						has_country_flag = lgate_warned@prev
+					}
 					check_variable = {
 						which = num_lcluster_clues
 						value > 5
 					}
-					any_owned_megastructure = { OR = {
-						is_megastructure_type = lgate_base
-						is_megastructure_type = lgate_disabled
-					} }
+					any_owned_megastructure = {
+						OR = {
+							is_megastructure_type = lgate_base
+							is_megastructure_type = lgate_disabled
+						}
+					}
 				}
 				save_event_target_as = lgate_warning_country
 				set_country_flag = lgate_warned@prev
 			}
-			country_event = { id = distar.10956 }
+			country_event = {
+				id = distar.10956
+			}
 		}
 	}
 }
@@ -315,7 +495,6 @@ country_event = {
 	id = distar.10960
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
 		any_megastructure = {
 			OR = {
@@ -326,10 +505,16 @@ country_event = {
 	}
 	immediate = {
 		random_megastructure = {
-			limit = { CmtTriggerIsClosedLgate = yes }
+			limit = {
+				CmtTriggerIsClosedLgate = yes
+			}
 			CmtEffectOpenLgate = yes
 			prev = {
-				country_event = { id = distar.10960 days = 200 random = 500 }
+				country_event = {
+					id = distar.10960
+					days = 200
+					random = 500
+				}
 			}
 		}
 	}
@@ -343,7 +528,6 @@ country_event = {
 	id = distar.13000
 	hide_window = yes
 	is_triggered_only = yes
-
 	immediate = {
 		create_country = {
 			name = "NAME_Spawning_Dragons"
@@ -355,15 +539,20 @@ country_event = {
 				}
 			}
 			flag = {
-				icon= {
+				icon = {
 					category = "zoological"
 					file = "flag_zoological_905.dds"
 				}
-				background= {
+				background = {
 					category = "backgrounds"
 					file = "00_solid.dds"
 				}
-				colors= { "dark_grey" "black" "null" "null" }
+				colors = {
+					"dark_grey"
+					"black"
+					"null"
+					"null"
+				}
 			}
 		}
 		while = {
@@ -383,7 +572,9 @@ country_event = {
 				}
 				# flip L-Gates
 				random_system_megastructure = {
-					limit = { CmtTriggerIsClosedLgate = yes }
+					limit = {
+						CmtTriggerIsClosedLgate = yes
+					}
 					CmtEffectOpenLgate = yes
 				}
 				# set dragon spawning grounds
@@ -392,7 +583,9 @@ country_event = {
 					limit = {
 						NOR = {
 							has_star_flag = dragon_point
-							any_system_planet = { is_colony = yes }
+							any_system_planet = {
+								is_colony = yes
+							}
 						}
 					}
 					set_star_flag = dragon_point
@@ -402,22 +595,34 @@ country_event = {
 		# notify those without l-gate systems
 		every_playable_country = {
 			limit = {
-				NOT = { any_system_within_border = { CmtTriggerIsGalaxyLgateSystem = yes } }
+				NOT = {
+					any_system_within_border = {
+						CmtTriggerIsGalaxyLgateSystem = yes
+					}
+				}
 			}
-			country_event = { id = distar.13011 }
+			country_event = {
+				id = distar.13011
+			}
 		}
 		while = {
 			limit = {
 				any_system = {
 					CmtTriggerIsGalaxyLgateSystem = yes
-					NOT = { has_star_flag = young_dragon_spawned }
+					NOT = {
+						has_star_flag = young_dragon_spawned
+					}
 				}
 			}
 			random_system = {
 				limit = {
 					CmtTriggerIsGalaxyLgateSystem = yes
-					NOT = { has_star_flag = young_dragon_spawned }
-					any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
+					NOT = {
+						has_star_flag = young_dragon_spawned
+					}
+					any_system_megastructure = {
+						CmtTriggerIsOpenedLgate = yes
+					}
 				}
 				set_star_flag = young_dragon_spawned
 				random_system_megastructure = {
@@ -426,23 +631,39 @@ country_event = {
 						min_steps = 3
 						limit = {
 							has_star_flag = dragon_point
-							NOT = { has_star_flag = dragon_point_picked }
+							NOT = {
+								has_star_flag = dragon_point_picked
+							}
 						}
 						set_star_flag = dragon_point_picked
 						# notify re: destination
 						if = {
-							limit = { prevprev = { exists = owner } }		## prevprev = L-Gate System
+							limit = {
+								prevprev = {
+									exists = owner
+								}
+							}							## prevprev = L-Gate System
 							save_event_target_as = dragons_target
 							prevprev = {
 								save_event_target_as = dragons_current_system
 								owner = {
 									if = {
-										limit = { NOT = { is_same_value = root } }
+										limit = {
+											NOT = {
+												is_same_value = root
+											}
+										}
 										set_country_flag = knows_ldragon
-										country_event = { id = distar.13010 }
+										country_event = {
+											id = distar.13010
+										}
 									}
 									else = {
-										root = { country_event = { id = distar.13010 } }		## Notification 1
+										root = {
+											country_event = {
+												id = distar.13010
+											}
+										}										## Notification 1
 									}
 								}
 							}
@@ -470,9 +691,9 @@ country_event = {
 									set_location = prevprevprev # megastructure
 									set_fleet_stance = passive
 									set_aggro_range_measure_from = self
-									#set_aggro_range = 10
+									# set_aggro_range = 10
 									auto_move_to_planet = {
-										target = prev # dragon_point star
+										target = prev  # dragon_point star
 										clear_auto_move_on_arrival = yes # hang around
 									}
 								}
@@ -494,16 +715,23 @@ country_event = {
 	id = distar.13006
 	hide_window = yes
 	is_triggered_only = yes
-
 	immediate = {
 		if = {
-			limit = { NOT = { exists = event_target:spawning_dragons } }
+			limit = {
+				NOT = {
+					exists = event_target:spawning_dragons
+				}
+			}
 			every_country = {
 				if = {
-					limit = { is_country_type = ldragon_country }
+					limit = {
+						is_country_type = ldragon_country
+					}
 					save_global_event_target_as = spawning_dragons
 				}
-				else = { break = yes }
+				else = {
+					break = yes
+				}
 			}
 		}
 		event_target:spawning_dragons = {
@@ -518,14 +746,14 @@ country_event = {
 					set_hostile = no
 					#set_neutral = no
 					set_friendly = yes
-					target = prev # Dragons
+					target = prev					# Dragons
 				}
 				prev = {
 					set_faction_hostility = {
 						set_hostile = no
 						#set_neutral = no
 						set_friendly = yes
-						target = prev # Gray Tempest
+						target = prev						# Gray Tempest
 					}
 				}
 			}
@@ -539,29 +767,33 @@ country_event = {
 	title = distar.13010.name
 	desc = {
 		text = distar.13010.desc.IOpened
-		trigger = { has_country_flag = lcluster_opener }
+		trigger = {
+			has_country_flag = lcluster_opener
+		}
 	}
 	desc = {
 		text = distar.13010.desc.OtherOpened
-		trigger = { NOT = { is_same_value = from } }
+		trigger = {
+			NOT = {
+				is_same_value = from
+			}
+		}
 	}
 	picture = GFX_evt_space_dragon_young
 	location = event_target:dragons_current_system.star
-
 	is_triggered_only = yes
-
 	immediate = {
 		set_country_flag = ldragon_known
-		observer_event = { id = observer.63 }
+		observer_event = {
+			id = observer.63
+		}
 	}
-
 	option = {
 		name = distar.13010.a.homicidal
 		exclusive_trigger = {
 			is_homicidal = yes
 		}
 	}
-
 	option = {
 		name = ALARMING
 	}
@@ -572,20 +804,22 @@ country_event = {
 	title = distar.13011.name
 	desc = distar.13011.desc
 	picture = GFX_evt_space_dragon_young
-
 	is_triggered_only = yes
-
-	trigger = { NOT = { has_country_flag = knows_ldragon } }
-
+	trigger = {
+		NOT = {
+			has_country_flag = knows_ldragon
+		}
+	}
 	immediate = {
 		capital_scope = {
 			closest_system = {
-				limit = { has_star_flag = lgate }
+				limit = {
+					has_star_flag = lgate
+				}
 				save_event_target_as = disturbance_system
 			}
 		}
 	}
-
 	option = {
 		name = distar.13011.a
 	}
@@ -597,26 +831,33 @@ country_event = {
 	title = distar.13020.name
 	desc = {
 		text = distar.13020.desc.LDragonKnown
-		trigger = { has_country_flag = ldragon_known }
+		trigger = {
+			has_country_flag = ldragon_known
+		}
 	}
 	desc = {
 		text = distar.13020.desc.LDragonUnknown
-		trigger = { NOT = { has_country_flag = ldragon_known } }
+		trigger = {
+			NOT = {
+				has_country_flag = ldragon_known
+			}
+		}
 	}
 	picture = GFX_evt_space_dragon_young
 	location = fromfrom
-
 	is_triggered_only = yes
-
 	trigger = {
 		is_country_type = default
-		from = { is_country_type = ldragon_country }
+		from = {
+			is_country_type = ldragon_country
+		}
 	}
-
 	option = {
 		name = distar.13020.a
 		trigger = {
-			NOT = { has_country_flag = ldragon_known }
+			NOT = {
+				has_country_flag = ldragon_known
+			}
 		}
 		add_monthly_resource_mult = {
 			resource = influence
@@ -631,7 +872,6 @@ country_event = {
 			max = @tier4materialmax
 		}
 	}
-
 	option = {
 		name = distar.13020.a
 		trigger = {
@@ -671,24 +911,24 @@ fleet_event = {
 	desc = distar.13030.desc
 	picture = GFX_evt_space_dragon_young
 	location = from.star
-
 	is_triggered_only = yes
-
 	trigger = {
 		is_ship_class = shipclass_science_ship
 		from = {
 			has_star_flag = dragon_point
-			NOT = { has_star_flag = visited_dragon_point@root.owner }
+			NOT = {
+				has_star_flag = visited_dragon_point@root.owner
+			}
 			any_ship_in_system = {
 				is_ship_size = nanite_space_dragon_baby
 			}
 		}
 	}
-
 	immediate = {
-		from = { set_star_flag = visited_dragon_point@root.owner }
+		from = {
+			set_star_flag = visited_dragon_point@root.owner
+		}
 	}
-
 	option = {
 		# enable special project
 		name = distar.13030.a
@@ -708,7 +948,6 @@ fleet_event = {
 			}
 		}
 	}
-
 	option = {
 		name = distar.13030.b
 	}
@@ -722,20 +961,20 @@ country_event = {
 	picture = GFX_evt_space_dragon_young
 	location = event_target:new_dragon
 	is_triggered_only = yes
-
 	immediate = {
 		from.solar_system = {
 			random_fleet_in_system = {
 				limit = {
 					exists = owner
-					owner = { is_country_type = ldragon_country }
+					owner = {
+						is_country_type = ldragon_country
+					}
 				}
 				save_event_target_as = new_dragon
 				set_owner = root
 			}
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		fromfrom.solar_system = {
@@ -764,18 +1003,18 @@ country_event = {
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_radio_chatter
 	location = FROM
-
 	is_triggered_only = yes
-
 	trigger = {
-		NOT = { exists = fromfrom } # not surveyed by ship
+		NOT = {
+			exists = fromfrom
+		}		# not surveyed by ship
 		NOR = {
 			has_country_flag = encountered_first_lgate
 			has_event_chain = "l_cluster_chain"
 		}
 		FROM = {
 			has_star_flag = lgate
-			any_system_megastructure = { 
+			any_system_megastructure = {
 				OR = {
 					is_megastructure_type = lgate_base
 					is_megastructure_type = lgate_disabled
@@ -783,12 +1022,12 @@ country_event = {
 			}
 		}
 	}
-
 	immediate = {
-		FROM = { save_event_target_as = gateway_system }
+		FROM = {
+			save_event_target_as = gateway_system
+		}
 		set_country_flag = encountered_first_lgate
 	}
-
 	option = {
 		name = INTRIGUING
 		start_lcluster_chain = yes
