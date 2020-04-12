@@ -81,16 +81,14 @@ country_event = {
 				
 				}
 			}
-			event_target:main_star = {
-				CmtEffectCreateNanitieFactory = yes
-			}
-			event_target:graygoo_country = {
+			event_target:main_star = { CmtEffectCreateNanitieFactory = yes }
+			last_created_country = {
 				create_ship_design = { design = "NAME_Gatebuilder_Starbase" }
 				add_ship_design = last_created_design
 			}
 			create_starbase = {
 				size = "starbase_gatebuilders"
-				owner = event_target:graygoo_country
+				owner = last_created_country
 			}
 		}
 		
@@ -104,6 +102,12 @@ country_event = {
 				limit = { is_planet_class = pc_gray_goo }
 				CmtEffectCreateAdmiralty_GraygooGarryson = yes
 			}
+			# if = { limit = { has_star_flag = lcluster4 }
+			# 	create_starbase = {
+			# 		size = "starbase_gatebuilders"
+			# 		owner = last_created_country
+			# 	}
+			# }
 		}
 		## Roamers
 		event_target:nanite_factory = { CmtEffectCreateAdmiralty_GraygooRoamer = yes }

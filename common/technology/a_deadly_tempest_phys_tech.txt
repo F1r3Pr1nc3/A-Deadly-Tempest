@@ -13,6 +13,7 @@ tech_nanoactuators = {
 	}
 	
 	potential = {
+		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
 	}
 }
@@ -31,6 +32,7 @@ tech_nanite_shield_rechargers = {
 	weight = @tier5weight3
 	
 	potential = {
+		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
 	}
 	
@@ -63,6 +65,7 @@ tech_lgate_construction = {
 	}
 	
 	potential = {
+		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
 	}
 

@@ -13,10 +13,8 @@ tech_adt_energymissiles = {
 	weight = @tier5weight2
 	
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 	
 	weight_modifier = {
@@ -53,10 +51,8 @@ tech_nanite_strike_craft = {
 	weight = @tier5weight2
 		
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 		
 	## unlock Nanite strike craft
@@ -77,10 +73,8 @@ tech_adt_gg_beam = {
 	weight = @tier5weight3
 	
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 	
 	weight_modifier = {
@@ -121,10 +115,8 @@ tech_nanite_torpedo = {
 	}
 
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 	
 	weight_modifier = {

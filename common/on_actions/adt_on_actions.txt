@@ -103,3 +103,11 @@ on_planet_zero_pops = {
 # 	events = {
 # 	}
 # }
+
+#This = Federation leader
+#From = Joining member
+on_join_federation = {
+	events = {
+		a_deadly_tempest.13079
+	}
+}

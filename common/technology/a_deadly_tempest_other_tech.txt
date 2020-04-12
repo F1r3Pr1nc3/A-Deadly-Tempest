@@ -12,10 +12,8 @@ tech_nanite_mega_engineering = {
 	is_rare = yes
 
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 		
 	modifier = {
@@ -44,9 +42,7 @@ tech_nanite_bombardment = {
 	}
 	
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 }

@@ -639,10 +639,11 @@ country_event = {
 						# notify re: destination
 						if = {
 							limit = {
+								## L-Gate System
 								prevprev = {
 									exists = owner
 								}
-							}							## prevprev = L-Gate System
+							}							
 							save_event_target_as = dragons_target
 							prevprev = {
 								save_event_target_as = dragons_current_system
@@ -661,9 +662,9 @@ country_event = {
 									else = {
 										root = {
 											country_event = {
-												id = distar.13010
+												id = distar.13010 ## Notification 1
 											}
-										}										## Notification 1
+										}
 									}
 								}
 							}

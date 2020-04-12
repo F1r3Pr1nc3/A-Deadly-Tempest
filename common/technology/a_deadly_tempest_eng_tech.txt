@@ -20,10 +20,8 @@ tech_nanite_ships = {
 	}
 	
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 }
 
@@ -40,10 +38,8 @@ tech_nanite_build_speed = {
 	is_rare = yes
 
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 	
 	modifier = {
@@ -62,10 +58,8 @@ tech_nanite_hull = {
 	is_rare = yes
 
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 	
 	modifier = {
@@ -88,10 +82,8 @@ tech_nanite_living_metal = {
 	
 	# Unlocks nanite_living_metal_forge
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 	# add Living Metal
 	modifier = {
@@ -108,10 +100,8 @@ tech_nanocrystals = {
 	is_rare = yes
 
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 	
 	modifier = {
@@ -136,10 +126,8 @@ tech_nanite_modular_engineering = {
 	weight = @tier5weight2
 	
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 	
 	modifier = {
@@ -161,10 +149,7 @@ tech_nanite_modular_engineering = {
 # 	weight = @tier5weight3
 
 # 	potential = {
-# 		has_resource = {
-# 			type = sr_living_metal
-# 			amount > 0
-# 		}
+# 		has_resource = { type = sr_living_metal amount > 0 }
 # 	}
 
 # 	weight_modifier = {

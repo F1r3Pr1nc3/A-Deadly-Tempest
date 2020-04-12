@@ -21,10 +21,8 @@ tech_nanite_terraforming = {
 	}
 
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 }
 
@@ -47,10 +45,8 @@ tech_nano_dust = {
 	}
 	
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 }
 
@@ -69,9 +65,7 @@ tech_nano_scales = {
 	}
 	
 	potential = {
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_global_flag = l_cluster_opened
+		has_resource = { type = nanites amount > 0 }
 	}
 }

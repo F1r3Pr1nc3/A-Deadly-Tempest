@@ -4,16 +4,13 @@
 #####     Nanites Goo Special Events      #####
 #####        For A Deadly Tempest         #####
 #####    Written by His Dread Monarch     #####
-#####                                     #####
+#####          and FirePrince             #####
 ###############################################
 ###############################################
-
 namespace = a_deadly_tempest
-
 ####################################
 # Nanites spawn more ships over time
 ####################################
-
 ## Reinforcements 1
 event = {
 	id = a_deadly_tempest.3
@@ -21,10 +18,15 @@ event = {
 	is_triggered_only = yes
 	trigger = {
 		exists = event_target:nanite_factory
-		event_target:nanite_factory = { is_ship_size = graygoo_factory }
+		event_target:nanite_factory = {
+			is_ship_size = graygoo_factory
+		}
 	}
 	immediate = {
-		country_event = { id = graygoo.3 days = 3 }
+		country_event = {
+			id = graygoo.3
+			days = 3
+		}
 		#country_event = { id = a_deadly_tempest.3 days = 2800 }
 	}
 }
@@ -34,17 +36,16 @@ event = {
 fleet_event = {
 	id = a_deadly_tempest.105
 	hide_window = yes
-	
 	trigger = {
 		has_fleet_flag = nanite_mother_ship
 		num_ships < 11
-		any_ship = { is_ship_size = graygoo_mothership }
+		any_ship = {
+			is_ship_size = graygoo_mothership
+		}
 	}
-	
 	mean_time_to_happen = {
 		months = 2
 	}
-		
 	immediate = {
 		create_ship = {
 			name = random
@@ -58,18 +59,17 @@ fleet_event = {
 fleet_event = {
 	id = a_deadly_tempest.106
 	hide_window = yes
-	
 	trigger = {
 		mid_game_years_passed >= -10
 		has_fleet_flag = nanite_mother_ship
 		num_ships < 21
-		any_ship = { is_ship_size = graygoo_mothership }
+		any_ship = {
+			is_ship_size = graygoo_mothership
+		}
 	}
-	
 	mean_time_to_happen = {
 		months = 2
 	}
-		
 	immediate = {
 		create_ship = {
 			name = random
@@ -83,18 +83,17 @@ fleet_event = {
 fleet_event = {
 	id = a_deadly_tempest.107
 	hide_window = yes
-	
 	trigger = {
 		end_game_years_passed >= -10
 		has_fleet_flag = nanite_mother_ship
 		num_ships < 41
-		any_ship = { is_ship_size = graygoo_mothership }
+		any_ship = {
+			is_ship_size = graygoo_mothership
+		}
 	}
-	 
 	mean_time_to_happen = {
 		months = 2
 	}
-		
 	immediate = {
 		random_list = {
 			5 = {
@@ -122,12 +121,13 @@ country_event = {
 	id = a_deadly_tempest.137
 	hide_window = yes
 	is_triggered_only = yes
-
 	immediate = {
 		event_target:graygoo_country = {
 			# Pre-Ketlings
 			if = {
-				limit = { exists = event_target:ratling_pre_space_country }
+				limit = {
+					exists = event_target:ratling_pre_space_country
+				}
 				set_faction_hostility = {
 					set_hostile = no
 					#set_neutral = no
@@ -145,7 +145,9 @@ country_event = {
 			}
 			# Scrapperbot
 			if = {
-				limit = { exists = event_target:scavenger_bot_country }
+				limit = {
+					exists = event_target:scavenger_bot_country
+				}
 				set_faction_hostility = {
 					set_hostile = no
 					#set_neutral = no
@@ -163,7 +165,9 @@ country_event = {
 			}
 			# mardak_vol
 			if = {
-				limit = { exists = event_target:mardak_vol_country }
+				limit = {
+					exists = event_target:mardak_vol_country
+				}
 				set_faction_hostility = {
 					set_hostile = no
 					#set_neutral = no
@@ -204,7 +208,7 @@ country_event = {
 	}
 }
 
-# Last battle ( graygoo.162)
+# Last battle, defend the base (from graygoo.162) (by FirePrince)
 country_event = {
 	id = a_deadly_tempest.96
 	hide_window = yes
@@ -212,26 +216,171 @@ country_event = {
 	trigger = {
 		exists = event_target:graygoo_country
 		exists = event_target:nanite_factory
-		event_target:nanite_factory = { is_ship_size = graygoo_factory }
+		event_target:nanite_factory = {
+			is_ship_size = graygoo_factory
+		}
 	}
-
 	immediate = {
 		event_target:graygoo_country = {
+			if = {
+				limit = {
+					NOT = {
+						exists = event_target:main_star
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							exists = event_target:lcluster_factory_system
+						}
+					}
+					event_target:nanite_factory = {
+						solar_system = {
+							save_event_target_as = lcluster_factory_system
+							random_system_planet = {
+								limit = {
+									has_planet_flag = main_star
+								}
+								save_event_target_as = main_star
+							}
+						}
+					}
+				}
+				else = {
+					event_target:lcluster_factory_system = {
+						random_system_planet = {
+							limit = {
+								has_planet_flag = main_star
+							}
+							save_event_target_as = main_star
+						}
+					}
+				}
+			}
 			every_owned_fleet = {
 				limit = {
 					exists = solar_system
 					solar_system = {
 						has_star_flag = lcluster
+						NOT = {
+							is_same_value = event_target:main_star
+						}
+					}
+				}
+				log = "shoal returning to base"
+				solar_system = {
+					random_system_planet = {
+						limit = {
+							has_planet_flag = main_star
+						}
+						save_event_target_as = old_location
 					}
 				}
 				remove_auto_move_target = yes
 				auto_move_to_planet = {
-					# event_target:lcluster_factory_system
-					target = event_target:nanite_factory.solar_system #main_star
-					clear_auto_move_on_arrival = no
-					# arrival_effect = fleet1_reset_journey
+					target = event_target:main_star
+					clear_auto_move_on_arrival = yes
+					arrival_effect = shoal_continue_journey
 				}
 			}
 		}
+	}
+}
+
+### Federation joined event
+#This = Federation leader
+#From = Joining member
+country_event = {
+	id = a_deadly_tempest.13079
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_global_flag = l_cluster_opened
+		}
+		federation = {
+			any_member = {
+				has_country_flag = encountered_first_lgate
+			}
+		}
+	}
+	immediate = {
+		from = {
+			save_event_target_as = fed_joiner
+		}
+		federation = {
+			every_member = {
+				limit = {
+					NOT = {
+						has_country_flag = encountered_first_lgate
+					}
+				}
+				country_event = {
+					id = a_deadly_tempest.13080
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+# TODO NEEDS TO TEST (by FirePrince)
+# This = country without l-gate
+country_event = {
+	id = a_deadly_tempest.13080
+	title = "apoc.1.name"
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = encountered_first_lgate
+			has_event_chain = "l_cluster_chain"
+		}
+		has_federation = yes
+		federation = {
+			any_member = {
+				has_country_flag = encountered_first_lgate
+				any_system_within_border = {
+					has_star_flag = lgate
+					any_system_megastructure = {
+						OR = {
+							is_megastructure_type = lgate_base
+							is_megastructure_type = lgate_disabled
+						}
+					}
+				}
+			}
+		}
+	}
+	immediate = {
+		federation = {
+			random_member = {
+				limit = {
+					has_country_flag = encountered_first_lgate
+					any_system_within_border = {
+						has_star_flag = lgate
+					}
+				}
+				random_system_within_border = {
+					limit = {
+						has_star_flag = lgate
+						any_system_megastructure = {
+							OR = {
+								is_megastructure_type = lgate_base
+								is_megastructure_type = lgate_disabled
+							}
+						}
+					}
+					save_event_target_as = gateway_system
+				}
+			}
+		}
+		set_country_flag = encountered_first_lgate
+	}
+	location = event_target:gateway_system
+	option = {
+		name = INTRIGUING
+		start_lcluster_chain = yes
 	}
 }
