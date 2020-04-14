@@ -27,89 +27,66 @@ event = {
 			id = graygoo.3
 			days = 3
 		}
-		#country_event = { id = a_deadly_tempest.3 days = 2800 }
 	}
 }
 
 ### Nanites
 # Mothership creates ships
-fleet_event = {
+country_event = {
 	id = a_deadly_tempest.105
 	hide_window = yes
+	is_triggered_only = yes
+	# mean_time_to_happen = { months = 2 }
 	trigger = {
-		has_fleet_flag = nanite_mother_ship
-		num_ships < 11
-		any_ship = {
-			is_ship_size = graygoo_mothership
-		}
-	}
-	mean_time_to_happen = {
-		months = 2
-	}
-	immediate = {
-		create_ship = {
-			name = random
-			design = "NAME_Nanite_Interdictor"
-			upgradable = no
-		}
-	}
-}
-
-# Mothership creates ships
-fleet_event = {
-	id = a_deadly_tempest.106
-	hide_window = yes
-	trigger = {
-		mid_game_years_passed >= -10
-		has_fleet_flag = nanite_mother_ship
-		num_ships < 21
-		any_ship = {
-			is_ship_size = graygoo_mothership
-		}
-	}
-	mean_time_to_happen = {
-		months = 2
-	}
-	immediate = {
-		create_ship = {
-			name = random
-			design = "NAME_Nanite_Interdictor"
-			upgradable = no
-		}
-	}
-}
-
-# Motherships create increased ship numbers during galactic crisis
-fleet_event = {
-	id = a_deadly_tempest.107
-	hide_window = yes
-	trigger = {
-		end_game_years_passed >= -10
-		has_fleet_flag = nanite_mother_ship
-		num_ships < 41
-		any_ship = {
-			is_ship_size = graygoo_mothership
-		}
-	}
-	mean_time_to_happen = {
-		months = 2
-	}
-	immediate = {
-		random_list = {
-			5 = {
-				create_ship = {
-					name = random
-					design = "NAME_Nanite_Mothership"
-					graphical_culture = "swarm_01"
-					upgradable = no
-				}
+		exists = event_target:graygoo_country
+		event_target:graygoo_country = {
+			any_owned_fleet = {
+				has_fleet_flag = nanite_mother_ship
+				# any_ship = { is_ship_size = graygoo_mothership }
 			}
-			95 = {
-				create_ship = {
-					name = random
-					design = "NAME_Nanite_Interdictor"
-					graphical_culture = "swarm_01"
-					upgradable = no
+		}
+	}
+	immediate = {
+		event_target:graygoo_country = {
+			every_owned_fleet = {
+				limit = {
+					any_ship = {
+						is_ship_size = graygoo_mothership
+					}
+				}
+				if = {
+					limit = {
+						end_game_years_passed >= -10
+						num_ships < 41
+					}
+					# Motherships create increased ship numbers during galactic crisis
+					random_list = {
+						10 = {
+							CmtEffectCreateShip_GraygooMother = yes
+						}
+						90 = {
+							CmtEffectCreateShip_GraygooInterdictor = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						mid_game_years_passed >= -10
+						num_ships < 21
+					}
+					CmtEffectCreateShip_GraygooInterdictor = yes
+				}
+				else_if = {
+					limit = {
+						num_ships < 11
+					}
+					CmtEffectCreateShip_GraygooInterdictor = yes
+				}
+				prev = {
+					country_event = {
+						id = a_deadly_tempest.105
+						days = 60
+					}
 				}
 			}
 		}
@@ -260,32 +237,80 @@ country_event = {
 			every_owned_fleet = {
 				limit = {
 					exists = solar_system
+					has_fleet_flag = nanite_mother_ship
 					solar_system = {
 						has_star_flag = lcluster
 						NOT = {
-							is_same_value = event_target:main_star
+							is_same_value = event_target:lcluster_factory_system
 						}
 					}
 				}
-				log = "shoal returning to base"
 				solar_system = {
 					random_system_planet = {
 						limit = {
-							has_planet_flag = main_star
+							OR = {
+								is_planet_class = pc_gray_goo
+								is_planet_class = pc_gaia
+							}
 						}
-						save_event_target_as = old_location
+						log = "shoal [PrevPrev.GetFleetName] returning to base [main_star.Planet.GetName] from planet: [This.Planet.GetName]"
+						prevprev = {
+							# remove_auto_move_target = yes
+							clear_fleet_actions = this
+							queue_actions = {
+								# orbit_planet = event_target:main_star
+								move_to = event_target:main_star
+							}
+							auto_move_to_planet = {
+								target = prev
+								clear_auto_move_on_arrival = no
+								# arrival_effect = shoal_continue_journey
+							}
+						}
 					}
-				}
-				remove_auto_move_target = yes
-				auto_move_to_planet = {
-					target = event_target:main_star
-					clear_auto_move_on_arrival = yes
-					arrival_effect = shoal_continue_journey
 				}
 			}
 		}
 	}
 }
+
+# gate_builders_hostility
+# From, This = Owner
+country_event = {
+	id = a_deadly_tempest.162
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = yes
+		# OR = {
+		# 	exists = event_target:graygoo_country
+		# 	exists = event_target:gate_builders
+		# }
+	}
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+		set_country_flag = gate_builders_hostility
+		if = { limit = { NOT = { exists = event_target:graygoo_country } }
+			random_country = {
+				limit = { is_country_type = gate_builders }
+				save_global_event_target_as = graygoo_country
+			}
+		}
+		log = "- This: [This.GetName] gets hostility to [graygoo_country.GetName]"
+
+		event_target:graygoo_country = {
+			set_faction_hostility = {
+				target = prev
+				set_neutral = no
+				set_friendly = no
+				set_hostile = yes
+			}
+			country_event = { id = a_deadly_tempest.105 days = 1800 } # Mothership creates ships
+			country_event = { id = a_deadly_tempest.96 } # Run Patrol
+		}
+	}
+}
+
 
 ### Federation joined event
 #This = Federation leader
@@ -329,6 +354,22 @@ country_event = {
 country_event = {
 	id = a_deadly_tempest.13080
 	title = "apoc.1.name"
+
+	desc = {
+		text = apoc.3.desc
+		trigger = {
+			NOT = {
+				has_country_flag = encountered_first_gateway
+			}
+		}
+	}
+	desc = {
+		text = apoc.3.b.desc
+		trigger = {
+			has_country_flag = encountered_first_gateway
+		}
+	}
+	
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_radio_chatter
 	is_triggered_only = yes

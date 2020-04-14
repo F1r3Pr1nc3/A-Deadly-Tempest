@@ -131,6 +131,7 @@ CmtEffectCreateShip_DessanuMother = {
 	create_ship = {
 		name = random
 		design = "NAME_Dessanu_Mothership"
+		upgradable = no
 	}
 }
 
@@ -138,6 +139,7 @@ CmtEffectCreateShip_DessanuInterdictor = {
 	create_ship = {
 		name = random
 		design = "NAME_Dessanu_Interdictor"
+		upgradable = no
 	}
 }
 
@@ -152,6 +154,8 @@ CmtEffectCreateShip_GraygooMother = {
 		name = random
 		design = "NAME_Nanite_Mothership"
 		graphical_culture = "pirate_01"
+		# graphical_culture = "swarm_01"
+		upgradable = no
 	}
 }
 
@@ -160,6 +164,8 @@ CmtEffectCreateShip_GraygooInterdictor = {
 		name = random
 		design = "NAME_Nanite_Interdictor"
 		graphical_culture = "pirate_01"
+		# graphical_culture = "swarm_01"
+		upgradable = no
 	}
 }
 

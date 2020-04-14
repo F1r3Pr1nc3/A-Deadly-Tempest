@@ -4,6 +4,7 @@
 
 CmtEffectCreateNanitieFactory = {
 	create_fleet = {
+		settings = { spawn_debris = yes is_boss = yes }
 		effect = {
 			set_owner = event_target:graygoo_country
 			create_ship = {

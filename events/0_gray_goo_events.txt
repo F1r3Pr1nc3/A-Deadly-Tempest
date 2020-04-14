@@ -95,6 +95,9 @@ country_event = {
 		### Create Fleets
 		## Garrison Fleets at Capital
 		event_target:nanite_factory = { CmtEffectCreateAdmiralty_GraygooCapitalDefence = yes }
+		## Roamers
+		event_target:main_star = { CmtEffectCreateAdmiralty_GraygooRoamer = yes }
+
 		## Garisson Fleet for L-Cluster
 		every_system = {
 			limit = { has_star_flag = lcluster }
@@ -109,8 +112,7 @@ country_event = {
 			# 	}
 			# }
 		}
-		## Roamers
-		event_target:nanite_factory = { CmtEffectCreateAdmiralty_GraygooRoamer = yes }
+		
 		## Initial Attack Fleets
 		every_system = {
 			limit = {
@@ -124,7 +126,10 @@ country_event = {
 			}
 		}
 		## Reinforcement Fleets (Call AFTER Create Factory)
-		event_target:graygoo_country = { country_event = { id = graygoo.3 days = 3600 } }
+		event_target:graygoo_country = {
+			country_event = { id = graygoo.3 days = 3600 }
+			country_event = { id = a_deadly_tempest.105 days = 1800 } # Mothership creates ships
+		}
 
 		### Notifications
 		every_country = { establish_communications_no_message = event_target:graygoo_country }
@@ -281,6 +286,7 @@ country_event = {
 					}
 				}
 			}
+			set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 3 }
 		}
 	}
 }
@@ -389,7 +395,7 @@ country_event = {
 		# destroy_country = yes
 		# remove_global_flag = active_gray_goo
 		# clear_global_event_target = graygoo_country
-		# clear_event_target = nanite_factory
+		# clear_global_event_target = nanite_factory
 		# clear_event_target = lcluster_factory_system
 		# clear_event_target = main_star
 		# remove_global_flag = gray_goo_crisis_active # Fix vanilla federation resolution
@@ -601,9 +607,11 @@ country_event = {
 			add_ship_design = last_created_design
 		}
 		every_country = { establish_communications_no_message = event_target:graygoo_country }
-		event_target:nanite_factory = { CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes }
 
-		CmtEffectCreateAdmiralty_DessanuRoamer = yes
+		 # Garrison Fleets at Capital
+		event_target:nanite_factory = { CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes }
+		# Roamers
+		event_target:main_star = { CmtEffectCreateAdmiralty_DessanuRoamer = yes }
 
 		### Change Planet to Gaia, Create Buildings, Orbital Station
 		every_system = {
@@ -673,6 +681,7 @@ country_event = {
 				}
 			}
 		}
+
 		event_target:graygoo_country = {
 			every_planet_within_border = {
 				if = {
@@ -1189,16 +1198,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_country_flag = gate_builder_diplomacy_engaged
-		set_country_flag = gate_builders_hostility
-		event_target:gate_builders = {
-			set_faction_hostility = {
-				target = root
-				set_hostile = yes
-				set_neutral = no
-				set_friendly = no
-			}
-		}
+		country_event = { id = a_deadly_tempest.162 } 
 	}
 
 	after = {
@@ -1457,15 +1457,7 @@ ship_event = {
 		name = graygoo.160.b
 		response_text = graygoo.160.b.response
 		hidden_effect = {
-			owner = { set_country_flag = gate_builders_hostility }
-			event_target:gate_builders = {
-				set_faction_hostility = {
-					target = root.owner
-					set_hostile = yes
-					set_neutral = no
-					set_friendly = no
-				}
-			}
+			owner = { country_event = { id = a_deadly_tempest.162 } }
 		}
 	}
 }
@@ -1500,16 +1492,7 @@ country_event = {
 	}
 
 	immediate = {
-		set_country_flag = gate_builders_hostility
-		event_target:gate_builders = {
-			set_faction_hostility = {
-				target = root
-				set_hostile = yes
-				set_neutral = no
-				set_friendly = no
-			}
-		}
-		set_country_flag = gate_builder_diplomacy_engaged
+		country_event = { id = a_deadly_tempest.162 }
 	}
 
 	after = {
@@ -1523,9 +1506,80 @@ country_event = {
 	}
 }
 
-# Entered Forbidden System (Second Time)
+# Entered Base System (Second Time)
 fleet_event = {
 	id = graygoo.162
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = {
+			has_star_flag = graygoo_factory_system
+			any_fleet_in_system = {
+				is_ship_size = graygoo_factory
+			}
+		}
+	}
+
+	immediate = {
+		# graygoo_country fallback
+		if = { limit = { NOT = { exists = event_target:graygoo_country } }
+			random_country = {
+				limit = {
+					OR = {
+						is_country_type = gray_goo
+						is_country_type = gate_builders
+					}
+				}
+				save_global_event_target_as = graygoo_country
+			}
+		}
+		# nanite_factory fallback
+		if = { limit = { NOT = { exists = event_target:nanite_factory } }
+			from = {
+				random_fleet_in_system = {
+					limit = { is_ship_size = graygoo_factory }
+					save_global_event_target_as = nanite_factory
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				exists = event_target:nanite_factory
+				event_target:nanite_factory = {
+					exists = owner
+					owner = { is_country_type = gate_builders }
+				} 
+			}
+			if = {
+				limit = {
+					owner = {
+						NOR = {
+							has_country_flag = gate_builders_hostility
+							has_country_flag = gk_told_to_leave
+							has_country_flag = violating_gatebuilder_space
+						}
+					}
+				}
+				fleet_event = { id = graygoo.163 }
+			} else = {
+				event_target:graygoo_country = {
+					country_event = { id = a_deadly_tempest.96 } # run patrol
+				}
+			}
+		} else = {
+			event_target:graygoo_country = {
+				country_event = { id = a_deadly_tempest.96 } # run patrol
+			}
+		}
+	}
+}
+
+# Entered Forbidden System (Second Time)
+fleet_event = {
+	id = graygoo.163
 	title = TRANSMISSION
 	desc = "graygoo.162.desc"
 
@@ -1535,23 +1589,23 @@ fleet_event = {
 		portrait = event_target:gate_builders
 	}
 
-	is_triggered_only = yes
+	fire_only_once = yes
 
 	trigger = {
-		from = {
-			has_star_flag = graygoo_factory_system
-			any_fleet_in_system = {
-				is_ship_size = graygoo_factory
-				owner = { is_country_type = gate_builders }
-			}
-		}
+		# from = {
+		# 	has_star_flag = graygoo_factory_system
+		# 	any_fleet_in_system = {
+		# 		is_ship_size = graygoo_factory
+		# 		owner = { is_country_type = gate_builders }
+		# 	}
+		# }
 		owner = {
 			has_country_flag = gk_first_entry
-			NOR = {
-				has_country_flag = gate_builders_hostility
-				has_country_flag = gk_told_to_leave
-				has_country_flag = violating_gatebuilder_space
-			}
+			# NOR = {
+			# 	has_country_flag = gate_builders_hostility
+			# 	has_country_flag = gk_told_to_leave
+			# 	has_country_flag = violating_gatebuilder_space
+			# }
 		}
 	}
 
@@ -1588,15 +1642,7 @@ fleet_event = {
 		name = graygoo.162.b
 		response_text = graygoo.160.b.response
 		hidden_effect = {
-			owner = { set_country_flag = gate_builders_hostility }
-			event_target:gate_builders = {
-				set_faction_hostility = {
-					target = root.owner
-					set_hostile = yes
-					set_neutral = no
-					set_friendly = no
-				}
-			}
+			owner = { country_event = { id = a_deadly_tempest.162 } }
 		}
 	}
 }
@@ -1669,8 +1715,8 @@ country_event = {
 		every_owned_fleet = { destroy_fleet = this }
 		destroy_country = yes
 		clear_global_event_target = graygoo_country
+		clear_global_event_target = nanite_factory
 		# clear_event_target = gate_builders
-		# clear_event_target = nanite_factory
 		# clear_event_target = lcluster_factory_system
 		# clear_event_target = main_star
 	}

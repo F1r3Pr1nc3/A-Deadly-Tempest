@@ -29,5 +29,5 @@ You can also install by downloading this repository:
  - The mod should appear in your launcher. You may also need to unsubscribe from the workshop version of the mod for this to work properly.
 
 Default Mod Folder Locations:
- - On Windows - `%USERPROFILE%//Documents//Paradox Interactive//Stellaris//mod`
+ - On Windows - `%USERPROFILE%\\Documents\\Paradox Interactive\\Stellaris\\mod`
  - On Linux - `/home/{YOUR_USER}/.local/share/Paradox Interactive/Stellaris/mod`
