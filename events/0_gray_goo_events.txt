@@ -129,6 +129,7 @@ country_event = {
 		event_target:graygoo_country = {
 			country_event = { id = graygoo.3 days = 3600 }
 			country_event = { id = a_deadly_tempest.105 days = 1800 } # Mothership creates ships
+			set_country_flag = adtFlagActiveMothershipRebuild
 		}
 
 		### Notifications
@@ -286,7 +287,12 @@ country_event = {
 					}
 				}
 			}
-			set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 3 }
+			set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 30 }
+			# Save game compatibilty
+			if = { limit = { NOT = { has_country_flag = adtFlagActiveMothershipRebuild } }
+				country_event = { id = a_deadly_tempest.105 days = 180 } # Mothership creates ships
+				set_country_flag = adtFlagActiveMothershipRebuild
+			}
 		}
 	}
 }
@@ -594,7 +600,7 @@ country_event = {
 					save_global_event_target_as = graygoo_country
 					add_resource = {
 						minerals = 5000
-						energy = 5000
+						energy = 10000
 						influence = 5000
 					}
 				}
@@ -1564,12 +1570,12 @@ fleet_event = {
 					}
 				}
 				fleet_event = { id = graygoo.163 }
-			} else = {
+			} else_if = { limit = { fleet_power > 16000 }
 				event_target:graygoo_country = {
 					country_event = { id = a_deadly_tempest.96 } # run patrol
 				}
 			}
-		} else = {
+		} else_if = { limit = { fleet_power > 16000 }
 			event_target:graygoo_country = {
 				country_event = { id = a_deadly_tempest.96 } # run patrol
 			}

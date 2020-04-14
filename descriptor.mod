@@ -15,5 +15,4 @@ tags={
 }
 picture="thumbnail.png"
 supported_version="2.6.*"
-path="mod/ADeadlyTempest"
 remote_file_id="2028826064"

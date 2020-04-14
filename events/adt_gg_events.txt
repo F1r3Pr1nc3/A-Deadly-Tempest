@@ -36,7 +36,7 @@ country_event = {
 	id = a_deadly_tempest.105
 	hide_window = yes
 	is_triggered_only = yes
-	# mean_time_to_happen = { months = 2 }
+	# mean_time_to_happen = { months = 3 }
 	trigger = {
 		exists = event_target:graygoo_country
 		event_target:graygoo_country = {
@@ -50,6 +50,8 @@ country_event = {
 		event_target:graygoo_country = {
 			every_owned_fleet = {
 				limit = {
+					has_fleet_flag = nanite_mother_ship
+					is_in_combat = no
 					any_ship = {
 						is_ship_size = graygoo_mothership
 					}
@@ -83,9 +85,16 @@ country_event = {
 					CmtEffectCreateShip_GraygooInterdictor = yes
 				}
 				prev = {
-					country_event = {
-						id = a_deadly_tempest.105
-						days = 60
+					# Save game compatibilty
+					if = {
+						limit = {
+							has_country_flag = adtFlagActiveMothershipRebuild
+							# NOT = { has_global_flag = CmtFlagLgateOpenedNow }
+						}
+						country_event = {
+							id = a_deadly_tempest.105
+							days = 90
+						}
 					}
 				}
 			}
@@ -305,8 +314,13 @@ country_event = {
 				set_friendly = no
 				set_hostile = yes
 			}
+			add_resource = {
+				minerals = 1000
+				energy = 10000
+			}
 			country_event = { id = a_deadly_tempest.105 days = 1800 } # Mothership creates ships
 			country_event = { id = a_deadly_tempest.96 } # Run Patrol
+			set_country_flag = adtFlagActiveMothershipRebuild
 		}
 	}
 }
