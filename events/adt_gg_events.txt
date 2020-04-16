@@ -47,54 +47,54 @@ country_event = {
 		# }
 	}
 	immediate = {
+		# if = { limit = { end_game_years_passed >= -10 }
+		# 	shoal_reinforce = { SHIPS = @\[@CmtT000_ConstFleetPower_Graygoo + 2.0] AMOUNT = 20 }
+		# } else_if = { limit = { mid_game_years_passed >= -10 }
+		# 	shoal_reinforce = { SHIPS = @\[@CmtT000_ConstFleetPower_Graygoo + 1.0]  AMOUNT = 10 }
+		# } else = {
+		# 	shoal_reinforce = { SHIPS = @\[@CmtT000_ConstFleetPower_Graygoo] AMOUNT = 5 }
+		# }
 		every_owned_fleet = {
 			limit = {
 				# has_fleet_flag = nanite_mother_ship
 				is_in_combat = no
-				any_ship = {
-					is_ship_size = graygoo_mothership
-				}
+				any_ship = { is_ship_size = graygoo_mothership }
+			}
+			if = { limit = { num_ships < 11 }
+				CmtEffectCreateShip_GraygooInterdictor = yes
 			}
 			if = {
 				limit = {
-					end_game_years_passed >= -10
-					num_ships < 41
+					has_fleet_flag = nanite_mother_ship
+					mid_game_years_passed >= -10
+					# exists = solar_system
+					# solar_system = { has_star_flag = lcluster }
+				}
+				if = { limit = { num_ships < 21 }
+					CmtEffectCreateShip_GraygooInterdictor = yes
 				}
 				# Motherships create increased ship numbers during galactic crisis
-				random_list = {
-					10 = {
-						CmtEffectCreateShip_GraygooMother = yes
-					}
-					90 = {
-						CmtEffectCreateShip_GraygooInterdictor = yes
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					mid_game_years_passed >= -10
-					num_ships < 21
-				}
-				CmtEffectCreateShip_GraygooInterdictor = yes
-			}
-			else_if = {
-				limit = {
-					num_ships < 11
-				}
-				CmtEffectCreateShip_GraygooInterdictor = yes
-			}
-			prev = {
-				# Save game compatibilty
 				if = {
 					limit = {
-						has_country_flag = adtFlagActiveMothershipRebuild
-						NOT = { has_global_flag = CmtFlagLgateOpenedNow } # TODO replace
+						end_game_years_passed >= -10
+						num_ships < 41
 					}
-					country_event = {
-						id = a_deadly_tempest.105
-						days = 60
+					random_list = {
+						10 = { CmtEffectCreateShip_GraygooMother = yes }
+						90 = { CmtEffectCreateShip_GraygooInterdictor = yes }
 					}
 				}
+			}
+		# Save game compatibilty   
+		if = {
+			limit = {
+				has_country_flag = adtFlagActiveMothershipRebuild
+				NOT = { has_global_flag = CmtFlagLgateOpenedNow } # TODO replace
+			}
+			set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 30 }
+			country_event = {
+				id = a_deadly_tempest.105
+				days = 60
 			}
 		}
 	}

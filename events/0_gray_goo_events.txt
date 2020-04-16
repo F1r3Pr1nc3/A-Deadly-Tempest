@@ -249,11 +249,11 @@ country_event = {
 				# Reinforce at factory if someone else is in the cluster...
 				event_target:nanite_factory = {
 					if = { limit = { end_game_years_passed >= -10 }
-						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 35 }
+						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 25 }
 					} else_if = { limit = { mid_game_years_passed >= 20 }
-						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 15 }
+						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 11 }
 					} else_if = { limit = { mid_game_years_passed >= -20 }
-						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 5 }
+						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 4 }
 					} else = {
 						CmtEffectCreateAdmiralty_GraygooAttackerB = yes
 					}
@@ -275,11 +275,11 @@ country_event = {
 							duration = 10
 						}
 						if = { limit = { end_game_years_passed >= -10 }
-							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 35 }
+							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 25 }
 						} else_if = { limit = { mid_game_years_passed >= 20 }
-							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 15 }
+							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 11 }
 						} else_if = { limit = { mid_game_years_passed >= -20 }
-							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 5 }
+							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 4 }
 						} else = {
 							CmtEffectCreateAdmiralty_GraygooAttackerA = yes
 						}
