@@ -733,7 +733,7 @@ CmtEffectCreateFleet_DessanuRoamer = {
 			CmtEffectCreateElement_DessanuStandard = yes
 			CmtFleetSetAuxParam_DessanuRoamerCommon = yes
 		}
-		settings = { uses_naval_capacity = no }
+		settings = { uses_naval_capacity = no spawn_debris = no }
 	}
 }
 
@@ -788,6 +788,7 @@ CmtEffectCreateFleet_GraygooAttacker = {
 			CmtEffectCreateElement_GraygooStandard = { AMOUNT = $AMOUNT|1$ }
 			CmtFleetSetAuxParam_GraygooAttacker = yes
 		}
+		settings = { spawn_debris = no }
 	}
 }
 

@@ -78,7 +78,6 @@ country_event = {
 				}
 				effect = {
 					save_global_event_target_as = graygoo_country
-				
 				}
 			}
 			event_target:main_star = { CmtEffectCreateNanitieFactory = yes }
@@ -93,10 +92,10 @@ country_event = {
 		}
 		
 		### Create Fleets
-		## Garrison Fleets at Capital
-		event_target:nanite_factory = { CmtEffectCreateAdmiralty_GraygooCapitalDefence = yes }
-		## Roamers
-		event_target:main_star = { CmtEffectCreateAdmiralty_GraygooRoamer = yes }
+		event_target:nanite_factory = {
+			CmtEffectCreateAdmiralty_GraygooCapitalDefence = yes ## Garrison Fleets at Capital
+			CmtEffectCreateAdmiralty_GraygooRoamer = yes ## Roamers
+		}
 
 		## Garisson Fleet for L-Cluster
 		every_system = {
@@ -614,11 +613,11 @@ country_event = {
 		}
 		every_country = { establish_communications_no_message = event_target:graygoo_country }
 
-		 # Garrison Fleets at Capital
-		event_target:nanite_factory = { CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes }
-		# Roamers
-		event_target:main_star = { CmtEffectCreateAdmiralty_DessanuRoamer = yes }
-
+		event_target:nanite_factory = {
+			CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes  # Garrison Fleets at Capital
+			CmtEffectCreateAdmiralty_DessanuRoamer = yes # Roamers
+		}
+		
 		### Change Planet to Gaia, Create Buildings, Orbital Station
 		every_system = {
 			limit = { has_star_flag = lcluster }
@@ -1570,12 +1569,12 @@ fleet_event = {
 					}
 				}
 				fleet_event = { id = graygoo.163 }
-			} else_if = { limit = { fleet_power > 16000 }
+			} else_if = { limit = { fleet_power > 21000 }
 				event_target:graygoo_country = {
 					country_event = { id = a_deadly_tempest.96 } # run patrol
 				}
 			}
-		} else_if = { limit = { fleet_power > 16000 }
+		} else_if = { limit = { fleet_power > 21000 }
 			event_target:graygoo_country = {
 				country_event = { id = a_deadly_tempest.96 } # run patrol
 			}
