@@ -21,3 +21,39 @@ disco_gray_cat = {
 	}
 	on_success = graygoo.400
 }
+
+transmitter_cat = {
+	picture = "GFX_evt_ship_in_orbit_2"
+	level = 2
+	max_once_global = yes
+	
+	spawn_chance = {
+		modifier = {
+			add = 3
+			has_distar = yes
+			is_star = no
+			from.owner = {
+				NOT = {
+					has_global_flag = l_cluster_opened
+					has_completed_event_chain_counter = {
+						event_chain = l_cluster_chain
+						counter = clues
+					}
+				}
+				has_event_chain = l_cluster_chain
+			}
+			solar_system = {
+				any_system_megastructure = {
+					OR = {
+						is_megastructure_type = gateway_ruined
+						is_megastructure_type = gateway_restored
+						is_megastructure_type = gateway_final
+						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
+					}
+				}
+			}
+		}
+	}
+	on_success = distar.2045
+}

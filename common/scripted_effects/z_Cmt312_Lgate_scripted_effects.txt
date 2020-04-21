@@ -145,6 +145,8 @@ CmtEffectRemoveDessanuGift = {
 ### End of Graygoo
 CmtEffectDestroyGraygoo = {
 	remove_global_flag = active_gray_goo
+	remove_global_flag = gray_goo_crisis_active # Fix vanilla Federation resolution
+
 	from = {
 		save_event_target_as = goo_slayer
 		country_event = { id = graygoo.15 }
@@ -185,6 +187,8 @@ CmtEffectDestroyGraygoo = {
 		every_owned_fleet = { destroy_fleet = this }
 		destroy_country = yes
 	}
+	clear_global_event_target = graygoo_country
+	clear_global_event_target = nanite_factory
 }
 
 

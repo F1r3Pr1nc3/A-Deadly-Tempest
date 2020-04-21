@@ -1,5 +1,15 @@
+###############################################
+###############################################
+#####                                     #####
+#####     Nanites Goo Special Effects     #####
+#####        For A Deadly Tempest         #####
+#####       Written by FirePrince         #####
+#####                                     #####
+###############################################
+###############################################
+
 shoal_reinforce = {
-	log = "set fleet size +$AMOUNT$ +$SHIPS$"
+	# log = "set fleet size +$AMOUNT$ +$SHIPS$"
 	every_owned_fleet = {
 		limit = {
 			has_auto_move_target = no
@@ -167,9 +177,13 @@ shoal_factory_guard_queue = {
 # TODO Unknown error!?
 shoal_continue_guard = {
 	queue_actions = {
+		wait = {
+			duration = 60
+			random = 60
+		}
 		find_random_system = {
 			trigger = {
-				id = graygoo_guard$NUM$.trigger.1
+				id = "graygoo_guard$NUM|11$.trigger.1"
 				has_star_flag = lcluster
 				any_system_planet = {
 					OR = {
@@ -185,7 +199,7 @@ shoal_continue_guard = {
 		}
 		find_closest_planet = {
 			trigger = {
-				id = graygoo_guard$NUM$.trigger.2
+				id = "graygoo_guard$NUM|11$.trigger.2"
 				OR = {
 					is_planet_class = pc_gray_goo
 					is_planet_class = pc_gaia
@@ -197,9 +211,9 @@ shoal_continue_guard = {
 			}
 			failed = {
 				effect = {
-					id = graygoo_guard$NUM$.failed
+					id = "graygoo_guard$NUM|11$.failed"
 					# log = "Fail Guard$NUM$ [This.GetFleetName] returning from: [Prev.GetName]"
-					shoal_continue_guard = { NUM = $NUM$ }
+					shoal_continue_guard = { NUM = @\[$NUM|11$ + 1] }
 				}
 			}
 		}
