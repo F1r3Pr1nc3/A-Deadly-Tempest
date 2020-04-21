@@ -750,7 +750,7 @@ CmtEffectCreateElement_GraygooStandard = {
 	
 	while = {
 		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlShip value > 0.125 } } }
-		event_target:CmtGlobalVar = { subtract_variable = { which = CmtVarWhileControlShip value = 0.25 } }
+		event_target:CmtGlobalVar = { change_variable = { which = CmtVarWhileControlShip value = -0.25 } }
 		CmtEffectProgressLoop4 = yes
 		while = {
 			count = $AMOUNT$

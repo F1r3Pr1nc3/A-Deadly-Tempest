@@ -51,7 +51,7 @@ tech_lgate_construction = {
 	tier = 5
 	category = { particles }
 	is_rare = yes
-	is_reverse_engineerable = no
+	is_reverse_engineerable = yes
 	weight = @tier5cost3
 	prerequisites = { "tech_gateway_construction" "tech_lgate_activation" }
 

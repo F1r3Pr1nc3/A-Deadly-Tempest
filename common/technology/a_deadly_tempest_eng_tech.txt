@@ -9,6 +9,7 @@ tech_nanite_ships = {
 	category = { voidcraft }
 	prerequisites = { "tech_battleships" }
 	weight = @tier5weight1
+	is_reverse_engineerable = yes
 	# is_rare = yes
 
 	## unlock nanite ships
@@ -55,6 +56,7 @@ tech_nanite_hull = {
 	category = { voidcraft }
 	prerequisites = { "tech_nanite_ships" }
 	weight = @tier5weight3
+	is_reverse_engineerable = yes
 	is_rare = yes
 
 	potential = {

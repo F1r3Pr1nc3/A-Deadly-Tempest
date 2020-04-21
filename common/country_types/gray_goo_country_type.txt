@@ -1,3 +1,104 @@
+gate_builders = {
+	scaled_difficulty_bonuses = 2.5
+	share_survey_data = no
+	custom_diplomacy = yes
+	enforces_borders = no
+	needs_survey = no
+	has_complete_sensor = yes
+	relations = yes
+	fallen_empire = yes
+	diplomatic_wars = yes
+	ship_disengagement = yes
+	army_disengagement = yes
+	uses_special_buildables = yes
+	observable = yes
+	custom_starbase = starbase_gatebuilders
+	ai = {
+		enabled = yes
+		declare_war = yes
+		min_navy_for_wars = 0.0
+		min_assault_armies_for_wars = 6
+		colonizer = no
+		internal_policies = no
+		modification = no
+		construction = no
+		# starbase_upgrade = no
+		limited_construction = yes
+		tech = no
+		modules = {
+			anti_crisis_military_minister_module
+		}
+		army_data = {
+			xenomorph_army = {
+				fraction = {
+					factor = 75
+					modifier = {
+						factor = 0
+						NOT = { has_ethic = ethic_fanatic_xenophobe }
+					}
+				}
+			}
+			robotic_army = {
+				fraction = {
+					factor = 75
+					modifier = {
+						factor = 0
+						NOT = { has_ethic = ethic_fanatic_materialist }
+					}
+				}
+			}
+		}
+	}
+	faction = {
+		hostile = no
+		needs_border_access = no
+		needs_colony = no
+		generate_borders = yes
+	}
+
+	modules = {
+		# Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = {
+			can_receive = {
+				action_declare_war
+			}
+			can_send = {
+				action_declare_war
+			}
+		}
+		all_technology_module = {}
+		tiered_technology_module = {
+			tier = 3
+			rare = yes
+		}
+		standard_event_module = {}
+		standard_economy_module = {}
+	}
+
+	resources = {
+		category = country_base
+		produces = {
+			energy = 500
+			minerals = 150
+			food = 100
+			physics_research = 10
+			society_research = 10
+			engineering_research = 10
+			sr_dark_matter = 1
+			sr_living_metal = 1
+			sr_zro = 1
+			nanites = 10
+			influence = 3
+			unity = 2
+			alloys = 50
+			consumer_goods = 200
+			rare_crystals = 5
+			exotic_gases = 5
+			volatile_motes = 5
+		}
+	}
+}
+
 gray_goo = {
 	attack_unarmed_orbital_stations = yes
 	scaled_difficulty_bonuses = 1.5	# scales to setting, vanilla = 1.0, FA = 3.0
@@ -23,7 +124,7 @@ gray_goo = {
 	faction = {
 		hostile = yes
 		needs_border_access = no
-		generate_borders = yes
+		generate_borders = no
 		needs_colony = no
 	}
 	modules = {

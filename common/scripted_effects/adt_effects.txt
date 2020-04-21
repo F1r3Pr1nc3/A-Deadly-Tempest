@@ -1,0 +1,209 @@
+shoal_reinforce = {
+	log = "set fleet size +$AMOUNT$ +$SHIPS$"
+	every_owned_fleet = {
+		limit = {
+			has_auto_move_target = no
+			num_ships < $AMOUNT|11$
+			is_in_combat = no
+			any_ship = {
+				is_ship_size = graygoo_mothership
+			}
+			OR = {
+				has_fleet_flag = nanite_mother_ship
+				AND = {
+					exists = solar_system
+					solar_system = {
+						has_star_flag = lcluster
+						any_system_planet = {
+							any_fleet_in_orbit = { exists = owner is_same_value = prevprevprev }
+						}
+					}
+				}
+			}
+		}
+		CmtEffectResetLoop = yes
+		while = {
+			count = $SHIPS|1$
+			CmtEffectProgressLoop4 = yes
+			switch = {
+				trigger = has_global_flag
+				CmtFlagLoopA = {
+					CmtEffectCreateShip_GraygooInterdictor = yes
+				}
+				CmtFlagLoopB = {
+					CmtEffectCreateShip_GraygooInterdictor = yes
+				}
+				CmtFlagLoopC = {
+					random_list = {
+						1 = {
+							CmtEffectCreateShip_GraygooMother = yes
+						}
+						9 = {
+							CmtEffectCreateShip_GraygooInterdictor = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+shoal_factory_guard_move = {
+	event_target:lcluster_factory_system = {
+		random_system_planet = {
+			limit = {
+				OR = {
+					is_planet_class = pc_gray_goo
+					is_planet_class = pc_gaia
+				}
+				OR = {
+					from = { NOT = { exists = orbit } }
+					any_fleet_in_orbit = { NOT = { is_same_value = from } }
+				}
+				NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+			}
+			from = {
+				auto_move_to_planet = {
+					target = prev
+					clear_auto_move_on_arrival = no
+					arrival_effect = shoal_factory_guard_move
+				}
+			}
+		}
+	}
+}
+
+shoal_factory_guard_queue = {
+	queue_actions = {
+		wait = {
+			duration = 60
+			random = 60
+		}
+		find_closest_planet = {
+			trigger = {
+				id =  graygoo_guard$NUM$.trigger.1
+				OR = {
+					is_planet_class = pc_gray_goo
+					is_planet_class = pc_gaia
+				}
+				NAND = {
+					prev = { exists = orbit }
+					any_fleet_in_orbit = { is_same_value = prevprev }
+				}
+				NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+			}
+			found_planet = {
+				# orbit_planet = THIS
+				effect = {
+					id = graygoo_guard$NUM$.effect.2
+					if = {
+						limit = {
+							NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+						} 
+						from = { queue_actions = { orbit_planet = prev } }
+					} else = {
+						random_list = {
+							1 = {
+								from = { queue_actions = { orbit_planet = prev } }
+							}
+							1 = {
+								from = { queue_actions = { move_to = event_target:nanite_factory } }
+							}
+							6 = {
+								solar_system = {
+									random_system_planet = {
+										limit = {
+											OR = {
+												is_planet_class = pc_gray_goo
+												is_planet_class = pc_gaia
+											}
+											NOT = {
+												# is_same_value = prevprevprev
+												any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship }
+											}
+										}
+										from = { queue_actions = { orbit_planet = prev } }
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			failed = {
+				effect = {
+					id = graygoo_guard$NUM$.failed
+					random_list = {
+						1 = {
+							from = { queue_actions = { move_to = event_target:main_star } }
+						}
+						1 = {
+							from = { queue_actions = { move_to = event_target:nanite_factory } }
+						}
+						2 = {
+							solar_system = {
+								random_system_planet = {
+									limit = {
+										OR = {
+											is_planet_class = pc_gray_goo
+											is_planet_class = pc_gaia
+										}
+										NOT = {
+											any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship }
+										}
+									}
+									from = { queue_actions = { orbit_planet = prev } }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# TODO Unknown error!?
+shoal_continue_guard = {
+	queue_actions = {
+		find_random_system = {
+			trigger = {
+				id = graygoo_guard$NUM$.trigger.1
+				has_star_flag = lcluster
+				any_system_planet = {
+					OR = {
+						is_planet_class = pc_gray_goo
+						is_planet_class = pc_gaia
+					}
+					NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+				}
+			}
+			found_system = {
+				move_to = THIS
+			}
+		}
+		find_closest_planet = {
+			trigger = {
+				id = graygoo_guard$NUM$.trigger.2
+				OR = {
+					is_planet_class = pc_gray_goo
+					is_planet_class = pc_gaia
+				}
+				NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+			}
+			found_planet = {
+				orbit_planet = THIS
+			}
+			failed = {
+				effect = {
+					id = graygoo_guard$NUM$.failed
+					# log = "Fail Guard$NUM$ [This.GetFleetName] returning from: [Prev.GetName]"
+					shoal_continue_guard = { NUM = $NUM$ }
+				}
+			}
+		}
+	}
+}
+
+# effect = {remove_auto_move_target = yes	clear_fleet_actions = this}

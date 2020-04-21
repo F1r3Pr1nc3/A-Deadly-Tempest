@@ -528,7 +528,7 @@ CmtEffectCreateAdmiralty_DessanuGarryson = {
 CmtEffectCreateAdmiralty_DessanuRoamer = {
 	event_target:graygoo_country = {
 		CmtEffectCreateFleet_DessanuRoamer = yes
-		event_target:lcluster1.star = {
+		event_target:lcluster1 = {
 			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 1 }
 		}
 		CmtEffectCreateFleet_DessanuRoamer = yes
@@ -775,7 +775,7 @@ CmtEffectCreateAdmiralty_GraygooGarryson = {
 CmtEffectCreateAdmiralty_GraygooRoamer = {
 	event_target:graygoo_country = {
 		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-		event_target:lcluster1.star = {
+		event_target:lcluster1 = {
 			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 01 }
 		}
 		

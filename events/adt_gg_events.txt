@@ -18,15 +18,20 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		exists = event_target:graygoo_country
 		exists = event_target:nanite_factory
 		event_target:nanite_factory = {
 			is_ship_size = graygoo_factory
 		}
 	}
 	immediate = {
-		country_event = {
-			id = graygoo.3
-			days = 3
+		# incrase fleet power over time
+		event_target:CmtGlobalVar = { change_variable = { which = CmtVarFleetPower_Graygoo value = 0.5 } }
+		event_target:graygoo_country = {
+			country_event = {
+				id = graygoo.3
+				days = 3
+			}
 		}
 	}
 }
@@ -37,68 +42,84 @@ country_event = {
 	id = a_deadly_tempest.105
 	hide_window = yes
 	is_triggered_only = yes
-	# mean_time_to_happen = { months = 2 }
 	trigger = {
 		exists = event_target:graygoo_country
-		is_same_empire = event_target:graygoo_country
+		event_target:graygoo_country = { is_same_empire = prev }
 		# any_owned_fleet = {
 		# 	has_fleet_flag = nanite_mother_ship
 		# 	any_ship = { is_ship_size = graygoo_mothership }
 		# }
 	}
 	immediate = {
-		# if = { limit = { end_game_years_passed >= -10 }
-		# 	shoal_reinforce = { SHIPS = @\[@CmtT000_ConstFleetPower_Graygoo + 2.0] AMOUNT = 20 }
-		# } else_if = { limit = { mid_game_years_passed >= -10 }
-		# 	shoal_reinforce = { SHIPS = @\[@CmtT000_ConstFleetPower_Graygoo + 1.0]  AMOUNT = 10 }
-		# } else = {
-		# 	shoal_reinforce = { SHIPS = @\[@CmtT000_ConstFleetPower_Graygoo] AMOUNT = 5 }
-		# }
 		every_owned_fleet = {
 			limit = {
-				# has_fleet_flag = nanite_mother_ship
 				is_in_combat = no
 				any_ship = { is_ship_size = graygoo_mothership }
+				OR = {
+					has_fleet_flag = nanite_mother_ship
+					has_fleet_flag = trait_biothrall_tolerance
+					# AND = { exists = solar_system solar_system = { has_star_flag = lcluster } }
+				}
 			}
 			if = { limit = { num_ships < 11 }
 				CmtEffectCreateShip_GraygooInterdictor = yes
 			}
 			if = {
-				limit = {
-					has_fleet_flag = nanite_mother_ship
-					mid_game_years_passed >= -10
-					# exists = solar_system
-					# solar_system = { has_star_flag = lcluster }
-				}
+				limit = { mid_game_years_passed >= -10 }
 				if = { limit = { num_ships < 21 }
 					CmtEffectCreateShip_GraygooInterdictor = yes
 				}
 				# Motherships create increased ship numbers during galactic crisis
 				if = {
 					limit = {
-						end_game_years_passed >= -10
+						end_game_years_passed >= 0
 						num_ships < 41
 					}
 					random_list = {
-						10 = { CmtEffectCreateShip_GraygooMother = yes }
-						90 = { CmtEffectCreateShip_GraygooInterdictor = yes }
+						1 = { CmtEffectCreateShip_GraygooMother = yes }
+						9 = { CmtEffectCreateShip_GraygooInterdictor = yes }
 					}
 				}
 			}
-		# Save game compatibilty   
-		if = {
-			limit = {
-				has_country_flag = adtFlagActiveMothershipRebuild
-				NOT = { has_global_flag = CmtFlagLgateOpenedNow } # TODO replace
-			}
-			set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 30 }
-			country_event = {
-				id = a_deadly_tempest.105
-				days = 60
-			}
+		}
+		# Save game compatibilty
+		# if = {
+		# 	limit = {
+		# 		has_country_flag = adtFlagActiveMothershipRebuild
+		# 	}
+		# 	country_event = {
+		# 		id = a_deadly_tempest.105
+		# 		days = 90
+		# 	}
+		# }
+	}
+}
+
+# Mothership creates ships
+country_event = {
+	id = a_deadly_tempest.106
+	hide_window = yes
+	mean_time_to_happen = { months = 3 }
+	trigger = {
+		exists = event_target:graygoo_country
+		event_target:graygoo_country = { is_same_empire = prev }
+	}
+	immediate = {
+		# TODO make dynamic with Crisis Manager
+		#event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Graygoo } }
+		# event_target:CmtGlobalVar = { shoal_reinforce = { AMOUNT = @\[CmtVarWhileControlShip + 10] SHIPS = 2 } }
+		if = { limit = { end_game_years_passed > 20 }
+			shoal_reinforce = { AMOUNT = 41 SHIPS = 3 }
+		} else_if = { limit = { mid_game_years_passed > 40 }
+			shoal_reinforce = { AMOUNT = 21 SHIPS = 2 }
+		} else_if = { limit = { mid_game_years_passed > -10 }
+			shoal_reinforce = { AMOUNT = 11 SHIPS = 2 }
+		} else = {
+			shoal_reinforce = { AMOUNT = 6 SHIPS = 1 }
 		}
 	}
 }
+
 
 # Gray Goo Friendship
 country_event = {
@@ -203,6 +224,7 @@ country_event = {
 		event_target:nanite_factory = {
 			is_ship_size = graygoo_factory
 		}
+		NOT = { has_country_flag = gk_told_to_leave }
 	}
 	immediate = {
 		event_target:graygoo_country = {
@@ -241,10 +263,10 @@ country_event = {
 					}
 				}
 			}
-			if = { limit = { check_variable = { which = fleetCounter value > 0 } }
+			if = { limit = { check_variable = { which = fleetCounter value < 1 } }
 				set_variable = { which = fleetCounter value = 8 } log = "set fleetCounter [graygoo_country.fleetCounter]"
 			}
-
+			set_timed_country_flag = { flag = gk_told_to_leave days = 60 }
 			every_owned_fleet = {
 				limit = {
 					exists = solar_system
@@ -263,30 +285,31 @@ country_event = {
 								is_planet_class = pc_gaia
 							}
 						}
+						
 						prevprev = {
 							if = { limit = { has_fleet_flag = nanite_mother_ship }
-								log = "shoal Guard [This.GetFleetName] returning to base [main_star.Planet.GetName] from: [Prev.GetName]"
+								# log = "shoal Guard [This.GetFleetName] returning to base [main_star.Planet.GetName] from: [Prev.GetName]"
 								remove_auto_move_target = yes
 								clear_fleet_actions = this
 								queue_actions = {
-									# orbit_planet = event_target:main_star
 									move_to = event_target:main_star
+									orbit_planet = prev
 								}
 								auto_move_to_planet = {
 									target = prev
 									clear_auto_move_on_arrival = no
-									# arrival_effect = shoal_continue_journey
+									# arrival_effect = 
 								}
 							} else_if = { limit = { OR = { has_auto_move_target = yes num_ships > 1 } }
-								log = "shoal [This.GetFleetName] returning to base [main_star.Planet.GetName] from: [Prev.GetName]"
+								# log = "shoal [This.GetFleetName] returning to base [main_star.Planet.GetName] from: [Prev.GetName]"
 								remove_auto_move_target = yes
 								clear_fleet_actions = this
 								event_target:graygoo_country = { change_variable = { which = fleetCounter value = 1 } }
 								queue_actions = {
 									move_to = event_target:main_star
 									effect = {
-										id ="graygoo_SetAuxParam_Roamer[fleetCounter@graygoo_country]"
-										CmtFleetSetAuxParam_Roamer = { NUM = fleetCounter@event_target:graygoo_country }
+										id = "graygoo_SetAuxParam_Roamer[graygoo_country.fleetCounter]"
+										CmtFleetSetAuxParam_Roamer = { NUM = "graygoo_country.fleetCounter" }
 									}
 								}
 							}
@@ -294,9 +317,182 @@ country_event = {
 					}
 				}
 			}
+			country_event = { id = a_deadly_tempest.161 days = 61 }
+			country_event = { id = a_deadly_tempest.97 days = 90 }
 		}
 	}
 }
+
+# Reorder base fleets
+country_event = {
+	id = a_deadly_tempest.97
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:graygoo_country
+		exists = event_target:nanite_factory
+		event_target:nanite_factory = {
+			is_ship_size = graygoo_factory
+		}
+		NOT = { has_country_flag = gk_told_to_leave }
+		event_target:lcluster_factory_system = {
+			any_fleet_in_system = {
+				has_fleet_flag = nanite_mother_ship
+				has_auto_move_target = no
+				OR = {
+					NOT = { exists = orbit }
+					orbit = { any_fleet_in_orbit = { NOT = { is_same_value = prev } } }
+				}
+			}
+		}
+	}
+	immediate = {
+		event_target:lcluster_factory_system = {
+			every_system_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_gray_goo
+						is_planet_class = pc_gaia
+					}
+					NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+				}
+				prev = {
+					every_fleet_in_system = {
+						limit= {
+							has_fleet_flag = nanite_mother_ship
+							has_auto_move_target = no
+							OR = {
+								NOT = { exists = orbit }
+								orbit = { any_fleet_in_orbit = { NOT = { is_same_value = prevprev } } }
+							}
+						}
+						queue_actions = { 
+							wait = {
+								duration = 30
+								random = 30
+							}
+						}
+						random_list = {
+							1 = {
+								queue_actions = { move_to = event_target:main_star }
+							}
+							1 = {
+								queue_actions = { move_to = event_target:nanite_factory }
+							}
+							5 = {
+								solar_system = {
+									random_system_planet = {
+										limit = {
+											OR = {
+												is_planet_class = pc_gray_goo
+												is_planet_class = pc_gaia
+											}
+											NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+										}
+										prevprev = { queue_actions = { orbit_planet = prev } }
+									}
+								}
+							}
+							3 = {
+								auto_move_to_planet = {
+									target = prevprev
+									clear_auto_move_on_arrival = no
+									arrival_effect = shoal_factory_guard_move
+								}
+							}
+							1 = {}
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = a_deadly_tempest.98 days = 30 }
+	}
+}
+
+# Reorder fleets again
+country_event = {
+	id = a_deadly_tempest.98
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:graygoo_country
+		exists = event_target:nanite_factory
+		event_target:nanite_factory = {
+			is_ship_size = graygoo_factory
+		}
+		NOT = { has_country_flag = gk_told_to_leave }
+	}
+	immediate = {
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = nanite_mother_ship
+				has_auto_move_target = no
+				any_ship = { is_ship_size = graygoo_mothership }
+				OR = {
+					NOT = { exists = orbit }
+					orbit = {
+						any_fleet_in_orbit = {
+							NOT = { is_same_value = prevprev }
+						}
+					}
+				}
+				exists = solar_system
+				solar_system = {
+					has_star_flag = lcluster
+				}
+			}
+			if = { limit = { solar_system = { is_same_value = event_target:lcluster_factory_system } }
+				# log = "shoal base Guard [This.GetFleetName] returning to [Prev.Planet.GetName]"
+				event_target:graygoo_country = { change_variable = { which = fleetCounter value = 1 } }
+				shoal_factory_guard_queue = { NUM = "graygoo_country.fleetCounter" }
+			}
+			# TODO Unknown error
+			# else_if = { limit = { NOT = { has_fleet_flag = guard_returning } }
+			# 	log = "shoal guard [This.GetFleetName] retreat from: [Prev.Planet.GetName]"
+			# 	clear_fleet_actions = this
+			# 	event_target:graygoo_country = { change_variable = { which = fleetCounter value = 1 } }
+			# 	shoal_continue_guard = { NUM = "graygoo_country.fleetCounter" }
+			# }
+		}
+	}
+}
+
+# Failed to leave / Continue patrol (break retreat)
+country_event = {
+	id = a_deadly_tempest.161
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = gk_told_to_leave }
+		event_target:lcluster_factory_system = {
+			any_fleet_in_system = {
+				owner = { is_same_value = root }
+				is_in_combat = no
+				any_ship = {
+					is_ship_size = graygoo_factory
+				}
+			}
+		}
+	}
+	immediate = {
+		every_owned_fleet = {
+			limit = {
+				has_auto_move_target = yes
+				any_ship = { is_ship_size = graygoo_mothership }
+				exists = solar_system
+				solar_system = {
+					has_star_flag = lcluster
+					NOT = { is_same_value = event_target:lcluster_factory_system }
+				}
+			}
+			remove_auto_move_target = yes # works although has_auto_move_target says no!?
+			# set_timed_fleet_flag = { flag = guard_returning days = 61 }
+		}
+		country_event = { id = a_deadly_tempest.97 days = 18 }
+	}
+}
+
 
 # Gatebuilders hostility
 # From, This = Owner

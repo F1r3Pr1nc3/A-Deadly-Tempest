@@ -4,32 +4,33 @@ namespace = distar
 #####                                     #####
 #####     L-Gates Events and Graygoo      #####
 #####      Support A Deadly Tempest       #####
-#####    Semi support Crisis Manager      #####
+#####       Support Crisis Manager        #####
+#####       Support Expanded Events       #####
 #####                                     #####
 ###############################################
 ###############################################
 # Randomize L-Cluster outcome on_game_start
-event = {
-	id = distar.8000
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		random_list = {
-			80 = {
-				set_global_flag = gray_goo_crisis_set
-				set_global_flag = active_gray_goo
-				set_global_flag = dragon_season
-			}
-			40 = {
-				set_global_flag = gray_goo_empire_set
-				set_global_flag = dragon_season
-			}
-			20 = {
-				set_global_flag = dragon_season
-			}
-		}
-	}
-}
+# event = {
+# 	id = distar.8000
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	immediate = {
+# 		random_list = {
+# 			80 = {
+# 				set_global_flag = gray_goo_crisis_set
+# 				set_global_flag = active_gray_goo
+# 				set_global_flag = dragon_season
+# 			}
+# 			40 = {
+# 				set_global_flag = gray_goo_empire_set
+# 				set_global_flag = dragon_season
+# 			}
+# 			20 = {
+# 				set_global_flag = dragon_season
+# 			}
+# 		}
+# 	}
+# }
 
 # check for gateway within borders
 country_event = {
@@ -45,6 +46,11 @@ country_event = {
 						is_megastructure_type = lgate_disabled
 					}
 				}
+				OR = {
+					is_ai = no
+					NOT = { has_global_flag = gray_goo_crisis_set }
+					fleet_power > 30000
+				}
 			}
 			random_owned_megastructure = {
 				limit = {
@@ -55,14 +61,12 @@ country_event = {
 				}
 				save_event_target_as = candidate_gateway
 			}
-			country_event = {
-				id = distar.10905
-			}			# enable project
+			# enable project
+			country_event = { id = distar.10905 }
 		}
 		else = {
-			country_event = {
-				id = distar.10901
-			}			# looping check
+			# looping check
+			country_event = { id = distar.10901 }
 		}
 	}
 }
@@ -87,6 +91,11 @@ country_event = {
 					}
 				}
 				has_technology = tech_lgate_activation
+				OR = {
+					is_ai = no
+					NOT = { has_global_flag = gray_goo_crisis_set }
+					fleet_power > 30000
+				}
 			}
 			random_owned_megastructure = {
 				limit = {
@@ -97,15 +106,12 @@ country_event = {
 				}
 				save_event_target_as = candidate_gateway
 			}
-			country_event = {
-				id = distar.10905
-			}			# enable project
+			# enable project
+			country_event = { id = distar.10905 }			
 		}
 		else = {
-			country_event = {
-				id = distar.10902
-				days = 60
-			}			# *THIS* looping check
+			# *THIS* looping check
+			country_event = { id = distar.10902 days = 60 }			
 		}
 	}
 }
@@ -120,7 +126,7 @@ country_event = {
 		set_country_flag = lcluster_opener
 		set_country_flag = lgates_activated
 		set_global_flag = lgates_activated_globally
-		set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 3 }
+		set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 5 }
 		# Spawn L-Cluster
 		if = {
 			limit = {

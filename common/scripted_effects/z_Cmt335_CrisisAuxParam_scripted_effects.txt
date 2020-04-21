@@ -176,7 +176,7 @@ CmtFleetSetAuxParam_GraygooRoamer = {
 						found_planet = {
 							orbit_planet = THIS
 							wait = {
-								duration = 50
+								duration = 60
 								random = 25
 							}
 						}
@@ -211,7 +211,7 @@ CmtFleetSetAuxParam_Roamer = {
 				found_planet = {
 					orbit_planet = THIS
 					wait = {
-						duration = 50
+						duration = 60
 						random = 25
 					}
 				}
