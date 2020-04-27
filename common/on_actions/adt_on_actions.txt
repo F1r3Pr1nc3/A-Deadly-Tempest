@@ -1,7 +1,8 @@
-# on_game_start = {
-# 	events = {
-# 	}
-# }
+on_game_start = {
+	events = {
+		a_deadly_tempest.1
+	}
+}
 # No scope, like on_game_start
 # on_monthly_pulse = {
 # 	events = {

@@ -206,7 +206,7 @@ create_dessanu_roamers_1 = {
 		CmtEffectCreateFleet_DessanuRoamer = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 01 }
+			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 1 }
 		}
 	}
 }
@@ -215,7 +215,7 @@ create_dessanu_roamers_2 = {
 		CmtEffectCreateFleet_DessanuRoamer = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 02 }
+			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 2 }
 		}
 	}
 }
@@ -224,7 +224,7 @@ create_dessanu_roamers_3 = {
 		CmtEffectCreateFleet_DessanuRoamer = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 03 }
+			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 3 }
 		}
 	}
 }
@@ -233,7 +233,7 @@ create_dessanu_roamers_4 = {
 		CmtEffectCreateFleet_DessanuRoamer = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 04 }
+			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 4 }
 		}
 	}
 }
@@ -242,7 +242,7 @@ create_dessanu_roamers_5 = {
 		CmtEffectCreateFleet_DessanuRoamer = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 05 }
+			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 5 }
 		}
 	}
 }
@@ -251,7 +251,7 @@ create_dessanu_roamers_6 = {
 		CmtEffectCreateFleet_DessanuRoamer = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 06 }
+			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 6 }
 		}
 	}
 }
@@ -260,7 +260,7 @@ create_dessanu_roamers_7 = {
 		CmtEffectCreateFleet_DessanuRoamer = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 07 }
+			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 7 }
 		}
 	}
 }
@@ -271,7 +271,7 @@ create_graygoo_roamers_1 = {
 		CmtEffectCreateFleet_GraygooAttacker = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 01 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 1 }
 		}
 	}
 }
@@ -280,7 +280,7 @@ create_graygoo_roamers_2 = {
 		CmtEffectCreateFleet_GraygooAttacker = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 02 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 2 }
 		}
 	}
 }
@@ -289,7 +289,7 @@ create_graygoo_roamers_3 = {
 		CmtEffectCreateFleet_GraygooAttacker = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 03 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 3 }
 		}
 	}
 }
@@ -298,7 +298,7 @@ create_graygoo_roamers_4 = {
 		CmtEffectCreateFleet_GraygooAttacker = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 04 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 4 }
 		}
 	}
 }
@@ -307,7 +307,7 @@ create_graygoo_roamers_5 = {
 		CmtEffectCreateFleet_GraygooAttacker = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 05 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 5 }
 		}
 	}
 }
@@ -316,7 +316,7 @@ create_graygoo_roamers_6 = {
 		CmtEffectCreateFleet_GraygooAttacker = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 06 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 6 }
 		}
 	}
 }
@@ -325,7 +325,7 @@ create_graygoo_roamers_7 = {
 		CmtEffectCreateFleet_GraygooAttacker = yes
 		random_system = {
 			limit = { has_star_flag = lcluster }
-			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 07 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 7 }
 		}
 	}
 }

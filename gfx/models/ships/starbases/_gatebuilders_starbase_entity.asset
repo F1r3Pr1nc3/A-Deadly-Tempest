@@ -13,11 +13,11 @@ entity = {
 entity = {
 	name = "gatebuilders_starbase_entity"
 	clone = "gatebuilder_01_space_station_entity"
-	scale = 0.9
+	# scale = 1.0
 }
 
 entity = {
 	name = "gatebuilder_starbase_section_entity"
 	clone = "gatebuilder_01_space_station_section_entity"
-	scale = 0.9
+	# scale = 1.0
 }

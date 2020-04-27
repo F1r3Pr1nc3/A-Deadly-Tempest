@@ -96,7 +96,7 @@ CmtFleetSetAuxParam_DessanuRoamer = {
 				repeat = {
 					find_random_system = {
 						trigger = {
-							id = graygoo_roamers_$NUM$.trigger.1
+							id = dessanu_roamers_$NUM$.trigger.1
 							has_star_flag = lcluster
 						}
 						found_system = {
@@ -105,7 +105,7 @@ CmtFleetSetAuxParam_DessanuRoamer = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = graygoo_roamers_$NUM$.trigger.2
+							id = dessanu_roamers_$NUM$.trigger.2
 							is_planet_class = "pc_gaia"
 						}
 						found_planet = {

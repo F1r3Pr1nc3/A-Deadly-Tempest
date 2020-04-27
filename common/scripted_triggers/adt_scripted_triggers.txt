@@ -40,3 +40,11 @@ has_lgate = {
 		}
 	}
 }
+
+host_has_nhsc = {
+	set_variable = { which = random_nhsc_value value = @armor_s_t8_strength }
+	OR = {
+		has_global_flag = nhsc_v30
+		check_variable = { which = random_nhsc_value value > 0 }
+	}
+}

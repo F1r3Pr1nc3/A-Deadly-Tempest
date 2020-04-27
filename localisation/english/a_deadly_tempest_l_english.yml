@@ -12,7 +12,10 @@
  a_deadly_tempest.82.a:0 "This atrocity must be avenged!"
  a_deadly_tempest.83.desc:0 "Our forces report that they have concluded the orbital bombardment of §H[From.GetName]§!. All population centers have been systematically eradicated, and the surface [From.GetPlanetMoon] is now only covered in countless nanite swarms."
  
- 
+ a_deadly_tempest.17.name:0 "The Gray Goo's End"
+ #a_deadly_tempest.17.desc:0 ""
+ a_deadly_tempest.17.tooltip:0 "Gain two of the following Technologies:\n"
+  
  ### Ship designs
  
  NAME_shoal_Fleet:0 "Nanite Shoal"
@@ -121,6 +124,8 @@
  feature_lgate_construction_desc:0 "Allows us to rebuild and construct new L-Gates."
  
  requires_tech_lgate_construction:0 "$TRIGGER_FAIL$Requires technology £physics£ §Y$tech_lgate_construction$§!."
+ lgate_requires_black_hole: "$TRIGGER_FAIL$Must be built near a black hole."
+
  tech_tactical_lgate_use:0 "Tactial L-Gate Use"
  tech_tactical_lgate_use_desc:0 "The L-Gates can keep us safe and secluded from the crisis currently burning the galaxy. But can we condemn the galaxy to its grim fate? Shall we not stand stalwart against the oncoming strom? Either way, maintaining a tactical doctrine of limited use of the L-Gates will allow us to strike at those we deem a threat."
  tech_nanoactuators:0 "Nanoactuators"

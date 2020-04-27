@@ -1,13 +1,44 @@
+namespace = a_deadly_tempest
 ###############################################
 ###############################################
 #####                                     #####
 #####     Nanites Goo Special Events      #####
 #####        For A Deadly Tempest         #####
-#####    Written by His Dread Monarch     #####
-#####          and FirePrince             #####
+#####       Written by FirePrince         #####
+#####                                     #####
 ###############################################
 ###############################################
-namespace = a_deadly_tempest
+
+
+## ##################################################### ##
+##             Setting up mod-is-in-use flags            ##
+##          Activation on Game Start/Saved Game          ##
+## ##################################################### ##
+event = {
+	id = a_deadly_tempest.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = a_deadly_tempest_mod_active }
+		is_country_type = global_event
+	}
+	immediate = {
+		set_global_flag = a_deadly_tempest_mod_active
+	}
+}
+
+event = {
+	id = a_deadly_tempest.2
+	hide_window = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_global_flag = a_deadly_tempest_mod_active }
+		is_country_type = global_event
+	}
+	immediate = {
+		set_global_flag = a_deadly_tempest_mod_active
+	}
+}
 
 ####################################
 # Nanites spawn more ships over time
@@ -41,127 +72,101 @@ event = {
 
 # nanite_factory_destroyed gives tech
 country_event = {
-	id = a_deadly_tempest.7
-	hide_window = yes
+	id = "a_deadly_tempest.7"
+	title =  "a_deadly_tempest.17.name"
+	desc =  "distar.137.paci"
+	hide_window = no
 	fire_only_once = yes
+
+	picture = GFX_evt_large_explosion # GFX_evt_gray_goo_ships
+	show_sound = event_space_battle # event_ship_explosion # event_celebration
+	location = FromFromFrom
+
 	trigger = { 
 		exists = event_target:goo_slayer
 		event_target:goo_slayer = { is_same_empire = prev }
 	 }
-	immediate = {
-		random_list = {
-			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_nanite_torpedo
+
+	# immediate = {}
+
+	option = {
+		name = "distar.137.a"
+		custom_tooltip = "a_deadly_tempest.17.tooltip"
+		hidden_effect = {
+			set_variable = { which = picked_tech value = 0 }
+			while = {
+				limit = {
+					check_variable = {
+						which = picked_tech
+						value < 2
+					}
 				}
-				give_technology = { tech = tech_nanite_torpedo }
-				change_variable = { which = "picked_tech" value = 1 }
-				tooltip = {
-					give_technology = { tech = tech_nanite_torpedo }
-				}
-			}
-			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_nanite_build_speed
-				}
-				give_technology = { tech = tech_nanite_build_speed }
-				change_variable = { which = "picked_tech" value = 1 }
-				tooltip = {
-					give_technology = { tech = tech_nanite_build_speed }
-				}
-			}
-			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_adt_energymissiles
-				}
-				give_technology = { tech = tech_adt_energymissiles }
-				change_variable = { which = "picked_tech" value = 1 }
-				tooltip = {
-					give_technology = { tech = tech_adt_energymissiles }
+				#  tech_nanite_torpedo tech_nanite_build_speed tech_adt_energymissiles tech_nanite_strike_craft tech_adt_gg_beam tech_nanocrystals tech_nanite_modular_engineering tech_nanite_living_metal
+				random_list = {
+					1 = { check_tech_item = { TECH = tech_nanite_torpedo } }
+					1 = { check_tech_item = { TECH = tech_adt_energymissiles } }
+					1 = { check_tech_item = { TECH = tech_nanite_strike_craft } }
+					1 = { check_tech_item = { TECH = tech_adt_gg_beam } }
+					1 = { check_tech_item = { TECH = tech_nanocrystals } }
+					1 = { check_tech_item = { TECH = tech_nanite_living_metal } }
+					# 1 = { check_tech_item = { TECH = tech_nanite_modular_engineering } }
+					# 1 = { check_tech_item = { TECH = tech_nanite_build_speed } }
 				}
 			}
-			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_nanite_strike_craft
-				}
-				give_technology = { tech = tech_nanite_strike_craft }
-				change_variable = { which = "picked_tech" value = 1 }
-				tooltip = {
-					give_technology = { tech = tech_nanite_strike_craft }
-				}
-			}
-			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_adt_gg_beam
-				}
-				give_technology = { tech = tech_adt_gg_beam }
-				change_variable = { which = "picked_tech" value = 1 }
-				tooltip = {
-					give_technology = { tech = tech_adt_gg_beam }
-				}
-			}
-			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_nanocrystals
-				}
-				give_technology = { tech = tech_nanocrystals }
-				change_variable = { which = "picked_tech" value = 1 }
-				tooltip = {
-					give_technology = { tech = tech_nanocrystals }
-				}
-			}
-			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_nanite_modular_engineering
-				}
-				give_technology = { tech = tech_nanite_modular_engineering }
-				change_variable = { which = "picked_tech" value = 1 }
-				tooltip = {
-					give_technology = { tech = tech_nanite_modular_engineering }
-				}
-			}
-			1 = {
-				modifier = {
-					factor = 0
-					has_technology = tech_nanite_living_metal
-				}
-				give_technology = { tech = tech_nanite_living_metal }
-				change_variable = { which = "picked_tech" value = 1 }
-				tooltip = {
-					give_technology = { tech = tech_nanite_living_metal }
-				}
-			}
+			# option = {
+			# 	name = "distar.137.paci"
+			# 	trigger = {
+			# 		has_ethic = ethic_fanatic_pacifist
+			# 		has_ethic = ethic_pacifist
+			# 		has_ethic = ethic_fanatic_xenophile
+			# 		has_ethic = ethic_xenophile
+			# 	}
+			# 	hidden_effect = {
+			# 		set_variable = { which = picked_tech value = 0 }
+			# 		while = {
+			# 			limit = {
+			# 				check_variable = {
+			# 					which = picked_tech
+			# 					value < 2
+			# 				}
+			# 			}
+			
+			# 			random_list = {
 		}
-		# guaranteed
-		if = { limit = { NOT = { has_technology = tech_nanite_repair_system } }
-			give_technology = { tech = tech_nanite_repair_system }
-		}
-		if = { limit = { NOT = { has_technology = tech_nanite_terraforming } }
-			give_technology = { tech = tech_nanite_terraforming }
-		}
-		if = { limit = { NOT = { has_technology = tech_nanite_ships } }
-			give_technology = { tech = tech_nanite_ships }
-		}
-		if = { limit = { NOT = { has_technology = tech_nanite_hull } }
-			give_technology = { tech = tech_nanite_hull }
-		}
-		if = { limit = { NOT = { has_technology = tech_nanite_bombardment } }
-			give_technology = { tech = tech_nanite_bombardment }
-		}
-		if = { limit = { NOT = { has_technology = tech_lgate_construction } }
-			give_technology = { tech = tech_lgate_construction }
+	}
+	after = {
+		# Guaranteed
+		hidden_effect = {
+			# Support nhsc mod
+			if = {
+				limit = {
+					host_has_nhsc = yes
+					NOR = {
+						has_technology = nhsc_tech_synthetic_lifeform_studies
+						has_tech_option = nhsc_tech_synthetic_lifeform_studies
+						is_researching_technology = nhsc_tech_synthetic_lifeform_studies
+					}
+				}
+				give_technology = { message = no tech = nhsc_tech_new_age_warfare }
+				give_technology = { message = no tech = nhsc_tech_advanced_materials }
+				give_tech_option = { TECH = nhsc_tech_synthetic_lifeform_studies }
+			} else = {
+				give_tech_option = { TECH = tech_nanite_build_speed }
+				give_tech_option = { TECH = tech_nanite_modular_engineering }
+				give_tech_option = { TECH = tech_nanite_mega_engineering }
+			}
+						
+			give_tech_option = { TECH = tech_nanite_repair_system }
+			# give_tech_option = { TECH = tech_nanite_terraforming }
+			give_tech_option = { TECH = tech_nanite_ships }
+			give_tech_option = { TECH = tech_nanite_hull }
+			give_tech_option = { TECH = tech_nanite_bombardment }
+			give_tech_option = { TECH = tech_lgate_construction }
+
 		}
 	}
 	# TODO: Give federation members one too?
 }
-
 
 # Mothership creates ships
 country_event = {

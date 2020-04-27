@@ -49,7 +49,27 @@ planet_event = {
 			}
 			country_event = { id = a_deadly_tempest.82 }
 		}
-		from = { country_event = { id = a_deadly_tempest.83 } }
+		from = {
+			country_event = { id = a_deadly_tempest.83 }
+			# small reinforce nanite bombarder
+			if = {
+				limit = {
+					exists = event_target:graygoo_country
+					event_target:graygoo_country = { is_same_empire = prev }
+					exists = root.orbit
+					root = { any_fleet_in_orbit = { exists = owner owner = { is_same_empire = event_target:graygoo_country } } }
+				}
+				root = {
+					random_fleet_in_orbit = {
+						limit = {
+							exists = owner
+							owner = { is_same_empire = event_target:graygoo_country }
+						}
+						CmtEffectCreateShip_GraygooInterdictor = yes
+					}
+				}
+			}
+		}
 		remove_all_buildings = yes
 		reset_planet = yes
 		reroll_deposits = yes

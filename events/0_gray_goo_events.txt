@@ -23,7 +23,7 @@ country_event = {
 	immediate = {
 		### Pre-treatment
 		awaken_guardians_of_the_galaxy = yes
-		awaken_fallen_machine_empire = yes
+		# awaken_fallen_machine_empire = yes
 		set_global_flag = gray_goo_crisis_active
 		# vanilla double call?
 		every_megastructure = {
@@ -215,8 +215,17 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		exists = event_target:nanite_factory
-		event_target:nanite_factory = { is_ship_size = graygoo_factory }
+		OR = {
+			AND = {
+				exists = event_target:nanite_factory
+				event_target:nanite_factory = { is_ship_size = graygoo_factory }
+			}
+			# Savegame comp.
+			any_system = {
+				has_star_flag = graygoo_factory_system
+				any_ship_in_system = { is_ship_size = graygoo_factory }
+			}
+		}
 		NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 1 } } }
 	}
 
@@ -235,7 +244,27 @@ country_event = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 6 } } }
 			country_event = { id = graygoo.3 days = 14 }
 		} else = { country_event = { id = graygoo.3 days = 3600 } }		## 10 yr
-		
+
+		# Fallback nanite_factory (savegame comp.)
+		if = { limit = { NOT = { exists = event_target:nanite_factory } }
+			if = { limit = { NOT = { exists = event_target:main_star } }
+				random_system = {
+					limit = { has_star_flag = graygoo_factory_system }
+					save_event_target_as = lcluster_factory_system
+					random_system_planet = {
+						limit = { has_planet_flag = main_star }
+						save_event_target_as = main_star
+					}
+				}
+			}
+			event_target:main_star = {
+				random_fleet_in_system = {
+					limit = { any_ship = { is_ship_size = graygoo_factory } }
+					save_global_event_target_as = nanite_factory
+				}
+			}
+		}
+
 		### Actual Effect
 		if = {
 			limit = { NOT = { has_global_flag = CmtFlagLgateOpenedNow } }
@@ -287,7 +316,7 @@ country_event = {
 					}
 				}
 			}
-			# Save game compatibilty
+			# Savegame compat.
 			if = { limit = { NOT = { has_country_flag = adtFlagActiveMothershipRebuild } }
 				country_event = { id = a_deadly_tempest.105 days = 180 } # Mothership creates ships
 				set_country_flag = adtFlagActiveMothershipRebuild
@@ -1541,7 +1570,7 @@ fleet_event = {
 				save_global_event_target_as = graygoo_country
 			}
 		}
-		# nanite_factory fallback
+		# nanite_factory fallback (savegame comp.)
 		if = { limit = { NOT = { exists = event_target:nanite_factory } }
 			from = {
 				random_fleet_in_system = {

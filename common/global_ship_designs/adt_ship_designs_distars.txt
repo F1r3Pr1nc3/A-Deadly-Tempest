@@ -616,63 +616,63 @@ ship_design = {
 	
 		component = {
 			slot = "TITAN_01"
-			template = "NANITE_ION_BEAM"
+			template = "GG_BEAM_STATIC"
 		}
 		component = {
 			slot = "TORPEDO_01"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_02"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_03"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_04"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_01"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_02"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_03"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_04"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_05"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_06"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_07"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_08"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_09"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_10"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 
 		component = {
@@ -750,31 +750,31 @@ ship_design = {
 		
 		component = {
 			slot = "TORPEDO_01"
-			template = "NANITE_ENERGY_TORPEDO"
+			template = "ENERGY_TORPEDO_2"
 		}
 		component = {
 			slot = "TORPEDO_02"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_03"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_04"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_01"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_02"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_03"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 
 		component = {
@@ -832,55 +832,55 @@ ship_design = {
 		
 		component = {
 			slot = "TORPEDO_01"
-			template = "NANITE_ENERGY_TORPEDO"
+			template = "ENERGY_TORPEDO_2"
 		}
 		component = {
 			slot = "TORPEDO_02"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_03"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_04"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_05"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "TORPEDO_06"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "GG_ENERGY_MISSILE"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_01"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_02"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_03"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_04"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_05"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_06"
-			template = "NANITE_STRIKE_CRAFT"
+			template = "GG_STRIKE_CRAFT"
 		}
 		component = {
 			slot = "AUX_UTILITY_1"
-			template = "AUTO_REPAIR_2"
+			template = "AUTO_REPAIR"
 		}
 	}
 	required_component = "SENSOR_2"

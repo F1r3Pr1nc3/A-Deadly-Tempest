@@ -58,6 +58,10 @@ lgate_disabled = {
 			}
 		}
 		custom_tooltip = {
+			fail_text = "lgate_requires_black_hole"
+			is_star_class = sc_black_hole
+		}
+		custom_tooltip = {
 			fail_text = "requires_no_existing_gateway"
 			NOR = {
 				has_star_flag = lgate
