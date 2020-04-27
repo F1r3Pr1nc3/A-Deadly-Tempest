@@ -1,0 +1,14 @@
+###############################################
+###### SCRIPTED VARIABLES FOR SHIP_SIZES ######
+###############################################
+
+## AJ modified revert patch
+
+@aj_build_block_radius_civilian = 20
+
+# @speed_very_slow = 80
+# @speed_slow = 100
+@aj_speed_default = 120
+@aj_speed_fast = 140
+# @speed_very_fast = 160
+@aj_speed_very_fast_npc = 200
