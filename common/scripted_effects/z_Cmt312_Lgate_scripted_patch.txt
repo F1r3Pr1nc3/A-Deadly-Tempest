@@ -1,10 +1,8 @@
-
-
 ####################################################
 ####################################################
 #####                                          #####
 #####    Crisis Manager                        #####
-#####     Comp Patch for A Deadly Tempest      #####
+#####    Comp Patch for A Deadly Tempest       #####
 #####    Scripted Effects for L-Gate Events    #####
 #####                                          #####
 ####################################################
@@ -19,6 +17,26 @@ CmtEffectOpenLgate = {
 	}
 	activate_gateway = this
 	set_megastructure_flag = lgate_activated
+}
+
+generate_lcluster_clue = {
+	hidden_effect = {
+		if = {
+			limit = {
+				has_distar = yes
+				NOT = { has_global_flag = l_cluster_opened }
+				has_event_chain = l_cluster_chain
+			}
+			custom_tooltip = add_lcluster_clue
+			add_event_chain_counter = { event_chain = l_cluster_chain counter = clues amount = 1 }
+			change_variable = { which = num_lcluster_clues value = 1 }
+			add_resource = { nanites = 25 }
+		}
+		if = {
+			limit = { has_completed_event_chain_counter = { event_chain = l_cluster_chain counter = clues } }
+			CmtEffectLgateClueComplete = yes
+		}
+	}
 }
 
 ### End of Graygoo
