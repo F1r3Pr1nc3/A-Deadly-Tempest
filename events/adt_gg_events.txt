@@ -85,7 +85,7 @@ country_event = {
 	trigger = { 
 		exists = event_target:goo_slayer
 		event_target:goo_slayer = { is_same_empire = prev }
-	 }
+	}
 
 	# immediate = {}
 

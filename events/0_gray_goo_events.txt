@@ -245,7 +245,7 @@ country_event = {
 			country_event = { id = graygoo.3 days = 14 }
 		} else = { country_event = { id = graygoo.3 days = 3600 } }		## 10 yr
 
-		# Fallback nanite_factory (savegame comp.)
+		# Fallback (savegame comp.) re-save event_targets
 		if = { limit = { NOT = { exists = event_target:nanite_factory } }
 			if = { limit = { NOT = { exists = event_target:main_star } }
 				random_system = {
@@ -262,6 +262,13 @@ country_event = {
 					limit = { any_ship = { is_ship_size = graygoo_factory } }
 					save_global_event_target_as = nanite_factory
 				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = event_target:graygoo_country }
+					is_country_type = gray_goo
+				}
+				save_global_event_target_as = graygoo_country
 			}
 		}
 
