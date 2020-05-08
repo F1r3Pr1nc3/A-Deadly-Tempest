@@ -157,7 +157,7 @@ starbase_gatebuilders = {
 	required_component_set = "combat_computers"
 
 	build_block_radius = @aj_build_block_radius_starbase
-	formation_priority = 1 #@starbase_formation_priority
+	formation_priority = @aj_starbase_formation_priority
 	icon_frame = -1
 }
 

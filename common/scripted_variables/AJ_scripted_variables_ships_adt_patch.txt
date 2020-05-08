@@ -4,7 +4,7 @@
 
 ## AJ modified revert patch
 
-@aj_build_block_radius_civilian = 20
+@aj_starbase_formation_priority = 1
 @aj_build_block_radius_starbase = 20
 
 # @speed_very_slow = 80

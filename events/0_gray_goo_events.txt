@@ -21,9 +21,10 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		if = { limit = { end_game_years_passed >= 10 }
+			awaken_guardians_of_the_galaxy = yes
+		}
 		### Pre-treatment
-		awaken_guardians_of_the_galaxy = yes
-		# awaken_fallen_machine_empire = yes
 		set_global_flag = gray_goo_crisis_active
 		# vanilla double call?
 		every_megastructure = {
@@ -197,6 +198,16 @@ planet_event = {
 				ariphaos_patch_remove_habitat = yes
 			}
 		}
+		# small reinforce nanite bombarder
+		root = {
+			random_fleet_in_orbit = {
+				limit = {
+					exists = owner
+					owner = { is_same_empire = event_target:graygoo_country }
+				}
+				CmtEffectCreateShip_GraygooInterdictor = yes
+			}
+		}
 		# Sets a short timed flag if bombardment is going on, so the planet can be appropriately nuked.
 		set_timed_planet_flag = {
 			flag = flag_nanite_bombardment
@@ -287,6 +298,8 @@ country_event = {
 				event_target:nanite_factory = {
 					if = { limit = { end_game_years_passed >= 20 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 4 }
+						awaken_guardians_of_the_galaxy = yes
+						awaken_fallen_machine_empire = yes
 					} else_if = { limit = { mid_game_years_passed >= 40 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 3 }
 					} else_if = { limit = { mid_game_years_passed >= -10 }
