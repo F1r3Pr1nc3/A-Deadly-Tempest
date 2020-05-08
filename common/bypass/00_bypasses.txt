@@ -188,6 +188,7 @@ lgate = {
 			}
 		}
 	}
+	on_action = "on_entering_lgate"
 	
 	scripted_connection = {
 		# defines endpoints that can only reach the "nexus"

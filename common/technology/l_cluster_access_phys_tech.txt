@@ -19,6 +19,7 @@ tech_lcluster_access = {
 		has_global_flag = l_cluster_opened
 		NOT = { has_global_flag = active_gray_goo }
 		# has_resource = { type = nanites amount > 0 }
+		NOT = { has_global_flag = distar_overhaul_mod_active }
 	}
 
 	weight_modifier = {

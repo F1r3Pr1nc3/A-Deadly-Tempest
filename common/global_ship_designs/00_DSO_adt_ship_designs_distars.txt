@@ -1,0 +1,889 @@
+# Gray Goo Mothership
+ship_design = {
+	name = "NAME_DSO_Nanite_Mothership"
+	ship_size = DSO_graygoo_mothership
+	is_event_design = yes
+
+	section = {
+		template = "DSO_nanite_mothership_key"
+		slot = "mid"
+	
+		component = {
+			slot = "TITAN_01"
+			template = "DSO_ION_BEAM"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_07"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_08"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_09"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_10"
+			template = "DSO_STRIKE_CRAFT"
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
+	}
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
+}
+
+### Nanite Ships
+
+# Gray Warship
+ship_design = {
+	name = "NAME_DSO_Nanite_Warship"
+	ship_size = DSO_graygoo_mothership
+	is_event_design = yes
+
+	section = {
+		template = "DSO_gray_warship_key"
+		slot = "mid"
+
+		component = {
+			slot = "TITAN_01"
+			template = "DSO_ION_BEAM"
+		}
+		# component = {
+		# 	slot = "TITAN_02"
+		# 	template = "DSO_ION_BEAM"
+		# }
+		component = {
+			slot = "TORPEDO_01"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_05"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_GAMMA_LASER"
+		}
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_05"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_06"
+			template = "MEDIUM_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_GAMMA_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "LARGE_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "PD_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_02"
+			template = "POINT_DEFENCE_3"
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "FIRE_CONTROL_1"
+		}
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
+}
+
+# Nanite Interdictor
+ship_design = {
+	name = "NAME_DSO_Nanite_Interdictor"
+	ship_size = DSO_graygoo_interdictor
+	is_event_design = yes
+	section = {
+		template = "DSO_nanite_interdictor_key"
+		slot = "mid"
+		
+		component = {
+			slot = "TORPEDO_01"
+			template = "DSO_ENERGY_TORPEDO"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "DSO_STRIKE_CRAFT"
+		}
+
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_5"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_6"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_7"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_8"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR_2"
+		}
+
+	}
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "CRUISER_ZERO_POINT_REACTOR"
+	required_component = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
+}
+
+# Factory
+ship_design = {
+	name = "NAME_DSO_Nanite_Factory"
+	ship_size = DSO_graygoo_factory
+	is_event_design = yes
+
+	section = {
+		template = "DSO_nanite_factory_key"
+		slot = "mid"
+		
+		component = {
+			slot = "TITAN_01"
+			template = "DSO_BEAM"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_05"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_06"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_07"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_08"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_09"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_10"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_11"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_12"
+			template = "DSO_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_07"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_08"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_09"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_10"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_11"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_12"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_13"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_14"
+			template = "DSO_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_15"
+			template = "DSO_STRIKE_CRAFT"
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "ENIGMATIC_DECODER"
+		}
+	}
+	required_component="GUARDIAN_SENSORS"
+	required_component="ENIGMATIC_DISRUPTION_FIELD"
+	required_component="TITAN_DARK_MATTER_REACTOR"
+}
+
+### Dessanu Ships
+
+# Dessanu Mothership
+ship_design = {
+	name = "NAME_DSO_Dessanu_Mothership"
+	ship_size = DSO_graygoo_mothership
+	is_event_design = yes
+
+	section = {
+		template = "DSO_nanite_mothership_key"
+		slot = "mid"
+	
+		component = {
+			slot = "TITAN_01"
+			template = "GG_BEAM_STATIC"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_07"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_08"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_09"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_10"
+			template = "GG_STRIKE_CRAFT"
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
+	}
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
+}
+
+# Dessanu Interdictor
+ship_design = {
+	name = "NAME_DSO_Dessanu_Interdictor"
+	ship_size = DSO_graygoo_interdictor
+	is_event_design = yes
+	section = {
+		template = "DSO_nanite_interdictor_key"
+		slot = "mid"
+		
+		component = {
+			slot = "TORPEDO_01"
+			template = "ENERGY_TORPEDO_2"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "GG_STRIKE_CRAFT"
+		}
+
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_5"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_6"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_7"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_8"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR_2"
+		}
+
+	}
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "CRUISER_ZERO_POINT_REACTOR"
+	required_component = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
+}
+
+# Gatebuilder Starbase
+ship_design = {
+	name = "NAME_DSO_Gatebuilder_Starbase"
+	ship_size = DSO_starbase_gatebuilders
+	section = {
+		template = "DSO_gatebuilder_starbase_key"
+		slot = "mid"
+		
+		component = {
+			slot = "TORPEDO_01"
+			template = "ENERGY_TORPEDO_2"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_05"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_06"
+			template = "GG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "GG_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component = "SENSOR_2"
+	required_component = "TITAN_ANTIMATTER_REACTOR"
+	required_component = "COMBAT_COMPUTER_PLATFORM_ADVANCED"
+}

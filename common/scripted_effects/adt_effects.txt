@@ -16,7 +16,10 @@ shoal_reinforce = {
 			num_ships < $AMOUNT|11$
 			is_in_combat = no
 			any_ship = {
-				is_ship_size = graygoo_mothership
+				OR = {
+					is_ship_size = graygoo_mothership
+					is_ship_size = DSO_graygoo_mothership
+				}
 			}
 			OR = {
 				has_fleet_flag = nanite_mother_ship

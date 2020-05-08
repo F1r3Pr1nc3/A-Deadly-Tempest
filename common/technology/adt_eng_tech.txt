@@ -23,6 +23,7 @@ tech_nanite_ships = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
+		NOT = { has_global_flag = distar_overhaul_mod_active }
 	}
 }
 
@@ -41,6 +42,7 @@ tech_nanite_build_speed = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
+		NOT = { has_global_flag = distar_overhaul_mod_active }
 	}
 	
 	modifier = {
@@ -62,6 +64,7 @@ tech_nanite_hull = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
+		NOT = { has_global_flag = distar_overhaul_mod_active }
 	}
 	
 	modifier = {
@@ -86,6 +89,7 @@ tech_nanite_living_metal = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
+		NOT = { has_global_flag = distar_overhaul_mod_active }
 	}
 	# add Living Metal
 	modifier = {
@@ -104,6 +108,7 @@ tech_nanocrystals = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
+		NOT = { has_global_flag = distar_overhaul_mod_active }
 	}
 	
 	modifier = {
@@ -130,6 +135,7 @@ tech_nanite_modular_engineering = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
+		NOT = { has_global_flag = distar_overhaul_mod_active }
 	}
 	
 	modifier = {

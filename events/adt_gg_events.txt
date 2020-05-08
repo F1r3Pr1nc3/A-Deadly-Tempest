@@ -185,7 +185,12 @@ country_event = {
 		every_owned_fleet = {
 			limit = {
 				is_in_combat = no
-				any_ship = { is_ship_size = graygoo_mothership }
+				any_ship = { 
+					OR = {
+						is_ship_size = graygoo_mothership
+						is_ship_size = DSO_graygoo_mothership
+					}
+				}
 				OR = {
 					has_fleet_flag = nanite_mother_ship
 					has_fleet_flag = trait_biothrall_tolerance
@@ -559,7 +564,10 @@ country_event = {
 			limit = {
 				has_fleet_flag = nanite_mother_ship
 				has_auto_move_target = no
-				any_ship = { is_ship_size = graygoo_mothership }
+				OR = {
+					is_ship_size = graygoo_mothership
+					is_ship_size = DSO_graygoo_mothership
+				}
 				OR = {
 					NOT = { exists = orbit }
 					orbit = {
@@ -610,7 +618,10 @@ country_event = {
 		every_owned_fleet = {
 			limit = {
 				has_auto_move_target = yes
-				any_ship = { is_ship_size = graygoo_mothership }
+				OR = {
+					is_ship_size = graygoo_mothership
+					is_ship_size = DSO_graygoo_mothership
+				}
 				exists = solar_system
 				solar_system = {
 					has_star_flag = lcluster

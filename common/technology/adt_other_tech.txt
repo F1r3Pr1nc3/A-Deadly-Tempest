@@ -14,6 +14,7 @@ tech_nanite_mega_engineering = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
+		NOT = { has_global_flag = distar_overhaul_mod_active }
 	}
 		
 	modifier = {
@@ -44,5 +45,6 @@ tech_nanite_bombardment = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
+		NOT = { has_global_flag = distar_overhaul_mod_active }
 	}
 }
