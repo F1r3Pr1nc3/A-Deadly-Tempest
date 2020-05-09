@@ -7,8 +7,8 @@ graygoo_mothership = {
 	rotation_speed = 0.15
 	collision_radius = 5
 	modifier = {
-		ship_shield_add = 5000
-		ship_armor_add = 5000
+		ship_shield_add = 4000
+		ship_armor_add = 4000
 		ship_evasion_add = 10
 		# ships_upkeep_mult = -1
 		ship_weapon_damage = 1
@@ -26,14 +26,14 @@ graygoo_mothership = {
 	is_space_station = no
 	icon_frame = 6
 	class = shipclass_military
-	
+	prerequisites = { "tech_nanite_ships" }
 	is_designable = yes
 	
 	base_buildtime = 1800
 	
 	construction_type = starbase_shipyard
 	enable_default_design = no
-	prerequisites = { "tech_nanite_ships" }
+
 	potential_construction = {
 		is_scope_type = starbase
 	}
@@ -67,8 +67,8 @@ graygoo_interdictor = {
 	rotation_speed = 0.175
 	collision_radius = 4
 	modifier = {
-		ship_shield_add = 2000
-		ship_armor_add = 2000
+		ship_shield_add = 1000
+		ship_armor_add = 1000
 		ship_evasion_add = 20
 		# ships_upkeep_mult = -1
 		ship_weapon_damage = 1
@@ -79,7 +79,7 @@ graygoo_interdictor = {
 		ship_tracking_add = 25
 		ship_accuracy_add = 25
 	}
-	max_hitpoints = 5000
+	max_hitpoints = 4000
 	size_multiplier = 4
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
@@ -148,7 +148,7 @@ starbase_gatebuilders = {
 	components_add_to_cost = no
 	is_listed = no
 	can_disable = no
-
+	prerequisites = { "tech_nanite_ships" }
 	enable_default_design = no	#if yes, countries will have an auto-generated design at start
 	class = shipclass_starbase
 

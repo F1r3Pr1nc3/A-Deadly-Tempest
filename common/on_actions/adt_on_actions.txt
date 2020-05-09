@@ -1,6 +1,7 @@
 on_game_start = {
 	events = {
 		a_deadly_tempest.1
+		CrisisManagerMenu.0001		## Calling menu
 	}
 }
 # No scope, like on_game_start

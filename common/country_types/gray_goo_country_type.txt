@@ -99,7 +99,7 @@ gate_builders = {
 
 gray_goo = {
 	attack_unarmed_orbital_stations = yes
-	scaled_difficulty_bonuses = 1.0 # 1.25 !?
+	scaled_difficulty_bonuses = 1.5 # 1.25 !?
 	destroys_starbases = yes
 	show_in_contacts_list = no
 	share_survey_data = no

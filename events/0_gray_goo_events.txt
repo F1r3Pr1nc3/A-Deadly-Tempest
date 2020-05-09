@@ -51,9 +51,9 @@ country_event = {
 						trait = "trait_robot_loyalty_circuits"
 						trait = "trait_robot_mass_produced"
 						trait = "trait_robot_durable"
-						# trait="trait_robot_recycled"
-						# trait="trait_robot_high_maintenance"
-						# trait="trait_robot_uncanny"
+						trait="trait_robot_recycled"
+						trait="trait_robot_high_maintenance"
+						trait="trait_robot_uncanny"
 					}
 					homeworld = this
 					immortal = yes
@@ -79,6 +79,17 @@ country_event = {
 				}
 				effect = {
 					save_global_event_target_as = graygoo_country
+					give_technology = { tech = tech_nanite_ships message = no }
+					give_technology = { tech = tech_nanite_hull message = no }
+					give_technology = { tech = tech_nanite_torpedo message = no }
+					give_technology = { tech = tech_adt_energymissiles message = no }
+					give_technology = { tech = tech_nanite_strike_craft message = no }
+					give_technology = { tech = tech_adt_gg_beam message = no }
+					give_technology = { tech = tech_nanocrystals message = no }
+					give_technology = { tech = tech_nanite_living_metal message = no }
+					give_technology = { tech = tech_nanite_repair_system message = no }
+					add_global_ship_design = "NAME_Nanite_Mothership"
+					add_global_ship_design = "NAME_Nanite_Interdictor"
 				}
 			}
 			event_target:main_star = { CmtEffectCreateNanitieFactory = yes }
@@ -652,7 +663,19 @@ country_event = {
 						minerals = 5000
 						energy = 10000
 						influence = 5000
+						nanites = 50000
 					}
+					give_technology = { tech = tech_nanite_torpedo message = no }
+					give_technology = { tech = tech_adt_energymissiles message = no }
+					give_technology = { tech = tech_nanite_strike_craft message = no }
+					give_technology = { tech = tech_adt_gg_beam message = no }
+					give_technology = { tech = tech_nanocrystals message = no }
+					give_technology = { tech = tech_nanite_living_metal message = no }
+					give_technology = { tech = tech_nanite_repair_system message = no }
+					give_technology = { tech = tech_nanite_ships message = no }
+					add_global_ship_design = "NAME_Dessanu_Mothership"
+					add_global_ship_design = "NAME_Dessanu_Interdictor"
+					add_global_ship_design = "NAME_Gatebuilder_Starbase"
 				}
 			}
 			### Create Factory/Fleets/Starbases
