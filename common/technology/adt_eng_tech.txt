@@ -23,7 +23,10 @@ tech_nanite_ships = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_nanites_assembler_factory
+		}
 	}
 }
 
@@ -42,7 +45,10 @@ tech_nanite_build_speed = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_nanite_clouds
+		}
 	}
 	
 	modifier = {
@@ -64,7 +70,10 @@ tech_nanite_hull = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_orbital_nanite_shipyard
+		}
 	}
 	
 	modifier = {
@@ -89,7 +98,10 @@ tech_nanite_living_metal = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_nanite_clouds
+		}
 	}
 	# add Living Metal
 	modifier = {
@@ -108,7 +120,10 @@ tech_nanocrystals = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_nanite_clouds
+		}
 	}
 	
 	modifier = {
@@ -135,7 +150,10 @@ tech_nanite_modular_engineering = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_nanite_clouds
+		}
 	}
 	
 	modifier = {

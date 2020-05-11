@@ -1,0 +1,40 @@
+############################################################
+###         ESC TECHNOLOGIES : CORE PATCH FOR ADT        ###
+############################################################
+
+############################################################
+##                     New Age Warfare                    ##
+############################################################
+
+nhsc_tech_new_age_warfare = {
+	area = society
+	category = { military_theory }
+	tier = 4
+	cost = @tier4cost3
+	weight = 0
+	is_rare = yes
+}
+
+############################################################
+##                    Advanced Materials                  ##
+############################################################
+
+nhsc_tech_advanced_materials = {
+	area = engineering
+	category = { materials }
+	tier = 5
+	cost = @tier5cost1
+	weight = 0
+}
+
+############################################################
+##                 Synthetic Lifeform Studies             ##
+############################################################
+
+nhsc_tech_synthetic_lifeform_studies = {
+	area = society
+	category = { materials }
+	tier = 5
+	cost = @tier5cost2
+	weight = 0
+}

@@ -20,6 +20,7 @@ strike_craft_component_template = {
 		}
 	}
 
+	hidden = yes
 	count = 10
 	regeneration_per_day = @regen
 	launch_time = 1.0
@@ -65,6 +66,7 @@ weapon_component_template = {
 	entity = "invisible_turret_entity"
 	type = missile
 	prio_projectile = yes
+	hidden = yes
 	
 	icon = "GFX_ship_part_nanite_energymissiles_1"
 	icon_frame = 1
@@ -107,6 +109,7 @@ weapon_component_template = {
 	#entity = "invisible_titanic_turret"
 	type = instant
 	prio_projectile = yes
+	hidden = yes
 	
 	icon = "GFX_ship_part_nanite_beam_titanic"
 	icon_frame = 1
@@ -145,6 +148,7 @@ weapon_component_template = {
 	#entity = "invisible_titanic_fixed"
 	type = instant
 	prio_projectile = yes
+	hidden = yes
 	
 	icon = "GFX_ship_part_nanite_beam_titanic"
 	icon_frame = 1
@@ -188,6 +192,7 @@ weapon_component_template = {
 	size = large
 	entity = "turret_energy_torpedo_entity"
 	type = instant
+	hidden = yes
 	
 	icon = "GFX_ship_part_nanite_energy_torpedo"
 	icon_frame = 1

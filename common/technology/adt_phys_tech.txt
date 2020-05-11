@@ -15,7 +15,10 @@ tech_nanoactuators = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_repeatable_nanite_technology_insight
+		}
 	}
 }
 
@@ -35,7 +38,10 @@ tech_nanite_shield_rechargers = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_repeatable_nanite_technology_insight
+		}
 	}
 	
 	modifier = {
@@ -69,7 +75,10 @@ tech_lgate_construction = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_repeatable_nanite_technology_insight
+		}
 	}
 
 	weight_modifier = {

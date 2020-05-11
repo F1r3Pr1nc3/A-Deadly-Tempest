@@ -23,7 +23,10 @@ tech_nanite_terraforming = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_repeatable_nanite_technology_insight
+		}
 	}
 }
 
@@ -48,7 +51,10 @@ tech_nano_dust = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_repeatable_nanite_technology_insight
+		}
 	}
 }
 
@@ -69,6 +75,9 @@ tech_nano_scales = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = distar_overhaul_mod_active }
+		OR = {
+			NOT = { has_global_flag = distar_overhaul_mod_active }
+			has_technology = tech_repeatable_nanite_technology_insight
+		}
 	}
 }
