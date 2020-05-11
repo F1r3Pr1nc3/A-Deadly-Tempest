@@ -1,0 +1,20 @@
+﻿l_german:
+
+####################################
+# Species Classes
+####################################
+ ESGO_desc:1 "Die Speziesklasse hat keinen Effekt auf Ihr Reich. Spezies der $ESGO$-Klasse könnten andere $ESGO_plural$ aber als weniger fremdartig einstufen als andere Speziesklassen."
+ ESGO_plural:0 "Grauen Schleime"
+ ESGO_insult_01:0 "Biest"
+ ESGO_insult_plural_01:0 "Biester"
+ ESGO_compliment_01:0 "Engel"
+ ESGO_compliment_plural_01:0 "Engel"
+ ESGO_spawn:0 "Jungfer"
+ ESGO_spawn_plural:0 "Jungfern"
+ ESGO_sound_01:0 "Knurren"
+ ESGO_sound_02:0 "Grunzen"
+ ESGO_sound_03:0 "Kläffen"
+ ESGO_sound_04:0 "Jaulen"
+ ESGO_sound_05:0 "Wimmern"
+ ESGO_organ:0 "Magen"
+ ESGO_mouth:0 "Mund"
