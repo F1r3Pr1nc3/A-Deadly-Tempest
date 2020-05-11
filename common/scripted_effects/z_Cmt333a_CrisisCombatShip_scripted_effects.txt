@@ -128,18 +128,42 @@ CmtEffectCreateShip_KhanConstructor = {
 #################
 
 CmtEffectCreateShip_DessanuMother = {
-	create_ship = {
-		name = random
-		design = "NAME_Dessanu_Mothership"
-		upgradable = no
+	if = {
+		limit = {
+			has_global_flag = distar_overhaul_mod_active
+		}
+		create_ship = {
+			name = random
+			design = "NAME_DSO_Dessanu_Mothership"
+			upgradable = no
+		}
+	}
+	else = {
+		create_ship = {
+			name = random
+			design = "NAME_Dessanu_Mothership"
+			upgradable = no
+		}
 	}
 }
 
 CmtEffectCreateShip_DessanuInterdictor = {
-	create_ship = {
-		name = random
-		design = "NAME_Dessanu_Interdictor"
-		upgradable = no
+	if = {
+		limit = {
+			has_global_flag = distar_overhaul_mod_active
+		}
+		create_ship = {
+			name = random
+			design = "NAME_DSO_Dessanu_Interdictor"
+			upgradable = no
+		}
+	}
+	else = {
+		create_ship = {
+			name = random
+			design = "NAME_Dessanu_Interdictor"
+			upgradable = no
+		}
 	}
 }
 
@@ -150,22 +174,50 @@ CmtEffectCreateShip_DessanuInterdictor = {
 #################
 
 CmtEffectCreateShip_GraygooMother = {
-	create_ship = {
-		name = random
-		design = "NAME_Nanite_Mothership"
-		graphical_culture = "pirate_01"
-		# graphical_culture = "swarm_01"
-		upgradable = no
+	if = {
+		limit = {
+			has_global_flag = distar_overhaul_mod_active
+		}
+		create_ship = {
+			name = random
+			design = "NAME_DSO_Nanite_Mothership"
+			graphical_culture = "pirate_01"
+			# graphical_culture = "swarm_01"
+			upgradable = no
+		}
+	}
+	else = {
+		create_ship = {
+			name = random
+			design = "NAME_Nanite_Mothership"
+			graphical_culture = "pirate_01"
+			# graphical_culture = "swarm_01"
+			upgradable = no
+		}
 	}
 }
 
 CmtEffectCreateShip_GraygooInterdictor = {
-	create_ship = {
-		name = random
-		design = "NAME_Nanite_Interdictor"
-		graphical_culture = "pirate_01"
-		# graphical_culture = "swarm_01"
-		upgradable = no
+	if = {
+		limit = {
+			has_global_flag = distar_overhaul_mod_active
+		}
+		create_ship = {
+			name = random
+			design = "NAME_DSO_Nanite_Interdictor"
+			graphical_culture = "pirate_01"
+			# graphical_culture = "swarm_01"
+			upgradable = no
+		}
+	}
+	else = {
+		create_ship = {
+			name = random
+			design = "NAME_Nanite_Interdictor"
+			graphical_culture = "pirate_01"
+			# graphical_culture = "swarm_01"
+			upgradable = no
+		}
 	}
 }
 
