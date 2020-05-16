@@ -220,7 +220,7 @@ country_event = {
 	trigger = { is_ai = no }
 	
 	immediate = {
-		country_event = { id = CrisisManagerMenu.3 }
+		country_event = { id = CrisisManagerMenu.0003 }
 	}
 }
 

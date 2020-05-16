@@ -791,4 +791,3 @@ CmtEffectCreateFleet_GraygooAttacker = {
 		settings = { spawn_debris = no }
 	}
 }
-
