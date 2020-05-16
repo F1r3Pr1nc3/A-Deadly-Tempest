@@ -1,5 +1,5 @@
 # ##################
-# NANITE TECH PATCH FOR DSO
+# NANITE TECH DUMMY PATCH FOR DSO
 # ##################
 
 tech_nanite_clouds = {

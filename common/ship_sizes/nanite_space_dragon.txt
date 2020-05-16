@@ -18,7 +18,7 @@ nanite_space_dragon_baby = {
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon_frame = 6
+	icon_frame = 12
 	
 	class = shipclass_military
 	is_designable = no

@@ -76,7 +76,7 @@ gate_builders = {
 	resources = {
 		category = country_base
 		produces = {
-			energy = 500
+			energy = 250
 			minerals = 150
 			food = 100
 			physics_research = 10
@@ -88,11 +88,11 @@ gate_builders = {
 			nanites = 10
 			influence = 3
 			unity = 2
-			alloys = 75
 			consumer_goods = 200
-			rare_crystals = 5
-			exotic_gases = 5
-			volatile_motes = 5
+			alloys = 125
+			volatile_motes = 20
+			rare_crystals = 3
+			exotic_gases = 3
 		}
 	}
 }

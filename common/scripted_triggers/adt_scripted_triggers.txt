@@ -1,7 +1,7 @@
 
 too_many_goo_mother_ships = {
 	owner = {
-		count_owned_ships = {
+		count_owned_ship = {
 			limit = { is_ship_size = graygoo_mothership }
 			count > 4
 		}

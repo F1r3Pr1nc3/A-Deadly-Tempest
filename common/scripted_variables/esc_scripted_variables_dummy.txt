@@ -1,0 +1,3 @@
+###   ESC : scripted variables dummy patch   ###
+### tier 8
+@armor_s_t8_strength = 0

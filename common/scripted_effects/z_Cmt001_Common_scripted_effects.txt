@@ -186,8 +186,8 @@ CmtEffectVersionUp = {
 
 ### Edition Check
 CmtEffectClearDetectedEdition = {
-	remove_global_flag = CmtFlagMidGameEdition
 	remove_global_flag = CmtFlagEndGameEdition
+	remove_global_flag = CmtFlagMidGameEdition
 	remove_global_flag = CmtFlagSleeperEdition
 	remove_global_flag = CmtFlagUprisingEdition
 	remove_global_flag = CmtFlagTotalWarPatch
