@@ -54,13 +54,13 @@ tech_nanite_shield_rechargers = {
 # ##################
 
 tech_lgate_construction = {
-	cost = @tier5cost3
+	cost = @tier5cost2
 	area = physics
 	tier = 5
 	category = { particles }
 	is_rare = yes
 	is_reverse_engineerable = yes
-	weight = @tier5cost3
+	weight = @tier4weight1
 	prerequisites = { "tech_gateway_construction" "tech_lgate_activation" }
 
 	feature_flags = { lgate_construction }

@@ -5,7 +5,7 @@
  ####################################
  
  ### Events
- mother_ship_hire:0 "Gray can create a nanite mothership for our use, however Gray will not create more than five for our empire; for a massive cost in resources to create the nanites for the ship./n/These ships are capable of creating smaller ships to escort them but only if the mothership is still intact. but in times of great crisis they might be able to create more.../n/Gray can create these ships no matter what form it takes as long as Gray is not reforming."
+ mother_ship_hire:0 "Gray can create a $NAME_Nanite_Warship$ for our use, however Gray will not create more than five for our empire; for a massive cost in resources to create the nanites for the ship./n/These ships are capable of creating smaller ships to escort them but only if the mothership is still intact. But in times of great crisis they might be able to create more.../n/Gray can create these ships no matter what form it takes as long as Gray is not reforming."
  
  a_deadly_tempest.82.name:0 "[From.GetName] Engulfed"
  a_deadly_tempest.82.desc:0 "A fleet belonging to the §H[From.From.GetName]§! has massacred the population of §H[From.GetName]§!! After a massed and unrelenting orbital bombardment campaign, all population centers on the surface have been systematically wiped out, reducing the [From.GetPlanetMoon] to an lifeless husk that is now only covered in countless nanite swarms."
@@ -14,22 +14,22 @@
  
  a_deadly_tempest.17.name:0 "The Gray Goo's End"
  #a_deadly_tempest.17.desc:0 ""
- a_deadly_tempest.17.tooltip:0 "Gain two of the following Technologies:\n"
+ a_deadly_tempest.17.tooltip:0 "Gain two of the following technologies:\n"
   
  ### Ship designs
  
  NAME_shoal_Fleet:0 "Nanite Shoal"
- NAME_Nanite_Warship:0 "Nanite Mothership"
- NAME_Nanite_Interdictor_default:0 "Nanite Interdictor"
- NAME_Nanite_Interdictor_Carrier:0 "Nanite Interdictor Carrier"
- nanite_mothership_key:0 "Nanite Mothership"
- nanite_mothership_battleship_key:0 "Nanite Mothership"
- nanite_warship_battleship_key:0 "Nanite Warship"
+ NAME_Nanite_Warship:0 "Nanite $graygoo_mothership$"
+ NAME_Nanite_Interdictor_default:0 "Nanite $graygoo_interdictor$"
+ NAME_Nanite_Interdictor_Carrier:0 "Nanite $graygoo_interdictor$ Carrier"
+ nanite_mothership_key:0 "Nanite $graygoo_mothership$"
+ nanite_mothership_battleship_key:0 "Nanite $graygoo_mothership$"
  gray_warship_key:0 "Nanite Warship"
- nanite_interdictor_key:0 "Interdictor"
- nanite_interdictor_alt_key:0 "Interdictor"
- nanite_interdictor_combat_key:0 "Combat Interdictor"
- nanite_interdictor_heavy_combat_key:0 "Assault Interdictor"
+ nanite_warship_battleship_key:0 "$gray_warship_key$"
+ nanite_interdictor_key:0 "$graygoo_interdictor$"
+ nanite_interdictor_alt_key:0 "$graygoo_interdictor$"
+ nanite_interdictor_combat_key:0 "$COMBAT$ $graygoo_interdictor$"
+ nanite_interdictor_heavy_combat_key:0 "$ASSAULT$ $graygoo_interdictor$"
  
  ### Ship Componates
  
@@ -37,19 +37,19 @@
  COMBAT_NANITE_COMPUTER_PICKET_BASIC:0 "Specialized Combat Computer (Picket)"
  COMBAT_NANITE_COMPUTER_PICKET_ADVANCED:0 "Advanced Combat Computer (Picket)"
  COMBAT_NANITE_COMPUTER_PICKET_SAPIENT:0 "Sapient Ship Intellect (Picket)"
- COMBAT_NANITE_COMPUTER_PICKET_AUTONOMOUS:0 "Autonomus Ship Intellect (Picket)"
+ COMBAT_NANITE_COMPUTER_PICKET_AUTONOMOUS:0 "Autonomous Ship Intellect (Picket)"
  COMBAT_NANITE_COMPUTER_PICKET_PRECOG:0 "Precognitive Ship Interface (Picket)"
  
  COMBAT_NANITE_COMPUTER_LINE_BASIC:0 "Specialized Combat Computer (Line)"
  COMBAT_NANITE_COMPUTER_LINE_ADVANCED:0 "Advanced Combat Computer (Line)"
  COMBAT_NANITE_COMPUTER_LINE_SAPIENT:0 "Sapient Ship Intellect (Line)"
- COMBAT_NANITE_COMPUTER_LINE_AUTONOMOUS:0 "Autonomus Ship Intellect (Line)"
+ COMBAT_NANITE_COMPUTER_LINE_AUTONOMOUS:0 "Autonomous Ship Intellect (Line)"
  COMBAT_NANITE_COMPUTER_LINE_PRECOG:0 "Precognitive Ship Interface (Line)"
  
  COMBAT_NANITE_COMPUTER_ARTILLERY_BASIC:0 "Specialized Combat Computer (Artillery)"
  COMBAT_NANITE_COMPUTER_ARTILLERY_ADVANCED:0 "Advanced Combat Computer (Artillery)"
  COMBAT_NANITE_COMPUTER_ARTILLERY_SAPIENT:0 "Sapient Ship Intellect (Artillery)"
- COMBAT_NANITE_COMPUTER_ARTILLERY_AUTONOMOUS:0 "Autonomus Ship Intellect (Artillery)"
+ COMBAT_NANITE_COMPUTER_ARTILLERY_AUTONOMOUS:0 "Autonomous Ship Intellect (Artillery)"
  COMBAT_NANITE_COMPUTER_ARTILLERY_PRECOG:0 "Precognitive Ship Interface (Artillery)"
  
  # Reactors
@@ -67,31 +67,29 @@
  GREYGOO_MOTHERSHIP_DARK_MATTER_REACTOR:0 "$DARK_MATTER_REACTOR$"
  
  # Thrusters
- INTERDICTOR_SHIP_THRUSTER_1:0 "Chemical Thrusters"
- INTERDICTOR_SHIP_THRUSTER_2:0 "Ion Thrusters"
- INTERDICTOR_SHIP_THRUSTER_3:0 "Plasma Thrusters"
- INTERDICTOR_SHIP_THRUSTER_4:0 "Impulse Thrusters"
- INTERDICTOR_SHIP_THRUSTER_5:0 "Dark Matter Thrusters"
+ INTERDICTOR_SHIP_THRUSTER_1:0 "$tech_thrusters_1$"
+ INTERDICTOR_SHIP_THRUSTER_2:0 "$tech_thrusters_2$"
+ INTERDICTOR_SHIP_THRUSTER_3:0 "$tech_thrusters_3$"
+ INTERDICTOR_SHIP_THRUSTER_4:0 "$tech_thrusters_4$"
+ INTERDICTOR_SHIP_THRUSTER_5:0 "$SHIP_THRUSTER_5$"
  
- GREYGOO_MOTHERSHIP_SHIP_THRUSTER_1:0 "Chemical Thrusters"
- GREYGOO_MOTHERSHIP_SHIP_THRUSTER_2:0 "Ion Thrusters"
- GREYGOO_MOTHERSHIP_SHIP_THRUSTER_3:0 "Plasma Thrusters"
- GREYGOO_MOTHERSHIP_SHIP_THRUSTER_4:0 "Impulse Thrusters"
- GREYGOO_MOTHERSHIP_SHIP_THRUSTER_5:0 "Dark Matter Thrusters"
+ GREYGOO_MOTHERSHIP_SHIP_THRUSTER_1:0 "$tech_thrusters_1$"
+ GREYGOO_MOTHERSHIP_SHIP_THRUSTER_2:0 "$tech_thrusters_2$"
+ GREYGOO_MOTHERSHIP_SHIP_THRUSTER_3:0 "$tech_thrusters_3$"
+ GREYGOO_MOTHERSHIP_SHIP_THRUSTER_4:0 "$tech_thrusters_4$"
+ GREYGOO_MOTHERSHIP_SHIP_THRUSTER_5:0 "$SHIP_THRUSTER_5$"
  
  # Weapons
- 
- NANITE_STRIKE_CRAFT:0 "Nanite Strike Craft"
+ NANITE_STRIKE_CRAFT:0 "Nanite $strike_craft$"
  NANITE_STRIKE_CRAFT_DESC:0 "Unlike conventional strike craft, a nanite model is capable of morphing its weapons on the fly, 'hangars' becoming glorified factories that can churn out a near constant stream of the craft."
  NANITE_ENERGY_MISSILE:0 "Energy Missile"
- NANITE_ENERGY_MISSILE_DESC:0 "This energy sphere is capable of tracking its target with the benefit of being untargetable by point defense."
+ NANITE_ENERGY_MISSILE_DESC:0 "This energy missile is capable of tracking its target with the benefit of being untargetable by point defense."
  NANITE_BEAM:0 "Nanite Beam"
  NANITE_BEAM_DESC:0 "This weapon works in a similar fashion to a phase disruptor, weaponising a hyperquantum energy charge to rip through any target smaller than a planet, but is many times more destructive, as in tandem with this energy beam is a stream of destructive nanobots programmed to devour any matter unfortunate enough to come into contact."
- NANITE_ION_BEAM:0 "Nanite Beam"
- NANITE_ION_BEAM_DESC:0 "This weapon works in a similar fashion to a phase disruptor, weaponising a hyperquantum energy charge to rip through any target smaller than a planet, but is many times more destructive, as in tandem with this energy beam is a stream of destructive nanobots programmed to devour any matter unfortunate enough to come into contact."
+ NANITE_ION_BEAM:0 "$NANITE_BEAM$"
+ NANITE_ION_BEAM_DESC:0 "$NANITE_BEAM_DESC$"
  NANITE_ENERGY_TORPEDO:0 "$tech_nanite_torpedo$"
  NANITE_ENERGY_TORPEDO_DESC:0 "$tech_nanite_torpedo_desc$"
-
 
  ### Starbase buildings and modules
  sm_nanite_yards:0 "Nanite Ship Foundry"
@@ -108,14 +106,14 @@
  ### Technology
   
  # Weapons
- tech_nanite_strike_craft:0 "Nanite Strike Craft"
+ tech_nanite_strike_craft:0 "Nanite $strike_craft$"
  tech_nanite_strike_craft_desc:0 "Our strike craft must be able to improvise, adapt, and overcome any obstacle they encounter in the field. This is much easier to accomplish when nanites can reform into any required weapon on the fly."
  tech_adt_gg_beam:0 "Gatebuilder Titan Weapon"
  tech_adt_gg_beam_desc:0 "The discussion over whether the Gatebuilders or the Gray origionally designed this weapon is significantly overshowed by the discussion over why such a grossly destructive weapon was neccessary in the first place."
  tech_adt_energymissiles:0 "Gatebuilder Energy Spheres"
  tech_adt_energymissiles_desc:0 "The Gatebuilders, whatever else they may have been, clearly had a deep enough understanding of nanomechanics to create energy spheres contained by specialized target-tracking nanites. While not on par with an actual neutron launcher, we could certainly use these spheres as excellent guided weapons."
  tech_nanite_torpedo:0 "Nanite Warhead Torpedo"
- tech_nanite_torpedo_desc:0 ""A torpedo that delivers a mass of disassembling nanities straight to the enemy ship."
+ tech_nanite_torpedo_desc:0 "A torpedo that delivers a mass of disassembling nanities straight to the enemy ship."
  
  # Phys
  tech_lgate_construction:0 "L-Gate Construction"
@@ -145,29 +143,29 @@
  tech_nanite_bombardment:0 "Nanite Bombardment"
  tech_nanite_bombardment_desc:0 "Unleashing the Gray Tempest on a world will turn it into a useless $pc_gray_goo$ to our enemies. But with the right technology, we might rerender it habitable..."
  tech_nanite_build_speed:0 "Nanite Shipyards"
- tech_nanite_build_speed_desc:0 "Ships are assembled quicker and faster with nanites assisting the construction."
+ tech_nanite_build_speed_desc:0 "Ships are assembled faster, with nanites assisting the construction."
  tech_nanite_hull:0 "Nanite Hulls"
  tech_nanite_hull_desc:0 "By having spreading billions of nanites on the surface of our ships they will reinforce both the hulls and armor, in addition to the nanites' impressive capacity for hull and armour repair."
  tech_nanite_ships:0 "Nanite Warforms"
- tech_nanite_ships_desc:0 "Having encountered nanite warforms and their power first-hand, it is understandable that we wish to create such vessels for our fleets. Each ship is comprised of untold billions of nanites and each is completely self sustaining. Unfortunatly, their unque nature may lead to designs not as flexable as we'd hope..."
- tech_nanite_living_metal:0 "Nanite Living Metal"
- tech_nanite_living_metal_desc:0 "Thanks to our advances in nano-science we are now able to produce living metal by using nanites."
+ tech_nanite_ships_desc:0 "Having encountered nanite warforms and their power first-hand, it is understandable that we wish to create such vessels for our fleets. Each ship is comprised of untold billions of nanites and each is completely self sustaining. Unfortunately, their unique nature may lead to designs not as flexible as we'd hope..."
+ tech_nanite_living_metal:0 "Nanite $sr_living_metal$"
+ tech_nanite_living_metal_desc:0 "Thanks to our advances in nano-science we are now able to produce $sr_living_metal$ by using nanites."
  tech_nanocrystals:0 "Nanocrystals"
  tech_nanocrystals_desc:0 "The Crystalline by-product of certain nanobot activity exhibits curious interactions with other nanoscopic material, hinting at truth hidden beyond the Planck scale."
  tech_nanite_star_base:0 "Nanite Stations"
  tech_nanite_star_base_desc:0 "The potential applications of nanite technology are as numerous as the nanites themselves. We would be fools to forgo investigating defensive avenues."
  tech_nanite_modular_engineering:0 "Modular Nanites"
- tech_nanite_modular_engineering_desc:0 "Standerd Construction Templates for our starbases are fine, but nanotemplates that can change themselves as needed are better. Much better."
+ tech_nanite_modular_engineering_desc:0 "Standard Construction Templates for our starbases are fine, but nano templates that can change themselves as needed are better, much better."
  tech_nanite_workers:0 "Nanite Constructs"
  tech_nanite_workers_desc:0 "Networking certain groups of nanites into separate networks which themselves have the capability to form what ever tool they need from their appendages, combined with the processing power of countless nanites, puts them on par with if not greater than Synthetics."
  tech_nanite_construction:0 "Nanite Construction"
  tech_nanite_construction_desc:0 "Templates and modules to help construction is one thing...using nanites which literally build the structure from the ground up is another..."
  tech_nanite_mega_engineering:0 "Nanite Mega Engineering"
- tech_nanite_mega_engineering_desc:0 "Combining nanites and living metal is the best idea since imperialism! Provided the nanites don't go rogue and become an unstopable gray goo of death..."
+ tech_nanite_mega_engineering_desc:0 "Combining nanites and $sr_living_metal$ is the best idea since imperialism! Provided the nanites don't go rogue and become an unstoppable gray goo of death..."
  
  mod_country_resource_max_sr_living_metal_add:0 "§HUnlocks Building:§! $building_machinedlc_nanite_living_metal_forge$"\nAdds $tech_nanite_living_metal$ Storage Capacity"
- building_machinedlc_nanite_living_metal_forge:0 "Living Metal $nanites$ Forge"
- building_machinedlc_nanite_living_metal_forge_desc:0 "Combine refined minerals with active $nanites$ into artificial living metals. These are synthetic but function exactly same as natural one."
+ building_machinedlc_nanite_living_metal_forge:0 "$sr_living_metal$ $nanites$ Forge"
+ building_machinedlc_nanite_living_metal_forge_desc:0 "Combine refined minerals with active $nanites$ into artificial $sr_living_metal$s. These are synthetic but function exactly same as natural one."
  
  
  # ###################################
@@ -244,15 +242,15 @@
  TECH_UNLOCK_NANITE_CONSTRUCTION_DESC:0 "Nanite ships are self sufficient, but due to their...'unique' nature, their designs seem hardcoded and may not be compatible with certain technologies."
  bombed_to_nanite_world:0 "The world will need to be terraformed in order to be liveable again."
  
- TECH_UNLOCK_NANITE_BOMBARDMENT_TITLE:0 "Unlock Nanite Bombardment"
+ TECH_UNLOCK_NANITE_BOMBARDMENT_TITLE:0 "Unlock $tech_nanite_bombardment$"
  TECH_UNLOCK_NANITE_BOMBARDMENT_DESC:0 "Unlock a new method of bombardment that will depopulate a world and turn it into a $pc_gray_goo$."
  
- TECH_UNLOCK_L_GATE_TITLE:0 "Unlock L-Gate Construction"
+ TECH_UNLOCK_L_GATE_TITLE:0 "Unlock $tech_lgate_construction$"
  TECH_UNLOCK_L_GATE_DESC:0 "Unlock the ability to construct L-Gates"
   
- TECH_UNLOCK_NANITE_TERRAFORMING_TITLE:0 "Unlock $pc_gray_goo$ Terraforming"
+ TECH_UNLOCK_NANITE_TERRAFORMING_TITLE:0 "Unlock $tech_nanite_terraforming$"
  TECH_UNLOCK_NANITE_TERRAFORMING_DESC:0 "Once $pc_gray_goo$s were though un-terraformable unless under certain conditions but all machines can be reprogrammed a nanite is no different."
  
- TECH_UNLOCK_L_GATE_TACTICAL_USE_TITLE:0 "Unlock Tactical L-Gate Use"
- TECH_UNLOCK_L_GATE_TACTICAL_USE_DESC:0 "Unlock the ability use our L-Gates while the cluster is closed."
+ TECH_UNLOCK_L_GATE_TACTICAL_USE_TITLE:0 "Unlock $tech_tactical_lgate_use$"
+ TECH_UNLOCK_L_GATE_TACTICAL_USE_DESC:0 "Unlock the ability to use our L-Gates while the cluster is closed."
  

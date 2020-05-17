@@ -243,17 +243,3 @@ give_tech_option = {
 	# give_technology = { tech = $TECH$ message = no }
 	}
 }
-
-# Scope random_list
-check_tech_item = {
-	modifier = {
-		factor = 0
-		is_researching_technology = $TECH|tech_nanite_torpedo$
-		has_technology = $TECH|tech_nanite_torpedo$
-	}
-	give_technology = { tech = $TECH|tech_nanite_torpedo$ }
-	change_variable = { which = "picked_tech" value = 1 }
-	tooltip = {
-		give_technology = { tech = $TECH|tech_nanite_torpedo$ }
-	}
-}
