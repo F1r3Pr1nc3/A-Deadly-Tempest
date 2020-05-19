@@ -1,5 +1,5 @@
-version="1.2"
-name="A Deadly Tempest (2.6)"
+version="1.3"
+name="A Deadly Tempest (2.7)"
 tags={
 	"Events"
 	"Gameplay"
@@ -14,6 +14,6 @@ tags={
 	"Nanites"
 }
 picture="thumbnail.png"
-supported_version="2.6.*"
+supported_version="2.7.*"
 path="C:/Users/Max/Documents/Paradox Interactive/Stellaris/mod/ADeadlyTempest"
 remote_file_id="2028826064"

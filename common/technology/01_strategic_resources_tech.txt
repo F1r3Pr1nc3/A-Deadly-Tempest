@@ -16,16 +16,7 @@ tech_nanite_transmutation = {
 		factor = 2
 		modifier = {
 			factor = 0
-			NOT = {
-				any_system_within_border = {
-					any_system_planet = {
-						has_resource = {
-							type = nanites
-							amount > 0
-						}
-					}
-				}
-			}
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
 		}
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech

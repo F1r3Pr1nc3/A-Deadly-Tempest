@@ -28,6 +28,13 @@ tech_nanite_ships = {
 			has_technology = tech_nanites_assembler_factory
 		}
 	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
+	}
 }
 
 # ##################
@@ -54,6 +61,13 @@ tech_nanite_build_speed = {
 	modifier = {
 		starbase_shipyard_build_speed_mult = 0.20
 		starbase_shipyard_build_cost_mult = -0.10
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
 	}
 }
 
@@ -82,6 +96,13 @@ tech_nanite_hull = {
 		ship_hull_regen_add_static = 1
 		ship_armor_regen_add_static = 2
 	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
+	}
 }
 
 # Nanite Living Metal
@@ -107,6 +128,13 @@ tech_nanite_living_metal = {
 	modifier = {
 		country_resource_max_sr_living_metal_add = 2000
 	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
+	}
 }
 
 tech_nanocrystals = {
@@ -130,6 +158,13 @@ tech_nanocrystals = {
 		weapon_type_explosive_weapon_damage_mult = 0.25
 		weapon_type_kinetic_weapon_damage_mult = 0.25
 		weapon_type_energy_weapon_damage_mult = 0.25
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
 	}
 }
 
@@ -161,6 +196,13 @@ tech_nanite_modular_engineering = {
 		starbase_module_build_speed_mult = 0.25
 		starbase_upgrade_cost_mult = -0.15
 		starbase_upgrade_speed_mult = 0.25
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
 	}
 }
 

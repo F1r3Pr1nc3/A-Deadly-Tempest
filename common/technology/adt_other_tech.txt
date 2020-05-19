@@ -23,6 +23,13 @@ tech_nanite_mega_engineering = {
 	modifier = {
 		megastructure_build_speed_mult = 0.50
 	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
+	}
 }
 
 ####################

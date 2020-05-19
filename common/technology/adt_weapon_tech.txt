@@ -8,8 +8,8 @@ tech_adt_energymissiles = {
 	tier = 5
 	category = { particles }
 	ai_update_type = military
-	prerequisites = { "tech_energy_torpedoes_2" "tech_missiles_5" }
-	is_reverse_engineerable = no
+	prerequisites = { "tech_energy_torpedoes_2" "tech_missiles_5" "tech_nanite_ships" }
+	is_reverse_engineerable = yes
 	weight = @tier5weight2
 	
 	potential = {
@@ -50,8 +50,8 @@ tech_nanite_strike_craft = {
 	tier = 5
 	ai_update_type = military
 	category = { voidcraft }
-	prerequisites = { "tech_strike_craft_3" }
-	is_reverse_engineerable = no
+	prerequisites = { "tech_strike_craft_3" "tech_nanite_ships" }
+	is_reverse_engineerable = yes
 	weight = @tier5weight2
 		
 	potential = {
@@ -76,8 +76,8 @@ tech_adt_gg_beam = {
 	tier = 5
 	category = { particles }
 	ai_update_type = military	
-	prerequisites = { "tech_arc_emitter_2" "tech_energy_lance_2" "tech_disruptors_3" }
-	is_reverse_engineerable = no
+	prerequisites = { "tech_arc_emitter_2" "tech_energy_lance_2" "tech_disruptors_3" "tech_nanite_ships" }
+	is_reverse_engineerable = yes
 	weight = @tier5weight3
 	
 	potential = {
@@ -116,9 +116,9 @@ tech_nanite_torpedo = {
 	is_dangerous = yes
 	category = { propulsion }
 	weight = 25
-	is_reverse_engineerable = no
+	is_reverse_engineerable = yes
 	
-	prerequisites = { "tech_energy_torpedoes_2" "tech_missiles_5" }
+	prerequisites = { "tech_energy_torpedoes_2" "tech_missiles_5" "tech_nanite_ships" }
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_torpedo

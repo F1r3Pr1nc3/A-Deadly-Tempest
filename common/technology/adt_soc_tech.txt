@@ -28,6 +28,13 @@ tech_nanite_terraforming = {
 			has_technology = tech_repeatable_nanite_technology_insight
 		}
 	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
+	}
 }
 
 # ##################
@@ -56,6 +63,13 @@ tech_nano_dust = {
 			has_technology = tech_repeatable_nanite_technology_insight
 		}
 	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
+	}
 }
 
 #Nano Scales
@@ -78,6 +92,13 @@ tech_nano_scales = {
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_technology = tech_repeatable_nanite_technology_insight
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
 		}
 	}
 }
