@@ -161,7 +161,8 @@ country_event = {
 	title = CrisisManagerMenu.0014.name
 	desc = CrisisManagerMenu.0014.desc
 	picture = GFX_evt_galactic_senate
-
+	
+	is_triggered_only = yes
 	trigger = {
 		has_country_flag = CmtFlagNowInMenu
 		NOT = { has_country_flag = CmtFlagNeverWarn14 }

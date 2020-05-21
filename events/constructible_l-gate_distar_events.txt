@@ -1,0 +1,334 @@
+namespace = distar
+#################################
+#
+# Anomaly Events
+# by Dee Majek
+# Tweaked by FirePrince
+# For disabled L-Gates (less important)
+# distar.2050 - distar.8000
+#
+#################################
+
+##### THE ENIGMATIC CACHE ######
+# (vanilla only tweaked for lgate_disabled)
+event = {
+	id = distar.2050
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_distar = yes
+		NOT = {
+			any_system = {
+				has_star_flag = enigmatic_cache_system
+			}
+		}
+		any_playable_country = {
+			is_ai = no
+			is_at_war = no
+		}
+	}
+	immediate = {
+		# spawn tube by random gateway
+		random_system = {
+			limit = {
+				any_system_megastructure = {
+					OR = {
+						is_megastructure_type = gateway_ruined
+						is_megastructure_type = gateway_restored
+						is_megastructure_type = gateway_final
+						is_megastructure_type = lgate_base
+						is_megastructure_type = lgate_disabled
+					}
+				}
+			}
+			star = {
+				planet_event = { id = distar.20501 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = distar.20501
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		# save spawn point
+		solar_system = {
+			if = {
+				limit = {
+					any_system_megastructure = {
+						OR = {
+							is_megastructure_type = gateway_ruined
+							is_megastructure_type = gateway_restored
+							is_megastructure_type = gateway_final
+							is_megastructure_type = lgate_base
+							is_megastructure_type = lgate_disabled
+						}
+					}
+				}
+				random_system_megastructure = {
+					limit = {
+						OR = {
+							is_megastructure_type = gateway_ruined
+							is_megastructure_type = gateway_restored
+							is_megastructure_type = gateway_final
+							is_megastructure_type = lgate_base
+							is_megastructure_type = lgate_disabled
+						}
+					}
+					save_event_target_as = spawning_gateway
+				}
+			}
+			# use root planet as spawn point if fired for debugging
+			else = {
+				root = {
+					save_event_target_as = spawning_gateway
+				}
+			}
+		}
+		# Finding a target planet to scan and spawning enigmatic cache system
+		if = {
+			limit = {
+				any_system = {
+					exists = owner
+					owner = {
+						is_country_type = default
+						is_at_war = no
+						any_owned_planet = {
+							is_colony = yes
+							NOT = { has_planet_flag = has_been_scanned }
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_system = {
+						exists = owner
+						owner = {
+							is_ai = no
+							is_country_type = default
+							is_at_war = no
+							any_owned_planet = {
+								is_colony = yes
+								NOT = { has_planet_flag = has_been_scanned }
+							}
+						}
+					}
+				}
+				closest_system = {
+					limit = {
+						exists = owner
+						owner = {
+							is_country_type = default
+							is_at_war = no
+							is_ai = no
+							any_owned_planet = {
+								is_colony = yes
+								NOT = { has_planet_flag = has_been_scanned }
+							}
+						}
+					}
+					random_system_planet = {
+						limit = { exists = owner }
+						#set_planet_flag = has_been_scanned
+						save_event_target_as = new_location
+						solar_system = { set_star_flag = enigmatic_cache_system }
+					}
+				}
+			}
+		}
+		else = {
+			closest_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_country_type = default
+						is_at_war = no
+						any_owned_planet = {
+							is_colony = yes
+							NOT = { has_planet_flag = has_been_scanned }
+						}
+					}
+				}
+				random_system_planet = {
+					limit = { exists = owner }
+					#set_planet_flag = has_been_scanned
+					save_event_target_as = new_location
+					solar_system = { set_star_flag = enigmatic_cache_system }
+				}
+			}
+		}
+		create_country = {
+			name = "NAME_enigmatic_cache"
+			type = enigmatic_cache
+			flag = {
+				icon = {
+					category = spherical
+					file = flag_spherical_4.dds
+				}
+				background = {
+					category = backgrounds
+					file = "00_solid.dds"
+				}
+				colors = {
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				save_global_event_target_as = enigmatic_cache_country
+			}
+		}
+		event_target:enigmatic_cache_country = {
+			set_graphical_culture = guardian_01
+			create_enigmatic_cache_fleet = yes
+		}
+		every_country = {
+			establish_communications_no_message = event_target:enigmatic_cache_country
+		}
+	}
+}
+
+# Attempts to create new enigmatic cache at safe location
+country_event = {
+	id = distar.5055
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+	# Shouldn't trigger if the enigmatic cache country already has an enigmatic cache in rotation
+		NOT = {
+			any_owned_ship = {
+				has_ship_flag = enigmatic_cache_ship
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_playable_country = {
+					is_ai = no
+					is_at_war = no
+					NOT = { is_hostile = root.owner }
+					any_owned_planet = {
+						NOT = { has_planet_flag = has_been_scanned }
+					}
+				}
+			}
+			closest_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_ai = no
+						is_at_war = no
+						NOT = { is_hostile = root.owner }
+					}
+					any_system_planet = {
+						is_colony = yes
+						NOT = { has_planet_flag = has_been_scanned }
+					}
+				}
+				random_system_planet = {
+					limit = {
+						is_colony = yes
+						NOT = { has_planet_flag = has_been_scanned }
+					}
+					save_event_target_as = new_location
+					solar_system = {
+						set_star_flag = enigmatic_cache_system
+					}
+				}
+			}
+			create_enigmatic_cache_fleet = yes
+		}
+		# A gateway
+		else_if = {
+			limit = {
+				any_system = {
+					any_system_megastructure = {
+						OR = {
+							is_megastructure_type = gateway_ruined
+							is_megastructure_type = gateway_restored
+							is_megastructure_type = gateway_final
+							is_megastructure_type = lgate_base
+							is_megastructure_type = lgate_disabled
+						}
+					}
+				}
+			}
+			closest_system = {
+				limit = {
+					any_system_megastructure = {
+						OR = {
+							is_megastructure_type = gateway_ruined
+							is_megastructure_type = gateway_restored
+							is_megastructure_type = gateway_final
+							is_megastructure_type = lgate_base
+							is_megastructure_type = lgate_disabled
+						}
+					}
+				}
+				random_system_megastructure = {
+					limit = {
+						OR = {
+							is_megastructure_type = gateway_ruined
+							is_megastructure_type = gateway_restored
+							is_megastructure_type = gateway_final
+							is_megastructure_type = lgate_base
+							is_megastructure_type = lgate_disabled
+						}
+					}
+					save_event_target_as = new_location
+					solar_system = {
+						set_star_flag = enigmatic_cache_system
+					}
+				}
+			}
+			create_enigmatic_cache_fleet = yes
+		}
+		# A non hostile system without an owner
+		else_if = {
+			limit = {
+				any_system = {
+					has_owner = no
+					NOR = {
+						has_star_flag = guardian
+						has_star_flag = hostile_system
+					}
+				}
+			}
+			random_system = {
+				limit = {
+					has_owner = no
+					NOR = {
+						has_star_flag = guardian
+						has_star_flag = hostile_system
+					}
+				}
+				random_system_planet = {
+					limit = {
+						has_owner = no
+					}
+					save_event_target_as = new_location
+					solar_system = {
+						set_star_flag = enigmatic_cache_system
+					}
+				}
+			}
+			create_enigmatic_cache_fleet = yes
+		}
+		else = {
+			country_event = { id = distar.5055 days = 500 }
+		}
+	}
+}
+
+
+

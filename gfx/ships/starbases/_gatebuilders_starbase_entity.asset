@@ -1,0 +1,23 @@
+entity = {
+	name = "gatebuilder_02_space_station_entity"
+	clone = "ancient_station_xl_entity"
+	scale = 0.9
+}
+
+entity = {
+	name = "gatebuilder_02_space_station_section_entity"
+	clone = "ancient_station_xl_hull_entity"
+	scale = 0.9
+}
+
+entity = {
+	name = "gatebuilders_starbase_entity"
+	clone = "gatebuilder_01_space_station_entity"
+	# scale = 1.0
+}
+
+entity = {
+	name = "gatebuilder_starbase_section_entity"
+	clone = "gatebuilder_01_space_station_section_entity"
+	# scale = 1.0
+}

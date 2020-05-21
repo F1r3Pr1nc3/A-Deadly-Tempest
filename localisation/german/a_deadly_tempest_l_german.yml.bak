@@ -116,6 +116,16 @@
  tech_nanite_torpedo_desc:0 "Ein Torpedo, der eine Menge zerlegbarer Nanitäten direkt an das feindliche Schiff liefert."
  
  # Phys
+ tech_lgate_construction:0 "L-Gate-Konstruktion"
+ tech_lgate_construction_desc:0 "Dank der Fortschritte in der Nanitechnologie können wir mit dem Bau eigener L-Gates beginnen, anstatt uns nur auf vorhandene Gates verlassen zu müssen."
+ feature_lgate_construction:0 "$tech_lgate_construction$"
+ feature_lgate_construction_desc:0 "Ermöglicht den Wiederaufbau und den Bau neuer L-Gates."
+ 
+ requires_tech_lgate_construction:0 "$TRIGGER_FAIL$Benötigt Technologie £physics£ §Y$tech_lgate_construction$§!."
+ lgate_requires_black_hole: "$TRIGGER_FAIL$Muss in der Nähe eines Schwarzen Lochs gebaut werden."
+
+ tech_tactical_lgate_use:0 "Taktische L-Gate-Nutzung"
+ tech_tactical_lgate_use_desc:0 "Die L-Gates können uns vor der Krise schützen, die derzeit die Galaxie verbrennt. Aber können wir die Galaxie zu ihrem Schicksal verurteilen? Sollen wir uns nicht gegen den entgegenkommenden Strom behaupten? In jedem Fall können wir durch die Beibehaltung einer taktischen Doktrin des begrenzten Einsatzes der L-Gates diejenigen angreifen, die wir als Bedrohung betrachten."
  tech_nanoactuators:0 "Nanoaktoren"
  tech_nanoactuators_desc:0 "Einfache, aber leistungsstarke Nanoaktoren, die komplexe Manipulationen und Experimente mesoskopischer Skalen ermöglichen."
  tech_nanite_shield_rechargers:0 "Nanite-Schildwolke"

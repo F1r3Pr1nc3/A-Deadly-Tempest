@@ -16,7 +16,7 @@ tech_nanite_mega_engineering = {
 		has_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_repeatable_nanite_technology_insight
+			has_country_flag = completed_nanite_technology_mastery_chain 
 		}
 	}
 		
@@ -57,7 +57,7 @@ tech_nanite_bombardment = {
 		has_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_repeatable_nanite_technology_insight
+			has_country_flag = completed_nanite_technology_mastery_chain 
 		}
 	}
 }

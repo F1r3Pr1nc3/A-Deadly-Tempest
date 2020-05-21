@@ -1,12 +1,12 @@
-
-too_many_goo_mother_ships = {
-	owner = {
-		count_owned_ship = {
-			limit = { is_ship_size = graygoo_mothership }
-			count > 4
-		}
-	}
-}
+## country
+# too_many_goo_mother_ships = {
+# 	owner = {
+# 		count_owned_ship = {
+# 			limit = { is_ship_size = graygoo_mothership }
+# 			count > 4
+# 		}
+# 	}
+# }
 
 can_set_lcluster_policiy = {
 	has_technology = tech_lcluster_access

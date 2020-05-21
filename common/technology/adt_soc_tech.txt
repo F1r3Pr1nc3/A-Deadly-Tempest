@@ -25,7 +25,7 @@ tech_nanite_terraforming = {
 		has_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_repeatable_nanite_technology_insight
+			has_country_flag = completed_nanite_technology_mastery_chain 
 		}
 	}
 	
@@ -60,7 +60,7 @@ tech_nano_dust = {
 		has_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_repeatable_nanite_technology_insight
+			has_country_flag = completed_nanite_technology_mastery_chain 
 		}
 	}
 
@@ -91,7 +91,7 @@ tech_nano_scales = {
 		has_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_repeatable_nanite_technology_insight
+			has_country_flag = completed_nanite_technology_mastery_chain 
 		}
 	}
 

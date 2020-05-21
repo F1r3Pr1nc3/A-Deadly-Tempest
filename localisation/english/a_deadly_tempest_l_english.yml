@@ -102,7 +102,6 @@
  orbital_nanitebombard_name:0 "Nanite Orbital Bombardment"
  orbital_nanitebombard_desc:0 ""
  
- 
  ### Technology
   
  # Weapons
@@ -116,16 +115,6 @@
  tech_nanite_torpedo_desc:0 "A torpedo that delivers a mass of disassembling nanities straight to the enemy ship."
  
  # Phys
- tech_lgate_construction:0 "L-Gate Construction"
- tech_lgate_construction_desc:0 "Thanks to advances in nanite technology we can start constructing our own L-Gates instead of just having to rely on existing gates."
- feature_lgate_construction:0 "$tech_lgate_construction$"
- feature_lgate_construction_desc:0 "Allows us to rebuild and construct new L-Gates."
- 
- requires_tech_lgate_construction:0 "$TRIGGER_FAIL$Requires technology £physics£ §Y$tech_lgate_construction$§!."
- lgate_requires_black_hole: "$TRIGGER_FAIL$Must be built near a black hole."
-
- tech_tactical_lgate_use:0 "Tactial L-Gate Use"
- tech_tactical_lgate_use_desc:0 "The L-Gates can keep us safe and secluded from the crisis currently burning the galaxy. But can we condemn the galaxy to its grim fate? Shall we not stand stalwart against the oncoming strom? Either way, maintaining a tactical doctrine of limited use of the L-Gates will allow us to strike at those we deem a threat."
  tech_nanoactuators:0 "Nanoactuators"
  tech_nanoactuators_desc:0 "Simple but powerful nano-actuators, allowing for complex manipulations and experiments of mesoscopic scales."
  tech_nanite_shield_rechargers:0 "Nanite Shield Cloud"
@@ -245,12 +234,6 @@
  TECH_UNLOCK_NANITE_BOMBARDMENT_TITLE:0 "Unlock $tech_nanite_bombardment$"
  TECH_UNLOCK_NANITE_BOMBARDMENT_DESC:0 "Unlock a new method of bombardment that will depopulate a world and turn it into a $pc_gray_goo$."
  
- TECH_UNLOCK_L_GATE_TITLE:0 "Unlock $tech_lgate_construction$"
- TECH_UNLOCK_L_GATE_DESC:0 "Unlock the ability to construct L-Gates"
-  
  TECH_UNLOCK_NANITE_TERRAFORMING_TITLE:0 "Unlock $tech_nanite_terraforming$"
  TECH_UNLOCK_NANITE_TERRAFORMING_DESC:0 "Once $pc_gray_goo$s were though un-terraformable unless under certain conditions but all machines can be reprogrammed a nanite is no different."
- 
- TECH_UNLOCK_L_GATE_TACTICAL_USE_TITLE:0 "Unlock $tech_tactical_lgate_use$"
- TECH_UNLOCK_L_GATE_TACTICAL_USE_DESC:0 "Unlock the ability to use our L-Gates while the cluster is closed."
  

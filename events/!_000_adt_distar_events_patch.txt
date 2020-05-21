@@ -40,12 +40,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				any_owned_megastructure = {
-					OR = {
-						is_megastructure_type = lgate_base
-						is_megastructure_type = lgate_disabled
-					}
-				}
+				has_lgate = yes
 				OR = {
 					is_ai = no
 					NOT = { has_global_flag = gray_goo_crisis_set }
@@ -84,12 +79,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				any_owned_megastructure = {
-					OR = {
-						is_megastructure_type = lgate_base
-						is_megastructure_type = lgate_disabled
-					}
-				}
+				has_lgate = yes
 				has_technology = tech_lgate_activation
 				OR = {
 					is_ai = no
@@ -431,12 +421,7 @@ event = {
 					which = num_lcluster_clues
 					value > 5
 				}
-				any_owned_megastructure = {
-					OR = {
-						is_megastructure_type = lgate_base
-						is_megastructure_type = lgate_disabled
-					}
-				}
+				has_lgate = yes
 			}
 		}
 	}
@@ -459,12 +444,7 @@ event = {
 						which = num_lcluster_clues
 						value > 5
 					}
-					any_owned_megastructure = {
-						OR = {
-							is_megastructure_type = lgate_base
-							is_megastructure_type = lgate_disabled
-						}
-					}
+					has_lgate = yes
 				}
 			}
 			random_relation = {
@@ -479,12 +459,7 @@ event = {
 						which = num_lcluster_clues
 						value > 5
 					}
-					any_owned_megastructure = {
-						OR = {
-							is_megastructure_type = lgate_base
-							is_megastructure_type = lgate_disabled
-						}
-					}
+					has_lgate = yes
 				}
 				save_event_target_as = lgate_warning_country
 				set_country_flag = lgate_warned@prev

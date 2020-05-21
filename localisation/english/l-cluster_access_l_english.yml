@@ -1,0 +1,50 @@
+﻿l_english:
+ ####################################
+ # L-Cluster Accsess (former included in A Deadly Tempest) 
+ ####################################
+
+ NAME_Final_Egress:0 "Terminal Egress"
+ # Technology
+ tech_lcluster_access:0 "L-Cluster Access Control"
+ tech_lcluster_access_desc:0 "After some time and study we have discovered the means to enable or disable the $lgate$ network whenever we like, so long as we have access to the master control panel situated in the §H$NAME_Final_Egress$§! system."
+
+ feature_lgate_access:0 "$tech_lcluster_access$"
+ feature_lgate_access_desc:0 "Our empire can control the access to the §H$NAME_Final_Egress$§! system."
+
+ lgate_access:0 "$tech_lcluster_access$"
+ lgate_access_desc:0 "This empire has control about the access to the §H$NAME_Final_Egress$§! system in the §EL-Cluster§!."
+ tech_tactical_lgate_use:0 "Tactial L-Gate Use"
+ tech_tactical_lgate_use_desc:0 "The §E$lgates$§! can keep us safe and secluded from the crisis currently burning the galaxy. But can we condemn the galaxy to its grim fate? Shall we not stand stalwart against the oncoming strom? Either way, maintaining a tactical doctrine of limited use of the §E$lgates$§! will allow us to strike at those we deem a threat."
+ 
+ ### Policy
+ lcluster_policy:0 "L-Cluster Access"
+ policy_lcluster_policy:0 "$lcluster_policy$"
+ policy_lcluster_policy_desc:0 "The §EL-Cluster§! offers more than just access to unique resources but control over an entire gate network. Now it is up to us to choose how we use it."
+ lcluster_policy_cannot_set:0 "Cannot set L-Cluster Policy"
+ lcluster_policy_cannot_set_name:0 "$lcluster_policy_cannot_set$"
+ lcluster_policy_cannot_set_desc:0 "Until we gain control of the §H$NAME_Final_Egress$§! system, we cannot control access to the §EL-Cluster§!."
+ lcluster_policy_open:0 "L-Cluster Open"
+ lcluster_policy_open_desc:0 "The §EL-Cluster§! will remain open. The unparalleled tactical mobility it provides, and the ease of transport for our goods, cannot be understated, and will be used to the benefit of our empire."
+ lcluster_policy_closed:0 "L-Cluster Closed"
+ lcluster_policy_closed_desc:0 "The §EL-Cluster§! will remain closed. Let it serve as a place of refuge and last retreat when wholesale extinction threatens our people, and perhaps the galaxy..."
+
+ ### Decisions
+ decision_open_lcluster:0 "Open L-Cluster"
+ decision_open_lcluster_desc:0 "$lcluster_policy_open_desc$"
+ decision_open_lcluster_effects:0 "Will active the §E$lgates$§!, allowing for their use."
+ 
+ decision_close_lcluster:0 "Close L-Cluster"
+ decision_close_lcluster_desc:0 "$lcluster_policy_closed_desc$"
+ decision_close_lcluster_effects:0 "Will deactivate the §E$lgates$§!, preventing their use." 
+ 
+ artifact_lgate_insight_cooldown_desc:0 "It will take some time to do this again."
+ 
+ ### Tooltips
+ not_in_lcluster:0 "Cannot build in §EL-Cluster§!"
+ needs_terminal_egress:0 "We must control §H$NAME_Final_Egress$§! to control access to the §EL-Cluster§!."
+ 
+ TECH_UNLOCK_L_GATE_ACCESS_TITLE:0 "§HUnlocks Feature:§! $tech_lcluster_access$"
+ TECH_UNLOCK_L_GATE_ACCESS_DESC:0 "Unlocks the Policy that enables the ability to close or open the §EL-Cluster§!. Must control §H$NAME_Final_Egress$§! to dictate policy."
+ TECH_UNLOCK_L_GATE_TACTICAL_USE_TITLE:0 "§HUnlocks Feature:§! $tech_tactical_lgate_use$"
+ TECH_UNLOCK_L_GATE_TACTICAL_USE_DESC:0 "Unlocks the ability to use our §E$lgates$§! while the §EL-Cluster§! is closed."
+ 

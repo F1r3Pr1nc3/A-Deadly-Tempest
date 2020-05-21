@@ -1,0 +1,17 @@
+﻿l_english:
+ # Phys Tech
+ tech_lgate_construction:0 "L-Gate Construction"
+ tech_lgate_construction_desc:0 "Thanks to advances in nanite technology we can start constructing our own §E$lgates$§! instead of just having to rely on existing gates."
+ 
+ feature_lgate_construction:0 "L-Gate Construction"
+ feature_lgate_construction_desc:0 "Allows us to rebuild and construct §E$lgates$§!."
+ 
+ lgate_construction:0 "L-Gate Construction"
+ lgate_construction_desc:0 "Allows this empire to rebuild and construct §E$lgates$§!."
+ 
+ requires_tech_lgate_construction:0 "$TRIGGER_FAIL$Requires technology £physics£ §Y$tech_lgate_construction$§!."
+ lgate_requires_black_hole: "$TRIGGER_FAIL$Must be built near a black hole."
+ 
+ TECH_UNLOCK_L_GATE_TITLE:0 "§HUnlocks Feature:§! $tech_lgate_construction$"
+ TECH_UNLOCK_L_GATE_DESC:0 "This technology will unlock the feature to construct and activate §E$lgates$§! within our owned space."
+ 

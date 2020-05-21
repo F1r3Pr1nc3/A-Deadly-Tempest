@@ -32,7 +32,7 @@ lgate_disabled = {
 		cost = {
 			alloys = 2400
 			nanites = 400
-			energy = 800
+			energy = 1200
 			influence = 80
 		}
 	}

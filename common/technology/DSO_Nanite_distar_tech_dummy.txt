@@ -12,26 +12,6 @@ tech_nanite_clouds = {
 	is_reverse_engineerable = no
 }
 
-tech_repeatable_nanite_technology_insight = {
-	area = engineering
-	cost = 10000
-	cost_per_level = @repeatableTechLevelCost
-	tier = 5
-	is_rare = yes
-	category = { voidcraft }
-	levels = -1
-	weight = 0
-
-	is_reverse_engineerable = yes
-	
-	weight_groups = {
-		#repeatable
-	}
-	mod_weight_if_group_picked = {
-		#repeatable = 0.01
-	}
-}
-
 tech_nanites_assembler_factory = {
 	area = engineering
 	cost = 20000

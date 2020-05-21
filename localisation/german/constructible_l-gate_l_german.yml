@@ -1,0 +1,13 @@
+﻿l_german:
+ # Phys Tech
+ tech_lgate_construction:0 "L-Gate-Konstruktion"
+ tech_lgate_construction_desc:0 "Dank der Fortschritte in der Nanitechnologie können wir mit dem Bau eigener §E$lgates$§! beginnen, anstatt uns nur auf vorhandene Gates verlassen zu müssen."
+ feature_lgate_construction:0 "$tech_lgate_construction$"
+ feature_lgate_construction_desc:0 "Ermöglicht den Wiederaufbau und Konstruktion neuer §E$lgates$§!."
+ lgate_construction:0 "$tech_lgate_construction$"
+ lgate_construction_desc:0 "Ermöglicht diesem Imperium, §E$lgates$§! wieder aufzubauen und zu konstruieren."
+ requires_tech_lgate_construction:0 "$TRIGGER_FAIL$Benötigt Technologie £physics£ §Y$tech_lgate_construction$§!."
+ lgate_requires_black_hole: "$TRIGGER_FAIL$Muss in der Nähe eines Schwarzen Lochs gebaut werden."
+ TECH_UNLOCK_L_GATE_TITLE:0 "Schaltet $tech_lgate_construction$ frei"
+ TECH_UNLOCK_L_GATE_DESC:0 "Schaltet die Fähigkeit, §E$lgates$§! zu konstruieren frei"
+ 

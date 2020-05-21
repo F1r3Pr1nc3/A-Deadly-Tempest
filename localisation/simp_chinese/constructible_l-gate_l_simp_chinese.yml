@@ -1,0 +1,16 @@
+﻿l_simp_chinese:
+ # Phys Tech
+ tech_lgate_construction:0 "L星门建造"
+ tech_lgate_construction_desc:0 "得益于纳米技术的进步，我们可以开始构建自己的L星门，而不用仅仅依靠现有。"
+ feature_lgate_construction:0 "$tech_lgate_construction$"
+ feature_lgate_construction_desc:0 "我们可以修复或建造新的L星门。"
+ 
+ requires_tech_lgate_construction:0 "$TRIGGER_FAIL$需要科技£physics£ §Y$tech_lgate_construction$§!。"
+ lgate_requires_black_hole: "$TRIGGER_FAIL$必须在黑洞旁建造。"
+ 
+ lgate_construction:0 "$tech_lgate_construction$"
+ lgate_construction_desc:0 "允许这个帝国重建和建造L型门。"
+  
+ TECH_UNLOCK_L_GATE_TITLE:0 "解锁L星门建造"
+ TECH_UNLOCK_L_GATE_DESC:0 "解锁建造L星门的能力。"
+ 
