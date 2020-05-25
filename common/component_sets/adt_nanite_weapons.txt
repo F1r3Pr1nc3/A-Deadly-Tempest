@@ -13,7 +13,7 @@ component_set = {
 }
 
 component_set = {
-	key = "NANITE_ION_BEAM"
+	key = "NANITE_BASE_BEAM"
 	icon = "GFX_ship_part_nanite_beam_titanic"
 	icon_frame = 1
 }

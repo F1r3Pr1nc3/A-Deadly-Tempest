@@ -1,8 +1,10 @@
 gate_builders = {
 	scaled_difficulty_bonuses = 2.5
+	destroys_starbases = no
 	share_survey_data = no
 	custom_diplomacy = yes
 	enforces_borders = no
+	orbital_bombardment = yes
 	needs_survey = no
 	has_complete_sensor = yes
 	observable = yes

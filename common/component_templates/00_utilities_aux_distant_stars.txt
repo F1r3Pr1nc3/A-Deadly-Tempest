@@ -1,3 +1,15 @@
+# @armor_2S = 65
+# @armor_2M = 160
+# @armor_2L = 390
+
+# @armor_3S = 85
+# @armor_3M = 215
+# @armor_3L = 510
+
+# @armor_6S = 185
+# @armor_6M = 465
+# @armor_6L = 1110
+
 ############################
 #    Auto-Repair Module    #
 ############################
@@ -30,5 +42,83 @@ utility_component_template = {
 			factor = 2.0
 			is_preferred_weapons = weapon_type_explosive
 		}		
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_NANITE_HULL_2"
+	size = medium
+	icon = "GFX_ship_part_nanite_hull"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t6_cost
+			nanites = 0.65
+		}
+		upkeep = {
+			energy = @m_t6_upkeep_energy 
+			alloys = @m_t6_upkeep_alloys
+		}
+	}
+	
+	prerequisites = { "tech_nanocrystals" "tech_nanite_living_metal" "tech_nanite_hull" }
+	component_set = "NANITE_HULL_2"
+	
+	modifier = {
+		ship_hull_add = @armor_6M
+		ship_armor_add = @armor_2M
+		ship_hull_regen_add_static = 0.5
+		ship_armor_regen_add_static = 0.4
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = nanites value <= 0 }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_NANITE_HULL_2"
+	size = large
+	icon = "GFX_ship_part_nanite_hull"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t6_cost
+			nanites = 1.30
+		}
+		upkeep = {
+			energy = @l_t6_upkeep_energy 
+			alloys = @l_t6_upkeep_alloys
+		}
+	}
+	
+	prerequisites = { "tech_nanocrystals" "tech_nanite_living_metal" "tech_nanite_hull" }
+	component_set = "NANITE_HULL_2"
+	
+	modifier = {
+		ship_hull_add = @armor_6L
+		ship_armor_add = @armor_2L
+		ship_hull_regen_add_static = 1.2
+		ship_armor_regen_add_static = 1
+	}
+
+	ai_weight = {
+		weight = 1
+		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		modifier = {
+			factor = 0
+			is_country_type = default
+			# has_monthly_income = { resource = nanites value <= 0 }
+			resource_stockpile_compare = { resource = nanites value < 100 }
+		}
 	}
 }

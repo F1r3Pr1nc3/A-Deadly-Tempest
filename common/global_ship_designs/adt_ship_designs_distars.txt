@@ -10,7 +10,7 @@ ship_design = {
 	
 		component = {
 			slot = "TITAN_01"
-			template = "NANITE_ION_BEAM"
+			template = "NANITE_BEAM"
 		}
 		component = {
 			slot = "TORPEDO_01"
@@ -147,11 +147,11 @@ ship_design = {
 
 		component = {
 			slot = "TITAN_01"
-			template = "NANITE_ION_BEAM"
+			template = "NANITE_BEAM"
 		}
 		# component = {
 		# 	slot = "TITAN_02"
-		# 	template = "NANITE_ION_BEAM"
+		# 	template = "NANITE_BEAM"
 		# }
 		component = {
 			slot = "TORPEDO_01"
@@ -413,7 +413,7 @@ ship_design = {
 		
 		component = {
 			slot = "TITAN_01"
-			template = "NANITE_BEAM"
+			template = "NANITE_BASE_BEAM"
 		}
 		component = {
 			slot = "TORPEDO_01"
@@ -829,7 +829,10 @@ ship_design = {
 	section = {
 		template = "gatebuilder_starbase_key"
 		slot = "mid"
-		
+		component = {
+			slot = "TITAN_01"
+			template = "GG_BEAM"
+		}
 		component = {
 			slot = "TORPEDO_01"
 			template = "ENERGY_TORPEDO_2"
@@ -880,7 +883,7 @@ ship_design = {
 		}
 		component = {
 			slot = "AUX_UTILITY_1"
-			template = "AUTO_REPAIR"
+			template = "AUTO_REPAIR_2"
 		}
 	}
 	required_component = "SENSOR_2"

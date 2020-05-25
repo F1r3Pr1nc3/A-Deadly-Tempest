@@ -17,13 +17,21 @@ spriteTypes = {
 		name = "GFX_ship_part_nanite_beam_titanic"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_beam_titanic.dds"
 	}
-	spriteType = {
-		name = "GFX_ship_part_nanite_armor"
-		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_armor.dds"
-	}
+	# spriteType = {
+	# 	name = "GFX_ship_part_nanite_armor"
+	# 	texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_armor.dds"
+	# }
 	spriteType = {
 		name = "GFX_ship_part_nanite_hull"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_hull.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_armor_nhsc_nano_1"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_nhsc_armor_nano_1.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_armor_nhsc_dragon2"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_nhsc_armor_d7.dds"
 	}
 	spriteType = {
 		name = "GFX_ship_part_nanite_auto_repair"

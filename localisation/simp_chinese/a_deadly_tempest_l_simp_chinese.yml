@@ -1,4 +1,5 @@
 ﻿l_simp_chinese:
+ # A Deadly Tempest
  mother_ship_hire:0 "小灰可以创造纳米母舰供我们使用，但是小灰无法创建超过五艘船，因为制造纳米机器人需要消耗大量的资源。\n这些母舰能分裂出小船为自己护航，前提是母舰完好无损。但在面临重大危机时它们也许能造出更多来······\n只要小灰没重组，不管它是什么形态，都可以创造母舰。"
  a_deadly_tempest.82.name:0 "[From.GetName]陷落"
  a_deadly_tempest.82.desc:0 "一支属于§H[From.From.GetName]§!的舰队屠杀了§H[From.GetName]§!的居民！经过无情的大规模轨道轰炸，地表上所有人口中心都被系统性地消灭了，[From.GetPlanetMoon]变成了毫无生机的空壳，现在只剩下无数的纳米虫群。"
@@ -61,17 +62,38 @@
  NANITE_ENERGY_MISSILE_DESC:0 "这种能量球体能够追踪目标，具有点防御无法瞄准的优势。"
  NANITE_BEAM:0 "纳米光束"
  NANITE_BEAM_DESC:0 "这种武器的工作原理类似于相位碎裂炮，利用超量子能量电荷来撕裂任何比行星小的目标，但其破坏力要强很多倍，因为有一道破坏性纳米机器人伴随着能量束，可以吞噬任何不幸接触到的物质。"
- NANITE_ION_BEAM:0 "纳米光束"
- NANITE_ION_BEAM_DESC:0 "这种武器的工作原理类似于相位碎裂炮，利用超量子能量电荷来撕裂任何比行星小的目标，但其破坏力要强很多倍，因为有一道破坏性纳米机器人伴随着能量束，可以吞噬任何不幸接触到的物质。"
+ NANITE_BASE_BEAM:0 "固定式纳米光束"
+ NANITE_BASE_BEAM_DESC:0 "这种武器的工作原理类似于相位碎裂炮，利用超量子能量电荷来撕裂任何比行星小的目标，但其破坏力要强很多倍，因为有一道破坏性纳米机器人伴随着能量束，可以吞噬任何不幸接触到的物质。"
  NANITE_ENERGY_TORPEDO:0 "$tech_nanite_torpedo$"
  NANITE_ENERGY_TORPEDO_DESC:0 "$tech_nanite_torpedo_desc$"
+
+ # Armor
+ NHSC_NANO_ARMOR_1: "纳米盔甲"
+ NHSC_NANO_ARMOR_1_DESC: "By adding nanites programmed to run repair jobs into the ship's hull, we're able to create an armor that not only protects from damage, but also repairs any damage it couldn't prevent."
+ SMALL_NHSC_NANO_ARMOR_1: "小$NHSC_NANO_ARMOR_1$"
+ SMALL_NHSC_NANO_ARMOR_1_DESC: "$NHSC_NANO_ARMOR_1_DESC$"
+ MEDIUM_NHSC_NANO_ARMOR_1: "中间一$NHSC_NANO_ARMOR_1$"
+ MEDIUM_NHSC_NANO_ARMOR_1_DESC: "$NHSC_NANO_ARMOR_1_DESC$"
+ LARGE_NHSC_NANO_ARMOR_1: "大$NHSC_NANO_ARMOR_1$"
+ LARGE_NHSC_NANO_ARMOR_1_DESC: "$NHSC_NANO_ARMOR_1_DESC$"
+ 
+ NANITE_HULL_2:0 "纳米船体加固"
+ NANITE_HULL_2_DESC:0 "By adding nanites programmed to run repair jobs into the ship's hull using $tech_nanocrystals$, we're able to create an hull that not only protects from damage, but also repairs any damage it couldn't prevent."
+ SMALL_NANITE_HULL_2: "小$NANITE_HULL_2$"
+ SMALL_NANITE_HULL_2_DESC: "$NANITE_HULL_2_DESC$"
+ MEDIUM_NANITE_HULL_2: "中间一$NANITE_HULL_2$"
+ MEDIUM_NANITE_HULL_2_DESC: "$NANITE_HULL_2_DESC$"
+ LARGE_NANITE_HULL_2: "大$NANITE_HULL_2$"
+ LARGE_NANITE_HULL_2_DESC: "$NANITE_HULL_2_DESC$"
+
  sm_nanite_yards:0 "纳米造船厂"
  sm_nanite_yards_desc:0 "标准的船厂缺乏制造智能纳米战舰所需的专业设备和人员。为了达到使纳米战舰全副武装的工程学水准，必须建造独特设计的轨道铸造厂，每分钟能生产数十亿个纳米机器人。"
  bombardment_nanitebombard:0 "纳米轰炸"
  bombardment_nanitebombard_desc:0 "这颗星球被破坏性的纳米机器人轰炸，它们会将接触到的任何东西分解成基本成分，目的很明确：最大限度地增加平民伤亡。\n- 对§Y陆军§!造成§R巨大§!伤害\n- 对§Y建筑§!造成§R巨大§!伤害\n- 对§Y人口§!造成§R巨大§!伤害\n- 会轰炸不设防星球\n- 会将星球转化为没有生命的$pc_gray_goo$，可以被正确科技改造"
  orbital_nanitebombard:0 "纳米轰炸"
  orbital_nanitebombard_name:0 "纳米轨道轰炸"
- orbital_nanitebombard_desc:0 ""
+ orbital_nanitebombard_desc:0 "$bombardment_nanitebombard_desc$"
+ ### Technology
  tech_nanite_strike_craft:0 "纳米舰载机"
  tech_nanite_strike_craft_desc:0 "我们的舰载机必须能随机应变，适应和克服战场上遇到的任何困难。当纳米机器人可以在飞行中改造成任何需要的武器时，这一点就很容易实现了。"
  tech_adt_gg_beam:0 "建门者泰坦武器"
@@ -91,6 +113,17 @@
  tech_nano_dust_desc:0 "一种被还原成颗粒状物质的元素浆体。散布在整个世界后可以被纳米机械激活，迅速改变行星的环境。"
  tech_nano_scales:0 "纳米鳞屑"
  tech_nano_scales_desc:0 "用于恢复被破坏生物圈的浓缩人工肥料。"
+
+ NHSC_TECH_NANO_ARMOR_1_TITLE: "纳米灌注盔甲"
+ NHSC_TECH_NANO_ARMOR_1_DESC: "By adding nanities programmed to run repair jobs into the ship's hull we're able to create an armor that not only protects from damage, but also repairs any damage it couldn't prevent."
+ nhsc_tech_armor_nanite_1: "$NHSC_TECH_NANO_ARMOR_1_TITLE$"
+ nhsc_tech_armor_nanite_1_desc: "$NHSC_TECH_NANO_ARMOR_1_DESC$"
+
+ NHSC_TECH_NANO_DRAGON_ARMOR_TITLE: "纳米融合龙鳞护甲"
+ NHSC_TECH_NANO_DRAGON_ARMOR_DESC: "Introduction of nanites into dragonscale armor can further improve its incredible toughness."
+ nhsc_tech_armor_dragonscales_nanite: "$NHSC_TECH_NANO_DRAGON_ARMOR_TITLE$"
+ nhsc_tech_armor_dragonscales_nanite_desc: "$NHSC_TECH_NANO_DRAGON_ARMOR_DESC$"
+
  tech_nanite_bombardment:0 "纳米轰炸"
  tech_nanite_bombardment_desc:0 "对星球释放灰蛊风暴会给我们的敌人留下一个毫无用处的$pc_gray_goo$。但如果有正确的科技，我们可以再次将其变得宜居······"
  tech_nanite_build_speed:0 "纳米船坞"

@@ -1,5 +1,30 @@
 # ## physics technologies
 
+tech_lgate_activation = {
+	cost = @tier3cost3
+	area = physics
+	tier = 3
+	is_rare = yes
+	is_dangerous = yes
+	category = { particles }
+	weight = 0
+
+	potential = {
+		NOT = { has_global_flag = l_cluster_opened }
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = lgate_activation_title
+			desc = lgate_activation_desc
+		}
+	}
+	
+	weight_modifier = {
+		factor = 0
+	}
+}
+
 tech_nanoactuators = {
 	area = physics
 	tier = 5
@@ -38,6 +63,7 @@ tech_nanite_shield_rechargers = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
+		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain 

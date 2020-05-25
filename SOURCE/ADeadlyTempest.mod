@@ -15,5 +15,5 @@ tags={
 }
 picture="thumbnail.png"
 supported_version="2.7.*"
-path="C:/Users/Max/Documents/Paradox Interactive/Stellaris/mod/ADeadlyTempest"
+path="mod/ADeadlyTempest"
 remote_file_id="2028826064"
