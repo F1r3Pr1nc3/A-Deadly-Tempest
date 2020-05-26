@@ -909,11 +909,11 @@ ship_design = {
 		}	
 		component = {
 			slot = "LARGE_UTILITY_9"
-			template = "NANITE_HULL_2"
+			template = "LARGE_NANITE_HULL_2"
 		}
 		component = {
 			slot = "LARGE_UTILITY_10"
-			template = "NANITE_HULL_2"
+			template = "LARGE_NANITE_HULL_2"
 		}
 		component = {
 			slot = "LARGE_UTILITY_11"
@@ -925,11 +925,11 @@ ship_design = {
 		}
 		component = {
 			slot = "LARGE_UTILITY_13"
-			template = "NHSC_NANO_ARMOR_1"
+			template = "LARGE_NHSC_NANO_ARMOR_1"
 		}
 		component = {
 			slot = "LARGE_UTILITY_14"
-			template = "NHSC_NANO_ARMOR_1"
+			template = "LARGE_NHSC_NANO_ARMOR_1"
 		}
 		component = {
 			slot = "LARGE_UTILITY_15"
@@ -1049,7 +1049,7 @@ ship_design = {
 		}
 		component = {
 			slot = "AUX_UTILITY_1"
-			template = "AUTO_REPAIR"
+			template = "AUTO_REPAIR_2"
 		}
 	}
 	required_component = "SENSOR_2"

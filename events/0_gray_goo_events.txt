@@ -641,10 +641,10 @@ country_event = {
 				save_event_target_as = main_star
 			}
 			create_species = {
-				is_mod = yes
+				# is_mod = yes
 				name = "NAME_Dessanu"
 				class = FUN #random_non_machine
-				portrait = "sd_fun_robot"
+				portrait = random #"sd_fun_robot"
 				traits = {
 					trait = random_traits
 					trait = "trait_mechanical"

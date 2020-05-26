@@ -104,7 +104,7 @@ utility_component_template = {
 				has_global_flag = ghost_signal_4_flag
 				has_global_flag = ghost_signal_3_flag
 				has_global_flag = ghost_signal_2_flag
-				has_global_flag = ghost_signal_1_flag
+				has_notification_modifier = ghost_signal_1
 			}
 		}			
 	}	
