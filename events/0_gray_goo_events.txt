@@ -90,6 +90,8 @@ country_event = {
 					give_technology = { tech = tech_nanite_repair_system message = no }
 					add_global_ship_design = "NAME_Nanite_Mothership"
 					add_global_ship_design = "NAME_Nanite_Interdictor"
+					add_global_ship_design = "NAME_Gatebuilder_Starbase"
+					set_country_flag = synthetic_empire
 				}
 			}
 			event_target:main_star = { CmtEffectCreateNanitieFactory = yes }
@@ -423,49 +425,63 @@ country_event = {
 # 	}
 # }
 
-### Factory Destroyed
+# Dreadnought Disabled (HIDDEN)
 country_event = {
 	id = graygoo.6
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = gray_goo
-		fromfrom = { is_ship_size = graygoo_factory }
+		is_country_type = guardian_dreadnought
+		has_country_flag = automated_dreadnought_country
+		FROMFROM = { is_ship_size = npc_warship_01 }
+		FROM = { 
+			is_ai = yes
+			OR = {
+				is_country_type = gate_builders
+				is_country_type = gray_goo
+				is_same_empire = event_target:graygoo_country
+			}
+		}
 	}
-
+	
 	immediate = {
-		fromfromfrom = { save_event_target_as = goo_slayer_ship }
-		CmtEffectDestroyGraygoo = yes
-		# Give tech
-		from = { country_event = { id = a_deadly_tempest.7 } }
-		# from = {
-		# 	save_event_target_as = goo_slayer
-		# 	country_event = { id = graygoo.15 }
-		# }
-		# every_playable_country = {
-		# 	limit = {
-		# 		is_ai = no
-		# 		NOT = { is_same_value = event_target:goo_slayer }
-		# 	}
-		# 	country_event = { id = graygoo.16 }
-		# }
-		# observer_event = { id = observer.65 }
-		# every_planet = {
-		# 	limit = { is_planet_class = pc_gray_goo }
-		# 	add_modifier = {
-		# 		modifier = "terraforming_candidate"
-		# 		days = -1
-		# 	}
-		# }
-		# every_owned_fleet = { destroy_fleet = this }
-		# destroy_country = yes
-		# remove_global_flag = active_gray_goo
-		# clear_global_event_target = graygoo_country
-		# clear_global_event_target = nanite_factory
-		# clear_event_target = lcluster_factory_system
-		# clear_event_target = main_star
-		# remove_global_flag = gray_goo_crisis_active # Fix vanilla federation resolution
+		destroy_country = yes
+		every_country = {
+			limit = { 
+				is_country_type = default
+				has_modifier = automated_dreadnought_weak_points
+			}
+			remove_modifier = "automated_dreadnought_weak_points"
+		}
+		every_country = {
+			limit = {
+				is_country_type = default
+				has_event_chain = curator_poi_chain
+				event_target:guardians_dreadnought_system = {
+					is_point_of_interest = {
+						id = curator_poi_dreadnought
+						event_chain = curator_poi_chain
+						owner = prev
+					}
+				}
+			}
+			remove_point_of_interest = curator_poi_dreadnought
+			end_curator_chain = yes
+		}
+		# Nanite Dreadnought
+		FROM = { add_global_ship_design = "NAME_Type_51" }
+		FROMFROMFROM = {
+			fleet = {
+				create_ship = {
+					name = random
+					design = "NAME_Type_51" 
+					graphical_culture = "npf_01"
+					upgradable = yes
+				}
+			}
+		}
 	}
 }
 
@@ -625,10 +641,14 @@ country_event = {
 				save_event_target_as = main_star
 			}
 			create_species = {
+				is_mod = yes
 				name = "NAME_Dessanu"
 				class = FUN #random_non_machine
-				portrait = random
-				traits = random
+				portrait = "sd_fun_robot"
+				traits = {
+					trait = random_traits
+					trait = "trait_mechanical"
+				}
 				#homeworld = random
 				immortal = yes
 			}
@@ -676,6 +696,7 @@ country_event = {
 					add_global_ship_design = "NAME_Dessanu_Mothership"
 					add_global_ship_design = "NAME_Dessanu_Interdictor"
 					add_global_ship_design = "NAME_Gatebuilder_Starbase"
+					set_country_flag = synthetic_empire
 				}
 			}
 			### Create Factory/Fleets/Starbases
@@ -1781,7 +1802,11 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = gate_builders
+		OR = {
+			is_country_type = gate_builders
+			is_country_type = gray_goo
+			is_same_empire = event_target:graygoo_country
+		}
 		fromfrom = { is_ship_size = graygoo_factory }
 	}
 
@@ -1789,8 +1814,17 @@ country_event = {
 		fromfromfrom = { save_event_target_as = goo_slayer_ship }
 		from = {
 			save_event_target_as = goo_slayer
-			country_event = { id = graygoo.181 }
+			# Give tech
+			country_event = { id = a_deadly_tempest.7 days = 1 }
 		}
+
+		if = {
+			limit = { is_country_type = gray_goo }
+			CmtEffectDestroyGraygoo = yes
+			break = yes
+		}
+
+		from = { country_event = { id = graygoo.181 } }
 		every_playable_country = {
 			limit = {
 				is_ai = no
@@ -1798,6 +1832,7 @@ country_event = {
 			}
 			country_event = { id = graygoo.182 }
 		}
+
 		observer_event = { id = observer.67 }
 		## Change Gaia Planet to Graygoo
 		if = {
@@ -1863,12 +1898,6 @@ country_event = {
 		if = {
 			limit = { CmtTriggerHasDessanuGift = yes }
 			CmtEffectRemoveDessanuGift = yes
-		}
-		# Give tech
-		hidden_effect = {
-			owner = {
-				country_event = { id = a_deadly_tempest.7 }
-			}
 		}
 	}
 }

@@ -125,6 +125,10 @@ ship_design = {
 			slot = "AUX_UTILITY_2"
 			template = "SHIELD_BOOSTER"
 		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "AFTERBURNER_2"
+		}
 	}
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
@@ -149,10 +153,6 @@ ship_design = {
 			slot = "TITAN_01"
 			template = "NANITE_BEAM"
 		}
-		# component = {
-		# 	slot = "TITAN_02"
-		# 	template = "NANITE_BEAM"
-		# }
 		component = {
 			slot = "TORPEDO_01"
 			template = "NANITE_ENERGY_MISSILE"
@@ -304,11 +304,11 @@ ship_design = {
 		}
 		component = {
 			slot = "AUX_UTILITY_3"
-			template = "FIRE_CONTROL_1"
+			template = "AFTERBURNER_2"
 		}
 		component = {
 			slot = "AUX_UTILITY_4"
-			template = "AFTERBURNER_2"
+			template = "FIRE_CONTROL_1"
 		}
 	}
 	required_component = "HYPER_DRIVE_3"
@@ -392,6 +392,10 @@ ship_design = {
 			slot = "AUX_UTILITY_1"
 			template = "AUTO_REPAIR_2"
 		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
 
 	}
 	required_component = "HYPER_DRIVE_3"
@@ -417,11 +421,11 @@ ship_design = {
 		}
 		component = {
 			slot = "TORPEDO_01"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_TORPEDO"
 		}
 		component = {
 			slot = "TORPEDO_02"
-			template = "NANITE_ENERGY_MISSILE"
+			template = "NANITE_ENERGY_TORPEDO"
 		}
 		component = {
 			slot = "TORPEDO_03"
@@ -731,6 +735,10 @@ ship_design = {
 			slot = "AUX_UTILITY_2"
 			template = "SHIELD_BOOSTER"
 		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "AFTERBURNER_2"
+		}
 	}
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
@@ -813,6 +821,10 @@ ship_design = {
 			slot = "AUX_UTILITY_1"
 			template = "AUTO_REPAIR_2"
 		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
 
 	}
 	required_component = "HYPER_DRIVE_3"
@@ -820,6 +832,160 @@ ship_design = {
 	required_component = "SHIP_THRUSTER_4"
 	required_component = "CRUISER_ZERO_POINT_REACTOR"
 	required_component = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
+}
+
+# Restored Automated Dreadnought
+ship_design = {
+	name = "NAME_Type_51"
+	ship_size = npc_warship_01
+
+	section = {
+		template = "automated_dreadnought_key"
+		slot = "mid"
+
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "NANITE_BEAM"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "NANITE_ENERGY_TORPEDO"
+		}		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "NANITE_ENERGY_TORPEDO"
+		}		
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "LARGE_PLASMA_3"
+		}		
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "LARGE_PLASMA_3"
+		}	
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "LARGE_PLASMA_3"
+		}		
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "LARGE_PLASMA_3"
+		}	
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "LARGE_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_DISRUPTOR_3"
+		}	
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_DISRUPTOR_3"
+		}	
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "POINT_DEFENCE_3"
+		}	
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "POINT_DEFENCE_3"
+		}	
+		component = {
+			slot = "SMALL_GUN_05"
+			template = "POINT_DEFENCE_3"
+		}		
+		component = {
+			slot = "SMALL_GUN_08"
+			template = "SMALL_PLASMA_3"
+		}	
+		component = {
+			slot = "SMALL_GUN_09"
+			template = "SMALL_PLASMA_3"
+		}	
+		component = {
+			slot = "SMALL_GUN_10"
+			template = "SMALL_PLASMA_3"
+		}	
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "NANITE_HULL_2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "NANITE_HULL_2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "NHSC_NANO_ARMOR_1"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "NHSC_NANO_ARMOR_1"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_SHIELD_5"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_SHIELD_5"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "LARGE_SHIELD_5"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "LARGE_SHIELD_5"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "LARGE_SHIELD_5"
+		}		
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "LARGE_SHIELD_5"
+		}				
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}	
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "AUTO_REPAIR_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_5"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="PSI_JUMP_DRIVE_1"
+	required_component="SENSOR_4"
+	required_component="SHIP_THRUSTER_4"
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	# required_component="COMBAT_COMPUTER_LINE_SAPIENT"
+	required_component = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
 }
 
 # Gatebuilder Starbase
@@ -883,7 +1049,7 @@ ship_design = {
 		}
 		component = {
 			slot = "AUX_UTILITY_1"
-			template = "AUTO_REPAIR_2"
+			template = "AUTO_REPAIR"
 		}
 	}
 	required_component = "SENSOR_2"

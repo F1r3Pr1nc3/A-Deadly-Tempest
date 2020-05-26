@@ -25,6 +25,8 @@ gate_builders = {
 		tech = no
 		modules = {
 			anti_crisis_military_minister_module
+			foreign_minister_module
+			interior_minister_module
 		}
 		army_data = {
 			xenomorph_army = {
