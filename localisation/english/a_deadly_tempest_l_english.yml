@@ -242,7 +242,7 @@
  mod_job_nanite_agri_worker_per_pop:0 "§G+1§! $job_nanite_agri_worker$ Job per $VALUE$ Pops"
  mod_job_nanite_agri_worker_per_pop_short:0 "\n§G+1§! £mod_job_nanite_agri_worker_add£ per $VALUE$ £pop£"
  
- ### Buildings
+ ### Buildings ###
  building_nanite_plant_1:0 "Nanite Foundries"
  building_nanite_plant_1_desc:0 "$job_nanite_forger_plural$ work within these foundries to produce nanites."
  building_nanite_plant_2:0 "Nanite Mega-Forges"
@@ -266,3 +266,8 @@
  TECH_UNLOCK_NANITE_TERRAFORMING_TITLE:0 "Unlock $tech_nanite_terraforming$"
  TECH_UNLOCK_NANITE_TERRAFORMING_DESC:0 "Once $pc_gray_goo$s were though un-terraformable unless under certain conditions but all machines can be reprogrammed a nanite is no different."
 
+ ### Armies ###
+ nanite_giga_warform: "§MNanite Warform§!"
+ nanite_giga_warform_desc: "An extremely-powerful gigantic nanite entity, with enough power to devastate cities."
+ nanite_giga_warform_plural: "§M$nanite_giga_warform$s§!"
+ nanite_giga_warform_passive:0 "Permits building §Y$nanite_giga_warform$§! armies at your capital."

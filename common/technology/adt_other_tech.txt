@@ -7,7 +7,7 @@ tech_nanite_mega_engineering = {
 	cost = 20000
 	tier = 5
 	category = { voidcraft }
-	prerequisites = { "tech_mega_engineering" }
+	prerequisites = { "tech_mega_engineering" "tech_nanite_living_metal" }
 	weight = @tier5weight2
 	is_rare = yes
 

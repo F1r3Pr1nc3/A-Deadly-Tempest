@@ -93,10 +93,10 @@ tech_nanite_hull = {
 	}
 	
 	modifier = {
-		ship_hull_mult = 0.25
-		ship_armor_mult = 0.25
-		ship_hull_regen_add_static = 1
-		ship_armor_regen_add_static = 2
+		ship_hull_mult = 0.2
+		ship_armor_mult = 0.2
+		ship_hull_regen_add_static = 0.5
+		ship_armor_regen_add_static = 1
 	}
 
 	weight_modifier = {
@@ -157,9 +157,9 @@ tech_nanocrystals = {
 	}
 	
 	modifier = {
-		weapon_type_explosive_weapon_damage_mult = 0.25
-		weapon_type_kinetic_weapon_damage_mult = 0.25
-		weapon_type_energy_weapon_damage_mult = 0.25
+		weapon_type_explosive_weapon_damage_mult = 0.2
+		weapon_type_kinetic_weapon_damage_mult = 0.2
+		weapon_type_energy_weapon_damage_mult = 0.2
 	}
 
 	weight_modifier = {

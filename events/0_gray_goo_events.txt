@@ -31,9 +31,15 @@ country_event = {
 			limit = { CmtTriggerIsClosedLgate = yes }
 			CmtEffectOpenLgate = yes
 		}
-		random_system = {
-			limit = { has_star_flag = graygoo_factory_system }
-			save_event_target_as = lcluster_factory_system
+		# vanilla double call?
+		if = {
+			limit = { NOT = { exists = event_target:lcluster_factory_system } }
+			random_system = {
+				limit = { has_star_flag = graygoo_factory_system }
+				save_global_event_target_as = lcluster_factory_system
+			}
+		}
+		event_target:lcluster_factory_system = {
 			random_system_planet = {
 				limit = { has_planet_flag = main_star }
 				save_event_target_as = main_star
@@ -91,6 +97,7 @@ country_event = {
 					add_global_ship_design = "NAME_Nanite_Mothership"
 					add_global_ship_design = "NAME_Nanite_Interdictor"
 					add_global_ship_design = "NAME_Gatebuilder_Starbase"
+					add_global_ship_design = "NAME_Reclaimer"
 					set_country_flag = synthetic_empire
 				}
 			}
@@ -257,7 +264,7 @@ country_event = {
 		### Time Control
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 2 } } }
-			country_event = { id = graygoo.3 days = 10800 }		## 30 yr
+			country_event = { id = graygoo.3 days = 9000 }		## 25 yr
 		} else_if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 4 } } }
 			country_event = { id = graygoo.3 days = 1440 }		## 4 yr
@@ -271,17 +278,11 @@ country_event = {
 
 		# Fallback (savegame comp.) re-save event_targets
 		if = { limit = { NOT = { exists = event_target:nanite_factory } }
-			if = { limit = { NOT = { exists = event_target:main_star } }
-				random_system = {
-					limit = { has_star_flag = graygoo_factory_system }
-					save_event_target_as = lcluster_factory_system
-					random_system_planet = {
-						limit = { has_planet_flag = main_star }
-						save_event_target_as = main_star
-					}
-				}
-			}
-			event_target:main_star = {
+			event_target:lcluster_factory_system = {
+				# random_system_planet = {
+				# 	limit = { has_planet_flag = main_star }
+				# 	save_event_target_as = main_star
+				# }
 				random_fleet_in_system = {
 					limit = { any_ship = { is_ship_size = graygoo_factory } }
 					save_global_event_target_as = nanite_factory
@@ -425,6 +426,7 @@ country_event = {
 # 	}
 # }
 
+# Claimed vanilla event is now graygoo.180
 # Dreadnought Disabled (HIDDEN)
 country_event = {
 	id = graygoo.6
@@ -632,16 +634,21 @@ country_event = {
 			limit = { CmtTriggerIsClosedLgate = yes }
 			CmtEffectOpenLgate = yes
 		}
+		# vanilla double call?
+		if = {
+			limit = { NOT = { exists = event_target:lcluster_factory_system } }
+			random_system = {
+				limit = { has_star_flag = graygoo_factory_system }
+				save_global_event_target_as = lcluster_factory_system
+			}
+		}
 		### Create Country
-		random_system = {
-			limit = { has_star_flag = graygoo_factory_system }
-			save_event_target_as = lcluster_factory_system
+		event_target:lcluster_factory_system = {
 			random_system_planet = {
 				limit = { has_planet_flag = main_star }
 				save_event_target_as = main_star
 			}
 			create_species = {
-				# is_mod = yes
 				name = "NAME_Dessanu"
 				class = FUN #random_non_machine
 				portrait = random #"sd_fun_robot"
@@ -696,6 +703,7 @@ country_event = {
 					add_global_ship_design = "NAME_Dessanu_Mothership"
 					add_global_ship_design = "NAME_Dessanu_Interdictor"
 					add_global_ship_design = "NAME_Gatebuilder_Starbase"
+					add_global_ship_design = "NAME_Reclaimer"
 					set_country_flag = synthetic_empire
 				}
 			}
@@ -1794,7 +1802,7 @@ fleet_event = {
 	}
 }
 
-# Factory Destroyed (Dessanu)
+# Factory Destroyed (Dessanu/Graygoo)
 country_event = {
 	id = graygoo.180
 	hide_window = yes
@@ -1828,7 +1836,7 @@ country_event = {
 		every_playable_country = {
 			limit = {
 				is_ai = no
-				NOT = { is_same_value = event_target:goo_slayer }
+				NOT = { is_same_empire = event_target:goo_slayer }
 			}
 			country_event = { id = graygoo.182 }
 		}
@@ -1877,9 +1885,7 @@ country_event = {
 		destroy_country = yes
 		clear_global_event_target = graygoo_country
 		clear_global_event_target = nanite_factory
-		# clear_event_target = gate_builders
-		# clear_event_target = lcluster_factory_system
-		# clear_event_target = main_star
+		clear_global_event_target = lcluster_factory_system # needed?
 	}
 }
 

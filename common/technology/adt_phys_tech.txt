@@ -71,6 +71,6 @@ tech_nanite_shield_rechargers = {
 	}
 	
 	modifier = {
-		ship_shield_mult = 0.25
+		ship_shield_mult = 0.2
 	}
 }

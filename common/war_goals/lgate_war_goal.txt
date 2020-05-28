@@ -51,18 +51,18 @@ wg_access_lcluster = {
 	ai_weight = {
 		weight = 100
 	}
-	# # Run when war ends in status quo
-	# on_status_quo = {
-	# }
+	# Run when war ends in status quo
+	on_status_quo = {
+		set_global_flag = lgates_activated_globally
+		FROM = { set_country_flag = lgates_activated }
+		set_country_flag = lgates_activated
+	}
 	# Run when target surrenders after claims are ceded
 	on_accept = {
 		FROM = {
 			random_system_within_border = {
 				limit = { has_star_flag = lcluster1 }
-					starbase = {
-						set_owner = ROOT
-					}
-				}
+				starbase = { set_owner = ROOT }
 			}
 		}
 		hidden_effect = {
@@ -74,9 +74,7 @@ wg_access_lcluster = {
 				set_country_flag = lgates_activated
 			}
 			set_global_flag = lgates_activated_globally
-			ROOT = { 
-				set_country_flag = lgates_activated
-			}
+			ROOT = { set_country_flag = lgates_activated }
 		}
 	}
 }

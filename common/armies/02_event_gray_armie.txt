@@ -1,11 +1,11 @@
 # Gray Nanite Army
 gray_army = {
-	damage = 30.0
-	health = 54.0
+	damage = 20.0
+	health = 36.0
 	has_morale = no
-	morale_damage = 18.0
-	collateral_damage = 15.0
-	war_exhaustion = 12.0
+	morale_damage = 12.0
+	collateral_damage = 10.0
+	war_exhaustion = 8.0
 	time = 5
 	resources = {
 		category = armies
@@ -15,8 +15,137 @@ gray_army = {
 	}
 	has_species = no
 	icon_frame = 11
-
+	# pop_limited = no
+	# is_pop_spawned = yes
+	# occupation = yes
 	potential = {
 		always = no
 	}
+}
+
+### Improved Cybrex-Warform with Nanites, same version as vanilla gray_army
+nanite_giga_warform = {
+	damage = 10.0
+	health = 18.0
+	has_morale = no
+	morale_damage = 6.0
+	collateral_damage = 5.0
+	war_exhaustion = 4.0
+	time = 500
+	has_species = no
+
+	icon_frame = 11
+
+	resources = {
+		category = armies
+		cost = {
+			energy = 250
+			alloys = 200
+			minerals = 200
+			nanites = 20
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+
+	show_tech_unlock_if = {
+		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
+		OR = {
+			has_authority = auth_machine_intelligence
+			has_civic = civic_machine_assimilator
+			from = { has_trait = "trait_machine_unit" }
+			has_country_flag = synthetic_empire
+		}
+	}
+
+	prerequisites = { tech_nanite_mega_engineering }
+
+	potential = {
+		NOR = {
+			has_global_flag = active_gray_goo 
+			exists = event_target:graygoo_country
+		}
+		custom_tooltip = {
+			# 	text = titanic_troop_limit_tooltip
+			planet = {
+				OR = {
+					is_capital = yes
+					# AND = {
+					# 	exists = event_target:lcluster_factory_system
+					# 	solar_system = { is_same_value = event_target:lcluster_factory_system }
+					# }
+					solar_system = { has_star_flag = graygoo_factory_system }
+				}
+			}
+			owner = {
+				OR = {
+					AND = {
+						exists = event_target:gray_owner
+						is_same_empire = event_target:gray_owner
+					}
+					AND = {
+						exists = event_target:goo_slayer
+						is_same_empire = event_target:goo_slayer
+					}
+					# has_country_flag =
+				}
+			}
+		}
+
+		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
+		owner = { 
+			OR = {
+				has_authority = auth_machine_intelligence
+				has_civic = civic_machine_assimilator
+				from = { has_trait = "trait_machine_unit" }
+				has_country_flag = synthetic_empire
+			}
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			# text = titanic_troop_limit_tooltip
+			#planet = { has_planet_flag =  }
+			planet = {
+				OR = {
+					is_capital = yes
+					# AND = {
+					# 	exists = event_target:lcluster_factory_system
+					# 	solar_system = { is_same_value = event_target:lcluster_factory_system }
+					# }
+					solar_system = { has_star_flag = graygoo_factory_system }
+				}
+			}
+			owner = {
+				#has_country_flag =
+				NOT = {
+					 check_variable = {
+						which = "nanite_warform_count"
+						value = 3
+					}
+				}
+			}
+		}
+	}
+
+	on_queued = {
+		owner = {
+			change_variable = {
+				which = "nanite_warform_count"
+				value = 1
+			}
+		}
+	}
+
+	on_unqueued = {
+		owner = {
+			change_variable = {
+				which = "nanite_warform_count"
+				value = -1
+			}
+		}
+	}
+
 }
