@@ -43,6 +43,7 @@ tech_nanite_bombardment = {
 	is_rare = yes
 	category = { voidcraft }
 	ai_update_type = military
+	prerequisites = { "tech_nanite_torpedo" }
 	weight = @tier5weight2
 	
 	prereqfor_desc = {

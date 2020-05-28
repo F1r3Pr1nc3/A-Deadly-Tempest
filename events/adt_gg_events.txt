@@ -45,7 +45,7 @@ event = {
 }
 
 ####################################
-# Nanites spawn more ships over time
+# Nanites spawn more fleets and ships over time
 ####################################
 ## Reinforcements 1
 event = {
@@ -417,7 +417,7 @@ country_event = {
 	}
 }
 
-# Mothership creates ships
+# Mothership creates ships (only Defender)
 country_event = {
 	id = a_deadly_tempest.106
 	hide_window = yes
@@ -1067,15 +1067,7 @@ country_event = {
 		federation = {
 			any_member = {
 				has_country_flag = encountered_first_lgate
-				any_system_within_border = {
-					has_star_flag = lgate
-					any_system_megastructure = {
-						OR = {
-							is_megastructure_type = lgate_base
-							is_megastructure_type = lgate_disabled
-						}
-					}
-				}
+				has_lgate = yes
 			}
 		}
 	}

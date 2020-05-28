@@ -48,3 +48,9 @@
  TECH_UNLOCK_L_GATE_TACTICAL_USE_TITLE:0 "Schaltet $tech_tactical_lgate_use$ frei"
  TECH_UNLOCK_L_GATE_TACTICAL_USE_DESC:0 "Schalte die Möglichkeit frei, unsere §E$lgates$§! zu verwenden, während der Cluster geschlossen ist."
  
+  # Diplomacy --------
+ casus_belli_cb_lgate_port:0 "$lcluster_policy$"
+ war_goal_wg_access_lcluster:0 "$decision_open_lcluster$"
+ war_goal_wg_access_lcluster_desc:0 "Die Abriegelung des gesamten §EL-Clusters§! stellt eine starke Behinderung des Gleichgewichts und eine zu bedrohliche  Machtposition dar."
+ 
+ 

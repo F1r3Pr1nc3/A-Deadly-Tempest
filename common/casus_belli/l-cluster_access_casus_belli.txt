@@ -1,0 +1,29 @@
+#my_casus_belli = {
+#	potential = { ... }		# trigger to make some CBs invalid for certain types of countries; this = attacker (CB owner); default: { always = yes }
+#	is_valid = { ... }		# trigger, evaluated daily to check if CB should be created or destroyed automatically, does not affect CBs granted via script;
+#								# this = attacker (CB owner), from = defender (target country); default: { always = yes }
+#	destroy_if = { ... }	# trigger, evaluated daily to destroy CBs that have been granted via script ahead of expiration date;
+#								# this = attacker (CB owner), from = defender (target country); default: { always = no }
+#	show_notification = no/yes	# optional (default = yes), flag to control whether this CB will generate a notification (to avoid duplicate
+# 								# notification when a claim CB is generated)
+#}
+cb_lgate_port = {
+	show_in_diplomacy = yes
+	show_notification = yes
+	#  (Country scope, THIS = casus belli owner, FROM = casus belli target)
+	potential = {
+		OR = {
+			is_country_type = default
+			is_country_type = awakened_fallen_empire
+		}
+		NOT = { has_global_flag = lgates_activated_globally }
+		NOT = { is_in_federation_with = from }
+		is_subject = no
+	}
+	is_valid = {
+		NOT = { is_overlord_to = FROM }
+		# is_country_type = awakened_fallen_empire
+		NOT = { has_authority = auth_machine_intelligence }
+		FROM = { controls_lcluster = yes } # can_set_lcluster_policiy = yes
+	}
+}

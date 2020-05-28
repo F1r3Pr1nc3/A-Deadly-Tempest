@@ -8,7 +8,8 @@ tech_lcluster_access = {
 	cost = @tier5cost2
 	tier = 5
 	category = { particles }
-	is_rare = yes
+	is_rare = no
+	is_dangerous = yes
 	weight = @tier5cost2
 	feature_flags = { lgate_access }
 
@@ -51,10 +52,10 @@ tech_lgate_construction = {
 	area = physics
 	tier = 5
 	category = { particles }
-	is_rare = yes
+	is_rare = no
 	is_reverse_engineerable = yes
-	weight = @tier4weight1
 	is_dangerous = yes
+	weight = @tier4weight1
 	icon = "tech_lcluster_access"
 
 	prerequisites = { "tech_gateway_construction" "tech_lgate_activation" }

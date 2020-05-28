@@ -114,7 +114,7 @@ nhsc_tech_armor_nanite_1 = {
 	prerequisites = { "tech_nanite_hull" }
 
 	potential = {
-		#NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
+		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		has_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }

@@ -192,7 +192,8 @@ weapon_component_template = {
 	key = "NANITE_ENERGY_TORPEDO"
 	size = large
 	entity = "turret_energy_torpedo_entity"
-	type = instant
+	type = missile
+	prio_projectile = yes
 	hidden = no
 	
 	icon = "GFX_ship_part_nanite_energy_torpedo"
@@ -213,10 +214,11 @@ weapon_component_template = {
 
 	prerequisites = { "tech_nanite_torpedo" }
 	component_set = "NANITE_ENERGY_TORPEDO"
-	projectile_gfx = "gatebuilder_torpedoes"
+	size_restriction = { titan graygoo_mothership colossus juggernaut }
 	tags = { weapon_type_energy }
+	projectile_gfx = "gatebuilder_torpedoes"
 	ai_tags = { weapon_role_artillery weapon_role_anti_hull weapon_role_anti_shield weapon_role_anti_armor }
-	ai_tag_weight = 0
+	ai_tag_weight = 1
 	resources = {
 		category = ship_components
 		cost = {
@@ -235,6 +237,7 @@ weapon_component_template = {
 			factor = 0.0
 			is_country_type = default
 			has_monthly_income = { resource = exotic_gases value <= 0 }
+			has_monthly_income = { resource = nanites value <= 0 }
 		}
 	}
 }
