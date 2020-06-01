@@ -1,0 +1,21 @@
+﻿l_french:
+ # Phys Tech
+ tech_lgate_construction:0 "L-Gate Construction"
+ tech_lgate_construction_desc:0 "Thanks to advances in nanite technology we can start constructing our own §E$lgates$§! instead of just having to rely on existing gates."
+ 
+ feature_lgate_construction:0 "L-Gate Construction"
+ feature_lgate_construction_desc:0 "Allows us to rebuild and construct §E$lgates$§!."
+ 
+ lgate_construction:0 "L-Gate Construction"
+ lgate_construction_desc:0 "Allows this empire to rebuild and construct §E$lgates$§!."
+ 
+ requires_tech_lgate_construction:0 "$TRIGGER_FAIL$Requires technology £physics£ §Y$tech_lgate_construction$§!."
+ lgate_requires_black_hole: "$TRIGGER_FAIL$Must be built near a black hole."
+ 
+ TECH_UNLOCK_L_GATE_TITLE:0 "§HUnlocks Feature:§! $tech_lgate_construction$"
+ TECH_UNLOCK_L_GATE_DESC:0 "This technology will unlock the feature to construct and activate §E$lgates$§! within our owned space."
+ 
+ # From DSO
+ civic_gateway_worshiper:0 "Gateway Guardian"
+ civic_gateway_worshiper_desc:0 "Long ago an ancient precursor race, the Dessanu, came in contact with this society. The Dessanu no doubte left their mark on them as primitives with lending technology and advancing them. Revering the Dessanu as Gods, this society worships L-Gates as holy relics. Their society is structured to uphold the covenant with the Dessanu. This covenant was a vow to keep the L-Gates in their dormant state."
+ civic_gateway_worshiper_effects:0 "Homeworld is a §YGaia World§! (Size: £planetsize£ §Y25§!)\nCan only settle §YGaia Worlds§!\n§YUnlocks Edict:§! Consecrate L-Gate\nGuarantees an §YL-Gate§! in your home system.\n§YL-Gate Insight§! research is §RDisabled§!\n§YUnique Questlines§! to unravel the mystery of the species origin and how the L-Gates play into it all."

@@ -9,7 +9,7 @@
 #}
 cb_lgate_port = {
 	show_in_diplomacy = yes
-	show_notification = yes
+	show_notification = no
 	#  (Country scope, THIS = casus belli owner, FROM = casus belli target)
 	potential = {
 		OR = {
