@@ -19,7 +19,7 @@ tech_nanite_ships = {
 			desc = "TECH_UNLOCK_NANITE_CONSTRUCTION_DESC"
 		}
 	}
-	
+
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
@@ -58,7 +58,7 @@ tech_nanite_build_speed = {
 			has_technology = tech_nanite_clouds
 		}
 	}
-	
+
 	modifier = {
 		starbase_shipyard_build_speed_mult = 0.20
 		starbase_shipyard_build_cost_mult = -0.10
@@ -91,7 +91,7 @@ tech_nanite_hull = {
 			has_technology = tech_orbital_nanite_shipyard
 		}
 	}
-	
+
 	modifier = {
 		ship_hull_mult = 0.2
 		ship_armor_mult = 0.2
@@ -116,7 +116,7 @@ tech_nanite_living_metal = {
 	prerequisites = { "tech_mine_living_metal" }
 	weight = @tier5weight1
 	is_rare = yes
-	
+
 	# Unlocks nanite_living_metal_forge
 	potential = {
 		has_global_flag = l_cluster_opened
@@ -155,7 +155,7 @@ tech_nanocrystals = {
 			has_technology = tech_nanite_clouds
 		}
 	}
-	
+
 	modifier = {
 		weapon_type_explosive_weapon_damage_mult = 0.2
 		weapon_type_kinetic_weapon_damage_mult = 0.2
@@ -183,7 +183,7 @@ tech_nanite_modular_engineering = {
 	prerequisites = { "tech_starbase_5" "tech_modular_engineering" }
 	is_rare = yes
 	weight = @tier5weight2
-	
+
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
@@ -192,7 +192,7 @@ tech_nanite_modular_engineering = {
 			has_technology = tech_nanite_clouds
 		}
 	}
-	
+
 	modifier = {
 		starbase_building_build_speed_mult = 0.25
 		starbase_module_build_speed_mult = 0.25

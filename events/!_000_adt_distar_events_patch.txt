@@ -97,11 +97,11 @@ country_event = {
 				save_event_target_as = candidate_gateway
 			}
 			# enable project
-			country_event = { id = distar.10905 }			
+			country_event = { id = distar.10905 }
 		}
 		else = {
 			# *THIS* looping check
-			country_event = { id = distar.10902 days = 60 }			
+			country_event = { id = distar.10902 days = 60 }
 		}
 	}
 }
@@ -129,7 +129,7 @@ country_event = {
 				id = distar.11000
 			}
 		}
-		### Set 1st L-Gate as Target 
+		### Set 1st L-Gate as Target
 		if = {
 			limit = {
 				NOT = {
@@ -245,7 +245,6 @@ country_event = {
 						factor = 0
 						has_global_flag = CmtFlagLgateForbidSilence
 						NAND = {
-							has_global_flag = CmtFlagLgateForbidSilence
 							has_global_flag = CmtFlagLgateForbidLdrake
 							has_global_flag = CmtFlagLgateForbidDessanu
 							has_global_flag = CmtFlagLgateForbidGraygoo
@@ -255,7 +254,16 @@ country_event = {
 				30 = {
 					modifier = {
 						factor = 0
-						has_global_flag = CmtFlagLgateForbidLdrake
+						OR = {
+							has_global_flag = CmtFlagLgateForbidLdrake
+							AND = {
+								has_global_flag = CmtFlagLgateForbidSilence
+								NAND = {
+									has_global_flag = CmtFlagLgateForbidDessanu
+									has_global_flag = CmtFlagLgateForbidGraygoo
+								}
+							}
+						}
 					}
 					set_global_flag = dragon_season
 				}
@@ -274,6 +282,21 @@ country_event = {
 					set_global_flag = gray_goo_crisis_set
 					set_global_flag = active_gray_goo
 				}
+			}
+			## ADT: Always L-Drake
+			if = {
+				limit = {
+					NOR = {
+						has_global_flag = CmtFlagLgateForbidLdrake
+						has_global_flag = dragon_season
+					}
+					NAND = {
+						has_global_flag = CmtFlagLgateForbidDessanu
+						has_global_flag = CmtFlagLgateForbidGraygoo
+						has_global_flag = CmtFlagLgateForbidSilence
+					}
+				}
+				set_global_flag = dragon_season
 			}
 		}
 		### Activate L-Gate
@@ -377,7 +400,7 @@ country_event = {
 			}
 		}
 		# Activate originating L-Gate: Put AFTER distar.13000 (if not already opened by other outcome)
-		event_target:candidate_gateway = {
+		event_target:CmtTargetLgateOrininatingSystem = {
 			if = {
 				limit = {
 					CmtTriggerIsClosedLgate = yes
@@ -538,10 +561,8 @@ country_event = {
 		}
 		while = {
 			limit = {
-				any_system = {
-					any_system_megastructure = {
-						CmtTriggerIsClosedLgate = yes
-					}
+				any_megastructure = {
+					CmtTriggerIsClosedLgate = yes
 				}
 			}
 			random_system = {
@@ -624,7 +645,7 @@ country_event = {
 								prevprev = {
 									exists = owner
 								}
-							}							
+							}
 							save_event_target_as = dragons_target
 							prevprev = {
 								save_event_target_as = dragons_current_system

@@ -6,12 +6,13 @@ tech_adt_energymissiles = {
 	area = physics
 	cost = @tier5cost2
 	tier = 5
+	is_rare = yes
 	category = { particles }
 	ai_update_type = military
 	prerequisites = { "tech_energy_torpedoes_2" "tech_missiles_5" "tech_nanite_ships" }
 	is_reverse_engineerable = yes
 	weight = @tier5weight2
-	
+
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
@@ -21,7 +22,7 @@ tech_adt_energymissiles = {
 			has_technology = tech_nanite_weaponry
 		}
 	}
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -49,12 +50,13 @@ tech_nanite_strike_craft = {
 	cost = @tier5cost2
 	area = engineering
 	tier = 5
+	is_rare = yes
 	ai_update_type = military
 	category = { voidcraft }
 	prerequisites = { "tech_strike_craft_3" "tech_nanite_ships" }
 	is_reverse_engineerable = yes
 	weight = @tier5weight2
-		
+
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
@@ -64,7 +66,7 @@ tech_nanite_strike_craft = {
 			has_technology = tech_nanite_clouds
 		}
 	}
-		
+
 	## unlock Nanite strike craft
 }
 
@@ -76,12 +78,13 @@ tech_adt_gg_beam = {
 	area = physics
 	cost = @tier5cost3
 	tier = 5
+	is_rare = yes
 	category = { particles }
-	ai_update_type = military	
+	ai_update_type = military
 	prerequisites = { "tech_arc_emitter_2" "tech_energy_lance_2" "tech_disruptors_3" "tech_nanite_ships" }
 	is_reverse_engineerable = yes
 	weight = @tier5weight3
-	
+
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
@@ -91,7 +94,7 @@ tech_adt_gg_beam = {
 			has_technology = tech_nanite_lancers
 		}
 	}
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -119,8 +122,9 @@ tech_nanite_torpedo = {
 	is_dangerous = yes
 	category = { propulsion }
 	weight = 25
+	# is_rare = yes
 	is_reverse_engineerable = yes
-	
+
 	prerequisites = { "tech_energy_torpedoes_2" "tech_missiles_5" "tech_nanite_ships" }
 	prereqfor_desc = {
 		custom = {
@@ -138,7 +142,7 @@ tech_nanite_torpedo = {
 			has_technology = tech_nanite_weaponry
 		}
 	}
-	
+
 	weight_modifier = {
 		modifier = {
 			factor = 1.1

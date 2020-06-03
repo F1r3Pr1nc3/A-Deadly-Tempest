@@ -10,7 +10,7 @@ civic_harvester_nanites = {
 			NOR = {
 				value = civic_machine_terminator
 				value = civic_machine_assimilator
-                value = civic_machine_servitor
+				value = civic_machine_servitor
 			}
 		}
 	}
@@ -35,9 +35,9 @@ civic_gateway_pursuer = {
 	picture = GFX_origin_lgate_pursuer
 	is_origin = yes
 	description = "civic_gateway_pursuer_effects"
-	playable = { 
-		host_has_dlc = "Synthetic Dawn Story Pack" 
-		host_has_dlc = "Distant Stars Story Pack" 
+	playable = {
+		host_has_dlc = "Synthetic Dawn Story Pack"
+		host_has_dlc = "Distant Stars Story Pack"
 	}
 	potential = { authority = { value = auth_machine_intelligence } }
 	homeworld = pc_nuked
@@ -47,7 +47,7 @@ civic_gateway_pursuer = {
 			NOR = {
 				value = civic_machine_terminator
 				value = civic_machine_assimilator
-                value = civic_machine_servitor
+				value = civic_machine_servitor
 			}
 		}
 	}
@@ -73,8 +73,8 @@ civic_gateway_worshiper = {
 	icon = "gfx/interface/icons/origins/origins_gateway.dds"
 	is_origin = yes
 	description = "civic_gateway_worshiper_effects"
-	playable = { 
-		host_has_dlc = "Distant Stars Story Pack" 
+	playable = {
+		host_has_dlc = "Distant Stars Story Pack"
 	}
 	starting_colony = pc_gaia
 	habitability_preference = pc_gaia

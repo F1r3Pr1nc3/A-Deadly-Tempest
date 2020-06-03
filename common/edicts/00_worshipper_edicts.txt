@@ -1,14 +1,10 @@
 ##########################################################################
 # Empire edicts
 ##########################################################################
-
 @Edict1Cost = 100
 @Edict2Cost = 200
 @Edict3Cost = 300
-
 @EdictDuration = 3600
-
-
 consecrate_lgate = {
 	length = @EdictDuration
 	resources = {
@@ -17,23 +13,18 @@ consecrate_lgate = {
 			influence = @Edict1Cost
 		}
 	}
-
 	modifier = {
 		country_base_unity_produces_add = 10
 	}
-	
 	potential = {
 		has_origin = civic_gateway_worshiper
-		
 	}
-	
-	allow = {		
+	allow = {
 		custom_tooltip = {
 			fail_text = "requires_1_lgate"
-			any_system_within_border = { has_star_flag = lgate }
+			has_lgate = yes
 		}
 	}
-	
 	ai_weight = {
 		weight = @EdictHighPrio
 	}
@@ -47,17 +38,13 @@ lgate_guardian = {
 			influence = @Edict1Cost
 		}
 	}
-
 	modifier = {
-		country_unity_produces_mult = 0.50
+		country_unity_produces_mult = 0.5
 	}
-	
 	potential = {
 		has_origin = civic_gateway_worshiper
-		
 	}
-	
-	allow = {		
+	allow = {
 		custom_tooltip = {
 			fail_text = "requires_3_lgate"
 			any_system_within_border = {
@@ -66,9 +53,7 @@ lgate_guardian = {
 			}
 		}
 	}
-	
 	ai_weight = {
 		weight = @EdictHighPrio
 	}
 }
-

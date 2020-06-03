@@ -1,13 +1,14 @@
 # ##################
 # NANITE TECH DUMMY PATCH FOR DSO
 # ##################
-
 tech_nanite_clouds = {
 	area = engineering
 	cost = 25000
 	tier = 3
 	is_rare = yes
-	category = { industry }
+	category = {
+		industry
+	}
 	weight = 0
 	is_reverse_engineerable = no
 }
@@ -17,11 +18,14 @@ tech_nanites_assembler_factory = {
 	cost = 20000
 	tier = 2
 	is_rare = yes
-	category = { industry }
+	category = {
+		industry
+	}
 	weight = 0
 	is_reverse_engineerable = no
-	
-	prerequisites = { "tech_nanite_clouds" } 
+	prerequisites = {
+		"tech_nanite_clouds"
+	}
 }
 
 tech_orbital_nanite_shipyard = {
@@ -29,10 +33,14 @@ tech_orbital_nanite_shipyard = {
 	cost = 50000
 	tier = 3
 	is_rare = yes
-	category = { industry }
+	category = {
+		industry
+	}
 	weight = 0
 	is_reverse_engineerable = no
-	prerequisites = { "tech_nanites_assembler_factory" } 
+	prerequisites = {
+		"tech_nanites_assembler_factory"
+	}
 }
 
 tech_nanite_weaponry = {
@@ -40,10 +48,14 @@ tech_nanite_weaponry = {
 	cost = 50000
 	tier = 3
 	is_dangerous = yes
-	category = { computing }
+	category = {
+		computing
+	}
 	weight = 0
 	is_reverse_engineerable = no
-	prerequisites = { "tech_orbital_nanite_shipyard" }
+	prerequisites = {
+		"tech_orbital_nanite_shipyard"
+	}
 }
 
 tech_nanite_lancers = {
@@ -51,8 +63,12 @@ tech_nanite_lancers = {
 	cost = 25000
 	tier = 3
 	is_dangerous = yes
-	category = { voidcraft }
+	category = {
+		voidcraft
+	}
 	weight = 0
 	is_reverse_engineerable = no
-	prerequisites = { "tech_nanite_weaponry" }
+	prerequisites = {
+		"tech_nanite_weaponry"
+	}
 }

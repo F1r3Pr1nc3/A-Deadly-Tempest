@@ -29,7 +29,7 @@
  lcluster_policy_closed_desc:0 "The §EL-Cluster§! will remain closed. Let it serve as a place of refuge and last retreat when wholesale extinction threatens our people, and perhaps the galaxy..."
 
  ### Decisions
- decision_open_lcluster:0 "Open the L-Cluster"
+ decision_open_lcluster:0 "Open L-Cluster"
  decision_open_lcluster_desc:0 "$lcluster_policy_open_desc$"
  decision_open_lcluster_effects:0 "Will active the §E$lgates$§!, allowing for their use."
  
@@ -51,5 +51,5 @@
  # Diplomacy --------
  casus_belli_cb_lgate_port:0 "$lcluster_policy$"
  war_goal_wg_access_lcluster:0 "$decision_open_lcluster$"
- war_goal_wg_access_lcluster_desc:0 "The closure of the entire §EL-Clusters§! represents a severe impediment to balance and an overly threatening position of power."
+ war_goal_wg_access_lcluster_desc:0 "The closure of the entire §EL-Clusters§! poses a threat and a major shift in the galactic balance."
  

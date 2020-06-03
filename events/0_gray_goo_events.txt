@@ -57,9 +57,9 @@ country_event = {
 						trait = "trait_robot_loyalty_circuits"
 						trait = "trait_robot_mass_produced"
 						trait = "trait_robot_durable"
-						trait="trait_robot_recycled"
-						trait="trait_robot_high_maintenance"
-						trait="trait_robot_uncanny"
+						trait = "trait_robot_recycled"
+						trait = "trait_robot_high_maintenance"
+						trait = "trait_robot_uncanny"
 					}
 					homeworld = this
 					immortal = yes
@@ -111,7 +111,7 @@ country_event = {
 				owner = last_created_country
 			}
 		}
-		
+
 		### Create Fleets
 		event_target:nanite_factory = {
 			CmtEffectCreateAdmiralty_GraygooCapitalDefence = yes ## Garrison Fleets at Capital
@@ -132,7 +132,7 @@ country_event = {
 			# 	}
 			# }
 		}
-		
+
 		## Initial Attack Fleets
 		every_system = {
 			limit = {
@@ -251,6 +251,12 @@ country_event = {
 				exists = event_target:nanite_factory
 				event_target:nanite_factory = { is_ship_size = graygoo_factory }
 			}
+			AND = {
+				exists = event_target:lcluster_factory_system
+				event_target:lcluster_factory_system = {
+					any_ship_in_system = { is_ship_size = graygoo_factory }
+				}
+			}
 			# Savegame comp.
 			any_system = {
 				has_star_flag = graygoo_factory_system
@@ -277,7 +283,17 @@ country_event = {
 		} else = { country_event = { id = graygoo.3 days = 3600 } }		## 10 yr
 
 		# Fallback (savegame comp.) re-save event_targets
-		if = { limit = { NOT = { exists = event_target:nanite_factory } }
+		if = {
+			limit = { NOT = { exists = event_target:nanite_factory } }
+			# Savegame only (unknown reason)
+			if = {
+				limit = { NOT = { exists = event_target:nanite_factory } }
+				random_system = {
+					limit = { has_star_flag = graygoo_factory_system }
+					save_global_event_target_as = lcluster_factory_system
+				}
+			}
+
 			event_target:lcluster_factory_system = {
 				# random_system_planet = {
 				# 	limit = { has_planet_flag = main_star }
@@ -438,7 +454,7 @@ country_event = {
 		is_country_type = guardian_dreadnought
 		has_country_flag = automated_dreadnought_country
 		FROMFROM = { is_ship_size = npc_warship_01 }
-		FROM = { 
+		FROM = {
 			is_ai = yes
 			OR = {
 				is_country_type = gate_builders
@@ -447,11 +463,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		destroy_country = yes
 		every_country = {
-			limit = { 
+			limit = {
 				is_country_type = default
 				has_modifier = automated_dreadnought_weak_points
 			}
@@ -478,7 +494,7 @@ country_event = {
 			fleet = {
 				create_ship = {
 					name = random
-					design = "NAME_Type_51" 
+					design = "NAME_Type_51"
 					graphical_culture = "npf_01"
 					upgradable = yes
 				}
@@ -720,7 +736,7 @@ country_event = {
 			CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes  # Garrison Fleets at Capital
 			CmtEffectCreateAdmiralty_DessanuRoamer = yes # Roamers
 		}
-		
+
 		### Change Planet to Gaia, Create Buildings, Orbital Station
 		every_system = {
 			limit = { has_star_flag = lcluster }
@@ -1354,7 +1370,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		country_event = { id = a_deadly_tempest.162 } 
+		country_event = { id = a_deadly_tempest.162 }
 	}
 
 	after = {
@@ -1440,7 +1456,7 @@ country_event = {
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 5 } } }
 		picture = GFX_evt_gaia
 	}
-	
+
 	show_sound = event_ground_battle
 	location = fromfrom
 
@@ -1706,7 +1722,7 @@ fleet_event = {
 				event_target:nanite_factory = {
 					exists = owner
 					owner = { is_country_type = gate_builders }
-				} 
+				}
 			}
 			if = {
 				limit = {

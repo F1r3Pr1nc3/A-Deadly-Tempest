@@ -5,7 +5,7 @@ namespace = distar
 # by Dee Majek
 # Tweaked by FirePrince
 # For disabled L-Gates (less important)
-# distar.2050 - distar.8000
+# distar.2050 - distar.5055
 #
 #################################
 

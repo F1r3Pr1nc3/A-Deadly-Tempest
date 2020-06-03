@@ -113,3 +113,13 @@ on_join_federation = {
 		a_deadly_tempest.13079
 	}
 }
+
+# Called upon entering FTL (on-action name scripted on the Bypass type)
+# THIS = Fleet
+# FROM = System jumping to
+# FROMFROM = System jumped from
+on_entering_lgate = {
+	events = {
+		#ldragon_country_starts_nanite_ecosystem.1
+	}
+}

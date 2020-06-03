@@ -80,7 +80,7 @@
  GREYGOO_MOTHERSHIP_SHIP_THRUSTER_5:0 "$SHIP_THRUSTER_5$"
 
  # Weapons
- NANITE_STRIKE_CRAFT:0 "Nanite $strike_craft$"
+NANITE_STRIKE_CRAFT:0 "$GG_STRIKE_CRAFT$"
  NANITE_STRIKE_CRAFT_DESC:0 "Unlike conventional strike craft, a nanite model is capable of morphing its weapons on the fly, 'hangars' becoming glorified factories that can churn out a near constant stream of the craft."
  NANITE_ENERGY_MISSILE:0 "Energy Missile"
  NANITE_ENERGY_MISSILE_DESC:0 "This energy missile is capable of tracking its target with the benefit of being untargetable by point defense."

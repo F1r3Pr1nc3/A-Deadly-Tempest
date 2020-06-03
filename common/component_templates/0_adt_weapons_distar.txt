@@ -1,9 +1,7 @@
-@regen = 0.50
-
+@regen = 0.5
 # ######################
 #  Nanite
 # ######################
-
 strike_craft_component_template = {
 	key = "NANITE_STRIKE_CRAFT"
 	size = LARGE
@@ -19,71 +17,73 @@ strike_craft_component_template = {
 			nanites = 0.01
 		}
 	}
-
 	hidden = no
 	count = 10
 	regeneration_per_day = @regen
-	launch_time = 1.0
-	
-	damage = { min = 10 max = 12 } # hits soft but fast (vanilla 2.6.3)
+	launch_time = 1
+	damage = {
+		min = 10
+		max = 12
+	}	# hits soft but fast (vanilla 2.6.3)
 	cooldown = 4
 	# damage = { min = 19 max = 21 } # hits hard but slow (vanilla 2.6.2)
 	# cooldown = 8
 	range = 20
 	engagement_range = 120
-	accuracy = 1.0
-	tracking = 1.0
-	
+	accuracy = 1
+	tracking = 1
 	health = 100
 	armor = 50
 	shield = 50
-	evasion = 0.80
-	
+	evasion = 0.8
 	speed = 600
 	rotation_speed = 0.4
 	acceleration = 0.5
-	
-	shield_damage = 1.0
+	shield_damage = 1
 	shield_penetration = 1
 	armor_penetration = 0.66
-	
 	ship_behavior = "bombers_behavior"
-	
-	weapon_type = instant # Not PD, unlike normal strike craft
+	weapon_type = instant	# Not PD, unlike normal strike craft
 	projectile_gfx = "strike_craft_laser_3"
-	
-	prerequisites = { "tech_nanite_strike_craft" }
+	prerequisites = {
+		"tech_nanite_strike_craft"
+	}
 	component_set = "NANITE_STRIKE_CRAFT"
 	icon = "GFX_ship_part_nanite_strikecraft"
 	icon_frame = 1
-	tags = { weapon_type_strike_craft }
+	tags = {
+		weapon_type_strike_craft
+	}
 }
-
 
 weapon_component_template = {
 	key = "NANITE_ENERGY_MISSILE"
 	size = torpedo
 	entity = "invisible_turret_entity"
-	type = missile
+	type = instant
 	prio_projectile = yes
 	hidden = no
-	
 	icon = "GFX_ship_part_nanite_energymissiles_1"
 	icon_frame = 1
-	
-	damage = { min = 100 max = 150 }
-	windup = { min = 2 max = 20 }
-	total_fire_time = 10.00
-	range = 120.0
-	accuracy = 1.00
-	tracking = 0.50
-	hull_damage = 1.00
+	damage = {
+		min = 100
+		max = 150
+	}
+	windup = {
+		min = 2
+		max = 20
+	}
+	total_fire_time = 10
+	range = 120
+	accuracy = 1
+	tracking = 0.5
+	hull_damage = 1
 	shield_damage = 0.75
-	armor_damage = 2.00
+	armor_damage = 2
 	missile_speed = 3
-	missile_health = 20.00
-	missile_evasion = 1.00
-	missile_retarget_range = 120.0
+	missile_health = 20
+	missile_evasion = 1
+	missile_retarget_range = 120
 	power = -30
 	resources = {
 		category = ship_components
@@ -94,12 +94,17 @@ weapon_component_template = {
 			nanites = 0.01
 		}
 	}
-	
-	prerequisites = { "tech_adt_energymissiles" }
+	prerequisites = {
+		"tech_adt_energymissiles"
+	}
 	component_set = "NANITE_ENERGY_MISSILE"
-	tags = { weapon_type_energy }
+	tags = {
+		weapon_type_energy
+	}
 	projectile_gfx = "gatebuilder_torpedo"
-	ai_tags = { weapon_role_artillery }
+	ai_tags = {
+		weapon_role_artillery
+	}
 	ai_tag_weight = 0
 }
 
@@ -110,19 +115,23 @@ weapon_component_template = {
 	type = instant
 	prio_projectile = yes
 	hidden = no
-	
 	icon = "GFX_ship_part_nanite_beam_titanic"
 	icon_frame = 1
-	
-	damage = { min = 1 max = 9999 }
-	windup = { min = 2 max = 20 }
-	total_fire_time = 115.00
-	range = 200.0
+	damage = {
+		min = 1
+		max = 9999
+	}
+	windup = {
+		min = 2
+		max = 20
+	}
+	total_fire_time = 115
+	range = 200
 	accuracy = 0.85
-	tracking = 0.00
-	hull_damage = 1.00
-	shield_penetration = 1.00
-	armor_penetration = 1.00
+	tracking = 0
+	hull_damage = 1
+	shield_penetration = 1
+	armor_penetration = 1
 	power = -100
 	resources = {
 		category = ship_components
@@ -133,13 +142,23 @@ weapon_component_template = {
 			nanites = 1
 		}
 	}
-	
-	prerequisites = { "tech_adt_gg_beam" }
+	prerequisites = {
+		"tech_adt_gg_beam"
+	}
 	component_set = "NANITE_BASE_BEAM"
-	size_restriction = { starbase_gatebuilders graygoo_factory starbase_starfortress starbase_citadel }
-	tags = { weapon_type_energy }
+	size_restriction = {
+		starbase_gatebuilders
+		graygoo_factory
+		starbase_starfortress
+		starbase_citadel
+	}
+	tags = {
+		weapon_type_energy
+	}
 	projectile_gfx = "gatebuilder_titan_weapon"
-	ai_tags = { weapon_role_artillery }
+	ai_tags = {
+		weapon_role_artillery
+	}
 	ai_tag_weight = 0
 }
 
@@ -150,19 +169,23 @@ weapon_component_template = {
 	type = instant
 	prio_projectile = yes
 	hidden = no
-	
 	icon = "GFX_ship_part_nanite_beam_titanic"
 	icon_frame = 1
-	
-	damage = { min = 1 max = 9999 }
-	windup = { min = 2 max = 20 }
-	total_fire_time = 115.00
-	range = 200.0
+	damage = {
+		min = 1
+		max = 9999
+	}
+	windup = {
+		min = 2
+		max = 20
+	}
+	total_fire_time = 115
+	range = 200
 	accuracy = 0.85
-	tracking = 0.00
-	hull_damage = 1.00
-	shield_penetration = 1.00
-	armor_penetration = 1.00
+	tracking = 0
+	hull_damage = 1
+	shield_penetration = 1
+	armor_penetration = 1
 	power = -750
 	resources = {
 		category = ship_components
@@ -173,51 +196,78 @@ weapon_component_template = {
 			nanites = 1
 		}
 	}
-	
-	firing_arc = 15.0
-	min_range = 15.0
+	firing_arc = 15
+	min_range = 15
 	use_ship_kill_target = no
-	
-	prerequisites = { "tech_adt_gg_beam" }
+	prerequisites = {
+		"tech_adt_gg_beam"
+	}
 	component_set = "NANITE_BEAM"
-	size_restriction = { ion_cannon titan graygoo_mothership colossus juggernaut }
-	tags = { weapon_type_energy }
+	size_restriction = {
+		ion_cannon
+		titan
+		graygoo_mothership
+		colossus
+		juggernaut
+	}
+	tags = {
+		weapon_type_energy
+	}
 	projectile_gfx = "gatebuilder_titan_weapon"
-	ai_tags = { weapon_role_artillery }
+	ai_tags = {
+		weapon_role_artillery
+	}
 	ai_tag_weight = 1
 }
 
 # ## Energy Torpedo Launchers
 weapon_component_template = {
 	key = "NANITE_ENERGY_TORPEDO"
-	size = large
+	size = torpedo
 	entity = "turret_energy_torpedo_entity"
 	type = missile
 	prio_projectile = yes
 	hidden = no
-	
 	icon = "GFX_ship_part_nanite_energy_torpedo"
 	icon_frame = 1
-
-	power = -90.00
-	damage = { min = 468.00 max = 1040.00 }
+	power = -90
+	damage = {
+		min = 468
+		max = 1040
+	}
 	hull_damage = 1.75
-	shield_damage = 0.50
-	shield_penetration = 1.50
-	armor_damage = 1.00
+	shield_damage = 0.5
+	shield_penetration = 1.5
+	armor_damage = 1
 	# armor_penetration = 0
-	windup = { min = 1.00 max = 19.00 }
-	total_fire_time = 150.00
-	range = 130.00
-	accuracy = 0.90
-	tracking = 0.50
-
-	prerequisites = { "tech_nanite_torpedo" }
+	windup = {
+		min = 1
+		max = 19
+	}
+	total_fire_time = 150
+	range = 130
+	accuracy = 0.9
+	tracking = 0.5
+	prerequisites = {
+		"tech_nanite_torpedo"
+	}
 	component_set = "NANITE_ENERGY_TORPEDO"
-	size_restriction = { titan graygoo_mothership colossus juggernaut }
-	tags = { weapon_type_energy }
+	size_restriction = {
+		titan
+		graygoo_mothership
+		colossus
+		juggernaut
+	}
+	tags = {
+		weapon_type_energy
+	}
 	projectile_gfx = "gatebuilder_torpedoes"
-	ai_tags = { weapon_role_artillery weapon_role_anti_hull weapon_role_anti_shield weapon_role_anti_armor }
+	ai_tags = {
+		weapon_role_artillery
+		weapon_role_anti_hull
+		weapon_role_anti_shield
+		weapon_role_anti_armor
+	}
 	ai_tag_weight = 1
 	resources = {
 		category = ship_components
@@ -225,19 +275,24 @@ weapon_component_template = {
 			nanites = 5
 			alloys = 10
 			exotic_gases = 1
-		}		
+		}
 		upkeep = {
 			nanites = 0.01
 		}
 	}
-
 	ai_weight = {
 		weight = 1
 		modifier = {
-			factor = 0.0
+			factor = 0
 			is_country_type = default
-			has_monthly_income = { resource = exotic_gases value <= 0 }
-			has_monthly_income = { resource = nanites value <= 0 }
+			has_monthly_income = {
+				resource = exotic_gases
+				value <= 0
+			}
+			has_monthly_income = {
+				resource = nanites
+				value <= 0
+			}
 		}
 	}
 }
