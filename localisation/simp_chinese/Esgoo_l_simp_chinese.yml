@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
- ESGO:0 "灰蛊"
- ESGO_desc:1 "物种类型对你的帝国没有任何影响，但灰蛊物种可能认为同族比其他物种更亲切。"
+ ESGO:0 "$DISTAR_NANO_CAT$"
+ ESGO_desc:1 "物种类型对你的帝国没有任何影响，但$ESGO$物种可能认为其它$ESGO_plural$比其他物种更亲切。"
  ESGO_plural:0 "灰蛊"
  ESGO_insult_01:0 "孽畜"
  ESGO_insult_plural_01:0 "孽畜"
