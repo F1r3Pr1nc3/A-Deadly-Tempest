@@ -26,8 +26,8 @@
 	city_graphical_culture="esgoo_01"
 	empire_flag={
 		icon={
-			category="spherical"
-			file="flag_spherical_16.dds"
+			category = "special"
+			file = "gray_goo.dds"
 		}
 		background={
 			category="backgrounds"

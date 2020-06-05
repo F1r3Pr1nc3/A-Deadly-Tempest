@@ -254,16 +254,16 @@ country_event = {
 				30 = {
 					modifier = {
 						factor = 0
-						OR = {
+						# OR = {
 							has_global_flag = CmtFlagLgateForbidLdrake
-							AND = {
-								has_global_flag = CmtFlagLgateForbidSilence
-								NAND = {
-									has_global_flag = CmtFlagLgateForbidDessanu
-									has_global_flag = CmtFlagLgateForbidGraygoo
-								}
-							}
-						}
+							# AND = { # remove outcome anyway?
+							# 	has_global_flag = CmtFlagLgateForbidSilence
+							# 	NAND = {
+							# 		has_global_flag = CmtFlagLgateForbidDessanu
+							# 		has_global_flag = CmtFlagLgateForbidGraygoo
+							# 	}
+							# }
+						# }
 					}
 					set_global_flag = dragon_season
 				}
@@ -405,6 +405,7 @@ country_event = {
 				limit = {
 					CmtTriggerIsClosedLgate = yes
 				}
+				save_event_target_as = candidate_gateway # for desc only
 				CmtEffectOpenLgate = yes
 			}
 		}
@@ -559,39 +560,33 @@ country_event = {
 				}
 			}
 		}
-		while = {
+		# while = {	limit = { any_megastructure = { CmtTriggerIsClosedLgate = yes } }
+		every_system = {
 			limit = {
-				any_megastructure = {
+				CmtTriggerIsGalaxyLgateSystem = yes # TODO may remove?
+				any_system_megastructure = {
 					CmtTriggerIsClosedLgate = yes
 				}
 			}
-			random_system = {
+			# flip L-Gates
+			random_system_megastructure = {
 				limit = {
-					CmtTriggerIsGalaxyLgateSystem = yes
-					any_system_megastructure = {
-						CmtTriggerIsClosedLgate = yes
-					}
+					CmtTriggerIsClosedLgate = yes
 				}
-				# flip L-Gates
-				random_system_megastructure = {
-					limit = {
-						CmtTriggerIsClosedLgate = yes
-					}
-					CmtEffectOpenLgate = yes
-				}
-				# set dragon spawning grounds
-				closest_system = {
-					min_steps = 3
-					limit = {
-						NOR = {
-							has_star_flag = dragon_point
-							any_system_planet = {
-								is_colony = yes
-							}
+				CmtEffectOpenLgate = yes
+			}
+			# set dragon spawning grounds
+			closest_system = {
+				min_steps = 3
+				limit = {
+					NOR = {
+						has_star_flag = dragon_point
+						any_system_planet = {
+							is_colony = yes
 						}
 					}
-					set_star_flag = dragon_point
 				}
+				set_star_flag = dragon_point
 			}
 		}
 		# notify those without l-gate systems

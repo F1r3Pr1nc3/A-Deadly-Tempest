@@ -34,7 +34,7 @@ wg_access_lcluster = {
 	possible = {
 		always = yes
 	}
-	
+
 	on_wargoal_set = {
 		FROM = {
 			random_system_within_border = {
@@ -54,7 +54,10 @@ wg_access_lcluster = {
 	# Run when war ends in status quo
 	on_status_quo = {
 		set_global_flag = lgates_activated_globally
-		FROM = { set_country_flag = lgates_activated }
+		FROM = {
+			set_country_flag = lgates_activated
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
+		}
 		set_country_flag = lgates_activated
 	}
 	# Run when target surrenders after claims are ceded
@@ -72,6 +75,7 @@ wg_access_lcluster = {
 					amount = 0.5
 				}
 				set_country_flag = lgates_activated
+				add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
 			}
 			set_global_flag = lgates_activated_globally
 			ROOT = { set_country_flag = lgates_activated }

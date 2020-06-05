@@ -270,17 +270,17 @@ country_event = {
 		### Time Control
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 2 } } }
-			country_event = { id = graygoo.3 days = 9000 }		## 25 yr
+			country_event = { id = graygoo.3 days = 7200 }		## 20 yr
 		} else_if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 4 } } }
-			country_event = { id = graygoo.3 days = 1440 }		## 4 yr
+			country_event = { id = graygoo.3 days = 1800 }		## 5 yr
 		} else_if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 5 } } }
-			country_event = { id = graygoo.3 days = 360 }		## 1 yr
+			country_event = { id = graygoo.3 days = 720 }		## 2 yr
 		} else_if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 6 } } }
-			country_event = { id = graygoo.3 days = 14 }
-		} else = { country_event = { id = graygoo.3 days = 3600 } }		## 10 yr
+			country_event = { id = graygoo.3 days = 360 }		## 1 yr
+		} else = { country_event = { id = graygoo.3 days = 3600 } }		## 10 yr vanilla
 
 		# Fallback (savegame comp.) re-save event_targets
 		if = {
