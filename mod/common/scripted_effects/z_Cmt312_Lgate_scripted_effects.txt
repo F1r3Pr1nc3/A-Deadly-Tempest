@@ -153,7 +153,7 @@ CmtEffectDestroyGraygoo = {
 	every_playable_country = {
 		limit = {
 			is_ai = no
-			NOT = { is_same_value = event_target:goo_slayer }
+			NOT = { is_same_empire = event_target:goo_slayer }
 		}
 		country_event = { id = graygoo.16 }
 	}
@@ -188,8 +188,8 @@ CmtEffectDestroyGraygoo = {
 	}
 	clear_global_event_target = graygoo_country
 	clear_global_event_target = nanite_factory
+	clear_global_event_target = lcluster_factory_system # needed?
 }
-
 
 
 #################################

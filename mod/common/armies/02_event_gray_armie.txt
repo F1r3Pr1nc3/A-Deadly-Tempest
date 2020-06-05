@@ -54,7 +54,7 @@ nanite_giga_warform = {
 		OR = {
 			has_authority = auth_machine_intelligence
 			has_civic = civic_machine_assimilator
-			from = { has_trait = "trait_machine_unit" }
+			# species = { has_trait = "trait_machine_unit" }
 			has_country_flag = synthetic_empire
 		}
 	}
@@ -63,7 +63,7 @@ nanite_giga_warform = {
 
 	potential = {
 		NOR = {
-			has_global_flag = active_gray_goo 
+			has_global_flag = active_gray_goo
 			exists = event_target:graygoo_country
 		}
 		custom_tooltip = {
@@ -94,7 +94,7 @@ nanite_giga_warform = {
 		}
 
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-		owner = { 
+		owner = {
 			OR = {
 				has_authority = auth_machine_intelligence
 				has_civic = civic_machine_assimilator

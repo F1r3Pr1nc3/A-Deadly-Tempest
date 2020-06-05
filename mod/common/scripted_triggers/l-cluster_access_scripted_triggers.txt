@@ -1,4 +1,4 @@
-
+## country
 can_set_lcluster_policiy = {
 	has_technology = tech_lcluster_access
 	OR = {
