@@ -5,6 +5,7 @@ gate_builders = {
 	custom_diplomacy = yes
 	enforces_borders = no
 	orbital_bombardment = yes
+	can_have_their_comms_shared = yes
 	needs_survey = no
 	has_complete_sensor = yes
 	observable = yes
@@ -47,6 +48,15 @@ gate_builders = {
 					}
 				}
 			}
+			nanite_giga_warform = {
+				fraction = {
+					factor = 45
+					modifier = {
+						factor = 0
+						NOT = { has_ethic = auth_machine_intelligence }
+					}
+				}
+			}
 		}
 	}
 	faction = {
@@ -63,9 +73,12 @@ gate_builders = {
 			can_receive = {
 				action_declare_war
 				action_offer_peace
+				action_ask_to_be_released_subject
 			}
 			can_send = {
 				action_declare_war
+				action_offer_peace
+				action_release_subject
 			}
 		}
 		all_technology_module = {}
@@ -111,12 +124,15 @@ gray_goo = {
 	mid_game_crisis = yes
 	enforces_borders = no
 	orbital_bombardment = yes
+	can_have_their_comms_shared = yes
 	needs_survey = no
 	has_complete_sensor = yes
-	can_have_their_comms_shared = yes
+	has_capital = no
+	playable = no
 	government = no
 	observable = no
 	custom_starbase = starbase_gatebuilders
+	uses_origins = no
 	ai = {
 		enabled = yes
 		modules = {

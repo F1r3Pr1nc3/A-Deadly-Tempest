@@ -346,11 +346,6 @@ country_event = {
 				id = graygoo.1
 				days = 1
 			}
-			# Make friendly
-			country_event = {
-				id = distar.13006
-				days = 1
-			}
 			country_event = {
 				id = a_deadly_tempest.137
 				days = 24
@@ -364,11 +359,6 @@ country_event = {
 				id = graygoo.100
 				days = 3
 			}
-			# Make friendly too?
-			country_event = {
-				id = distar.13006
-				days = 3
-			}
 			country_event = {
 				id = a_deadly_tempest.137
 				days = 24
@@ -378,6 +368,11 @@ country_event = {
 			country_event = {
 				id = distar.10951
 			}
+		}
+		# Make draon friendly
+		country_event = {
+			id = a_deadly_tempest.13006
+			days = 3
 		}
 		# Enable other L-Gates over time (anyway)
 		random_country = {
@@ -701,57 +696,6 @@ country_event = {
 					create_ambient_object = {
 						location = this
 						type = horror_spawn_object
-					}
-				}
-			}
-		}
-	}
-}
-
-# goo_dragon_friendship
-country_event = {
-	id = distar.13006
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		if = {
-			limit = {
-				NOT = {
-					exists = event_target:spawning_dragons
-				}
-			}
-			every_country = {
-				if = {
-					limit = {
-						is_country_type = ldragon_country
-					}
-					save_global_event_target_as = spawning_dragons
-				}
-				else = {
-					break = yes
-				}
-			}
-		}
-		event_target:spawning_dragons = {
-			random_country = {
-				limit = {
-					OR = {
-						is_country_type = gray_goo
-						is_country_type = gate_builders
-					}
-				}
-				set_faction_hostility = {
-					set_hostile = no
-					#set_neutral = no
-					set_friendly = yes
-					target = prev					# Dragons
-				}
-				prev = {
-					set_faction_hostility = {
-						set_hostile = no
-						#set_neutral = no
-						set_friendly = yes
-						target = prev						# Gray Tempest
 					}
 				}
 			}

@@ -11,7 +11,7 @@ tech_lcluster_access = {
 	}
 	is_rare = no
 	is_dangerous = yes
-	weight = @tier5cost2
+	weight = @tier3weight3
 	feature_flags = {
 		lgate_access
 	}

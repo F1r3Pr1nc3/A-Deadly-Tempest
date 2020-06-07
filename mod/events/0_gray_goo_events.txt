@@ -145,6 +145,10 @@ country_event = {
 				CmtEffectCreateAdmiralty_GraygooAttackerA = yes
 			}
 		}
+
+		## Make dragons friendly
+		country_event = { id = a_deadly_tempest.13006 }
+
 		## Reinforcement Fleets (Call AFTER Create Factory)
 		event_target:graygoo_country = {
 			country_event = { id = graygoo.3 days = 3600 }
@@ -700,8 +704,10 @@ country_event = {
 					}
 					colors= { "teal" "dark_grey" "null" "null" }
 				}
+				origin = "origin_fallen_empire"
 				effect = {
 					save_global_event_target_as = graygoo_country
+					set_graphical_culture = "machine_01"
 					add_resource = {
 						minerals = 5000
 						energy = 10000
@@ -891,13 +897,19 @@ country_event = {
 							is_researching_technology = tech_lgate_activation
 							has_technology = tech_lgate_activation
 							has_special_project = LCLUSTER_PROJECT
+						}
+					}
+					set_country_flag = CmtFlagLgateOpenFinalPhase
+				}
+				if = {
+					limit = {
+						OR = {
+							has_special_project = LCLUSTER_PROJECT
 							has_event_chain = l_cluster_chain
 						}
 					}
 					country_event = { id = graygoo.111 }
-				} else = {
-					country_event = { id = graygoo.112 }
-				}
+				} else = { country_event = { id = graygoo.112 } }
 			}
 		}
 	}

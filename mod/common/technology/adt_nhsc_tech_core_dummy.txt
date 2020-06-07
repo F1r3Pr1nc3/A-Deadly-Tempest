@@ -9,10 +9,14 @@
 nhsc_tech_new_age_warfare = {
 	area = society
 	category = { military_theory }
-	tier = 4
-	cost = @tier4cost3
+	tier = 5
+	cost = @tier5cost3
 	weight = 0
 	is_rare = yes
+	potential = {
+		has_global_flag = nhsc_v30
+	}
+	weight_modifier = { factor = 0 }
 }
 
 ############################################################
@@ -23,8 +27,13 @@ nhsc_tech_advanced_materials = {
 	area = engineering
 	category = { materials }
 	tier = 5
-	cost = @tier5cost1
+	cost = @tier5cost3
 	weight = 0
+	prerequisites = { "nhsc_tech_central_research_bureau" "tech_engineering_3" }
+	potential = {
+		has_global_flag = nhsc_v30
+	}
+	weight_modifier = { factor = 0 }
 }
 
 ############################################################
@@ -35,6 +44,13 @@ nhsc_tech_synthetic_lifeform_studies = {
 	area = society
 	category = { materials }
 	tier = 5
-	cost = @tier5cost2
+	cost = @tier5cost3
 	weight = 0
+	prerequisites = { "nhsc_tech_new_age_warfare" "nhsc_tech_advanced_materials" }
+	is_rare = yes
+	potential = {
+		has_global_flag = nhsc_v30
+		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
+	}
+	weight_modifier = { factor = 0 }
 }
