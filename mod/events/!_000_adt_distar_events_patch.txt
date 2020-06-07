@@ -369,11 +369,6 @@ country_event = {
 				id = distar.10951
 			}
 		}
-		# Make draon friendly
-		country_event = {
-			id = a_deadly_tempest.13006
-			days = 3
-		}
 		# Enable other L-Gates over time (anyway)
 		random_country = {
 			limit = {
@@ -388,9 +383,7 @@ country_event = {
 		# Activate Terminal Egress L-Gate (if not already opened by other outcome)
 		event_target:lcluster1 = {
 			random_system_megastructure = {
-				limit = {
-					CmtTriggerIsClosedLgate = yes
-				}
+				limit = { CmtTriggerIsClosedLgate = yes }
 				CmtEffectOpenLgate = yes
 			}
 		}
@@ -398,10 +391,15 @@ country_event = {
 		event_target:CmtTargetLgateOrininatingSystem = {
 			if = {
 				limit = {
-					CmtTriggerIsClosedLgate = yes
+					any_system_megastructure = {
+						CmtTriggerIsClosedLgate = yes
+					}
 				}
 				save_event_target_as = candidate_gateway # for desc only
-				CmtEffectOpenLgate = yes
+				random_system_megastructure = {
+					limit = { CmtTriggerIsClosedLgate = yes }
+					CmtEffectOpenLgate = yes
+				}
 			}
 		}
 		### Technology Control: Put AFTER graygoo.100
@@ -414,6 +412,8 @@ country_event = {
 				message = no
 			}
 		}
+		## Make dragons friendly (sometimes not working so call it twice)
+		country_event = { id = a_deadly_tempest.13006 days = 4 }
 	}
 }
 

@@ -99,6 +99,15 @@ country_event = {
 					add_global_ship_design = "NAME_Gatebuilder_Starbase"
 					add_global_ship_design = "NAME_Reclaimer"
 					set_country_flag = synthetic_empire
+					if = {
+						limit = { exists = event_target:spawning_dragons }
+						set_faction_hostility = {
+							target = event_target:spawning_dragons
+							set_hostile = no
+							#set_neutral = no
+							set_friendly = yes
+						}
+					}
 				}
 			}
 			event_target:main_star = { CmtEffectCreateNanitieFactory = yes }
@@ -146,9 +155,6 @@ country_event = {
 			}
 		}
 
-		## Make dragons friendly
-		country_event = { id = a_deadly_tempest.13006 }
-
 		## Reinforcement Fleets (Call AFTER Create Factory)
 		event_target:graygoo_country = {
 			country_event = { id = graygoo.3 days = 3600 }
@@ -177,6 +183,8 @@ country_event = {
 			}
 		}
 		observer_event = { id = observer.64 }
+		## Make dragons friendly (sometimes not working so call it twice)
+		country_event = { id = a_deadly_tempest.13006 days = 1 }
 	}
 }
 
@@ -727,6 +735,15 @@ country_event = {
 					add_global_ship_design = "NAME_Gatebuilder_Starbase"
 					add_global_ship_design = "NAME_Reclaimer"
 					set_country_flag = synthetic_empire
+					if = {
+						limit = { exists = event_target:spawning_dragons }
+						set_faction_hostility = {
+							target = event_target:spawning_dragons
+							set_hostile = no
+							#set_neutral = no
+							set_friendly = yes
+						}
+					}
 				}
 			}
 			### Create Factory/Fleets/Starbases
