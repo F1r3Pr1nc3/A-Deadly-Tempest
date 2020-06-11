@@ -110,7 +110,7 @@ shoal_factory_guard_queue = {
 					if = {
 						limit = {
 							NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
-						} 
+						}
 						from = { queue_actions = { orbit_planet = prev } }
 					} else = {
 						random_list = {
@@ -146,12 +146,20 @@ shoal_factory_guard_queue = {
 					id = graygoo_guard$NUM$.failed
 					random_list = {
 						1 = {
+							modifier = {
+								factor = 0
+								NOT = { exists = event_target:main_star }
+							}
 							from = { queue_actions = { move_to = event_target:main_star } }
 						}
-						1 = {
+						2 = {
+							modifier = {
+								factor = 0
+								NOT = { exists = event_target:nanite_factory }
+							}
 							from = { queue_actions = { move_to = event_target:nanite_factory } }
 						}
-						2 = {
+						3 = {
 							solar_system = {
 								random_system_planet = {
 									limit = {
@@ -196,6 +204,21 @@ shoal_continue_guard = {
 			}
 			found_system = {
 				move_to = THIS
+				find_random_planet = {
+					trigger = {
+						id = "graygoo_guard$NUM|11$.trigger.3"
+						is_star = yes
+						exists = starbase
+					}
+					found_planet = {
+						orbit_planet = THIS
+						move_to = THIS.starbase
+						wait = {
+							duration = 60
+							random = 30
+						}
+					}
+				}
 			}
 		}
 		find_closest_planet = {
@@ -209,6 +232,10 @@ shoal_continue_guard = {
 			}
 			found_planet = {
 				orbit_planet = THIS
+				wait = {
+					duration = 60
+					random = 30
+				}
 			}
 			failed = {
 				effect = {

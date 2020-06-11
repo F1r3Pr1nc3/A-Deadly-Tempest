@@ -53,7 +53,7 @@ gate_builders = {
 					factor = 45
 					modifier = {
 						factor = 0
-						NOT = { has_ethic = auth_machine_intelligence }
+						NOT = { has_authority = auth_machine_intelligence }
 					}
 				}
 			}
@@ -95,7 +95,7 @@ gate_builders = {
 		produces = {
 			energy = 250
 			minerals = 150
-			food = 100
+			food = 10000
 			physics_research = 10
 			society_research = 10
 			engineering_research = 10
@@ -144,7 +144,7 @@ gray_goo = {
 		hostile = yes
 		auto_delete = yes
 		needs_border_access = no
-		generate_borders = no
+		generate_borders = yes #no?
 		needs_colony = no
 	}
 	modules = {

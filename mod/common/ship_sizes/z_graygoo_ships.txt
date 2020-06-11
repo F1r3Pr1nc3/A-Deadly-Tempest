@@ -1,6 +1,6 @@
 # Gray Goo Mothership
 graygoo_mothership = {
-	graphical_culture = no
+	graphical_culture = no #{ "reptilian_01" }
 	entity = "gatebuilder_01_mothership_entity"
 	max_speed = @aj_speed_default
 	acceleration = 0.2
@@ -28,11 +28,11 @@ graygoo_mothership = {
 	class = shipclass_military
 	prerequisites = { "tech_nanite_ships" }
 	is_designable = yes
-	
+
 	base_buildtime = 1800
-	
+
 	construction_type = starbase_shipyard
-	enable_default_design = no
+	enable_default_design = yes
 
 	potential_construction = {
 		is_scope_type = starbase
@@ -40,7 +40,7 @@ graygoo_mothership = {
 	possible_construction = {
 		has_starbase_building = nanite_yards
 	}
-	
+
 	resources = {
 		category = ships
 		cost = {
@@ -50,7 +50,7 @@ graygoo_mothership = {
 			nanites = 5
 		}
 	}
-	
+
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "combat_computers"
@@ -60,7 +60,7 @@ graygoo_mothership = {
 
 # Gray Goo Interdictor
 graygoo_interdictor = {
-	graphical_culture = no
+	graphical_culture = no #{ "reptilian_01" }
 	entity = gatebuilder_01_cruiser_entity
 	max_speed = @aj_speed_fast
 	acceleration = 0.25
@@ -87,27 +87,27 @@ graygoo_interdictor = {
 	is_space_station = no
 	icon_frame = 4
 	class = shipclass_military
-	enable_default_design = no
+	enable_default_design = yes
 	prerequisites = { "tech_nanite_ships" }
 	is_designable = yes
-	
+
 	base_buildtime = 200
-	
+
 	construction_type = starbase_shipyard
-	
+
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "combat_computers"
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
-	
+
 	potential_construction = {
 		is_scope_type = starbase
 	}
 	possible_construction = {
 		has_starbase_building = nanite_yards
 	}
-	
+
 	resources = {
 		category = ships
 		cost = {
@@ -121,20 +121,22 @@ graygoo_interdictor = {
 
 # Nanite Starbase
 starbase_gatebuilders = {
-	graphical_culture = no
+	graphical_culture = no #{ "reptilian_01" }
 	max_speed = 0.0
 	acceleration = 0.0
 	rotation_speed = 0.0
-	entity = gatebuilders_starbase_entity
+	entity = gatebuilder_01_space_station_entity
 	modifier = {
 		ship_evasion_mult = -1
-		ship_shield_add = 10000
-		ship_armor_add = 10000
+		ship_shield_add = 20000
+		ship_armor_add = 20000
 	}
 	ship_modifier = {
-		ship_weapon_range_mult = 0.20
+		ship_fire_rate_mult = 0.5
+		ship_tracking_add = 25
+		ship_accuracy_add = 25
 	}
-	max_hitpoints = 20000
+	max_hitpoints = 40000
 	base_buildtime = 730
 	combat_size_multiplier = 50
 	size_multiplier = 4
@@ -142,14 +144,14 @@ starbase_gatebuilders = {
 	section_slots = { "mid" = { locator = "part1" } }
 	is_designable = no
 	num_target_locators = 0
-	is_space_station = yes
+	is_space_station = yes # vanilla no
 	can_have_federation_design = no
 	is_civilian = no
 	components_add_to_cost = no
 	is_listed = no
 	can_disable = no
 	prerequisites = { "tech_nanite_ships" }
-	enable_default_design = no	#if yes, countries will have an auto-generated design at start
+	enable_default_design = no #if yes, countries will have an auto-generated design at start
 	class = shipclass_starbase
 
 	required_component_set = "power_core"
@@ -163,8 +165,7 @@ starbase_gatebuilders = {
 
 # Nanite Factory
 graygoo_factory = {
-	graphical_culture = no
-	# graphical_culture = { "ancient" }
+	graphical_culture = no #{ "reptilian_01" }
 	# entity = gatebuilder_01_space_station_entity
 	entity = gatebuilder_02_space_station_entity
 	max_speed = 0.0
@@ -175,7 +176,7 @@ graygoo_factory = {
 		ship_evasion_mult = -1
 		ship_armor_add = 50000
 		ship_shield_add = 50000
-		# ships_upkeep_mult = -1
+		ships_upkeep_mult = -1
 		ship_weapon_damage = 1
 	}
 	ship_modifier = {
@@ -193,11 +194,14 @@ graygoo_factory = {
 	is_space_station = yes
 	build_block_radius = 30
 
+	can_disable = no
 	enable_default_design = no
 	prerequisites = { "tech_nanite_ships" }
 	class = shipclass_military_station
+
 	is_designable = no
-	
+
+	required_component_set = "power_core"
 	required_component_set = "combat_computers"
 	required_component_set = "sensor_components"
 	required_component_set = "station_large_aura_components"

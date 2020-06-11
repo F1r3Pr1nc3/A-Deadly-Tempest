@@ -54,6 +54,9 @@ strike_craft_component_template = {
 	tags = {
 		weapon_type_strike_craft
 	}
+	ai_tags = {
+		weapon_type_strike_craft
+	}
 }
 
 weapon_component_template = {
@@ -105,7 +108,7 @@ weapon_component_template = {
 	ai_tags = {
 		weapon_role_artillery
 	}
-	ai_tag_weight = 0
+	ai_tag_weight = 1
 }
 
 weapon_component_template = {
@@ -159,7 +162,7 @@ weapon_component_template = {
 	ai_tags = {
 		weapon_role_artillery
 	}
-	ai_tag_weight = 0
+	ai_tag_weight = 1
 }
 
 weapon_component_template = {

@@ -911,6 +911,7 @@ country_event = {
 		NOT = {
 			has_country_flag = gk_told_to_leave
 		}
+		exists = event_target:lcluster_factory_system
 		event_target:lcluster_factory_system = {
 			any_fleet_in_system = {
 				owner = {

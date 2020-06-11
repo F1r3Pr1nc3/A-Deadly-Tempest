@@ -10,7 +10,7 @@ CmtEffectCreateNanitieFactory = {
 			create_ship = {
 				name = random
 				design = "NAME_Nanite_Factory"
-				graphical_culture = "pirate_01"
+				graphical_culture = "reptilian_01"
 			}
 			set_location = {
 				target = prev #event_target:main_star

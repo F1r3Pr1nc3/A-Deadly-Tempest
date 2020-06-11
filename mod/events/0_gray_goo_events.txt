@@ -1,17 +1,17 @@
 ############################################
-#####                                  #####
-#####     Gray Goo/Dessanu Events      #####
-#####   Replaced by A Deadly Tempest   #####
-#####    Replaced by Crisis Manager    #####
-#####    Vanilla by Henrik Thyrwall    #####
-#####                                  #####
+#####									#####
+#####	 Gray Goo/Dessanu Events		#####
+#####	Replaced by A Deadly Tempest	#####
+#####	Replaced by Crisis Manager		#####
+#####	Vanilla by Henrik Thyrwall		#####
+#####									#####
 ############################################
 
 namespace = graygoo
 
-#################
-###  Graygoo  ###
-#################
+###############
+###	Graygoo	###
+###############
 
 ###Invasion begins
 country_event = {
@@ -208,6 +208,22 @@ planet_event = {
 	}
 
 	immediate = {
+		# small reinforce nanite bombarder
+		print_scope_effect = yes
+
+		ROOT = {
+			print_scope_effect = yes
+			random_fleet_in_orbit = {
+				limit = {
+					exists = owner
+					owner = { is_same_empire = event_target:graygoo_country }
+					any_ship = {
+						is_ship_size = graygoo_mothership
+					}
+				}
+				CmtEffectCreateShip_GraygooInterdictor = yes
+			}
+		}
 		destroy_colony = yes
 		if = {
 			limit = {
@@ -216,7 +232,7 @@ planet_event = {
 					is_planet_class = pc_habitat
 				}
 			}
-			change_pc =  pc_gray_goo
+			change_pc = pc_gray_goo
 			reset_planet = yes
 		}
 		else = {
@@ -228,16 +244,6 @@ planet_event = {
 			if = {
 				limit = { is_planet_class = pc_habitat }
 				ariphaos_patch_remove_habitat = yes
-			}
-		}
-		# small reinforce nanite bombarder
-		root = {
-			random_fleet_in_orbit = {
-				limit = {
-					exists = owner
-					owner = { is_same_empire = event_target:graygoo_country }
-				}
-				CmtEffectCreateShip_GraygooInterdictor = yes
 			}
 		}
 		# Sets a short timed flag if bombardment is going on, so the planet can be appropriately nuked.
@@ -647,9 +653,9 @@ country_event = {
 	}
 }
 
-#################
-###  Dessanu  ###
-#################
+###############
+###	Dessanu	###
+###############
 
 ### Set up Gray Goo Fallen Empire (Gate Builder)
 country_event = {
@@ -756,7 +762,7 @@ country_event = {
 		every_country = { establish_communications_no_message = event_target:graygoo_country }
 
 		event_target:nanite_factory = {
-			CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes  # Garrison Fleets at Capital
+			CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes	# Garrison Fleets at Capital
 			CmtEffectCreateAdmiralty_DessanuRoamer = yes # Roamers
 		}
 
@@ -2583,7 +2589,7 @@ country_event = {
 		name = graygoo.500.a
 		response_text = graygoo.503.a.response
 		allow = {
-			hidden_trigger = {  # To prevent exploit
+			hidden_trigger = {	# To prevent exploit
 				any_owned_army = {
 					army_type = gray_army
 					OR = {

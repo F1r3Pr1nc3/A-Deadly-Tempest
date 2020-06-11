@@ -29,7 +29,7 @@ nhsc_tech_advanced_materials = {
 	tier = 5
 	cost = @tier5cost3
 	weight = 0
-	prerequisites = { "nhsc_tech_central_research_bureau" "tech_engineering_3" }
+	prerequisites = { "tech_engineering_3" }
 	potential = {
 		has_global_flag = nhsc_v30
 	}

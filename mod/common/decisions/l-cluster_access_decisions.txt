@@ -13,17 +13,17 @@ decision_open_lcluster = {
 			influence = 20
 		}
 	}
-	
+
 	potential = {
 		NOT = { has_global_flag = lgates_activated_globally }
 		is_capital = yes
 		exists = owner
-		from = { 
+		owner = {
 			can_set_lcluster_policiy = yes
 			# controls_lcluster = yes
 		}
 	}
-	
+
 	allow = {
 		custom_tooltip = {
 			fail_text = "lcluster_policy_cannot_set_name"
@@ -31,23 +31,23 @@ decision_open_lcluster = {
 			#	has_global_flag = lgates_activated_globally
 				has_modifier = "artifact_lgate_insight_cooldown"
 			}
-			from = { controls_lcluster = yes }
+			owner = { controls_lcluster = yes }
 		}
 	}
-	
+
 	effect = {
 		# Make city-planet
 		custom_tooltip = decision_open_lcluster_effects
 		hidden_effect = {
 			set_global_flag = lgates_activated_globally
-			owner = { 
+			owner = {
 				set_country_flag = lgates_activated
 				add_notification_modifier = lgate_access
 			}
 			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
@@ -64,17 +64,17 @@ decision_close_lcluster = {
 			influence = 100
 		}
 	}
-	
+
 	potential = {
 		has_global_flag = lgates_activated_globally
 		is_capital = yes
 		exists = owner
-		from = { 
+		owner = {
 			can_set_lcluster_policiy = yes
 			# controls_lcluster = yes
 		}
 	}
-	
+
 	allow = {
 		custom_tooltip = {
 			fail_text = "lcluster_policy_cannot_set_name"
@@ -82,10 +82,10 @@ decision_close_lcluster = {
 			NOR = {
 				has_modifier = "artifact_lgate_insight_cooldown"
 			}
-			from = { controls_lcluster = yes }
+			owner = { controls_lcluster = yes }
 		}
 	}
-	
+
 	effect = {
 		# Make city-planet
 		custom_tooltip = decision_close_lcluster_effects
@@ -98,7 +98,7 @@ decision_close_lcluster = {
 			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}

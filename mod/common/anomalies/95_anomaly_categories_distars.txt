@@ -1,26 +1,26 @@
 ### Gray ###
-disco_gray_cat = {
-	desc = "disco_gray_cat_desc"
-	picture = "GFX_evt_ship_in_orbit_2"
-	level = 3
+# disco_gray_cat = {
+# 	desc = "disco_gray_cat_desc"
+# 	picture = "GFX_evt_ship_in_orbit_2"
+# 	level = 3
 
-	spawn_chance = {
-		modifier = {
-			add = 9
-			is_planet_class = pc_gray_goo
-			solar_system = { has_star_flag = lcluster }
-		}
-		# modifier = {
-		# 	factor = 0
-		# 	OR = {
-		# 		has_global_flag = gray_goo_crisis_set
-		# 		has_global_flag = dragon_season
-		# 		has_global_flag = gray_goo_empire_set
-		# 	}
-		# }
-	}
-	on_success = graygoo.400
-}
+# 	spawn_chance = {
+# 		modifier = {
+# 			add = 6
+# 			is_planet_class = pc_gray_goo
+# 			solar_system = { has_star_flag = lcluster }
+# 		}
+# 		# modifier = {
+# 		# 	factor = 0
+# 		# 	OR = {
+# 		# 		has_global_flag = gray_goo_crisis_set
+# 		# 		has_global_flag = dragon_season
+# 		# 		has_global_flag = gray_goo_empire_set
+# 		# 	}
+# 		# }
+# 	}
+# 	on_success = graygoo.400
+# }
 
 transmitter_cat = {
 	picture = "GFX_evt_ship_in_orbit_2"
@@ -33,7 +33,7 @@ transmitter_cat = {
 			has_distar = yes
 			is_star = no
 			from.owner = {
-				NOT = {
+				NOR = {
 					has_global_flag = l_cluster_opened
 					has_completed_event_chain_counter = {
 						event_chain = l_cluster_chain

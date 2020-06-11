@@ -6,7 +6,7 @@ planet_event = {
 	hide_window = yes
 
 	is_triggered_only = yes
-	
+
 	trigger = {
 		OR = {
 			has_orbital_bombardment_stance = nanitebombard
@@ -36,12 +36,12 @@ planet_event = {
 		}
 		planet_devastation >= 100
 	}
-	
+
 	immediate = {
 		every_owned_pop = {
 			kill_pop = yes
 		}
-		owner = { 
+		owner = {
 			add_static_war_exhaustion = {
 				attacker = from
 				location = root
@@ -59,7 +59,7 @@ planet_event = {
 		set_planet_flag = armageddon_nuked
 		if = {
 			limit = {
-				habitable_planet = yes	
+				habitable_planet = yes
 				NOR = {
 					is_planet_class = pc_ringworld_habitable
 					is_planet_class = pc_habitat
@@ -90,10 +90,10 @@ country_event = {
 	desc = a_deadly_tempest.82.desc
 	show_sound = event_ghost_town
 	location = from
-	
+
 	is_triggered_only = yes
 	# trigger = { always = yes }
-	
+
 	option = {
 		name = a_deadly_tempest.82.a
 		custom_tooltip = bombed_to_nanite_world
@@ -108,10 +108,10 @@ country_event = {
 	desc = a_deadly_tempest.83.desc
 	show_sound = event_super_explosion
 	location = from
-	
+
 	is_triggered_only = yes
 	# trigger = { always = yes }
-	
+
 	option = {
 		name = EXCELLENT
 		custom_tooltip = bombed_to_nanite_world

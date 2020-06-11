@@ -1,4 +1,4 @@
-# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes. 
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes.
 #############
 #	POWER	#
 #############
@@ -121,12 +121,12 @@ utility_component_template = {
 			nanites = 0.04
 		}
 	}
-	
+
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
 	size_restriction = { graygoo_interdictor }
 	upgrades_to = "INTERDICTOR_FUSION_REACTOR"
-	
+
 	ai_weight = {
 		weight = 1
 	}
@@ -148,12 +148,12 @@ utility_component_template = {
 			nanites = 0.16
 		}
 	}
-	
+
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
 	size_restriction = { graygoo_mothership }
 	upgrades_to = "TITAN_FUSION_REACTOR"
-	
+
 	ai_weight = {
 		weight = 1
 	}
@@ -179,12 +179,12 @@ utility_component_template = {
 			nanites = 0.052
 		}
 	}
-	
+
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
 	size_restriction = { graygoo_interdictor }
 	upgrades_to = "INTERDICTOR_COLD_FUSION_REACTOR"
-	
+
 	ai_weight = {
 		weight = 2
 	}
@@ -206,12 +206,12 @@ utility_component_template = {
 			nanites = 0.208
 		}
 	}
-	
+
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
 	size_restriction = { graygoo_mothership }
 	upgrades_to = "TITAN_COLD_FUSION_REACTOR"
-	
+
 	ai_weight = {
 		weight = 2
 	}
@@ -237,12 +237,12 @@ utility_component_template = {
 			nanites = 0.068
 		}
 	}
-	
+
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
 	size_restriction = { graygoo_interdictor }
 	upgrades_to = "INTERDICTOR_ANTIMATTER_REACTOR"
-	
+
 	ai_weight = {
 		weight = 3
 	}
@@ -264,12 +264,12 @@ utility_component_template = {
 			nanites = 0.270
 		}
 	}
-	
+
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
 	size_restriction = { graygoo_mothership }
 	upgrades_to = "TITAN_ANTIMATTER_REACTOR"
-	
+
 	ai_weight = {
 		weight = 3
 	}
@@ -295,12 +295,12 @@ utility_component_template = {
 			nanites = 0.088
 		}
 	}
-	
+
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
 	size_restriction = { graygoo_interdictor }
 	upgrades_to = "INTERDICTOR_ZERO_POINT_REACTOR"
-	
+
 	ai_weight = {
 		weight = 4
 	}
@@ -322,12 +322,12 @@ utility_component_template = {
 			nanites = 0.351
 		}
 	}
-	
+
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
 	size_restriction = { graygoo_mothership }
 	upgrades_to = "TITAN_ZERO_POINT_REACTOR"
-	
+
 	ai_weight = {
 		weight = 4
 	}
@@ -353,12 +353,12 @@ utility_component_template = {
 			nanites = 0.114
 		}
 	}
-	
+
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
 	size_restriction = { graygoo_interdictor }
 	upgrades_to = "INTERDICTOR_DARK_MATTER_REACTOR"
-	
+
 	ai_weight = {
 		weight = 5
 	}
@@ -380,12 +380,12 @@ utility_component_template = {
 			nanites = 0.456
 		}
 	}
-	
+
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
 	size_restriction = { graygoo_mothership }
 	upgrades_to = "TITAN_DARK_MATTER_REACTOR"
-	
+
 	ai_weight = {
 		weight = 5
 	}
@@ -411,11 +411,11 @@ utility_component_template = {
 			nanites = 0.148
 		}
 	}
-	
+
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
 	size_restriction = { graygoo_interdictor }
-	
+
 	ai_weight = {
 		weight = 6
 	}
@@ -437,11 +437,11 @@ utility_component_template = {
 			nanites = 0.593
 		}
 	}
-	
+
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
 	size_restriction = { graygoo_mothership }
-	
+
 	ai_weight = {
 		weight = 6
 	}
