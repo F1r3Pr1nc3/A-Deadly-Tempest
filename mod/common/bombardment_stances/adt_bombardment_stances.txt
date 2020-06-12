@@ -1,29 +1,37 @@
 
 nanitebombard = {
 	trigger = {
-		owner = { 
-			has_technology = tech_nanite_bombardment
+		owner = {
 			OR = {
-				has_policy_flag = orbital_bombardment_indiscriminate
-				has_policy_flag = orbital_bombardment_armageddon
+				AND = {
+					exists = event_target:graygoo_country
+					is_same_empire = event_target:graygoo_country
+				}
+				AND = {
+					has_technology = tech_nanite_bombardment
+					OR = {
+						has_policy_flag = orbital_bombardment_indiscriminate
+						has_policy_flag = orbital_bombardment_armageddon
+					}
+				}
 			}
 		}
 	}
-	
-	icon_frame = 3
+
+	icon_frame = 6
 	default = no
-	
+
 	stop_when_armies_dead = no
 	abduct_pops = no
 
 	planet_damage = 1.5
 	army_damage = 2.0
-	
+
 	kill_pop_chance = {
 		base = 2.0
 	}
 	min_pops_to_kill_pop = 0
-	
+
 	# root = fleet
 	# from = planet
 	ai_weight = {
@@ -31,7 +39,7 @@ nanitebombard = {
 		modifier = {
 			factor = 0.01
 			exists = from
-			from = { 
+			from = {
 				owner = { NOT = { is_hostile = root.owner } }
 			}
 		}

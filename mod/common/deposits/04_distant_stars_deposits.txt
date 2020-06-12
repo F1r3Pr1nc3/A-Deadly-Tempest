@@ -29,14 +29,14 @@ d_nanites_deposit = {
 		}
 	}
 
-	planet_modifier = { 
+	planet_modifier = {
 		district_generator_max = 4
-	}	
+	}
 	icon = d_mining_tunnels
 
 	station = shipclass_mining_station
 	is_for_colonizeable = no
-	
+
 	drop_weight = {
 		weight = 0
 		modifier = {

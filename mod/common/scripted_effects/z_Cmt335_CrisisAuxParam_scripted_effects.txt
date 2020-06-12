@@ -199,7 +199,7 @@ CmtFleetSetAuxParam_GraygooRoamer = {
 							move_to = THIS
 							find_random_planet = {
 								trigger = {
-									id = dessanu_roamers_$NUM$.trigger.3
+									id = graygoo_roamers_$NUM$.trigger.3
 									is_star = yes
 								}
 								found_planet = {

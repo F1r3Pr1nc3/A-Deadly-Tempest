@@ -1155,3 +1155,50 @@ country_event = {
 		start_lcluster_chain = yes
 	}
 }
+
+### Set up Gray Goo
+country_event = {
+	id = a_deadly_tempest.107
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		give_technology = { tech = tech_nanite_ships message = no }
+		give_technology = { tech = tech_nanite_hull message = no }
+		give_technology = { tech = tech_nanite_torpedo message = no }
+		give_technology = { tech = tech_adt_energymissiles message = no }
+		give_technology = { tech = tech_nanite_strike_craft message = no }
+		give_technology = { tech = tech_adt_gg_beam message = no }
+		give_technology = { tech = tech_nanocrystals message = no }
+		give_technology = { tech = tech_nanite_modular_engineering message = no }
+		give_technology = { tech = tech_nanite_living_metal message = no }
+		give_technology = { tech = tech_nanite_repair_system message = no }
+		give_technology = { tech = tech_nanite_bombardment message = no }
+		give_technology = { tech = tech_nanite_mega_engineering message = no }
+		give_technology = { tech = tech_lgate_construction message = no }
+
+		add_global_ship_design = "NAME_Dessanu_Mothership"
+		add_global_ship_design = "NAME_Dessanu_Interdictor"
+		add_global_ship_design = "NAME_Gatebuilder_Starbase"
+		add_global_ship_design = "NAME_Reclaimer"
+
+		set_country_flag = synthetic_empire
+		country_event = { id = a_deadly_tempest.13006 }
+
+		#last_created_country
+		create_ship_design = { design = "NAME_Gatebuilder_Starbase" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Reclaimer" }
+		add_ship_design = last_created_design
+
+		# set_policy = {
+		# 	policy = artificial_intelligence_policy
+		# 	option = ai_full_rights
+		# 	cooldown = no
+		# }
+		# set_policy = {
+		# 	policy = orbital_bombardment
+		# 	option = orbital_bombardment_indiscriminate
+		# 	cooldown = no
+		# }
+	}
+}

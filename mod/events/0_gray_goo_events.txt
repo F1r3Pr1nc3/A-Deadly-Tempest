@@ -75,7 +75,7 @@ country_event = {
 				flag = {
 					icon= {
 						category = "special"
-						file = "gray_goo_90.dds"
+						file = "gray_goo.dds"
 					}
 					background= {
 						category = "backgrounds"
@@ -85,36 +85,11 @@ country_event = {
 				}
 				effect = {
 					save_global_event_target_as = graygoo_country
-					give_technology = { tech = tech_nanite_ships message = no }
-					give_technology = { tech = tech_nanite_hull message = no }
-					give_technology = { tech = tech_nanite_torpedo message = no }
-					give_technology = { tech = tech_adt_energymissiles message = no }
-					give_technology = { tech = tech_nanite_strike_craft message = no }
-					give_technology = { tech = tech_adt_gg_beam message = no }
-					give_technology = { tech = tech_nanocrystals message = no }
-					give_technology = { tech = tech_nanite_living_metal message = no }
-					give_technology = { tech = tech_nanite_repair_system message = no }
-					add_global_ship_design = "NAME_Nanite_Mothership"
-					add_global_ship_design = "NAME_Nanite_Interdictor"
-					add_global_ship_design = "NAME_Gatebuilder_Starbase"
-					add_global_ship_design = "NAME_Reclaimer"
-					set_country_flag = synthetic_empire
-					if = {
-						limit = { exists = event_target:spawning_dragons }
-						set_faction_hostility = {
-							target = event_target:spawning_dragons
-							set_hostile = no
-							#set_neutral = no
-							set_friendly = yes
-						}
-					}
+					## add technologies
+					country_event = { id = a_deadly_tempest.107 }
 				}
 			}
 			event_target:main_star = { CmtEffectCreateNanitieFactory = yes }
-			last_created_country = {
-				create_ship_design = { design = "NAME_Gatebuilder_Starbase" }
-				add_ship_design = last_created_design
-			}
 			create_starbase = {
 				size = "starbase_gatebuilders"
 				owner = last_created_country
@@ -209,22 +184,17 @@ planet_event = {
 
 	immediate = {
 		# small reinforce nanite bombarder
-		print_scope_effect = yes
-
-		ROOT = {
-			print_scope_effect = yes
-			random_fleet_in_orbit = {
-				limit = {
-					exists = owner
-					owner = { is_same_empire = event_target:graygoo_country }
-					any_ship = {
-						is_ship_size = graygoo_mothership
-					}
+		random_fleet_in_orbit = {
+			limit = {
+				exists = owner
+				owner = { is_same_empire = event_target:graygoo_country }
+				any_ship = {
+					is_ship_size = graygoo_mothership
 				}
-				CmtEffectCreateShip_GraygooInterdictor = yes
 			}
+			CmtEffectCreateShip_GraygooInterdictor = yes
 		}
-		destroy_colony = yes
+		# destroy_colony = yes
 		if = {
 			limit = {
 				NOR = {
@@ -234,6 +204,31 @@ planet_event = {
 			}
 			change_pc = pc_gray_goo
 			reset_planet = yes
+			# Reset only removes real static modifiers? (2.7.2)
+			# TODO which from 08_static_modifiers_megacorp.txt
+			remove_modifier = planet_food_boost
+			remove_modifier = planet_luxuries_boost
+			remove_modifier = penal_colony
+			remove_modifier = slave_colony
+			remove_modifier = resort_colony
+			remove_modifier = mastery_of_nature
+			remove_modifier = artist_monument_erected
+			remove_modifier = martial_law
+			remove_modifier = hunter_killer_drones
+			remove_modifier = compliance_protocols
+
+			random_list = {
+				4 = {}
+				4 = { add_deposit = d_nanites_deposit }
+				1 = { add_deposit = d_tomb_world_ruins }
+				1 = { add_deposit = d_strip_mine }
+				1 = { add_deposit = d_former_battlefield }
+				1 = { add_deposit = d_failing_infrastructure }
+				16 = {
+					# modifier = { NOT = { exists = owner } factor = 0 }
+					ROOT = { generate_new_deposits_and_blockers = yes }
+				}
+			}
 		}
 		else = {
 			if = {
@@ -246,10 +241,12 @@ planet_event = {
 				ariphaos_patch_remove_habitat = yes
 			}
 		}
+		destroy_colony = yes
+
 		# Sets a short timed flag if bombardment is going on, so the planet can be appropriately nuked.
 		set_timed_planet_flag = {
 			flag = flag_nanite_bombardment
-			days = 7
+			days = 6
 		}
 	}
 
@@ -728,37 +725,14 @@ country_event = {
 						influence = 5000
 						nanites = 50000
 					}
-					give_technology = { tech = tech_nanite_torpedo message = no }
-					give_technology = { tech = tech_adt_energymissiles message = no }
-					give_technology = { tech = tech_nanite_strike_craft message = no }
-					give_technology = { tech = tech_adt_gg_beam message = no }
-					give_technology = { tech = tech_nanocrystals message = no }
-					give_technology = { tech = tech_nanite_living_metal message = no }
-					give_technology = { tech = tech_nanite_repair_system message = no }
-					give_technology = { tech = tech_nanite_ships message = no }
-					add_global_ship_design = "NAME_Dessanu_Mothership"
-					add_global_ship_design = "NAME_Dessanu_Interdictor"
-					add_global_ship_design = "NAME_Gatebuilder_Starbase"
-					add_global_ship_design = "NAME_Reclaimer"
-					set_country_flag = synthetic_empire
-					if = {
-						limit = { exists = event_target:spawning_dragons }
-						set_faction_hostility = {
-							target = event_target:spawning_dragons
-							set_hostile = no
-							#set_neutral = no
-							set_friendly = yes
-						}
-					}
+					## add technologies
+					country_event = { id = a_deadly_tempest.107 }
 				}
 			}
 			### Create Factory/Fleets/Starbases
 			event_target:main_star = { CmtEffectCreateNanitieFactory = yes }
 		}
-		event_target:graygoo_country = {
-			create_ship_design = { design = "NAME_Gatebuilder_Starbase" }
-			add_ship_design = last_created_design
-		}
+
 		every_country = { establish_communications_no_message = event_target:graygoo_country }
 
 		event_target:nanite_factory = {

@@ -48,13 +48,22 @@ gate_builders = {
 					}
 				}
 			}
+			nanite_giga_guardian = {
+				fraction = {
+					factor = 45
+					# modifier = {
+					# 	factor = 0
+					# 	NOT = { has_authority = auth_machine_intelligence }
+					# }
+				}
+			}
 			nanite_giga_warform = {
 				fraction = {
 					factor = 45
-					modifier = {
-						factor = 0
-						NOT = { has_authority = auth_machine_intelligence }
-					}
+					# modifier = {
+					# 	factor = 0
+					# 	NOT = { has_authority = auth_machine_intelligence }
+					# }
 				}
 			}
 		}
@@ -95,7 +104,7 @@ gate_builders = {
 		produces = {
 			energy = 250
 			minerals = 150
-			food = 10000
+			food = 100
 			physics_research = 10
 			society_research = 10
 			engineering_research = 10

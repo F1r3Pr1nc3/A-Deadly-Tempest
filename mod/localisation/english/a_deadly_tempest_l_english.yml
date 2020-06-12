@@ -266,7 +266,11 @@ NANITE_STRIKE_CRAFT:0 "$GG_STRIKE_CRAFT$"
  TECH_UNLOCK_NANITE_TERRAFORMING_DESC:0 "Once $pc_gray_goo$s were though un-terraformable unless under certain conditions but all machines can be reprogrammed a nanite is no different."
 
  ### Armies ###
- nanite_giga_warform: "§MNanite Warform§!"
- nanite_giga_warform_desc: "An extremely-powerful gigantic nanite entity, with enough power to devastate cities."
- nanite_giga_warform_plural: "§M$nanite_giga_warform$s§!"
+ nanite_giga_warform:0 "§M Nanite Warform§!"
+ nanite_giga_warform_desc:0 "An extremely-powerful gigantic nanite entity, with enough power to devastate cities."
+ nanite_giga_warform_plural:0 "§M$nanite_giga_warform$s§!"
  nanite_giga_warform_passive:0 "Permits building §Y$nanite_giga_warform$§! armies at your capital."
+
+ nanite_giga_guardian:0 "§M Nanite Defense Warform§!"
+ nanite_giga_guardian_desc:0 "The $nanite_giga_guardian$ is an extremely-powerful defensive version of the $nanite_giga_warform$."
+ nanite_giga_guardian_plural:0 "§M$nanite_giga_guardian$s§!"
