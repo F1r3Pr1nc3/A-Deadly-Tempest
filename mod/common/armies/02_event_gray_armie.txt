@@ -26,13 +26,14 @@ gray_army = {
 ### Nanite Empire Armies
 nanite_giga_guardian = {
 	defensive = yes
-	is_pop_spawned = yes
+	occupation = yes
+	# is_pop_spawned = yes
 	health = 18
 	damage = 10
 	has_morale = no
 	morale_damage = 5
-	collateral_damage = 3.0
-	war_exhaustion = 2.0 # No WE from defense armies
+	collateral_damage = 2
+	war_exhaustion = 2 # No WE from defense armies
 	icon_frame = 13
 	has_species = no
 	time = 5
@@ -46,17 +47,18 @@ nanite_giga_guardian = {
 	prerequisites = { tech_nanite_mega_engineering }
 
 	potential = {
-		owner = {
-			OR = {
-				has_authority = auth_machine_intelligence
-				has_civic = civic_machine_assimilator
-				from = { has_trait = "trait_machine_unit" }
-				has_country_flag = synthetic_empire
-			}
-		}
-		planet = {
-			has_building = building_stronghold
-		}
+		always = no
+		# owner = {
+		# 	OR = {
+		# 		has_authority = auth_machine_intelligence
+		# 		has_civic = civic_machine_assimilator
+		# 		has_trait = "trait_machine_unit"
+		# 		has_country_flag = synthetic_empire
+		# 	}
+		# }
+		# planet = {
+		# 	has_building = building_stronghold
+		# }
 	}
 }
 
@@ -91,7 +93,7 @@ nanite_giga_warform = {
 		OR = {
 			has_authority = auth_machine_intelligence
 			has_civic = civic_machine_assimilator
-			# species = { has_trait = "trait_machine_unit" }
+			# has_trait = "trait_machine_unit"
 			has_country_flag = synthetic_empire
 		}
 	}
@@ -139,7 +141,7 @@ nanite_giga_warform = {
 			OR = {
 				has_authority = auth_machine_intelligence
 				has_civic = civic_machine_assimilator
-				from = { has_trait = "trait_machine_unit" }
+				has_trait = "trait_machine_unit"
 				has_country_flag = synthetic_empire
 			}
 		}

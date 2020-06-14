@@ -341,13 +341,11 @@ country_event = {
 				# Reinforce at factory if someone else is in the cluster...
 				# AMOUNT integer 1 = 4 Ships per CM factor (so 3.0 = 12)
 				event_target:nanite_factory = {
-					if = { limit = { end_game_years_passed >= 20 }
+					if = { limit = { end_game_years_passed >= 30 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 4 }
-						awaken_guardians_of_the_galaxy = yes
-						awaken_fallen_machine_empire = yes
 					} else_if = { limit = { mid_game_years_passed >= 40 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 3 }
-					} else_if = { limit = { mid_game_years_passed >= -10 }
+					} else_if = { limit = { mid_game_years_passed >= 10 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 2 }
 					} else = {
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 1 }
@@ -369,11 +367,13 @@ country_event = {
 							use_3d_location = yes
 							duration = 10
 						}
-						if = { limit = { end_game_years_passed >= 20 }
+						if = { limit = { end_game_years_passed >= 30 }
 							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 4 }
+							awaken_guardians_of_the_galaxy = yes
+							awaken_fallen_machine_empire = yes
 						} else_if = { limit = { mid_game_years_passed >= 40 }
 							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 3 }
-						} else_if = { limit = { mid_game_years_passed >= -10 }
+						} else_if = { limit = { mid_game_years_passed >= 10 }
 							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 2 }
 						} else = {
 							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 1 }
@@ -767,52 +767,11 @@ country_event = {
 				set_planet_flag = hidden_nanite_world
 				prevent_anomaly = yes
 				set_owner = event_target:graygoo_country
-				#TODO [CD]
-				#random_tile = {
-				#	limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-				#	set_building = "building_capital_2"
-				#	set_deposit = d_energy_deposit
-				#}
-				#random_tile = {
-				#	limit = {
-				#		has_building = no
-				#		has_blocker = no
-				#	}
-				#	set_building = "building_hydroponics_farm_4"
-				#	set_deposit = d_farmland_deposit
-				#}
-				#while = {
-				#	count = 3
-				#	random_tile = {
-				#		limit = {
-				#			has_building = no
-				#			has_blocker = no
-				#		}
-				#		set_building = "building_power_plant_4"
-				#		set_deposit = d_energy_deposit
-				#	}
-				#}
-				#while = {
-				#	count = 2
-				#	random_tile = {
-				#		limit = {
-				#			has_building = no
-				#			has_blocker = no
-				#		}
-				#		set_building = "building_mining_network_4"
-				#		set_deposit = d_mineral_deposit
-				#	}
-				#}
-				#while = {
-				#	count = 1
-				#	random_tile = {
-				#		limit = {
-				#			has_building = no
-				#			has_blocker = no
-				#		}
-				#		set_building = "building_fortress"
-				#	}
-				#}
+
+				add_deposit = d_energy_5
+				add_deposit = d_natural_farmland
+				add_deposit = d_minerals_2
+
 				while = {
 					count = 30
 					create_pop = { species = owner_main_species }
@@ -866,6 +825,12 @@ country_event = {
 				add_building = building_factory_1
 				add_building = building_holo_theatres
 				add_building = building_foundry_1
+
+				create_army = {
+					owner = event_target:graygoo_country
+					species = last_created
+					type = "nanite_giga_guardian"
+				}
 			}
 		}
 		country_event = { id = graygoo.110 }

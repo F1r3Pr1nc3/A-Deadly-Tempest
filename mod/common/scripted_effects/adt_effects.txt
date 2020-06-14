@@ -10,12 +10,13 @@
 
 shoal_reinforce = {
 	# log = "set fleet size +$AMOUNT$ +$SHIPS$"
-	every_owned_fleet = {
+	# every_owned_fleet = {
+	random_owned_fleet = {
 		limit = {
 			has_auto_move_target = no
 			num_ships < $AMOUNT|11$
 			is_in_combat = no
-			any_ship = {
+			any_owned_ship = {
 				is_ship_size = graygoo_mothership
 			}
 			OR = {
@@ -253,11 +254,11 @@ shoal_continue_guard = {
 # Called after planet reset (Scope planet)
 generate_new_deposits_and_blockers = {
 	clear_deposits = yes
-
 	if = {
 		limit = { NOT = { exists = owner } }
 		break = yes
 	}
+
 	# blockers
 	if = {
 		limit = {
@@ -275,7 +276,6 @@ generate_new_deposits_and_blockers = {
 				NOT = { has_origin = origin_machine }
 			}
 		}
-
 		add_deposit = d_exterminators_ruins
 		add_deposit = d_former_battlefield
 	}
@@ -285,7 +285,6 @@ generate_new_deposits_and_blockers = {
 				has_civic = civic_machine_servitor
 			}
 		}
-
 		add_deposit = d_strip_mine
 		add_deposit = d_unsupervised_settlement
 	}
@@ -296,7 +295,6 @@ generate_new_deposits_and_blockers = {
 				NOT = { has_origin = origin_machine }
 			}
 		}
-
 		add_deposit = d_strip_mine
 		add_deposit = d_assimilators_ruins
 	}
@@ -307,7 +305,6 @@ generate_new_deposits_and_blockers = {
 				NOT = { has_origin = origin_machine }
 			}
 		}
-
 		add_deposit = d_strip_mine
 		add_deposit = d_machine_empire_ruins
 	}
@@ -317,7 +314,6 @@ generate_new_deposits_and_blockers = {
 				has_authority = auth_hive_mind
 			}
 		}
-
 		add_deposit = d_collapsed_burrows
 		add_deposit = d_failing_infrastructure
 		add_deposit = d_failing_infrastructure

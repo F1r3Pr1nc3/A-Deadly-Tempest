@@ -50,7 +50,7 @@ gate_builders = {
 			}
 			nanite_giga_guardian = {
 				fraction = {
-					factor = 45
+					factor = 35
 					# modifier = {
 					# 	factor = 0
 					# 	NOT = { has_authority = auth_machine_intelligence }

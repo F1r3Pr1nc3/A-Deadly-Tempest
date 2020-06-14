@@ -47,7 +47,7 @@ graygoo_mothership = {
 			nanites = 100
 		}
 		upkeep = {
-			nanites = 5
+			nanites = 4
 		}
 	}
 
@@ -117,6 +117,118 @@ graygoo_interdictor = {
 			nanites = 1
 		}
 	}
+}
+
+# Scavenger Bot
+leviathan_02_scavenger_bot = {
+	graphical_culture = no
+	entity = leviathan_01_scavenger_bot_entity
+	can_be_inspected = no
+	formation_priority = @juggernaut_formation_priority
+	max_speed = @aj_speed_very_slow
+	acceleration = 0.3
+	rotation_speed = 0.05
+	collision_radius = 7
+	max_hitpoints = @juggernaut_hp
+	modifier = {
+		ship_shield_add = 50000
+		ship_armor_add = 50000
+		starbase_shipyard_capacity_add = 2
+	}
+
+	base_buildtime = @juggernaut_build_time
+	resources = {
+		category = ships
+		cost = {
+			nanites = 100
+		}
+		upkeep = {
+			energy = 15
+			alloys = 8
+			nanites = 8
+		}
+	}
+
+	combat_size_multiplier = 5
+	size_multiplier = 32
+	fleet_slot_size = 16
+	section_slots = { "mid" = { locator = "part1" } "bot_1" = { locator = "bot_1" } "bot_2" = { locator = "bot_2" } "bot_3" = { locator = "bot_3" } }
+
+	potential_construction = {
+		OR = {
+			AND = {
+				is_scope_type = starbase
+				NOT = { has_starbase_size = juggernaut }
+			}
+			AND = {
+				is_scope_type = megastructure
+				OR = {
+					is_megastructure_type = mega_shipyard_3
+					is_megastructure_type = mega_shipyard_restored
+				}
+			}
+		}
+	}
+
+	possible_construction = {
+		custom_tooltip = {
+			fail_text = starbase_citadel_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_size >= starbase_citadel
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = starbase_colossal_yards_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_building = colossus_yards
+				}
+			}
+		}
+	}
+
+	empire_limit = { base = 1 }
+
+	num_target_locators = 0
+	# is_space_station = no
+	# can_have_federation_design = no
+	# enable_default_design = yes
+	can_disable = no
+	icon_frame = 7
+	ship_class_icon_frame = 35
+
+	default_behavior = carrier
+
+	prerequisites = { "tech_juggernaut" }
+	class = shipclass_starbase
+	construction_type = starbase_shipyard
+
+	required_component_set = "power_core"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "ship_aura_components"
+
+	min_upgrade_cost = { alloys = 50 }
 }
 
 # Nanite Starbase

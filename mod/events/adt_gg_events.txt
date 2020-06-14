@@ -350,9 +350,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		exists = event_target:graygoo_country
-		event_target:graygoo_country = {
-			is_same_empire = prev
-		}
+		is_same_empire = event_target:graygoo_country
 		# any_owned_fleet = {
 		# 	has_fleet_flag = nanite_mother_ship
 		# 	any_ship = { is_ship_size = graygoo_mothership }
@@ -422,7 +420,7 @@ country_event = {
 	id = a_deadly_tempest.106
 	hide_window = yes
 	mean_time_to_happen = {
-		months = 3
+		months = 2
 	}
 	trigger = {
 		exists = event_target:graygoo_country
@@ -436,7 +434,7 @@ country_event = {
 		# event_target:CmtGlobalVar = { shoal_reinforce = { AMOUNT = @\[CmtVarWhileControlShip + 10] SHIPS = 2 } }
 		if = {
 			limit = {
-				end_game_years_passed > 20
+				end_game_years_passed > 35
 			}
 			shoal_reinforce = {
 				AMOUNT = 41
@@ -445,7 +443,7 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				mid_game_years_passed > 40
+				mid_game_years_passed > 50
 			}
 			shoal_reinforce = {
 				AMOUNT = 21
@@ -454,7 +452,7 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				mid_game_years_passed > -10
+				mid_game_years_passed > 5
 			}
 			shoal_reinforce = {
 				AMOUNT = 11
@@ -1179,7 +1177,7 @@ country_event = {
 		add_global_ship_design = "NAME_Dessanu_Mothership"
 		add_global_ship_design = "NAME_Dessanu_Interdictor"
 		add_global_ship_design = "NAME_Gatebuilder_Starbase"
-		add_global_ship_design = "NAME_Reclaimer"
+		# add_global_ship_design = "NAME_Reclaimer"
 
 		set_country_flag = synthetic_empire
 		country_event = { id = a_deadly_tempest.13006 }
@@ -1187,7 +1185,11 @@ country_event = {
 		#last_created_country
 		create_ship_design = { design = "NAME_Gatebuilder_Starbase" }
 		add_ship_design = last_created_design
-		create_ship_design = { design = "NAME_Reclaimer" }
+		# create_ship_design = { design = "NAME_Reclaimer" }
+		# add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Dessanu_Mothership" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Dessanu_Interdictor" }
 		add_ship_design = last_created_design
 
 		# set_policy = {
