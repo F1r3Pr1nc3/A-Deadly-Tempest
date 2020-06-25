@@ -1,0 +1,877 @@
+############################################################
+##               ESC : Thruster Components                ##
+############################################################
+
+# - Antimatter Thrusters
+# - Gravity Manipulation Engines
+
+@cost5 = 15
+@cost5_destroyer = 30
+@cost5_cruiser = 60
+@cost5_battleship = 120
+@cost5_titan = 240
+@cost5_colossus = 300
+
+@cost5_strikecruiser = 75
+@cost5_battlecruiser = 100
+@cost5_carrier = 120
+@cost5_dreadnought = 132
+@cost5_flagship = 300
+
+@cost6 = 18
+@cost6_destroyer = 36
+@cost6_cruiser = 72
+@cost6_battleship = 144
+@cost6_titan = 288
+@cost6_colossus = 360
+
+@cost6_strikecruiser = 90
+@cost6_battlecruiser = 120
+@cost6_carrier = 144
+@cost6_dreadnought = 160
+@cost6_flagship = 360
+
+@power5 = -30
+@power5_destroyer = -60
+@power5_cruiser = -120
+@power5_battleship = -240
+@power5_titan = -480
+@power5_colossus = -600
+
+@power5_strikecruiser = -140
+@power5_battlecruiser = -190
+@power5_carrier = -245
+@power5_dreadnought = -260
+@power5_flagship = -500
+
+@power6 = -35
+@power6_destroyer = -72
+@power6_cruiser = -144
+@power6_battleship = -288
+@power6_titan = -540
+@power6_colossus = -700
+
+@power6_strikecruiser = -160
+@power6_battlecruiser = -210
+@power6_carrier = -275
+@power6_dreadnought = -300
+@power6_flagship = -580
+
+@jumpdrive2_cost = 50
+@jumpdrive3_cost = 75
+@jumpdrive2_power = -50
+@jumpdrive3_power = -75
+
+################################################
+##           Antimatter Thrusters             ##
+################################################
+
+utility_component_template = {
+	key = "NHSC_ADV_THRUSTERS_1"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_5"
+	icon_frame = 1
+	power = @power5
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.0
+		ship_evasion_add = 20
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "NHSC_ADV_THRUSTERS_2"
+	size_restriction = { corvette eac_pdf_patrol_craft_1 eac_pdf_patrol_craft_2 colonizer lithoid_colonizer sponsored_colonizer constructor science transport }
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "DESTROYER_NHSC_ADV_THRUSTERS_1"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_5"
+	icon_frame = 1
+	power = @power5_destroyer
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5_destroyer
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.0
+		ship_evasion_add = 16
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "DESTROYER_NHSC_ADV_THRUSTERS_2"
+	size_restriction = { destroyer }
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "CRUISER_NHSC_ADV_THRUSTERS_1"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_5"
+	icon_frame = 1
+	power = @power5_cruiser
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5_cruiser
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.0
+		ship_evasion_add = 12
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "CRUISER_NHSC_ADV_THRUSTERS_2"
+	size_restriction = { cruiser rs_support_cruiser rs_ea_cruiser rs_battlecruiser fe_escort graygoo_interdictor }
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "BATTLESHIP_NHSC_ADV_THRUSTERS_1"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_5"
+	icon_frame = 1
+	power = @power5_battleship
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5_battleship
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.0
+		ship_evasion_add = 8
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "BATTLESHIP_NHSC_ADV_THRUSTERS_2"
+	size_restriction = { battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b
+                         rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e
+						 rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h
+						 rs_heavy_dreadnought_type_i rs_heavy_dreadnought_type_strg rs_heavy_dreadnought_type_fe
+						 rs_heavy_dreadnought_type_fe1 rs_heavy_dreadnought_type_fe2 rs_heavy_dreadnought_type_fe3
+						 rs_heavy_dreadnought_type_tw fe_battlecruiser explorationship }
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "TITAN_NHSC_ADV_THRUSTERS_1"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_5"
+	icon_frame = 1
+	power = @power5_titan
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5_titan
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.0
+		ship_evasion_add = 4
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "TITAN_NHSC_ADV_THRUSTERS_2"
+	size_restriction = { titan fe_titan graygoo_mothership }
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "COLOSSUS_NHSC_ADV_THRUSTERS_1"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_5"
+	icon_frame = 1
+	power = @power5_colossus
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5_colossus
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.25
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "COLOSSUS_NHSC_ADV_THRUSTERS_2"
+	size_restriction = { colossus juggernaut }
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "STRIKECRUISER_NHSC_ADV_THRUSTERS_1"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_5"
+	icon_frame = 1
+	power = @power5_strikecruiser
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5_strikecruiser
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.0
+		ship_evasion_add = 14
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "STRIKECRUISER_NHSC_ADV_THRUSTERS_2"
+	size_restriction = { StrikeCruiser }
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "BATTLECRUISER_NHSC_ADV_THRUSTERS_1"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_5"
+	icon_frame = 1
+	power = @power5_battlecruiser
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5_battlecruiser
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.0
+		ship_evasion_add = 10
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "BATTLECRUISER_NHSC_ADV_THRUSTERS_2"
+	size_restriction = { Battlecruiser escortcarrier }
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "CARRIER_NHSC_ADV_THRUSTERS_1"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_5"
+	icon_frame = 1
+	power = @power5_carrier
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5_carrier
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.0
+		ship_evasion_add = 8
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "CARRIER_NHSC_ADV_THRUSTERS_2"
+	size_restriction = { Carrier SCX_Carrier }
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "DREADNOUGHT_NHSC_ADV_THRUSTERS_1"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_5"
+	icon_frame = 1
+	power = @power5_dreadnought
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5_dreadnought
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.0
+		ship_evasion_add = 6
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "DREADNOUGHT_NHSC_ADV_THRUSTERS_2"
+	size_restriction = { Dreadnought SCX_Dreadnought dreadnought_a }
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "FLAGSHIP_NHSC_ADV_THRUSTERS_1"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_5"
+	icon_frame = 1
+	power = @power5_flagship
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost5_flagship
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.0
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "FLAGSHIP_NHSC_ADV_THRUSTERS_2"
+	size_restriction = { Flagship ultrajuggernaut }
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+################################################
+##         Gravity Manipulation Engines       ##
+################################################
+
+utility_component_template = {
+	key = "NHSC_ADV_THRUSTERS_2"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_6"
+	icon_frame = 1
+	power = @power6
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost6
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 25
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { corvette eac_pdf_patrol_craft_1 eac_pdf_patrol_craft_2 colonizer lithoid_colonizer sponsored_colonizer constructor science transport }
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "DESTROYER_NHSC_ADV_THRUSTERS_2"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_6"
+	icon_frame = 1
+	power = @power6_destroyer
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost6_destroyer
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 20
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { destroyer }
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "CRUISER_NHSC_ADV_THRUSTERS_2"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_6"
+	icon_frame = 1
+	power = @power6_cruiser
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost6_cruiser
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 15
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { cruiser rs_support_cruiser rs_ea_cruiser rs_battlecruiser fe_escort graygoo_interdictor }
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "BATTLESHIP_NHSC_ADV_THRUSTERS_2"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_6"
+	icon_frame = 1
+	power = @power6_battleship
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost6_battleship
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 10
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b
+                         rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e
+						 rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h
+						 rs_heavy_dreadnought_type_i rs_heavy_dreadnought_type_strg rs_heavy_dreadnought_type_fe
+						 rs_heavy_dreadnought_type_fe1 rs_heavy_dreadnought_type_fe2 rs_heavy_dreadnought_type_fe3
+						 rs_heavy_dreadnought_type_tw fe_battlecruiser explorationship }
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "TITAN_NHSC_ADV_THRUSTERS_2"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_6"
+	icon_frame = 1
+	power = @power6_titan
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost6_titan
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 7
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { titan fe_titan graygoo_mothership }
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "COLOSSUS_NHSC_ADV_THRUSTERS_2"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_6"
+	icon_frame = 1
+	power = @power6_colossus
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost6_colossus
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.5
+		ship_evasion_add = 3
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { colossus juggernaut }
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "STRIKECRUISER_NHSC_ADV_THRUSTERS_2"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_6"
+	icon_frame = 1
+	power = @power6_strikecruiser
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost6_strikecruiser
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 17
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { StrikeCruiser }
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "BATTLECRUISER_NHSC_ADV_THRUSTERS_2"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_6"
+	icon_frame = 1
+	power = @power6_battlecruiser
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost6_battlecruiser
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 13
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { Battlecruiser escortcarrier }
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "CARRIER_NHSC_ADV_THRUSTERS_2"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_6"
+	icon_frame = 1
+	power = @power6_carrier
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost6_carrier
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 10
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { Carrier SCX_Carrier }
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "DREADNOUGHT_NHSC_ADV_THRUSTERS_2"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_6"
+	icon_frame = 1
+	power = @power6_dreadnought
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost6_dreadnought
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 8
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { Dreadnought SCX_Dreadnought dreadnought_a }
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+utility_component_template = {
+	key = "FLAGSHIP_NHSC_ADV_THRUSTERS_2"
+	size = small
+	icon = "GFX_ship_part_thrusters_nhsc_6"
+	icon_frame = 1
+	power = @power6_flagship
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost6_flagship
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 3
+	}
+
+	prerequisites = { "nhsc_tech_advanced_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { Flagship ultrajuggernaut }
+
+	ai_weight = {
+		weight = 6
+	}
+}
+
+################################################
+##                 Jump Drives                ##
+################################################
+
+# Improved Jump Drive
+utility_component_template = {
+	key = "NHSC_JUMP_DRIVE_2"
+	size = small
+	icon = "GFX_ship_part_jump_drive_2"
+	icon_frame = 1
+	ftl = yes
+	jumpdrive = yes
+	power = @jumpdrive2_power
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @jumpdrive2_cost
+			sr_dark_matter = 1.5
+		}
+	}
+
+	ship_modifier = {
+		ship_windup_mult = -0.825
+		ship_jumpdrive_cooldown_mult = -0.125
+		ship_ftl_jumpdrive_range_mult = 0.25
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+
+	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_military_special shipclass_starbase }
+	prerequisites = { nhsc_tech_jump_drive_2 }
+	component_set = "ftl_components"
+	upgrades_to = "NHSC_JUMP_DRIVE_3"
+}
+
+# Supercharged Jump Drive
+utility_component_template = {
+	key = "NHSC_JUMP_DRIVE_3"
+	size = small
+	icon = "GFX_ship_part_jump_drive_3"
+	icon_frame = 1
+	ftl = yes
+	jumpdrive = yes
+	power = @jumpdrive3_power
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @jumpdrive3_cost
+			sr_dark_matter = 2
+		}
+	}
+
+	ship_modifier = {
+		ship_windup_mult = -0.9
+		ship_jumpdrive_cooldown_mult = -0.25
+		ship_ftl_jumpdrive_range_mult = 0.5
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+
+	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_military_special shipclass_starbase }
+	prerequisites = { nhsc_tech_jump_drive_3 }
+	component_set = "ftl_components"
+}
+
+# Precursor Jump Drive
+utility_component_template = {
+	key = "NHSC_JUMP_DRIVE_PRECURSOR"
+	size = small
+	icon = "GFX_ship_part_jump_drive_precursor"
+	icon_frame = 1
+	ftl = yes
+	jumpdrive = yes
+	power = @jumpdrive3_power
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @jumpdrive3_cost
+			sr_dark_matter = 2.5
+		}
+	}
+
+	ship_modifier = {
+		ship_windup_mult = -0.95
+		ship_jumpdrive_cooldown_mult = -0.5
+		ship_ftl_jumpdrive_range_mult = 1
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+
+	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_military_special shipclass_starbase }
+	prerequisites = { nhsc_tech_jump_drive_precursor }
+	component_set = "ftl_components"
+}
+
+# Improved Psionic Jump Drive
+utility_component_template = {
+	key = "NHSC_PSI_JUMP_DRIVE_2"
+	size = small
+	icon = "GFX_ship_part_psi_jump_drive_2"
+	icon_frame = 1
+	ftl = yes
+	jumpdrive = yes
+	power = @jumpdrive2_power
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @jumpdrive2_cost
+			esc_psionic_charge = 1.5
+		}
+	}
+
+	ship_modifier = {
+		ship_windup_mult = -0.875
+		ship_jumpdrive_cooldown_mult = -0.125
+		ship_ftl_jumpdrive_range_mult = 0.75
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+
+	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_military_special shipclass_starbase }
+	prerequisites = { nhsc_tech_psi_jump_drive_2 }
+	component_set = "ftl_components"
+	upgrades_to = "NHSC_PSI_JUMP_DRIVE_3"
+}
+
+# Shroud Guide
+utility_component_template = {
+	key = "NHSC_PSI_JUMP_DRIVE_3"
+	size = small
+	icon = "GFX_ship_part_psi_jump_drive_3"
+	icon_frame = 1
+	ftl = yes
+	jumpdrive = yes
+	power = @jumpdrive3_power
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @jumpdrive3_cost
+			esc_psionic_charge = 2
+		}
+	}
+
+	ship_modifier = {
+		ship_windup_mult = -0.95
+		ship_jumpdrive_cooldown_mult = -0.25
+		ship_ftl_jumpdrive_range_mult = 1
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+
+	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_military_special shipclass_starbase }
+	prerequisites = { nhsc_tech_psi_jump_drive_3 }
+	component_set = "ftl_components"
+}

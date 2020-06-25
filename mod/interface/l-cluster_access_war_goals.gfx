@@ -1,5 +1,4 @@
 spriteTypes = {
-	
 	spriteType = {
 		name = "GFX_wg_claim_lgates"
 		texturefile = "gfx/interface/icons/diplomacy/diplomacy_war.dds"
@@ -9,5 +8,8 @@ spriteTypes = {
 		name = "GFX_wg_access_lcluster"
 		texturefile = "gfx/interface/icons/diplomacy/diplomacy_closed_borders.dds"
 	}
-
+	spriteType = {
+		name = "GFX_wg_access_lcluster_long"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_closed_borders.dds"
+	}
 }

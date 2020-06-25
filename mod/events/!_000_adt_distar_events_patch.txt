@@ -25,9 +25,9 @@ namespace = distar
 # 				set_global_flag = gray_goo_empire_set
 # 				set_global_flag = dragon_season
 # 			}
-# 			20 = {
-# 				set_global_flag = dragon_season
-# 			}
+# 			# 20 = {
+# 			# 	set_global_flag = dragon_season
+# 			# }
 # 		}
 # 	}
 # }
@@ -48,12 +48,7 @@ country_event = {
 				}
 			}
 			random_owned_megastructure = {
-				limit = {
-					OR = {
-						is_megastructure_type = lgate_base
-						is_megastructure_type = lgate_disabled
-					}
-				}
+				limit = { CmtTriggerIsClosedLgate = yes }
 				save_event_target_as = candidate_gateway
 			}
 			# enable project
@@ -89,10 +84,7 @@ country_event = {
 			}
 			random_owned_megastructure = {
 				limit = {
-					OR = {
-						is_megastructure_type = lgate_base
-						is_megastructure_type = lgate_disabled
-					}
+					CmtTriggerIsClosedLgate = yes
 				}
 				save_event_target_as = candidate_gateway
 			}
@@ -380,6 +372,7 @@ country_event = {
 				random = 500
 			}
 		}
+		# flip L-Gates
 		# Activate Terminal Egress L-Gate (if not already opened by other outcome)
 		event_target:lcluster1 = {
 			random_system_megastructure = {
@@ -497,10 +490,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		any_megastructure = {
-			OR = {
-				is_megastructure_type = lgate_base
-				is_megastructure_type = lgate_disabled
-			}
+			CmtTriggerIsClosedLgate = yes
 		}
 	}
 	immediate = {
@@ -555,43 +545,45 @@ country_event = {
 				}
 			}
 		}
-		# while = {	limit = { any_megastructure = { CmtTriggerIsClosedLgate = yes } }
-		every_system = {
-			limit = {
-				CmtTriggerIsGalaxyLgateSystem = yes # TODO may remove?
-				any_system_megastructure = {
-					CmtTriggerIsClosedLgate = yes
-				}
-			}
-			# flip L-Gates
-			random_system_megastructure = {
+		while = {
+			limit = { any_megastructure = { CmtTriggerIsClosedLgate = yes } }
+			random_system = {
 				limit = {
-					CmtTriggerIsClosedLgate = yes
+					CmtTriggerIsGalaxyLgateSystem = yes # TODO may remove?
+					# OR = {
+					# 	has_megastructure = lgate_base
+					# 	has_megastructure = lgate_disabled
+					# }
+					any_system_megastructure = { CmtTriggerIsClosedLgate = yes }
 				}
-				CmtEffectOpenLgate = yes
-			}
-			# set dragon spawning grounds
-			closest_system = {
-				min_steps = 3
-				limit = {
-					NOR = {
-						has_star_flag = dragon_point
-						any_system_planet = {
-							is_colony = yes
+				# flip L-Gates
+				random_system_megastructure = {
+					limit = { CmtTriggerIsClosedLgate = yes }
+					CmtEffectOpenLgate = yes
+				}
+				# set dragon spawning grounds
+				closest_system = {
+					min_steps = 3
+					limit = {
+						NOR = {
+							has_star_flag = dragon_point
+							any_system_planet = {
+								is_colony = yes
+							}
 						}
 					}
+					set_star_flag = dragon_point
 				}
-				set_star_flag = dragon_point
 			}
 		}
 		# notify those without l-gate systems
 		every_playable_country = {
 			limit = {
-				NOT = {
-					any_system_within_border = {
-						CmtTriggerIsGalaxyLgateSystem = yes
-					}
+				NOR = {
+					has_megastructure = lgate_base
+					has_megastructure = lgate_disabled
 				}
+				# NOT = { any_system_within_border = { CmtTriggerIsGalaxyLgateSystem = yes } }
 			}
 			country_event = {
 				id = distar.13011
@@ -608,10 +600,9 @@ country_event = {
 			}
 			random_system = {
 				limit = {
-					CmtTriggerIsGalaxyLgateSystem = yes
-					NOT = {
-						has_star_flag = young_dragon_spawned
-					}
+					# CmtTriggerIsGalaxyLgateSystem = yes
+					has_star_flag = lgate
+					NOT = { has_star_flag = young_dragon_spawned }
 					any_system_megastructure = {
 						CmtTriggerIsOpenedLgate = yes
 					}
@@ -957,10 +948,7 @@ country_event = {
 		FROM = {
 			has_star_flag = lgate
 			any_system_megastructure = {
-				OR = {
-					is_megastructure_type = lgate_base
-					is_megastructure_type = lgate_disabled
-				}
+				CmtTriggerIsClosedLgate = yes
 			}
 		}
 	}

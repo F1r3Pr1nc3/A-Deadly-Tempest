@@ -1,6 +1,6 @@
 ﻿l_english:
  ####################################
- # L-Cluster Accsess (former included in A Deadly Tempest)
+ # L-Cluster Access (former included in A Deadly Tempest)
  ####################################
 
  NAME_Final_Egress:0 "Terminal Egress"
@@ -14,7 +14,7 @@
  lgate_access:0 "$tech_lcluster_access$"
  lgate_access_desc:0 "This empire has control about the access to the §H$NAME_Final_Egress$§! system in the §EL-Cluster§!."
  tech_tactical_lgate_use:0 "Tactial L-Gate Use"
- tech_tactical_lgate_use_desc:0 "The §E$lgates$§! can keep us safe and secluded from the crisis currently burning the galaxy. But can we condemn the galaxy to its grim fate? Shall we not stand stalwart against the oncoming strom? Either way, maintaining a tactical doctrine of limited use of the §E$lgates$§! will allow us to strike at those we deem a threat."
+ tech_tactical_lgate_use_desc:0 "The §E$lgates$§! can keep us safe and secluded from the crisis currently burning the galaxy. But can we condemn the galaxy to its grim fate? Shall we not stand stalwart against the oncoming storm? Either way, maintaining a tactical doctrine of limited use of the §E$lgates$§! will allow us to strike at those we deem a threat."
 
  ### Policy
  lcluster_policy:0 "L-Cluster Access"
@@ -51,4 +51,9 @@
  # Diplomacy --------
  casus_belli_cb_lgate_port:0 "$lcluster_policy$"
  war_goal_wg_access_lcluster:0 "$decision_open_lcluster$"
- war_goal_wg_access_lcluster_desc:0 "The closure of the entire §EL-Clusters§! poses a threat and a major shift in the galactic balance."
+ war_goal_wg_access_lcluster_desc:0 "Start a war to open the §EL-Clusters§! and the border of hostile civilization and obtain 20 years of right of passage.\n The closure of the entire §EL-Clusters§! poses a threat and a major shift for the galactic balance."
+ war_goal_wg_access_lcluster_tooltip:0 "§Y[From.GetName]§! has been defeated, they put down their arrogance and agreed to open the L-Gates and the border to us within §Y20§! years.\n§Y[Root.GetName]§! has gained §G+100§! £influence£\n"
+ war_goal_wg_access_lcluster_long:0 "$decision_open_lcluster$ and L-Gates"
+ war_goal_wg_access_lcluster_long_desc:0 "Start a war to open the §EL-Gates§! and the border of hostile civilizations, gain 50 years of right of way and end the competition.\n The closure of the entire §EL-Clusters§! poses a threat and a major shift for the galactic balance."
+ war_goal_wg_access_lcluster_long_tooltip:0 "§Y[From.GetName]§! has been completely defeated, they had to put down their arrogance and agreed to open the border and §EL-Gates§! to us within §Y50§!. At the same time, we also ended the state of rivals with them, but obviously they did not agree with this result and would strike back one day in the future.\n§Y[Root.GetName]§! has gained §G+150§! £influence£\n"
+ opinion_wg_access_lcluster_long:0 "Be rampant in our territory"

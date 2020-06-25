@@ -104,21 +104,6 @@ CmtEffectCreateShip_KhanArmy = {
 	}
 }
 
-CmtEffectCreateShip_KhanConstructor = {
-	create_fleet = {
-		name = "NAME_Constructor"
-		effect = {
-			set_owner = prev
-			create_ship = {
-				name = random
-				design = "NAME_Constructor"
-				graphical_culture = "pirate_01"
-				# effect = { CmtEffectFasterKhanConstructor = yes }
-			}
-			# CmtFleetSetAuxParam_KhanAuxiliary = yes
-		}
-	}
-}
 
 #################
 ###  Dessanu  ###

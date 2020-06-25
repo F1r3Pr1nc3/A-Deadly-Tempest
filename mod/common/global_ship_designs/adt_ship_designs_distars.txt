@@ -2,12 +2,10 @@
 ship_design = {
 	name = "NAME_Nanite_Mothership"
 	ship_size = graygoo_mothership
-	is_event_design = yes
-
+	# is_event_design = yes
 	section = {
 		template = "nanite_mothership_key"
 		slot = "mid"
-
 		component = {
 			slot = "TITAN_01"
 			template = "NANITE_BEAM"
@@ -68,7 +66,6 @@ ship_design = {
 			slot = "STRIKE_CRAFT_10"
 			template = "NANITE_STRIKE_CRAFT"
 		}
-
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_SHIELD_5"
@@ -138,17 +135,14 @@ ship_design = {
 }
 
 ### Nanite Ships
-
 # Gray Warship
 ship_design = {
 	name = "NAME_Nanite_Warship"
 	ship_size = graygoo_mothership
 	is_event_design = yes
-
 	section = {
 		template = "gray_warship_key"
 		slot = "mid"
-
 		component = {
 			slot = "TITAN_01"
 			template = "NANITE_BEAM"
@@ -229,7 +223,6 @@ ship_design = {
 			slot = "PD_02"
 			template = "POINT_DEFENCE_3"
 		}
-
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_SHIELD_5"
@@ -322,11 +315,10 @@ ship_design = {
 ship_design = {
 	name = "NAME_Nanite_Interdictor"
 	ship_size = graygoo_interdictor
-	is_event_design = yes
+	# is_event_design = yes
 	section = {
 		template = "nanite_interdictor_key"
 		slot = "mid"
-
 		component = {
 			slot = "TORPEDO_01"
 			template = "NANITE_ENERGY_TORPEDO"
@@ -355,7 +347,6 @@ ship_design = {
 			slot = "STRIKE_CRAFT_03"
 			template = "NANITE_STRIKE_CRAFT"
 		}
-
 		component = {
 			slot = "MEDIUM_UTILITY_1"
 			template = "MEDIUM_SHIELD_5"
@@ -396,13 +387,13 @@ ship_design = {
 			slot = "AUX_UTILITY_2"
 			template = "SHIELD_BOOSTER"
 		}
-
 	}
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
 	required_component = "SHIP_THRUSTER_4"
 	required_component = "CRUISER_ZERO_POINT_REACTOR"
-	required_component = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
+	required_component = "COMBAT_NANITE_COMPUTER_LINE_AUTONOMOUS"
+	# required_component = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
 }
 
 # Factory
@@ -410,11 +401,9 @@ ship_design = {
 	name = "NAME_Nanite_Factory"
 	ship_size = graygoo_factory
 	is_event_design = yes
-
 	section = {
 		template = "nanite_factory_key"
 		slot = "mid"
-
 		component = {
 			slot = "TITAN_01"
 			template = "NANITE_BASE_BEAM"
@@ -527,7 +516,6 @@ ship_design = {
 			slot = "STRIKE_CRAFT_15"
 			template = "NANITE_STRIKE_CRAFT"
 		}
-
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_SHIELD_5"
@@ -601,9 +589,9 @@ ship_design = {
 			template = "ENIGMATIC_DECODER"
 		}
 	}
-	required_component="GUARDIAN_SENSORS"
-	required_component="ENIGMATIC_DISRUPTION_FIELD"
-	required_component="TITAN_DARK_MATTER_REACTOR"
+	required_component = "GUARDIAN_SENSORS"
+	required_component = "ENIGMATIC_DISRUPTION_FIELD"
+	required_component = "TITAN_DARK_MATTER_REACTOR"
 }
 
 ### Dessanu Ships
@@ -613,11 +601,9 @@ ship_design = {
 	name = "NAME_Dessanu_Mothership"
 	ship_size = graygoo_mothership
 	is_event_design = yes
-
 	section = {
 		template = "nanite_mothership_key"
 		slot = "mid"
-
 		component = {
 			slot = "TITAN_01"
 			template = "GG_BEAM_STATIC"
@@ -678,7 +664,6 @@ ship_design = {
 			slot = "STRIKE_CRAFT_10"
 			template = "GG_STRIKE_CRAFT"
 		}
-
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_SHIELD_5"
@@ -755,7 +740,6 @@ ship_design = {
 	section = {
 		template = "nanite_interdictor_key"
 		slot = "mid"
-
 		component = {
 			slot = "TORPEDO_01"
 			template = "ENERGY_TORPEDO_2"
@@ -784,7 +768,6 @@ ship_design = {
 			slot = "STRIKE_CRAFT_03"
 			template = "GG_STRIKE_CRAFT"
 		}
-
 		component = {
 			slot = "MEDIUM_UTILITY_1"
 			template = "MEDIUM_SHIELD_5"
@@ -825,7 +808,6 @@ ship_design = {
 			slot = "AUX_UTILITY_2"
 			template = "SHIELD_BOOSTER"
 		}
-
 	}
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
@@ -836,13 +818,13 @@ ship_design = {
 
 # Restored Automated Dreadnought
 ship_design = {
-	name = "NAME_Type_51"
-	ship_size = npc_warship_01
-
+	name = "NAME_Type_69"
+	ship_size = auto_dread
+	# is_event_design = yes
 	section = {
-		template = "automated_dreadnought_key"
+		# template = "automated_dreadnought_key"
+		template = "auto_dread_key"
 		slot = "mid"
-
 		component = {
 			slot = "EXTRA_LARGE_01"
 			template = "NANITE_BEAM"
@@ -980,11 +962,10 @@ ship_design = {
 			template = "AFTERBURNER_2"
 		}
 	}
-	required_component="PSI_JUMP_DRIVE_1"
-	required_component="SENSOR_4"
-	required_component="SHIP_THRUSTER_4"
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "SHIP_THRUSTER_4"
 	required_component = "TITAN_ZERO_POINT_REACTOR"
-	# required_component="COMBAT_COMPUTER_LINE_SAPIENT"
 	required_component = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
 }
 
@@ -1055,4 +1036,276 @@ ship_design = {
 	required_component = "SENSOR_2"
 	required_component = "TITAN_ANTIMATTER_REACTOR"
 	required_component = "COMBAT_COMPUTER_PLATFORM_ADVANCED"
+}
+
+
+# Scavenger Bot
+ship_design = {
+	name = "NAME_Scavenger_Bot"
+	ship_size = scavenger_bot
+	is_event_design = yes
+	section = {
+		template = "scavenger_bot_key"
+		slot = "mid"
+		component = {
+			slot = "TITAN_01"
+			template = "SCAVENGER_MAIN_WEAPON"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "SCAVENGER_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "SCAVENGER_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "SCAVENGER_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "SCAVENGER_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "TORPEDO_05"
+			template = "SCAVENGER_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "TORPEDO_06"
+			template = "SCAVENGER_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "TORPEDO_07"
+			template = "SCAVENGER_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "PD_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "SHIELD_BOOSTER"
+		}
+	}
+	section = {
+		template = "scavenger_bot_small_bot_1_key"
+		slot = "bot_1"
+		component = {
+			slot = "TORPEDO_01"
+			template = "SCAVENGER_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "PD_01"
+			template = "POINT_DEFENCE_3"
+		}
+	}
+	section = {
+		template = "scavenger_bot_small_bot_2_key"
+		slot = "bot_2"
+		component = {
+			slot = "TORPEDO_01"
+			template = "SCAVENGER_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "PD_01"
+			template = "POINT_DEFENCE_3"
+		}
+	}
+	section = {
+		template = "scavenger_bot_small_bot_3_key"
+		slot = "bot_3"
+		component = {
+			slot = "TORPEDO_01"
+			template = "SCAVENGER_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "PD_01"
+			template = "POINT_DEFENCE_3"
+		}
+	}
+	required_component = "HYPER_DRIVE_3"
+	required_component = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "SENSOR_4"
+}
+
+# Nanite Dragon
+ship_design = {
+	name = "NAME_Nanite_Dragon"
+	ship_size = nanite_dragon
+	is_event_design = yes
+	section = {
+		template = "nanite_dragon_key"
+		slot = "mid"
+		component = {
+			slot = "PRIMARY_GUN_01"
+			template = "DRAGON_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_01"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_02"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_03"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_04"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_05"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_06"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_07"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_08"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_01"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_02"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_03"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_04"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR_2"
+		}
+	}
+	required_component = "GUARDIAN_DRIVE"
+	required_component = "COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+	required_component = "GUARDIAN_PROPULSION"
+	required_component = "GUARDIAN_SENSORS"
 }

@@ -14,7 +14,7 @@ wg_access_lcluster = {
 	cede_claims = occupied_only # yes/occupied_only/no
 	release_occupied_systems_on_status_quo = yes
 	# This affects how likely the AI is to surrender to this wargoal, generally less willing on more severe wargoals (negative numbers = less willing)
-	surrender_acceptance = -100 # Default 0
+	surrender_acceptance = 25 # Default 0
 	# This affects how quickly war exhaustion builds up for this side in the war (2.0 = twice as fast)
 	war_exhaustion = 0.5 # Default 1.0
 	# If used as attacker wargoal and set, defender will have their wargoal predetermined by this
@@ -49,7 +49,7 @@ wg_access_lcluster = {
 	}
 
 	ai_weight = {
-		weight = 100
+		weight = 25
 	}
 	# Run when war ends in status quo
 	on_status_quo = {
@@ -62,6 +62,7 @@ wg_access_lcluster = {
 	}
 	# Run when target surrenders after claims are ceded
 	on_accept = {
+		custom_tooltip = wg_access_lcluster_long_tooltip
 		FROM = {
 			random_system_within_border = {
 				limit = { has_star_flag = lcluster1 }
@@ -69,11 +70,115 @@ wg_access_lcluster = {
 			}
 		}
 		hidden_effect = {
+			add_resource = { influence = 100 }
+			end_rivalry = FROM
 			FROM = {
 				add_threat = {
-					who = root
+					who = ROOT
 					amount = 0.5
 				}
+				set_closed_borders = {
+					who = ROOT
+					status = no
+					forced = 20
+				 }
+				end_rivalry = ROOT
+				add_opinion_modifier = { modifier = "opinion_wg_access_lcluster_long" who = ROOT }
+				set_country_flag = lgates_activated
+				add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
+			}
+			set_global_flag = lgates_activated_globally
+			ROOT = { set_country_flag = lgates_activated }
+		}
+	}
+}
+
+wg_access_lcluster_long = {
+	# Required, the actor must have a Casus Belli against the target
+	casus_belli = cb_lgate_port
+	# Hide this wargoal if country doesn't have the requisite CB
+	hide_if_no_cb = yes	# Default no
+	total_war = no
+
+	allowed_peace_offers = {
+		status_quo
+		surrender
+		demand_surrender
+	}
+	# Cede claims on peace?
+	cede_claims = occupied_only # yes/occupied_only/no
+	release_occupied_systems_on_status_quo = yes
+	# This affects how likely the AI is to surrender to this wargoal, generally less willing on more severe wargoals (negative numbers = less willing)
+	surrender_acceptance = -30 # Default 0
+	# This affects how quickly war exhaustion builds up for this side in the war (2.0 = twice as fast)
+	war_exhaustion = 0.5 # Default 1.0
+	# If used as attacker wargoal and set, defender will have their wargoal predetermined by this
+	# If not set, defender gets to pick their own wargoal
+	set_defender_wargoal = wg_access_lcluster_long
+	#	# Defenders get this war goal if no war goal is picked in time. If multiple war goals are set to
+#	# be defender default, the first one scripted in the file is chosen.
+#	defender_default = yes # Default no
+	# This decides whether claims should be listed in the description
+#	show_claims_in_description = yes # Default no
+
+	# FROM = The targeted country
+	# THIS = The acting country
+	potential = {
+		always = yes # no means event only
+	}
+	possible = {
+		always = yes
+	}
+
+	on_wargoal_set = {
+		FROM = {
+			random_system_within_border = {
+				limit = { has_star_flag = lcluster1 }
+				add_claims = {
+					who = ROOT
+					num_of_claims = 1
+					show_notification = yes
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 75
+	}
+	# Run when war ends in status quo
+	on_status_quo = {
+		set_global_flag = lgates_activated_globally
+		FROM = {
+			set_country_flag = lgates_activated
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
+		}
+		set_country_flag = lgates_activated
+	}
+	# Run when target surrenders after claims are ceded
+	on_accept = {
+		custom_tooltip = wg_access_lcluster_long_tooltip
+		FROM = {
+			random_system_within_border = {
+				limit = { has_star_flag = lcluster1 }
+				starbase = { set_owner = ROOT }
+			}
+		}
+		hidden_effect = {
+			add_resource = { influence = 150 }
+			end_rivalry = FROM
+			FROM = {
+				add_threat = {
+					who = ROOT
+					amount = 0.5
+				}
+				set_closed_borders = {
+					who = ROOT
+					status = no
+					forced = 50
+				 }
+				end_rivalry = ROOT
+				add_opinion_modifier = { modifier = "opinion_wg_access_lcluster_long" who = ROOT }
 				set_country_flag = lgates_activated
 				add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
 			}

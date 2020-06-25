@@ -28,46 +28,46 @@
  ### Common Words (All of them are shown in options)
  CmtTextOK.name:0 "OK."
  CmtTextOK.tooltip:1 ""
- CmtTextExit.name:0 "§GExit Menu§!"
+ CmtTextExit.name:0 "§GMenü verlassen§!"
  CmtTextExit.tooltip:1 ""
- CmtTextGoBack.name:0 "Go Back"
+ CmtTextGoBack.name:0 "Zurück"
  CmtTextGoBack.tooltip:1 ""
- CmtTextGoNextPage.name:0 "Go Next"
+ CmtTextGoNextPage.name:0 "Weiter"
  CmtTextGoNextPage.tooltip:1 ""
- CmtTextGoNextConfig.name:0 "Go Next Configration"
+ CmtTextGoNextConfig.name:0 "Weiter mit der nächsten Konfiguration"
  CmtTextGoNextConfig.tooltip:1 ""
- CmtTextGoBackMain.name:0 "Go Back to Main Menu"
+ CmtTextGoBackMain.name:0 "Zurück zum Hauptmenü"
  CmtTextGoBackMain.tooltip:1 ""
- CmtTextGoBackViewerMenu.name:0 "Go Back to Viewer Menu"
+ CmtTextGoBackViewerMenu.name:0 "Zurück zum Viewermenü"
  CmtTextGoBackViewerMenu.tooltip:1 ""
- CmtTextKeepCurrent.name:0 "Keep Current Configuration"
+ CmtTextKeepCurrent.name:0 "Behalte die aktuelle Konfiguration bei"
  CmtTextKeepCurrent.tooltip:1 ""
- CmtTextSetIndividually.name:0 "Set Individually for Each Crises"        ## The active voice. This is used as title of options.
+ CmtTextSetIndividually.name:0 "Für jede Krise individuell einstellen"        ## The active voice. This is used as title of options.
  CmtTextSetIndividually.tooltip:1 ""
  CmtTextErrUndefined.name:0 "§EUndefined§! (§RError!!§!)"
  CmtTextErrUndefined.tooltip:0 "Something is wrong, and this option is deactivated.\nPlease re-configurate it for activating this option."
  CmtTextSeparator.name:1 "----------------------------------------------------------------"        ## '-' x64
  CmtTextSeparator.tooltip:0 "This is a separator with no effect."
- CmtTextTemplateUnique.name:0 "§WUnique Value of Template§!"
- CmtTextTemplateUnique.desc:0 "The unique value set by user template"
+ CmtTextTemplateUnique.name:0 "§WEindeutiger Wert der Vorlage§!"
+ CmtTextTemplateUnique.desc:0 "Der von der Benutzervorlage festgelegte eindeutige Wert"
 
  ### Footnotes for Descriptions
- CmtTextCurrent:0 "§WCurrent Setting: §!"
- CmtTextOperation:0 "§WSelected Operation: §!"
- CmtTextCurrentEnd:0 "§WCurrent Setting ($CmtNameEndgame$): §!"
- CmtTextCurrentMid:0 "§WCurrent Setting ($CmtNameMidgame$): §!"
- CmtTextSetIndividuallyPassive:0 "Set individually for each crises"        ## The passive voice. This is used like 'Current Settings: Set Individually for Each Crises'
+ CmtTextCurrent:0 "§WAktuelle Einstellung: §!"
+ CmtTextOperation:0 "§WAusgewählte Operation: §!"
+ CmtTextCurrentEnd:0 "§WAktuelle Einstellung ($CmtNameEndgame$): §!"
+ CmtTextCurrentMid:0 "§WAktuelle Einstellung ($CmtNameMidgame$): §!"
+ CmtTextSetIndividuallyPassive:0 "Individuell für jede Krise"        ## The passive voice. This is used like 'Aktuelle Einstellungs: Set Individually for Each Crises'
 
  ### Common Words in Options
- CmtTextSwitchToForbid:0 "Switch to §BForbid§!"
- CmtTextSwitchToAllow:0 "Switch to §GAllow§!"
+ CmtTextSwitchToForbid:0 "Wechseln zu §BForbid§!"
+ CmtTextSwitchToAllow:0 "Wechseln zu §GAllow§!"
  CmtTextListedNone:1 "-"
 
  ### Cautions
- CmtWarn0:0 "Notice"
- CmtWarn1:0 "§YAttention§!"
- CmtWarn2:0 "§HCaution!§!"
- CmtWarn3:0 "§RWarning!!§!"
+ CmtWarn0:0 "Notiz"
+ CmtWarn1:0 "§YAchtung§!"
+ CmtWarn2:0 "§HVorsicht!§!"
+ CmtWarn3:0 "§RWarnung!!§!"
 
  ### Sidenotes
  CmtTextDefault:0 "(Default)"
@@ -76,17 +76,16 @@
  CmtTextUpdate0:0 "§RNon-updated§!"
  CmtTextUpdate1:0 "§HBata Version§!"
  CmtTextUpdate2:0 "§GStable Version§!"
- CmtTextFriendly:0 "Friendly"
- CmtTextHostile:0 "Hostile"
+ CmtTextFriendly:0 "Freundlich"
+ CmtTextHostile:0 "Feindlich"
  CmtSignTimes:0 "×"        ## Multiplication Sign, used like ''Fleet Power: × 1.25''.
  CmtSignPlus:0 "+"
  CmtSignMinus:0 "-"
  CmtSignZero:0 "±0"        ## Plus-Minus Zero
 
  ### For only debug mode
- CmtTextTurnOn:0 ": Current §ROFF§!, Turn ON"
- CmtTextTurnOff:0 ": Current §GON§!, Turn OFF"
-
+ CmtTextTurnOn:0 ": Aktuell §ROFF§!, Anschalten"
+ CmtTextTurnOff:0 ": Aktuell §GON§!, Abschalten"
 
 
  ###########################################
@@ -102,8 +101,8 @@
  CmtDescTemplateInfoNull:1 ""
 
  ### For Initial Words
- CmtDescNpc:0 "NPCs: the empire controled by AI, but not a human player."
- CmtDescPcNpc:0 "PCs: the empire controled by you or other person.\nNPCs: the empire controled by AI."
+ CmtDescNpc:0 "NPCs: das von der KI kontrollierte Imperium, aber kein menschlicher Spieler."
+ CmtDescPcNpc:0 "PCs: das von Ihnen oder einer anderen Person kontrollierte Reich.\nNPCs: the empire controled by AI."
  CmtDescEgsy:0 "$CmtWarn0$: EGSY means ''End-Game Start Year''"
  CmtDescMgsy:0 "$CmtWarn0$: MGSY means ''Mid-Game Start Year''"
  CmtDescMtth:0 "$CmtWarn0$\nMTTH means ''Mean Time to Happen''.\nShorter MTTH makes higher probability per elapsed time of the event."
@@ -139,7 +138,6 @@
 
  ### Mid-Game Edition
  CmtDescListedNotAllLgate:0 "$CmtWarn0$\nAlthough [CmtGlobalVar.GetValue.CmtVarManualLgate] L-Gates exists, only 8 L-Gates are listed here.\nSelect ''$CrisisManagerMenu.7141d.name$'' if the L-Gate you want to select is not listed."
-
 
 
  #######################################
@@ -189,7 +187,6 @@
  CmtNameMechUprising:0 "Machine Uprising"
 
 
-
  #####################################
  ###  Initialization Events, etc.  ###
  #####################################
@@ -208,12 +205,11 @@
  CrisisManagerMenu.0014b.tooltip:1 ""
 
 
-
  ###################
- ###  Main Menu  ###
+ ###  Main Menü  ###
  ###################
 
- CrisisManagerMenu.0100.name:0 "$CrisisManagerTitleB$ Menu"
+ CrisisManagerMenu.0100.name:0 "$CrisisManagerTitleB$ Menü"
  CrisisManagerMenu.0100.desc1:0 "$CmtTextTransitionalBetaFull$Here you can configure parameters of the crises.\nMost of configurations can be changed until the corresponding events happen.\n\n$CmtDescTooltipInfo$"
  CrisisManagerMenu.0100.desc2:0 "§HAny events controlled by this mod have been triggered already.§!\nSo, some of configurations can be changed no more.\n\n$CmtDescTooltipInfo$"
  CrisisManagerMenu.0100.desc3:0 "$CrisisManagerMenu.0100.desc1$\n\n§WThis templete was applied: [CmtGlobalVar.GetName_LastAppliedTemplate]§!"
@@ -236,12 +232,11 @@
  CrisisManagerMenu.0100.9000.tooltip:0 "§RFor only debugging.§!"
 
 
-
  ###############################
  ###  Configurations Viewer  ###
  ###############################
 
- CrisisManagerMenu.1000.title:0 "Configuration Viewer"
+ CrisisManagerMenu.1000.title:0 "Konfigurations-Viewer"
  CrisisManagerMenu.1000.name:1 "$CrisisManagerMenu.1000.title$ $CrisisManagerTitleC$"
  CrisisManagerMenu.1000.desc1:0 "All configurations are shown in these links.\nAll parameters can be changed individually from the links."
  CrisisManagerMenu.1000.desc2:0 "All configurations are shown in these links.\nSome of parameters §Hcannot be changed§! because the crisis has already happend."
@@ -250,7 +245,7 @@
  CrisisManagerMenu.1000a.tooltip:1 ""
  CrisisManagerMenu.1000b.tooltip:0 "Several Window are opend to show all configurations."
 
- CrisisManagerMenu.1000.1010.name:0 "Common Configurations for Crises"
+ CrisisManagerMenu.1000.1010.name:0 "Allgemeine Konfigurationen für Krisen"
  CrisisManagerMenu.1000.1021.name:1 "$CmtNamePrethoryn$"
  CrisisManagerMenu.1000.1022.name:1 "$CmtNameExds$, $CmtNameForcedEoc$"
  CrisisManagerMenu.1000.1023.name:1 "$CmtNameContingency$"
@@ -274,10 +269,10 @@
  CrisisManagerMenu.1000.1032.tooltip:1 ""
  CrisisManagerMenu.1000.1033.tooltip:1 ""
 
- CrisisManagerMenu.10xx.desc:0 "Current configurations are shown here."
- CrisisManagerMenu.10xx.desc1:0 "$CrisisManagerMenu.10xx.desc$\nAll configurations can be changed individually."
- CrisisManagerMenu.10xx.desc2a:0 "$CrisisManagerMenu.10xx.desc$\n§HAny configurations cannot be changed§! because events related to them have already happend."
- CrisisManagerMenu.10xx.desc2b:0 "$CrisisManagerMenu.10xx.desc$\n§HSome of parameters cannot be configured§! because events related to them have already happend."
+ CrisisManagerMenu.10xx.desc:0 "Aktuelle Konfigurationen werden hier angezeigt."
+ CrisisManagerMenu.10xx.desc1:0 "$CrisisManagerMenu.10xx.desc$\nAlle Konfigurationen können einzeln geändert werden."
+ CrisisManagerMenu.10xx.desc2a:0 "$CrisisManagerMenu.10xx.desc$\n§HKonfigurationen können nicht geändert werden§! weil damit verbundene Ereignisse bereits eingetreten sind."
+ CrisisManagerMenu.10xx.desc2b:0 "$CrisisManagerMenu.10xx.desc$\n§HEinige Parameter können nicht konfiguriert werden§! weil damit verbundene Ereignisse bereits eingetreten sind."
  CrisisManagerMenu.10xx.footnote:0 "§WThis Page: §!"
 
  CrisisManagerMenu.1010.name:1 "$CrisisManagerMenu.1000.title$ $CrisisManagerTitleC$"
@@ -313,15 +308,14 @@
  CrisisManagerMenu.1033.desc:1 "$CrisisManagerMenu.10xx.desc1$\n$CrisisManagerMenu.10xx.footnote$§W$CrisisManagerMenu.1000.1033.name$§!"
 
 
-
  ###################
  ###  Templates  ###
  ###################
 
- CrisisManagerMenu.2100.name:0 "List of Configuration Templates"
- CrisisManagerMenu.2100.desc:0 "Here you can select any template of configurations.\n\n$CrisisManagerTemplateList.desc$\n\n$CmtDescTemplateInfoFull$"
+ CrisisManagerMenu.2100.name:0 "Liste der Konfigurationsvorlagen"
+ CrisisManagerMenu.2100.desc:0 "Hier kannst Du eine beliebige Vorlage für die Konfigurationen auswählen.\n\n$CrisisManagerTemplateList.desc$\n\n$CmtDescTemplateInfoFull$"
  CrisisManagerTemplate_T000.title:0 "Default"        # Name of Template
- CrisisManagerTemplate_T000.tooltip:0 "Return all configurations to default."
+ CrisisManagerTemplate_T000.tooltip:0 "Setze alle Konfigurationen auf die Standardeinstellungen zurück."
  CmtTemplateEvent_EMS:0 " $CmtIconTemplateEvent$(All)"
  CmtTemplateEvent_EM_:0 " $CmtIconTemplateEvent$(E/M)"
  CmtTemplateEvent_E_S:0 " $CmtIconTemplateEvent$(E/S)"
@@ -353,7 +347,6 @@
  CrisisManagerTemplate_T114.name:1 "[CmtGlobalVar.GetName_CmtTemplateEvent_T114][CmtGlobalVar.GetName_CmtTemplatePower_T114]:   $CrisisManagerTemplate_T114.title$"
  CrisisManagerTemplate_T115.name:1 "[CmtGlobalVar.GetName_CmtTemplateEvent_T115][CmtGlobalVar.GetName_CmtTemplatePower_T115]:   $CrisisManagerTemplate_T115.title$"
  CrisisManagerTemplate_T116.name:1 "[CmtGlobalVar.GetName_CmtTemplateEvent_T116][CmtGlobalVar.GetName_CmtTemplatePower_T116]:   $CrisisManagerTemplate_T116.title$"
-
 
 
  ########################################
@@ -431,20 +424,20 @@
 
 
  ### At the Earliest
- CrisisManagerMenu.3130.title:0 "Crises to Happen at Earliest"
- CrisisManagerMenu.3130.desc:0 "A configuration of the year crisis happens at the earliest.\n\n$CmtDescEgsy$"
+ CrisisManagerMenu.3130.title:0 "Krisen ereignen sich frühestens bei"
+ CrisisManagerMenu.3130.desc:0 "Eine Konfiguration des Jahres, in welchem die Krise frühestens auftritt.\n\n$CmtDescEgsy$"
  CrisisManagerMenu.3130x.title:1 "$CrisisManagerMenu.3130.title$: "
- CrisisManagerMenu.3130.V9.title:0 "Crises to Happen at Earliest §YEGSY +100 Years§!"
- CrisisManagerMenu.3130.V8.title:0 "Crises to Happen at Earliest §YEGSY +75 Years§!"
- CrisisManagerMenu.3130.V7.title:0 "Crises to Happen at Earliest §YEGSY +50 Years§!"
- CrisisManagerMenu.3130.V6.title:0 "Crises to Happen at Earliest §YEGSY +25 Years§!"
- CrisisManagerMenu.3130.V5.title:0 "Crises to Happen at Earliest §YEGSY $CmtSignZero$ Years§!"
- CrisisManagerMenu.3130.V4.title:0 "Crises to Happen at Earliest §YEGSY -25 Years§!"
- CrisisManagerMenu.3130.V3.title:0 "Crises to Happen at Earliest §YEGSY -50 Years§!"
- CrisisManagerMenu.3130.V2.title:0 "Crises to Happen at Earliest §YEGSY -75 Years§!"
- CrisisManagerMenu.3130.V1.title:0 "Crises to Happen at Earliest §YEGSY -100 Years§!"
+ CrisisManagerMenu.3130.V9.title:0 "$CrisisManagerMenu.3130.title$ §YEGSY +100 Years§!"
+ CrisisManagerMenu.3130.V8.title:0 "$CrisisManagerMenu.3130.title$ §YEGSY +75 Years§!"
+ CrisisManagerMenu.3130.V7.title:0 "$CrisisManagerMenu.3130.title$ §YEGSY +50 Years§!"
+ CrisisManagerMenu.3130.V6.title:0 "$CrisisManagerMenu.3130.title$ §YEGSY +25 Years§!"
+ CrisisManagerMenu.3130.V5.title:0 "$CrisisManagerMenu.3130.title$ §YEGSY $CmtSignZero$ Years§!"
+ CrisisManagerMenu.3130.V4.title:0 "$CrisisManagerMenu.3130.title$ §YEGSY -25 Years§!"
+ CrisisManagerMenu.3130.V3.title:0 "$CrisisManagerMenu.3130.title$ §YEGSY -50 Years§!"
+ CrisisManagerMenu.3130.V2.title:0 "$CrisisManagerMenu.3130.title$ §YEGSY -75 Years§!"
+ CrisisManagerMenu.3130.V1.title:0 "$CrisisManagerMenu.3130.title$ §YEGSY -100 Years§!"
  CrisisManagerMenu.3130.V0.title:0 "Crises to Happen §Rat Earliest 2205§!"
- CrisisManagerMenu.3130.VC.title:0 "Crises to Happen at Earliest §YEGSY [CmtGlobalVar.GetSign_CmtVarEarliestEgpy][CmtGlobalVar.GetValue.CmtVarEarliestEgpy] Years§!"
+ CrisisManagerMenu.3130.VC.title:0 "$CrisisManagerMenu.3130.title$ §YEGSY [CmtGlobalVar.GetSign_CmtVarEarliestEgpy][CmtGlobalVar.GetValue.CmtVarEarliestEgpy] Years§!"
  CrisisManagerMenu.3130.V9.tooltip:1 "$CmtDescEgsy$"
  CrisisManagerMenu.3130.V8.tooltip:1 "$CmtDescEgsy$"
  CrisisManagerMenu.3130.V7.tooltip:1 "$CmtDescEgsy$"
@@ -537,17 +530,17 @@
 
 
  ### Progress Speed of Opening Event Chain
- CrisisManagerMenu.3160.title:0 "Progress Speed of Opening Events"
- CrisisManagerMenu.3160.desc:0 "A configuration for progress speed of the crises opening event chains.\nSee also: ''$CrisisManagerMenu.3160y.name$''."
+ CrisisManagerMenu.3160.title:0 "Verlaufsgeschwindigkeit beim Öffnen von Ereignissen"
+ CrisisManagerMenu.3160.desc:0 "Eine Konfiguration für die Fortschrittsgeschwindigkeit der Krisen, die Ereignisketten öffnen.\nSee also: ''$CrisisManagerMenu.3160y.name$''."
  CrisisManagerMenu.3160a.title:0 "§MVery Slow§!"
  CrisisManagerMenu.3160b.title:0 "§BRandomly Slow§!"
  CrisisManagerMenu.3160c.title:0 "§GStandard§!"
  CrisisManagerMenu.3160d.title:0 "§YFast§!"
  CrisisManagerMenu.3160e.title:0 "§HRandomly Fast§!"
  CrisisManagerMenu.3160f.title:0 "§RFoxhound§!"        ## Origin of the name: Mig-31, interceptor aircraft.
- CrisisManagerMenu.3160x.title:0 "Speed of Opening Event: "
- CrisisManagerMenu.3160y.name:0 "What does it mean?"
- CrisisManagerMenu.3160x.tooltip:0 "The time from crisis triggered to 1st attacking: "
+ CrisisManagerMenu.3160x.title:0 "Geschwindigkeit des Eröffnungs-Ereignisses: "
+ CrisisManagerMenu.3160y.name:0 "Was bedeutet das?"
+ CrisisManagerMenu.3160x.tooltip:0 "Die Zeit von der Krise bis zum ersten Angriff: "
  CrisisManagerMenu.3160a.tooltip:0 "$CrisisManagerMenu.3160x.tooltip$§YAbout 23 - 26 years§!"
  CrisisManagerMenu.3160b.tooltip:0 "$CrisisManagerMenu.3160x.tooltip$§YAbout 5 - 30 years§!"
  CrisisManagerMenu.3160c.tooltip:1 ""
@@ -745,8 +738,8 @@
 
 
  ### Faster Constructors
- CrisisManagerMenu.3250.title:0 "Faster Constructors"
- CrisisManagerMenu.3250.desc:0 "A configuration for sublight speed and jump charge time of construction ships of Crisis Factions.\n\n$CmtWarn0$:  Build time of starbases is NOT modified.\n$CmtDescForOnlyEndgame$"
+ CrisisManagerMenu.3250.title:0 "Schnellere Konstruktoren"
+ CrisisManagerMenu.3250.desc:0 "Eine Konfiguration für die Geschwindigkeit des Unterlicht- und Sprungzeiten von Konstruktionschiffen der Krisenfraktionen.\n\n$CmtWarn0$:  Die Erstellungszeit von Sternenbasen wird NICHT geändert.\n$CmtDescForOnlyEndgame$"
  CrisisManagerMenu.3250a.title:0 "§MVery Slow§! Constructors"
  CrisisManagerMenu.3250b.title:0 "§BSlow§! Constructors"
  CrisisManagerMenu.3250c.title:0 "§GMiddle Speed§! of Constructors"
@@ -773,15 +766,15 @@
  CrisisManagerMenu.3250z.name:1 "$CrisisManagerMenu.3250x.title$$CmtTextErrUndefined.name$"
  CrisisManagerMenu.3250z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
- ### Friendly Crisis
- CrisisManagerMenu.3260.title:0 "Friendly Crisis"
- CrisisManagerMenu.3260.desc:0 "A configuration of relationship of crisis factions with each other.\n\n$CmtWarn1$\nThis configuration dose NOT control relationship between crisis factions and general empires. The crisis factions are always hostile with general empires.\n\n$CmtWarn2$: Some of crises fleets may loaf at the stellar system of a friend.\n$CmtDescForOnlyEndgame$"
+ ### Freundliche Krise
+ CrisisManagerMenu.3260.title:0 "Freundliche Krise"
+ CrisisManagerMenu.3260.desc:0 "Eine Konfiguration der Beziehung von Krisenfraktionen zueinander.\n\n$CmtWarn1$\nDiese Konfiguration kontrolliert NICHT die Beziehung zwischen Krisenfraktionen und allgemeinen Imperien. Die Krisenfraktionen sind immer feindlich gegenüber allgemeinen Imperien.\n\n$CmtWarn2$: Einige der Krisenflotten können sich im Sternensystem eines Freundes aufhalten.\n$CmtDescForOnlyEndgame$"
  CrisisManagerMenu.3260a.title:0 "§GCrisis factions Hostile§! to Each Other"
  CrisisManagerMenu.3260b.title:0 "§YOnly EXDs Friendly§! with Each Other"
  CrisisManagerMenu.3260c.title:0 "§HCrisis factions except EXDs Friendly§! with Each Other"
  CrisisManagerMenu.3260d.title:0 "§RCrisis factions Friendly§! with Each Other"
  CrisisManagerMenu.3260x.title:1 "$CrisisManagerMenu.3260.title$: "
- CrisisManagerMenu.3260a.tooltip:0 "Each crisis factions will fight each other if they meet.\n\n$CmtNameUnbidden$ - $CmtNameAberrant$: $CmtTextHostile$\n$CmtNameAberrant$ - $CmtNameVehement$: $CmtTextHostile$\n$CmtNameVehement$ - $CmtNameUnbidden$: $CmtTextHostile$\n\n$CmtNamePrethoryn$ - $CmtNameContingency$: $CmtTextHostile$\n$CmtNamePrethoryn$ - $CmtNameUnbidden$: $CmtTextHostile$\n$CmtNamePrethoryn$ - $CmtNameAberrant$: $CmtTextHostile$\n$CmtNamePrethoryn$ - $CmtNameVehement$: $CmtTextHostile$\n$CmtNameContingency$ - $CmtNameUnbidden$: $CmtTextHostile$\n$CmtNameContingency$ - $CmtNameAberrant$: $CmtTextHostile$\n$CmtNameContingency$ - $CmtNameVehement$: $CmtTextHostile$\n"
+ CrisisManagerMenu.3260a.tooltip:0 "Jede Krisenfraktion wird gegeneinander kämpfen, wenn sie sich trifft.\n\n$CmtNameUnbidden$ - $CmtNameAberrant$: $CmtTextHostile$\n$CmtNameAberrant$ - $CmtNameVehement$: $CmtTextHostile$\n$CmtNameVehement$ - $CmtNameUnbidden$: $CmtTextHostile$\n\n$CmtNamePrethoryn$ - $CmtNameContingency$: $CmtTextHostile$\n$CmtNamePrethoryn$ - $CmtNameUnbidden$: $CmtTextHostile$\n$CmtNamePrethoryn$ - $CmtNameAberrant$: $CmtTextHostile$\n$CmtNamePrethoryn$ - $CmtNameVehement$: $CmtTextHostile$\n$CmtNameContingency$ - $CmtNameUnbidden$: $CmtTextHostile$\n$CmtNameContingency$ - $CmtNameAberrant$: $CmtTextHostile$\n$CmtNameContingency$ - $CmtNameVehement$: $CmtTextHostile$\n"
  CrisisManagerMenu.3260b.tooltip:0 "Unbidden, Aberrant and Vehement are friendly with each other, and they will §Hnot§! fight each other.\nOther crisis factions are hostile to each other.\n\n$CmtNameUnbidden$ - $CmtNameAberrant$: $CmtTextFriendly$\n$CmtNameAberrant$ - $CmtNameVehement$: $CmtTextFriendly$\n$CmtNameVehement$ - $CmtNameUnbidden$: $CmtTextFriendly$\n\n$CmtNamePrethoryn$ - $CmtNameContingency$: $CmtTextHostile$\n$CmtNamePrethoryn$ - $CmtNameUnbidden$: $CmtTextHostile$\n$CmtNamePrethoryn$ - $CmtNameAberrant$: $CmtTextHostile$\n$CmtNamePrethoryn$ - $CmtNameVehement$: $CmtTextHostile$\n$CmtNameContingency$ - $CmtNameUnbidden$: $CmtTextHostile$\n$CmtNameContingency$ - $CmtNameAberrant$: $CmtTextHostile$\n$CmtNameContingency$ - $CmtNameVehement$: $CmtTextHostile$\n"
  CrisisManagerMenu.3260c.tooltip:0 "Unbidden, Aberrant and Vehement are hostile to each other.\n\nOther crisis factions are friendly with each other.\n$CmtNameUnbidden$ - $CmtNameAberrant$: $CmtTextHostile$\n$CmtNameAberrant$ - $CmtNameVehement$: $CmtTextHostile$\n$CmtNameVehement$ - $CmtNameUnbidden$: $CmtTextHostile$\n\n$CmtNamePrethoryn$ - $CmtNameContingency$: $CmtTextFriendly$\n$CmtNamePrethoryn$ - $CmtNameUnbidden$: $CmtTextFriendly$\n$CmtNamePrethoryn$ - $CmtNameAberrant$: $CmtTextFriendly$\n$CmtNamePrethoryn$ - $CmtNameVehement$: $CmtTextFriendly$\n$CmtNameContingency$ - $CmtNameUnbidden$: $CmtTextFriendly$\n$CmtNameContingency$ - $CmtNameAberrant$: $CmtTextFriendly$\n$CmtNameContingency$ - $CmtNameVehement$: $CmtTextFriendly$\n"
  CrisisManagerMenu.3260d.tooltip:0 "Crisis factions have cooperative relationship with each other.\nThey never fight each other, until they succeed annihilating all empire in the galaxy.\n\n$CmtNameUnbidden$ - $CmtNameAberrant$: $CmtTextFriendly$\n$CmtNameAberrant$ - $CmtNameVehement$: $CmtTextFriendly$\n$CmtNameVehement$ - $CmtNameUnbidden$: $CmtTextFriendly$\n\n$CmtNamePrethoryn$ - $CmtNameContingency$: $CmtTextFriendly$\n$CmtNamePrethoryn$ - $CmtNameUnbidden$: $CmtTextFriendly$\n$CmtNamePrethoryn$ - $CmtNameAberrant$: $CmtTextFriendly$\n$CmtNamePrethoryn$ - $CmtNameVehement$: $CmtTextFriendly$\n$CmtNameContingency$ - $CmtNameUnbidden$: $CmtTextFriendly$\n$CmtNameContingency$ - $CmtNameAberrant$: $CmtTextFriendly$\n$CmtNameContingency$ - $CmtNameVehement$: $CmtTextFriendly$\n"
@@ -799,12 +792,11 @@
  CrisisManagerMenu.3260z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
 
-
  #########################################
  ###  Advanced Configurations: Common  ###
  #########################################
 
- ### Menu
+ ### Menü
  CrisisManagerMenu.4000.title:0 "Advanced Configurations"
  CrisisManagerMenu.4000.name:1 "$CrisisManagerMenu.4000.title$ $CrisisManagerTitleC$"
  CrisisManagerMenu.4000.desc:0 "Here you can configurate parameters specific for each crises.\nThese configurations is for only fanatically meticulous player."
@@ -847,7 +839,6 @@
  CrisisManagerMenu.4000.4800.fail.tooltip:1 "§L$CrisisManagerMenu.4000.xxxx.fail.tooltip$§!"
  CrisisManagerMenu.4000.4900.fail.tooltip:1 "§L$CrisisManagerMenu.4000.xxxx.fail.tooltip$§!"
  CrisisManagerMenu.4000.5100.fail.tooltip:1 "§L$CrisisManagerMenu.4000.xxxx.fail.tooltip$§!"
-
 
 
  ############################################
@@ -977,7 +968,7 @@
  CrisisManagerMenu.4160b.title:0 "§HUnlimited§!"
  CrisisManagerMenu.4160x.title:0 "Flavor Texts of Prethoryn: "
  CrisisManagerMenu.4160a.tooltip:1 ""
- CrisisManagerMenu.4160b.tooltip:0 "Science is amazing! Translation software success to establish mind link."
+ CrisisManagerMenu.4160b.tooltip:0 "Die Wissenschaft ist unglaublich! Erfolg der Übersetzungssoftware, um eine Gedankenverbindung herzustellen."
 
  CrisisManagerMenu.4160.name:1 "$CrisisManagerMenu.4160.title$ $CrisisManagerTitleC$"
  CrisisManagerMenu.4160.desc1:1 "$CrisisManagerMenu.4160.desc$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.4160a.title$§!"
@@ -992,7 +983,7 @@
 
  ### Forbid Extradimensional Invasion
  CrisisManagerMenu.4210.title:0 "Forbid $CmtNameCrisisExds$"
- CrisisManagerMenu.4210.desc:0 "A configuration for forbiding to open extradimensional portals.\n\n$CmtWarn2$: Following 4 options interfere with each other.\nThe priority of them:\n(1) $CrisisManagerMenu.4210a.title$\n(2) $CrisisManagerMenu.3110e.title$ / $CrisisManagerMenu.3150d.title$\n(3) $CrisisManagerMenu.4210b.title$\n\nThis means that if you select one of ''(2)'' in above list and §GRequire Jump Drive§!, Unbidden can come to the galaxy with no empires having Jump Drive technology."
+ CrisisManagerMenu.4210.desc:0 "Eine Konfiguration zum Verbieten des Öffnens von extradimensionalen Portalen.\n\n$CmtWarn2$: Die folgenden 4 Optionen stören sich gegenseitig.\nDie Priorität von ihnen:\n(1) $CrisisManagerMenu.4210a.title$\n(2) $CrisisManagerMenu.3110e.title$ / $CrisisManagerMenu.3150d.title$\n(3) $CrisisManagerMenu.4210b.title$\n\nDies bedeutet, wenn Du eines von ''(2)'' in der obigen Liste auswählst und §GJump-Drive erforderlich§!, Unbidden können ohne Imperien mit Jump-Drive-Technologie in die Galaxie kommen."
  CrisisManagerMenu.4210a.title:0 "§BForbid§! Extradimensional Invasion"
  CrisisManagerMenu.4210b.title:0 "§GRequire Jump Drive§! to Summon Unbidden"
  CrisisManagerMenu.4210c.title:0 "§HAllow Always§! Unbidden to Invade."
@@ -1146,7 +1137,6 @@
  CrisisManagerMenu.4250z.name:1 "$CrisisManagerMenu.4250x.title$$CmtTextErrUndefined.name$"
  CrisisManagerMenu.4250t.tooltip:1 "$CmtTextTemplateUnique.desc$"
  CrisisManagerMenu.4250z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
-
 
 
  ##############################################
@@ -1329,7 +1319,6 @@
  CrisisManagerMenu.4370z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
 
-
  ######################################################
  ###  Advanced Configurations: Forced End of Cycle  ###
  ######################################################
@@ -1434,7 +1423,6 @@
  CrisisManagerMenu.4450b.name:1 "$CrisisManagerMenu.4450x.title$$CrisisManagerMenu.4450b.title$ $CmtTooltipInfo1$"
  CrisisManagerMenu.4450z.name:1 "$CrisisManagerMenu.4450x.title$$CmtTextErrUndefined.name$"
  CrisisManagerMenu.4450z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
-
 
 
  ########################################################
@@ -1724,7 +1712,6 @@
  CrisisManagerMenu.4580z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
 
-
  ################################################
  ###  Advanced Configurations: War in Heaven  ###
  ################################################
@@ -1963,7 +1950,6 @@
  CrisisManagerMenu.4680z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
 
-
  ######################################################
  ###  Advanced Configurations: Guardians of Galaxy  ###
  ######################################################
@@ -1976,7 +1962,7 @@
  CrisisManagerMenu.4710c.title:0 "§GHigh§!"
  CrisisManagerMenu.4710d.title:0 "§HSurely Awaken§!"
  CrisisManagerMenu.4710x.title:1 "$CrisisManagerMenu.4710.title$: "
- CrisisManagerMenu.4710a.tooltip:0 "They will not awaken as the guardians.\nHowever, other type of awakening can happen, and this awakened empire might switch to the guardians."
+ CrisisManagerMenu.4710a.tooltip:0 "They will not awaken as the guardians.\nHowever, other type of awakening can happen, and this awakened empire might Wechseln zu the guardians."
  CrisisManagerMenu.4710b.tooltip:0 "A Probablity of Awaking is 40%."
  CrisisManagerMenu.4710c.tooltip:0 "A Probablity of Awaking is 75%."
  CrisisManagerMenu.4710d.tooltip:0 "They will surely awaken if they exists."
@@ -2084,7 +2070,7 @@
  CrisisManagerMenu.4750c.title:0 "§YAwakening Randomly§!"
  CrisisManagerMenu.4750d.title:0 "§HAwakening Surely as Berserkers§!"
  CrisisManagerMenu.4750x.title:1 "$CrisisManagerMenu.4750.title$: "
- CrisisManagerMenu.4750a.tooltip:0 "The directive will reactivated for §R<<DATA BLOCK CORRUPTED>>§! rrup§R<<DATA BLOCK CORRUPTED>>.§!\n\nThey have forgotten their task in ages past, although it must have been very important.\nThey will never awaken."        ## rrup: Corruption (See also fallen_machine_empire.2.desc_01 in Stellaris original file.)
+ CrisisManagerMenu.4750a.tooltip:0 "The directive will reactivated for §R<<DATA BLOCK CORRUPTED>>§! rrup§R<<DATA BLOCK CORRUPTED>>.§!\n\nThey have forgotten their task in ages past, although it must have been very important.\nThey will never awaken."        ## rrup: Corruption (Siehe auch fallen_machine_empire.2.desc_01 in Stellaris original file.)
  CrisisManagerMenu.4750b.tooltip:0 "Their ''Final Defense Directive'' is surely reliable."
  CrisisManagerMenu.4750c.tooltip:0 "They might awaken as the Guardians, and again they might awaken as Berserkers"
  CrisisManagerMenu.4750d.tooltip:0 "§R<<ERROR>> <<ERROR>> <<ERROR>> <<ERROR>> <<ERROR>>§!\n\n§R<<ERROR>> <<ERROR>> <<ERROR>> <<ERROR>> <<ERROR>>§!"
@@ -2100,7 +2086,6 @@
  CrisisManagerMenu.4750d.name:1 "$CrisisManagerMenu.4750x.title$$CrisisManagerMenu.4750d.title$"
  CrisisManagerMenu.4750z.name:1 "$CrisisManagerMenu.4750x.title$$CmtTextErrUndefined.name$"
  CrisisManagerMenu.4750z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
-
 
 
  #######################################
@@ -2456,7 +2441,6 @@
  CrisisManagerMenu.4860f.name:1 "$CrisisManagerMenu.4860f.title$"
  CrisisManagerMenu.4860z.name:1 "$CrisisManagerMenu.4860x.title$$CmtTextErrUndefined.name$"
  CrisisManagerMenu.4860z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
-
 
 
  #########################################
@@ -2817,7 +2801,6 @@
  CrisisManagerMenu.4970z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
 
-
  ###########################################
  ###  Advanced Configurations: Uprising  ###
  ###########################################
@@ -2928,7 +2911,6 @@
  CrisisManagerMenu.5120z.name:1 "$CrisisManagerMenu.5120x.title$$CmtTextErrUndefined.name$"
  CrisisManagerMenu.5120t.tooltip:1 "$CmtTextTemplateUnique.desc$"
  CrisisManagerMenu.5120z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
-
 
 
  ### MTTH for Uprising
@@ -3245,12 +3227,11 @@
 
 
 
-
  ######################
  ###  Crisis Power  ###
  ######################
 
- ### Menu
+ ### Menü
  CrisisManagerMenu.6000.title:0 "Crisis Power"
  CrisisManagerMenu.6000.desc:0 "Configurations for fleets power and the number of fleets/ships.\nThese configurations are independent from Crisis Strength in galaxy settings.\n§HSee also 2 pages of ''More Information''.§! Important information is written here.\n[CmtGlobalVar.GetCurrnentSetting_EndgamePower][CmtGlobalVar.GetCurrnentSetting_MidgamePower]"
  CrisisManagerMenu.6000n.title:0 "User/Template Original"
@@ -4723,7 +4704,6 @@
 
 
 
-
  ###########################
  ###  Manual Operations  ###
  ###########################
@@ -4864,7 +4844,7 @@
  CrisisManagerMenu.7136.title:1 "$CrisisManagerMenu.7000.7136.A.name$"
  CrisisManagerMenu.7136.desc1:0 "Select 1st fallen empire to awaken for the War in Heaven.\nThe empire awakened already cannot be selected."
  CrisisManagerMenu.7136.desc2:0 "Select 2nd fallen empire to awaken for the War in Heaven.\nThe empire awakened already cannot be selected.\n\n§W1st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperA]§! §Y[CmtTargetManualSleeperA.GetName]§!"
- CrisisManagerMenu.7136.desc3:0 "$CmtDescNoCancelHead$\n§WSelected Operation: the War in Heaven§!\n\n§W1st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperA] §Y[CmtTargetManualSleeperA.GetName]§!\n\n§W2st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperB] §Y[CmtTargetManualSleeperB.GetName]§!"
+ CrisisManagerMenu.7136.desc3:0 "$CmtDescNoCancelHead$\n§WAusgewählte Operation: the War in Heaven§!\n\n§W1st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperA] §Y[CmtTargetManualSleeperA.GetName]§!\n\n§W2st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperB] §Y[CmtTargetManualSleeperB.GetName]§!"
  CrisisManagerMenu.7136a.name:0 "I changed my mind."
  CrisisManagerMenu.7136b.name:0 "Randam fallen empire."
  CrisisManagerMenu.7136c1.name:1 "$CmtProperNameSleeper1$"
@@ -4887,7 +4867,7 @@
 
  CrisisManagerMenu.7140.title:1 "$CrisisManagerMenu.7000.7140.A.name$"
  CrisisManagerMenu.7140.desc:0 "Select type of L-Cluster Events."
- CrisisManagerMenu.7140a.name:0 "$CrisisManagerMenu.7136a.name$"        # I changed my mind.
+ CrisisManagerMenu.7140a.name:0 "$CrisisManagerMenu.7136a.name$"
  CrisisManagerMenu.7140b.name:0 "Random L-Cluster Events"
  CrisisManagerMenu.7140c1.name:0 "Eerie Silence"
  CrisisManagerMenu.7140c2.name:0 "L-Drake Event"
@@ -4900,7 +4880,7 @@
  CrisisManagerMenu.7141.title:1 "$CrisisManagerMenu.7000.7140.A.name$"
  CrisisManagerMenu.7141.desc1:0 "Select a L-Gate to be opened first.\nIn some cases, all L-Gates open at once and this choice is wasted.\n$CmtDescNoCancelTail$\n\n$CmtTextOperation$§W[CmtGlobalVar.GetName_LgateManualOpenEvent]§!"
  CrisisManagerMenu.7141.desc2:1 "$CrisisManagerMenu.7141.desc1$\n\n$CmtDescListedNotAllLgate$"
- CrisisManagerMenu.7141a.name:0 "$CrisisManagerMenu.7136a.name$"        # I changed my mind.
+ CrisisManagerMenu.7141a.name:0 "$CrisisManagerMenu.7136a.name$"
  CrisisManagerMenu.7141b.name:0 "Open Random L-Gate"
  CrisisManagerMenu.7141c1.name:0 "Open L-Gate in §Y[CmtTargetManualLgateSystem1.GetName]§!"
  CrisisManagerMenu.7141c2.name:0 "Open L-Gate in §Y[CmtTargetManualLgateSystem2.GetName]§!"
@@ -5205,7 +5185,6 @@
  CrisisManagerMenu.7419b9.tooltip:1 "$CrisisManagerTemplate_SleeperInitializing.title$\n\n$CmtDescApocalypseColossus$"
 
 
-
  ### Create/Remove L-Gate
  CrisisManagerMenu.7500.title:0 "Create/Remove L-Gate"
  CrisisManagerMenu.7500.name:1 "$CrisisManagerMenu.7500.title$ $CrisisManagerTitleC$"
@@ -5262,11 +5241,11 @@
 
 
  ####################
- ###  Debug Menu  ###
+ ###  Debug Menü  ###
  ####################
 
  ### Main
- CrisisManagerMenu.9000.name:0 "Debug Menu $CrisisManagerTitleC$"
+ CrisisManagerMenu.9000.name:0 "Debug Menü $CrisisManagerTitleC$"
  CrisisManagerMenu.9000.desc:0 "§HThis menu can be used only for debugging.§!"
  CrisisManagerMenu.9000.9100.name:0 "Variable Checker"
  CrisisManagerMenu.9000.9200.name:0 "Flag Controller"
@@ -5331,6 +5310,5 @@
  ### If/Else Test
  CrisisManagerMenu.9920.name:1 "$CrisisManagerMenu.9000.9920.name$ $CrisisManagerTitleC$"
  CrisisManagerMenu.9920.desc:0 "If/Else test\n§WCurrent Code: [CmtGlobalVar.GetValue.CmtVarIfElseCheck]\n\nCode x.1: New structure has a priority\nCode x.2: Old structure has a priority\n.x: Result of Nesting Test\n§!"
-
 
 

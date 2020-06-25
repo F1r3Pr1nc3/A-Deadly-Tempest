@@ -111,7 +111,7 @@ gate_builders = {
 			sr_dark_matter = 1
 			sr_living_metal = 1
 			sr_zro = 1
-			nanites = 10
+			nanites = 50
 			influence = 3
 			unity = 2
 			consumer_goods = 200
@@ -162,7 +162,7 @@ gray_goo = {
 		} # Nothing is allowed, but we need this for relationships.
 		tiered_technology_module = {
 			tier = 3
-			rare = yes
+			rare = no
 		}
 		standard_event_module = {}
 	}

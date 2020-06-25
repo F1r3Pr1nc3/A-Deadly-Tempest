@@ -38,8 +38,7 @@
 @CmtConstKhanFleetPowerUpperLimit_T6 =  375000		##  375 k
 @CmtConstKhanFleetPowerUpperLimit_T7 =  750000		##  750 k
 
-@CmtConstGraygooFleetNumberUpperLimit = 32			## >~1200 k (*20 with ADT)
-
+@CmtConstGraygooFleetNumberUpperLimit =  50		## >~2000 k (*20 with ADT)
 
 ##############
 ###  Khan  ###
@@ -238,7 +237,6 @@ CmtEffectCreateAdmiralty_KhanReinforcement = {
 				}
 			}
 		}
-		
 		### Army
 		if = {
 			limit = {
@@ -276,7 +274,6 @@ CmtEffectCreateAdmiralty_KhanReinforcement = {
 				}
 			}
 		}
-		
 		### Navy Fleet
 		if = {
 			limit = {
@@ -535,7 +532,6 @@ CmtEffectCreateAdmiralty_DessanuRoamer = {
 		event_target:lcluster1b = {
 			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 2 }
 		}
-		
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Dessanu value > 0.375 } } }
 			CmtEffectCreateFleet_DessanuRoamer = yes
@@ -605,7 +601,6 @@ CmtEffectCreateAdmiralty_DessanuRoamer = {
 				CmtFleetSetAuxParam_DessanuRoamer = { NUM = 14 }
 			}
 		}
-		
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Dessanu value > 2.125 } } }
 			CmtEffectCreateFleet_DessanuRoamer = yes
@@ -778,13 +773,11 @@ CmtEffectCreateAdmiralty_GraygooRoamer = {
 		event_target:lcluster1 = {
 			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 01 }
 		}
-		
 		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
 		random_system = {
 			limit = { has_star_flag = lcluster1 }
 			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 02 }
 		}
-		
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 0.375 } } }
 			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
@@ -819,7 +812,6 @@ CmtEffectCreateAdmiralty_GraygooRoamer = {
 				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 07 }
 			}
 		}
-		
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 1.125 } } }
 			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
@@ -867,7 +859,6 @@ CmtEffectCreateAdmiralty_GraygooRoamer = {
 				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 14 }
 			}
 		}
-		
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 2.125 } } }
 			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }

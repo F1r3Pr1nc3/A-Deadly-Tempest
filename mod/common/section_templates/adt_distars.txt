@@ -1,0 +1,246 @@
+### --- Guards --- ###
+
+# Automated Dreadnought Section
+ship_section_template = {
+	key = "auto_dread_key"
+	ship_size = auto_dread
+	fits_on_slot = mid
+	should_draw_components = yes
+	# entity = "npf_01_npc_warship_01_hull_entity"
+	entity = "auto_dread_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "small_gun_03"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "small_turret"
+		is_side_slot = yes
+		locatorname = "small_gun_04"
+	}
+	component_slot = {
+		name = "SMALL_GUN_05"
+		template = "small_turret"
+		is_side_slot = yes
+		locatorname = "small_gun_05"
+	}
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		is_side_slot = yes
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "LARGE_GUN_04"
+		template = "large_turret"
+		is_side_slot = yes
+		locatorname = "large_gun_04"
+	}
+	component_slot = {
+		name = "LARGE_GUN_05"
+		template = "large_turret"
+		is_side_slot = yes
+		locatorname = "large_gun_05"
+	}
+	component_slot = {
+		name = "LARGE_GUN_06"
+		template = "large_turret"
+		locatorname = "large_gun_06"
+	}
+	component_slot = {
+		name = "LARGE_GUN_07"
+		template = "large_turret"
+		is_side_slot = yes
+		locatorname = "large_gun_07"
+	}
+	component_slot = {
+		name = "SMALL_GUN_08"
+		template = "small_turret"
+		locatorname = "small_gun_08"
+	}
+	component_slot = {
+		name = "SMALL_GUN_09"
+		template = "small_turret"
+		locatorname = "small_gun_09"
+	}
+	component_slot = {
+		name = "SMALL_GUN_10"
+		template = "small_turret"
+		locatorname = "small_gun_10"
+	}
+	large_utility_slots = 22
+	aux_utility_slots = 5
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 80
+		}
+	}
+}
+
+# Scavenger Bot
+ship_section_template = {
+	key = "scavenger_bot_key"
+	ship_size = scavenger_bot
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "leviathan_01_scavenger_bot_section_entity"
+	# entity = "scavenger_bot_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = {
+		name = "TITAN_01"
+		template = "invisible_titanic_fixed"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "invisible_missile_fixed"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "invisible_missile_fixed"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TORPEDO_04"
+		template = "invisible_missile_fixed"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "TORPEDO_05"
+		template = "invisible_missile_fixed"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "TORPEDO_06"
+		template = "invisible_missile_fixed"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "TORPEDO_07"
+		template = "invisible_missile_fixed"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "PD_01"
+		template = "invisible_point_defence_turret"
+		locatorname = "root"
+	}
+	large_utility_slots = 20
+	aux_utility_slots = 3
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 140
+		}
+	}
+}
+
+ship_section_template = {
+	key = "scavenger_bot_small_bot_1_key"
+	ship_size = scavenger_bot
+	fits_on_slot = bot_1
+	entity = "leviathan_01_scavenger_bot_helper_bot_entity"
+	# entity = "scavenger_droid_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_fixed"
+		locatorname = "turret_muzzle_01"
+	}
+	component_slot = {
+		name = "PD_01"
+		template = "invisible_point_defence_turret"
+		locatorname = "turret_muzzle_01"
+	}
+	large_utility_slots = 5
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 140
+		}
+	}
+}
+
+ship_section_template = {
+	key = "scavenger_bot_small_bot_2_key"
+	ship_size = scavenger_bot
+	fits_on_slot = bot_2
+	entity = "leviathan_01_scavenger_bot_helper_bot_entity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_fixed"
+		locatorname = "turret_muzzle_01"
+	}
+	component_slot = {
+		name = "PD_01"
+		template = "invisible_point_defence_turret"
+		locatorname = "turret_muzzle_01"
+	}
+	large_utility_slots = 5
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 140
+		}
+	}
+}
+
+ship_section_template = {
+	key = "scavenger_bot_small_bot_3_key"
+	ship_size = scavenger_bot
+	fits_on_slot = bot_3
+	entity = "leviathan_01_scavenger_bot_helper_bot_entity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_fixed"
+		locatorname = "turret_muzzle_01"
+	}
+	component_slot = {
+		name = "PD_01"
+		template = "invisible_point_defence_turret"
+		locatorname = "turret_muzzle_01"
+	}
+	large_utility_slots = 5
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 140
+		}
+	}
+}

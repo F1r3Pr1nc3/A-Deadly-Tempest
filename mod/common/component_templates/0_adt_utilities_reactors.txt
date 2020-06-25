@@ -1,0 +1,415 @@
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes.
+#############
+#	POWER	#
+#############
+
+@cruiser_power_5 = 800
+@cruiser_power_6 = 1030
+@battleship_power_5 = 1550
+@battleship_power_6 = 2000
+@titan_power_5 = 3200
+@titan_power_6 = 5200
+@colossus_power = 10000
+@starbase_power_5 = 3200
+@starbase_power_6 = 4200
+@platform_power_5 = 575
+@platform_power_6 = 750
+
+#############
+#	COST	#
+#############
+
+@cruiser_cost_5 = 112
+@cruiser_cost_6 = 148
+@battleship_cost_5 = 224
+@battleship_cost_6 = 296
+@titan_cost_5 = 448
+@titan_cost_6 = 592
+@platform_cost_5 = 56
+@platform_cost_6 = 74
+
+
+## Vanilla Reactors ##
+
+########################
+# Zero-Point Reactors
+########################
+
+utility_component_template = {
+	key = "CRUISER_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @cruiser_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cruiser_cost_5
+		}
+		upkeep = {
+			energy = 1.14
+			alloys = 0.114
+		}
+	}
+
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	size_restriction = { cruiser graygoo_interdictor }
+	upgrades_to = "CRUISER_DARK_MATTER_REACTOR"
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "TITAN_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @titan_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titan_cost_5
+		}
+		upkeep = {
+			energy = 4.56
+			alloys = 0.456
+		}
+	}
+
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	size_restriction = { titan graygoo_mothership scavenger_bot auto_dread }
+	upgrades_to = "TITAN_DARK_MATTER_REACTOR"
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+# utility_component_template = {
+# 	key = "COLOSSUS_ZERO_POINT_REACTOR"
+# 	size = small
+# 	icon = "GFX_ship_part_reactor_5"
+# 	icon_frame = 1
+# 	power = @colossus_power
+
+# 	component_set = "power_core"
+# 	size_restriction = { colossus scavenger_bot }
+# 	upgrades_to = "COLOSSUS_DARK_MATTER_REACTOR"
+
+# 	ai_weight = {
+# 		weight = 5
+# 	}
+# }
+
+# utility_component_template = {
+# 	key = "ION_CANNON_ZERO_POINT_REACTOR"
+# 	size = small
+# 	icon = "GFX_ship_part_reactor_5"
+# 	icon_frame = 1
+# 	power = @cruiser_power_5
+# 	resources = {
+# 		category = ship_components
+# 		cost = {
+# 			alloys = @cruiser_cost_5
+# 		}
+# 	}
+
+# 	component_set = "power_core"
+# 	size_restriction = { ion_cannon }
+# 	upgrades_to = "ION_CANNON_DARK_MATTER_REACTOR"
+
+# 	ai_weight = {
+# 		weight = 5
+# 	}
+# }
+
+utility_component_template = {
+	key = "STARBASE_ZERO_POINT_REACTOR"
+	size = large
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @starbase_power_5
+
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	class_restriction = { shipclass_starbase }
+	size_restriction = {
+		starbase_outpost
+		starbase_starport
+		starbase_starhold
+		starbase_starfortress
+		starbase_citadel
+		juggernaut
+		graygoo_factory
+		scavenger_bot
+	}
+	upgrades_to = "STARBASE_DARK_MATTER_REACTOR"
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "PLATFORM_ZERO_POINT_REACTOR"
+	size = large
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @platform_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @platform_cost_5
+		}
+		upkeep = {
+			energy = 0.57
+			alloys = 0.057
+		}
+	}
+
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	class_restriction = { shipclass_military_station }
+	size_restriction = {
+		military_station_small
+		military_station_medium
+		military_station_large
+		starbase_gatebuilders
+	}
+	upgrades_to = "PLATFORM_DARK_MATTER_REACTOR"
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+
+####################
+# Engimatic Reactors
+####################
+
+utility_component_template = {
+	key = "CRUISER_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @cruiser_power_6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cruiser_cost_6
+			sr_dark_matter = 4
+		}
+		upkeep = {
+			energy = 1.48
+			alloys = 0.148
+		}
+	}
+
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { cruiser graygoo_interdictor }
+	upgrades_to = CRUISER_GRAVITON_REACTOR
+
+	ai_weight = {
+		weight = 6
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "BATTLESHIP_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @battleship_power_6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @battleship_cost_6
+			sr_dark_matter = 8
+		}
+		upkeep = {
+			energy = 2.98
+			alloys = 0.298
+		}
+	}
+
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { battleship graygoo_interdictor }
+	upgrades_to = BATTLESHIP_GRAVITON_REACTOR
+
+	ai_weight = {
+		weight = 6
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "TITAN_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @titan_power_6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titan_cost_6
+			sr_dark_matter = 16
+		}
+		upkeep = {
+			energy = 5.93
+			alloys = 0.593
+		}
+	}
+
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { titan graygoo_mothership scavenger_bot auto_dread }
+	upgrades_to = TITAN_GRAVITON_REACTOR
+
+	ai_weight = {
+		weight = 6
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		}
+	}
+}
+
+# utility_component_template = {
+# 	key = "COLOSSUS_DARK_MATTER_REACTOR"
+# 	size = small
+# 	icon = "GFX_ship_part_dark_matter_power_core"
+# 	icon_frame = 1
+# 	power = @colossus_power
+# 	resources = {
+# 		category = ship_components
+# 		cost = {
+# 			alloys = @titan_cost_6
+# 			sr_dark_matter = 32
+# 		}
+# 		upkeep = {
+# 			energy = 11.86
+# 			alloys = 1.18
+# 		}
+# 	}
+
+# 	prerequisites = { "tech_dark_matter_power_core" }
+# 	component_set = "power_core"
+# 	size_restriction = { colossus scavenger_bot }
+
+# 	ai_weight = {
+# 		weight = 6
+# 		modifier = {
+# 			factor = 0.0
+# 			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+# 		}
+# 	}
+# }
+
+utility_component_template = {
+	key = "PLATFORM_DARK_MATTER_REACTOR"
+	size = large
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @platform_power_6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @platform_cost_6
+			sr_dark_matter = 4
+		}
+		upkeep = {
+			energy = 0.74
+			alloys = 0.074
+		}
+	}
+
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	class_restriction = { shipclass_military_station }
+	size_restriction = {
+		military_station_small
+		military_station_medium
+		military_station_large
+		starbase_gatebuilders
+	}
+
+	ai_weight = {
+		weight = 6
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		}
+	}
+}
+
+# utility_component_template = {
+# 	key = "ION_CANNON_DARK_MATTER_REACTOR"
+# 	size = small
+# 	icon = "GFX_ship_part_dark_matter_power_core"
+# 	icon_frame = 1
+# 	power = @cruiser_power_6
+# 	resources = {
+# 		category = ship_components
+# 		cost = {
+# 			alloys = @cruiser_cost_6
+# 			sr_dark_matter = 8
+# 		}
+# 	}
+
+# 	prerequisites = { "tech_dark_matter_power_core" }
+# 	component_set = "power_core"
+# 	size_restriction = { ion_cannon }
+
+# 	ai_weight = {
+# 		weight = 6
+# 		modifier = {
+# 			factor = 0.0
+# 			is_country_type = default
+# 			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+# 		}
+# 	}
+# }
+
+utility_component_template = {
+	key = "STARBASE_DARK_MATTER_REACTOR"
+	size = large
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @starbase_power_6
+
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	class_restriction = { shipclass_starbase }
+	size_restriction = {
+		starbase_outpost
+		starbase_starport
+		starbase_starhold
+		starbase_starfortress
+		starbase_citadel
+		juggernaut
+		graygoo_factory
+		scavenger_bot
+	}
+
+	ai_weight = {
+		weight = 6
+	}
+}

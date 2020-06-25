@@ -1,11 +1,9 @@
-
 ship_section_template = {
 	key = "nanite_mothership_key"
 	ship_size = graygoo_mothership
 	fits_on_slot = mid
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
-	
 	component_slot = {
 		name = "TITAN_01"
 		template = "invisible_titanic_fixed"
@@ -31,7 +29,6 @@ ship_section_template = {
 		template = "invisible_missile_turret"
 		locatorname = "xl_gun_01"
 	}
-
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "large_strike_craft"
@@ -82,11 +79,9 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "xl_gun_01"
 	}
-
 	large_utility_slots = 12
 	aux_utility_slots = 3
 }
-
 
 ship_section_template = {
 	key = "nanite_mothership_battleship_key"
@@ -94,7 +89,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
-	
 	component_slot = {
 		name = "TITAN_01"
 		template = "extra_large_turret"
@@ -125,7 +119,6 @@ ship_section_template = {
 		template = "invisible_missile_turret"
 		locatorname = "xl_gun_01"
 	}
-
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "large_strike_craft"
@@ -176,7 +169,6 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "xl_gun_01"
 	}
-
 	large_utility_slots = 12
 	aux_utility_slots = 3
 }
@@ -187,7 +179,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
-	
 	component_slot = {
 		name = "TITAN_01"
 		template = "extra_large_turret"
@@ -268,7 +259,6 @@ ship_section_template = {
 		template = "large_turret"
 		locatorname = "xl_gun_01"
 	}
-
 	large_utility_slots = 12
 	aux_utility_slots = 3
 }
@@ -279,7 +269,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
-	
 	component_slot = {
 		name = "TITAN_01"
 		template = "invisible_titanic_fixed"
@@ -385,7 +374,6 @@ ship_section_template = {
 		template = "point_defence_turret"
 		locatorname = "xl_gun_01"
 	}
-
 	large_utility_slots = 16
 	aux_utility_slots = 4
 }
@@ -396,7 +384,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "invisible_missile_turret"
@@ -417,7 +404,6 @@ ship_section_template = {
 		template = "invisible_missile_turret"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "large_strike_craft"
@@ -433,7 +419,6 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "turret_01"
 	}
-
 	medium_utility_slots = 8
 	aux_utility_slots = 2
 }
@@ -444,7 +429,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "large_turret"
@@ -465,7 +449,6 @@ ship_section_template = {
 		template = "medium_turret"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "large_strike_craft"
@@ -481,7 +464,6 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "turret_01"
 	}
-
 	medium_utility_slots = 8
 	aux_utility_slots = 2
 }
@@ -492,7 +474,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "invisible_missile_turret"
@@ -513,7 +494,6 @@ ship_section_template = {
 		template = "invisible_missile_turret"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "medium_turret"
@@ -529,7 +509,6 @@ ship_section_template = {
 		template = "medium_turret"
 		locatorname = "turret_01"
 	}
-
 	medium_utility_slots = 8
 	aux_utility_slots = 2
 }
@@ -540,7 +519,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "large_turret"
@@ -561,7 +539,6 @@ ship_section_template = {
 		template = "medium_turret"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "small_turret"
@@ -577,9 +554,104 @@ ship_section_template = {
 		template = "small_turret"
 		locatorname = "turret_01"
 	}
-
 	medium_utility_slots = 8
 	aux_utility_slots = 2
+}
+
+# Nanite Dragon
+ship_section_template = {
+	key = "nanite_dragon_key"
+	ship_size = nanite_dragon
+	fits_on_slot = mid
+	# entity = "nanite_dragon_section_entity"
+	entity = "nanite_space_dragon_baby_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = {
+		name = "PRIMARY_GUN_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "SECONDARY_GUN_01"
+		template = "medium_turret"
+		locatorname = "wing_1_3_l"
+		is_side_slot = no
+	}
+	component_slot = {
+		name = "SECONDARY_GUN_02"
+		template = "medium_turret"
+		locatorname = "wing_2_3_l"
+		is_side_slot = no
+	}
+	component_slot = {
+		name = "SECONDARY_GUN_03"
+		template = "medium_turret"
+		locatorname = "wing_3_4_l"
+		is_side_slot = no
+	}
+	component_slot = {
+		name = "SECONDARY_GUN_04"
+		template = "medium_turret"
+		locatorname = "wing_4_3_l"
+		is_side_slot = no
+	}
+	component_slot = {
+		name = "SECONDARY_GUN_05"
+		template = "medium_turret"
+		locatorname = "wing_1_3_r"
+		is_side_slot = no
+	}
+	component_slot = {
+		name = "SECONDARY_GUN_06"
+		template = "medium_turret"
+		locatorname = "wing_2_3_r"
+		is_side_slot = no
+	}
+	component_slot = {
+		name = "SECONDARY_GUN_07"
+		template = "medium_turret"
+		locatorname = "wing_3_4_r"
+		is_side_slot = no
+	}
+	component_slot = {
+		name = "SECONDARY_GUN_08"
+		template = "medium_turret"
+		locatorname = "wing_4_3_r"
+		is_side_slot = no
+	}
+	component_slot = {
+		name = "TERTIARY_GUN_01"
+		template = "point_defence_turret"
+		locatorname = "wing_4_4_l"
+		is_side_slot = no
+	}
+	component_slot = {
+		name = "TERTIARY_GUN_02"
+		template = "point_defence_turret"
+		locatorname = "wing_3_3_l"
+		is_side_slot = no
+	}
+	component_slot = {
+		name = "TERTIARY_GUN_03"
+		template = "point_defence_turret"
+		locatorname = "wing_3_3_r"
+		is_side_slot = no
+	}
+	component_slot = {
+		name = "TERTIARY_GUN_04"
+		template = "point_defence_turret"
+		locatorname = "wing_4_4_r"
+		is_side_slot = no
+	}
+	aux_utility_slots = 2
+	large_utility_slots = 6
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 120
+			nanites = 20
+		}
+	}
 }
 
 ship_section_template = {
@@ -729,9 +801,14 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "target_locator_5"
 	}
-	
 	large_utility_slots = 15
 	aux_utility_slots = 3
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 360
+		}
+	}
 }
 
 ship_section_template = {
@@ -806,114 +883,5 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "strike_craft_locator_03"
 	}
-	
 	aux_utility_slots = 1
-}
-
-# Automated Dreadnought Section
-ship_section_template = {
-	key = "automated_dreadnought_key"
-	ship_size = npc_warship_01
-	fits_on_slot = mid
-	should_draw_components = yes
-	entity = "npc_warship_01_hull_entity"
-	icon = "GFX_ship_part_core_mid"
-	component_slot = {
-		name = "EXTRA_LARGE_01"
-		template = "invisible_extra_large_fixed"
-		locatorname = "root"
-	}
-	component_slot = {
-		name = "LARGE_GUN_01"
-		template = "large_turret"
-		locatorname = "large_gun_01"
-	}	
-	component_slot = {
-		name = "LARGE_GUN_02"
-		template = "large_turret"
-		locatorname = "large_gun_02"
-	}	
-	
-	component_slot = {
-		name = "SMALL_GUN_01"
-		template = "small_turret"
-		locatorname = "small_gun_01"
-	}	
-	
-	component_slot = {
-		name = "SMALL_GUN_02"
-		template = "small_turret"
-		locatorname = "small_gun_02"
-	}	
-	
-	component_slot = {
-		name = "SMALL_GUN_03"
-		template = "small_turret"
-		locatorname = "small_gun_03"
-	}
-	component_slot = {
-		name = "SMALL_GUN_04"
-		template = "small_turret"
-		is_side_slot = yes
-		locatorname = "small_gun_04"
-	}
-	component_slot = {
-		name = "SMALL_GUN_05"
-		template = "small_turret"
-		is_side_slot = yes
-		locatorname = "small_gun_05"
-	}
-	
-	component_slot = {
-		name = "LARGE_GUN_03"
-		template = "large_turret"
-		is_side_slot = yes
-		locatorname = "large_gun_03"
-	}	
-	component_slot = {
-		name = "LARGE_GUN_04"
-		template = "large_turret"
-		is_side_slot = yes
-		locatorname = "large_gun_04"
-	}	
-	component_slot = {
-		name = "LARGE_GUN_05"
-		template = "large_turret"
-		is_side_slot = yes
-		locatorname = "large_gun_05"
-	}	
-	
-	component_slot = {
-		name = "LARGE_GUN_06"
-		template = "large_turret"
-		locatorname = "large_gun_06"
-	}		
-	
-	component_slot = {
-		name = "LARGE_GUN_07"
-		template = "large_turret"
-		is_side_slot = yes
-		locatorname = "large_gun_07"
-	}	
-	
-	component_slot = {
-		name = "SMALL_GUN_08"
-		template = "small_turret"
-		locatorname = "small_gun_08"
-	}	
-	
-	component_slot = {
-		name = "SMALL_GUN_09"
-		template = "small_turret"
-		locatorname = "small_gun_09"
-	}	
-	
-	component_slot = {
-		name = "SMALL_GUN_10"
-		template = "small_turret"
-		locatorname = "small_gun_10"
-	}
-	
-	large_utility_slots = 22
-	aux_utility_slots = 5
 }

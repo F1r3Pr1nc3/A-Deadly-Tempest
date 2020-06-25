@@ -1,0 +1,9 @@
+
+opinion_wg_access_lcluster_long = {
+	opinion = {
+		base = -75
+	}
+	decay = {
+		base = 1	# Changes every year
+	}
+}

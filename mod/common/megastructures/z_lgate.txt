@@ -8,7 +8,7 @@ lgate_base = {
 	place_entity_on_planet_plane = no
 	#build_outside_gravity_well = yes
 	show_galactic_map_icon = no
-	
+
 	potential = { always = no }
 	upgrade_from = { lgate_disabled }
 
@@ -40,7 +40,7 @@ lgate_disabled = {
 	construction_blocked_by_others = no
 
 	potential = { has_technology = tech_lgate_construction }
-	
+
 	# trigger, scope: galactic object, from: country
 	possible = {
 		exists = starbase
@@ -92,20 +92,20 @@ lgate_disabled = {
 		modifier = {
 			factor = 0.1
 			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
-		}	
+		}
 
 		modifier = {
 			factor = 0.1
 			any_neighbor_system = {
 				exists = owner
-				NOT = { 
-					owner = { is_same_value = from } 
+				NOT = {
+					owner = { is_same_value = from }
 				}
 			}
 		}
 		modifier = {
 			factor = 0
-			any_neighbor_system = { 
+			any_neighbor_system = {
 				has_star_flag = lgate
 			}
 		}

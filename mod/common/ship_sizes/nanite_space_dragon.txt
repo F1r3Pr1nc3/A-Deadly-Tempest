@@ -19,7 +19,7 @@ nanite_space_dragon_baby = {
 	num_target_locators = 0
 	is_space_station = no
 	icon_frame = 12
-	
+
 	class = shipclass_military
 	is_designable = no
 	required_component_set = "ftl_components"

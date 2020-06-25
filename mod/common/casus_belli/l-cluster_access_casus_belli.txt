@@ -15,15 +15,23 @@ cb_lgate_port = {
 		OR = {
 			is_country_type = default
 			is_country_type = awakened_fallen_empire
+			is_country_type = ascended_empire	#_ZOFE
+			is_country_type = lost_empire		#_ZOFE
 		}
 		NOT = { has_global_flag = lgates_activated_globally }
 		NOT = { is_in_federation_with = from }
 		is_subject = no
 	}
 	is_valid = {
+		NOT = { has_global_flag = lgates_activated_globally }
 		NOT = { is_overlord_to = FROM }
-		# is_country_type = awakened_fallen_empire
 		NOT = { has_authority = auth_machine_intelligence }
+		# OR = {
+		# 	is_subject = no
+		# 	overlord = { NOT = { is_same_value = from } }
+		# }
+		# is_country_type = awakened_fallen_empire
+		# has_closed_borders = root
 		FROM = { controls_lcluster = yes } # can_set_lcluster_policiy = yes
 	}
 }

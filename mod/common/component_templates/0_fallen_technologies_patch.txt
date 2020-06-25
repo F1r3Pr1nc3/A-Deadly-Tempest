@@ -1,0 +1,251 @@
+
+## Combat Computers & Thrusters Patch for auto_dread & scavenger_bot
+
+#Combat Computers
+@power3 = -25
+@cost3 = 20
+# DM Power:
+@titan_power_6 = 4200
+@colossus_power = 10000
+@platform_power_6 = 750
+@titan_cost_6 = 592
+@platform_cost_6 = 74
+# DM Thrusters:
+@titan_power_5 = -480
+@titan_cost4 = 192
+@colossus_power_5 = -600
+@colossus_cost5 = 300
+@shipAuraRange = 40
+
+#Titan
+utility_component_template = {
+	key = "FE_TITAN_COMBAT_COMPUTER_1"
+	size = small
+	icon = "GFX_ship_part_computer_line_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = {
+		shipclass_military
+	}
+	size_restriction = {
+		fe_titan
+		auto_dread
+		scavenger_bot
+	}
+	component_set = "combat_computers"
+	ship_behavior = "line"
+	ship_modifier = {
+		ship_fire_rate_mult = 0.2
+		ship_accuracy_add = 20
+		ship_engagement_range_mult = 0.25
+	}
+	ai_weight = {
+		weight = 50
+	}
+}
+
+utility_component_template = {
+	key = "FE_TITAN_COMBAT_COMPUTER_2"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = {
+		shipclass_military
+	}
+	size_restriction = {
+		fe_titan
+		auto_dread
+		scavenger_bot
+	}
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	ship_modifier = {
+		ship_fire_rate_mult = 0.2
+		ship_weapon_range_mult = 0.2
+		ship_engagement_range_mult = 0.5
+	}
+	ai_weight = {
+		weight = 50
+	}
+}
+
+utility_component_template = {
+	key = "FE_TITAN_COMBAT_COMPUTER_3"
+	size = small
+	icon = "GFX_ship_part_computer_line_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = {
+		shipclass_military
+	}
+	size_restriction = {
+		fe_titan
+		auto_dread
+		scavenger_bot
+	}
+	component_set = "combat_computers"
+	ship_behavior = "sniper"
+	ship_modifier = {
+		ship_fire_rate_mult = 0.2
+		ship_weapon_range_mult = 0.2
+		ship_engagement_range_mult = 0.5
+	}
+	ai_weight = {
+		weight = 50
+	}
+}
+
+utility_component_template = {
+	key = "FE_TITAN_COMBAT_COMPUTER_4"
+	size = small
+	icon = "GFX_ship_part_computer_carrier_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = {
+		shipclass_military
+	}
+	size_restriction = {
+		fe_titan
+		auto_dread
+		scavenger_bot
+	}
+	component_set = "combat_computers"
+	ship_behavior = "carrier"
+	ship_modifier = {
+		ship_engagement_range_mult = 1
+	}
+	ai_weight = {
+		weight = 50
+	}
+}
+
+## Utilities
+
+utility_component_template = {
+	key = "FE_TITAN_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = 4800
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titan_cost_6
+			sr_dark_matter = 16
+		}
+		upkeep = {
+			energy = 5.93
+			alloys = 0.593
+		}
+	}
+	prerequisites = {
+		"tech_dark_matter_power_core"
+	}
+	component_set = "power_core"
+	size_restriction = {
+		fe_titan
+		auto_dread
+		scavenger_bot
+	}
+	ai_weight = {
+		weight = 50
+		#		modifier = {
+		#			factor = 0.0
+		#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		#		}
+	}
+}
+
+utility_component_template = {
+	key = "FE_LARGE_STATIONS_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = 4800
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @battleship_cost_6
+			sr_dark_matter = 8
+		}
+		upkeep = {
+			energy = 2.98
+			alloys = 0.298
+		}
+	}
+	prerequisites = {
+		"tech_dark_matter_power_core"
+	}
+	component_set = "power_core"
+	size_restriction = {
+		fe_large_station
+		graygoo_factory
+	}
+	ai_weight = {
+		weight = 50
+		#		modifier = {
+		#			factor = 0.0
+		#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		#		}
+	}
+}
+
+utility_component_template = {
+	key = "FE_TITAN_SHIP_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = @titan_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titan_cost4
+			sr_dark_matter = 16
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 4
+	}
+	prerequisites = {
+		"tech_dark_matter_propulsion"
+	}
+	component_set = "thruster_components"
+	size_restriction = {
+		fe_titan
+		auto_dread
+		scavenger_bot
+	}
+	ai_weight = {
+		weight = 50
+		#		modifier = {
+		#			factor = 0.0
+		#			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		#		}
+	}
+}

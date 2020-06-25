@@ -70,7 +70,7 @@ country_event = {
 
 ### Manual Call Up (Called from ''!Mod Menu'')
 country_event = {
-	id = CrisisManagerMenu.0003 #3?
+	id = CrisisManagerMenu.0003 # same as CrisisManagerMenu.3
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -162,7 +162,7 @@ country_event = {
 	desc = CrisisManagerMenu.0014.desc
 	picture = GFX_evt_galactic_senate
 	
-	is_triggered_only = yes
+	is_triggered_only = yes # no?
 	trigger = {
 		has_country_flag = CmtFlagNowInMenu
 		NOT = { has_country_flag = CmtFlagNeverWarn14 }

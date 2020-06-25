@@ -251,110 +251,109 @@ shoal_continue_guard = {
 
 # effect = {remove_auto_move_target = yes	clear_fleet_actions = this}
 
-# Called after planet reset (Scope planet)
+# Called after planet reset (Scope planet, ROOT country)
 generate_new_deposits_and_blockers = {
 	clear_deposits = yes
-	if = {
-		limit = { NOT = { exists = owner } }
-		break = yes
-	}
-
-	# blockers
-	if = {
-		limit = {
-			owner = {
-				has_origin = origin_post_apocalyptic
-			}
-		}
-		add_deposit = d_tomb_world_ruins
-		add_deposit = d_tomb_world_wasteland
-	}
-	else_if = {
-		limit = {
-			owner = {
-				has_civic = civic_machine_terminator
-				NOT = { has_origin = origin_machine }
-			}
-		}
-		add_deposit = d_exterminators_ruins
-		add_deposit = d_former_battlefield
-	}
-	else_if = {
-		limit = {
-			owner = {
-				has_civic = civic_machine_servitor
-			}
-		}
-		add_deposit = d_strip_mine
-		add_deposit = d_unsupervised_settlement
-	}
-	else_if = {
-		limit = {
-			owner = {
-				has_civic = civic_machine_assimilator
-				NOT = { has_origin = origin_machine }
-			}
-		}
-		add_deposit = d_strip_mine
-		add_deposit = d_assimilators_ruins
-	}
-	else_if = {
-		limit = {
-			owner = {
-				has_authority = auth_machine_intelligence
-				NOT = { has_origin = origin_machine }
-			}
-		}
-		add_deposit = d_strip_mine
-		add_deposit = d_machine_empire_ruins
-	}
-	else_if = {
-		limit = {
-			owner = {
-				has_authority = auth_hive_mind
-			}
-		}
-		add_deposit = d_collapsed_burrows
-		add_deposit = d_failing_infrastructure
-		add_deposit = d_failing_infrastructure
-	}
-	else_if = {
-		limit = {
-			owner = {
-				NOT = { has_origin = origin_machine }
-			}
-		}
-		add_deposit = d_decrepit_dwellings
-		add_deposit = d_failing_infrastructure
-		add_deposit = d_failing_infrastructure
-	}
 
 	if = {
-		limit = {
-			owner = {
-				is_lithoid_empire = yes
-				NOR = {
-					has_valid_civic = civic_hive_devouring_swarm
-					has_origin = origin_lithoid
+		limit = { exists = owner }
+		# blockers
+		if = {
+			limit = {
+				owner = {
+					has_origin = origin_post_apocalyptic
 				}
 			}
+			add_deposit = d_tomb_world_ruins
+			add_deposit = d_tomb_world_wasteland
 		}
-		while = {
-			count = 4
-			add_deposit = d_hibernating_lithoids
+		else_if = {
+			limit = {
+				owner = {
+					has_civic = civic_machine_terminator
+					NOT = { has_origin = origin_machine }
+				}
+			}
+			add_deposit = d_exterminators_ruins
+			add_deposit = d_former_battlefield
 		}
-	}
+		else_if = {
+			limit = {
+				owner = {
+					has_civic = civic_machine_servitor
+				}
+			}
+			add_deposit = d_strip_mine
+			add_deposit = d_unsupervised_settlement
+		}
+		else_if = {
+			limit = {
+				owner = {
+					has_civic = civic_machine_assimilator
+					NOT = { has_origin = origin_machine }
+				}
+			}
+			add_deposit = d_strip_mine
+			add_deposit = d_assimilators_ruins
+		}
+		else_if = {
+			limit = {
+				owner = {
+					has_authority = auth_machine_intelligence
+					NOT = { has_origin = origin_machine }
+				}
+			}
+			add_deposit = d_strip_mine
+			add_deposit = d_machine_empire_ruins
+		}
+		else_if = {
+			limit = {
+				owner = {
+					has_authority = auth_hive_mind
+				}
+			}
+			add_deposit = d_collapsed_burrows
+			add_deposit = d_failing_infrastructure
+			add_deposit = d_failing_infrastructure
+		}
+		else_if = {
+			limit = {
+				owner = {
+					NOT = { has_origin = origin_machine }
+				}
+			}
+			add_deposit = d_decrepit_dwellings
+			add_deposit = d_failing_infrastructure
+			add_deposit = d_failing_infrastructure
+		}
 
-	if = {
-		limit = {
-			owner = {
-				is_lithoid_empire = yes
-				has_valid_civic = civic_hive_devouring_swarm
+		if = {
+			limit = {
+				owner = {
+					is_lithoid_empire = yes
+					NOR = {
+						has_valid_civic = civic_hive_devouring_swarm
+						has_origin = origin_lithoid
+					}
+				}
+			}
+			while = {
+				count = 4
+				add_deposit = d_hibernating_lithoids
 			}
 		}
-		while = {
-			count = 2
-			add_deposit = d_hibernating_lithoids
+
+		if = {
+			limit = {
+				owner = {
+					is_lithoid_empire = yes
+					has_valid_civic = civic_hive_devouring_swarm
+				}
+			}
+			while = {
+				count = 2
+				add_deposit = d_hibernating_lithoids
+			}
 		}
 	}
 }

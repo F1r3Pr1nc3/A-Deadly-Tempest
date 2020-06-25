@@ -15,9 +15,6 @@ gray_army = {
 	}
 	has_species = no
 	icon_frame = 13
-	# pop_limited = no
-	# is_pop_spawned = yes
-	# occupation = yes
 	potential = {
 		always = no
 	}
@@ -47,18 +44,18 @@ nanite_giga_guardian = {
 	prerequisites = { tech_nanite_mega_engineering }
 
 	potential = {
-		always = no
-		# owner = {
-		# 	OR = {
-		# 		has_authority = auth_machine_intelligence
-		# 		has_civic = civic_machine_assimilator
-		# 		has_trait = "trait_machine_unit"
-		# 		has_country_flag = synthetic_empire
-		# 	}
-		# }
-		# planet = {
-		# 	has_building = building_stronghold
-		# }
+		# always = no
+		owner = {
+			OR = {
+				has_authority = auth_machine_intelligence
+				has_civic = civic_machine_assimilator
+				has_trait = "trait_machine_unit"
+				has_country_flag = synthetic_empire
+			}
+		}
+		planet = {
+			has_building = building_stronghold
+		}
 	}
 }
 
@@ -105,39 +102,25 @@ nanite_giga_warform = {
 		# 	has_global_flag = active_gray_goo
 		# 	exists = event_target:graygoo_country
 		# }
+		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
+
 		# custom_tooltip = {
 			# 	text = titanic_troop_limit_tooltip
 		planet = {
 			OR = {
 				is_capital = yes
-				# AND = {
-				# 	exists = event_target:lcluster_factory_system
-				# 	solar_system = { is_same_value = event_target:lcluster_factory_system }
-				# }
 				solar_system = { has_star_flag = graygoo_factory_system }
 			}
 			has_building = building_stronghold
 		}
 		owner = {
 			OR = {
-				AND = {
-					exists = event_target:gray_owner
-					is_same_empire = event_target:gray_owner
-				}
-				AND = {
-					exists = event_target:goo_slayer
-					is_same_empire = event_target:goo_slayer
-				}
-				# has_country_flag =
-				AND = {
-					exists = event_target:graygoo_country
-					is_same_empire = event_target:graygoo_country
-				}
+				AND = { exists = event_target:gray_owner is_same_empire = event_target:gray_owner }
+				AND = { exists = event_target:goo_slayer is_same_empire = event_target:goo_slayer }
+				# has_country_flag = goo_slayer
+				# has_country_flag = lcluster_opener
+				AND = { exists = event_target:graygoo_country is_same_empire = event_target:graygoo_country }
 			}
-		}
-
-		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-		owner = {
 			OR = {
 				has_authority = auth_machine_intelligence
 				has_civic = civic_machine_assimilator
@@ -154,10 +137,6 @@ nanite_giga_warform = {
 			planet = {
 				OR = {
 					is_capital = yes
-					# AND = {
-					# 	exists = event_target:lcluster_factory_system
-					# 	solar_system = { is_same_value = event_target:lcluster_factory_system }
-					# }
 					solar_system = { has_star_flag = graygoo_factory_system }
 				}
 			}

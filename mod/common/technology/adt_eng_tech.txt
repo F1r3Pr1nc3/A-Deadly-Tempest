@@ -1,39 +1,55 @@
 # ##################
 # Ship Sizes
 # ##################
-
 tech_nanite_ships = {
 	cost = @tier5cost2
 	area = engineering
 	tier = 5
-	category = { voidcraft }
-	prerequisites = { "tech_battleships" }
+	category = {
+		voidcraft
+	}
+	prerequisites = {
+		"tech_battleships"
+	}
 	weight = @tier5weight1
 	is_reverse_engineerable = yes
 	is_rare = yes
-
 	## unlock nanite ships
 	prereqfor_desc = {
 		ship = {
-			title = "TECH_UNLOCK_NANITE_CONSTRUCTION_TITLE"
-			desc = "TECH_UNLOCK_NANITE_CONSTRUCTION_DESC"
+			title = "TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_DESC"
 		}
 	}
-
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+		NOT = {
+			has_global_flag = ESC_weapons_nanite_forbidden
+		}
 		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
+			NOT = {
+				has_global_flag = distar_overhaul_mod_active
+			}
 			has_technology = tech_nanites_assembler_factory
 		}
 	}
-
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			NOT = {
+				any_system_within_border = {
+					any_system_planet = {
+						has_resource = {
+							type = nanites
+							amount > 0
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -41,33 +57,45 @@ tech_nanite_ships = {
 # ##################
 # Nanite upgrades
 # ##################
-
 tech_nanite_build_speed = {
 	cost = @tier5cost2
 	area = engineering
 	tier = 5
-	category = { voidcraft }
+	category = {
+		voidcraft
+	}
 	weight = @tier5weight2
 	is_rare = yes
-
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
 		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
+			NOT = {
+				has_global_flag = distar_overhaul_mod_active
+			}
 			has_technology = tech_nanite_clouds
 		}
 	}
-
 	modifier = {
-		starbase_shipyard_build_speed_mult = 0.20
-		starbase_shipyard_build_cost_mult = -0.10
+		starbase_shipyard_build_speed_mult = 0.2
+		starbase_shipyard_build_cost_mult = -0.1
 	}
-
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			NOT = {
+				any_system_within_border = {
+					any_system_planet = {
+						has_resource = {
+							type = nanites
+							amount > 0
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -76,33 +104,50 @@ tech_nanite_hull = {
 	cost = @tier5cost3
 	area = engineering
 	tier = 5
-	category = { voidcraft }
-	prerequisites = { "tech_nanite_ships" }
+	category = {
+		voidcraft
+	}
+	prerequisites = {
+		"tech_nanite_ships"
+	}
 	weight = @tier5weight3
 	is_reverse_engineerable = yes
 	is_rare = yes
-
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
-		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
+		NOT = {
+			has_global_flag = ESC_weapons_nanite_forbidden
+		}
 		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
+			NOT = {
+				has_global_flag = distar_overhaul_mod_active
+			}
 			has_technology = tech_orbital_nanite_shipyard
 		}
 	}
-
 	modifier = {
 		ship_hull_mult = 0.2
 		ship_armor_mult = 0.2
 		ship_hull_regen_add_static = 0.5
 		ship_armor_regen_add_static = 1
 	}
-
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			NOT = {
+				any_system_within_border = {
+					any_system_planet = {
+						has_resource = {
+							type = nanites
+							amount > 0
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -112,17 +157,25 @@ tech_nanite_living_metal = {
 	cost = @tier5cost1
 	area = engineering
 	tier = 5
-	category = { materials }
-	prerequisites = { "tech_mine_living_metal" }
+	category = {
+		materials
+	}
+	prerequisites = {
+		"tech_mine_living_metal"
+	}
 	weight = @tier5weight1
 	is_rare = yes
-
 	# Unlocks nanite_living_metal_forge
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
 		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
+			NOT = {
+				has_global_flag = distar_overhaul_mod_active
+			}
 			has_technology = tech_nanite_clouds
 		}
 	}
@@ -130,11 +183,19 @@ tech_nanite_living_metal = {
 	modifier = {
 		country_resource_max_sr_living_metal_add = 2000
 	}
-
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			NOT = {
+				any_system_within_border = {
+					any_system_planet = {
+						has_resource = {
+							type = nanites
+							amount > 0
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -143,29 +204,42 @@ tech_nanocrystals = {
 	cost = @tier5cost1
 	area = engineering
 	tier = 5
-	category = { materials }
+	category = {
+		materials
+	}
 	weight = @tier5weight1
 	is_rare = yes
-
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
 		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
+			NOT = {
+				has_global_flag = distar_overhaul_mod_active
+			}
 			has_technology = tech_nanite_clouds
 		}
 	}
-
 	modifier = {
 		weapon_type_explosive_weapon_damage_mult = 0.2
 		weapon_type_kinetic_weapon_damage_mult = 0.2
 		weapon_type_energy_weapon_damage_mult = 0.2
 	}
-
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			NOT = {
+				any_system_within_border = {
+					any_system_planet = {
+						has_resource = {
+							type = nanites
+							amount > 0
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -173,37 +247,52 @@ tech_nanocrystals = {
 # ##################################
 # Nanite Starbases/stations upgrades
 # ##################################
-
 # Modular Engineering
 tech_nanite_modular_engineering = {
 	cost = @tier5cost3
 	area = engineering
-	category = { voidcraft }
+	category = {
+		voidcraft
+	}
 	tier = 5
-	prerequisites = { "tech_starbase_5" "tech_modular_engineering" }
+	prerequisites = {
+		"tech_starbase_5"
+		"tech_modular_engineering"
+	}
 	is_rare = yes
 	weight = @tier5weight2
-
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
 		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
+			NOT = {
+				has_global_flag = distar_overhaul_mod_active
+			}
 			has_technology = tech_nanite_clouds
 		}
 	}
-
 	modifier = {
 		starbase_building_build_speed_mult = 0.25
 		starbase_module_build_speed_mult = 0.25
 		starbase_upgrade_cost_mult = -0.15
 		starbase_upgrade_speed_mult = 0.25
 	}
-
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			NOT = {
+				any_system_within_border = {
+					any_system_planet = {
+						has_resource = {
+							type = nanites
+							amount > 0
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -217,11 +306,9 @@ tech_nanite_modular_engineering = {
 # 	category = { voidcraft }
 # 	ai_update_type = military
 # 	weight = @tier5weight3
-
 # 	potential = {
 # 		has_resource = { type = sr_living_metal amount > 0 }
 # 	}
-
 # 	weight_modifier = {
 # 		factor = 0 		# Can only be reverse engineered from killing the Scavenger Bot
 # 	}

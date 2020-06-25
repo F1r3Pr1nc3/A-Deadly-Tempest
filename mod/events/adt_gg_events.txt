@@ -1,4 +1,5 @@
 namespace = a_deadly_tempest
+
 ####################################################
 ####################################################
 #####                                          #####
@@ -13,6 +14,7 @@ namespace = a_deadly_tempest
 ##           Setting up mod-is-in-use flags        ##
 ##        Activation on Game Start/Saved Game      ##
 #####################################################
+
 event = {
 	id = a_deadly_tempest.1
 	hide_window = yes
@@ -25,6 +27,7 @@ event = {
 	}
 	immediate = {
 		set_global_flag = a_deadly_tempest_mod_active
+		log = "a_deadly_tempest_mod_active"
 	}
 }
 
@@ -41,6 +44,7 @@ event = {
 	}
 	immediate = {
 		set_global_flag = a_deadly_tempest_mod_active
+		log = "a_deadly_tempest_mod_active"
 	}
 }
 
@@ -1173,11 +1177,14 @@ country_event = {
 		give_technology = { tech = tech_nanite_bombardment message = no }
 		give_technology = { tech = tech_nanite_mega_engineering message = no }
 		give_technology = { tech = tech_lgate_construction message = no }
+		give_technology = { tech = tech_guardians message = no }
 
-		add_global_ship_design = "NAME_Dessanu_Mothership"
-		add_global_ship_design = "NAME_Dessanu_Interdictor"
+		add_global_ship_design = "NAME_Nanite_Mothership"
+		add_global_ship_design = "NAME_Nanite_Interdictor"
+		add_global_ship_design = "NAME_Nanite_Dragon"
 		add_global_ship_design = "NAME_Gatebuilder_Starbase"
-		# add_global_ship_design = "NAME_Reclaimer"
+		add_global_ship_design = "NAME_Scavenger_Bot"
+		add_global_ship_design = "NAME_Type_69"
 
 		set_country_flag = synthetic_empire
 		country_event = { id = a_deadly_tempest.13006 }
@@ -1185,11 +1192,15 @@ country_event = {
 		#last_created_country
 		create_ship_design = { design = "NAME_Gatebuilder_Starbase" }
 		add_ship_design = last_created_design
-		# create_ship_design = { design = "NAME_Reclaimer" }
-		# add_ship_design = last_created_design
-		create_ship_design = { design = "NAME_Dessanu_Mothership" }
+		create_ship_design = { design = "NAME_Scavenger_Bot" }
 		add_ship_design = last_created_design
-		create_ship_design = { design = "NAME_Dessanu_Interdictor" }
+		create_ship_design = { design = "NAME_Nanite_Dragon" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Nanite_Mothership" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Nanite_Interdictor" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Type_69" }
 		add_ship_design = last_created_design
 
 		# set_policy = {

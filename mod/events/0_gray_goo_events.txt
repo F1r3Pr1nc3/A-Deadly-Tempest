@@ -163,7 +163,7 @@ country_event = {
 	}
 }
 
-# Colony Bombarded
+# Colony Bombarded (From.From = ship)
 planet_event = {
 	id = graygoo.2
 	#hide_window = yes
@@ -226,7 +226,7 @@ planet_event = {
 				1 = { add_deposit = d_failing_infrastructure }
 				16 = {
 					# modifier = { NOT = { exists = owner } factor = 0 }
-					ROOT = { generate_new_deposits_and_blockers = yes }
+					generate_new_deposits_and_blockers = yes
 				}
 			}
 		}
@@ -504,12 +504,12 @@ country_event = {
 			end_curator_chain = yes
 		}
 		# Nanite Dreadnought
-		FROM = { add_global_ship_design = "NAME_Type_51" }
+		FROM = { add_global_ship_design = "NAME_Type_69" }
 		FROMFROMFROM = {
 			fleet = {
 				create_ship = {
 					name = random
-					design = "NAME_Type_51"
+					design = "NAME_Type_69"
 					graphical_culture = "npf_01"
 					upgradable = yes
 				}
@@ -679,16 +679,44 @@ country_event = {
 				limit = { has_planet_flag = main_star }
 				save_event_target_as = main_star
 			}
-			create_species = {
-				name = "NAME_Dessanu"
-				class = FUN #random_non_machine
-				portrait = random #"sd_fun_robot"
-				traits = {
-					trait = random_traits
-					trait = "trait_mechanical"
+			random_list = {
+				15 = {
+					create_species = {
+						name = "NAME_Dessanu"
+						class = FUN #random_non_machine
+						portrait = random #"sd_fun_robot"
+						traits = { trait = random_traits }
+						#homeworld = random
+						immortal = yes
+					}
 				}
-				#homeworld = random
-				immortal = yes
+				15 = {
+					create_species = {
+						name = "NAME_Dessanu"
+						class = LITHOID
+						portrait = random
+						traits = { trait = random_traits }
+						immortal = yes
+					}
+				}
+				15 = {
+					create_species = {
+						name = "NAME_Dessanu"
+						class = PLANT
+						portrait = random
+						traits = { trait = random_traits }
+						immortal = yes
+					}
+				}
+				15 = {
+					create_species = {
+						name = "NAME_Dessanu"
+						class = MOL
+						portrait = random
+						traits = { trait = random_traits }
+						immortal = yes
+					}
+				}
 			}
 			create_country = {
 				name = "NAME_Dessanu_Consonance"
@@ -725,6 +753,21 @@ country_event = {
 						influence = 5000
 						nanites = 50000
 					}
+					# species = {
+					# 	change_species_characteristics = {
+					# 		immortal = yes
+					# 		# new_pop_resource_requirement = { type = food_surplus value = 0 }
+					# 	}
+					# }
+					modify_species = {
+						species = species
+						add_trait = trait_machine_unit
+						add_trait = trait_mechanical
+						add_traits_at_start_of_list = yes
+						ideal_planet_class = pc_gray_goo
+						change_scoped_species = yes
+					}
+
 					## add technologies
 					country_event = { id = a_deadly_tempest.107 }
 				}
@@ -1811,7 +1854,9 @@ country_event = {
 	immediate = {
 		fromfromfrom = { save_event_target_as = goo_slayer_ship }
 		from = {
-			save_event_target_as = goo_slayer
+			# ADT: Used later
+			# set_country_flag = goo_slayer
+			save_global_event_target_as = goo_slayer
 			# Give tech
 			country_event = { id = a_deadly_tempest.7 days = 1 }
 		}
@@ -1838,6 +1883,7 @@ country_event = {
 			every_owned_planet = {
 				limit = { is_planet_class = pc_gaia }
 				remove_all_buildings = yes
+				generate_new_deposits_and_blockers = yes
 				destroy_colony = yes
 			}
 			every_planet = {
@@ -1860,14 +1906,16 @@ country_event = {
 				remove_all_buildings = yes
 				destroy_colony = yes
 				reroll_planet = yes
+				generate_new_deposits_and_blockers = yes
 			}
 		} else = {
 			every_owned_planet = {
 				limit = { is_planet_class = pc_gaia }
 				change_pc = pc_gray_goo
 				remove_all_buildings = yes
-				destroy_colony = yes
 				reroll_planet = yes
+				generate_new_deposits_and_blockers = yes
+				destroy_colony = yes
 				add_modifier = { modifier = terraforming_candidate days = -1 }
 			}
 		}
@@ -1875,7 +1923,7 @@ country_event = {
 		destroy_country = yes
 		clear_global_event_target = graygoo_country
 		clear_global_event_target = nanite_factory
-		clear_global_event_target = lcluster_factory_system # needed?
+		clear_global_event_target = lcluster_factory_system
 	}
 }
 

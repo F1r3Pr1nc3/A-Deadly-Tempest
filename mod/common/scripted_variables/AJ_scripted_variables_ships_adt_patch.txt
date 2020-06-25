@@ -7,9 +7,9 @@
 @aj_starbase_formation_priority = 1
 @aj_build_block_radius_starbase = 20
 
-@aj_speed_very_slow = 80 # aj = 80
-# @speed_slow = 100
-@aj_speed_default = 120 # aj = 120
+@aj_speed_very_slow = 80
+@aj_speed_slow = 100
+@aj_speed_default = 120
 @aj_speed_fast = 140
 # @speed_very_fast = 160
 @aj_speed_very_fast_npc = 200

@@ -3,20 +3,6 @@
 #	POWER	#
 #############
 
-@corvette_power_1 = 75
-@corvette_power_2 = 100
-@corvette_power_3 = 130
-@corvette_power_4 = 170
-@corvette_power_5 = 220
-@corvette_power_6 = 285
-
-@destroyer_power_1 = 140
-@destroyer_power_2 = 180
-@destroyer_power_3 = 240
-@destroyer_power_4 = 320
-@destroyer_power_5 = 430
-@destroyer_power_6 = 550
-
 @cruiser_power_1 = 280
 @cruiser_power_2 = 360
 @cruiser_power_3 = 480
@@ -24,12 +10,12 @@
 @cruiser_power_5 = 800
 @cruiser_power_6 = 1030
 
-@battleship_power_1 = 550
-@battleship_power_2 = 720
-@battleship_power_3 = 950
-@battleship_power_4 = 1250
-@battleship_power_5 = 1550
-@battleship_power_6 = 2000
+# @battleship_power_1 = 550
+# @battleship_power_2 = 720
+# @battleship_power_3 = 950
+# @battleship_power_4 = 1250
+# @battleship_power_5 = 1550
+# @battleship_power_6 = 2000
 
 @titan_power_1 = 1100
 @titan_power_2 = 1450
@@ -40,12 +26,6 @@
 
 @colossus_power = 10000
 
-@starbase_power = 10000
-
-@platform_power_1 = 200
-@platform_power_2 = 260
-@platform_power_3 = 340
-@platform_power_4 = 440
 @platform_power_5 = 575
 @platform_power_6 = 750
 
@@ -53,57 +33,20 @@
 #	COST	#
 #############
 
-@corvette_cost_1 = 20
-@corvette_cost_2 = 25
-@corvette_cost_3 = 30
-@corvette_cost_4 = 35
-@corvette_cost_5 = 40
-@corvette_cost_6 = 45
-
-@destroyer_cost_1 = 40
-@destroyer_cost_2 = 50
-@destroyer_cost_3 = 60
-@destroyer_cost_4 = 70
-@destroyer_cost_5 = 80
-@destroyer_cost_6 = 90
-
-@cruiser_cost_1 = 100
-@cruiser_cost_2 = 130
-@cruiser_cost_3 = 160
-@cruiser_cost_4 = 190
-@cruiser_cost_5 = 220
-@cruiser_cost_6 = 250
-
-@battleship_cost_1 = 200
-@battleship_cost_2 = 260
-@battleship_cost_3 = 320
-@battleship_cost_4 = 380
-@battleship_cost_5 = 440
-@battleship_cost_6 = 500
-
-@titan_cost_1 = 400
-@titan_cost_2 = 450
-@titan_cost_3 = 500
-@titan_cost_4 = 550
-@titan_cost_5 = 1054
-@titan_cost_6 = 1370
-
-@colossus_cost_1 = 0
-
-@platform_cost_1 = 40
-@platform_cost_2 = 50
-@platform_cost_3 = 60
-@platform_cost_4 = 70
-@platform_cost_5 = 80
-@platform_cost_6 = 90
+# @cruiser_cost_5 = 220
+# @cruiser_cost_6 = 250
+# @battleship_cost_6 = 296
+# @titan_cost_5 = 1054
+# @titan_cost_6 = 1370
+# @platform_cost_6 = 74
 
 #############
-#  REACTORS #
+# REACTORS #
 #############
 
-########################
-# Fission Reactors
-########################
+# ########################
+# # Fission Reactors
+# ########################
 
 utility_component_template = {
 	key = "INTERDICTOR_FISSION_REACTOR"
@@ -124,7 +67,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor }
+	size_restriction = { graygoo_interdictor auto_dread }
 	upgrades_to = "INTERDICTOR_FUSION_REACTOR"
 
 	ai_weight = {
@@ -151,8 +94,8 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_mothership }
-	upgrades_to = "TITAN_FUSION_REACTOR"
+	size_restriction = { graygoo_mothership scavenger_bot nanite_dragon }
+	upgrades_to = "GREYGOO_MOTHERSHIP_FUSION_REACTOR"
 
 	ai_weight = {
 		weight = 1
@@ -182,7 +125,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor }
+	size_restriction = { graygoo_interdictor auto_dread }
 	upgrades_to = "INTERDICTOR_COLD_FUSION_REACTOR"
 
 	ai_weight = {
@@ -209,8 +152,8 @@ utility_component_template = {
 
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_mothership }
-	upgrades_to = "TITAN_COLD_FUSION_REACTOR"
+	size_restriction = { graygoo_mothership scavenger_bot nanite_dragon }
+	upgrades_to = "GREYGOO_MOTHERSHIP_COLD_FUSION_REACTOR"
 
 	ai_weight = {
 		weight = 2
@@ -240,7 +183,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor }
+	size_restriction = { graygoo_interdictor auto_dread }
 	upgrades_to = "INTERDICTOR_ANTIMATTER_REACTOR"
 
 	ai_weight = {
@@ -267,8 +210,8 @@ utility_component_template = {
 
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_mothership }
-	upgrades_to = "TITAN_ANTIMATTER_REACTOR"
+	size_restriction = { graygoo_mothership scavenger_bot nanite_dragon }
+	upgrades_to = "GREYGOO_MOTHERSHIP_ANTIMATTER_REACTOR"
 
 	ai_weight = {
 		weight = 3
@@ -298,7 +241,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor }
+	size_restriction = { graygoo_interdictor auto_dread }
 	upgrades_to = "INTERDICTOR_ZERO_POINT_REACTOR"
 
 	ai_weight = {
@@ -325,8 +268,8 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_mothership }
-	upgrades_to = "TITAN_ZERO_POINT_REACTOR"
+	size_restriction = { graygoo_mothership scavenger_bot nanite_dragon }
+	upgrades_to = "GREYGOO_MOTHERSHIP_ZERO_POINT_REACTOR"
 
 	ai_weight = {
 		weight = 4
@@ -356,7 +299,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor }
+	size_restriction = { graygoo_interdictor auto_dread }
 	upgrades_to = "INTERDICTOR_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -383,8 +326,8 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_mothership }
-	upgrades_to = "TITAN_DARK_MATTER_REACTOR"
+	size_restriction = { graygoo_mothership scavenger_bot nanite_dragon }
+	upgrades_to = "GREYGOO_MOTHERSHIP_DARK_MATTER_REACTOR"
 
 	ai_weight = {
 		weight = 5
@@ -414,7 +357,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor }
+	size_restriction = { graygoo_interdictor auto_dread }
 
 	ai_weight = {
 		weight = 6
@@ -440,7 +383,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { graygoo_mothership }
+	size_restriction = { graygoo_mothership scavenger_bot nanite_dragon }
 
 	ai_weight = {
 		weight = 6
