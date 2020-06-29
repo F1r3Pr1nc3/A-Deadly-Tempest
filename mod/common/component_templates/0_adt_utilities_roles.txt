@@ -1,0 +1,315 @@
+## Combat Computers & Thrusters Patch for auto_dread & scavenger_bot
+#Combat Computers
+@power3 = -25
+@cost3 = 20
+# DM Power:
+@titan_power_6 = 4200
+@colossus_power = 10000
+@platform_power_6 = 750
+@battleship_cost_6 = 296
+@titan_cost_6 = 592
+@platform_cost_6 = 74
+# DM Thrusters:
+@titan_power_5 = -480
+@titan_cost4 = 192
+@colossus_power_5 = -600
+@colossus_cost5 = 300
+@shipAuraRange = 40
+
+# 'LINE' COMPUTERS
+
+# utility_component_template = {
+# 	key = "COMBAT_COMPUTER_LINE_SAPIENT"
+# 	size = small
+# 	icon = "GFX_ship_part_computer_line_sapient"
+# 	icon_frame = 1
+# 	power = @power3
+# 	resources = {
+# 		category = ship_components
+# 		cost = {
+# 			alloys = @cost3
+# 		}
+# 	}
+# 	class_restriction = { shipclass_military }
+# 	size_restriction = { destroyer cruiser battleship graygoo_interdictor }
+# 	component_set = "combat_computers"
+# 	ship_behavior = "line"
+# 	prerequisites = { "tech_combat_computers_3" }
+
+# 	ship_modifier = {
+# 		ship_fire_rate_mult = 0.20
+# 		ship_accuracy_add = 20
+# 	}
+
+# 	ai_weight = {
+# 		weight = 5
+# 		modifier = {
+# 			factor = 0
+# 			OR = {
+# 				has_global_flag = ghost_signal_5_flag
+# 				has_global_flag = ghost_signal_4_flag
+# 				has_global_flag = ghost_signal_3_flag
+# 				has_global_flag = ghost_signal_2_flag
+# 			}
+# 		}
+# 	}
+# }
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
+	size = small
+	icon = "GFX_ship_part_computer_line_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { destroyer cruiser battleship graygoo_interdictor }
+	component_set = "combat_computers"
+	ship_behavior = "line"
+	prerequisites = { "tech_combat_computers_autonomous" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_accuracy_add = 20
+	}
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_LINE_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_line_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { destroyer cruiser battleship graygoo_interdictor }
+	component_set = "combat_computers"
+	ship_behavior = "line"
+	prerequisites = { "tech_precognition_interface" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_accuracy_add = 15
+		ship_tracking_add = 10
+	}
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+# 'ARTILLERY' COMPUTERS
+
+# utility_component_template = {
+# 	key = "COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+# 	size = small
+# 	icon = "GFX_ship_part_computer_artillery_sapient"
+# 	icon_frame = 1
+# 	power = @power3
+# 	resources = {
+# 		category = ship_components
+# 		cost = {
+# 			alloys = @cost3
+# 		}
+# 	}
+# 	class_restriction = { shipclass_military shipclass_starbase }
+# 	size_restriction = {
+# 		destroyer
+# 		cruiser
+# 		battleship
+# 		titan
+# 		juggernaut
+# 		auto_dread
+# 		scavenger_bot
+# 	}
+# 	component_set = "combat_computers"
+# 	ship_behavior = "artillery"
+# 	prerequisites = { "tech_combat_computers_3" }
+
+# 	ship_modifier = {
+# 		ship_fire_rate_mult = 0.20
+# 		ship_weapon_range_mult = 0.20
+# 	}
+
+# 	ai_weight = {
+# 		weight = 5
+# 		modifier = {
+# 			factor = 0
+# 			OR = {
+# 				has_global_flag = ghost_signal_5_flag
+# 				has_global_flag = ghost_signal_4_flag
+# 				has_global_flag = ghost_signal_3_flag
+# 				has_global_flag = ghost_signal_2_flag
+# 			}
+# 		}
+# 	}
+# }
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = {
+		shipclass_military
+		shipclass_starbase
+	}
+	size_restriction = {
+		destroyer
+		cruiser
+		battleship
+		titan
+		juggernaut
+		auto_dread
+		scavenger_bot
+	}
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	prerequisites = {
+		"tech_combat_computers_autonomous"
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.2
+		ship_weapon_range_mult = 0.2
+	}
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_ARTILLERY_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { shipclass_military shipclass_starbase }
+	size_restriction = {
+		destroyer
+		cruiser
+		battleship
+		titan
+		juggernaut
+		auto_dread
+		scavenger_bot
+	}
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	prerequisites = { "tech_precognition_interface" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_weapon_range_mult = 0.15
+		ship_tracking_add = 10
+	}
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+# 'CARRIER' COMPUTERS
+utility_component_template = {
+	key = "COMBAT_COMPUTER_CARRIER_AUTONOMOUS"
+	size = small
+	icon = "GFX_ship_part_computer_carrier_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = {
+		shipclass_military
+		shipclass_starbase
+	}
+	size_restriction = {
+		cruiser
+		battleship
+		juggernaut
+		titan
+		auto_dread
+		scavenger_bot
+	}
+	component_set = "combat_computers"
+	ship_behavior = "carrier"
+	prerequisites = {
+		"tech_combat_computers_autonomous"
+	}
+	ship_modifier = {
+		ship_engagement_range_mult = 1
+	}
+	ai_weight = {
+		weight = 5
+	}
+}
+
+
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_CARRIER_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_carrier_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = {
+		shipclass_military
+		shipclass_starbase
+	}
+	size_restriction = {
+		cruiser
+		battleship
+		juggernaut
+		titan
+		auto_dread
+		scavenger_bot
+	}
+	component_set = "combat_computers"
+	ship_behavior = "carrier"
+	prerequisites = {
+		"tech_precognition_interface"
+	}
+	ship_modifier = {
+		ship_engagement_range_mult = 0.75
+		ship_tracking_add = 10
+	}
+	ai_weight = {
+		weight = 4
+	}
+}

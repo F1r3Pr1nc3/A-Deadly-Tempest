@@ -199,27 +199,42 @@ ariphaos_patch_leader_add_traits = {
 			}
 		}
 		if = {
-			limit = { leader_class = admiral }
+			limit = { 
+				leader_class = admiral 
+				NOT = { has_trait = leader_trait_admiral_chosen }
+			}
 			add_trait = leader_trait_admiral_psionic
 			add_ruler_trait = leader_trait_ruler_psionic
 		}
 		else_if = {
-			limit = { leader_class = general }
+			limit = { 
+				leader_class = general
+				NOT = { has_trait = leader_trait_general_chosen }
+			}
 			add_trait = leader_trait_general_psionic
 			add_ruler_trait = leader_trait_ruler_psionic
 		}
 		else_if = {
-			limit = { leader_class = governor }
+			limit = { 
+				leader_class = governor
+				NOT = { has_trait = leader_trait_governor_chosen }
+			}
 			add_trait = leader_trait_governor_psionic
 			add_ruler_trait = leader_trait_ruler_psionic
 		}
 		else_if = {
-			limit = { leader_class = scientist }
+			limit = { 
+				leader_class = scientist
+				NOT = { has_trait = leader_trait_scientist_chosen }
+			}
 			add_trait = leader_trait_scientist_psionic
 			add_ruler_trait = leader_trait_ruler_psionic
 		}
 		else_if = {
-			limit = { leader_class = ruler }
+			limit = { 
+				leader_class = ruler 
+				NOT = { has_ruler_trait = leader_trait_ruler_chosen }
+			}
 			add_trait = leader_trait_ruler_psionic
 			add_ruler_trait = leader_trait_ruler_psionic
 		}

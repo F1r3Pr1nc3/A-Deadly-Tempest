@@ -2,7 +2,7 @@
 ship_design = {
 	name = "NAME_Nanite_Mothership"
 	ship_size = graygoo_mothership
-	# is_event_design = yes
+	is_event_design = yes
 	section = {
 		template = "nanite_mothership_key"
 		slot = "mid"
@@ -315,7 +315,7 @@ ship_design = {
 ship_design = {
 	name = "NAME_Nanite_Interdictor"
 	ship_size = graygoo_interdictor
-	# is_event_design = yes
+	is_event_design = yes
 	section = {
 		template = "nanite_interdictor_key"
 		slot = "mid"
@@ -392,8 +392,7 @@ ship_design = {
 	required_component = "SENSOR_4"
 	required_component = "SHIP_THRUSTER_4"
 	required_component = "CRUISER_ZERO_POINT_REACTOR"
-	required_component = "COMBAT_NANITE_COMPUTER_LINE_AUTONOMOUS"
-	# required_component = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
+	required_component = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
 }
 
 # Factory
@@ -600,7 +599,7 @@ ship_design = {
 ship_design = {
 	name = "NAME_Dessanu_Mothership"
 	ship_size = graygoo_mothership
-	is_event_design = yes
+	# is_event_design = yes
 	section = {
 		template = "nanite_mothership_key"
 		slot = "mid"
@@ -736,7 +735,7 @@ ship_design = {
 ship_design = {
 	name = "NAME_Dessanu_Interdictor"
 	ship_size = graygoo_interdictor
-	is_event_design = yes
+	# is_event_design = yes
 	section = {
 		template = "nanite_interdictor_key"
 		slot = "mid"
@@ -820,6 +819,7 @@ ship_design = {
 ship_design = {
 	name = "NAME_Type_69"
 	ship_size = auto_dread
+	# ship_size = npc_warship_01
 	# is_event_design = yes
 	section = {
 		# template = "automated_dreadnought_key"
@@ -973,6 +973,7 @@ ship_design = {
 ship_design = {
 	name = "NAME_Gatebuilder_Starbase"
 	ship_size = starbase_gatebuilders
+	# is_event_design = yes #vanilla no
 	section = {
 		template = "gatebuilder_starbase_key"
 		slot = "mid"
@@ -1213,17 +1214,17 @@ ship_design = {
 		}
 	}
 	required_component = "HYPER_DRIVE_3"
-	required_component = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
 	required_component = "TITAN_ZERO_POINT_REACTOR"
 	required_component = "SHIP_THRUSTER_4"
 	required_component = "SENSOR_4"
+	required_component = "COMBAT_COMPUTER_CARRIER_AUTONOMOUS"
 }
 
 # Nanite Dragon
 ship_design = {
 	name = "NAME_Nanite_Dragon"
 	ship_size = nanite_dragon
-	is_event_design = yes
+	# is_event_design = yes
 	section = {
 		template = "nanite_dragon_key"
 		slot = "mid"
@@ -1305,7 +1306,7 @@ ship_design = {
 		}
 	}
 	required_component = "GUARDIAN_DRIVE"
-	required_component = "COMBAT_COMPUTER_ARTILLERY_SAPIENT"
 	required_component = "GUARDIAN_PROPULSION"
 	required_component = "GUARDIAN_SENSORS"
+	required_component = "COMBAT_COMPUTER_ARTILLERY_SAPIENT"
 }

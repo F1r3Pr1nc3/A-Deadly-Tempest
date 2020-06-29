@@ -1,28 +1,5 @@
 objectTypes = {
 
-	#####     Infinity Machine     #####
-
-	pdxmesh = {
-		name = "infinity_sphere_hull_mesh"
-		file = "gfx/models/ships/guardians/technosphere/technosphere.mesh"
-		scale = 2.0
-
-		animation = { id = "opened"			type = "technosphere_opened_animation" }
-		animation = { id = "closed"			type = "technosphere_closed_animation" }
-		animation = { id = "opening"		type = "technosphere_opening_animation" }
-		animation = { id = "closing"		type = "technosphere_closing_animation" }
-		animation = { id = "death"			type = "technosphere_death_animation" }
-
-		meshsettings = {
-			name = "polySurface61Shape"
-			index = 0
-			texture_diffuse = "technosphere_diffuse.dds"
-			texture_normal = "technosphere_normal.dds"
-			texture_specular = "technosphere_specular.dds"
-			shader = "PdxMeshShip"
-		}
-	}
-
 	#####     Automated Dreadnought     #####
 
 	pdxmesh = {
@@ -39,132 +16,6 @@ objectTypes = {
 			texture_diffuse = "dreadnought_01_diffuse.dds"
 			texture_normal = "dreadnought_01_normal.dds"
 			texture_specular = "dreadnought_01_specular.dds"
-			shader = "PdxMeshShip"
-		}
-	}
-
-	#####     Enigmatic Fortresses     #####
-
-	pdxmesh = {
-		name = "enig_sentinel_mesh"
-		file = "gfx/models/ships/guardians/ancient_station/ancient_station_xs.mesh"
-		scale = 1.0
-
-		animation = { id = "idle"		type = "ancient_station_xs_idle_animation" }
-		animation = { id = "moving"		type = "ancient_station_xs_moving_animation" }
-		animation = { id = "death"		type = "ancient_station_xs_death_animation" }
-	}
-
-	pdxmesh = {
-		name = "enig_sentinel_hull_mesh"
-		file = "gfx/models/ships/guardians/ancient_station/ancient_station_xs_hull.mesh"
-		scale = 5.0
-
-		meshsettings = {
-			name = "polySurface855Shape"
-			index = 0
-			texture_diffuse = "ancient_space_station_diffuse.dds"
-			texture_normal = "ancient_space_station_normal.dds"
-			texture_specular = "ancient_space_station_specular.dds"
-			shader = "PdxMeshShip"
-		}
-	}
-
-	pdxmesh = {
-		name = "enig_defender_mesh"
-		file = "gfx/models/ships/guardians/ancient_station/ancient_station_s.mesh"
-		scale = 1.0
-
-		animation = { id = "idle"		type = "ancient_station_s_idle_animation" }
-		animation = { id = "moving"		type = "ancient_station_s_moving_animation" }
-		animation = { id = "death"		type = "ancient_station_s_death_animation" }
-	}
-
-	pdxmesh = {
-		name = "enig_defender_hull_mesh"
-		file = "gfx/models/ships/guardians/ancient_station/ancient_station_s_hull.mesh"
-		scale = 5.0
-
-		meshsettings = {
-			name = "polySurface1328Shape"
-			index = 0
-			texture_diffuse = "ancient_space_station_diffuse.dds"
-			texture_normal = "ancient_space_station_normal.dds"
-			texture_specular = "ancient_space_station_specular.dds"
-			shader = "PdxMeshShip"
-		}
-	}
-
-	pdxmesh = {
-		name = "enig_warden_mesh"
-		file = "gfx/models/ships/guardians/ancient_station/ancient_station_m.mesh"
-		scale = 1.0
-
-		animation = { id = "idle"		type = "ancient_station_m_idle_animation" }
-		animation = { id = "moving"		type = "ancient_station_m_moving_animation" }
-		animation = { id = "death"		type = "ancient_station_m_death_animation" }
-	}
-
-	pdxmesh = {
-		name = "enig_warden_hull_mesh"
-		file = "gfx/models/ships/guardians/ancient_station/ancient_station_m_hull.mesh"
-		scale = 5.0
-
-		meshsettings = {
-			name = "polySurface1294Shape"
-			index = 0
-			texture_diffuse = "ancient_space_station_diffuse.dds"
-			texture_normal = "ancient_space_station_normal.dds"
-			texture_specular = "ancient_space_station_specular.dds"
-			shader = "PdxMeshShip"
-		}
-	}
-
-	pdxmesh = {
-		name = "enig_guardian_mesh"
-		file = "gfx/models/ships/guardians/ancient_station/ancient_station_l.mesh"
-		scale = 1.0
-
-		animation = { id = "idle"		type = "ancient_station_l_idle_animation" }
-		animation = { id = "moving"		type = "ancient_station_l_moving_animation" }
-		animation = { id = "death"		type = "ancient_station_l_death_animation" }
-	}
-
-	pdxmesh = {
-		name = "enig_guardian_hull_mesh"
-		file = "gfx/models/ships/guardians/ancient_station/ancient_station_l_hull.mesh"
-		scale = 5.0
-
-		meshsettings = {
-			name = "polySurface1334Shape"
-			index = 0
-			texture_diffuse = "ancient_space_station_diffuse.dds"
-			texture_normal = "ancient_space_station_normal.dds"
-			texture_specular = "ancient_space_station_specular.dds"
-			shader = "PdxMeshShip"
-		}
-	}
-
-	pdxmesh = {
-		name = "enig_vault_mesh"
-		file = "gfx/models/ships/guardians/ancient_station/ancient_station_xl_frame.mesh"
-		scale = 1.0
-
-		animation = { id = "idle"		type = "ancient_station_xl_frame_idle_animation" }
-		animation = { id = "death"		type = "ancient_station_xl_frame_death_animation" }
-	}
-
-	pdxmesh = {
-		name = "enig_vault_hull_mesh"
-		file = "gfx/models/ships/guardians/ancient_station/ancient_station_xl.mesh"
-		scale = 5.0
-
-		meshsettings = {
-			name = "polySurface1036Shape"
-			index = 0
-			texture_diffuse = "ancient_space_station_diffuse.dds"
-			texture_normal = "ancient_space_station_normal.dds"
-			texture_specular = "ancient_space_station_specular.dds"
 			shader = "PdxMeshShip"
 		}
 	}
@@ -224,5 +75,35 @@ objectTypes = {
 			shader = "PdxMeshShip"
 		}
 	}
+
+	#####     Nanite Dragon     #####
+	# pdxmesh = {
+	# 	name = "nanite_dragon_section_mesh"
+	# 	file = "gfx/models/ships/guardians/space_dragon/guardian_01_space_dragon.mesh"
+	# 	scale = 100
+
+	# 	animation = { id = "idle"			type = "guardian_01_space_dragon_idle_animation" }
+	# 	animation = { id = "moving"			type = "guardian_01_space_dragon_moving_animation" }
+	# 	animation = { id = "death"			type = "guardian_01_space_dragon_death_animation" }
+	# 	animation = { id = "attack"			type = "guardian_01_space_dragon_attack_animation" }
+
+	# 	meshsettings = {
+	# 		name = "pPlane26Shape"
+	# 		index = 0
+	# 		texture_diffuse = "nanite_dragon_fins_diffuse.dds"
+	# 		texture_normal = "guardian_01_space_dragon_fins_normal.dds"
+	# 		texture_specular = "guardian_01_space_dragon_fins_specular.dds"
+	# 		shader = "PdxMeshAlphaAdditive"
+	# 	}
+
+	# 	meshsettings = {
+	# 		name = "pPlane26Shape"
+	# 		index = 1
+	# 		texture_diffuse = "nanite_dragon_diffuse.dds"
+	# 		texture_normal = "guardian_01_space_dragon_normal.dds"
+	# 		texture_specular = "guardian_01_space_dragon_specular.dds"
+	# 		shader = "PdxMeshShip"
+	# 	}
+	# }
 
 }

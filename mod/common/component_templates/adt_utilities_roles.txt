@@ -104,7 +104,7 @@ utility_component_template = {
 				has_global_flag = ghost_signal_4_flag
 				has_global_flag = ghost_signal_3_flag
 				has_global_flag = ghost_signal_2_flag
-				has_notification_modifier = ghost_signal_1
+				# has_notification_modifier = ghost_signal_1
 			}
 		}
 	}
@@ -262,7 +262,7 @@ utility_component_template = {
 				has_global_flag = ghost_signal_4_flag
 				has_global_flag = ghost_signal_3_flag
 				has_global_flag = ghost_signal_2_flag
-				has_notification_modifier = ghost_signal_1
+				# has_notification_modifier = ghost_signal_1
 			}
 		}
 	}
@@ -418,7 +418,7 @@ utility_component_template = {
 				has_global_flag = ghost_signal_4_flag
 				has_global_flag = ghost_signal_3_flag
 				has_global_flag = ghost_signal_2_flag
-				has_notification_modifier = ghost_signal_1
+				# has_notification_modifier = ghost_signal_1
 			}
 		}
 	}
@@ -482,11 +482,12 @@ utility_component_template = {
 	}
 }
 
+
 ######################
 # 'CARRIER' COMPUTERS #
 ######################
 utility_component_template = {
-	key = "COMBAT_COMPUTER_CARRIER_BASIC"
+	key = "COMBAT_NANITE_COMPUTER_CARRIER_BASIC"
 	size = small
 	icon = "GFX_ship_part_computer_carrier_basic"
 	icon_frame = 1
@@ -494,15 +495,15 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost1
+			nanites = @cost1
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { cruiser battleship juggernaut titan auto_dread scavenger_bot }
+	size_restriction = { auto_dread scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
-	prerequisites = { "tech_combat_computers_1" }
-	upgrades_to = "COMBAT_COMPUTER_CARRIER_ADVANCED"
+	prerequisites = { "tech_combat_computers_1" "tech_nanite_ships" }
+	upgrades_to = "COMBAT_NANITE_COMPUTER_CARRIER_ADVANCED"
 
 	ship_modifier = {
 		ship_engagement_range_mult = 0.25
@@ -514,7 +515,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_CARRIER_ADVANCED"
+	key = "COMBAT_NANITE_COMPUTER_CARRIER_ADVANCED"
 	size = small
 	icon = "GFX_ship_part_computer_carrier_advanced"
 	icon_frame = 1
@@ -522,15 +523,15 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost2
+			nanites = @cost2
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { cruiser battleship juggernaut titan auto_dread scavenger_bot }
+	size_restriction = { auto_dread scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
-	prerequisites = { "tech_combat_computers_2" }
-	upgrades_to = "COMBAT_COMPUTER_CARRIER_SAPIENT"
+	prerequisites = { "tech_combat_computers_2" "tech_nanite_ships" }
+	upgrades_to = "COMBAT_NANITE_COMPUTER_CARRIER_AUTONOMOUS"
 
 	ship_modifier = {
 		ship_engagement_range_mult = 0.50
@@ -542,7 +543,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_CARRIER_SAPIENT"
+	key = "COMBAT_NANITE_COMPUTER_CARRIER_AUTONOMOUS"
 	size = small
 	icon = "GFX_ship_part_computer_carrier_sapient"
 	icon_frame = 1
@@ -550,51 +551,14 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost3
+			nanites = @cost3
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { cruiser battleship juggernaut titan auto_dread scavenger_bot }
+	size_restriction = { auto_dread scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
-	prerequisites = { "tech_combat_computers_3" }
-
-	ship_modifier = {
-		ship_engagement_range_mult = 1.0
-	}
-
-	ai_weight = {
-		weight = 5
-		modifier = {
-			factor = 0
-			OR = {
-				has_global_flag = ghost_signal_5_flag
-				has_global_flag = ghost_signal_4_flag
-				has_global_flag = ghost_signal_3_flag
-				has_global_flag = ghost_signal_2_flag
-			}
-		}
-	}
-}
-
-
-utility_component_template = {
-	key = "COMBAT_COMPUTER_CARRIER_AUTONOMOUS"
-	size = small
-	icon = "GFX_ship_part_computer_carrier_sapient"
-	icon_frame = 1
-	power = @power3
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = @cost3
-		}
-	}
-	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { cruiser battleship juggernaut titan auto_dread scavenger_bot }
-	component_set = "combat_computers"
-	ship_behavior = "carrier"
-	prerequisites = { "tech_combat_computers_autonomous" }
+	prerequisites = { "tech_combat_computers_autonomous" "tech_nanite_ships" }
 
 	ship_modifier = {
 		ship_engagement_range_mult = 1.0
@@ -606,7 +570,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_CARRIER_PRECOG"
+	key = "COMBAT_NANITE_COMPUTER_CARRIER_PRECOG"
 	size = small
 	icon = "GFX_ship_part_computer_carrier_precog"
 	icon_frame = 1
@@ -614,14 +578,14 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost3
+			nanites = @cost3
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { cruiser battleship juggernaut titan auto_dread scavenger_bot }
+	size_restriction = { auto_dread scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
-	prerequisites = { "tech_precognition_interface" }
+	prerequisites = { "tech_precognition_interface" "tech_nanite_ships" }
 
 	ship_modifier = {
 		ship_engagement_range_mult = 0.75
@@ -632,7 +596,3 @@ utility_component_template = {
 		weight = 4
 	}
 }
-
-################
-# Platform
-################

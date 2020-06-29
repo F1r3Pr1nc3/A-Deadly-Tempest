@@ -51,6 +51,12 @@
  COMBAT_NANITE_COMPUTER_ARTILLERY_AUTONOMOUS:0 "Autonomous Ship Intellect (Artillery)"
  COMBAT_NANITE_COMPUTER_ARTILLERY_PRECOG:0 "Precognitive Ship Interface (Artillery)"
 
+ COMBAT_NANITE_COMPUTER_CARRIER_BASIC:0 "Specialized Combat Computer (Carrier)"
+ COMBAT_NANITE_COMPUTER_CARRIER_ADVANCED:0 "Advanced Combat Computer (Carrier)"
+ COMBAT_NANITE_COMPUTER_CARRIER_SAPIENT:0 "Sapient Ship Intellect (Carrier)"
+ COMBAT_NANITE_COMPUTER_CARRIER_AUTONOMOUS:0 "Autonomous Ship Intellect (Carrier)"
+ COMBAT_NANITE_COMPUTER_CARRIER_PRECOG:0 "Precognitive Ship Interface (Carrier)"
+
  # Reactors
  INTERDICTOR_FISSION_REACTOR:0 "$FISSION_REACTOR$"
  GREYGOO_MOTHERSHIP_FISSION_REACTOR:0 "$FISSION_REACTOR$"
@@ -84,6 +90,8 @@
  NANITE_ENERGY_MISSILE_DESC:0 "This energy missile is capable of tracking its target with the benefit of being untargetable by point defense."
  NANITE_BEAM:0 "Nanite Beam"
  NANITE_BEAM_DESC:0 "This weapon works in a similar fashion to a phase disruptor, weaponizing a hyperquantum energy charge to rip through any target smaller than a planet, but is many times more destructive, as in tandem with this energy beam is a stream of destructive nanobots programmed to devour any matter unfortunate enough to come into contact."
+ NANITE_ION_BEAM:0 "$NANITE_BEAM$"
+ NANITE_ION_BEAM_DESC:0 "$NANITE_BEAM_DESC$"
  NANITE_BASE_BEAM:0 "Stationary $NANITE_BEAM$"
  NANITE_BASE_BEAM_DESC:0 "$NANITE_BEAM_DESC$"
  NANITE_ENERGY_TORPEDO:0 "$tech_nanite_torpedo$"

@@ -12,12 +12,6 @@ component_set = {
 }
 
 component_set = {
-	key = "NANITE_BASE_BEAM"
-	icon = "GFX_ship_part_nanite_beam_titanic"
-	icon_frame = 1
-}
-
-component_set = {
 	key = "NANITE_ENERGY_MISSILE"
 	icon = "GFX_ship_part_nanite_energymissiles_1"
 	icon_frame = 1

@@ -8,6 +8,8 @@
 @titan_power_6 = 4200
 @colossus_power = 10000
 @platform_power_6 = 750
+
+@battleship_cost_6 = 296
 @titan_cost_6 = 592
 @platform_cost_6 = 74
 # DM Thrusters:

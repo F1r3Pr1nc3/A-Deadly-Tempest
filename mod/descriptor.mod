@@ -1,5 +1,8 @@
-version="1.3.6"
+version="1.3.7"
 name="A Deadly Tempest (2.7)"
+dependencies={
+	"Fix Fire From The Stars"
+}
 tags={
 	"Events"
 	"Gameplay"

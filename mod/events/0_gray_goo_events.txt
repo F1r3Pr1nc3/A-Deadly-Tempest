@@ -744,6 +744,7 @@ country_event = {
 					colors= { "teal" "dark_grey" "null" "null" }
 				}
 				origin = "origin_fallen_empire"
+				# origin = "origin_life_seeded"
 				effect = {
 					save_global_event_target_as = graygoo_country
 					set_graphical_culture = "machine_01"

@@ -22,6 +22,7 @@ tech_nanite_ships = {
 		}
 	}
 	potential = {
+		host_has_dlc = "Distant Stars Story Pack"
 		has_global_flag = l_cluster_opened
 		has_resource = {
 			type = nanites

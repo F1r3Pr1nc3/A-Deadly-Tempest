@@ -1164,6 +1164,9 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		give_technology = { tech = tech_arc_emitter_2 message = no }
+		give_technology = { tech = tech_energy_lance_2 message = no }
+		give_technology = { tech = tech_disruptors_3 message = no }
 		give_technology = { tech = tech_nanite_ships message = no }
 		give_technology = { tech = tech_nanite_hull message = no }
 		give_technology = { tech = tech_nanite_torpedo message = no }

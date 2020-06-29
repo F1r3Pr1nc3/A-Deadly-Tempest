@@ -13,22 +13,18 @@ strike_craft_component_template = {
 			nanites = 8
 			alloys = 20
 		}
-		upkeep = {
-			nanites = 0.01
-		}
+		upkeep = { nanites = 0.01 }
 	}
-	hidden = no
+	# hidden = yes
 	count = 10
 	regeneration_per_day = @regen
 	launch_time = 1
-	damage = {
-		min = 10
-		max = 12
-	}
 	# hits soft but fast (vanilla 2.6.3)
-	cooldown = 4
-	# damage = { min = 19 max = 21 } # hits hard but slow (vanilla 2.6.2)
-	# cooldown = 8
+	# damage = { min = 10 max = 12 } cooldown = 4
+	# hits hard but slow (vanilla 2.6.2)
+	# damage = { min = 19 max = 21 } cooldown = 8
+	damage = { min = 15 max = 17 }
+	cooldown = 6
 	range = 20
 	engagement_range = 120
 	accuracy = 1
@@ -44,20 +40,14 @@ strike_craft_component_template = {
 	shield_penetration = 1
 	armor_penetration = 0.66
 	ship_behavior = "bombers_behavior"
-	weapon_type = instant	# Not PD, unlike normal strike craft
+	weapon_type = instant  # Not PD, unlike normal strike craft
 	projectile_gfx = "strike_craft_laser_3"
-	prerequisites = {
-		"tech_nanite_strike_craft"
-	}
+	prerequisites = { "tech_nanite_strike_craft" }
 	component_set = "NANITE_STRIKE_CRAFT"
 	icon = "GFX_ship_part_nanite_strikecraft"
 	icon_frame = 1
-	tags = {
-		weapon_type_strike_craft
-	}
-	ai_tags = {
-		weapon_type_strike_craft
-	}
+	tags = { weapon_type_strike_craft }
+	ai_tags = { weapon_type_strike_craft }
 }
 
 weapon_component_template = {
@@ -66,7 +56,7 @@ weapon_component_template = {
 	entity = "invisible_turret_entity"
 	type = missile	#instant
 	prio_projectile = yes
-	hidden = no
+	# hidden = yes
 	icon = "GFX_ship_part_nanite_energymissiles_1"
 	icon_frame = 1
 	damage = {
@@ -91,88 +81,24 @@ weapon_component_template = {
 	power = -30
 	resources = {
 		category = ship_components
-		cost = {
-			nanites = 10
-		}
-		upkeep = {
-			nanites = 0.01
-		}
+		cost = { nanites = 10 }
+		upkeep = { nanites = 0.01 }
 	}
-	prerequisites = {
-		"tech_adt_energymissiles"
-	}
+	prerequisites = { "tech_adt_energymissiles" }
 	component_set = "NANITE_ENERGY_MISSILE"
-	tags = {
-		weapon_type_energy
-	}
+	tags = { weapon_type_energy }
 	projectile_gfx = "gatebuilder_torpedo"
-	ai_tags = {
-		weapon_role_artillery
-	}
+	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 1
 }
 
 weapon_component_template = {
-	key = "NANITE_BASE_BEAM"
+	key = "NANITE_BEAM" # _STATIC
 	size = titanic
 	entity = "invisible_turret_entity"
 	type = instant
 	prio_projectile = yes
-	hidden = no
-	icon = "GFX_ship_part_nanite_beam_titanic"
-	icon_frame = 1
-	damage = {
-		min = 1
-		max = 9999
-	}
-	windup = {
-		min = 2
-		max = 20
-	}
-	total_fire_time = 115
-	range = 200
-	accuracy = 0.85
-	tracking = 0
-	hull_damage = 1
-	shield_penetration = 1
-	armor_penetration = 1
-	power = -100
-	resources = {
-		category = ship_components
-		cost = {
-			nanites = 100
-		}
-		upkeep = {
-			nanites = 1
-		}
-	}
-	prerequisites = {
-		"tech_adt_gg_beam"
-	}
-	component_set = "NANITE_BASE_BEAM"
-	size_restriction = {
-		starbase_gatebuilders
-		graygoo_factory
-		starbase_starfortress
-		starbase_citadel
-	}
-	tags = {
-		weapon_type_energy
-	}
-	projectile_gfx = "gatebuilder_titan_weapon"
-	ai_tags = {
-		weapon_role_artillery
-	}
-	ai_tag_weight = 1
-}
-
-weapon_component_template = {
-	key = "NANITE_BEAM"
-	size = titanic
-	entity = "invisible_turret_entity"
-	type = instant
-	prio_projectile = yes
-	hidden = no
+	# hidden = yes
 	icon = "GFX_ship_part_nanite_beam_titanic"
 	icon_frame = 1
 	damage = {
@@ -193,38 +119,114 @@ weapon_component_template = {
 	power = -750
 	resources = {
 		category = ship_components
-		cost = {
-			nanites = 100
-		}
-		upkeep = {
-			nanites = 1
-		}
+		cost = { nanites = 100 }
+		upkeep = { nanites = 1 }
 	}
 	firing_arc = 15
-	min_range = 15
+	min_range = 30
 	use_ship_kill_target = no
-	prerequisites = {
-		"tech_adt_gg_beam"
-	}
+	prerequisites = { "tech_adt_gg_beam" }
 	component_set = "NANITE_BEAM"
 	size_restriction = {
-		ion_cannon
 		titan
+		fe_titan
 		graygoo_mothership
-		colossus
-		juggernaut
-		scavenger_bot
 		auto_dread
 		nanite_dragon
 	}
-	tags = {
-		weapon_type_energy
-	}
+	tags = { weapon_type_energy }
 	projectile_gfx = "gatebuilder_titan_weapon"
-	ai_tags = {
-		weapon_role_artillery
-	}
+	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 1
+}
+
+weapon_component_template = {
+	key = "NANITE_BASE_BEAM" #_ION
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	prio_projectile = yes
+	# hidden = yes
+	icon = "GFX_ship_part_nanite_beam_titanic"
+	icon_frame = 1
+	damage = {
+		min = 1
+		max = 9999
+	}
+	windup = {
+		min = 2
+		max = 20
+	}
+	total_fire_time = 115
+	range = 200
+	accuracy = 0.85
+	tracking = 0
+	hull_damage = 1
+	shield_penetration = 1
+	armor_penetration = 1
+	power = -100
+	resources = {
+		category = ship_components
+		cost = { nanites = 100 }
+		upkeep = { nanites = 1 }
+	}
+
+	prerequisites = { "tech_adt_gg_beam" }
+	component_set = "NANITE_BEAM"
+	class_restriction = { shipclass_military_station shipclass_starbase }
+	# size_restriction = {
+	# 	starbase_gatebuilders
+	# 	graygoo_factory
+	# 	starbase_starfortress
+	# 	starbase_citadel
+	# juggernaut
+	# scavenger_bot
+	# }
+	tags = { weapon_type_energy }
+	projectile_gfx = "gatebuilder_titan_weapon"
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 1
+}
+
+weapon_component_template = {
+	key = "NANITE_ION_BEAM"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	prio_projectile = yes
+	# hidden = yes
+
+	icon = "GFX_ship_part_nanite_beam_titanic"
+	icon_frame = 1
+
+	damage = { min = 1 max = 9999 }
+	windup = { min = 2 max = 20 }
+	total_fire_time = 115.00
+	range = 200.0
+	accuracy = 0.85
+	tracking = 0.00
+	hull_damage = 1.00
+	shield_penetration = 1.00
+	armor_penetration = 1.00
+	power = 0
+	resources = {
+		category = ship_components
+		cost = { nanites = 100 }
+		upkeep = { nanites = 1 }
+	}
+
+	firing_arc = 10.0
+	min_range = 10.0
+	use_ship_kill_target = no
+
+	prerequisites = { "tech_adt_gg_beam" }
+	component_set = "NANITE_BEAM"
+	size_restriction = { ion_cannon colossus }
+	tags = { weapon_type_energy }
+	projectile_gfx = "gatebuilder_titan_weapon"
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 2
+	ai_weight = { weight = 2 }
 }
 
 # ## Energy Torpedo Launchers
@@ -234,7 +236,7 @@ weapon_component_template = {
 	entity = "turret_energy_torpedo_entity"
 	type = missile
 	prio_projectile = yes
-	hidden = no
+	# hidden = yes
 	icon = "GFX_ship_part_nanite_energy_torpedo"
 	icon_frame = 1
 	power = -90
@@ -255,9 +257,7 @@ weapon_component_template = {
 	range = 130
 	accuracy = 0.9
 	tracking = 0.5
-	prerequisites = {
-		"tech_nanite_torpedo"
-	}
+	prerequisites = { "tech_nanite_torpedo" }
 	component_set = "NANITE_ENERGY_TORPEDO"
 	size_restriction = {
 		titan
@@ -268,9 +268,7 @@ weapon_component_template = {
 		auto_dread
 		nanite_dragon
 	}
-	tags = {
-		weapon_type_energy
-	}
+	tags = { weapon_type_energy }
 	projectile_gfx = "gatebuilder_torpedoes"
 	ai_tags = {
 		weapon_role_artillery
@@ -286,9 +284,7 @@ weapon_component_template = {
 			alloys = 10
 			exotic_gases = 1
 		}
-		upkeep = {
-			nanites = 0.01
-		}
+		upkeep = { nanites = 0.01 }
 	}
 	ai_weight = {
 		weight = 1
@@ -307,35 +303,29 @@ weapon_component_template = {
 	}
 }
 
-# ######################
-#  Scavenger Bot Weapons
-# ######################
-# ## Scavenger Bot Secondary Weapon
-# weapon_component_template = {
-# 	key = "SCAVENGER_SECONDARY_WEAPON"
-# 	size = torpedo
-# 	# hidden = yes
-# 	type = missile
-# 	icon = "GFX_ship_part_aura_minefield"
-# 	icon_frame = 1
-# 	tags = {
-# 		weapon_type_explosive
-# 	}
-# 	projectile_gfx = "scavenger_bot_secondary_weapon"
-# }
+## Scavenger Bot Weapons
+weapon_component_template = {
+	key = "SCAVENGER_SECONDARY_WEAPON"
+	size = torpedo
+	entity = "invisible_turret_entity"
+	# hidden = yes
+	type = missile
+	icon = "GFX_ship_part_aura_minefield"
+	icon_frame = 1
+	tags = { weapon_type_explosive }
+	projectile_gfx = "scavenger_bot_secondary_weapon"
+}
 
-# weapon_component_template = {
-# 	key = "SCAVENGER_MAIN_WEAPON"
-# 	size = titanic
-# 	type = instant
-# 	prio_projectile = yes
-# 	# hidden = yes
-# 	icon = "GFX_ship_part_aura_minefield"
-# 	icon_frame = 1
-# 	firing_arc = 15
-# 	min_range = 30
-# 	tags = {
-# 		weapon_type_kinetic
-# 	}
-# 	projectile_gfx = "scavenger_bot_main_weapon"
-# }
+weapon_component_template = {
+	key = "SCAVENGER_MAIN_WEAPON"
+	size = titanic
+	type = instant
+	prio_projectile = yes
+	# hidden = yes
+	icon = "GFX_ship_part_aura_minefield"
+	icon_frame = 1
+	firing_arc = 15
+	min_range = 30
+	tags = { weapon_type_kinetic }
+	projectile_gfx = "scavenger_bot_main_weapon"
+}

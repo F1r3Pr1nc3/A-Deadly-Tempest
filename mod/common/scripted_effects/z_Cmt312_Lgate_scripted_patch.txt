@@ -39,16 +39,15 @@ CmtEffectLgateClueComplete = {
 
 ## Scope: this = megastructure (L-Gate)
 CmtEffectOpenLgate = {
+	# if = { limit = { is_scope_type = megastructure }
 	if = {
-		limit = { is_scope_type = megastructure }
-		if = {
-			limit = { is_megastructure_type = lgate_disabled }
-			upgrade_megastructure_to = lgate_base
-			finish_upgrade = yes
-		}
-		set_megastructure_flag = lgate_activated
-		activate_gateway = THIS
+		limit = { is_megastructure_type = lgate_disabled }
+		upgrade_megastructure_to = lgate_base
+		finish_upgrade = yes
 	}
+	activate_gateway = THIS
+	set_megastructure_flag = lgate_activated
+	# }
 }
 
 ### End of Graygoo
