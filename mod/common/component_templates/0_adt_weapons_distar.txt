@@ -130,6 +130,7 @@ weapon_component_template = {
 	size_restriction = {
 		titan
 		fe_titan
+		colossus
 		graygoo_mothership
 		auto_dread
 		nanite_dragon
@@ -221,7 +222,7 @@ weapon_component_template = {
 
 	prerequisites = { "tech_adt_gg_beam" }
 	component_set = "NANITE_BEAM"
-	size_restriction = { ion_cannon colossus }
+	size_restriction = { ion_cannon }
 	tags = { weapon_type_energy }
 	projectile_gfx = "gatebuilder_titan_weapon"
 	ai_tags = { weapon_role_artillery }
