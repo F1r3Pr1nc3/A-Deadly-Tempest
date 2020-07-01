@@ -64,8 +64,8 @@ graygoo_interdictor = {
 					owner = { has_technology = tech_nanite_ships }
 					OR = {
 						has_starbase_building = nanite_yards
-						has_starbase_size = graygoo_factory
-						has_starbase_size = scavenger_bot
+						# has_starbase_size = graygoo_factory
+						# has_starbase_size = scavenger_bot
 					}
 				}
 				# AND = {
@@ -149,8 +149,8 @@ graygoo_mothership = {
 					owner = { has_technology = tech_nanite_ships }
 					OR = {
 						has_starbase_building = nanite_yards
-						has_starbase_size = graygoo_factory
-						has_starbase_size = scavenger_bot
+						# has_starbase_size = graygoo_factory
+						# has_starbase_size = scavenger_bot
 					}
 				}
 				# AND = {
@@ -270,8 +270,8 @@ auto_dread = {
 					is_scope_type = starbase
 					OR = {
 						has_starbase_building = nanite_yards
-						has_starbase_size = graygoo_factory
-						has_starbase_size = scavenger_bot
+						# has_starbase_size = graygoo_factory
+						# has_starbase_size = scavenger_bot
 					}
 				}
 				AND = {
@@ -365,8 +365,8 @@ nanite_dragon = {
 					is_scope_type = starbase
 					OR = {
 						has_starbase_building = nanite_yards
-						has_starbase_size = graygoo_factory
-						#has_starbase_size = scavenger_bot
+						# has_starbase_size = graygoo_factory
+						## has_starbase_size = scavenger_bot
 					}
 				}
 				# AND = {
@@ -415,10 +415,10 @@ scavenger_bot = {
 	collision_radius = 7
 	max_hitpoints = @juggernaut_hp
 	modifier = {
-		# ships_upkeep_mult = -1
+		ships_upkeep_mult = -1
 		ship_shield_add = 50000
 		ship_armor_add = 50000
-		starbase_shipyard_capacity_add = 1
+		# starbase_shipyard_capacity_add = 1
 	}
 
 	base_buildtime = @colossus_build_time
@@ -445,10 +445,10 @@ scavenger_bot = {
 			AND = {
 				is_scope_type = starbase
 				NOT = { has_starbase_size = juggernaut }
-				NOT = { has_starbase_size = scavenger_bot }
+				NOT = { # has_starbase_size = scavenger_bot }
 				OR = {
 					has_starbase_building = nanite_yards
-					has_starbase_size = graygoo_factory
+					# has_starbase_size = graygoo_factory
 				}
 			}
 			AND = {
@@ -462,14 +462,14 @@ scavenger_bot = {
 		# FROM = { has_technology = tech_scavenger_bot }
 	}
 	possible_construction = {
-		FROM = { has_technology = tech_scavenger_bot }
+		# FROM = { has_technology = tech_scavenger_bot }
 		custom_tooltip = {
 			fail_text = starbase_nanite_yards_trigger
 			AND = {
 				is_scope_type = starbase
 				OR = {
 					has_starbase_building = nanite_yards
-					has_starbase_size = graygoo_factory
+					# has_starbase_size = graygoo_factory
 				}
 			}
 		}
@@ -509,8 +509,8 @@ scavenger_bot = {
 
 	empire_limit = { base = 1 }
 
-	# num_target_locators = 1
-	is_space_station = yes
+	num_target_locators = 0 #?
+	is_space_station = no
 	can_have_federation_design = no
 	enable_default_design = no
 	can_disable = yes
@@ -520,7 +520,8 @@ scavenger_bot = {
 	default_behavior = carrier
 	combat_disengage_chance = 0.25
 
-	class = shipclass_starbase
+	# class = shipclass_starbase TODO
+	class = shipclass_military
 	construction_type = starbase_shipyard
 
 	required_component_set = "power_core"
@@ -697,8 +698,7 @@ graygoo_factory = {
 	enable_default_design = no
 	prerequisites = { "tech_nanite_starbase" "tech_nanite_mega_engineering" }
 	class = shipclass_military_station
-	construction_type = starbase_defenses
-
+	# construction_type = starbase_defenses
 	is_designable = no ## TODO
 
 	required_component_set = "power_core"
