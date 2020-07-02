@@ -311,17 +311,9 @@ country_event = {
 						is_researching_technology = nhsc_tech_synthetic_lifeform_studies
 					}
 				}
-				give_technology = {
-					message = no
-					tech = nhsc_tech_new_age_warfare
-				}
-				give_technology = {
-					message = no
-					tech = nhsc_tech_advanced_materials
-				}
-				give_tech_option = {
-					TECH = nhsc_tech_synthetic_lifeform_studies
-				}
+				give_technology = { tech = nhsc_tech_new_age_warfare message = no }
+				give_technology = { tech = nhsc_tech_advanced_materials message = no }
+				give_tech_option = { TECH = nhsc_tech_synthetic_lifeform_studies }
 			}
 			else = {
 				# give_tech_option = { TECH = tech_nanite_build_speed }
@@ -341,6 +333,9 @@ country_event = {
 			}
 			give_tech_option = {
 				TECH = tech_lgate_construction
+			}
+			give_tech_option = {
+				TECH = tech_nanite_dragon
 			}
 		}
 	}
@@ -1181,6 +1176,7 @@ country_event = {
 		give_technology = { tech = tech_nanite_mega_engineering message = no }
 		give_technology = { tech = tech_lgate_construction message = no }
 		give_technology = { tech = tech_guardians message = no }
+		give_technology = { tech = tech_nanite_dragon message = no }
 
 		add_global_ship_design = "NAME_Nanite_Mothership"
 		add_global_ship_design = "NAME_Nanite_Interdictor"

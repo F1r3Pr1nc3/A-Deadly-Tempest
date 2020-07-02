@@ -717,6 +717,15 @@ country_event = {
 						immortal = yes
 					}
 				}
+				15 = {
+					create_species = {
+						name = "NAME_Dessanu"
+						class = ESGO
+						portrait = random
+						traits = { trait = random_traits }
+						immortal = yes
+					}
+				}
 			}
 			create_country = {
 				name = "NAME_Dessanu_Consonance"

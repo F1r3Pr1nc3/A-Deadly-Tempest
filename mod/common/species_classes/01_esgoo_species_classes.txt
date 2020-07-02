@@ -15,13 +15,14 @@ ESGO = {
 	gender = no
 	use_climate_preference = no
 	portrait_modding = no
-	
+
 	leader_age_min = 2
 	leader_age_max = 10
 
 	portraits = {
 		"esgoo"
 		"lithnanite"
+		"creature"
 	}
 
 	graphical_culture = esgoo_01

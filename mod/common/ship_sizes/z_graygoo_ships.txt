@@ -366,7 +366,7 @@ nanite_dragon = {
 					OR = {
 						has_starbase_building = nanite_yards
 						# has_starbase_size = graygoo_factory
-						## has_starbase_size = scavenger_bot
+						# has_starbase_size = scavenger_bot
 					}
 				}
 				# AND = {
@@ -445,7 +445,7 @@ scavenger_bot = {
 			AND = {
 				is_scope_type = starbase
 				NOT = { has_starbase_size = juggernaut }
-				NOT = { # has_starbase_size = scavenger_bot }
+				#NOT = { has_starbase_size = scavenger_bot }
 				OR = {
 					has_starbase_building = nanite_yards
 					# has_starbase_size = graygoo_factory
@@ -459,18 +459,14 @@ scavenger_bot = {
 				}
 			}
 		}
-		# FROM = { has_technology = tech_scavenger_bot }
 	}
 	possible_construction = {
-		# FROM = { has_technology = tech_scavenger_bot }
 		custom_tooltip = {
 			fail_text = starbase_nanite_yards_trigger
-			AND = {
-				is_scope_type = starbase
-				OR = {
-					has_starbase_building = nanite_yards
-					# has_starbase_size = graygoo_factory
-				}
+			is_scope_type = starbase
+			OR = {
+				has_starbase_building = nanite_yards
+				# has_starbase_size = graygoo_factory
 			}
 		}
 		custom_tooltip = {
@@ -513,7 +509,7 @@ scavenger_bot = {
 	is_space_station = no
 	can_have_federation_design = no
 	enable_default_design = no
-	can_disable = yes
+	can_disable = no ## TODO yes!?
 	icon_frame = 7
 	ship_class_icon_frame = 35
 
@@ -578,16 +574,17 @@ nanite_starbase = {
 	num_target_locators = 0
 	is_space_station = yes # vanilla no
 	base_buildtime = 540
-	is_designable = yes
+	auto_upgrade = no
+	is_designable = no ## TODO yes
 	uses_name_prefix = no
 	takes_name_from_ship_design = yes
 	can_have_federation_design = no
 	is_civilian = no
 	components_add_to_cost = no
-	# is_listed = no
+	is_listed = no
 	can_disable = no
 	prerequisites = { "tech_nanite_starbase" }
-	enable_default_design = yes # vanilla no
+	enable_default_design = no # vanilla no
 	class = shipclass_military_station
 	construction_type = starbase_defenses
 
@@ -637,7 +634,7 @@ starbase_gatebuilders = {
 	is_civilian = no
 	components_add_to_cost = no
 	is_listed = no
-	can_disable = yes
+	can_disable = no ## TODO yes - not really working
 	prerequisites = { "tech_nanite_ships" }
 	enable_default_design = no # vanilla no
 	class = shipclass_starbase
