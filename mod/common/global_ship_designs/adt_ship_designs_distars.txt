@@ -129,9 +129,9 @@ ship_design = {
 	}
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
-	required_component = "SHIP_THRUSTER_4"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
-	required_component = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
+	required_component = "GREYGOO_MOTHERSHIP_SHIP_THRUSTER_4"
+	required_component = "GREYGOO_MOTHERSHIP_ZERO_POINT_REACTOR"
+	required_component = "COMBAT_NANITE_COMPUTER_ARTILLERY_AUTONOMOUS"
 }
 
 ### Nanite Ships
@@ -306,9 +306,9 @@ ship_design = {
 	}
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
-	required_component = "SHIP_THRUSTER_4"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
-	required_component = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
+	required_component = "GREYGOO_MOTHERSHIP_SHIP_THRUSTER_4"
+	required_component = "GREYGOO_MOTHERSHIP_ZERO_POINT_REACTOR"
+	required_component = "COMBAT_NANITE_COMPUTER_ARTILLERY_AUTONOMOUS"
 }
 
 # Nanite Interdictor
@@ -1190,7 +1190,7 @@ ship_design = {
 		}
 	}
 	section = {
-		template = "scavenger_bot_small_bot_2_key"
+		template = "scavenger_bot_small_bot_1_key"
 		slot = "bot_2"
 		component = {
 			slot = "TORPEDO_01"
@@ -1202,7 +1202,7 @@ ship_design = {
 		}
 	}
 	section = {
-		template = "scavenger_bot_small_bot_3_key"
+		template = "scavenger_bot_small_bot_1_key"
 		slot = "bot_3"
 		component = {
 			slot = "TORPEDO_01"

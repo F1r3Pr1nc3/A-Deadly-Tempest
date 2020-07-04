@@ -151,8 +151,9 @@
  tech_nanite_torpedo_desc:0 "A torpedo that delivers a mass of disassembling nanites straight to the enemy ship."
 
  # Phys
- tech_nanoactuators:0 "Nanoactuators"
- tech_nanoactuators_desc:0 "Simple but powerful nano-actuators, allowing for complex manipulations and experiments of mesoscopic scales."
+ tech_nanoactuators:0 "$sr_distar_nanoactuator$"
+ tech_nanoactuators_desc:0 "$sr_distar_nanoactuator_desc$"
+
  tech_nanite_shield_rechargers:0 "Nanite Shield Cloud"
  tech_nanite_shield_rechargers_desc:0 "By spreading a cloud of specialized nanites which linger around a ship's shields, the protective field's strength is increase."
 
@@ -161,10 +162,10 @@
  tech_nanite_terraforming_desc:0 "$pc_gray_goo$s have the potential to be terraformed into any world we can imagine, but it seemed they could only do so under certain conditions... until now."
  TECH_UNLOCK_NANITE_TERRAFORMING_TITLE:0 "Unlock $tech_nanite_terraforming$"
  TECH_UNLOCK_NANITE_TERRAFORMING_DESC:0 "Once $pc_gray_goo$s were though un-terraformable unless under certain conditions but all machines can be reprogrammed a nanite is no different."
- tech_nano_dust:0 "Nanodust"
- tech_nano_dust_desc:0 "A slurry of elements reduced to particulate matter. Once distributed across a world, Gray Dust can be activated by nanomachines to rapidly alter planetary conditions."
- tech_nano_scales:0 "Nanoscales"
- tech_nano_scales_desc:0 "Concentrated artificial fertilizer designed to revive devastated biospheres"
+ tech_nano_dust:0 "$sr_distar_nanodust$"
+ tech_nano_dust_desc:0 "$sr_distar_nanodust_desc$"
+ tech_nano_scales:0 "$sr_distar_nanoscale$"
+ tech_nano_scales_desc:0 "$sr_distar_nanoscale_desc$"
 
  NHSC_TECH_NANO_ARMOR_1_TITLE: "Nanite-infused Armor"
  NHSC_TECH_NANO_ARMOR_1_DESC: "By adding nanites programmed to run repair jobs into the ship's hull we're able to create an armor that not only protects from damage, but also repairs any damage it couldn't prevent."
@@ -187,8 +188,8 @@
  tech_nanite_ships_desc:0 "Having encountered nanite warforms and their power first-hand, it is understandable that we wish to create such vessels for our fleets. Each ship is comprised of untold billions of nanites and each is completely self sustaining. Unfortunately, their unique nature may lead to designs not as flexible as we'd hope..."
  tech_nanite_living_metal:0 "Nanite $sr_living_metal$"
  tech_nanite_living_metal_desc:0 "Thanks to our advances in nano-science we are now able to produce $sr_living_metal$ by using nanites."
- tech_nanocrystals:0 "Nanocrystals"
- tech_nanocrystals_desc:0 "The Crystalline by-product of certain nanobot activity exhibits curious interactions with other nanoscopic material, hinting at truth hidden beyond the Planck scale."
+ tech_nanocrystals:0 "$sr_distar_nanocrystals$"
+ tech_nanocrystals_desc:0 "$sr_distar_nanocrystals_desc$"
  tech_nanite_starbase:0 "Nanite $starbase_citadel$"
  tech_nanite_starbase_desc:0 "The potential applications of nanite technology are as numerous as the nanites themselves. We would be fools to forgo investigating defensive avenues."
  tech_nanite_modular_engineering:0 "Modular Nanites"

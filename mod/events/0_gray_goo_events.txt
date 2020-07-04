@@ -46,9 +46,10 @@ country_event = {
 			}
 			random_system_planet = {
 				limit = { is_planet_class = pc_gray_goo }
+				# save_event_target_as = gray_homeworld
 				create_species = {
 					name = "NAME_Gray_Goo"
-					class = MACHINE
+					class = ESGO #MACHINE
 					portrait = lithnanite
 					traits = {
 						trait = "trait_machine_unit"
@@ -730,6 +731,7 @@ country_event = {
 			create_country = {
 				name = "NAME_Dessanu_Consonance"
 				type = "gate_builders"
+				# name_list = "graygoo"
 				ignore_initial_colony_error = yes
 				authority = "auth_democratic"
 				civics = {
@@ -2280,10 +2282,34 @@ country_event = {
 
 	is_triggered_only = yes
 
+	trigger = {
+		NOT = { has_country_flag = gray_diplomacy_engaged }
+	}
 	immediate = {
+		create_species = {
+			name = "NAME_Gray"
+			class = ESGO
+			portrait = root.species
+			traits = {
+				trait = "trait_machine_unit"
+				trait = "trait_robot_enhanced_memory"
+				trait = "trait_robot_superconductive"
+				trait = "trait_robot_loyalty_circuits"
+				trait = "trait_robot_mass_produced"
+				trait = "trait_robot_durable"
+				trait = "trait_robot_recycled"
+				trait = "trait_robot_high_maintenance"
+				trait = "trait_robot_uncanny"
+			}
+			homeworld = event_target:gray_homeworld
+			immortal = yes
+		}
+
 		create_country = {
 			name = "NAME_Gray"
-			type = gray
+			type = "gray"
+			name_list = "graygoo"
+			ignore_initial_colony_error = yes
 			flag = {
 				icon= {
 					category = "special"
@@ -2294,6 +2320,12 @@ country_event = {
 					file = "sinus.dds"
 				}
 				colors={ "grey" "dark_grey" "null" "null" }
+			}
+			effect = {
+				save_global_event_target_as = graygoo_country
+				set_graphical_culture = root
+				## add technologies
+				country_event = { id = a_deadly_tempest.107 }
 			}
 		}
 		last_created_country = {

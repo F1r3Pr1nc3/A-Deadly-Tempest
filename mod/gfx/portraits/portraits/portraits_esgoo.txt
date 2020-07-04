@@ -35,7 +35,7 @@ portraits = {
 		hair_selector = "no_texture"
 		greeting_sound = "reptilian_01_greetings"
 		character_textures = {
-			"gfx/models/portraits/gatebuilder/creature.dds"
+			"gfx/models/portraits/creature/creature.dds"
 		}
 	}
 }
