@@ -37,6 +37,10 @@ spriteTypes = {
 		name = "GFX_ship_part_nanite_auto_repair"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_auto_repair.dds"
 	}
+	spriteType = {
+		name = "GFX_ship_part_scrapper_weapon"
+		texturefile = "gfx/interface/icons/technologies/tech_scavenger_bot.dds"
+	}
 	## Spaceport Modules ##
 	spriteType = {
 		name = "GFX_spaceport_module_nanite_yard"

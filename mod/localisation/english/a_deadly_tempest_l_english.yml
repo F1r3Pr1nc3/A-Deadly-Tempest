@@ -211,8 +211,7 @@
  # Specialist
  job_nanite_forger:0 "Nanicist"
  job_nanite_forger_plural:0 "Nanicists"
- job_nanite_forger_desc:1 "These specialists create the nanites used across our empire, for their many purposes."
- job_nanite_forger_desc:0 "$job_nanite_forger_plural$ produce £nanites£ §Y$minerals$§!"
+ job_nanite_forger_desc:0 "These specialists create the nanites used across our empire, for their many purposes."
  job_nanite_forger_effect_desc:0 "$job_nanite_forger_plural$ turn £minerals£ §Y$minerals$§! into £nanites£ §Y$Nanites$§!"
  mod_job_nanite_forger_add:0 "$job_nanite_forger$ Jobs"
  mod_job_nanite_forger_per_pop:0 "§G+1§! $job_nanite_forger$ Job per $VALUE$ Pops"
@@ -220,8 +219,7 @@
 
  job_nanite_forger_drone:0 "Nanite Drone"
  job_nanite_forger_drone_plural:0 "Nanite Drones"
- job_nanite_forger_drone_desc:1 "These Drones create the nanites used by the collective."
- job_nanite_forger_drone_desc:0 "$job_nanite_forger_drone_plural$ produce £nanites£ §Y$minerals$§!"
+ job_nanite_forger_drone_desc:0 "These Drones create the nanites used by the collective."
  job_nanite_forger_drone_effect_desc:0 "$job_nanite_forger_drone_plural$ turn £minerals£ §Y$minerals$§! into £nanites£ §Y$Nanites$§!"
  mod_job_nanite_forger_drone_add:0 "$job_nanite_forger_drone$ Jobs"
  mod_job_nanite_forger_drone_per_pop:0 "§G+1§! $job_nanite_forger_drone$ Job per $VALUE$ Pops"

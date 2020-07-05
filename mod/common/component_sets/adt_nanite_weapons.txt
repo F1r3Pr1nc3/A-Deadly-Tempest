@@ -22,3 +22,9 @@ component_set = {
 	icon = "GFX_ship_part_nanite_energy_torpedo"
 	icon_frame = 1
 }
+
+component_set = {
+	key = "SCRAP_WEAPON"
+	icon = "GFX_ship_part_scrapper_weapon"
+	icon_frame = 1
+}

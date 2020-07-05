@@ -3,7 +3,7 @@ distantstars_init_00 = {
 	class = sc_black_hole
 
 	flags = { hostile_system lgate }
-	
+
 	usage = misc_system_init
 	usage_odds = {
 		base = 0
@@ -20,7 +20,7 @@ distantstars_init_00 = {
 			has_star_flag = empire_cluster
 		}
 		modifier = {
-			factor = 0										# we don't want gateways too close to each other
+			factor = 0
 			any_neighbor_system = {
 				OR = {
 					has_megastructure = lgate_disabled
@@ -33,24 +33,24 @@ distantstars_init_00 = {
 
 	max_instances = 9
 	scaled_spawn_chance = 10
-	
+
 	planet = {
 		class = star
 		orbit_distance = 0
 	}
-	
+
 	change_orbit = 60
-	
+
 	planet = {
 		count = { min = 0 max = 1 }
 		class = "pc_broken"
 		size = { min = 10 max = 15 }
-		
+
 		init_effect = { prevent_anomaly = yes }
 	}
-	
+
 	change_orbit = 30
-	
+
 	planet = {
 		count = { min = 0 max = 1 }
 		class = "pc_barren_cold"
@@ -72,7 +72,7 @@ distantstars_init_06 = {
 	class = sc_black_hole
 
 	flags = { hostile_system lgate lgate_guaranteed }
-	
+
 	usage = misc_system_init
 	usage_odds = {
 		base = 0
@@ -89,7 +89,7 @@ distantstars_init_06 = {
 			has_star_flag = empire_cluster
 		}
 		modifier = {
-			factor = 0										# we don't want gateways too close to each other
+			factor = 0
 			any_neighbor_system = {
 				OR = {
 					has_megastructure = lgate_disabled
@@ -102,24 +102,24 @@ distantstars_init_06 = {
 
 	max_instances = 1
 	spawn_chance = 100
-	
+
 	planet = {
 		class = star
 		orbit_distance = 0
 	}
-	
+
 	change_orbit = 60
-	
+
 	planet = {
 		count = { min = 0 max = 1 }
 		class = "pc_broken"
 		size = { min = 10 max = 15 }
-		
+
 		init_effect = { prevent_anomaly = yes }
 	}
-	
+
 	change_orbit = 30
-	
+
 	planet = {
 		count = { min = 0 max = 1 }
 		class = "pc_barren_cold"
