@@ -1040,9 +1040,9 @@ ship_design = {
 }
 
 
-# Scavenger Bot
+# Scavenger Bot 
 ship_design = {
-	name = "NAME_Scavenger_Bot"
+	name = "NAME_Scavenger_Bot" # NAME_Reclaimer (vanilla)
 	ship_size = scavenger_bot
 	is_event_design = yes
 	section = {
@@ -1220,9 +1220,100 @@ ship_design = {
 	required_component = "COMBAT_COMPUTER_CARRIER_AUTONOMOUS"
 }
 
-# Nanite Dragon
+# Nanite Dragon (vanilla)
 ship_design = {
 	name = "NAME_Nanite_Dragon"
+	ship_size = nanite_space_dragon_baby
+	is_event_design = yes
+	section = {
+		template = "nanite_space_dragon_baby_key"
+		slot = "mid"
+		component = {
+			slot = "PRIMARY_GUN_01"
+			template = "DRAGON_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_01"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_02"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_03"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_04"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_05"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_06"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_07"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_08"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_01"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_02"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_03"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_04"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR_2"
+		}
+	}
+	required_component = "GUARDIAN_DRIVE"
+	required_component = "GUARDIAN_PROPULSION"
+	required_component = "GUARDIAN_SENSORS"
+	required_component = "COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+}
+
+# Nanite Dragon Young
+ship_design = {
+	name = "NAME_Nanite_Dragon_Young"
 	ship_size = nanite_dragon
 	# is_event_design = yes
 	section = {

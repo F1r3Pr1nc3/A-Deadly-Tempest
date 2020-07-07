@@ -853,7 +853,10 @@ fleet_event = {
 				has_star_flag = visited_dragon_point@root.owner
 			}
 			any_ship_in_system = {
-				is_ship_size = nanite_space_dragon_baby
+				OR ={
+					is_ship_size = nanite_space_dragon_baby
+					is_ship_size = nanite_dragon # TODO need checked (in Sep)
+				}
 			}
 		}
 	}
