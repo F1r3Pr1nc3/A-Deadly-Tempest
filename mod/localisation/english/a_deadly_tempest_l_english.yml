@@ -29,7 +29,7 @@
  nanite_interdictor_alt_key:0 "$graygoo_interdictor$"
  nanite_interdictor_combat_key:0 "$COMBAT$ $graygoo_interdictor$"
  nanite_interdictor_heavy_combat_key:0 "$ASSAULT$ $graygoo_interdictor$"
-
+ 
  ### Ship Components
 
  # Combat Computers
@@ -118,7 +118,7 @@
 
  ### Starbase buildings and modules
  sm_nanite_yards:0 "Nanite Ship Foundry"
- sm_nanite_yards_desc:0 "A standard shipyard lacks the specialized equipment and personnel required for the manufacturing of intelligent nanites ships. Uniquely designed orbital foundries, producing billions of nanites a minute, are necessary to achieve the height of engineering that is a fully armed and operational Nanite Warform."
+ sm_nanite_yards_desc:0 "A standard shipyard lacks the specialized equipment and personnel required for the manufacturing of intelligent nanites ships. Uniquely designed orbital foundries, producing billions of nanites a minute, are necessary to achieve the height of engineering that is a fully armed and operational $NAME_Nanite_Ship$."
  nanite_factory_key:0 "Nanite $graygoo_factory$"
  gatebuilder_starbase_key:0 "$starbase_citadel$"
  nanite_starbase:0 "Nanite $starbase_citadel$"
@@ -184,7 +184,7 @@
  tech_nanite_build_speed_desc:0 "Ships are assembled faster, with nanites assisting the construction."
  tech_nanite_hull:0 "Nanite Hulls"
  tech_nanite_hull_desc:0 "By having spreading billions of nanites on the surface of our ships they will reinforce both the hulls and armor, in addition to the nanites' impressive capacity for hull and armour repair."
- tech_nanite_ships:0 "Nanite Warforms"
+ tech_nanite_ships:0 "$NAME_Nanite_Ship$s"
  tech_nanite_ships_desc:0 "Having encountered nanite warforms and their power first-hand, it is understandable that we wish to create such vessels for our fleets. Each ship is comprised of untold billions of nanites and each is completely self sustaining. Unfortunately, their unique nature may lead to designs not as flexible as we'd hope..."
  tech_nanite_living_metal:0 "Nanite $sr_living_metal$"
  tech_nanite_living_metal_desc:0 "Thanks to our advances in nano-science we are now able to produce $sr_living_metal$ by using nanites."
@@ -283,7 +283,7 @@
  auto_dread:0 "Automated Dreadnought"
  auto_dread_plural:0 "Automated Dreadnoughts"
  auto_dread_key:0 "$auto_dread$"
- tech_auto_dread:0 "PROJECT: $auto_dread$"
+ tech_auto_dread:0 "PROJECT $auto_dread$"
  tech_auto_dread_desc:0 "Allow the construction of $auto_dread_plural$"
  TECH_UNLOCK_DREADNOUGHT_CONSTRUCTION_TITLE:0 "§HUnlocks Guardian:§! $auto_dread$"
  TECH_UNLOCK_DREADNOUGHT_CONSTRUCTION_DESC:0 "A deadly capital ship with full firepower and solid armor. It can even outperform the best fortress a player empire could design."
@@ -291,7 +291,7 @@
  nanite_dragon_plural:0 "Nanite Dragons"
  nanite_dragon_key:0 "$nanite_dragon$"
  nanite_dragon_key:0 "$nanite_dragon$"
- tech_nanite_dragon:0 "PROJECT: $nanite_dragon$"
+ tech_nanite_dragon:0 "PROJECT $nanite_dragon$"
  tech_nanite_dragon_desc:0 "Allow the construction of $nanite_dragon_plural$"
  TECH_UNLOCK_NANITE_DRAGON_CONSTRUCTION_TITLE:0 "§HUnlocks Guardian:§! $nanite_dragon$"
  TECH_UNLOCK_NANITE_DRAGON_CONSTRUCTION_DESC:0 "The apex predator, the $nanite_dragon$ move extremely fast with planetary system."
@@ -301,7 +301,7 @@
  scavenger_bot_small_bot_1_key:0 "$NAME_Reclaimer$ Droid"
  scavenger_bot_small_bot_2_key:0 "$NAME_Reclaimer$ Droid 2"
  scavenger_bot_small_bot_3_key:0 "$NAME_Reclaimer$ Droid 3"
- tech_scavenger_bot:0 "PROJECT: $scavenger_bot$"
+ tech_scavenger_bot:0 "PROJECT $scavenger_bot$"
  tech_scavenger_bot_desc:0 "Allow the construction of $scavenger_bot$"
  TECH_UNLOCK_SCAVENGER_CONSTRUCTION_TITLE:0 "§HUnlocks Guardian:§! $scavenger_bot$"
  TECH_UNLOCK_SCAVENGER_CONSTRUCTION_DESC:0 "An automaton jury-rigged from the scraps of thousands of shipwrecks, constantly scavenging a massive ship graveyard."

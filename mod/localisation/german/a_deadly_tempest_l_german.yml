@@ -1,4 +1,4 @@
-﻿l_german:
+﻿"l_german":
  COMBAT_NANITE_COMPUTER_ARTILLERY_ADVANCED:0 "Fortgeschrittener Kampfcomputer (Artillerie)"
  COMBAT_NANITE_COMPUTER_ARTILLERY_AUTONOMOUS:0 "Selbstständiger Schiffsintellekt (Artillerie)"
  COMBAT_NANITE_COMPUTER_ARTILLERY_BASIC:0 "Spezialisierter Kampfcomputer (Artillerie)"
@@ -83,12 +83,10 @@
  TECH_UNLOCK_GUARDIANS_CONSTRUCTION_TITLE:0 "§HUnlocks Guardians"
  TECH_UNLOCK_NANITE_BOMBARDMENT_DESC:0 "Schaltet a new method of bombardment that will depopulate a world and turn it into a $pc_gray_goo$."
  TECH_UNLOCK_NANITE_BOMBARDMENT_TITLE:0 "Schaltet $tech_nanite_bombardment$ frei"
- TECH_UNLOCK_NANITE_CONSTRUCTION_DESC:0 "Nanitschiffe sind autark, aber aufgrund ihrer 'einzigartigen' Natur scheinen ihre Designs fest codiert zu sein und sind möglicherweise nicht mit bestimmten Technologien kompatibel."
- TECH_UNLOCK_NANITE_CONSTRUCTION_TITLE:0 "Schaltet Nanitschiffe frei"
  TECH_UNLOCK_NANITE_DRAGON_CONSTRUCTION_DESC:0 "The apex predator, the $nanite_dragon$ move extremely fast with planetary system."
  TECH_UNLOCK_NANITE_DRAGON_CONSTRUCTION_TITLE:0 "§HUnlocks Guardian:§! $nanite_dragon$"
- TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_DESC:0 "§H$graygoo_interdictor$, $graygoo_mothership$ & $nanite_dragon$§!\nThese ships are self sufficient, but due to their...'unique' nature, their designs seem hardcoded and may not be compatible with certain technologies. But we can replicate the process to boosters our carrier operation."
- TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_TITLE:0 "§HUnlocks Nanite Ships§!"
+ TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_DESC:0 "§H$graygoo_interdictor$, $graygoo_mothership$ & $nanite_dragon$§!\nDiese Nanitschiffe sind autark, aber aufgrund ihrer 'einzigartigen' Natur scheinen ihre Designs fest codiert zu sein und sind möglicherweise nicht mit bestimmten Technologien kompatibel."
+ TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_TITLE:0 "§HSchaltet Nanitschiffe frei§!"
  TECH_UNLOCK_NANITE_STARBASE_DESC:0 "These massive $nanite_starbase$ should prevent all hostiles from passing."
  TECH_UNLOCK_NANITE_STARBASE_TITLE:0 "§HUnlocks Station:§! Defense $nanite_starbase$"
  TECH_UNLOCK_NANITE_STATION_CONSTRUCTION_DESC:0 "§HFactory§!\nLook at these schematics within the program!!! We can replicate the process to boosters our defenses."

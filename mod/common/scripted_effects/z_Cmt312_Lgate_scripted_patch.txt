@@ -15,6 +15,7 @@ generate_lcluster_clue = {
 				has_distar = yes
 				NOT = { has_global_flag = l_cluster_opened }
 				has_event_chain = l_cluster_chain
+				NAND = { is_ai = yes has_global_flag = CmtFlagLgateReqPlayer }
 			}
 			custom_tooltip = add_lcluster_clue
 			add_event_chain_counter = { event_chain = l_cluster_chain counter = clues amount = 1 }

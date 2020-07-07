@@ -32,7 +32,7 @@
 			### no : this template is not applied automatically.
 	
 	### The version of Crisis Manager. This template corresponds to: 
-		@CmtT201_ConstVersionInfo = 1.10
+		@CmtT201_ConstVersionInfo = 1.11
 			### Never change this value.
 			### For example, ''1.03'' means ''ver.1.3'' but not ''ver.1.0.3''
 		
