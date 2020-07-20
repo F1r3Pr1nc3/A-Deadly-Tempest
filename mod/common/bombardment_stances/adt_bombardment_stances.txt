@@ -28,7 +28,7 @@ nanitebombard = {
 	army_damage = 2.0
 
 	kill_pop_chance = {
-		base = 2.0
+		base = 2.5
 	}
 	min_pops_to_kill_pop = 0
 
