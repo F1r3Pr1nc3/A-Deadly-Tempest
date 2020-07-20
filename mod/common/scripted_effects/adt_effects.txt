@@ -368,13 +368,28 @@ give_tech_option = {
 				is_researching_technology = $TECH$
 			}
 		}
-		tooltip = {
-			add_research_option = $TECH$
+		# hidden_trigger = {
+		# 	always = $INFO|yes$
+		# 	tooltip = { add_research_option = $TECH$ }
+
+		# }
+		# add_tech_progress = {
+		# 	tech = $TECH$
+		# 	progress = 0.25
+		# }
+		if = {
+			limit = { always = $INFO|yes$ }
+			tooltip = { add_research_option = $TECH$ }
+			add_tech_progress = {
+				tech = $TECH$
+				progress = 0.25
+			}
+		} else = {
+			add_tech_progress = {
+				tech = $TECH$
+				progress = 0.1
+			}
 		}
-		add_tech_progress = {
-			tech = $TECH$
-			progress = 0.25
-		}
-	# give_technology = { tech = $TECH$ message = no }
+		# give_technology = { tech = $TECH$ message = no }
 	}
 }

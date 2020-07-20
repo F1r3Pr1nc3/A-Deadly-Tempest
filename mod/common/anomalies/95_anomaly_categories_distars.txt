@@ -30,7 +30,7 @@ transmitter_cat = {
 	spawn_chance = {
 		modifier = {
 			add = 3
-			has_distar = yes
+			no_scope = { has_distar = yes }
 			is_star = no
 			from.owner = {
 				NOR = {

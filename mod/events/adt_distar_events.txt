@@ -40,7 +40,7 @@ event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		has_distar = yes
+		no_scope = { has_distar = yes }
 		NOT = {
 			any_system = {
 				has_star_flag = enigmatic_cache_system
@@ -350,6 +350,149 @@ country_event = {
 		}
 		else = {
 			country_event = { id = distar.5055 days = 500 }
+		}
+	}
+}
+
+
+#################################
+#
+# Distant Stars Events
+# by Miranda van den Brink
+#
+#################################
+
+####### VOIDSPAWN/HATCHLING EVENTS #######
+
+# Gatekeeper Egg Planet Owner
+planet_event = {
+	id = distar.5000
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_planet_flag = hatchling_egg
+		NOR = {
+			has_global_flag = hatchling_triggered
+			has_planet_flag = hatchling_planet_owner_triggered
+			owner = {
+				is_at_war = yes
+			}
+		}
+	}
+
+	immediate = {
+		save_global_event_target_as = hatchling_egg
+		planet_event = { id = distar.5010 days = 200 random = 100 }
+		#planet_event = { id = distar.5010 days = 3 random = 1 }
+		set_planet_flag = hatchling_planet_owner_triggered
+	}
+}
+
+
+# All Rifts Removed (on_monthly_pulse)
+event = {
+	id = distar.5014
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:hatchling_egg
+		event_target:hatchling_egg = {
+			has_planet_flag = egg_interrupted
+			NOR = {
+				has_planet_flag = rifts_removed
+				has_deposit = d_egg_cracking
+			}
+		}
+	}
+	immediate = {
+		event_target:hatchling_egg = {
+			switch = {
+				trigger = is_planet_class
+				pc_savannah = { set_planet_entity = { entity = pc_savannah } }
+				pc_desert = { set_planet_entity = { entity = pc_desert } }
+				pc_arid = { set_planet_entity = { entity = pc_arid } } # vanilla fix!?
+				pc_gray_goo = { set_planet_entity = { entity = pc_gray_goo } }
+				pc_gaia = { set_planet_entity = { entity = pc_gaia } }
+			}
+			owner = {
+				country_event = { id = distar.5015 }
+			}
+			set_planet_flag = rifts_removed
+			remove_modifier = egg_rifts
+		}
+	}
+}
+
+# All Rifts Removed Notification
+country_event = {
+	id = distar.5015
+	title = distar.5014.name
+	desc = distar.5014.desc
+	picture = GFX_evt_news_room
+	show_sound = event_radio_chatter
+	location = event_target:hatchling_egg
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+	}
+	after = {
+		hidden_effect = {
+			event_target:hatchling_egg = {
+				remove_planet_flag = hatchling_egg
+				remove_planet_flag = egg_interrupted
+				remove_planet_flag = hatchling_will_trigger
+				remove_planet_flag = space_owner_triggered
+				remove_planet_flag = hatchling_planet_owner_triggered
+			}
+			clear_global_event_target = hatchling_egg
+			clear_global_event_target = hatchling
+			clear_global_event_target = hatchling_fleet
+			event_target:hatchling_country = { destroy_country = yes }
+			clear_global_event_target = hatchling_country
+			remove_global_flag = hatchling_triggered
+		}
+	}
+}
+
+# Quest (from distar.5009)
+country_event = {
+	id = distar.5012
+	title = distar.5012.name
+	desc = distar.5012.desc
+	picture = GFX_evt_voidspawn
+	show_sound = event_laboratory_sound
+	location = event_target:hatchling_egg
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		add_research_option = tech_gargantuan_evolution
+		add_tech_progress = {
+			tech = tech_gargantuan_evolution
+			progress = 0.3
+		}
+	}
+	after = {
+		hidden_effect = {
+			event_target:hatchling_egg = {
+				remove_planet_flag = hatchling_egg
+				remove_planet_flag = egg_interrupted
+				remove_planet_flag = hatchling_will_trigger
+				remove_planet_flag = space_owner_triggered
+				remove_planet_flag = hatchling_planet_owner_triggered
+			}
+			clear_global_event_target = hatchling_egg
+			clear_global_event_target = hatchling
+			clear_global_event_target = hatchling_fleet
+			event_target:hatchling_country = { destroy_country = yes }
+			clear_global_event_target = hatchling_country
+			remove_global_flag = hatchling_triggered
 		}
 	}
 }

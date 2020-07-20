@@ -1,30 +1,5 @@
 # ## physics technologies
 
-tech_lgate_activation = {
-	cost = @tier3cost3
-	area = physics
-	tier = 3
-	is_rare = yes
-	is_dangerous = yes
-	category = { particles }
-	weight = 0
-
-	potential = {
-		NOT = { has_global_flag = l_cluster_opened }
-	}
-
-	prereqfor_desc = {
-		custom = {
-			title = lgate_activation_title
-			desc = lgate_activation_desc
-		}
-	}
-
-	weight_modifier = {
-		factor = 0
-	}
-}
-
 tech_nanoactuators = {
 	area = physics
 	tier = 5

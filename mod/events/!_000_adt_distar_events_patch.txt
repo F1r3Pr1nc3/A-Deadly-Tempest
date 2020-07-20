@@ -670,7 +670,7 @@ country_event = {
 										design = "NAME_Nanite_Dragon"
 										name = "NAME_Young_Dragon"
 										prefix = no
-										upgradable = no
+										upgradable = yes
 									}
 									set_location = prevprevprev # megastructure
 									set_fleet_stance = passive
@@ -916,6 +916,7 @@ country_event = {
 		fromfrom.solar_system = {
 			custom_tooltip = distar.13035.a.tooltip
 		}
+		hidden_effect = { give_technology = { tech = tech_nanite_guardians message = no } }
 	}
 }
 

@@ -18,7 +18,7 @@ tech_nanite_ships = {
 		}
 	}
 	potential = {
-		host_has_dlc = "Distant Stars Story Pack"
+		no_scope = { has_distar = yes }
 		has_global_flag = l_cluster_opened
 		has_resource = {
 			type = nanites
@@ -92,6 +92,7 @@ tech_nanite_build_speed = {
 tech_nanite_hull = {
 	cost = @tier5cost3
 	area = engineering
+	icon = tech_nanite_starbase
 	tier = 5
 	category = { voidcraft }
 	prerequisites = { "tech_nanite_ships" }
@@ -217,17 +218,18 @@ tech_nanocrystals = {
 # Nanite Starbases/stations upgrades
 # ##################################
 # tech_space_defense_station_4
-tech_nanite_starbase = {
+tech_nanite_bulwark = {
 	cost = @tier4cost3
 	area = engineering
 	tier = 4
 	category = { voidcraft }
-	prerequisites = { "tech_starbase_4" "tech_nanite_strike_craft" }
+	prerequisites = { "tech_space_defense_station_improvement" "tech_nanite_strike_craft" } # "tech_space_defense_station_1" "tech_starbase_4"
 	is_rare = yes
 	weight = @tier4weight2
+
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_resource = { type = nanites amount > 3 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_technology = tech_nanite_clouds
@@ -239,37 +241,44 @@ tech_nanite_starbase = {
 
 	prereqfor_desc = {
 		ship = {
-			title = "TECH_UNLOCK_NANITE_STARBASE_TITLE"
-			desc = "TECH_UNLOCK_NANITE_STARBASE_DESC"
+			title = "TECH_UNLOCK_NANITE_BULWARK_TITLE"
+			desc = "TECH_UNLOCK_NANITE_BULWARK_DESC"
 		}
 	}
 	## TODO
 	weight_modifier = {
-		factor = 0
-		# modifier = {
-		# 	factor = 10
-		# 	any_neighbor_country = { has_technology = tech_nanite_starbase }
-		# }
-		# modifier = {
-		# 	factor = 1.25
-		# 	research_leader = {
-		# 		area = engineering
-		# 		has_trait = "leader_trait_expertise_voidcraft"
-		# 	}
-		# }
+		factor = 0.1
+		modifier = {
+			factor = 10
+			any_neighbor_country = {
+				OR = {
+					has_technology = tech_nanite_bulwark
+					has_technology = tech_starbase_5
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
 	}
 
 	ai_weight = {
-		factor = 0
-		# modifier = {
-		# 	factor = 1.25
-		# 	research_leader = {
-		# 		area = engineering
-		# 		has_trait = "leader_trait_expertise_voidcraft"
-		# 	}
-		# }
+		# factor = 10
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
 	}
 }
+
+
 # Modular Engineering
 tech_nanite_modular_engineering = {
 	cost = @tier5cost3

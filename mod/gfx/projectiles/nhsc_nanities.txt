@@ -6,10 +6,10 @@
 projectile_gfx_ballistic = {
 	name = "gatebuilder_torpedoes"
 	color = { 0.1 1.0 0.2 1.0 }
-	hit_entity = "neutron_torpedoes_hit_entity"
-	shield_hit_entity = "neutron_torpedoes_shield_hit_entity"
-	muzzle_flash_entity = "neutron_torpedoes_muzzle_entity"
-	entity = "neutron_torpedoes_entity"
+	hit_entity = "proton_torpedoes_hit_entity"
+	shield_hit_entity = "proton_torpedoes_shield_hit_entity"
+	muzzle_flash_entity = "proton_torpedoes_muzzle_entity"
+	entity = "proton_torpedoes_entity"
 	speed = 90.0			#preferred speed of the projectile
 	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
 	shield_impact = {

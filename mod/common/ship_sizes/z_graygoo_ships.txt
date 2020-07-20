@@ -444,6 +444,7 @@ scavenger_bot = {
 		OR = {
 			AND = {
 				is_scope_type = starbase
+				has_starbase_size >= starbase_citadel
 				NOT = { has_starbase_size = juggernaut }
 				#NOT = { has_starbase_size = scavenger_bot }
 				OR = {
@@ -503,9 +504,8 @@ scavenger_bot = {
 		}
 	}
 
-	empire_limit = { base = 1 }
-
-	num_target_locators = 0 #?
+	# empire_limit = { base = 1 } # is shown globally!?
+	num_target_locators = 0
 	is_space_station = no
 	can_have_federation_design = no
 	enable_default_design = no
@@ -535,66 +535,201 @@ scavenger_bot = {
 	}
 }
 
-# Nanite Starbase
-# military_station_xl_bulwark
-nanite_starbase = {
+
+voidspawn = {
+	is_space_object = yes
 	graphical_culture = no
+	entity = leviathan_01_voidspawn_entity
+	formation_priority = @titan_formation_priority
+	max_speed = @aj_speed_slow
+	acceleration = 0.2
+	rotation_speed = 0.20
+	collision_radius = 7
+	modifier = {
+		ship_evasion_add = 25
+		ship_armor_add = 100000
+		ships_upkeep_mult = -1
+	}
+	max_hitpoints = 100000
+	combat_size_multiplier = 50
+	size_multiplier = 32
+	fleet_slot_size = 8
+	section_slots = { "mid" = { locator = "spine" } }
+	num_target_locators = 0
+	icon_frame = 12
+	base_buildtime = 1800
+	can_have_federation_design = no
+	enable_default_design = yes #if yes, countries will have an auto-generated design at start
+
+	default_behavior = artillery
+	is_designable = no ## TODO?
+
+	prerequisites = { "tech_voidspawn" }
+
+	combat_disengage_chance = 1.25
+
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	required_component_set = "special_ship_slot"			# built-in support for New Ship Classes and More
+	required_component_set = "nsc_titan_aura"				# built-in support for New Ship Classes and More
+
+	potential_construction = {
+		OR = {
+			AND = {
+				is_scope_type = starbase
+				has_starbase_size >= starbase_citadel
+				# NOT = { has_starbase_size = juggernaut }
+				#NOT = { has_starbase_size = scavenger_bot }
+				# OR = {
+					has_starbase_building = nanite_yards
+					# has_starbase_size = graygoo_factory
+				# }
+			}
+			AND = {
+				is_scope_type = megastructure
+				OR = {
+					is_megastructure_type = mega_shipyard_3
+					is_megastructure_type = mega_shipyard_restored
+				}
+			}
+		}
+	}
+	possible_construction = {
+		custom_tooltip = {
+			fail_text = starbase_nanite_yards_trigger
+			is_scope_type = starbase
+			OR = {
+				has_starbase_building = nanite_yards
+				# has_starbase_size = graygoo_factory
+			}
+		}
+		custom_tooltip = {
+			fail_text = starbase_citadel_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_size >= starbase_citadel
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = starbase_colossal_yards_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_building = colossus_yards
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = ships
+		upkeep = {
+			energy = @titan_upkeep_energy
+			alloys = @titan_upkeep_alloys
+		}
+	}
+
+	min_upgrade_cost = {
+		alloys = 16
+	}
+
+}
+
+##  Nanite Starbase  ##
+# military_station_xl_bulwark = {
+military_station_nanite_bulwark = {
+# military_station_large = {
+	# entity = military_station_xl_bulwark_entity
+	# entity = gatebuilder_01_space_station_entity
+	entity = gatebuilders_01_bulwark_entity
+	# graphical_culture = no
 	max_speed = 6
 	rotation_speed = 10
 	acceleration = 10
-	entity = gatebuilder_01_space_station_entity
-	can_be_inspected = yes
-
 	modifier = {
 		ship_evasion_mult = -1
-		ship_shield_add = 20000
-		ship_armor_add = 20000
-		ships_upkeep_mult = -0.33
+		ship_shield_mult = 1
+		ships_upkeep_mult = -0.25 #-0.33
+		ship_shield_add = 15000
+		ship_armor_add = 15000
 		ship_piracy_suppression_add = 16
 	}
 	ship_modifier = {
-		ship_weapon_range_mult = 0.25
+		ship_weapon_range_mult = 0.2
 		ship_fire_rate_mult = 0.5
-		ship_tracking_add = 25
-		ship_accuracy_add = 25
-		ship_shield_mult = 1
+		# ship_tracking_add = 25
+		# ship_accuracy_add = 25
 	}
 	max_hitpoints = 40000
 	combat_size_multiplier = 50
 	size_multiplier = 12
-	fleet_slot_size = 6
-	section_slots = { "mid" = { locator = "part1" } }
-	## TODO
-	# section_slots = {
-	# 	"north" = { locator = "part1" }
-	# 	"west" = { locator = "part2" }
-	# 	"east" = { locator = "part4" }
-	# 	"south" = { locator = "part3" }
-	# }
-	num_target_locators = 0
-	is_space_station = yes # vanilla no
-	base_buildtime = 540
-	auto_upgrade = no
-	is_designable = no ## TODO yes
+	fleet_slot_size = 12
+	section_slots = {
+		"north" = { locator = "part1" }
+		"west" = { locator = "part2" }
+		"east" = { locator = "part3" }
+		"south" = { locator = "part4" }
+	}
+	num_target_locators = 4 # 0
+	can_be_inspected = yes
+	is_space_station = yes
+	base_buildtime = 760
+	# 	auto_upgrade = no
+	is_designable = yes
 	uses_name_prefix = no
 	takes_name_from_ship_design = yes
-	can_have_federation_design = no
-	is_civilian = no
-	components_add_to_cost = no
-	is_listed = no
-	can_disable = no
-	prerequisites = { "tech_nanite_starbase" }
-	enable_default_design = no # vanilla no
+	# 	can_have_federation_design = no
+	# 	is_civilian = no
+	# 	is_listed = no
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	# 	components_add_to_cost = no
+	can_disable = yes
+	flip_control_on_disable = no
+	prerequisites = { "tech_nanite_bulwark" }
 	class = shipclass_military_station
 	construction_type = starbase_defenses
-
 	required_component_set = "power_core"
 	required_component_set = "power_core"
 	required_component_set = "sensor_components"
 	required_component_set = "combat_computers"
 	build_block_radius = @aj_build_block_radius_military
-	formation_priority = @aj_starbase_formation_priority
-	icon_frame = -1
+	# formation_priority = @aj_starbase_formation_priority
+
+	potential_construction = {
+		is_scope_type = starbase
+	}
+	possible_construction = {
+		has_starbase_size >= starbase_citadel
+	}
+	# resources = {
+	# 	category = starbase_stations
+	# 	cost = {
+	# 		alloys = 2000
+	# 	}
+	# }
+	# ship_class_icon_frame = 26
+	# icon_frame = 1
 }
 
 starbase_gatebuilders = {
@@ -627,14 +762,14 @@ starbase_gatebuilders = {
 
 	num_target_locators = 0
 	is_space_station = yes # vanilla no
-	base_buildtime = 730
+	base_buildtime = 680
 	is_designable = no ## TODO?
 	uses_name_prefix = no
 	can_have_federation_design = no
 	is_civilian = no
 	components_add_to_cost = no
 	is_listed = no
-	can_disable = no ## TODO yes - not really working
+	can_disable = yes ## TODO yes - not really working
 	prerequisites = { "tech_nanite_ships" }
 	enable_default_design = no # vanilla no
 	class = shipclass_starbase
@@ -648,7 +783,8 @@ starbase_gatebuilders = {
 	icon_frame = -1
 }
 
-# Nanite Factory
+##   Nanite Factory   ##
+# military_station_xxl_citadel
 graygoo_factory = {
 	is_space_object = yes
 	graphical_culture = no
@@ -685,15 +821,15 @@ graygoo_factory = {
 	# 	"east" = { locator = "part4" }
 	# 	"south" = { locator = "part3" }
 	# }
-	num_target_locators = 2
+	num_target_locators = 5
 	is_space_station = yes
-	base_buildtime = 800
+	base_buildtime = 1080
 	# is_civilian = no
 	# components_add_to_cost = no
 	# is_listed = no
 	can_disable = no
 	enable_default_design = no
-	# prerequisites = { "tech_nanite_starbase" "tech_nanite_mega_engineering" }
+	# prerequisites = { "tech_nanite_bulwark" "tech_nanite_mega_engineering" }
 	class = shipclass_military_station
 	# construction_type = starbase_defenses
 	is_designable = no ## TODO

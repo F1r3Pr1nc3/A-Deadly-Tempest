@@ -10,10 +10,10 @@
 @titan_power_5 = 3200
 @titan_power_6 = 5200
 @colossus_power = 10000
-@starbase_power_5 = 3200
-@starbase_power_6 = 4200
 @platform_power_5 = 575
 @platform_power_6 = 750
+@starbase_power_5 = 3200
+@starbase_power_6 = 4200
 
 #############
 #	COST	#
@@ -144,8 +144,8 @@ utility_component_template = {
 		starbase_starfortress
 		starbase_citadel
 		juggernaut
+		starbase_gatebuilders
 		graygoo_factory
-		scavenger_bot
 	}
 	upgrades_to = "STARBASE_DARK_MATTER_REACTOR"
 
@@ -178,7 +178,6 @@ utility_component_template = {
 		military_station_small
 		military_station_medium
 		military_station_large
-		starbase_gatebuilders
 	}
 	upgrades_to = "PLATFORM_DARK_MATTER_REACTOR"
 
@@ -218,9 +217,9 @@ utility_component_template = {
 	ai_weight = {
 		weight = 6
 		modifier = {
-			factor = 0.0
+			factor = 0
 			is_country_type = default
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			has_monthly_income = { resource = sr_dark_matter value < 1 }
 		}
 	}
 }
@@ -251,9 +250,9 @@ utility_component_template = {
 	ai_weight = {
 		weight = 6
 		modifier = {
-			factor = 0.0
+			factor = 0
 			is_country_type = default
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			has_monthly_income = { resource = sr_dark_matter value < 1 }
 		}
 	}
 }
@@ -284,9 +283,9 @@ utility_component_template = {
 	ai_weight = {
 		weight = 6
 		modifier = {
-			factor = 0.0
+			factor = 0
 			is_country_type = default
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			has_monthly_income = { resource = sr_dark_matter value < 1 }
 		}
 	}
 }
@@ -347,15 +346,14 @@ utility_component_template = {
 		military_station_small
 		military_station_medium
 		military_station_large
-		starbase_gatebuilders
 	}
 
 	ai_weight = {
 		weight = 6
 		modifier = {
-			factor = 0.0
+			factor = 0
 			is_country_type = default
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			has_monthly_income = { resource = sr_dark_matter value < 1 }
 		}
 	}
 }
@@ -404,12 +402,17 @@ utility_component_template = {
 		starbase_starhold
 		starbase_starfortress
 		starbase_citadel
+		starbase_gatebuilders
 		juggernaut
 		graygoo_factory
-		scavenger_bot
 	}
 
 	ai_weight = {
 		weight = 6
+		modifier = {
+			factor = 0
+			is_country_type = default
+			resource_stockpile_compare = { resource = nanites value < 9 }
+		}
 	}
 }

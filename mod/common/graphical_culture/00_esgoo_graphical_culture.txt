@@ -1,5 +1,5 @@
 esgoo_01 = {
-	randomized = { host_has_dlc = "Distant Stars Story Pack" }
+	randomized = { no_scope = { has_distar = yes } }
 	selectable = { local_has_dlc = "Distant Stars Story Pack" }
 
 	ship_color = yes

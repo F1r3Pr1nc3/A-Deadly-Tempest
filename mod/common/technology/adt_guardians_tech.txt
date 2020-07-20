@@ -1,15 +1,28 @@
-tech_guardians = {
+tech_nanite_guardians = {
 	cost = @tier4cost1
 	area = engineering
+	icon = tech_guardians
 	tier = 5
 	category = {
 		voidcraft
 	}
 	prerequisites = {
 		"tech_battleships"
+		"tech_nanite_ships"
 	}
 	weight = @tier2weight3
 	is_rare = yes
+	potential = {
+		no_scope = {
+			has_global_flag = l_cluster_opened
+			NAND = {
+				has_global_flag = auto_dread_disabled
+				has_global_flag = scavenger_disabled
+				has_global_flag = dragon_disabled
+				has_global_flag = voidspawn_disabled
+			}
+		}
+	}
 	prereqfor_desc = {
 		ship = {
 			title = "TECH_UNLOCK_GUARDIANS_CONSTRUCTION_TITLE"
@@ -17,44 +30,54 @@ tech_guardians = {
 		}
 	}
 	weight_modifier = {
-		factor = 0		# only per event
-		# modifier = {
-		# 	factor = 1
-		# 	no_scope = {
-		# 		NAND = {
-		# 			has_global_flag = auto_dread_disabled
-		# 			has_global_flag = scavenger_disabled
-		# 			has_global_flag = dragon_disabled
-		# 		}
-		# 	}
-		# }
-		# modifier = {
-		# 	factor = 1.25
-		# 	research_leader = {
-		# 		area = engineering
-		# 		has_trait = "leader_trait_expertise_voidcraft"
-		# 	}
-		# }
+		factor = 0.01 # if 0 only per event
+		modifier = {
+			factor = 5
+			has_country_flag = pantagruel
+		}
+		modifier = {
+			factor = 5
+			has_country_flag = enigmatic_cache_host_country
+		}
+		modifier = {
+			factor = 20
+			has_country_flag = enigmatic_caches_choice
+		}
+		modifier = {
+			factor = 20
+			has_country_flag = applied_enigmatic_intelligence
+		}
+		modifier = {
+			factor = 1.25
+			exists = event_target:gray_owner
+			is_same_empire = event_target:gray_owner
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
 	}
 	ai_weight = {
-		factor = 0
-		# modifier = {
-		# 	factor = 1
-		# 	no_scope = {
-		# 		NAND = {
-		# 			has_global_flag = auto_dread_disabled
-		# 			has_global_flag = scavenger_disabled
-		# 			has_global_flag = dragon_disabled
-		# 		}
-		# 	}
-		# }
-		# modifier = {
-		# 	factor = 1.25
-		# 	research_leader = {
-		# 		area = engineering
-		# 		has_trait = "leader_trait_expertise_voidcraft"
-		# 	}
-		# }
+		factor = 0.01
+		modifier = {
+			factor = 5
+			has_country_flag = pantagruel
+		}
+		modifier = {
+			factor = 1.5
+			exists = event_target:gray_owner
+			is_same_empire = event_target:gray_owner
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
 	}
 }
 
@@ -66,10 +89,17 @@ tech_auto_dread = {
 		voidcraft
 	}
 	prerequisites = {
-		"tech_guardians"
+		"tech_nanite_guardians"
 	}
 	weight = @tier3weight2
 	is_rare = yes
+	potential = {
+		no_scope = {
+			has_leviathans = yes
+			NOT = { has_global_flag = auto_dread_disabled }
+		}
+	}
+
 	prereqfor_desc = {
 		ship = {
 			title = "TECH_UNLOCK_DREADNOUGHT_CONSTRUCTION_TITLE"
@@ -77,42 +107,56 @@ tech_auto_dread = {
 		}
 	}
 	weight_modifier = {
-		factor = 0
-		# modifier = {
-		# 	factor = 0
-		# 	no_scope = {
-		# 		has_global_flag = auto_dread_disabled
-		# 	}
-		# }
-		# modifier = {
-		# 	factor = 1.25
-		# 	research_leader = {
-		# 		area = engineering
-		# 		has_trait = "leader_trait_expertise_voidcraft"
-		# 	}
-		# }
-		# modifier = {
-		# 	factor = 0.25
-		# 	OR = {
-		# 		has_ethic = "ethic_gestalt_consciousness"
-		# 	}
-		# }
+		factor = 0.01
+		modifier = {
+			factor = 2
+			has_country_flag = encountered_dreadnought
+		}
+		modifier = {
+			factor = 10
+			has_country_flag = restored_dreadnought
+		}
+		modifier = {
+			factor = 1.25
+			exists = event_target:gray_owner
+			is_same_empire = event_target:gray_owner
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_ethic = "ethic_gestalt_consciousness"
+			}
+		}
 	}
 	ai_weight = {
-		factor = 0
-		# modifier = {
-		# 	factor = 0
-		# 	no_scope = {
-		# 		has_global_flag = auto_dread_disabled
-		# 	}
-		# }
-		# modifier = {
-		# 	factor = 1.25
-		# 	research_leader = {
-		# 		area = engineering
-		# 		has_trait = "leader_trait_expertise_voidcraft"
-		# 	}
-		# }
+		factor = 0.01
+		modifier = {
+			factor = 2.5
+			has_country_flag = encountered_dreadnought
+		}
+		modifier = {
+			factor = 20
+			has_country_flag = restored_dreadnought
+		}
+		modifier = {
+			factor = 1.5
+			exists = event_target:gray_owner
+			is_same_empire = event_target:gray_owner
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
 	}
 }
 
@@ -125,15 +169,18 @@ tech_scavenger_bot = {
 	}
 	ai_update_type = military
 	prerequisites = {
-		"tech_nanite_modular_engineering"
+		"tech_nanite_guardians"
 		"tech_nanite_mega_engineering"
-		"tech_guardians"
+		"tech_nanite_modular_engineering"
 	}
 	weight = @tier4weight3
 	is_rare = yes
 	potential = {
-		# host_has_dlc = "Federations"
-		host_has_dlc = "Distant Stars Story Pack"
+		no_scope = {
+			has_distar = yes
+			# has_federations_dlc = yes
+			NOT = { has_global_flag = scavenger_disabled }
+		}
 		has_resource = {
 			type = sr_living_metal
 			amount > 0
@@ -146,40 +193,40 @@ tech_scavenger_bot = {
 		}
 	}
 	weight_modifier = {
-		factor = 0
-		# modifier = {
-		# 	factor = 0
-		# 	no_scope = {
-		# 		has_global_flag = scavenger_disabled
-		# 	}
-		# }
-		# modifier = {
-		# 	factor = 1.25
-		# 	research_leader = {
-		# 		area = engineering
-		# 		has_trait = "leader_trait_expertise_voidcraft"
-		# 	}
-		# }
-		# modifier = {
-		# 	factor = 0.25
-		# 	OR = {
-		# 		has_ethic = ethic_spiritualist
-		# 		has_ethic = ethic_fanatic_spiritualist
-		# 		has_ethic = ethic_pacifist
-		# 		has_ethic = ethic_fanatic_pacifist
-		# 		has_ethic = ethic_authoritarian
-		# 		has_ethic = ethic_fanatic_authoritarian
-		# 	}
-		# }
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = scrapper_killed }
+		}
+		modifier = {
+			factor = 1.25
+			exists = event_target:gray_owner
+			is_same_empire = event_target:gray_owner
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		# factor = 0
 	}
 	ai_weight = {
-		factor = 0
-		# modifier = {
-		# 	factor = 0
-		# 	no_scope = {
-		# 		has_global_flag = scavenger_disabled
-		# 	}
-		# }
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = scrapper_killed }
+		}
 		# modifier = {
 		# 	factor = 1.25
 		# 	research_leader = {
@@ -187,6 +234,7 @@ tech_scavenger_bot = {
 		# 		has_trait = "leader_trait_expertise_voidcraft"
 		# 	}
 		# }
+		# factor = 0
 	}
 }
 
@@ -198,7 +246,7 @@ tech_nanite_dragon = {
 		voidcraft
 	}
 	prerequisites = {
-		"tech_guardians"
+		"tech_nanite_guardians"
 		"tech_nanite_ships"
 	}
 	weight = @tier3weight1
@@ -210,17 +258,27 @@ tech_nanite_dragon = {
 		}
 	}
 	potential = {
-		host_has_dlc = "Distant Stars Story Pack"
+		no_scope = {
+			has_distar = yes
+			NOT = { has_global_flag = nanite_dragon_disabled }
+		}
 	}
 
 	weight_modifier = {
-		factor = 0
-		# modifier = {
-		# 	factor = 0
-		# 	no_scope = {
-		# 		has_global_flag = nanite_dragon_disabled
-		# 	}
-		# }
+		factor = 0.01
+		modifier = {
+			factor = 1.5
+			exists = event_target:spawning_dragons
+			OR = {
+				has_country_flag = ldragon_known
+				has_country_flag = knows_ldragon
+			}
+		}
+		modifier = {
+			factor = 1.5
+			exists = event_target:gray_owner
+			is_same_empire = event_target:gray_owner
+		}
 		# modifier = {
 		#	switch not woring in modifier!?
 		# 	switch = {
@@ -232,48 +290,187 @@ tech_nanite_dragon = {
 		# 	}
 		# }
 		# modifier = {
-		# 	factor = 10
-		# 	any_neighbor_country = {
-		# 		has_technology = tech_battleships
-		# 	}
+		# 	factor = 0.1
+		# 	NOT = { years_passed > 50 }
 		# }
 		# modifier = {
-		# 	factor = 1.25
-		# 	has_tradition = tr_supremacy_adopt
+		# 	factor = 2
+		# 	years_passed > 60
 		# }
 		# modifier = {
-		# 	factor = 1.25
-		# 	research_leader = {
-		# 		area = engineering
-		# 		has_trait = "leader_trait_expertise_voidcraft"
-		# 	}
+		# 	factor = 3
+		# 	years_passed > 65
 		# }
 		# modifier = {
-		# 	factor = 0.25
-		# 	OR = {
-		# 		has_ethic = "ethic_spiritualist"
-		# 		has_ethic = "ethic_fanatic_spiritualist"
-		# 		has_ethic = "ethic_materialist"
-		# 		has_ethic = "ethic_fanatic_materialist"
-		# 		has_ethic = "ethic_xenophobe"
-		# 		has_ethic = "ethic_fanatic_xenophobe"
-		# 	}
+		# 	factor = 4
+		# 	years_passed > 70
 		# }
+		modifier = {
+			factor = 5
+			any_neighbor_country = {
+				has_technology = tech_nanite_dragon
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+				has_ethic = "ethic_xenophobe"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
 	}
 	ai_weight = {
-		factor = 0
-		# modifier = {
-		# 	factor = 0
-		# 	no_scope = {
-		# 		has_global_flag = dragon_disabled
-		# 	}
-		# }
-		# modifier = {
-		# 	factor = 1.25
-		# 	research_leader = {
-		# 		area = engineering
-		# 		has_trait = "leader_trait_expertise_voidcraft"
-		# 	}
-		# }
+		factor = 0.1
+		modifier = {
+			factor = 2
+			exists = event_target:spawning_dragons
+			OR = {
+				has_country_flag = ldragon_known
+				has_country_flag = knows_ldragon
+			}
+		}
+		modifier = {
+			factor = 2
+			exists = event_target:gray_owner
+			is_same_empire = event_target:gray_owner
+		}
+		modifier = {
+			factor = 1.5
+			any_neighbor_country = {
+				has_technology = tech_battleships
+			}
+		}
+		modifier = {
+			factor = 10
+			any_neighbor_country = {
+				has_technology = tech_nanite_dragon
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_voidspawn = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 5
+	category = { voidcraft }
+	prerequisites = {
+		"tech_nanite_guardians"
+		"tech_nanite_mega_engineering"
+		"tech_nanite_modular_engineering"
+	}
+	weight = @tier5weight2
+	is_rare = yes
+
+	potential = {
+		no_scope = {
+			has_distar = yes
+			has_global_flag = hatchling_triggered
+			NOT = { has_global_flag = voidspawn_disabled }
+		}
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_VOIDSPAWN_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_VOIDSPAWN_CONSTRUCTION_DESC"
+		}
+	}
+
+	weight_modifier = {
+		factor = 0.01
+		modifier = {
+			factor = 1.25
+			has_country_flag = encountered_hatchling
+		}
+		modifier = {
+			factor = 1.5
+			exists = event_target:egg_owner
+			is_same_empire = event_target:egg_owner
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = hatchling_killed
+		}
+		modifier = {
+			factor = 1.5
+			exists = event_target:gray_owner
+			is_same_empire = event_target:gray_owner
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 0.05
+		modifier = {
+			factor = 1.5
+			has_country_flag = encountered_hatchling
+		}
+		modifier = {
+			factor = 1.5
+			exists = event_target:egg_owner
+			is_same_empire = event_target:egg_owner
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = hatchling_killed
+		}
+		modifier = {
+			factor = 2
+			exists = event_target:gray_owner
+			is_same_empire = event_target:gray_owner
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
 	}
 }

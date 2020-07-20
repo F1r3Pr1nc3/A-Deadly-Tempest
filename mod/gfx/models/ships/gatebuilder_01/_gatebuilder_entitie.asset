@@ -1,8 +1,10 @@
-#####				Deactivated					#####
+###position = { 0<-[+Left,-Right] | 0<-[+Up,-Down] | 0<-[+Back,-Forward] }
+
+#####   Deactivated L-Gate   #####
 entity = {
 	name = "deactivated_gatebuilder_gateway_entity"
 	pdxmesh = "gateway_mesh"
-	
+
 	default_state = "idle"
 	state = { name = "idle" animation = "idle" animation_speed = 0
 		start_event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_hum" stop_on_state_change = yes } }
@@ -11,10 +13,9 @@ entity = {
 	state = { name = "death" animation = "death" looping = no
 		event = { time = 7.63 node = "root" particle = "dreadnought_explosion_particle" keep_particle = yes }
 		event = { time = 2.1 node = "root" particle = "gatebuilder_gateway_portal_death_residue_effect" keep_particle = yes }
-		
 		event = { trigger_once = yes sound = { soundeffect = "megastructure_gate_way_station_death" stop_on_state_change = yes } }
 	}
-	
+
 	meshsettings = {
 		name = "gateway_bottomShapeShape"
 		index = 0
@@ -23,4 +24,170 @@ entity = {
 		texture_specular = "gatebuilder_01_gateway_specular.dds"
 		shader = "PdxMeshShip"
 	}
+}
+
+###   Gatebuilder Bulwark   ###
+entity = {
+	###General Information
+
+	name = "gatebuilders_01_bulwark_entity"
+	# clone = "gatebuilder_01_space_station_entity"
+	pdxmesh = "gatebuilder_01_station_frame_mesh"
+	# pdxmesh = "gatebuilder_01_space_station_mesh"
+
+	scale = 1.0
+	game_data = { size = 22 emissive_recolor_crunch = 2.0 }
+
+	# locator = { name = "part1" position = { 0 0 0 } }
+	# locator = { name = "part2" position = { 0 0 0 } }
+	# locator = { name = "part3" position = { 0 0 0 } }
+	# locator = { name = "part4" position = { 0 0 0 } }
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	state = { name = "combat_idle" animation = "idle" }
+	state = { name = "death" animation = "death" looping = no
+		event = { time = 12.2 node = "explosion_locator" particle = "gatebuilder_station_explosion_particle" keep_particle = yes trigger_once = yes }
+	}
+
+	##Locators for Extensions
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { root = "gatebuilders_01_bulwark_attachment_entity" }
+
+	###Locators for Sections
+	locator = { name = "part1"	position = { 0 1 -11 } rotation = { 0 0 0 } }
+	locator = { name = "part2"	position = { 0 1 11 } rotation = { 180 0 0 } }
+	locator = { name = "part3"	position = { 11 1 0 } rotation = { -90 0 0 } }
+	locator = { name = "part4"	position = { -11 1 0 } rotation = { 90 0 0 } }
+
+}
+
+##################
+### Extensions ###
+##################
+
+entity = {
+	###General Information
+	name = "gatebuilders_01_bulwark_attachment_entity"
+	# clone = "gatebuilder_01_space_station_entity"
+	pdxmesh = "gatebuilder_01_space_station_mesh"
+	scale = 0.8
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 1 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 2 node = "light_locator_03" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_04" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_05" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_06" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_07" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_08" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_09" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_gatebuilder_01_space_station" } }
+
+	}
+	state = { name = "combat_idle" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 1 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 2 node = "light_locator_03" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_04" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_05" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_06" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_07" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_08" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3 node = "light_locator_09" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+
+		event = { time = 0 node = "xl_gun_01" particle = "gatebuilders_01_station_energy_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" state_time = 12.3 looping = no
+		event = { time = 0 node = "explosion_locator_01" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 1 node = "explosion_locator_02" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 2 node = "explosion_locator_03" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 3 node = "explosion_locator_04" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 4 node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+	}
+}
+
+################
+### Sections ###
+################
+
+entity = {
+	name = "gatebuilder_01_bulwark_section_entity"
+	pdxmesh = "locator_mesh"
+	# clone = "gatebuilder_01_space_station_section_entity"
+
+	# locator = { name = "north"	position = { 0 1 -11 } rotation = { 0 0 0 } }
+	# locator = { name = "east"	position = { 0 1 11 } rotation = { 180 0 0 } }
+	# locator = { name = "west"	position = { 11 1 0 } rotation = { -90 0 0 } }
+	# locator = { name = "south"	position = { -11 1 0 } rotation = { 90 0 0 } }
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 }
+	scale = 0.8
+
+	locator = { name = "root" position = { 0 0 0 } }
+	locator = { name = "xl_gun_01" position = { 0 23.42 0 } }
+	locator = {
+		name = "strike_craft_locator_01"
+		position = { 15.36 7.9 0 }
+		rotation = { 0 0 0 }
+	}
+	locator = {
+		name = "strike_craft_locator_02"
+		position = { 0 7.9 15.36 }
+		rotation = { 0 0 0 }
+	}
+	locator = {
+		name = "strike_craft_locator_03"
+		position = { 0 7.9 -15.36 }
+		rotation = { 0 0 0 }
+	}
+	locator = {
+		name = "strike_craft_locator_04"
+		position = { -15.36 7.9 0 }
+		rotation = { 0 0 0 }
+	}
+}
+
+#############################
+### CONSTRUCTION ENTITIES ###
+#############################
+
+entity = {
+
+	###General Information
+
+	name = "gatebuilder_01_bulwark_construction_entity"
+	# pdxmesh = "gatebuilder_01_station_frame_mesh"
+	pdxmesh = "gatebuilder_01_space_station_mesh"
+	scale = 0.8
+
+	###Animations
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+	}
+
+	###Locators
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	# locator = { name = "part1"	position = { 0 1 -11 } rotation = { 0 0 0 } }
+	# locator = { name = "part2"	position = { 0 1 11 } rotation = { 180 0 0 } }
+	# locator = { name = "part3"	position = { 11 1 0 } rotation = { -90 0 0 } }
+	# locator = { name = "part4"	position = { -11 1 0 } rotation = { 90 0 0 } }
+
+	###Attachments
+
+	attach = { root = "gatebuilders_01_bulwark_attachment_entity" }
+	attach = { part1	= "gatebuilder_01_bulwark_section_entity" }
+	attach = { part2	= "gatebuilder_01_bulwark_section_entity" }
+	attach = { part3	= "gatebuilder_01_bulwark_section_entity" }
+	attach = { part4	= "gatebuilder_01_bulwark_section_entity" }
+	# attach = { north	= "gatebuilder_01_bulwark_section_entity" }
+	# attach = { east 	= "gatebuilder_01_bulwark_section_entity" }
+	# attach = { west 	= "gatebuilder_01_bulwark_section_entity" }
+	# attach = { south	= "gatebuilder_01_bulwark_section_entity" }
 }

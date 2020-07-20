@@ -62,7 +62,7 @@ wg_access_lcluster = {
 	}
 	# Run when target surrenders after claims are ceded
 	on_accept = {
-		custom_tooltip = wg_access_lcluster_long_tooltip
+		custom_tooltip = war_goal_wg_access_lcluster_tooltip
 		FROM = {
 			random_system_within_border = {
 				limit = { has_star_flag = lcluster1 }
@@ -157,7 +157,7 @@ wg_access_lcluster_long = {
 	}
 	# Run when target surrenders after claims are ceded
 	on_accept = {
-		custom_tooltip = wg_access_lcluster_long_tooltip
+		custom_tooltip = war_goal_wg_access_lcluster_long_tooltip
 		FROM = {
 			random_system_within_border = {
 				limit = { has_star_flag = lcluster1 }

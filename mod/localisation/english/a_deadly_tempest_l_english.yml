@@ -21,7 +21,7 @@
  NAME_Nanite_Warship:0 "Nanite $graygoo_mothership$"
  NAME_Nanite_Interdictor_default:0 "Nanite $graygoo_interdictor$"
  NAME_Nanite_Interdictor_Carrier:0 "Nanite $graygoo_interdictor$ Carrier"
- nanite_mothership_key:0 "Nanite $graygoo_mothership$"
+ nanite_mothership_key:0 "$graygoo_mothership$"
  nanite_mothership_battleship_key:0 "Nanite $graygoo_mothership$"
  gray_warship_key:0 "Nanite Warship"
  nanite_warship_battleship_key:0 "$gray_warship_key$"
@@ -29,7 +29,7 @@
  nanite_interdictor_alt_key:0 "$graygoo_interdictor$"
  nanite_interdictor_combat_key:0 "$COMBAT$ $graygoo_interdictor$"
  nanite_interdictor_heavy_combat_key:0 "$ASSAULT$ $graygoo_interdictor$"
- 
+
  ### Ship Components
 
  # Combat Computers
@@ -119,14 +119,41 @@
  ### Starbase buildings and modules
  sm_nanite_yards:0 "Nanite Ship Foundry"
  sm_nanite_yards_desc:0 "A standard shipyard lacks the specialized equipment and personnel required for the manufacturing of intelligent nanites ships. Uniquely designed orbital foundries, producing billions of nanites a minute, are necessary to achieve the height of engineering that is a fully armed and operational $NAME_Nanite_Ship$."
- nanite_factory_key:0 "Nanite $graygoo_factory$"
+ nanite_factory_key:0 "$graygoo_factory$"
  gatebuilder_starbase_key:0 "$starbase_citadel$"
- nanite_starbase:0 "Nanite $starbase_citadel$"
- nanite_starbase_key:0 "$starbase_citadel$"
  sm_nanite_yards_desc_modifier:0 "Allows for the creation of nanite ships."
  starbase_nanite_yards_trigger:0 "£trigger_no£  Starbase needs §Y$sm_nanite_yards$§! building"
- TECH_UNLOCK_NANITE_STARBASE_TITLE:0 "§HUnlocks Station:§! Defense $nanite_starbase$"
- TECH_UNLOCK_NANITE_STARBASE_DESC:0 "These massive $nanite_starbase$ should prevent all hostiles from passing."
+ tech_nanite_bulwark:0 "Nanite $starbase_citadel$"
+ tech_nanite_bulwark_desc:0 "The potential applications of nanite technology are as numerous as the nanites themselves. We would be fools to forgo investigating defensive avenues."
+ TECH_UNLOCK_NANITE_BULWARK_TITLE:0 "§HUnlocks Station:§! $military_station_nanite_bulwark$"
+ TECH_UNLOCK_NANITE_BULWARK_DESC:0 "These gigantic $military_station_nanite_bulwark$ should prevent all hostiles from passing."
+ # TECH_UNLOCK_NANITE_FACTORY_CONSTRUCTION_TITLE:0 "§HUnlocks Nanite Station:§! Factory"
+ # TECH_UNLOCK_NANITE_FACTORY_CONSTRUCTION_DESC:0 "§HFactory§!\nLook at these schematics within the program!!! We can replicate the process to boosters our defenses."
+
+ ##  Defense Stations  ##
+ military_station_nanite_bulwark:0 "Nanite $starbase_citadel$"
+ military_station_nanite_bulwark_plural:0 "Nanite $starbase_citadel_plural$"
+
+ ##  Station Sections  ##
+ NANITE_BULWARK_LARGE:0 "$HEAVY_MILITARY_STATION_SECTION$"
+ NANITE_BULWARK_HANGAR:0 "$HANGAR_MILITARY_STATION_SECTION$"
+ NANITE_BULWARK_MEDIUM:0 "$MEDIUM_MILITARY_STATION_SECTION$"
+ NANITE_BULWARK_TORPEDO:0 "$torpedo$ Section"
+ NANITE_BULWARK_MIXED:0 "Mixed Weapon Section"
+ NANITE_BULWARK_SMALL:0 "$LIGHT_MILITARY_STATION_SECTION$"
+
+ BULWARK_FISSION_REACTOR: "$FISSION_REACTOR$"
+ BULWARK_FUSION_REACTOR: "$FUSION_REACTOR$"
+ BULWARK_COLD_FUSION_REACTOR: "$COLD_FUSION_REACTOR$"
+ BULWARK_ANTIMATTER_REACTOR: "$ANTIMATTER_REACTOR$"
+ BULWARK_ZERO_POINT_REACTOR: "$ZERO_POINT_REACTOR$"
+ BULWARK_DARK_MATTER_REACTOR: "$DARK_MATTER_REACTOR$"
+ # NSC support
+ BULWARK_GRAVITON_REACTOR: "Graviton Reactor"
+ BULWARK_NAQUADRIA_REACTOR: "Naquadria Reactor"
+ BULWARK_SINGULARITY_REACTOR: "Singularity Reactor"
+ BULWARK_MULTIDIMENSIONAL_REACTOR: "Multidimensional Reactor"
+ BULWARK_OPTIMIZED_ENIGMATIC_REACTOR: "Optimized $DARK_MATTER_REACTOR$"
 
  ### Bombardment
  bombardment_nanitebombard:0 "Nanite"
@@ -138,7 +165,7 @@
  TECH_UNLOCK_NANITE_BOMBARDMENT_TITLE:0 "Unlock $tech_nanite_bombardment$"
  TECH_UNLOCK_NANITE_BOMBARDMENT_DESC:0 "Unlock a new method of bombardment that will depopulate a world and turn it into a $pc_gray_goo$."
 
- ### Technology
+ ### Technology (Common) ###
 
  # Weapons
  tech_nanite_strike_craft:0 "Nanite $strike_craft$"
@@ -188,10 +215,8 @@
  tech_nanite_ships_desc:0 "Having encountered nanite warforms and their power first-hand, it is understandable that we wish to create such vessels for our fleets. Each ship is comprised of untold billions of nanites and each is completely self sustaining. Unfortunately, their unique nature may lead to designs not as flexible as we'd hope..."
  tech_nanite_living_metal:0 "Nanite $sr_living_metal$"
  tech_nanite_living_metal_desc:0 "Thanks to our advances in nano-science we are now able to produce $sr_living_metal$ by using nanites."
- tech_nanocrystals:0 "$sr_distar_nanocrystals$"
- tech_nanocrystals_desc:0 "$sr_distar_nanocrystals_desc$"
- tech_nanite_starbase:0 "Nanite $starbase_citadel$"
- tech_nanite_starbase_desc:0 "The potential applications of nanite technology are as numerous as the nanites themselves. We would be fools to forgo investigating defensive avenues."
+ tech_nanocrystals:0 "$sr_distar_nanocrystal$"
+ tech_nanocrystals_desc:0 "$sr_distar_nanocrystal_desc$"
  tech_nanite_modular_engineering:0 "Modular Nanites"
  tech_nanite_modular_engineering_desc:0 "Standard construction templates for our starbases are fine, but nano templates that can change themselves as needed are better, much better."
  tech_nanite_workers:0 "Nanite Constructs"
@@ -272,26 +297,23 @@
 
  TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_TITLE:0 "§HUnlocks Nanite Ships§!"
  TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_DESC:0 "§H$graygoo_interdictor$, $graygoo_mothership$ & $nanite_dragon$§!\nThese ships are self sufficient, but due to their...'unique' nature, their designs seem hardcoded and may not be compatible with certain technologies. But we can replicate the process to boosters our carrier operation."
- TECH_UNLOCK_NANITE_STATION_CONSTRUCTION_TITLE:0 "§HUnlocks Nanite Station:§! Factory"
- TECH_UNLOCK_NANITE_STATION_CONSTRUCTION_DESC:0 "§HFactory§!\nLook at these schematics within the program!!! We can replicate the process to boosters our defenses."
 
  # Guardians
- tech_guardians:0 "Guardian Replication Project"
- tech_guardians_desc:0 "Extremely powerful hostile spaceborne aliens found in specific, predetermined systems, these guardians rivalling moons in size and mass and possess sufficient firepower."
+ tech_nanite_guardians:0 "Guardian Replication Project"
+ tech_nanite_guardians_desc:0 "Extremely powerful hostile spaceborne aliens found in specific, predetermined systems, these guardians rivalling moons in size and mass and possess sufficient firepower."
  TECH_UNLOCK_GUARDIANS_CONSTRUCTION_TITLE:0 "§HUnlocks Guardians"
  TECH_UNLOCK_GUARDIANS_CONSTRUCTION_DESC:0 "Enable replication of guardians. While they lack the firepower of originals, these replicant still possess great stats."
- auto_dread:0 "Automated Dreadnought"
- auto_dread_plural:0 "Automated Dreadnoughts"
+ auto_dread:0 "Dreadnought"
+ auto_dread_plural:0 "$auto_dread$s"
  auto_dread_key:0 "$auto_dread$"
- tech_auto_dread:0 "PROJECT $auto_dread$"
+ tech_auto_dread:0 "Project $auto_dread$"
  tech_auto_dread_desc:0 "Allow the construction of $auto_dread_plural$"
  TECH_UNLOCK_DREADNOUGHT_CONSTRUCTION_TITLE:0 "§HUnlocks Guardian:§! $auto_dread$"
  TECH_UNLOCK_DREADNOUGHT_CONSTRUCTION_DESC:0 "A deadly capital ship with full firepower and solid armor. It can even outperform the best fortress a player empire could design."
  nanite_dragon:0 "Nanite Dragon"
  nanite_dragon_plural:0 "Nanite Dragons"
  nanite_dragon_key:0 "$nanite_dragon$"
- nanite_dragon_key:0 "$nanite_dragon$"
- tech_nanite_dragon:0 "PROJECT $nanite_dragon$"
+ tech_nanite_dragon:0 "Project $nanite_dragon$"
  tech_nanite_dragon_desc:0 "Allow the construction of $nanite_dragon_plural$"
  TECH_UNLOCK_NANITE_DRAGON_CONSTRUCTION_TITLE:0 "§HUnlocks Guardian:§! $nanite_dragon$"
  TECH_UNLOCK_NANITE_DRAGON_CONSTRUCTION_DESC:0 "The apex predator, the $nanite_dragon$ move extremely fast with planetary system."
@@ -301,10 +323,17 @@
  scavenger_bot_small_bot_1_key:0 "$NAME_Reclaimer$ Droid"
  scavenger_bot_small_bot_2_key:0 "$NAME_Reclaimer$ Droid 2"
  scavenger_bot_small_bot_3_key:0 "$NAME_Reclaimer$ Droid 3"
- tech_scavenger_bot:0 "PROJECT $scavenger_bot$"
- tech_scavenger_bot_desc:0 "Allow the construction of $scavenger_bot$"
+ tech_scavenger_bot:0 "Project $scavenger_bot$"
+ tech_scavenger_bot_desc:0 "Allow the construction of $scavenger_bot_plural$"
  TECH_UNLOCK_SCAVENGER_CONSTRUCTION_TITLE:0 "§HUnlocks Guardian:§! $scavenger_bot$"
  TECH_UNLOCK_SCAVENGER_CONSTRUCTION_DESC:0 "An automaton jury-rigged from the scraps of thousands of shipwrecks, constantly scavenging a massive ship graveyard."
+ voidspawn:0 "$leviathan_01_voidspawn$"
+ voidspawn_plural:0 "$leviathan_01_voidspawn_plural$"
+ voidspawn_key:0 ""
+ tech_voidspawn:0 "Project $voidspawn$"
+ tech_voidspawn_desc:0 "Allow the construction of $voidspawn_plural$"
+ TECH_UNLOCK_VOIDSPAWN_CONSTRUCTION_TITLE:0 "§HUnlocks Guardian:§! $voidspawn$"
+ TECH_UNLOCK_VOIDSPAWN_CONSTRUCTION_DESC:0 "The $voidspawn$ is an unborn leviathan, hidden within an egg, which looks like a dry world, orbiting a Class G star without any other habitable planets."
 
  ### Armies
  nanite_giga_warform:0 "§M Nanite Warform§!"

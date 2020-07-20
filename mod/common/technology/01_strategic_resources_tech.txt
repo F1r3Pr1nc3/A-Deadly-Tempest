@@ -10,7 +10,7 @@ tech_nanite_transmutation = {
 	weight = @tier2weight2
 	is_rare = yes
 	potential = {
-		host_has_dlc = "Distant Stars Story Pack"
+		no_scope = { has_distar = yes }
 	}
 	weight_modifier = {
 		factor = 2

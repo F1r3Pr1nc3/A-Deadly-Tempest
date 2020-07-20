@@ -18,7 +18,7 @@ has_lgate = {
 	}
 }
 
-host_has_nhsc = {
+has_nhsc = {
 	OR = {
 		has_global_flag = nhsc_v30
 		check_variable = { which = random_nhsc_value value > 0 }

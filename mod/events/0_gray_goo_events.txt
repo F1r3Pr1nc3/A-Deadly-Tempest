@@ -172,7 +172,7 @@ planet_event = {
 	desc = "graygoo.2.desc"
 	picture = GFX_evt_gray_gooed_planet
 	show_sound = event_ghost_town
-
+	location = this
 	is_triggered_only = yes
 
 	trigger = {
@@ -226,7 +226,7 @@ planet_event = {
 				1 = { add_deposit = d_former_battlefield }
 				1 = { add_deposit = d_failing_infrastructure }
 				16 = {
-					# modifier = { NOT = { exists = owner } factor = 0 }
+					modifier = { NOT = { exists = owner } factor = 0 }
 					generate_new_deposits_and_blockers = yes
 				}
 			}
@@ -459,7 +459,7 @@ country_event = {
 # }
 
 # Claimed vanilla event is now graygoo.180
-# Dreadnought Disabled (HIDDEN)
+# Dreadnought Disabled/Destroyed (HIDDEN)
 country_event = {
 	id = graygoo.6
 	hide_window = yes
@@ -505,7 +505,11 @@ country_event = {
 			end_curator_chain = yes
 		}
 		# Nanite Dreadnought
-		FROM = { add_global_ship_design = "NAME_Type_69" }
+		FROM = {
+			add_global_ship_design = "NAME_Type_69"
+			create_ship_design = { design = "NAME_Type_69" }
+			add_ship_design = last_created_design
+		}
 		FROMFROMFROM = {
 			fleet = {
 				create_ship = {
@@ -1848,9 +1852,16 @@ fleet_event = {
 }
 
 # Factory Destroyed (Dessanu/Graygoo)
+# This = owner of ship 1 (destroyed)
+# From = owner of ship 2 (combatant)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
 country_event = {
 	id = graygoo.180
 	hide_window = yes
+	picture = GFX_evt_exploding_ship
+	show_sound = event_super_explosion
+	location = this
 
 	is_triggered_only = yes
 
@@ -1875,7 +1886,7 @@ country_event = {
 
 		if = {
 			limit = { is_country_type = gray_goo }
-			CmtEffectDestroyGraygoo = yes
+			CmtEffectDestroyGraygoo = yes # call graygoo.15
 			break = yes
 		}
 
@@ -1895,12 +1906,14 @@ country_event = {
 			every_owned_planet = {
 				limit = { is_planet_class = pc_gaia }
 				remove_all_buildings = yes
+				every_owned_pop = { kill_pop = yes }
 				generate_new_deposits_and_blockers = yes
 				destroy_colony = yes
 			}
 			every_planet = {
-				limit = { is_planet_class = pc_gray_goo }
+				limit = { is_planet_class = pc_gray_goo has_planet_flag = hidden_nanite_world }
 				add_modifier = { modifier = terraforming_candidate days = -1 }
+				remove_planet_flag = hidden_nanite_world
 			}
 		} else_if = {
 			limit = {
@@ -1913,25 +1926,38 @@ country_event = {
 				}
 			}
 			every_owned_planet = {
-				limit = { is_planet_class = pc_gaia }
+				limit = { is_planet_class = pc_gaia has_planet_flag = hidden_nanite_world }
 				change_pc = pc_gray_goo
 				remove_all_buildings = yes
+				every_owned_pop = { kill_pop = yes }
 				destroy_colony = yes
 				reroll_planet = yes
 				generate_new_deposits_and_blockers = yes
+				remove_planet_flag = hidden_nanite_world
 			}
 		} else = {
 			every_owned_planet = {
-				limit = { is_planet_class = pc_gaia }
+				limit = { is_planet_class = pc_gaia has_planet_flag = hidden_nanite_world }
 				change_pc = pc_gray_goo
 				remove_all_buildings = yes
+				every_owned_pop = { kill_pop = yes }
 				reroll_planet = yes
 				generate_new_deposits_and_blockers = yes
 				destroy_colony = yes
 				add_modifier = { modifier = terraforming_candidate days = -1 }
+				remove_planet_flag = hidden_nanite_world
 			}
 		}
 		every_owned_fleet = { destroy_fleet = this }
+		# pop is not removed automatically
+		every_owned_pop = {
+			kill_pop = yes
+		}
+		# kill also every not owned pop!?
+		every_galaxy_pop = {
+			limit = { is_exact_same_species = root.species }
+			kill_pop = yes
+		}
 		destroy_country = yes
 		clear_global_event_target = graygoo_country
 		clear_global_event_target = nanite_factory
@@ -1945,7 +1971,7 @@ country_event = {
 	title = "graygoo.181.name"
 	desc = "graygoo.181.desc"
 	picture = GFX_evt_large_explosion
-	show_sound = event_ship_explosion
+	show_sound = event_super_explosion
 
 	is_triggered_only = yes
 

@@ -1,0 +1,24 @@
+ships = {
+	triggered_cost_modifier = {
+		key = ship_military_station_medium
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_scope_valid = yes
+			is_ship_size = military_station_medium
+		}
+	}
+	triggered_cost_modifier = {
+		key = ship_military_station_large
+		use_parent_icon = yes
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_scope_valid = yes
+			is_ship_size = military_station_large
+		}
+	}
+}
