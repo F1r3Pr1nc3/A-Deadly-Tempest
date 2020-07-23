@@ -818,12 +818,12 @@ ship_design = {
 # Restored Automated Dreadnought
 ship_design = {
 	name = "NAME_Type_69"
-	ship_size = auto_dread
+	ship_size = dreadnought
 	# ship_size = npc_warship_01
 	# is_event_design = yes
 	section = {
 		# template = "automated_dreadnought_key"
-		template = "auto_dread_key"
+		template = "dreadnought_key"
 		slot = "mid"
 		component = {
 			slot = "EXTRA_LARGE_01"

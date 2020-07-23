@@ -3,7 +3,7 @@ objectTypes = {
 	#####     Automated Dreadnought     #####
 
 	pdxmesh = {
-		name = "auto_dread_hull_mesh"
+		name = "dreadnought_hull_mesh"
 		file = "gfx/models/ships/guardians/dreadnought/npf_01_npc_warship_01.mesh"
 		scale = 5.0
 

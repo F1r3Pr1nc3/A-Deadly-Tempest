@@ -21,11 +21,15 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		if = { limit = { end_game_years_passed >= 10 }
-			awaken_guardians_of_the_galaxy = yes
-		}
 		### Pre-treatment
 		set_global_flag = gray_goo_crisis_active
+
+		# The guardians only awaken if there is a set_global_flag = galactic_crisis_happened !?
+		awaken_guardians_of_the_galaxy = yes
+		if = { limit = { end_game_years_passed >= 10 }
+			# set_global_flag = galactic_crisis_happened # but this prevents other crisis?
+			awaken_guardians_of_the_galaxy = yes
+		}
 		# vanilla double call?
 		every_megastructure = {
 			limit = { CmtTriggerIsClosedLgate = yes }

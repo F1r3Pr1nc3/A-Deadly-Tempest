@@ -112,7 +112,7 @@ entity = {
 #####     Automated Dreadnought     #####
 ### FRAME
 entity = {
-	name = "auto_dread_entity"
+	name = "dreadnought_entity"
 	pdxmesh = "locator_mesh"
 	scale = 1.0
 	cull_radius = 10.0
@@ -135,31 +135,31 @@ entity = {
 
 ### SHIP
 entity = {
-	name = "auto_dread_hull_entity"
-	pdxmesh = "auto_dread_hull_mesh"
+	name = "dreadnought_hull_entity"
+	pdxmesh = "dreadnought_hull_mesh"
 	scale = 0.5
 
-	attach = { large_gun_01			= "auto_dread_turret_large_entity" }
-	attach = { large_gun_02			= "auto_dread_turret_large_entity" }
-	attach = { small_gun_01			= "auto_dread_turret_small_entity" }
-	attach = { small_gun_02			= "auto_dread_turret_small_entity" }
-	attach = { small_gun_03			= "auto_dread_turret_small_entity" }
-	attach = { small_gun_04_l		= "auto_dread_turret_small_entity" }
-	attach = { small_gun_04_r		= "auto_dread_turret_small_entity" }
-	attach = { small_gun_05_l		= "auto_dread_turret_small_entity" }
-	attach = { small_gun_05_r		= "auto_dread_turret_small_entity" }
-	attach = { large_gun_03_l		= "auto_dread_turret_large_entity" }
-	attach = { large_gun_03_r		= "auto_dread_turret_large_entity" }
-	attach = { large_gun_04_l		= "auto_dread_turret_large_entity" }
-	attach = { large_gun_04_r		= "auto_dread_turret_large_entity" }
-	attach = { large_gun_05_l		= "auto_dread_turret_large_entity" }
-	attach = { large_gun_05_r		= "auto_dread_turret_large_entity" }
-	attach = { large_gun_06			= "auto_dread_turret_large_entity" }
-	attach = { large_gun_07_l		= "auto_dread_turret_large_entity" }
-	attach = { large_gun_07_r		= "auto_dread_turret_large_entity" }
-	attach = { small_gun_08			= "auto_dread_turret_small_entity" }
-	attach = { small_gun_09			= "auto_dread_turret_small_entity" }
-	attach = { small_gun_10			= "auto_dread_turret_small_entity" }
+	attach = { large_gun_01			= "dreadnought_turret_large_entity" }
+	attach = { large_gun_02			= "dreadnought_turret_large_entity" }
+	attach = { small_gun_01			= "dreadnought_turret_small_entity" }
+	attach = { small_gun_02			= "dreadnought_turret_small_entity" }
+	attach = { small_gun_03			= "dreadnought_turret_small_entity" }
+	attach = { small_gun_04_l		= "dreadnought_turret_small_entity" }
+	attach = { small_gun_04_r		= "dreadnought_turret_small_entity" }
+	attach = { small_gun_05_l		= "dreadnought_turret_small_entity" }
+	attach = { small_gun_05_r		= "dreadnought_turret_small_entity" }
+	attach = { large_gun_03_l		= "dreadnought_turret_large_entity" }
+	attach = { large_gun_03_r		= "dreadnought_turret_large_entity" }
+	attach = { large_gun_04_l		= "dreadnought_turret_large_entity" }
+	attach = { large_gun_04_r		= "dreadnought_turret_large_entity" }
+	attach = { large_gun_05_l		= "dreadnought_turret_large_entity" }
+	attach = { large_gun_05_r		= "dreadnought_turret_large_entity" }
+	attach = { large_gun_06			= "dreadnought_turret_large_entity" }
+	attach = { large_gun_07_l		= "dreadnought_turret_large_entity" }
+	attach = { large_gun_07_r		= "dreadnought_turret_large_entity" }
+	attach = { small_gun_08			= "dreadnought_turret_small_entity" }
+	attach = { small_gun_09			= "dreadnought_turret_small_entity" }
+	attach = { small_gun_10			= "dreadnought_turret_small_entity" }
 
 	default_state = "idle"
 	state = { name = "idle" animation = "idle"
@@ -215,13 +215,13 @@ entity = {
 }
 
 entity = {
-	name = "auto_dread_turret_small_entity"
+	name = "dreadnought_turret_small_entity"
 	pdxmesh = "npf_01_turret_small_mesh"
 	scale = 5.0
 }
 
 entity = {
-	name = "auto_dread_turret_large_entity"
+	name = "dreadnought_turret_large_entity"
 	pdxmesh = "npf_01_large_turret_mesh"
 	scale = 5.0
 }

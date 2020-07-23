@@ -39,6 +39,7 @@ gate_builders = {
 		tech = no
 		avoid_enemies = no
 		modules = {
+			# military_minister_module
 			anti_crisis_military_minister_module
 			foreign_minister_module
 			interior_minister_module
@@ -142,7 +143,7 @@ gate_builders = {
 
 gray_goo = {
 	attack_unarmed_orbital_stations = yes
-	scaled_difficulty_bonuses = 1.25 # 1.0
+	scaled_difficulty_bonuses = 1.1 # even 1.25 seems to powerful
 	destroys_starbases = yes
 	show_in_contacts_list = no
 	share_survey_data = no

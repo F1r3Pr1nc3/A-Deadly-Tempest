@@ -193,7 +193,7 @@ graygoo_mothership = {
 }
 
 # Automated Dreadnought
-auto_dread = {
+dreadnought = {
 	# graphical_culture = { "npf_01" "npf_01_dirty" }
 	is_space_object = yes
 	graphical_culture = no
@@ -225,7 +225,7 @@ auto_dread = {
 
 	default_behavior = line
 
-	prerequisites = { "tech_auto_dread" }
+	prerequisites = { "tech_dreadnought" }
 
 	combat_disengage_chance = 1.25
 
@@ -243,10 +243,10 @@ auto_dread = {
 				}
 			}
 		}
-		# FROM = { has_technology = tech_auto_dread }
+		# FROM = { has_technology = tech_dreadnought }
 	}
 	possible_construction = {
-		# FROM = { has_technology = tech_auto_dread }
+		# FROM = { has_technology = tech_dreadnought }
 		custom_tooltip = {
 			fail_text = requires_starfortress
 			OR = {
@@ -670,18 +670,18 @@ military_station_nanite_bulwark = {
 	modifier = {
 		ship_evasion_mult = -1
 		ship_shield_mult = 1
-		ships_upkeep_mult = -0.25 #-0.33
-		ship_shield_add = 15000
-		ship_armor_add = 15000
+		ships_upkeep_mult = -0.33
+		ship_shield_add = 20000
+		ship_armor_add = 20000
 		ship_piracy_suppression_add = 16
 	}
 	ship_modifier = {
 		ship_weapon_range_mult = 0.2
 		ship_fire_rate_mult = 0.5
-		# ship_tracking_add = 25
-		# ship_accuracy_add = 25
+		ship_tracking_add = 25
+		ship_accuracy_add = 25
 	}
-	max_hitpoints = 40000
+	max_hitpoints = 50000
 	combat_size_multiplier = 50
 	size_multiplier = 12
 	fleet_slot_size = 12
@@ -694,7 +694,7 @@ military_station_nanite_bulwark = {
 	num_target_locators = 4 # 0
 	can_be_inspected = yes
 	is_space_station = yes
-	base_buildtime = 760
+	base_buildtime = 730
 	# 	auto_upgrade = no
 	is_designable = yes
 	uses_name_prefix = no
@@ -720,7 +720,11 @@ military_station_nanite_bulwark = {
 		is_scope_type = starbase
 	}
 	possible_construction = {
-		has_starbase_size >= starbase_citadel
+		OR = {
+			has_starbase_size >= starbase_citadel
+			has_starbase_size >= starbase_fe_outpost
+			has_starbase_size >= starbase_gatebuilders
+		}
 	}
 	# resources = {
 	# 	category = starbase_stations
@@ -742,8 +746,8 @@ starbase_gatebuilders = {
 
 	modifier = {
 		ship_evasion_mult = -1
-		ship_shield_add = 20000
-		ship_armor_add = 20000
+		ship_shield_add = 30000 # vanilla 10000; NSC 80000
+		ship_armor_add = 30000 # vanilla 10000; NSC 80000
 		ships_upkeep_mult = -0.33
 		ship_piracy_suppression_add = 16
 	}
@@ -754,15 +758,15 @@ starbase_gatebuilders = {
 		ship_accuracy_add = 25
 		ship_shield_mult = 1
 	}
-	max_hitpoints = 40000
+	max_hitpoints = 45000 # vanilla 20000; NSC 90000
 	combat_size_multiplier = 50
 	size_multiplier = 12
 	fleet_slot_size = 6
 	section_slots = { "mid" = { locator = "part1" } }
 
 	num_target_locators = 0
-	is_space_station = yes # vanilla no
-	base_buildtime = 680
+	is_space_station = no # vanilla no
+	base_buildtime = 730
 	is_designable = no ## TODO?
 	uses_name_prefix = no
 	can_have_federation_design = no

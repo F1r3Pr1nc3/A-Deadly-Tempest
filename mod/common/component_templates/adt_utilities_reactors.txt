@@ -67,7 +67,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor auto_dread }
+	size_restriction = { graygoo_interdictor dreadnought }
 	upgrades_to = "INTERDICTOR_FUSION_REACTOR"
 
 	ai_weight = {
@@ -125,7 +125,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor auto_dread }
+	size_restriction = { graygoo_interdictor dreadnought }
 	upgrades_to = "INTERDICTOR_COLD_FUSION_REACTOR"
 
 	ai_weight = {
@@ -183,7 +183,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor auto_dread }
+	size_restriction = { graygoo_interdictor dreadnought }
 	upgrades_to = "INTERDICTOR_ANTIMATTER_REACTOR"
 
 	ai_weight = {
@@ -241,7 +241,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor auto_dread }
+	size_restriction = { graygoo_interdictor dreadnought }
 	upgrades_to = "INTERDICTOR_ZERO_POINT_REACTOR"
 
 	ai_weight = {
@@ -299,7 +299,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor auto_dread }
+	size_restriction = { graygoo_interdictor dreadnought }
 	upgrades_to = "INTERDICTOR_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -357,7 +357,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { graygoo_interdictor auto_dread }
+	size_restriction = { graygoo_interdictor dreadnought }
 
 	ai_weight = {
 		weight = 6

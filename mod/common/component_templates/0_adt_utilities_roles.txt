@@ -1,4 +1,4 @@
-## Combat Computers & Thrusters Patch for auto_dread & scavenger_bot
+## Combat Computers & Thrusters Patch for dreadnought & scavenger_bot
 #Combat Computers
 @power3 = -25
 @cost3 = 20
@@ -134,7 +134,7 @@ utility_component_template = {
 # 		battleship
 # 		titan
 # 		juggernaut
-# 		auto_dread
+# 		dreadnought
 # 		scavenger_bot
 # 	}
 # 	component_set = "combat_computers"
@@ -182,7 +182,7 @@ utility_component_template = {
 		battleship
 		titan
 		juggernaut
-		auto_dread
+		dreadnought
 		scavenger_bot
 	}
 	component_set = "combat_computers"
@@ -218,7 +218,7 @@ utility_component_template = {
 		battleship
 		titan
 		juggernaut
-		auto_dread
+		dreadnought
 		scavenger_bot
 	}
 	component_set = "combat_computers"
@@ -258,7 +258,7 @@ utility_component_template = {
 		battleship
 		juggernaut
 		titan
-		auto_dread
+		dreadnought
 		scavenger_bot
 	}
 	component_set = "combat_computers"
@@ -297,7 +297,7 @@ utility_component_template = {
 		battleship
 		juggernaut
 		titan
-		auto_dread
+		dreadnought
 		scavenger_bot
 	}
 	component_set = "combat_computers"

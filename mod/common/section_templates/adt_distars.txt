@@ -1,12 +1,12 @@
 ### --- Guards --- ###
 # Automated Dreadnought Section
 ship_section_template = {
-	key = "auto_dread_key"
-	ship_size = auto_dread
+	key = "dreadnought_key"
+	ship_size = dreadnought
 	fits_on_slot = mid
 	should_draw_components = yes
 	# entity = "npf_01_npc_warship_01_hull_entity"
-	entity = "auto_dread_hull_entity"
+	entity = "dreadnought_hull_entity"
 	icon = "GFX_ship_part_core_mid"
 	component_slot = {
 		name = "EXTRA_LARGE_01"

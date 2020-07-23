@@ -1012,12 +1012,16 @@ country_event = {
 				minerals = 1000
 				energy = 10000
 			}
+			# Mothership creates ships
 			country_event = {
 				id = a_deadly_tempest.105
 				days = 1800
-			}			# Mothership creates ships
-			country_event = { id = a_deadly_tempest.96 }			# Run Patrol
+			}
+			# Run Patrol
+			country_event = { id = a_deadly_tempest.96 }
 			set_country_flag = adtFlagActiveMothershipRebuild
+
+			country_event = { id = fallen_empires_awakening.3 days = 540 random = 500 }
 		}
 	}
 }

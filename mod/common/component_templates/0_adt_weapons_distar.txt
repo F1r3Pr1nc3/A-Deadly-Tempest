@@ -123,7 +123,7 @@ weapon_component_template = {
 		fe_titan
 		colossus
 		graygoo_mothership
-		auto_dread
+		dreadnought
 		scavenger_bot
 		nanite_dragon
 	}
@@ -246,7 +246,7 @@ weapon_component_template = {
 		colossus
 		juggernaut
 		scavenger_bot
-		auto_dread
+		dreadnought
 		nanite_dragon
 	}
 	tags = { weapon_type_energy }

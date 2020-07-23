@@ -185,7 +185,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { graygoo_mothership graygoo_interdictor auto_dread scavenger_bot }
+	size_restriction = { graygoo_mothership graygoo_interdictor dreadnought scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_combat_computers_1" }
@@ -214,7 +214,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { graygoo_mothership graygoo_interdictor auto_dread scavenger_bot }
+	size_restriction = { graygoo_mothership graygoo_interdictor dreadnought scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_combat_computers_2" }
@@ -243,7 +243,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { graygoo_mothership graygoo_interdictor auto_dread scavenger_bot }
+	size_restriction = { graygoo_mothership graygoo_interdictor dreadnought scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_combat_computers_3" }
@@ -281,7 +281,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { graygoo_mothership graygoo_interdictor auto_dread scavenger_bot }
+	size_restriction = { graygoo_mothership graygoo_interdictor dreadnought scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_combat_computers_autonomous" }
@@ -309,7 +309,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { graygoo_mothership graygoo_interdictor auto_dread scavenger_bot }
+	size_restriction = { graygoo_mothership graygoo_interdictor dreadnought scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_precognition_interface" }
@@ -499,7 +499,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { auto_dread scavenger_bot }
+	size_restriction = { dreadnought scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_1" "tech_nanite_ships" }
@@ -527,7 +527,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { auto_dread scavenger_bot }
+	size_restriction = { dreadnought scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_2" "tech_nanite_ships" }
@@ -555,7 +555,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { auto_dread scavenger_bot }
+	size_restriction = { dreadnought scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_autonomous" "tech_nanite_ships" }
@@ -582,7 +582,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { auto_dread scavenger_bot }
+	size_restriction = { dreadnought scavenger_bot }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_precognition_interface" "tech_nanite_ships" }

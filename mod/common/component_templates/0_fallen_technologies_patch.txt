@@ -1,5 +1,5 @@
 
-## Combat Computers & Thrusters Patch for auto_dread & scavenger_bot
+## Combat Computers & Thrusters Patch for dreadnought & scavenger_bot
 
 #Combat Computers
 @power3 = -25
@@ -37,7 +37,7 @@ utility_component_template = {
 	}
 	size_restriction = {
 		fe_titan
-		auto_dread
+		dreadnought
 		scavenger_bot
 	}
 	component_set = "combat_computers"
@@ -69,7 +69,7 @@ utility_component_template = {
 	}
 	size_restriction = {
 		fe_titan
-		auto_dread
+		dreadnought
 		scavenger_bot
 	}
 	component_set = "combat_computers"
@@ -101,7 +101,7 @@ utility_component_template = {
 	}
 	size_restriction = {
 		fe_titan
-		auto_dread
+		dreadnought
 		scavenger_bot
 	}
 	component_set = "combat_computers"
@@ -133,7 +133,7 @@ utility_component_template = {
 	}
 	size_restriction = {
 		fe_titan
-		auto_dread
+		dreadnought
 		scavenger_bot
 	}
 	component_set = "combat_computers"
@@ -171,7 +171,7 @@ utility_component_template = {
 	component_set = "power_core"
 	size_restriction = {
 		fe_titan
-		auto_dread
+		dreadnought
 		scavenger_bot
 	}
 	ai_weight = {
@@ -240,7 +240,7 @@ utility_component_template = {
 	component_set = "thruster_components"
 	size_restriction = {
 		fe_titan
-		auto_dread
+		dreadnought
 		scavenger_bot
 	}
 	ai_weight = {

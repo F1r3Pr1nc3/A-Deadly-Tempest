@@ -16,7 +16,7 @@ tech_nanite_guardians = {
 		no_scope = {
 			has_global_flag = l_cluster_opened
 			NAND = {
-				has_global_flag = auto_dread_disabled
+				has_global_flag = dreadnought_disabled
 				has_global_flag = scavenger_disabled
 				has_global_flag = dragon_disabled
 				has_global_flag = voidspawn_disabled
@@ -81,7 +81,7 @@ tech_nanite_guardians = {
 	}
 }
 
-tech_auto_dread = {
+tech_dreadnought = {
 	cost = @tier4cost1
 	area = engineering
 	tier = 5
@@ -96,7 +96,7 @@ tech_auto_dread = {
 	potential = {
 		no_scope = {
 			has_leviathans = yes
-			NOT = { has_global_flag = auto_dread_disabled }
+			NOT = { has_global_flag = dreadnought_disabled }
 		}
 	}
 

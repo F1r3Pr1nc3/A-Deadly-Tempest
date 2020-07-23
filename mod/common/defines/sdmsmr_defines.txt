@@ -1,0 +1,8 @@
+        NEconomy = {
+                MILITARY_STATION_MAINTENANCE_MUL        = -0.60         # Monthly military station maintenance reduction
+	}
+	
+	NAI = {
+		MILITARY_STATION_BUDGET_FRACTION = 0.12
+		MINERAL_MILITARY_STATION_BUDGET_FRACTION = 0.08
+	}

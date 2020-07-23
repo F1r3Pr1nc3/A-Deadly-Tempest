@@ -7,13 +7,13 @@ tech_nanite_transmutation = {
 	category = {
 		materials
 	}
-	weight = @tier2weight2
+	weight = @tier2weight3
 	is_rare = yes
 	potential = {
 		no_scope = { has_distar = yes }
 	}
 	weight_modifier = {
-		factor = 2
+		# factor = 0.5
 		modifier = {
 			factor = 0
 			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }

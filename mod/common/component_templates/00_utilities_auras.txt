@@ -84,7 +84,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership auto_dread }
+	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought }
 	component_set = "ship_aura_components"
 
 	hostile_aura = {
@@ -130,7 +130,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership auto_dread }
+	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought }
 	component_set = "ship_aura_components"
 
 	hostile_aura = {
@@ -171,7 +171,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership auto_dread }
+	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought }
 	component_set = "ship_aura_components"
 
 	hostile_aura = {
@@ -214,7 +214,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership auto_dread }
+	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought }
 	component_set = "ship_aura_components"
 
 	friendly_aura = {
@@ -255,7 +255,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership auto_dread nanite_dragon }
+	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought nanite_dragon }
 	component_set = "ship_aura_components"
 
 	friendly_aura = {
@@ -301,7 +301,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership auto_dread nanite_dragon }
+	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought nanite_dragon }
 	component_set = "ship_aura_components"
 
 	friendly_aura = {
