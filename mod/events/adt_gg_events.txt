@@ -67,15 +67,18 @@ event = {
 	trigger = {
 		# always = no
 		is_country_type = global_event
-		NAND = {
-			exists = event_target:GlobalVar
-			has_global_flag = a_deadly_tempest_mod_active
-			# AND = { has_global_flag = nhsc_v30
-			event_target:GlobalVar = {
-				# check_variable = { which = current_adt_version value = @latest_adt_version }
-				check_variable = { which = random_nhsc_value value = @armor_s_t8_strength }
+		OR = {
+			NAND = {
+				exists = event_target:GlobalVar
+				has_global_flag = a_deadly_tempest_mod_active
 			}
-			# }
+			AND = {
+				has_global_flag = nhsc_v30
+				event_target:GlobalVar = {
+					# check_variable = { which = current_adt_version value = @latest_adt_version }
+					NOT = { check_variable = { which = random_nhsc_value value = @armor_s_t8_strength } }
+				}
+			}
 		}
 	}
 	immediate = {
@@ -92,14 +95,21 @@ event = {
 		}
 		# Support nhsc mod
 		event_target:GlobalVar = {
-			set_variable = {
-				which = random_nhsc_value
-				value = @armor_s_t8_strength
-			}
 			# set_variable = {
 			# 	which = current_adt_version
 			# 	value = @latest_adt_version
 			# }
+			set_variable = {
+				which = random_nhsc_value
+				value = @armor_s_t8_strength
+			}
+			if = {
+				limit = {
+					has_global_flag = nhsc_v30
+					NOT = { check_variable = { which = random_nhsc_value value = 300 } }
+				}
+				remove_global_flag = nhsc_v30
+			}
 		}
 
 	}
