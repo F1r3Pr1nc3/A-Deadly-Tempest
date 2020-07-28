@@ -29,7 +29,7 @@ utility_component_template = {
 
 	prerequisites = { "nhsc_tech_armor_nanite_1" }
 	component_set = "NHSC_NANO_ARMOR_1"
-	# upgrades_to = "SMALL_NHSC_NANO_ARMOR_2"
+	upgrades_to = "SMALL_NHSC_NANO_ARMOR_2"
 
 	ai_weight = {
 		### AI shouldn't use this component if it can't afford at least some upgrades right away
@@ -70,7 +70,7 @@ utility_component_template = {
 
 	prerequisites = { "nhsc_tech_armor_nanite_1" }
 	component_set = "NHSC_NANO_ARMOR_1"
-	# upgrades_to = "MEDIUM_NHSC_NANO_ARMOR_2"
+	upgrades_to = "MEDIUM_NHSC_NANO_ARMOR_2"
 
 	ai_weight = {
 		### AI shouldn't use this component if it can't afford at least some upgrades right away
@@ -111,7 +111,7 @@ utility_component_template = {
 
 	prerequisites = { "nhsc_tech_armor_nanite_1" }
 	component_set = "NHSC_NANO_ARMOR_1"
-	# upgrades_to = "LARGE_NHSC_NANO_ARMOR_2"
+	upgrades_to = "LARGE_NHSC_NANO_ARMOR_2"
 
 	ai_weight = {
 		weight = 1

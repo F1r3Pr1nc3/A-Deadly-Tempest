@@ -19,8 +19,11 @@ has_lgate = {
 }
 
 has_nhsc = {
-	OR = {
+	AND = {
 		has_global_flag = nhsc_v30
-		check_variable = { which = random_nhsc_value value > 0 }
+		exists = event_target:GlobalVar
+		event_target:GlobalVar = {
+			check_variable = { which = random_nhsc_value value = 300 }
+		}
 	}
 }

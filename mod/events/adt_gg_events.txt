@@ -1,5 +1,7 @@
 namespace = a_deadly_tempest
 
+# @latest_adt_version = 1.43
+
 ####################################################
 ####################################################
 #####                                          #####
@@ -20,30 +22,88 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = yes
-	trigger = {
-		always = yes
-		#NOT = { has_global_flag = a_deadly_tempest_mod_active }
-		#is_country_type = global_event
-	}
+	# trigger = {
+	# 	always = yes
+	# 	#NOT = { has_global_flag = a_deadly_tempest_mod_active }
+	# 	is_country_type = global_event
+	# }
 	immediate = {
 		set_global_flag = a_deadly_tempest_mod_active
-		log = "a_deadly_tempest_mod_active"
+		if = { limit = { NOT = { exists = event_target:GlobalVar } }
+			if = { limit = { NOT = { is_country_type = global_event } }
+				random_country = {
+					limit = { is_country_type = global_event }
+					save_global_event_target_as = GlobalVar
+				}
+			} else = {
+				save_global_event_target_as = GlobalVar
+			}
+		}
+		# Support nhsc mod
+		event_target:GlobalVar = {
+			set_variable = {
+				which = random_nhsc_value
+				value = @armor_s_t8_strength
+			}
+		}
 	}
+	after = { log = "1 a_deadly_tempest_mod_active [GlobalVar.random_nhsc_value]" }
 }
 
 event = {
 	id = a_deadly_tempest.2
 	hide_window = yes
-	fire_only_once = yes
+	# fire_only_once = yes
+	is_triggered_only = yes
+
+	# title = CrisisManagerMenu.0011.name
+	# desc = CrisisManagerMenu.0011.desc
+	# picture = GFX_evt_CmtMenuA
+	# option = {
+	# 	name = CmtTextOK.name
+	# 	custom_tooltip = CmtTextOK.tooltip
+	# }
+
 	trigger = {
-		always = no
-		NOT = { has_global_flag = a_deadly_tempest_mod_active }
+		# always = no
 		is_country_type = global_event
+		NAND = {
+			exists = event_target:GlobalVar
+			has_global_flag = a_deadly_tempest_mod_active
+			# AND = { has_global_flag = nhsc_v30
+			event_target:GlobalVar = {
+				# check_variable = { which = current_adt_version value = @latest_adt_version }
+				check_variable = { which = random_nhsc_value value = @armor_s_t8_strength }
+			}
+			# }
+		}
 	}
 	immediate = {
 		set_global_flag = a_deadly_tempest_mod_active
-		log = "a_deadly_tempest_mod_active"
+		if = { limit = { NOT = { exists = event_target:GlobalVar } }
+			if = { limit = { is_country_type = global_event }
+				save_global_event_target_as = GlobalVar
+			} else = {
+				random_country = {
+					limit = { is_country_type = global_event }
+					save_global_event_target_as = GlobalVar
+				}
+			}
+		}
+		# Support nhsc mod
+		event_target:GlobalVar = {
+			set_variable = {
+				which = random_nhsc_value
+				value = @armor_s_t8_strength
+			}
+			# set_variable = {
+			# 	which = current_adt_version
+			# 	value = @latest_adt_version
+			# }
+		}
+
 	}
+	after = { log = "2 a_deadly_tempest_mod_active [GlobalVar.random_nhsc_value]" }
 }
 
 ####################################
@@ -210,9 +270,11 @@ country_event = {
 					which = picked_tech
 					value = 0
 				}
-				set_variable = {
-					which = random_nhsc_value
-					value = @armor_s_t8_strength
+				event_target:GlobalVar = {
+					set_variable = {
+						which = random_nhsc_value
+						value = @armor_s_t8_strength
+					}
 				}
 				while = {
 					limit = {
@@ -369,9 +431,11 @@ country_event = {
 		# Guaranteed
 		hidden_effect = {
 			# Support nhsc mod
-			set_variable = {
-				which = random_nhsc_value
-				value = @armor_s_t8_strength
+			event_target:GlobalVar = {
+				set_variable = {
+					which = random_nhsc_value
+					value = @armor_s_t8_strength
+				}
 			}
 			if = {
 				limit = {

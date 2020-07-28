@@ -16,7 +16,7 @@ tech_nanite_guardians = {
 		no_scope = {
 			has_global_flag = l_cluster_opened
 			NAND = {
-				has_global_flag = dreadnought_disabled
+				has_global_flag = auto_dread_disabled
 				has_global_flag = scavenger_disabled
 				has_global_flag = dragon_disabled
 				has_global_flag = voidspawn_disabled
@@ -61,7 +61,7 @@ tech_nanite_guardians = {
 		}
 	}
 	ai_weight = {
-		factor = 0.01
+		factor = 0.05
 		modifier = {
 			factor = 5
 			has_country_flag = pantagruel
@@ -96,7 +96,7 @@ tech_dreadnought = {
 	potential = {
 		no_scope = {
 			has_leviathans = yes
-			NOT = { has_global_flag = dreadnought_disabled }
+			NOT = { has_global_flag = auto_dread_disabled }
 		}
 	}
 

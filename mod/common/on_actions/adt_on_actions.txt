@@ -5,10 +5,11 @@ on_game_start = {
 	}
 }
 # No scope, like on_game_start
-# on_monthly_pulse = {
-# 	events = {
-# 	}
-# }
+on_monthly_pulse = {
+	events = {
+		a_deadly_tempest.2
+	}
+}
 
 # No scope, like on_game_start
 # on_yearly_pulse = {
