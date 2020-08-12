@@ -8,17 +8,13 @@
 ###############################################
 ###############################################
 
-shoal_reinforce = {
+shoal_guard_reinforce = {
 	# log = "set fleet size +$AMOUNT$ +$SHIPS$"
 	# every_owned_fleet = {
 	random_owned_fleet = {
 		limit = {
 			has_auto_move_target = no
-			num_ships < $AMOUNT|11$
 			is_in_combat = no
-			any_owned_ship = {
-				is_ship_size = graygoo_mothership
-			}
 			OR = {
 				has_fleet_flag = nanite_mother_ship
 				AND = {
@@ -31,6 +27,8 @@ shoal_reinforce = {
 					}
 				}
 			}
+			is_ship_size = graygoo_mothership # implicit any_owned_ship
+			num_ships < $AMOUNT|11$
 		}
 		CmtEffectResetLoop = yes
 		while = {
@@ -59,7 +57,87 @@ shoal_reinforce = {
 	}
 }
 
+shoal_global_reinforce = {
+	log = "shoal_global_reinforce [AMOUNT] - [SHIPS]"
+	every_owned_fleet = {
+		limit = {
+			is_in_combat = no
+			is_ship_size = graygoo_mothership # implicit any_owned_ship
+			# OR = {
+			# 	has_fleet_flag = nanite_mother_ship
+			# 	has_fleet_flag = trait_biothrall_tolerance
+			# }
+			num_ships < $AMOUNT|11$
+		}
+		CmtEffectResetLoop = yes
+		while = {
+			count = $SHIPS|1$
+			CmtEffectProgressLoop4 = yes
+			switch = {
+				trigger = has_global_flag
+				CmtFlagLoopA = {
+					CmtEffectCreateShip_GraygooInterdictor = yes
+				}
+				CmtFlagLoopB = {
+					CmtEffectCreateShip_GraygooInterdictor = yes
+				}
+				CmtFlagLoopC = {
+					random_list = {
+						1 = {
+							CmtEffectCreateShip_GraygooMother = yes
+						}
+						9 = {
+							CmtEffectCreateShip_GraygooInterdictor = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
+## make dynamic with Crisis Manager
+shoal_guard_dynamic_reinforce = {
+	# make dynamic with Crisis Manager
+	#event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Graygoo } }
+	# CmtVarCapitalDefenceNumber 1-8 vanilla = 4
+	set_variable = { which = CapitalDefence_tmp value = CmtVarCapitalDefenceNumber }
+	# log = "guard_dynamic [$STRENGTH$] - [CmtVarCapitalDefenceNumber]"
+	if = { limit = { end_game_years_passed > 35 }
+		multiply_variable = { which = CapitalDefence_tmp value = 10 }
+		change_variable = { which = CapitalDefence_tmp value = 1 }
+		$KIND$ = {
+			# "AMOUNT" = @\[ $STRENGTH|4$ * 10 + 1 ] # 41
+			"AMOUNT" = CapitalDefence_tmp
+			"SHIPS" = 3
+		}
+	} else_if = { limit = { mid_game_years_passed > 50 } # todo $MidYear|
+		multiply_variable = { which = CapitalDefence_tmp value = 5 }
+		change_variable = { which = CapitalDefence_tmp value = 1 }
+		$KIND$ = {
+			# "AMOUNT" = @\[ $STRENGTH|4$ * 5 + 1 ] # 21
+			"AMOUNT" = CapitalDefence_tmp
+			"SHIPS" = 2
+		}
+	} else_if = { limit = { mid_game_years_passed > 5 }
+		multiply_variable = { which = CapitalDefence_tmp value = 2.5 }
+		change_variable = { which = CapitalDefence_tmp value = 1 }
+		$KIND$ = {
+			# "AMOUNT" = @\[ $STRENGTH|4$ * 2.5 + 1 ] # 11
+			"AMOUNT" = CapitalDefence_tmp
+			"SHIPS" = 1
+		}
+	} else = {
+		multiply_variable = { which = CapitalDefence_tmp value = 1.5 }
+		$KIND$ = {
+			# "AMOUNT" = @\[ $STRENGTH|4$ * 1.5 ] # 6
+			"AMOUNT" = CapitalDefence_tmp
+			"SHIPS" = 1
+		}
+	}
+}
+
+# fleet
 shoal_factory_guard_move = {
 	event_target:lcluster_factory_system = {
 		random_system_planet = {
@@ -78,7 +156,7 @@ shoal_factory_guard_move = {
 				auto_move_to_planet = {
 					target = prev
 					clear_auto_move_on_arrival = no
-					arrival_effect = shoal_factory_guard_move
+					# arrival_effect = shoal_factory_guard_move ?
 				}
 			}
 		}
@@ -184,17 +262,56 @@ shoal_factory_guard_queue = {
 }
 
 # Scope fleet
-# TODO Unknown error!?
-shoal_continue_guard = {
-	queue_actions = {
-		wait = {
-			duration = 60
-			random = 60
+shoal_cluster_defense = {
+	closest_system = {
+		limit = {
+			has_star_flag = lcluster
+			NOT = { has_star_flag = graygoo_factory_system }
+			any_system_planet = {
+				OR = {
+					is_planet_class = pc_gray_goo
+					is_planet_class = pc_gaia
+				}
+				NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+			}
 		}
-		find_random_system = {
+		max_steps = 4
+		random_system_planet = {
+			limit = {
+				OR = {
+					is_planet_class = pc_gray_goo
+					is_planet_class = pc_gaia
+				}
+				NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+			}
+			FROM = {
+				auto_move_to_planet = {
+					target = PREV
+					clear_auto_move_on_arrival = yes
+				}
+			}
+			# break = yes
+		}
+	}
+	# TODO Unknown error!?
+	# event_target:graygoo_country = { change_variable = { which = fleetCounter value = 1 } }
+	# shoal_continue_cluster_defense = { NUM = "graygoo_country.fleetCounter" }
+}
+
+# Scope fleet
+# TODO Unknown error!?
+shoal_continue_cluster_defense = {
+	queue_actions = {
+		# wait = {
+		# 	duration = 60
+		# 	random = 60
+		# }
+		# find_random_system = {
+		find_closest_system = {
 			trigger = {
-				id = "graygoo_guard$NUM|11$.trigger.1"
+				id = "graygoo_def_$NUM|11$.trigger.1"
 				has_star_flag = lcluster
+				NOT = { has_star_flag = graygoo_factory_system }
 				any_system_planet = {
 					OR = {
 						is_planet_class = pc_gray_goo
@@ -207,45 +324,66 @@ shoal_continue_guard = {
 				move_to = THIS
 				find_random_planet = {
 					trigger = {
-						id = "graygoo_guard$NUM|11$.trigger.3"
-						is_star = yes
-						exists = starbase
+						id = "graygoo_def_$NUM|11$.trigger.3"
+						# is_star = yes
+						# exists = starbase
+						OR = {
+							is_planet_class = pc_gray_goo
+							is_planet_class = pc_gaia
+						}
+						NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
 					}
 					found_planet = {
+						move_to = THIS
 						orbit_planet = THIS
-						move_to = THIS.starbase
-						wait = {
-							duration = 60
-							random = 30
+						# move_to = THIS.starbase
+						# wait = {
+						# 	duration = 60
+						# 	random = 30
+						# }
+					}
+					failed = {
+						effect = {
+							id = "graygoo_def_$NUM|11$.failed"
+							# log = "Fail graygoo_def [This.GetFleetName] returning from [Prev.GetName] - [From.GetFleetName]"
+							# shoal_continue_cluster_defense = { NUM = @\[$NUM|11$ + 1] }
+							event_target:graygoo_country = { change_variable = { which = "fleetCounter" value = 1 } }
+							FROM = { shoal_continue_cluster_defense = { NUM = "graygoo_country.fleetCounter" } }
 						}
 					}
 				}
 			}
 		}
-		find_closest_planet = {
-			trigger = {
-				id = "graygoo_guard$NUM|11$.trigger.2"
-				OR = {
-					is_planet_class = pc_gray_goo
-					is_planet_class = pc_gaia
-				}
-				NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
-			}
-			found_planet = {
-				orbit_planet = THIS
-				wait = {
-					duration = 60
-					random = 30
-				}
-			}
-			failed = {
-				effect = {
-					id = "graygoo_guard$NUM|11$.failed"
-					# log = "Fail Guard$NUM$ [This.GetFleetName] returning from: [Prev.GetName]"
-					shoal_continue_guard = { NUM = @\[$NUM|11$ + 1] }
-				}
-			}
-		}
+		# wait = {
+		# 	duration = 60
+		# 	random = 30
+		# }
+		# find_closest_planet = {
+		# 	trigger = {
+		# 		id = "graygoo_guard$NUM|11$.trigger.2"
+		# 		OR = {
+		# 			is_planet_class = pc_gray_goo
+		# 			is_planet_class = pc_gaia
+		# 		}
+		# 		NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+		# 	}
+		# 	found_planet = {
+		# 		orbit_planet = THIS
+		# 		wait = {
+		# 			duration = 60
+		# 			random = 30
+		# 		}
+		# 	}
+		# 	failed = {
+		# 		effect = {
+		# 			id = "graygoo_guard$NUM|11$.failed"
+		# 			# log = "Fail Guard$NUM$ [This.GetFleetName] returning from: [Prev.GetName]"
+		# 			# shoal_continue_cluster_defense = { NUM = @\[$NUM|11$ + 1] }
+		# 			event_target:graygoo_country = { change_variable = { which = fleetCounter value = 1 } }
+		# 			shoal_continue_cluster_defense = { NUM = "graygoo_country.fleetCounter" }
+		# 		}
+		# 	}
+		# }
 	}
 }
 

@@ -9,7 +9,7 @@ ship_event = {
 	desc = {
 		text = apoc.3.desc
 		trigger = {
-			NOT = { 
+			NOT = {
 				owner = { has_country_flag = encountered_first_gateway }
 			}
 		}
@@ -23,12 +23,12 @@ ship_event = {
 	picture = GFX_evt_l-gateway
 	show_sound = event_radio_chatter
 	location = FROM
-	
+
 	is_triggered_only = yes
-	
 	trigger = {
 		owner = {
-			NOR = { 
+			is_country_type_with_subjects = yes
+			NOR = {
 				has_country_flag = encountered_first_lgate
 				has_event_chain = "l_cluster_chain"
 			}
@@ -43,12 +43,12 @@ ship_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		FROM = { save_event_target_as = gateway_system }
 		owner = { set_country_flag = encountered_first_lgate }
-	}	
-	
+	}
+
 	option = {
 		name = INTRIGUING
 		owner = {

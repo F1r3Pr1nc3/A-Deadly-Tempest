@@ -12,7 +12,7 @@
 # Information
 #	All script in this file require following scopes
 #	this: Owner country
-#	prev: Location for creating fleets (e.g. planet)
+#	PREV: Location for creating fleets (e.g. planet)
 #
 
 ###################
@@ -28,7 +28,7 @@ CmtEffectCreateFleet_Khan1stFleet = {	### Exception: Leader = event_target:great
 	create_fleet = {
 		name = NAME_Chosen_of_the_Great_Khan
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -68,7 +68,7 @@ CmtEffectCreateFleet_Khan2ndFleet = {	### Exception: Leader = exiled_khan
 	create_fleet = {
 		name = NAME_Chosen_of_the_Great_Khan
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -109,7 +109,7 @@ CmtEffectCreateFleet_KhanStandard = {
 	CmtEffectCreateAdmiral_MarauderStandard = yes
 	create_fleet = {
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -147,7 +147,7 @@ CmtEffectCreateFleet_KhanArmadaVoidborn = {
 	create_fleet = {
 		name = "NAME_Armada_of_the_Voidborn"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -181,7 +181,7 @@ CmtEffectCreateFleet_KhanStarRiderFlotilla = {
 	create_fleet = {
 		name = "NAME_Star_Rider_Flotilla"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -215,7 +215,7 @@ CmtEffectCreateFleet_KhanFirstStormWing = {
 	create_fleet = {
 		name = "NAME_First_Storm_Wing"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -248,7 +248,7 @@ CmtEffectCreateFleet_KhanDwamakBashers = {
 	create_fleet = {
 		name = "NAME_234th_Dwamak_Bashers"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -282,7 +282,7 @@ CmtEffectCreateFleet_KhanUnhingedScreamerFlotilla = {
 	create_fleet = {
 		name = "NAME_Unhinged_Screamer_Flotilla"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -316,7 +316,7 @@ CmtEffectCreateFleet_KhanFrenziedVolunteerSquadron = {
 	create_fleet = {
 		name = "NAME_Frenzied_Volunteer_Squadron"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -349,7 +349,7 @@ CmtEffectCreateFleet_KhanHerChosenChampions = {
 	create_fleet = {
 		name = "NAME_Her_Chosen_Champions"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -383,7 +383,7 @@ CmtEffectCreateFleet_KhanOrderEternalNight = {
 	create_fleet = {
 		name = "NAME_Order_of_Eternal_Night"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -417,7 +417,7 @@ CmtEffectCreateFleet_KhanTwilightCongregation = {
 	create_fleet = {
 		name = "NAME_Twilight_Congregation"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
 
@@ -451,7 +451,7 @@ CmtEffectCreateFleet_KhanSubReinforcement1 = {
 	create_fleet = {
 		name = "NAME_Horde_Auxiliary_Fleet"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			set_fleet_flag = horde_auxuliaries
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
@@ -488,7 +488,7 @@ CmtEffectCreateFleet_KhanSubReinforcement2 = {
 	create_fleet = {
 		name = "NAME_Horde_Auxiliary_Fleet"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			set_fleet_flag = horde_auxuliaries
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
@@ -528,7 +528,7 @@ CmtEffectCreateFleet_KhanSubReinforcement3 = {
 	create_fleet = {
 		name = "NAME_Horde_Auxiliary_Fleet"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			set_fleet_flag = horde_auxuliaries
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
@@ -568,7 +568,7 @@ CmtEffectCreateFleet_KhanSubReinforcement4 = {
 	create_fleet = {
 		name = "NAME_Horde_Auxiliary_Fleet"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			set_fleet_flag = horde_auxuliaries
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
@@ -608,7 +608,7 @@ CmtEffectCreateFleet_KhanSubReinforcement5 = {
 	create_fleet = {
 		name = "NAME_Horde_Auxiliary_Fleet"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			set_fleet_flag = horde_auxuliaries
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
@@ -645,7 +645,7 @@ CmtEffectCreateFleet_KhanEncourager = {
 	create_fleet = {
 		name = "NAME_Garrison_Fleet"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			set_fleet_flag = satrapy_garrison_fleet
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Khan } }
 			CmtEffectResetLoop = yes
@@ -702,7 +702,7 @@ CmtEffectCreateFleet_DessanuGarryson = {
 	create_fleet = {
 		name = "NAME_Dessanu_Fleet"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			CmtEffectCreateElement_DessanuStandard = yes
 			CmtFleetSetAuxParam_DessanuGarryson = yes
 			assign_leader = last_created_leader
@@ -712,6 +712,7 @@ CmtEffectCreateFleet_DessanuGarryson = {
 			uses_naval_capacity = no
 		}
 	}
+
 }
 
 CmtEffectCreateFleet_DessanuRoamer = {
@@ -719,7 +720,7 @@ CmtEffectCreateFleet_DessanuRoamer = {
 	create_fleet = {
 		name = "NAME_Dessanu_Fleet_2"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			CmtEffectCreateElement_DessanuStandard = yes
 			CmtFleetSetAuxParam_DessanuRoamerCommon = yes
 		}
@@ -759,9 +760,10 @@ CmtEffectCreateFleet_GraygooGarryson = {
 	create_fleet = {
 		name = "NAME_Tempest_Fleet"
 		effect = {
-			set_owner = prev
-			CmtEffectCreateElement_GraygooStandard = { AMOUNT = $AMOUNT|1$ }
+			set_owner = PREV
+			CmtEffectCreateElement_GraygooStandard = { AMOUNT = 1 }
 			CmtFleetSetAuxParam_GraygooGarryson = yes
+			# [[DIR] set_location = { target = prevprev distance = 80 angle = $DIR|90$ } ] # $DIS|80$ $DIR$
 		}
 		settings = { garrison = yes }
 	}
@@ -771,7 +773,7 @@ CmtEffectCreateFleet_GraygooAttacker = {
 	create_fleet = {
 		name = "NAME_Tempest_Fleet"
 		effect = {
-			set_owner = prev
+			set_owner = PREV
 			CmtEffectCreateElement_GraygooStandard = { AMOUNT = $AMOUNT|1$ }
 			CmtFleetSetAuxParam_GraygooAttacker = yes
 		}

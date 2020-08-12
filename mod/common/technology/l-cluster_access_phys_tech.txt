@@ -6,18 +6,12 @@ tech_lcluster_access = {
 	area = physics
 	cost = @tier5cost2
 	tier = 5
-	category = {
-		particles
-	}
+	category = { particles }
 	is_rare = no
 	is_dangerous = yes
 	weight = @tier3weight3
-	feature_flags = {
-		lgate_access
-	}
-	prerequisites = {
-		"tech_lgate_activation"
-	}
+	feature_flags = { lgate_access }
+	prerequisites = { "tech_lgate_activation" }
 	prereqfor_desc = {
 		diplo_action = {
 			title = "TECH_UNLOCK_L_GATE_ACCESS_TITLE"
@@ -27,9 +21,7 @@ tech_lcluster_access = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		no_scope = { has_distar = yes }
-		NOT = {
-			has_global_flag = active_gray_goo
-		}
+		NOT = { has_global_flag = active_gray_goo }
 		has_resource = {
 			type = nanites
 			amount > 0
@@ -58,18 +50,14 @@ tech_lcluster_access = {
 			}
 		}
 	}
-	ai_weight = {
-		factor = 0
-	}
+	ai_weight = { factor = 0 }
 }
 
 tech_lgate_construction = {
 	cost = @tier5cost2
 	area = physics
 	tier = 5
-	category = {
-		particles
-	}
+	category = { particles }
 	is_rare = no
 	is_reverse_engineerable = yes
 	is_dangerous = yes
@@ -79,9 +67,7 @@ tech_lgate_construction = {
 		"tech_gateway_construction"
 		"tech_lgate_activation"
 	}
-	feature_flags = {
-		lgate_construction
-	}
+	feature_flags = { lgate_construction }
 	prereqfor_desc = {
 		diplo_action = {
 			title = "TECH_UNLOCK_L_GATE_TITLE"

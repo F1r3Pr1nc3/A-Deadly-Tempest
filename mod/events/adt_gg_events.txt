@@ -31,13 +31,10 @@ event = {
 		set_global_flag = a_deadly_tempest_mod_active
 		if = { limit = { NOT = { exists = event_target:GlobalVar } }
 			if = { limit = { NOT = { is_country_type = global_event } }
-				random_country = {
-					limit = { is_country_type = global_event }
+				random_country = { limit = { is_country_type = global_event }
 					save_global_event_target_as = GlobalVar
 				}
-			} else = {
-				save_global_event_target_as = GlobalVar
-			}
+			} else = { save_global_event_target_as = GlobalVar }
 		}
 		# Support nhsc mod
 		event_target:GlobalVar = {
@@ -53,9 +50,8 @@ event = {
 event = {
 	id = a_deadly_tempest.2
 	hide_window = yes
-	# fire_only_once = yes
 	is_triggered_only = yes
-
+	# fire_only_once = yes
 	# title = CrisisManagerMenu.0011.name
 	# desc = CrisisManagerMenu.0011.desc
 	# picture = GFX_evt_CmtMenuA
@@ -66,7 +62,7 @@ event = {
 
 	trigger = {
 		# always = no
-		is_country_type = global_event
+		# is_country_type = global_event is none
 		OR = {
 			NAND = {
 				exists = event_target:GlobalVar
@@ -74,8 +70,7 @@ event = {
 			}
 			AND = {
 				has_global_flag = nhsc_v30
-				event_target:GlobalVar = {
-					# check_variable = { which = current_adt_version value = @latest_adt_version }
+				event_target:GlobalVar = { # check_variable = { which = current_adt_version value = @latest_adt_version }
 					NOT = { check_variable = { which = random_nhsc_value value = @armor_s_t8_strength } }
 				}
 			}
@@ -84,25 +79,21 @@ event = {
 	immediate = {
 		set_global_flag = a_deadly_tempest_mod_active
 		if = { limit = { NOT = { exists = event_target:GlobalVar } }
-			if = { limit = { is_country_type = global_event }
+			# if = { limit = { is_country_type = global_event }
+			# 	save_global_event_target_as = GlobalVar
+			# } else = {
+			random_country = { limit = { is_country_type = global_event }
 				save_global_event_target_as = GlobalVar
-			} else = {
-				random_country = {
-					limit = { is_country_type = global_event }
-					save_global_event_target_as = GlobalVar
-				}
 			}
+			# }
 		}
-		# Support nhsc mod
+		# ESC/nhsc mod savegame support
 		event_target:GlobalVar = {
 			# set_variable = {
 			# 	which = current_adt_version
 			# 	value = @latest_adt_version
 			# }
-			set_variable = {
-				which = random_nhsc_value
-				value = @armor_s_t8_strength
-			}
+			set_variable = { which = random_nhsc_value value = @armor_s_t8_strength }
 			if = {
 				limit = {
 					has_global_flag = nhsc_v30
@@ -163,15 +154,12 @@ country_event = {
 		is_same_empire = event_target:goo_slayer
 	}
 	immediate = {
-		every_system = {
-			limit = { has_star_flag = lcluster }
-			random_system_planet = {
-				limit = { is_planet_class = pc_gray_goo }
+		every_system = { limit = { has_star_flag = lcluster }
+			random_system_planet = { limit = { is_planet_class = pc_gray_goo }
 				random_list = {
 					60 = {
 						set_planet_flag = hatchling_egg
-						random_list = {
-							60 = { set_planet_flag = hatchling_will_trigger }
+						random_list = { 60 = { set_planet_flag = hatchling_will_trigger }
 							40 = {}
 						}
 					}
@@ -185,8 +173,7 @@ country_event = {
 		# 		is_ai = no
 		# 		is_subject = no
 		# 		NOT = {
-		# 			any_playable_country = {
-		# 				# NOT = { is_same_empire = prev }
+		# 			any_playable_country = { # 				# NOT = { is_same_empire = prev }
 		# 				relative_power = {
 		# 					who = prev
 		# 					category = fleet
@@ -237,8 +224,7 @@ country_event = {
 					is_subject = no
 					no_scope = { is_difficulty > 3 }
 					NOT = {
-						any_playable_country = {
-							# NOT = { is_same_empire = prev }
+						any_playable_country = { # NOT = { is_same_empire = prev }
 							relative_power = {
 								who = prev
 								category = fleet
@@ -280,12 +266,12 @@ country_event = {
 					which = picked_tech
 					value = 0
 				}
-				event_target:GlobalVar = {
-					set_variable = {
-						which = random_nhsc_value
-						value = @armor_s_t8_strength
-					}
-				}
+				# event_target:GlobalVar = {
+				# 	set_variable = {
+				# 		which = random_nhsc_value
+				# 		value = @armor_s_t8_strength
+				# 	}
+				# }
 				while = {
 					limit = {
 						check_variable = {
@@ -306,9 +292,7 @@ country_event = {
 								which = "picked_tech"
 								value = 1
 							}
-							tooltip = {
-								give_technology = { tech = tech_nanite_torpedo }
-							}
+							tooltip = { give_technology = { tech = tech_nanite_torpedo } }
 						}
 						1 = {
 							modifier = {
@@ -321,9 +305,7 @@ country_event = {
 								which = "picked_tech"
 								value = 1
 							}
-							tooltip = {
-								give_technology = { tech = tech_adt_energymissiles }
-							}
+							tooltip = { give_technology = { tech = tech_adt_energymissiles } }
 						}
 						1 = {
 							modifier = {
@@ -336,9 +318,7 @@ country_event = {
 								which = "picked_tech"
 								value = 1
 							}
-							tooltip = {
-								give_technology = { tech = tech_nanite_strike_craft }
-							}
+							tooltip = { give_technology = { tech = tech_nanite_strike_craft } }
 						}
 						1 = {
 							modifier = {
@@ -351,9 +331,7 @@ country_event = {
 								which = "picked_tech"
 								value = 1
 							}
-							tooltip = {
-								give_technology = { tech = tech_adt_gg_beam }
-							}
+							tooltip = { give_technology = { tech = tech_adt_gg_beam } }
 						}
 						1 = {
 							modifier = {
@@ -366,9 +344,7 @@ country_event = {
 								which = "picked_tech"
 								value = 1
 							}
-							tooltip = {
-								give_technology = { tech = tech_nanocrystals }
-							}
+							tooltip = { give_technology = { tech = tech_nanocrystals } }
 						}
 						1 = {
 							modifier = {
@@ -381,9 +357,7 @@ country_event = {
 								which = "picked_tech"
 								value = 1
 							}
-							tooltip = {
-								give_technology = { tech = tech_nanite_living_metal }
-							}
+							tooltip = { give_technology = { tech = tech_nanite_living_metal } }
 						}
 						1 = {
 							modifier = {
@@ -396,9 +370,7 @@ country_event = {
 								which = "picked_tech"
 								value = 1
 							}
-							tooltip = {
-								give_technology = { tech = tech_nanite_modular_engineering }
-							}
+							tooltip = { give_technology = { tech = tech_nanite_modular_engineering } }
 						}
 						1 = {
 							modifier = {
@@ -411,9 +383,7 @@ country_event = {
 								which = "picked_tech"
 								value = 1
 							}
-							tooltip = {
-								give_technology = { tech = tech_nanite_build_speed }
-							}
+							tooltip = { give_technology = { tech = tech_nanite_build_speed } }
 						}
 					}
 				}
@@ -440,31 +410,7 @@ country_event = {
 	after = {
 		# Guaranteed
 		hidden_effect = {
-			# Support nhsc mod
-			event_target:GlobalVar = {
-				set_variable = {
-					which = random_nhsc_value
-					value = @armor_s_t8_strength
-				}
-			}
-			if = {
-				limit = {
-					has_nhsc = yes
-					NOR = {
-						has_technology = nhsc_tech_synthetic_lifeform_studies
-						has_tech_option = nhsc_tech_synthetic_lifeform_studies
-						is_researching_technology = nhsc_tech_synthetic_lifeform_studies
-					}
-				}
-				give_technology = { tech = nhsc_tech_new_age_warfare message = no }
-				give_technology = { tech = nhsc_tech_advanced_materials message = no }
-				give_tech_option = { TECH = nhsc_tech_synthetic_lifeform_studies }
-			}
-			# else = {
-			# 	# give_tech_option = { TECH = tech_nanite_build_speed }
-			# 	# give_tech_option = { TECH = tech_nanite_modular_engineering }
-			# 	give_tech_option = { TECH = tech_nanite_mega_engineering }
-			# }
+
 			give_tech_option = { TECH = tech_nanite_repair_system }
 			give_tech_option = { TECH = tech_nanite_terraforming }
 			give_tech_option = { TECH = tech_nanite_ships }
@@ -487,12 +433,31 @@ country_event = {
 				}
 				last_created_ambient_object = {
 					set_location = {
-						target = PREV
+						target = fromfrom
 						distance = 110
 						angle = 110
 					}
 				}
 			}
+
+			# Support nhsc mod
+			if = {
+				limit = {
+					no_scope = { has_nhsc = yes }
+					NOR = {
+						has_technology = nhsc_tech_synthetic_lifeform_studies
+						has_tech_option = nhsc_tech_synthetic_lifeform_studies
+						is_researching_technology = nhsc_tech_synthetic_lifeform_studies
+					}
+				}
+				give_technology = { tech = nhsc_tech_new_age_warfare message = no }
+				give_technology = { tech = nhsc_tech_advanced_materials message = no }
+				give_tech_option = { TECH = nhsc_tech_synthetic_lifeform_studies }
+			}
+			# else = { # 	# give_tech_option = { TECH = tech_nanite_build_speed }
+			# 	# give_tech_option = { TECH = tech_nanite_modular_engineering }
+			# 	give_tech_option = { TECH = tech_nanite_mega_engineering }
+			# }
 		}
 	}
 	# TODO: Give federation members one too?
@@ -508,43 +473,53 @@ country_event = {
 		is_same_empire = event_target:graygoo_country
 		# any_owned_fleet = {
 		# 	has_fleet_flag = nanite_mother_ship
-		# 	any_ship = { is_ship_size = graygoo_mothership }
+		# 	any_owned_ship = { is_ship_size = graygoo_mothership }
 		# }
 	}
 	immediate = {
-		every_owned_fleet = {
-			limit = {
-				is_in_combat = no
-				any_ship = { is_ship_size = graygoo_mothership }
-				OR = {
-					has_fleet_flag = nanite_mother_ship
-					has_fleet_flag = trait_biothrall_tolerance
-					# AND = { exists = solar_system solar_system = { has_star_flag = lcluster } }
+		# Check Init
+		if = { limit = { check_variable = { which = CmtVarCapitalDefenceNumber value < 1 } }
+			event_target:CmtGlobalVar = {
+				if = { limit = { is_country_type = gate_builders }
+					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu }
+				} else = {
+					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo }
 				}
 			}
-			if = {
-				limit = { num_ships < 11 }
-				CmtEffectCreateShip_GraygooInterdictor = yes
-			}
-			if = {
-				limit = { mid_game_years_passed >= -10 }
-				if = {
-					limit = { num_ships < 21 }
-					CmtEffectCreateShip_GraygooInterdictor = yes
-				}
-				# Motherships create increased ship numbers during galactic crisis
-				if = {
-					limit = {
-						end_game_years_passed >= 0
-						num_ships < 41
-					}
-					random_list = {
-						1 = { CmtEffectCreateShip_GraygooMother = yes }
-						9 = { CmtEffectCreateShip_GraygooInterdictor = yes }
-					}
-				}
-			}
+			CmtEffectInitFleetUpperLimit = yes
 		}
+
+		# every_owned_fleet = {
+		# 	limit = {
+		# 		is_in_combat = no
+		# 		is_ship_size = graygoo_mothership
+		# 		OR = {
+		# 			has_fleet_flag = nanite_mother_ship
+		# 			has_fleet_flag = trait_biothrall_tolerance
+		# 			# AND = { exists = solar_system solar_system = { has_star_flag = lcluster } }
+		# 		}
+		# 	}
+		# 	if = { limit = { num_ships < 11 }
+		# 		CmtEffectCreateShip_GraygooInterdictor = yes
+		# 	}
+		# 	if = { limit = { mid_game_years_passed >= -10 }
+		# 		if = {
+		# 			limit = { num_ships < 21 }
+		# 			CmtEffectCreateShip_GraygooInterdictor = yes
+		# 		}
+		# 		# Motherships create increased ship numbers during galactic crisis
+		# 		if = {
+		# 			limit = {
+		# 				end_game_years_passed >= 0
+		# 				num_ships < 41
+		# 			}
+		# 			random_list = {
+		# 				1 = { CmtEffectCreateShip_GraygooMother = yes }
+		# 				9 = { CmtEffectCreateShip_GraygooInterdictor = yes }
+		# 			}
+		# 		}
+		# 	}
+		# }
 		# Save game compatibilty
 		# if = {
 		# 	limit = {
@@ -556,6 +531,15 @@ country_event = {
 		# 	}
 		# }
 	}
+	after = {
+		# log = "STRENGTH [graygoo_country.CmtVarCapitalDefenceNumber]"
+		if = { limit = { check_variable = { which = CmtVarCapitalDefenceNumber value > 0 } }
+			shoal_guard_dynamic_reinforce = {
+				"KIND" = shoal_global_reinforce
+				# STRENGTH = CmtVarCapitalDefenceNumber
+			}
+		}
+	}
 }
 
 # Mothership creates ships (only Defender)
@@ -565,37 +549,24 @@ country_event = {
 	mean_time_to_happen = { months = 2 }
 	trigger = {
 		exists = event_target:graygoo_country
-		event_target:graygoo_country = { is_same_empire = prev }
+		is_same_empire = event_target:graygoo_country
 	}
 	immediate = {
-		# TODO make dynamic with Crisis Manager
-		#event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Graygoo } }
-		# event_target:CmtGlobalVar = { shoal_reinforce = { AMOUNT = @\[CmtVarWhileControlShip + 10] SHIPS = 2 } }
-		if = {
-			limit = { end_game_years_passed > 35 }
-			shoal_reinforce = {
-				AMOUNT = 41
-				SHIPS = 3
+		# Check Init
+		if = { limit = { check_variable = { which = CmtVarCapitalDefenceNumber value < 1 } }
+			event_target:CmtGlobalVar = {
+				if = { limit = { is_country_type = gate_builders }
+					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu }
+				} else = {
+					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo }
+				}
 			}
+			CmtEffectInitFleetUpperLimit = yes
 		}
-		else_if = {
-			limit = { mid_game_years_passed > 50 }
-			shoal_reinforce = {
-				AMOUNT = 21
-				SHIPS = 2
-			}
-		}
-		else_if = {
-			limit = { mid_game_years_passed > 5 }
-			shoal_reinforce = {
-				AMOUNT = 11
-				SHIPS = 2
-			}
-		}
-		else = {
-			shoal_reinforce = {
-				AMOUNT = 6
-				SHIPS = 1
+		if = { limit = { check_variable = { which = CmtVarCapitalDefenceNumber value > 0 } }
+			shoal_guard_dynamic_reinforce = {
+				"KIND" = shoal_guard_reinforce
+				# STRENGTH = CmtVarCapitalDefenceNumber
 			}
 		}
 	}
@@ -609,8 +580,7 @@ country_event = {
 	immediate = {
 		event_target:graygoo_country = {
 			# Pre-Ketlings
-			if = {
-				limit = { exists = event_target:ratling_pre_space_country }
+			if = { limit = { exists = event_target:ratling_pre_space_country }
 				set_faction_hostility = {
 					set_hostile = no
 					#set_neutral = no
@@ -627,8 +597,7 @@ country_event = {
 				}
 			}
 			# Scrapper bot
-			if = {
-				limit = { exists = event_target:scavenger_bot_country }
+			if = { limit = { exists = event_target:scavenger_bot_country }
 				set_faction_hostility = {
 					set_hostile = no
 					#set_neutral = no
@@ -645,8 +614,7 @@ country_event = {
 				}
 			}
 			# Enigmatic Fortress (enigmatic_cache)
-			# if = {
-			# 	limit = { exists = event_target:fortress_country }
+			# if = { # 	limit = { exists = event_target:fortress_country }
 			# 	set_faction_hostility = {
 			# 		set_hostile = no
 			# 		#set_neutral = no
@@ -663,8 +631,7 @@ country_event = {
 			# 	}
 			# }
 			# Enigmatic Cache (guardian_fortress)
-			if = {
-				limit = { exists = event_target:enigmatic_cache_present_host }
+			if = { limit = { exists = event_target:enigmatic_cache_present_host }
 				set_faction_hostility = {
 					set_hostile = no
 					#set_neutral = no
@@ -681,8 +648,7 @@ country_event = {
 				}
 			}
 			# mardak_vol
-			if = {
-				limit = { exists = event_target:mardak_vol_country }
+			if = { limit = { exists = event_target:mardak_vol_country }
 				set_faction_hostility = {
 					set_hostile = no
 					#set_neutral = no
@@ -737,18 +703,13 @@ country_event = {
 	immediate = {
 		event_target:graygoo_country = {
 			if = {
-				limit = {
-					NOT = { exists = event_target:main_star }
-				}
+				limit = { NOT = { exists = event_target:main_star } }
 				if = {
-					limit = {
-						NOT = { exists = event_target:lcluster_factory_system }
-					}
+					limit = { NOT = { exists = event_target:lcluster_factory_system } }
 					event_target:nanite_factory = {
 						solar_system = {
 							save_event_target_as = lcluster_factory_system
-							random_system_planet = {
-								limit = { has_planet_flag = main_star }
+							random_system_planet = { limit = { has_planet_flag = main_star }
 								save_event_target_as = main_star
 							}
 						}
@@ -756,8 +717,7 @@ country_event = {
 				}
 				else = {
 					event_target:lcluster_factory_system = {
-						random_system_planet = {
-							limit = { has_planet_flag = main_star }
+						random_system_planet = { limit = { has_planet_flag = main_star }
 							save_event_target_as = main_star
 						}
 					}
@@ -766,12 +726,12 @@ country_event = {
 			if = {
 				limit = {
 					check_variable = {
-						which = fleetCounter
+						which = "fleetCounter"
 						value < 1
 					}
 				}
 				set_variable = {
-					which = fleetCounter
+					which = "fleetCounter"
 					value = 8
 				}
 				log = "set fleetCounter [graygoo_country.fleetCounter]"
@@ -797,8 +757,7 @@ country_event = {
 							}
 						}
 						prevprev = {
-							if = {
-								limit = { has_fleet_flag = nanite_mother_ship }
+							if = { limit = { has_fleet_flag = nanite_mother_ship }
 								# log = "shoal Guard [This.GetFleetName] returning to base [main_star.Planet.GetName] from: [Prev.GetName]"
 								remove_auto_move_target = yes
 								clear_fleet_actions = this
@@ -809,7 +768,7 @@ country_event = {
 								auto_move_to_planet = {
 									target = prev
 									clear_auto_move_on_arrival = no
-									# arrival_effect = 
+									# arrival_effect =
 								}
 							}
 							else_if = {
@@ -824,7 +783,7 @@ country_event = {
 								clear_fleet_actions = this
 								event_target:graygoo_country = {
 									change_variable = {
-										which = fleetCounter
+										which = "fleetCounter"
 										value = 1
 									}
 								}
@@ -841,7 +800,7 @@ country_event = {
 				}
 			}
 			country_event = {
-				id = a_deadly_tempest.161
+				id = a_deadly_tempest.161 # break
 				days = 61
 			}
 			country_event = {
@@ -869,9 +828,7 @@ country_event = {
 				OR = {
 					NOT = { exists = orbit }
 					orbit = {
-						any_fleet_in_orbit = {
-							NOT = { is_same_value = prev }
-						}
+						any_fleet_in_orbit = { NOT = { is_same_value = prevprev } }
 					}
 				}
 			}
@@ -900,9 +857,7 @@ country_event = {
 							OR = {
 								NOT = { exists = orbit }
 								orbit = {
-									any_fleet_in_orbit = {
-										NOT = { is_same_value = prevprev }
-									}
+									any_fleet_in_orbit = { NOT = { is_same_value = prevprev } }
 								}
 							}
 						}
@@ -913,12 +868,9 @@ country_event = {
 							}
 						}
 						random_list = {
-							1 = {
-								queue_actions = { move_to = event_target:main_star }
-							}
-							1 = {
-								queue_actions = { move_to = event_target:nanite_factory }
-							}
+							# 1 = { queue_actions = { move_to = event_target:main_star } }
+							1 = { queue_actions = { move_to = event_target:lcluster_factory_system } }
+							1 = { queue_actions = { move_to = event_target:nanite_factory } }
 							5 = {
 								solar_system = {
 									random_system_planet = {
@@ -934,9 +886,7 @@ country_event = {
 												}
 											}
 										}
-										prevprev = {
-											queue_actions = { orbit_planet = prev }
-										}
+										prevprev = { queue_actions = { orbit_planet = prev } }
 									}
 								}
 							}
@@ -968,46 +918,78 @@ country_event = {
 	trigger = {
 		exists = event_target:graygoo_country
 		exists = event_target:nanite_factory
-		event_target:nanite_factory = { is_ship_size = graygoo_factory }
+		event_target:nanite_factory = { is_ship_size = graygoo_factory is_in_combat = no }
 		NOT = { has_country_flag = gk_told_to_leave }
 	}
 	immediate = {
-		every_owned_fleet = {
-			limit = {
-				has_fleet_flag = nanite_mother_ship
-				has_auto_move_target = no
-				is_ship_size = graygoo_mothership
-				OR = {
-					NOT = { exists = orbit }
-					orbit = {
-						any_fleet_in_orbit = {
-							NOT = { is_same_value = prevprev }
+		event_target:CmtGlobalVar = {
+			if = { limit = { is_country_type = gate_builders }
+				set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu }
+			} else = {
+				set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo }
+			}
+		}
+		# Return to cluster defense
+		event_target:lcluster_factory_system = {
+			# copy
+			set_variable = { which = CmtVarCapitalDefenceNumber value = PREV }
+			if = {
+				limit = { check_variable = { which = CmtVarCapitalDefenceNumber value < 1 } }
+				PREV = { CmtEffectInitFleetUpperLimit = yes }
+				set_variable = { which = CmtVarCapitalDefenceNumber value = PREV }
+			}
+			change_variable = { which = CmtVarCapitalDefenceNumber value = 3 } # +3 minimum
+			# log = "CmtVarCapitalDefenceNumber [graygoo_country.CmtVarCapitalDefenceNumber] - [lcluster_factory_system.CmtVarCapitalDefenceNumber]."
+
+			if = {
+				limit = { check_fleet_count_in_system = { "CHECK" = CmtVarCapitalDefenceNumber } }
+				every_fleet_in_system = {
+					limit = {
+						has_fleet_flag = nanite_mother_ship
+						has_auto_move_target = no
+						is_ship_size = graygoo_mothership
+					}
+					PREV = { change_variable = { which = CmtVarCapitalDefenceNumber value = -1 } }
+				}
+			}
+			multiply_variable = { which = CmtVarCapitalDefenceNumber value = -1 }
+			log = "CmtVarCapitalDefenceNumber [graygoo_country.CmtVarCapitalDefenceNumber] - [lcluster_factory_system.CmtVarCapitalDefenceNumber] while [graygoo_country.fleetCounter]"
+			if = {
+				limit = { check_variable = { which = CmtVarCapitalDefenceNumber value > 0 } }
+				while = {
+					count = CmtVarCapitalDefenceNumber
+					random_fleet_in_system = {
+						limit = {
+							has_fleet_flag = nanite_mother_ship
+							has_auto_move_target = no
+							is_ship_size = graygoo_mothership
+						}
+						clear_fleet_actions = this
+						shoal_cluster_defense = yes
+					}
+				}
+			}
+
+			every_fleet_in_system = {
+				limit = {
+					has_fleet_flag = nanite_mother_ship
+					has_auto_move_target = no
+					is_ship_size = graygoo_mothership
+					OR = {
+						NOT = { exists = orbit }
+						# planet = { count_fleet_in_orbit = { count > 1 } }
+						orbit = {
+							any_fleet_in_orbit = { NOT = { is_same_value = prevprev } }
 						}
 					}
+					exists = solar_system
+					# solar_system = { is_same_value = event_target:lcluster_factory_system }
+					# solar_system = { has_star_flag = lcluster }
 				}
-				exists = solar_system
-				solar_system = { has_star_flag = lcluster }
-			}
-			if = {
-				limit = {
-					solar_system = { is_same_value = event_target:lcluster_factory_system }
-				}
-				# log = "shoal base Guard [This.GetFleetName] returning to [Prev.Planet.GetName]"
-				event_target:graygoo_country = {
-					change_variable = {
-						which = fleetCounter
-						value = 1
-					}
-				}
+				log = "shoal base Guard [This.GetFleetName] returning to [Prev.Planet.GetName]"
+				event_target:graygoo_country = { change_variable = { which = "fleetCounter" value = 1 } }
 				shoal_factory_guard_queue = { NUM = "graygoo_country.fleetCounter" }
 			}
-			# TODO Unknown error
-			# else_if = { limit = { NOT = { has_fleet_flag = guard_returning } }
-			# 	log = "shoal guard [This.GetFleetName] retreat from: [Prev.Planet.GetName]"
-			# 	clear_fleet_actions = this
-			# 	event_target:graygoo_country = { change_variable = { which = fleetCounter value = 1 } }
-			# 	shoal_continue_guard = { NUM = "graygoo_country.fleetCounter" }
-			# }
 		}
 	}
 }
@@ -1024,7 +1006,7 @@ country_event = {
 			any_fleet_in_system = {
 				owner = { is_same_value = root }
 				is_in_combat = no
-				any_ship = { is_ship_size = graygoo_factory }
+				is_ship_size = graygoo_factory
 			}
 		}
 	}
@@ -1036,10 +1018,11 @@ country_event = {
 				exists = solar_system
 				solar_system = {
 					has_star_flag = lcluster
-					NOT = { is_same_value = event_target:lcluster_factory_system }
+					NOT = { has_star_flag = graygoo_factory_system }
+					# NOT = { is_same_value = event_target:lcluster_factory_system }
 				}
 			}
-			remove_auto_move_target = yes			# works although has_auto_move_target says no!?
+			remove_auto_move_target = yes		# works although has_auto_move_target says no!?
 			# set_timed_fleet_flag = { flag = guard_returning days = 61 }
 		}
 		country_event = {
@@ -1066,15 +1049,12 @@ country_event = {
 		set_country_flag = gate_builder_diplomacy_engaged
 		set_country_flag = gate_builders_hostility
 		if = {
-			limit = {
-				NOT = { exists = event_target:graygoo_country }
-			}
-			random_country = {
-				limit = { is_country_type = gate_builders }
+			limit = { NOT = { exists = event_target:graygoo_country } }
+			random_country = { limit = { is_country_type = gate_builders }
 				save_global_event_target_as = graygoo_country
 			}
 		}
-		log = "- This: [This.GetName] gets hostility to [graygoo_country.GetName]"
+		# log = "- This [This.GetName] gets hostility to [graygoo_country.GetName]"
 		event_target:graygoo_country = {
 			set_faction_hostility = {
 				target = prev
@@ -1108,11 +1088,11 @@ country_event = {
 	immediate = {
 		if = { limit = { NOT = { exists = event_target:spawning_dragons } }
 			every_country = {
-				if = {
-					limit = { is_country_type = ldragon_country }
+				if = { limit = { is_country_type = ldragon_country }
 					save_global_event_target_as = spawning_dragons
 				}
-				else = { break = yes } }
+				else = { break = yes }
+			}
 		}
 		if = { limit = { NOT = { exists = event_target:graygoo_country } }
 			every_country = {
@@ -1125,7 +1105,8 @@ country_event = {
 					}
 					save_global_event_target_as = graygoo_country
 				}
-				else = { break = yes } }
+				else = { break = yes }
+			}
 		}
 		event_target:spawning_dragons = {
 			set_faction_hostility = {
@@ -1153,24 +1134,20 @@ country_event = {
 	id = a_deadly_tempest.13079
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = l_cluster_opened }
+	trigger = { NOT = { has_global_flag = l_cluster_opened }
 		federation = {
 			any_member = { has_country_flag = encountered_first_lgate }
 		}
 	}
-	immediate = {
-		from = { save_event_target_as = fed_joiner }
-		federation = {
-			every_member = {
-				limit = {
-					NOT = { has_country_flag = encountered_first_lgate }
-				}
-				country_event = {
-					id = a_deadly_tempest.13080
-					days = 5
-				}
+	immediate = { from = { save_event_target_as = fed_joiner }
+		every_federation_ally = {
+		# federation = { every_member = {
+			limit = { NOT = { has_country_flag = encountered_first_lgate } }
+			country_event = {
+				id = a_deadly_tempest.13080
+				days = 5
 			}
+			# }
 		}
 	}
 }
@@ -1182,9 +1159,7 @@ country_event = {
 	title = "apoc.1.name"
 	desc = {
 		text = apoc.3.desc
-		trigger = {
-			NOT = { has_country_flag = encountered_first_gateway }
-		}
+		trigger = { NOT = { has_country_flag = encountered_first_gateway } }
 	}
 	desc = {
 		text = apoc.3.b.desc
@@ -1242,6 +1217,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+
 		give_technology = { tech = tech_arc_emitter_2 message = no }
 		give_technology = { tech = tech_energy_lance_2 message = no }
 		give_technology = { tech = tech_disruptors_3 message = no }

@@ -53,7 +53,7 @@ country_event = {
 				# save_event_target_as = gray_homeworld
 				create_species = {
 					name = "NAME_Gray_Goo"
-					class = ESGO #MACHINE
+					class = "ESGO" #MACHINE
 					portrait = lithnanite
 					traits = {
 						trait = "trait_machine_unit"
@@ -193,9 +193,8 @@ planet_event = {
 			limit = {
 				exists = owner
 				owner = { is_same_empire = event_target:graygoo_country }
-				any_ship = {
-					is_ship_size = graygoo_mothership
-				}
+				# any_owned_ship = {
+				is_ship_size = graygoo_mothership
 			}
 			CmtEffectCreateShip_GraygooInterdictor = yes
 		}
@@ -320,7 +319,7 @@ country_event = {
 				# 	save_event_target_as = main_star
 				# }
 				random_fleet_in_system = {
-					limit = { any_ship = { is_ship_size = graygoo_factory } }
+					limit = { is_ship_size = graygoo_factory }
 					save_global_event_target_as = nanite_factory
 				}
 			}
@@ -784,7 +783,7 @@ country_event = {
 						add_trait = trait_machine_unit
 						add_trait = trait_mechanical
 						add_traits_at_start_of_list = yes
-						ideal_planet_class = pc_gray_goo
+						# ideal_planet_class = pc_gray_goo
 						change_scoped_species = yes
 					}
 
@@ -1689,11 +1688,8 @@ country_event = {
 		NOT = { has_country_flag = gate_builders_hostility }
 		event_target:lcluster_factory_system = {
 			any_fleet_in_system = {
-				owner = { is_same_value = root }
-				any_ship = {
-					is_ship_size = graygoo_factory
-					owner = { is_country_type = gate_builders }
-				}
+				owner = { is_same_value = root is_country_type = gate_builders }
+				is_ship_size = graygoo_factory
 			}
 		}
 	}
@@ -2318,7 +2314,7 @@ country_event = {
 	immediate = {
 		create_species = {
 			name = "NAME_Gray"
-			class = ESGO
+			class = "ESGO"
 			portrait = root.species
 			traits = {
 				trait = "trait_machine_unit"

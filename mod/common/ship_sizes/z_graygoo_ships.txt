@@ -658,12 +658,12 @@ voidspawn = {
 
 ##  Nanite Starbase  ##
 # military_station_xl_bulwark = {
-military_station_nanite_bulwark = {
 # military_station_large = {
+military_station_nanite_bulwark = {
+	graphical_culture = no
 	# entity = military_station_xl_bulwark_entity
 	# entity = gatebuilder_01_space_station_entity
 	entity = gatebuilders_01_bulwark_entity
-	# graphical_culture = no
 	max_speed = 6
 	rotation_speed = 10
 	acceleration = 10
