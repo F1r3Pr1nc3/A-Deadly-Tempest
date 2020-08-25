@@ -39,6 +39,7 @@
 @CmtConstKhanFleetPowerUpperLimit_T7 =  750000		##  750 k
 
 @CmtConstGraygooFleetNumberUpperLimit = 100		## >~4000 k
+@CmtGraygooFleetNumberGuardAwakeLimit = 0.7		# Percent of FleetLimit (1 = 100)
 
 ##############
 ###  Khan  ###
@@ -435,17 +436,17 @@ CmtEffectInitFleetUpperLimit = {
 	} else = {
 		set_variable = { which = CmtVarCapitalDefenceNumber value = 1 }
 	}
-	# effect = { set_variable = { which = CmtVarFleetAngle value = 36000000 } }
-	# effect = { divide_variable = { which = CmtVarFleetAngle value = 8 } log = "[This.CmtVarFleetAngle]" }
 
-	set_variable = { which = CmtVarFleetAngle value = 36000000 }
+	set_variable = { which = CmtGraygooFleetNumberGuardAwakeLimit value = @CmtGraygooFleetNumberGuardAwakeLimit }
+	multiply_variable = { which = CmtGraygooFleetNumberGuardAwakeLimit value = CmtGraygooFleetNumberUpperLimit }
+
+	set_variable = { which = CmtVarFleetAngle value = 0.03605 }
 	divide_variable = { which = CmtVarFleetAngle value = CmtVarCapitalDefenceNumber }
 	# We need integer not float
-	divide_variable = { which = CmtVarFleetAngle value = 100000 }
+	divide_variable = { which = CmtVarFleetAngle value = 10 } # for more precise rounding
+	multiply_variable = { which = CmtVarFleetAngle value = 100000 }
 	set_variable = { which = CmtVarWhileFleetAngle value = 0 }
-	# all empty!?
 	# log = "Dessanu CmtVarFleetAngle [This.CmtVarFleetAngle] - CmtVarCapitalDefenceNumber [This.CmtVarCapitalDefenceNumber], Ships = [CmtGlobalVar.CmtVarWhileControlFleet], This = [This.GetName]"
-
 }
 
 #################
@@ -459,16 +460,14 @@ CmtEffectCreateAdmiralty_DessanuCapitalDefence = {
 		while = {
 			count = CmtVarCapitalDefenceNumber
 			CmtEffectCreateFleet_DessanuGarryson = yes
-			# CmtEffectCreateFleet_DessanuGarryson = { DIR = CmtVarWhileFleetAngle } # not working
+			# CmtEffectCreateFleet_DessanuGarryson = { DIR = CmtVarWhileFleetAngle }
 			last_created_fleet = {
-				set_location = {
-					target = prevprev
-					distance = 80
-					angle = random
-					# angle = event_target:graygoo_country.CmtVarWhileFleetAngle # not working
-				}
+				set_variable = { which = CmtVarWhileControlFleet value = PREV }
+				if = { limit = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } }
+					set_location = { target = PREVPREV distance = 80 angle = CmtVarWhileFleetAngle }
+				} else = { set_location = { target = PREVPREV distance = 80 angle = random } }
 			}
-			change_variable = { which = "CmtVarWhileFleetAngle" value = "CmtVarFleetAngle" }
+			change_variable = { which = CmtVarWhileFleetAngle value = CmtVarFleetAngle }
 		}
 	}
 }
@@ -628,15 +627,13 @@ CmtEffectCreateAdmiralty_GraygooCapitalDefence = {
 	event_target:graygoo_country = {
 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo } }
 		CmtEffectInitFleetUpperLimit = yes
-
 		while = {
 			count = CmtVarCapitalDefenceNumber
 			CmtEffectCreateFleet_GraygooGarryson = yes
-			# CmtEffectCreateFleet_DessanuGarryson = { DIR = CmtVarWhileFleetAngle } # not working: "Malformed token
+			# CmtEffectCreateFleet_GraygooGarryson = { DIR = CmtVarWhileFleetAngle } # "Malformed token
 			last_created_fleet = {
 				set_variable = { which = CmtVarWhileControlFleet value = PREV }
 				if = { limit = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } }
-					# it seems variables or advanced statements get not parsed in a while loop
 					set_location = { target = PREVPREV distance = 80 angle = CmtVarWhileFleetAngle }
 				} else = { set_location = { target = PREVPREV distance = 80 angle = random } }
 			}
@@ -805,13 +802,13 @@ CmtEffectCreateAdmiralty_GraygooRoamer = {
 	}
 }
 
-
 CmtEffectCreateAdmiralty_GraygooAttackerA = {
 	event_target:graygoo_country = {
 		if = {
 			limit = {
-				# num_fleets < @CmtConstGraygooFleetNumberUpperLimit
-				num_fleets < CmtGraygooFleetNumberUpperLimit
+				num_fleets < @CmtConstGraygooFleetNumberUpperLimit # TODO dynamically!?
+				# num_fleets < $UpperLimit|@CmtConstGraygooFleetNumberUpperLimit$
+				# CmtTriggerIsFleetLimit = { UpperLimit = CmtGraygooFleetNumberUpperLimit }
 			}
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo } }
 			while = {
@@ -838,8 +835,9 @@ CmtEffectCreateAdmiralty_GraygooAttackerB = {
 	event_target:graygoo_country = {
 		if = {
 			limit = {
-				#num_fleets < @CmtConstGraygooFleetNumberUpperLimit }
-				num_fleets < CmtGraygooFleetNumberUpperLimit
+				num_fleets < @CmtConstGraygooFleetNumberUpperLimit # TODO dynamically!?
+				# num_fleets < $UpperLimit|@CmtConstGraygooFleetNumberUpperLimit$
+				# CmtTriggerIsFleetLimit = { UpperLimit = CmtGraygooFleetNumberUpperLimit }
 			}
 			event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo } }
 			while = {

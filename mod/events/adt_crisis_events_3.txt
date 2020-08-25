@@ -1,0 +1,208 @@
+############################
+#
+# Crisis Events III
+# Replaced by A Deadly Tempest
+#
+############################
+
+namespace = crisis
+
+# Spawn Cybrex
+country_event = {
+	id = crisis.2400
+	hide_window = yes
+
+	trigger = {
+		NOT = { has_global_flag = cybrex_resurface }
+		OR = {
+			AND = {
+				has_global_flag = ai_invasion_ongoing
+				is_country_type = ai_empire
+				galaxy_percentage > 0.20
+			}
+			AND = {
+				has_global_flag = gray_goo_crisis_active
+				is_country_type = gray_goo
+				num_fleets > 80 # TODO dynamically!?
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	immediate = {
+		set_global_flag = cybrex_resurface
+		remove_global_flag = cybrex_departed
+		remove_global_flag = cybrex_destroyed
+		random_rim_system = {
+			limit = { NOT = { has_star_flag = sealed_system } }
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 40
+				initializer = "cybrex_beta"
+			}
+		}
+		# Vanilla doesnt use/check his own saved targets!?
+		if = { limit = { NOT = { exists = event_target:cybrex } }
+			random_country = {
+				limit = { is_country_type = cybrex_empire }
+				save_global_event_target_as = cybrex
+			}
+		}
+
+		save_event_target_as = cybrex_target
+
+		observer_event = { id = observer.52 }
+		every_country = {
+			limit = { is_country_type = default }
+			country_event = { id = crisis.2401 days = 2 }
+		}
+
+		event_target:cybrex = {
+			country_event = { id = crisis.2421 days = 4 }
+			country_event = { id = crisis.2421 days = 120 }
+			country_event = { id = crisis.2421 days = 320 }
+			establish_communications_no_message = root
+			establish_communications_no_message = event_target:cybrex_target
+		}
+	}
+}
+
+# # Cybrex Notification
+# country_event = {
+# 	id = crisis.2401
+# 	title = "crisis.2401.name"
+# 	desc = "crisis.2401.desc"
+# 	# desc = {
+# 	# 	text = "crisis.2401.desc"
+# 	# 	trigger = { is_country_type = ai_empire }
+# 	# }
+# 	# desc = {
+# 	# 	text ="crisis.2401.b.desc"
+# 	# 	trigger = { is_country_type = gray_goo }
+# 	# }
+
+# 	picture = GFX_evt_physics_research
+# 	show_sound = event_red_alert
+# 	location = event_target:cybrex_beta
+
+# 	is_triggered_only = yes
+
+# 	option = {
+# 		name = ONSCREEN
+# 		hidden_effect = {
+# 			country_event = { id = crisis.2402 }
+# 			establish_communications_no_message = event_target:cybrex
+# 			event_target:cybrex_beta = {
+# 				every_system_planet = {
+#  					surveyed = {
+#  						set_surveyed = yes
+#  						surveyor = root
+#  					}
+#  				}
+#  			}
+# 		}
+# 	}
+# }
+
+# Final Machine World Destroyed
+# id = crisis.2046
+# Incoming Transmission
+country_event = {
+	id = crisis.2408
+	title = "TRANSMISSION"
+	desc = "crisis.2408.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = ai_crisis_2
+		room = ethic_spaceship_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = crisis.2408.a
+	}
+	after = {
+		hidden_effect = {
+			clear_global_event_target = cybrex
+			remove_global_flag = cybrex_resurface
+			remove_global_flag = cybrex_destroyed
+			remove_country_flag = cybrex_donation
+		}
+	}
+}
+
+# Cybrex First Attacks (HIDDEN)
+country_event = {
+	id = crisis.2421
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_global_flag = ai_invasion_ongoing
+			has_global_flag = gray_goo_crisis_active
+		}
+	}
+
+	immediate = {
+		# print_scope_effect = yes
+		# FIXME vanilla: not used anywhere?
+		random_country = { limit = { is_country_type = ai_empire }
+			save_event_target_as = contingency
+		}
+
+		create_leader = {
+			class = admiral
+			species = owner_main_species
+			name = random
+			skill = 5
+			traits = {
+				trait = leader_trait_cybrex
+			}
+		}
+		last_created_leader = { set_age = 0 }
+		capital_scope = {
+			save_event_target_as = cybrex_home
+			create_fleet = {
+				effect = {
+					set_owner = prevprev
+					while = {
+						count = 10
+						create_ship = {
+							name = random
+							design = "NAME_Taciturn"
+							graphical_culture = "ai_01"
+						}
+					}
+					assign_leader = last_created_leader
+					while = {
+						count = 20
+						create_ship = {
+							name = random
+							design = "NAME_Reticent"
+							graphical_culture = "ai_01"
+						}
+					}
+					set_location = {
+						target = prev
+						distance = 45
+						angle = random
+					}
+
+					save_event_target_as = cybrex_fleet
+					set_aggro_range = 500
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_fleet_flag = cybrex_attack_fleet
+				}
+			}
+		}
+	}
+}

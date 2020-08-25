@@ -223,8 +223,23 @@ country_event = {
 					is_ai = no
 					is_subject = no
 					no_scope = { is_difficulty > 3 }
-					NOT = {
-						any_playable_country = { # NOT = { is_same_empire = prev }
+					OR = {
+						has_federation = yes
+						any_owned_megastructure = {
+							OR = {
+								is_megastructure_type = mega_shipyard_1
+								is_megastructure_type = mega_shipyard_2
+								is_megastructure_type = mega_shipyard_3
+							}
+						}
+					}
+					NOR = {
+						is_pacifist = yes
+						has_policy_flag = liberation_wars
+						has_ethic = ethic_gestalt_consciousness
+						has_total_war_cb = yes
+						# any_country = { # NOT = { is_same_empire = prev }
+						any_playable_country = {
 							relative_power = {
 								who = prev
 								category = fleet

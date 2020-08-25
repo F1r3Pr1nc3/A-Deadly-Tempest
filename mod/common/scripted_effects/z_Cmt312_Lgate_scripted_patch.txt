@@ -99,4 +99,17 @@ CmtEffectDestroyGraygoo = {
 	clear_global_event_target = graygoo_country
 	clear_global_event_target = nanite_factory
 	clear_global_event_target = lcluster_factory_system
+	# Cybrex
+	if = {
+		limit = {
+			has_global_flag = cybrex_resurface
+			exists = event_target:cybrex
+			NOR = {
+				has_global_flag = cybrex_destroyed
+				has_global_flag = ai_invasion_ongoing
+			}
+		}
+		# Cybrex Depart Galaxy
+		event_target:cybrex = { country_event = { id = crisis.2406 days = 365 random = 800 } }
+	}
 }
