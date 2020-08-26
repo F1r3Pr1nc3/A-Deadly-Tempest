@@ -4,7 +4,7 @@
 
 tech_nanite_mega_engineering = {
 	area = engineering
-	cost = 20000
+	cost = @tier4cost3
 	tier = 5
 	is_rare = yes
 
@@ -22,7 +22,15 @@ tech_nanite_mega_engineering = {
 	}
 
 	modifier = {
-		megastructure_build_speed_mult = 0.50
+		megastructure_build_speed_mult = 0.5
+		starbase_building_build_speed_mult = 0.2
+		starbase_module_build_speed_mult = 0.2
+		shipsize_starbase_gatebuilders_build_speed_mult = 0.2
+		shipsize_military_station_nanite_bulwark_build_speed_mult = 0.2
+		shipsize_scavenger_bot_build_speed_mult = 0.2
+		shipsize_dreadnought_build_speed_mult = 0.2
+		shipsize_graygoo_mothership_build_speed_mult = 0.2
+		shipsize_graygoo_interdictor_build_speed_mult = 0.2
 	}
 
 	weight_modifier = {
@@ -39,11 +47,11 @@ tech_nanite_mega_engineering = {
 
 tech_nanite_bombardment = {
 	area = engineering
-	cost = 20000
+	cost = @tier4cost2
 	tier = 5
 	is_rare = yes
 	category = { voidcraft }
-	ai_update_type = military
+	# ai_update_type = military
 	prerequisites = { "tech_nanite_torpedo" }
 	weight = @tier5weight2
 

@@ -1,7 +1,7 @@
 ############################
 #
 # Crisis Events III
-# Replaced by A Deadly Tempest
+# Replaced by A Deadly Tempest (Cybrex awakening)
 #
 ############################
 
@@ -23,7 +23,7 @@ country_event = {
 			AND = {
 				has_global_flag = gray_goo_crisis_active
 				is_country_type = gray_goo
-				num_fleets > 80 # TODO dynamically!?
+				num_fleets > 60 # TODO dynamically!?
 			}
 		}
 	}
@@ -152,7 +152,7 @@ country_event = {
 	}
 
 	immediate = {
-		# print_scope_effect = yes
+		print_scope_effect = yes # DEBUG
 		# FIXME vanilla: not used anywhere?
 		random_country = { limit = { is_country_type = ai_empire }
 			save_event_target_as = contingency

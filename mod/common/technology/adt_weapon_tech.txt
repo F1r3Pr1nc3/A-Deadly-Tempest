@@ -117,10 +117,11 @@ tech_adt_gg_beam = {
 # Nanite Torpedo
 tech_nanite_torpedo = {
 	area = engineering
-	cost = 25000
+	cost = @tier4cost2
 	tier = 3
 	is_dangerous = yes
 	category = { propulsion }
+	ai_update_type = military
 	weight = 25
 	# is_rare = yes
 	is_reverse_engineerable = yes

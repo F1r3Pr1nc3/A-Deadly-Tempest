@@ -12,6 +12,7 @@ tech_nanite_guardians = {
 	}
 	weight = @tier2weight3
 	is_rare = yes
+	gateway = guardians
 	potential = {
 		no_scope = {
 			has_global_flag = l_cluster_opened
@@ -164,10 +165,7 @@ tech_scavenger_bot = {
 	cost = @tier4cost3
 	area = engineering
 	tier = 5
-	category = {
-		voidcraft
-	}
-	ai_update_type = military
+	category = { voidcraft }
 	prerequisites = {
 		"tech_nanite_guardians"
 		"tech_nanite_mega_engineering"

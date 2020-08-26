@@ -138,6 +138,8 @@
  dreadnought_key:0 "$dreadnought$"
  dreadnought_plural:0 "$dreadnought$s"
  gatebuilder_starbase_key:0 "$starbase_citadel$"
+ gateway_guardians:0 "§HGuardians Path§!\n§EThis advanced nanite technology will lead in to the construction and replication of huge powerful guardians.§!"
+ gateway_nanites:0 "§HNanites Path§!\n§EThis technology will lead to further advancements in the field of nanites.§!"
  gray_warship_key:0 "Nanite Warship"
  job_nanite_agri_drone:0 "Nanite Agri-Drone"
  job_nanite_agri_drone_desc:0 "Food production requires a variety of workers, from operators of planting and harvesting machinery, to watering, fertilizer and pesticide systems managers, to livestock handlers."

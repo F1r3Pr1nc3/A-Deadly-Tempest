@@ -166,6 +166,7 @@
  TECH_UNLOCK_NANITE_BOMBARDMENT_DESC:0 "Unlock a new method of bombardment that will depopulate a world and turn it into a $pc_gray_goo$."
 
  ### Technology (Common) ###
+ gateway_nanites:0 "§HNanites Path§!\n§EThis technology will lead to further advancements in the field of nanites.§!"
 
  # Weapons
  tech_nanite_strike_craft:0 "Nanite $strike_craft$"
@@ -299,6 +300,7 @@
  TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_DESC:0 "§H$graygoo_interdictor$, $graygoo_mothership$ & $nanite_dragon$§!\nThese ships are self sufficient, but due to their...'unique' nature, their designs seem hardcoded and may not be compatible with certain technologies. But we can replicate the process to boosters our carrier operation."
 
  # Guardians
+ gateway_guardians:0 "§HGuardians Path§!\n§EThis advanced nanite technology will lead in to the construction and replication of huge powerful guardians.§!"
  tech_nanite_guardians:0 "Guardian Replication Project"
  tech_nanite_guardians_desc:0 "Extremely powerful hostile spaceborne aliens found in specific, predetermined systems, these guardians rivalling moons in size and mass and possess sufficient firepower."
  TECH_UNLOCK_GUARDIANS_CONSTRUCTION_TITLE:0 "§HUnlocks Guardians"

@@ -2,7 +2,7 @@
 
 tech_nanoactuators = {
 	area = physics
-	tier = 5
+	tier = 4
 	cost = @tier4cost1
 	category = { computing }
 	prerequisites = { "tech_self_aware_logic" }
@@ -31,7 +31,7 @@ tech_nanite_shield_rechargers = {
 	cost = @tier5cost3
 	tier = 5
 	category = { field_manipulation }
-	ai_update_type = all
+	ai_update_type = military
 	prerequisites = { "tech_shields_5" }
 	weight = @tier5weight3
 

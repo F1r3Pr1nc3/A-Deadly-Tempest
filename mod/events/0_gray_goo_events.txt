@@ -345,7 +345,6 @@ country_event = {
 				# Reinforce at factory if someone else is in the cluster...
 				# AMOUNT integer 1 = 4 Ships per CM factor (so 3.0 = 12)
 				event_target:nanite_factory = {
-					# set_variable = { which = CmtGraygooFleetNumberUpperLimit value = event_target:graygoo_country }
 					if = { limit = { end_game_years_passed >= 30 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 4 }
 					} else_if = { limit = { mid_game_years_passed >= 40 }

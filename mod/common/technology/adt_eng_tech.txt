@@ -10,6 +10,7 @@ tech_nanite_ships = {
 	weight = @tier5weight1
 	is_reverse_engineerable = yes
 	is_rare = yes
+	gateway = nanites #ship
 	## unlock nanite ships
 	prereqfor_desc = {
 		ship = {
@@ -94,6 +95,7 @@ tech_nanite_hull = {
 	area = engineering
 	tier = 5
 	category = { voidcraft }
+	ai_update_type = military
 	prerequisites = { "tech_nanite_ships" }
 	weight = @tier5weight3
 	is_reverse_engineerable = yes
@@ -152,6 +154,14 @@ tech_nanite_living_metal = {
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_technology = tech_nanite_clouds
+		}
+	}
+	prereqfor_desc = {
+		# hide_prereq_for_desc = component
+		# component = {
+		custom = {
+			title = "tech_nanite_mega_engineering"
+			desc = "tech_nanite_mega_engineering_desc"
 		}
 	}
 	# add Living Metal
@@ -223,6 +233,7 @@ tech_nanite_bulwark = {
 	icon = tech_nanite_starbase
 	tier = 4
 	category = { voidcraft }
+	ai_update_type = all
 	prerequisites = { "tech_space_defense_station_improvement" "tech_nanite_strike_craft" } # "tech_space_defense_station_1" "tech_starbase_4"
 	is_rare = yes
 	weight = @tier4weight2
