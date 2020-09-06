@@ -748,7 +748,6 @@ starbase_gatebuilders = {
 		ship_evasion_mult = -1
 		ship_shield_add = 30000 # vanilla 10000; NSC 80000
 		ship_armor_add = 30000 # vanilla 10000; NSC 80000
-		ships_upkeep_mult = -0.33
 		ship_piracy_suppression_add = 16
 	}
 	ship_modifier = {

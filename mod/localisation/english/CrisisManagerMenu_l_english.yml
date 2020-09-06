@@ -614,7 +614,7 @@
  CrisisManagerMenu.3220.desc1:1 "$CrisisManagerMenu.3220.descB$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.3220a.title$§!"
  CrisisManagerMenu.3220.desc2:1 "$CrisisManagerMenu.3220.descB$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.3220b.title$§!"
  CrisisManagerMenu.3220.desc3:1 "$CrisisManagerMenu.3220.descB$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.3220c.title$§!"
- CrisisManagerMenu.3220.desc4:1 "$CrisisManagerMenu.3220.descB$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.3220d.title$§!"
+#  CrisisManagerMenu.3220.desc4:1 "$CrisisManagerMenu.3220.descB$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.3220d.title$§!"
  CrisisManagerMenu.3220a.name:1 "$CrisisManagerMenu.3220x.title$$CrisisManagerMenu.3220a.title$ $CmtTextVanilla$"
  CrisisManagerMenu.3220b.name:1 "$CrisisManagerMenu.3220x.title$$CrisisManagerMenu.3220b.title$ $CmtTooltipInfo2$"
  CrisisManagerMenu.3220c.name:1 "$CrisisManagerMenu.3220x.title$$CrisisManagerMenu.3220c.title$ $CmtTooltipInfo2$ $CmtTextDefault$"

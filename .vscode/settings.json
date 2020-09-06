@@ -1,4 +1,6 @@
 {
+	"zenMode.centerLayout": false,
+	"workbench.enableExperiments": false,
 	"cSpell.words": [
 		"dragonscale",
 		"gatebuilder",
@@ -9,3 +11,4 @@
 		"warform"
 	]
 }
+
