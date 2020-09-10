@@ -59,7 +59,7 @@
 #  CririsManagerControl.7178a.name:1 "Disappointed."
 #  CririsManagerControl.7178a.tooltip:1 ""
 #  CririsManagerControl.7179.name:0 "[From.GetName] Declare War on Us"
-#  CririsManagerControl.7179.desc:0 "§Y[From.GetName]§! stood with §Y[FromFrom.GetName]§!!\n They declared war on us today and now we are in a state of war with them."
+#  CririsManagerControl.7179.desc:0 "§Y[From.GetName]§! stood with §Y[FromFrom.GetName]§!!\nThey declared war on us today and now we are in a state of war with them."
 #  CririsManagerControl.7179a.name:1 "$DISCONCERTING$"
 #  CririsManagerControl.7179a.tooltip:1 "$DISCONCERTING$"
  

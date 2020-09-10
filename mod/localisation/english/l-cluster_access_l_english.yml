@@ -51,9 +51,9 @@
  # Diplomacy --------
  casus_belli_cb_lgate_port:0 "$lcluster_policy$"
  war_goal_wg_access_lcluster:0 "$decision_open_lcluster$"
- war_goal_wg_access_lcluster_desc:0 "Start a war to open the §EL-Clusters§! and the border of hostile civilization and obtain 20 years of right of passage.\n The closure of the entire §EL-Clusters§! poses a threat and a major shift for the galactic balance."
+ war_goal_wg_access_lcluster_desc:0 "Start a war to open the §EL-Clusters§! and the border of hostile civilization and obtain 20 years of right of passage.\nThe closure of the entire §EL-Clusters§! poses a threat and a major shift for the galactic balance."
  war_goal_wg_access_lcluster_tooltip:0 "§Y[From.GetName]§! has been defeated, they put down their arrogance and agreed to open the L-Gates and the border to us within §Y20§! years.\n§Y[Root.GetName]§! has gained §G+100§! £influence£\n"
  war_goal_wg_access_lcluster_long:0 "$decision_open_lcluster$ and L-Gates"
- war_goal_wg_access_lcluster_long_desc:0 "Start a war to open the §EL-Gates§! and the border of hostile civilizations, gain 50 years of right of way and end the competition.\n The closure of the entire §EL-Clusters§! poses a threat and a major shift for the galactic balance."
+ war_goal_wg_access_lcluster_long_desc:0 "Start a war to open the §EL-Gates§! and the border of hostile civilizations, gain 50 years of right of way and end the competition.\nThe closure of the entire §EL-Clusters§! poses a threat and a major shift for the galactic balance."
  war_goal_wg_access_lcluster_long_tooltip:0 "§Y[From.GetName]§! has been completely defeated, they had to put down their arrogance and agreed to open the border and §EL-Gates§! to us within §Y50§!. At the same time, we also ended the state of rivals with them, but obviously they did not agree with this result and would strike back one day in the future.\n§Y[Root.GetName]§! has gained §G+150§! £influence£\n"
  opinion_wg_access_lcluster_long:0 "Be rampant in our territory"

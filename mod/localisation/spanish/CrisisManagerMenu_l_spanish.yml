@@ -463,7 +463,6 @@
  CrisisManagerMenu.3220.desc1:0 "$CrisisManagerMenu.3220.descB$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.3220a.title$§!"
  CrisisManagerMenu.3220.desc2:0 "$CrisisManagerMenu.3220.descB$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.3220b.title$§!"
  CrisisManagerMenu.3220.desc3:0 "$CrisisManagerMenu.3220.descB$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.3220c.title$§!"
- CrisisManagerMenu.3220.desc4:0 "$CrisisManagerMenu.3220.descB$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.3220d.title$§!"
  CrisisManagerMenu.3220.descA:0 "A configuration whether a starbase is built immediately when a crisis fleet enters stellar system unowned by anyone.\n\n$CmtDescNoTotalWarPack$"
  CrisisManagerMenu.3220.descB:0 "A configuration whether a starbase is built immediately when a construction ship or a military fleet of crisis factions enters stellar system unowned by anyone.\nThis configuration saves time for constructing starbase and makes expansion of crisis functions faster.\n\n$CmtDescTotalWarTarget$"
  CrisisManagerMenu.3220.name:0 "$CrisisManagerMenu.3220.title$ $CrisisManagerTitleC$"

@@ -11,7 +11,7 @@
  a_deadly_tempest.82.a:0 "This atrocity must be avenged!"
  a_deadly_tempest.83.desc:0 "Our forces report that they have concluded the orbital bombardment of §H[From.GetName]§!. All population centers have been systematically eradicated, and the surface [From.GetPlanetMoon] is now only covered in countless nanite swarms."
 
- a_deadly_tempest.17.name:0 "The Gray Goo's End"
+ a_deadly_tempest.17.name:0 "The End of [graygoo_country.GetName]"
  a_deadly_tempest.17.desc:0 ""
  a_deadly_tempest.17.tooltip:0 "Gain two of the following technologies:\n"
 

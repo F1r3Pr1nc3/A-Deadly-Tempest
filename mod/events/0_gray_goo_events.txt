@@ -1608,18 +1608,72 @@ country_event = {
 	}
 }
 
+# Entered Factory System (First Time)
+country_event = {
+	id = graygoo.158
+	title = leviathans.2105.name
+	desc = leviathans.2105.desc
+	picture = GFX_evt_enigmatic_fortress
+	show_sound = event_ship_bridge
+	location = event_target:nanite_factory
+	is_triggered_only = yes
+	immediate = {}
+	option = {
+		name = leviathans.2105.a # leviathans.2101.b
+	}
+}
+
 # Entered Forbidden System (First Time)
-ship_event = {
-	id = graygoo.160
+country_event = {
+	id = graygoo.159
 	title = TRANSMISSION
-	desc = "graygoo.160.desc"
-
+	title = leviathans.2105.name
+	desc = graygoo.160.desc
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:gate_builders
 	}
+	is_triggered_only = yes
 
+	# trigger = {
+	# 	from.space_owner = { is_country_type = gate_builders }
+	# }
+
+	immediate = {
+		random_country = {
+			limit = { is_country_type = gate_builders }
+			save_event_target_as = gate_builders
+		}
+		set_country_flag = gate_builder_diplomacy_engaged
+	}
+
+	option = {
+		name = graygoo.160.a
+		hidden_effect = {
+			set_timed_country_flag = { flag = gk_told_to_leave days = 60 }
+			set_country_flag = gk_first_entry
+			country_event = { id = graygoo.161 days = 60 }
+		}
+	}
+	option = {
+		name = graygoo.160.b
+		response_text = graygoo.160.b.response
+		hidden_effect = {
+			country_event = { id = a_deadly_tempest.162 }
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			remove_country_flag = gate_builder_diplomacy_engaged
+		}
+	}
+}
+
+# Entered Forbidden System (First Time)
+ship_event = {
+	id = graygoo.160
+	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
@@ -1627,7 +1681,12 @@ ship_event = {
 			has_star_flag = graygoo_factory_system
 			any_fleet_in_system = {
 				is_ship_size = graygoo_factory
-				owner = { is_country_type = gate_builders }
+				owner = {
+					OR = {
+						is_country_type = gray_goo
+						is_country_type = gate_builders
+					}
+				}
 			}
 		}
 		owner = {
@@ -1636,36 +1695,22 @@ ship_event = {
 	}
 
 	immediate = {
-		random_country = {
-			limit = { is_country_type = gate_builders }
-			save_event_target_as = gate_builders
-		}
-		owner = {
-			set_country_flag = gate_builder_diplomacy_engaged
-		}
-	}
+			FROM = { save_event_target_as = fortress_system }
 
-	after = {
-		hidden_effect = {
-			owner = { remove_country_flag = gate_builder_diplomacy_engaged }
-		}
-	}
-
-	option = {
-		name = graygoo.160.a
-		hidden_effect = {
-			owner = {
-				set_timed_country_flag = { flag = gk_told_to_leave days = 60 }
-				set_country_flag = gk_first_entry
-				country_event = { id = graygoo.161 days = 60 }
+			if = { limit = { NOT = { exists = event_target:nanite_factory } }
+				from = {
+					random_fleet_in_system = {
+						limit = { is_ship_size = graygoo_factory }
+						save_global_event_target_as = nanite_factory
+					}
+				}
 			}
-		}
-	}
-	option = {
-		name = graygoo.160.b
-		response_text = graygoo.160.b.response
-		hidden_effect = {
-			owner = { country_event = { id = a_deadly_tempest.162 } }
+			owner = { country_event = { id = graygoo.158 } }
+
+			if = {
+				limit = { event_target:nanite_factory = { owner = { is_country_type = gate_builders } } }
+				owner = { country_event = { id = graygoo.159 days = 1 } }
+			}
 		}
 	}
 }
@@ -1961,7 +2006,6 @@ country_event = {
 		destroy_country = yes
 		clear_global_event_target = graygoo_country
 		clear_global_event_target = nanite_factory
-		clear_global_event_target = lcluster_factory_system
 	}
 }
 
@@ -1972,6 +2016,7 @@ country_event = {
 	desc = "graygoo.181.desc"
 	picture = GFX_evt_large_explosion
 	show_sound = event_super_explosion
+	location = event_target:lcluster_factory_system
 
 	is_triggered_only = yes
 
@@ -2695,33 +2740,13 @@ country_event = {
 				fail_text = graygoo.500.allow.a
 				any_owned_army = {
 					army_type = gray_army
-					if = {
-						limit = { exists = planet }
-						planet = { has_ground_combat = no }
-					}
-				}
-			}
-		}
-		allow = {
-			hidden_trigger = {
-				any_owned_army = {
-					army_type = gray_army
 					OR = {
-						exists = planet
 						AND = {
-							exists = fleet
-							fleet = { num_ships > 0 }
+							exists = planet planet = { has_ground_combat = no }
 						}
-					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = { exists = fleet }
-						fleet = { is_in_combat = no }
+						AND = {
+							exists = fleet fleet = { is_in_combat = no }
+						}
 					}
 				}
 			}
@@ -2847,7 +2872,7 @@ country_event = {
 	}
 }
 
-# Entering Empty Cluster
+# Entering "Empty" L-Cluster
 ship_event = {
 	id = graygoo.550
 	title = "graygoo.550.name"
@@ -2859,8 +2884,8 @@ ship_event = {
 
 	trigger = {
 		NOR = {
-			has_global_flag = gray_goo_crisis_set
-			has_global_flag = dragon_season
+			# has_global_flag = gray_goo_crisis_set
+			# has_global_flag = dragon_season
 			has_global_flag = gray_goo_empire_set
 		}
 		from = { has_star_flag = lcluster1 }

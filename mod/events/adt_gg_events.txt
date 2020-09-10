@@ -138,23 +138,26 @@ event = {
 }
 
 ### Nanites
+
 # nanite_factory_destroyed gives tech
 country_event = {
 	id = a_deadly_tempest.7
-	title = "a_deadly_tempest.17.name"
+	title = "a_deadly_tempest.17.name" # leviathans.2155.name
 	desc = "distar.137.paci"
 	hide_window = no
 	# fire_only_once = yes
 	is_triggered_only = yes
-	picture = GFX_evt_large_explosion	# GFX_evt_gray_goo_ships
-	show_sound = event_space_battle		# event_ship_explosion # event_celebration
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_celebration # event_ship_explosion
+
 	location = FromFromFrom
 	trigger = {
 		exists = event_target:goo_slayer
 		is_same_empire = event_target:goo_slayer
 	}
 	immediate = {
-		every_system = { limit = { has_star_flag = lcluster }
+		every_system = {
+			limit = { has_star_flag = lcluster }
 			random_system_planet = { limit = { is_planet_class = pc_gray_goo }
 				random_list = {
 					60 = {
@@ -167,259 +170,188 @@ country_event = {
 				}
 			}
 		}
-
-		# if = {
-		# 	limit = {
-		# 		is_ai = no
-		# 		is_subject = no
-		# 		NOT = {
-		# 			any_playable_country = { # 				# NOT = { is_same_empire = prev }
-		# 				relative_power = {
-		# 					who = prev
-		# 					category = fleet
-		# 					value > equivalent
-		# 				}
-		# 			}
-		# 		}
-		# 	}
-		# 	# event_target:lcluster_factory_system
-		# 	event_target:goo_slayer_ship = {
-		# 		solar_system = {
-		# 			every_system_planet = {
-		# 				limit = {
-		# 					# habitable_planet = yes
-		# 					# NOR = {
-		# 					# 	is_planet_class = pc_ringworld_habitable
-		# 					# 	is_planet_class = pc_habitat
-		# 					# }
-		# 					is_asteroid = no
-		# 					is_star = no
-		# 					NOT = { is_planet_class = pc_gas_giant }
-		# 				}
-		# 				create_ambient_object = {
-		# 					type = explosion_particle_object
-		# 					location = this
-		# 					use_3d_location = yes
-		# 					duration = 10
-		# 					scale = 20
-		# 				}
-		# 				# change_pc = pc_molten
-		# 				reset_planet = yes
-		# 			}
-		# 			every_fleet_in_system = { destroy_fleet = this }
-		# 			break = yes
-		# 		}
-		# 	}
-		# }
+		if = {
+			limit = {
+				is_ai = no
+				exists = event_target:lcluster_factory_system
+				is_subject = no
+				no_scope = { is_difficulty > 3 }
+				OR = {
+					has_federation = yes
+					any_owned_megastructure = {
+						OR = {
+							is_megastructure_type = mega_shipyard_1
+							is_megastructure_type = mega_shipyard_2
+							is_megastructure_type = mega_shipyard_3
+						}
+					}
+				}
+				NOR = {
+					is_pacifist = yes
+					has_policy_flag = liberation_wars
+					has_ethic = ethic_gestalt_consciousness
+					has_total_war_cb = yes
+					# any_playable_country = {
+					any_country = {
+						# NOT = { is_same_empire = prev }
+						relative_power = {
+							who = prev
+							category = all #fleet
+							value > equivalent
+						}
+					}
+				}
+			}
+			country_event = { id = a_deadly_tempest.8 days = 2 }
+		}
 	}
 
 	option = {
 		name = "distar.137.a"
 		custom_tooltip = "a_deadly_tempest.17.tooltip"
 		hidden_effect = {
-			# TODO
-			if = {
-				limit = {
-					is_ai = no
-					is_subject = no
-					no_scope = { is_difficulty > 3 }
-					OR = {
-						has_federation = yes
-						any_owned_megastructure = {
-							OR = {
-								is_megastructure_type = mega_shipyard_1
-								is_megastructure_type = mega_shipyard_2
-								is_megastructure_type = mega_shipyard_3
-							}
-						}
-					}
-					NOR = {
-						is_pacifist = yes
-						has_policy_flag = liberation_wars
-						has_ethic = ethic_gestalt_consciousness
-						has_total_war_cb = yes
-						# any_country = { # NOT = { is_same_empire = prev }
-						any_playable_country = {
-							relative_power = {
-								who = prev
-								category = fleet
-								value > equivalent
-							}
-						}
-					}
-				}
-				# event_target:lcluster_factory_system
-				event_target:goo_slayer_ship = {
-					solar_system = {
-						every_system_planet = {
-							limit = {
-								# habitable_planet = yes
-								# NOR = {
-								# 	is_planet_class = pc_ringworld_habitable
-								# 	is_planet_class = pc_habitat
-								# }
-								is_asteroid = no
-								is_star = no
-								NOT = { is_planet_class = pc_gas_giant }
-							}
-							create_ambient_object = {
-								type = explosion_particle_object
-								location = this
-								use_3d_location = yes
-								duration = 10
-								scale = 20
-							}
-							# change_pc = pc_molten
-							reset_planet = yes
-						}
-						every_fleet_in_system = { destroy_fleet = this }
-						break = yes
-					}
-				}
-			} else = {
-				set_variable = {
-					which = picked_tech
-					value = 0
-				}
-				# event_target:GlobalVar = {
-				# 	set_variable = {
-				# 		which = random_nhsc_value
-				# 		value = @armor_s_t8_strength
-				# 	}
-				# }
-				while = {
-					limit = {
-						check_variable = {
-							which = picked_tech
-							value < 2
-						}
-					}
-					#  tech_nanite_torpedo tech_nanite_build_speed tech_adt_energymissiles tech_nanite_strike_craft tech_adt_gg_beam tech_nanocrystals tech_nanite_modular_engineering tech_nanite_living_metal
-					random_list = {
-						1 = {
-							modifier = {
-								factor = 0
-								is_researching_technology = tech_nanite_torpedo
-								has_technology = tech_nanite_torpedo
-							}
-							give_technology = { tech = tech_nanite_torpedo }
-							change_variable = {
-								which = "picked_tech"
-								value = 1
-							}
-							tooltip = { give_technology = { tech = tech_nanite_torpedo } }
-						}
-						1 = {
-							modifier = {
-								factor = 0
-								is_researching_technology = tech_adt_energymissiles
-								has_technology = tech_adt_energymissiles
-							}
-							give_technology = { tech = tech_adt_energymissiles }
-							change_variable = {
-								which = "picked_tech"
-								value = 1
-							}
-							tooltip = { give_technology = { tech = tech_adt_energymissiles } }
-						}
-						1 = {
-							modifier = {
-								factor = 0
-								is_researching_technology = tech_nanite_strike_craft
-								has_technology = tech_nanite_strike_craft
-							}
-							give_technology = { tech = tech_nanite_strike_craft }
-							change_variable = {
-								which = "picked_tech"
-								value = 1
-							}
-							tooltip = { give_technology = { tech = tech_nanite_strike_craft } }
-						}
-						1 = {
-							modifier = {
-								factor = 0
-								is_researching_technology = tech_adt_gg_beam
-								has_technology = tech_adt_gg_beam
-							}
-							give_technology = { tech = tech_adt_gg_beam }
-							change_variable = {
-								which = "picked_tech"
-								value = 1
-							}
-							tooltip = { give_technology = { tech = tech_adt_gg_beam } }
-						}
-						1 = {
-							modifier = {
-								factor = 0
-								is_researching_technology = tech_nanocrystals
-								has_technology = tech_nanocrystals
-							}
-							give_technology = { tech = tech_nanocrystals }
-							change_variable = {
-								which = "picked_tech"
-								value = 1
-							}
-							tooltip = { give_technology = { tech = tech_nanocrystals } }
-						}
-						1 = {
-							modifier = {
-								factor = 0
-								is_researching_technology = tech_nanite_living_metal
-								has_technology = tech_nanite_living_metal
-							}
-							give_technology = { tech = tech_nanite_living_metal }
-							change_variable = {
-								which = "picked_tech"
-								value = 1
-							}
-							tooltip = { give_technology = { tech = tech_nanite_living_metal } }
-						}
-						1 = {
-							modifier = {
-								factor = 0
-								is_researching_technology = tech_nanite_modular_engineering
-								has_technology = tech_nanite_modular_engineering
-							}
-							give_technology = { tech = tech_nanite_modular_engineering }
-							change_variable = {
-								which = "picked_tech"
-								value = 1
-							}
-							tooltip = { give_technology = { tech = tech_nanite_modular_engineering } }
-						}
-						1 = {
-							modifier = {
-								factor = 0
-								is_researching_technology = tech_nanite_build_speed
-								has_technology = tech_nanite_build_speed
-							}
-							give_technology = { tech = tech_nanite_build_speed }
-							change_variable = {
-								which = "picked_tech"
-								value = 1
-							}
-							tooltip = { give_technology = { tech = tech_nanite_build_speed } }
-						}
-					}
-				}
-				# option = {
-				# 	name = "distar.137.paci"
-				# 	trigger = {
-				# 		has_ethic = ethic_fanatic_pacifist
-				# 		has_ethic = ethic_pacifist
-				# 		has_ethic = ethic_fanatic_xenophile
-				# 		has_ethic = ethic_xenophile
-				# 	}
-				# 	hidden_effect = { # 		set_variable = { which = picked_tech value = 0 }
-				# 		while = {
-				# 			limit = {
-				# 				check_variable = {
-				# 					which = picked_tech
-				# 					value < 2
-				# 				}
-				# 			}
-				# 			random_list = { }
+			set_variable = {
+				which = picked_tech
+				value = 0
 			}
+			# event_target:GlobalVar = {
+			# 	set_variable = {
+			# 		which = random_nhsc_value
+			# 		value = @armor_s_t8_strength
+			# 	}
+			# }
+			while = {
+				limit = {
+					check_variable = {
+						which = picked_tech
+						value < 2
+					}
+				}
+				#  tech_nanite_torpedo tech_nanite_build_speed tech_adt_energymissiles tech_nanite_strike_craft tech_adt_gg_beam tech_nanocrystals tech_nanite_modular_engineering tech_nanite_living_metal
+				random_list = {
+					1 = {
+						modifier = {
+							factor = 0
+							is_researching_technology = tech_nanite_torpedo
+							has_technology = tech_nanite_torpedo
+						}
+						give_technology = { tech = tech_nanite_torpedo }
+						change_variable = {
+							which = "picked_tech"
+							value = 1
+						}
+						tooltip = { give_technology = { tech = tech_nanite_torpedo } }
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							is_researching_technology = tech_adt_energymissiles
+							has_technology = tech_adt_energymissiles
+						}
+						give_technology = { tech = tech_adt_energymissiles }
+						change_variable = {
+							which = "picked_tech"
+							value = 1
+						}
+						tooltip = { give_technology = { tech = tech_adt_energymissiles } }
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							is_researching_technology = tech_nanite_strike_craft
+							has_technology = tech_nanite_strike_craft
+						}
+						give_technology = { tech = tech_nanite_strike_craft }
+						change_variable = {
+							which = "picked_tech"
+							value = 1
+						}
+						tooltip = { give_technology = { tech = tech_nanite_strike_craft } }
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							is_researching_technology = tech_adt_gg_beam
+							has_technology = tech_adt_gg_beam
+						}
+						give_technology = { tech = tech_adt_gg_beam }
+						change_variable = {
+							which = "picked_tech"
+							value = 1
+						}
+						tooltip = { give_technology = { tech = tech_adt_gg_beam } }
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							is_researching_technology = tech_nanocrystals
+							has_technology = tech_nanocrystals
+						}
+						give_technology = { tech = tech_nanocrystals }
+						change_variable = {
+							which = "picked_tech"
+							value = 1
+						}
+						tooltip = { give_technology = { tech = tech_nanocrystals } }
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							is_researching_technology = tech_nanite_living_metal
+							has_technology = tech_nanite_living_metal
+						}
+						give_technology = { tech = tech_nanite_living_metal }
+						change_variable = {
+							which = "picked_tech"
+							value = 1
+						}
+						tooltip = { give_technology = { tech = tech_nanite_living_metal } }
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							is_researching_technology = tech_nanite_modular_engineering
+							has_technology = tech_nanite_modular_engineering
+						}
+						give_technology = { tech = tech_nanite_modular_engineering }
+						change_variable = {
+							which = "picked_tech"
+							value = 1
+						}
+						tooltip = { give_technology = { tech = tech_nanite_modular_engineering } }
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							is_researching_technology = tech_nanite_build_speed
+							has_technology = tech_nanite_build_speed
+						}
+						give_technology = { tech = tech_nanite_build_speed }
+						change_variable = {
+							which = "picked_tech"
+							value = 1
+						}
+						tooltip = { give_technology = { tech = tech_nanite_build_speed } }
+					}
+				}
+			}
+			# option = {
+			# 	name = "distar.137.paci"
+			# 	trigger = {
+			# 		has_ethic = ethic_fanatic_pacifist
+			# 		has_ethic = ethic_pacifist
+			# 		has_ethic = ethic_fanatic_xenophile
+			# 		has_ethic = ethic_xenophile
+			# 	}
+			# 	hidden_effect = { # 		set_variable = { which = picked_tech value = 0 }
+			# 		while = {
+			# 			limit = {
+			# 				check_variable = {
+			# 					which = picked_tech
+			# 					value < 2
+			# 				}
+			# 			}
+			# 			random_list = { }
 		}
 	}
 	after = {
@@ -476,6 +408,51 @@ country_event = {
 		}
 	}
 	# TODO: Give federation members one too?
+}
+
+country_event = {
+	id = a_deadly_tempest.8
+	title = "leviathans.2152.c"
+	desc = "leviathans.2157.a.tooltip"
+	hide_window = no
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_evt_large_explosion
+	show_sound = event_ship_explosion
+	location = event_target:lcluster_factory_system
+	# trigger = {
+	# 	exists = event_target:goo_slayer
+	# 	is_same_empire = event_target:goo_slayer
+	# }
+	immediate = {
+		# event_target:goo_slayer_ship.solar_system = {
+		event_target:lcluster_factory_system  = {
+			every_system_planet = {
+				limit = {
+					# habitable_planet = yes
+					# NOR = {
+					# 	is_planet_class = pc_ringworld_habitable
+					# 	is_planet_class = pc_habitat
+					# }
+					is_asteroid = no
+					is_star = no
+					NOT = { is_planet_class = pc_gas_giant }
+				}
+				create_ambient_object = {
+					type = explosion_particle_object
+					location = this
+					use_3d_location = yes
+					duration = 10
+					scale = 20
+				}
+				# change_pc = pc_molten
+				reset_planet = yes
+			}
+			every_fleet_in_system = { destroy_fleet = this }
+			break = yes
+		}
+		clear_global_event_target = lcluster_factory_system
+	}
 }
 
 # Mothership creates ships

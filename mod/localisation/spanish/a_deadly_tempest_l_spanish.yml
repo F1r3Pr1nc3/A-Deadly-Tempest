@@ -113,7 +113,7 @@
  TECH_UNLOCK_VOIDSPAWN_CONSTRUCTION_DESC:0 "The $voidspawn$ is an unborn leviathan, hidden within an egg, which looks like a dry world, orbiting a Class G star without any other habitable planets."
  TECH_UNLOCK_VOIDSPAWN_CONSTRUCTION_TITLE:0 "§HUnlocks Guardian:§! $voidspawn$"
  a_deadly_tempest.17.desc:0 ""
- a_deadly_tempest.17.name:0 "The Gray Goo's End"
+ a_deadly_tempest.17.name:0 "The End of [graygoo_country.GetName]"
  a_deadly_tempest.17.tooltip:0 "Gain two of the following technologies:\n"
  a_deadly_tempest.82.a:0 "This atrocity must be avenged!"
  a_deadly_tempest.82.desc:0 "A fleet belonging to the §H[From.From.GetName]§! has massacred the population of §H[From.GetName]§!! After a massed and unrelenting orbital bombardment campaign, all population centers on the surface have been systematically wiped out, reducing the [From.GetPlanetMoon] to an lifeless husk that is now only covered in countless nanite swarms."

@@ -113,7 +113,7 @@
  TECH_UNLOCK_VOIDSPAWN_CONSTRUCTION_DESC:0 "The $voidspawn$ is an unborn leviathan, hidden within an egg, which looks like a dry world, orbiting a Class G star without any other habitable planets."
  TECH_UNLOCK_VOIDSPAWN_CONSTRUCTION_TITLE:0 "§HUnlocks Guardian:§! $voidspawn$"
  a_deadly_tempest.17.desc:0 ""
- a_deadly_tempest.17.name:0 "灰蛊终结"
+ a_deadly_tempest.17.name:0 "[graygoo_country.GetName]终结"
  a_deadly_tempest.17.tooltip:0 "获得下列两项科技：\n"
  a_deadly_tempest.82.a:0 "这种暴行我们必须报仇雪恨！"
  a_deadly_tempest.82.desc:0 "一支属于§H[From.From.GetName]§!的舰队屠杀了§H[From.GetName]§!的居民！经过无情的大规模轨道轰炸，地表上所有人口中心都被系统性地消灭了，[From.GetPlanetMoon]变成了毫无生机的空壳，现在只剩下无数的纳米虫群。"
