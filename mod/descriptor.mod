@@ -1,5 +1,5 @@
-version="1.4.3"
-name="A Deadly Tempest (2.7)"
+version="1.5.0"
+name="A Deadly Tempest (2.8)"
 dependencies={
 	"Fix Fire From The Stars"
 }
@@ -17,5 +17,5 @@ tags={
 	"Nanites"
 }
 picture="thumbnail.png"
-supported_version="2.7.*"
+supported_version="2.8.*"
 remote_file_id="2028826064"

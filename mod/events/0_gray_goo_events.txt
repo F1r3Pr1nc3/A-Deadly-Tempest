@@ -1617,6 +1617,11 @@ country_event = {
 	show_sound = event_ship_bridge
 	location = event_target:nanite_factory
 	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
 	immediate = {}
 	option = {
 		name = leviathans.2105.a # leviathans.2101.b
@@ -1695,22 +1700,22 @@ ship_event = {
 	}
 
 	immediate = {
-			FROM = { save_event_target_as = fortress_system }
+		FROM = { save_event_target_as = fortress_system }
 
-			if = { limit = { NOT = { exists = event_target:nanite_factory } }
-				from = {
-					random_fleet_in_system = {
-						limit = { is_ship_size = graygoo_factory }
-						save_global_event_target_as = nanite_factory
-					}
+		if = {
+			limit = { NOT = { exists = event_target:nanite_factory } }
+			from = {
+				random_fleet_in_system = {
+					limit = { is_ship_size = graygoo_factory }
+					save_global_event_target_as = nanite_factory
 				}
 			}
-			owner = { country_event = { id = graygoo.158 } }
+		}
+		owner = { country_event = { id = graygoo.158 } }
 
-			if = {
-				limit = { event_target:nanite_factory = { owner = { is_country_type = gate_builders } } }
-				owner = { country_event = { id = graygoo.159 days = 1 } }
-			}
+		if = {
+			limit = { event_target:nanite_factory = { owner = { is_country_type = gate_builders } } }
+			owner = { country_event = { id = graygoo.159 days = 1 } }
 		}
 	}
 }
@@ -2115,12 +2120,18 @@ ship_event = {
 	title = "graygoo.400.name"
 	desc = {
 		trigger = {
-			owner = { NOT = { has_authority = auth_machine_intelligence } }
+			owner = {
+				# NOT = { has_authority = auth_machine_intelligence }
+				is_synthetic_empire = no
+			}
 		}
 		text = "graygoo.400.a.desc"
 	}
 	desc = {
-		trigger = { owner = { has_authority = auth_machine_intelligence } }
+		trigger = { owner = {
+			# has_authority = auth_machine_intelligence
+			is_synthetic_empire = yes
+		} }
 		text = "graygoo.400.b.desc"
 	}
 	picture = GFX_evt_ship_in_orbit_2
@@ -2724,7 +2735,7 @@ country_event = {
 		name = graygoo.500.b
 		response_text = graygoo.503.b.response
 		allow = {
-			hidden_trigger = {
+			hidden_trigger = { # To prevent exploit
 				any_owned_army = {
 					army_type = gray_army
 					OR = {

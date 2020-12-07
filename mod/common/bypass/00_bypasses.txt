@@ -34,7 +34,6 @@
 # 										# FROM = System jumping to
 # 										# FROMFROM = System jumped from
 # }
-
 gateway = {
 	name = GATEWAY_GALACTIC
 	is_pathfind = yes
@@ -43,11 +42,11 @@ gateway = {
 	always_active = no
 	windup_time = 0
 	winddown_time = 0
-	ftl_multiplier = 0			# 0 means instant
+	ftl_multiplier = 0	# 0 means instant
 	icon_frame = 25
-	remember_instances = no 	# whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
-	galactic_map_tooltip_header=GATEWAY_GALACTIC
-	galactic_map_tooltip_desc=GATEWAY_GALACTIC_DESC
+	remember_instances = no	# whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
+	galactic_map_tooltip_header = GATEWAY_GALACTIC
+	galactic_map_tooltip_desc = GATEWAY_GALACTIC_DESC
 	connection_type = any_other
 	animation_time = 1
 	ftl_ship_effect = "gateway_ftl_ship_effect_entity"
@@ -58,9 +57,13 @@ gateway = {
 	on_pre_explore = {
 		activate_gateway = fromfrom
 		if = {
-			limit = { num_active_gateways = 1 }
+			limit = {
+				num_active_gateways = 1
+			}
 			random_megastructure = {
-				limit = { is_megastructure_type = gateway_ruined }
+				limit = {
+					is_megastructure_type = gateway_ruined
+				}
 				upgrade_megastructure_to = gateway_restored
 				finish_upgrade = yes
 			}
@@ -70,13 +73,17 @@ gateway = {
 		custom_tooltip = {
 			fail_text = GATEWAY_COUNTRY_CANNOT_USE
 			OR = {
-				NOT = { exists = from }
+				NOT = {
+					exists = from
+				}
 				from = {
 					OR = {
 						is_same_value = root
 						is_in_federation_with = root
 						is_overlord_to = root
-						root = { is_overlord_to = from }
+						root = {
+							is_overlord_to = from
+						}
 					}
 				}
 				from = {
@@ -87,10 +94,17 @@ gateway = {
 				}
 			}
 			# not be used if...
-			# NOR = {
-			# 	is_country_type = tiyanki
-			# 	is_country_type = amoeba
-			# }
+			NOR = {
+				is_country_type = amoeba
+				is_country_type = amoeba_borderless
+				is_country_type = caravaneer_fleet
+				is_country_type = crystal
+				is_country_type = feral_prethoryn
+				is_country_type = guardian
+				is_country_type = guardian_dragon
+				is_country_type = tiyanki
+				is_country_type = vluur
+			}
 		}
 	}
 	on_action = "on_entering_gateway"
@@ -109,32 +123,36 @@ wormhole = {
 	icon_frame = 12
 	remember_instances = yes
 	animation_time = 1
-	galactic_map_tooltip_header=NATURAL_WORMHOLE_GALACTIC
-	galactic_map_tooltip_desc=NATURAL_WORMHOLE_DESC
+	galactic_map_tooltip_header = NATURAL_WORMHOLE_GALACTIC
+	galactic_map_tooltip_desc = NATURAL_WORMHOLE_DESC
 	connection_type = one_to_one
 	ftl_ship_effect = "wormhole_ftl_ship_effect_entity"
 	ftl_bypass_effect = "wormhole_ftl_bypass_effect_entity"
 	prerequisites = {
 		tech_wormhole_stabilization
 	}
-
 	potential = {
 		always = yes
 	}
-
 	country_can_use = {
 		custom_tooltip = {
 			fail_text = NATURAL_WORMHOLE_COUNTRY_CANNOT_USE
 			# Wormhole can be used if...
 			OR = {
 				# System has no owner
-				NOT = { exists = from }
+				NOT = {
+					exists = from
+				}
 				# System's owner has not closed borders to you
 				from = {
-					NOT = { has_closed_borders = root }
+					NOT = {
+						has_closed_borders = root
+					}
 				}
 				# System's owner is at war with you
-				from = { is_at_war_with = root }
+				from = {
+					is_at_war_with = root
+				}
 				# System's owner is not a proper empire
 				from = {
 					NOR = {
@@ -156,9 +174,9 @@ lgate = {
 	always_active = no
 	windup_time = 0
 	winddown_time = 0
-	ftl_multiplier = 0			# 0 means instant
+	ftl_multiplier = 0	# 0 means instant
 	icon_frame = 30
-	remember_instances = no 	# whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
+	remember_instances = no	# whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
 	galactic_map_tooltip_header = LGATE_GALACTIC
 	galactic_map_tooltip_desc = LGATE_GALACTIC_DESC
 	connection_type = scripted_connection
@@ -174,22 +192,36 @@ lgate = {
 			#has_global_flag = l_cluster_opened
 			OR = {
 				has_global_flag = lgates_activated_globally
-				if = { limit = { exists = owner }
-					owner = { has_country_flag = lgates_activated }
+				if = {
+					limit = {
+						exists = owner
+					}
+					owner = {
+						has_country_flag = lgates_activated
+					}
 				}
-				else_if = { limit = { is_scope_type = country }
+				else_if = {
+					limit = {
+						is_scope_type = country
+					}
 					has_country_flag = lgates_activated
 				}
 			}
 			# invalid object???
-			# NOR = {
-			# 	is_country_type = tiyanki
-			# 	is_country_type = amoeba
-			# }
+			NOR = {
+				is_country_type = amoeba
+				is_country_type = amoeba_borderless
+				is_country_type = caravaneer_fleet
+				is_country_type = crystal
+				is_country_type = feral_prethoryn
+				is_country_type = guardian
+				is_country_type = guardian_dragon
+				is_country_type = tiyanki
+				is_country_type = vluur
+			}
 		}
 	}
 	on_action = "on_entering_lgate"
-
 	scripted_connection = {
 		# defines endpoints that can only reach the "nexus"
 		node = {

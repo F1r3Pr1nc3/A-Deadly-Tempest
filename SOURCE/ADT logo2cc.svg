@@ -228,7 +228,7 @@
          x="-150"
          y="230"
          sodipodi:role="line">A Deadly<tspan
-   x="-160"
+   x="-155"
    y="542"
    letter-spacing="14.5px"
    id="tspan1757">Tem<tspan
@@ -278,7 +278,7 @@
          text-anchor="middle"
          word-spacing="0px">
         <tspan
-           id="tspan1768">2.7.2</tspan>
+           id="tspan1768">2.8.1</tspan>
       </text>
     </g>
     <use
@@ -447,7 +447,7 @@
     </g>
   </g>
   <g
-     transform="translate(446.8 57.54)"
+     transform="translate(435 57.54)"
      filter="url(#i)"
      opacity=".75"
      style="filter:url(#filter1854);opacity:0.75"

@@ -469,21 +469,24 @@ country_event = {
 				}
 			}
 		}
-		while = { limit = { any_megastructure = { CmtTriggerIsClosedLgate = yes } }
-			random_system = {
+		
+		while = {
+			limit = { any_megastructure = { CmtTriggerIsClosedLgate = yes } }
+			random_megastructure = {
 				limit = {
-					CmtTriggerIsGalaxyLgateSystem = yes # TODO may remove?
+					CmtTriggerIsClosedLgate = yes
+					# CmtTriggerIsGalaxyLgateSystem = yes # TODO may remove?
+					# any_system_megastructure = { CmtTriggerIsClosedLgate = yes }
 					# OR = {
 					# 	has_megastructure = lgate_base
 					# 	has_megastructure = lgate_disabled
 					# }
-					any_system_megastructure = { CmtTriggerIsClosedLgate = yes }
 				}
 				# flip L-Gates
-				random_system_megastructure = { limit = { CmtTriggerIsClosedLgate = yes }
-					CmtEffectOpenLgate = yes
-				}
+				# random_system_megastructure = { limit = { CmtTriggerIsClosedLgate = yes }
+				CmtEffectOpenLgate = yes
 				# set dragon spawning grounds
+				# solar_system = {
 				closest_system = {
 					min_steps = 3
 					limit = {

@@ -10,7 +10,7 @@
  ##################################################
  ##################################################
  
- CrisisManagerTemplateList.desc:0 "There is yet only one custom template for A Deadly Tempest.\n$CmtWarn0$: You can make more templates on your own (and share them)."
+ CrisisManagerTemplateList.desc:0 "Todavía hay solo una plantilla personalizada para A Deadly Tempest.\n$CmtWarn0$: Puede crear más plantillas por su cuenta (y compartirlas)."
  
- CrisisManagerTemplate_T001.title:0 "A Deadly Tempest Template"
- CrisisManagerTemplate_T001.tooltip:1 "Greetings! There are only few fitting and increasing changes to the Default Template."
+ CrisisManagerTemplate_T001.title:0 "Una plantilla de tempestad mortal"
+ CrisisManagerTemplate_T001.tooltip:1 "¡Saludos! Hay solo unos pocos cambios de ajuste y aumento en la plantilla predeterminada."

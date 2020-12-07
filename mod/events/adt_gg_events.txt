@@ -30,7 +30,11 @@ event = {
 	immediate = {
 		set_global_flag = a_deadly_tempest_mod_active
 		if = { limit = { NOT = { exists = event_target:GlobalVar } }
-			if = { limit = { NOT = { is_country_type = global_event } }
+			if = { limit = {
+				NAND = {
+					exists = this
+					is_country_type = global_event
+				} }
 				random_country = { limit = { is_country_type = global_event }
 					save_global_event_target_as = GlobalVar
 				}

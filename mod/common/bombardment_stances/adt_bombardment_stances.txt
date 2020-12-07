@@ -18,7 +18,7 @@ nanitebombard = {
 		}
 	}
 
-	icon_frame = 6
+	icon_frame = 8
 	default = no
 
 	stop_when_armies_dead = no
