@@ -3,6 +3,7 @@
 # Culture is scripted for species classes, see "common/species_classes/" and "graphical_culture = xxx"
 
 machine_01 = {
+	randomized = { no_scope = { has_synthethic_dawn = yes } }
 	fallback = reptilian_01
 	ship_color = yes
 	ship_lighting = {

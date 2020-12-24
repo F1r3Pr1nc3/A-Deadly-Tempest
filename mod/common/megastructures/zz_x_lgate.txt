@@ -1,5 +1,4 @@
 # see README.txt for example
-
 # Active L-Gate
 lgate_base = {
 	entity = "gatebuilder_01_gateway_entity"
@@ -9,13 +8,36 @@ lgate_base = {
 	#build_outside_gravity_well = yes
 	show_galactic_map_icon = no
 	# can_disable = yes
-
-	potential = { always = no }
-	upgrade_from = { lgate_disabled }
-
-	construction_blocks_others = no
-
 	bypass_type = lgate
+	build_time = 500
+	resources = {
+		category = megastructures
+		cost = { nanites = 100 }
+		upkeep = { }
+		produces = { }
+	}
+	construction_blocks_others = no
+	upgrade_from = { lgate_disabled }
+	prerequisites = { "tech_lgate_construction" }
+	potential = {
+		always = no
+		# has_civic = civic_machine_nanites
+		# has_technology = tech_lgate_construction
+		# has_technology = tech_gateway_activation
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_tech_lgate_construction"
+			from = { has_technology = tech_lgate_construction }
+		}
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	placement_rules = {
+		# those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
+	}
 }
 
 # Disabled L-Gate
@@ -24,25 +46,29 @@ lgate_disabled = {
 	construction_entity = "gateway_portal_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	build_outside_gravity_well = yes
+	#build_outside_gravity_well = yes
 	show_galactic_map_icon = no
 	# can_disable = yes
-
-	build_time = 1620
+	build_time = 1500
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 2400
-			nanites = 400
-			energy = 1200
+			alloys = 2000
+			nanites = 300
+			energy = 1000
 			influence = 80
 		}
+		upkeep = { }
+		produces = { }
 	}
+	entity_offset = { x = -8 y = -8 }
 	construction_blocks_others = no
 	construction_blocked_by_others = no
-
-	potential = { has_technology = tech_lgate_construction }
-
+	prerequisites = { "tech_lgate_construction" }
+	potential = {
+		always = yes
+		# has_technology = tech_lgate_construction
+	}
 	# trigger, scope: galactic object, from: country
 	possible = {
 		exists = starbase
@@ -65,6 +91,13 @@ lgate_disabled = {
 			fail_text = "lgate_requires_black_hole"
 			is_star_class = sc_black_hole
 		}
+		# custom_tooltip = {
+		# 	fail_text = "lgate_requires_no_neutron_star_pulsar"
+		# 	NOR = {
+		# 		is_star_class = sc_neutron_star
+		# 		is_star_class = sc_pulsar
+		# 	}
+		# }
 		custom_tooltip = {
 			fail_text = "requires_no_existing_gateway"
 			NOR = {
@@ -81,43 +114,83 @@ lgate_disabled = {
 			fail_text = "requires_tech_lgate_construction"
 			from = { has_technology = tech_lgate_construction }
 		}
-
+		custom_tooltip = {
+			fail_text = "requires_no_binary_trinary"
+			NOR = {
+				is_star_class = sc_binary_1
+				is_star_class = sc_binary_2
+				is_star_class = sc_binary_3
+				is_star_class = sc_binary_4
+				is_star_class = sc_binary_5
+				is_star_class = sc_binary_6
+				is_star_class = sc_binary_7
+				is_star_class = sc_binary_8
+				is_star_class = sc_binary_9
+				is_star_class = sc_binary_10
+				is_star_class = sc_trinary_1
+				is_star_class = sc_trinary_2
+				is_star_class = sc_trinary_3
+				is_star_class = sc_trinary_4
+			}
+		}
 	}
 	# root = system
 	# from = country
 	placement_rules = {
-		# those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+		}
 	}
-
+	#root = system
+	#from = country
 	ai_weight = {
 		factor = 2
 		modifier = {
-			factor = 0.1
-			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
+			factor = 0
+			starbase = {
+				NOT = { has_starbase_size >= starbase_starport }
+			}
 		}
-
+		modifier = {
+			factor = 0.1
+			starbase = {
+				NOT = { has_starbase_size >= starbase_starfortress }
+			}
+		}
 		modifier = {
 			factor = 0.1
 			any_neighbor_system = {
 				exists = owner
-				NOT = {
-					owner = { is_same_value = from }
+				owner = {
+					NOT = { is_same_value = from }
 				}
 			}
 		}
 		modifier = {
 			factor = 0
-			any_neighbor_system = {
-				has_star_flag = lgate
-			}
+			any_neighbor_system = { has_star_flag = lgate }
 		}
 		modifier = {
-			factor = 3.0
+			factor = 3
 			is_star_class = sc_black_hole
 		}
+		# modifier = {
+		# 	factor = 0.2
+		# 	from = {
+		# 		has_monthly_income = { resource = nanites value <= 0 }
+		# 		NOT = { has_civic = civic_harvester_nanites }
+		# 	}
+		# }
 	}
-
-	bypass_type = lgate
+	on_build_start = { }
+	on_build_cancel = { }
 	#effects, scope: galactic object, from: country, fromfrom: megastructure instance
 	on_build_complete = {
 		# Works, but let's open the gate over the time event?

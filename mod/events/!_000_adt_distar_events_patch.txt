@@ -31,7 +31,6 @@ namespace = distar
 # 		}
 # 	}
 # }
-
 # check for gateway within borders
 country_event = {
 	id = distar.10900
@@ -47,7 +46,8 @@ country_event = {
 					fleet_power > 30000
 				}
 			}
-			random_owned_megastructure = { limit = { CmtTriggerIsClosedLgate = yes }
+			random_owned_megastructure = {
+				limit = { CmtTriggerIsClosedLgate = yes }
 				save_event_target_as = candidate_gateway
 			}
 			# enable project
@@ -85,9 +85,13 @@ country_event = {
 			}
 			# enable project
 			country_event = { id = distar.10905 }
-		} else = {
+		}
+		else = {
 			# *THIS* looping check
-			country_event = { id = distar.10902 days = 60 }
+			country_event = {
+				id = distar.10902
+				days = 60
+			}
 		}
 	}
 }
@@ -102,7 +106,10 @@ country_event = {
 		set_country_flag = lcluster_opener
 		set_country_flag = lgates_activated
 		set_global_flag = lgates_activated_globally
-		set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 5 }
+		set_timed_global_flag = {
+			flag = CmtFlagLgateOpenedNow
+			days = 5
+		}
 		# Spawn L-Cluster
 		if = {
 			limit = {
@@ -209,14 +216,14 @@ country_event = {
 					modifier = {
 						factor = 0
 						# OR = {
-							has_global_flag = CmtFlagLgateForbidLdrake
-							# AND = { # remove outcome anyway?
-							# 	has_global_flag = CmtFlagLgateForbidSilence
-							# 	NAND = {
-							# 		has_global_flag = CmtFlagLgateForbidDessanu
-							# 		has_global_flag = CmtFlagLgateForbidGraygoo
-							# 	}
-							# }
+						has_global_flag = CmtFlagLgateForbidLdrake
+						# AND = { # remove outcome anyway?
+						# 	has_global_flag = CmtFlagLgateForbidSilence
+						# 	NAND = {
+						# 		has_global_flag = CmtFlagLgateForbidDessanu
+						# 		has_global_flag = CmtFlagLgateForbidGraygoo
+						# 	}
+						# }
 						# }
 					}
 					set_global_flag = dragon_season
@@ -288,6 +295,7 @@ country_event = {
 				id = graygoo.1
 				days = 1
 			}
+			country_event = { id = a_deadly_tempest.13006 days = 1 }
 			country_event = {
 				id = a_deadly_tempest.137
 				days = 24
@@ -319,7 +327,8 @@ country_event = {
 		# flip L-Gates
 		# Activate Terminal Egress L-Gate (if not already opened by other outcome)
 		event_target:lcluster1 = {
-			random_system_megastructure = { limit = { CmtTriggerIsClosedLgate = yes }
+			random_system_megastructure = {
+				limit = { CmtTriggerIsClosedLgate = yes }
 				CmtEffectOpenLgate = yes
 			}
 		}
@@ -329,8 +338,9 @@ country_event = {
 				limit = {
 					any_system_megastructure = { CmtTriggerIsClosedLgate = yes }
 				}
-				save_event_target_as = candidate_gateway # for desc only
-				random_system_megastructure = { limit = { CmtTriggerIsClosedLgate = yes }
+				save_event_target_as = candidate_gateway				# for desc only
+				random_system_megastructure = {
+					limit = { CmtTriggerIsClosedLgate = yes }
 					CmtEffectOpenLgate = yes
 				}
 			}
@@ -344,7 +354,10 @@ country_event = {
 			}
 		}
 		## Make dragons friendly (sometimes not working so call it twice)
-		country_event = { id = a_deadly_tempest.13006 days = 4 }
+		country_event = {
+			id = a_deadly_tempest.13006
+			days = 2
+		}
 	}
 }
 
@@ -469,9 +482,10 @@ country_event = {
 				}
 			}
 		}
-		
 		while = {
-			limit = { any_megastructure = { CmtTriggerIsClosedLgate = yes } }
+			limit = {
+				any_megastructure = { CmtTriggerIsClosedLgate = yes }
+			}
 			random_megastructure = {
 				limit = {
 					CmtTriggerIsClosedLgate = yes
@@ -525,7 +539,8 @@ country_event = {
 					any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
 				}
 				set_star_flag = young_dragon_spawned
-				random_system_megastructure = { #limit = { CmtTriggerIsOpenedLgate = yes }
+				random_system_megastructure = {
+					#limit = { CmtTriggerIsOpenedLgate = yes }
 					closest_system = {
 						min_steps = 3
 						limit = {
@@ -579,13 +594,13 @@ country_event = {
 										prefix = no
 										upgradable = yes
 									}
-									set_location = prevprevprev # megastructure
+									set_location = prevprevprev									# megastructure
 									set_fleet_stance = passive
 									set_aggro_range_measure_from = self
 									# set_aggro_range = 10
 									auto_move_to_planet = {
-										target = prev  # dragon_point star
-										clear_auto_move_on_arrival = yes # hang around
+										target = prev										# dragon_point star
+										clear_auto_move_on_arrival = yes										# hang around
 									}
 								}
 							}
@@ -597,6 +612,10 @@ country_event = {
 					}
 				}
 			}
+		}
+		country_event = {
+			id = a_deadly_tempest.13006
+			days = 1
 		}
 	}
 }
@@ -782,7 +801,15 @@ country_event = {
 	option = {
 		name = INTERESTING
 		fromfrom.solar_system = { custom_tooltip = distar.13035.a.tooltip }
-		hidden_effect = { give_technology = { tech = tech_nanite_guardians message = no } }
+		hidden_effect = {
+			if = {
+				limit = { has_global_flag = a_deadly_tempest_mod_active }
+				give_technology = {
+					tech = tech_nanite_guardians
+					message = no
+				}
+			}
+		}
 	}
 }
 
@@ -804,7 +831,8 @@ country_event = {
 	location = FROM
 	is_triggered_only = yes
 	trigger = {
-		NOT = { exists = fromfrom }		# not surveyed by ship
+		NOT = { exists = fromfrom }
+		# not surveyed by ship
 		is_country_type_with_subjects = yes
 		NOR = {
 			has_country_flag = encountered_first_lgate

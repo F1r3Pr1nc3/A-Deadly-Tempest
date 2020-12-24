@@ -123,17 +123,7 @@ country_event = {
 		}
 
 		## Initial Attack Fleets
-		every_system = {
-			limit = {
-				CmtTriggerIsGalaxyLgateSystem = yes
-				NOT = { has_star_flag = lgate_originating_system }
-				any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
-			}
-			random_system_megastructure = {
-				limit = { CmtTriggerIsOpenedLgate = yes }
-				CmtEffectCreateAdmiralty_GraygooAttackerA = yes
-			}
-		}
+		country_event = { id = graygoo.4 days = 2 } # 1 day delay for dragon friendship
 
 		## Reinforcement Fleets (Call AFTER Create Factory)
 		event_target:graygoo_country = {
@@ -144,7 +134,7 @@ country_event = {
 
 		### Notifications
 		every_country = { establish_communications_no_message = event_target:graygoo_country }
-		country_event = { id = graygoo.10 }
+		country_event = { id = graygoo.10 days = 1 }
 		every_playable_country = {
 			# limit = { NOT = { is_same_value = root } }
 			limit = { NOT = { has_country_flag = lcluster_opener } }
@@ -156,15 +146,15 @@ country_event = {
 						#is_same_value = root
 					}
 				}
-				country_event = { id = graygoo.13 }
+				country_event = { id = graygoo.13 days = 1 }
 			} else = {
 				liquidate_clues = yes
-				country_event = { id = graygoo.11 }
+				country_event = { id = graygoo.11 days = 1 }
 			}
 		}
 		observer_event = { id = observer.64 }
 		## Make dragons friendly (sometimes not working so call it twice)
-		country_event = { id = a_deadly_tempest.13006 days = 1 }
+		country_event = { id = a_deadly_tempest.13006 }
 	}
 }
 
@@ -394,13 +384,30 @@ country_event = {
 	}
 }
 
+## Initial Attack Fleets
+country_event = {
+	id = graygoo.4
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_system = {
+			limit = {
+				CmtTriggerIsGalaxyLgateSystem = yes
+				NOT = { has_star_flag = lgate_originating_system }
+				any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
+			}
+			random_system_megastructure = {
+				limit = { CmtTriggerIsOpenedLgate = yes }
+				CmtEffectCreateAdmiralty_GraygooAttackerA = yes
+			}
+		}
+	}
+}
 # # Reinforcements 2
 # country_event = {
 # 	id = graygoo.4
 # 	hide_window = yes
-
 # 	is_triggered_only = yes
-
 # 	immediate = {
 # 		random_owned_ship = {
 # 			limit = { is_ship_size = graygoo_factory }
