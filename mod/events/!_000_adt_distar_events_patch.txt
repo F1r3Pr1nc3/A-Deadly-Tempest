@@ -312,9 +312,9 @@ country_event = {
 				days = 24
 			}
 		}
-		else = {
-			country_event = { id = distar.10951 }
-		}
+		# else = { # seems vanilla bug
+		# Cancel projects for all other, call AFTER everything
+		country_event = { id = distar.10951 days = 5 }
 		# Enable other L-Gates over time (anyway)
 		random_country = {
 			limit = { is_country_type = global_event }
@@ -345,9 +345,15 @@ country_event = {
 				}
 			}
 		}
-		### Technology Control: Put AFTER graygoo.100
+		### Technology Control: Put AFTER graygoo.100 ?
 		every_playable_country = {
-			limit = { is_researching_technology = tech_lgate_activation }
+			limit = {
+				OR = {
+					is_researching_technology = tech_lgate_activation
+					has_tech_option = tech_lgate_activation
+					has_event_chain = l_cluster_chain
+				}
+			}
 			give_technology = {
 				tech = tech_lgate_activation
 				message = no

@@ -204,5 +204,9 @@ country_event = {
 				}
 			}
 		}
+		country_event = {
+			id = crisis.2421
+			days = 1800
+		}
 	}
 }
