@@ -29,11 +29,7 @@ has_nhsc = {
 # trigger = { event_target:lcluster_factory_system = { check_fleet_count_in_system = { CHECK = CmtVarCapitalDefenceNumber } }}
 check_fleet_count_in_system = {
 	if = { limit = { is_scope_type = galactic_object }
-		[[CHECK]
-		count_fleet_in_system = {
-			count > $CHECK$
-			limit = { has_fleet_flag = nanite_mother_ship }
-		}]
+		[[CHECK] count_fleet_in_system = { count > $CHECK$ limit = { has_fleet_flag = nanite_mother_ship } }]
 	}
 	# else = { log = "Wrong scope in count_fleet_in_system [This.GetName]" }
 }

@@ -136,20 +136,20 @@ country_event = {
 		every_country = { establish_communications_no_message = event_target:graygoo_country }
 		country_event = { id = graygoo.10 days = 1 }
 		every_playable_country = {
-			# limit = { NOT = { is_same_value = root } }
+			# limit = { NOT = { is_same_empire = root } }
 			limit = { NOT = { has_country_flag = lcluster_opener } }
 			if = {
 				limit = {
 					NOR = {
 						has_event_chain = l_cluster_chain
 						has_special_project = LCLUSTER_PROJECT
-						#is_same_value = root
 					}
 				}
 				country_event = { id = graygoo.13 days = 1 }
 			} else = {
-				liquidate_clues = yes
 				country_event = { id = graygoo.11 days = 1 }
+				# Remove Quest (FIX vanilla!?)
+				country_event = { id = distar.10959 days = 1 }
 			}
 		}
 		observer_event = { id = observer.64 }
@@ -533,7 +533,6 @@ country_event = {
 	}
 }
 
-
 ###############
 ###	Dessanu	###
 ###############
@@ -809,6 +808,8 @@ country_event = {
 						}
 					}
 					country_event = { id = graygoo.111 }
+					# Remove Quest (FIX vanilla!?)
+					country_event = { id = distar.10959 days = 1 }
 				} else = { country_event = { id = graygoo.112 } }
 			}
 		}
@@ -864,7 +865,7 @@ country_event = {
 		}
 		if = {
 			limit = { NOT = { has_technology = tech_mine_living_metal } }
-			 give_technology = { tech = tech_mine_living_metal }
+			give_technology = { tech = tech_mine_living_metal }
 		}
 	}
 }
@@ -883,6 +884,23 @@ country_event = {
 
 	is_triggered_only = yes
 
+	immediate = {
+		every_playable_country = {
+			limit = {
+				OR = {
+					is_researching_technology = tech_lgate_activation
+					has_tech_option = tech_lgate_activation
+					has_event_chain = l_cluster_chain
+				}
+			}
+			give_technology = {
+				tech = tech_lgate_activation
+				message = no
+			}
+		}
+		set_global_flag = l_cluster_opened
+	}
+
 	option = {
 		name = graygoo.116.d
 		if = {
@@ -896,6 +914,7 @@ country_event = {
 				has_country_flag = CmtFlagLgateOpenFinalPhase
 			}
 			CmtEffectAddDessanuGift2 = yes
+			remove_country_flag = CmtFlagLgateOpenFinalPhase
 		} else_if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateDessanuGift value = 5 } } }
 			CmtEffectAddDessanuGift1 = yes

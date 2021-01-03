@@ -47,8 +47,9 @@
 		texture=0
 		hair=0
 		clothes=0
+		leader_class="ruler"
 	}
-	spawn_as_fallen=no
+	spawn_as_fallen=yes
 	ignore_portrait_duplication=no
 	room="personality_erudite_explorers_room"
 	spawn_enabled=yes
@@ -56,6 +57,7 @@
 	civics={
 		"civic_machine_replication"
 		"civic_machine_terminator"
+		# "civic_machine_warfleet"
 	}
 	origin="origin_default"
 }

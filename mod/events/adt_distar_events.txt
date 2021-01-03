@@ -397,3 +397,66 @@ country_event = {
 		}
 	}
 }
+
+# Abandoned Cluster Found (opt. by FirePrince)
+country_event = {
+	id = distar.10951
+	title = "distar.10951.name"
+	desc = "distar.10951.desc"
+	picture = GFX_evt_l-gateway
+	show_sound = event_activating_unknown_technology
+	location = event_target:candidate_gateway
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { exists = event_target:lcluster1 } }
+			country_event = { id = distar.11000 }
+		}
+		every_playable_country = {
+			limit = {
+				NOT = {
+					has_country_flag = lcluster_opener
+					# is_same_empire = root
+				}
+			}
+			if = {
+				limit = { has_special_project = LCLUSTER_PROJECT }
+				country_event = { id = distar.10952 }
+			} else_if = {
+				limit = { has_event_chain = l_cluster_chain }
+				country_event = { id = distar.10953 }
+			} else = {
+				country_event = { id = distar.10954 }
+			}
+		}
+		observer_event = { id = observer.62 }
+
+		# Remove Quest for Root (fallback only)
+		country_event = { id = distar.10959 days = 1 }
+	}
+
+	option = {
+		name = "distar.10951.a"
+	}
+}
+
+# Cancel L-Gates project/chain
+country_event = {
+	id = distar.10959
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_special_project = LCLUSTER_PROJECT }
+			abort_special_project = { type = LCLUSTER_PROJECT }
+		} else_if = {
+			limit = { has_event_chain = l_cluster_chain }
+			liquidate_clues = yes
+			end_event_chain = "l_cluster_chain"
+		}
+	}
+}

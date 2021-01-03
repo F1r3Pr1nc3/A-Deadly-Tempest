@@ -119,8 +119,8 @@ on_join_federation = {
 # THIS = Fleet
 # FROM = System jumping to
 # FROMFROM = System jumped from
-on_entering_lgate = {
-	# events = {
-	# 	ldragon_country_starts_nanite_ecosystem.1
-	# }
-}
+# on_entering_lgate = {
+# 	# events = {
+# 	# 	ldragon_country_starts_nanite_ecosystem.1
+# 	# }
+# }

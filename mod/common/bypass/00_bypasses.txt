@@ -27,7 +27,7 @@
 # 	on_pre_explore = {					# an effect that is called just before the jump of a right click "explore" action of a fleet
 #
 # 	}
-#	country_can_use = {					# trigger to evaluate if a country can use bypasses of this type. this: country, from: (optional) system owner; default: { always = yes }
+#	country_can_use = {					# trigger to evaluate if a country can use bypasses of this type. this: country, from: (optional) system owner; default: { always = yes  }
 #	}
 # 	on_action = "on_entering_bypass"	# The name of the on-action event that will be fired upon entering FTL (if set)
 # 										# THIS = Fleet
@@ -51,19 +51,13 @@ gateway = {
 	animation_time = 1
 	ftl_ship_effect = "gateway_ftl_ship_effect_entity"
 	ftl_bypass_effect = "gateway_ftl_bypass_effect_entity"
-	prerequisites = {
-		tech_gateway_activation
-	}
+	prerequisites = { tech_gateway_activation }
 	on_pre_explore = {
 		activate_gateway = fromfrom
 		if = {
-			limit = {
-				num_active_gateways = 1
-			}
+			limit = { num_active_gateways = 1 }
 			random_megastructure = {
-				limit = {
-					is_megastructure_type = gateway_ruined
-				}
+				limit = { is_megastructure_type = gateway_ruined }
 				upgrade_megastructure_to = gateway_restored
 				finish_upgrade = yes
 			}
@@ -73,17 +67,13 @@ gateway = {
 		custom_tooltip = {
 			fail_text = GATEWAY_COUNTRY_CANNOT_USE
 			OR = {
-				NOT = {
-					exists = from
-				}
+				NOT = { exists = from }
 				from = {
 					OR = {
 						is_same_value = root
 						is_in_federation_with = root
 						is_overlord_to = root
-						root = {
-							is_overlord_to = from
-						}
+						root = { is_overlord_to = from }
 					}
 				}
 				from = {
@@ -93,7 +83,6 @@ gateway = {
 					}
 				}
 			}
-			# not be used if...
 			NOR = {
 				is_country_type = amoeba
 				is_country_type = amoeba_borderless
@@ -128,39 +117,32 @@ wormhole = {
 	connection_type = one_to_one
 	ftl_ship_effect = "wormhole_ftl_ship_effect_entity"
 	ftl_bypass_effect = "wormhole_ftl_bypass_effect_entity"
-	prerequisites = {
-		tech_wormhole_stabilization
-	}
-	potential = {
-		always = yes
-	}
+	prerequisites = { tech_wormhole_stabilization }
+	potential = { always = yes }
 	country_can_use = {
 		custom_tooltip = {
 			fail_text = NATURAL_WORMHOLE_COUNTRY_CANNOT_USE
 			# Wormhole can be used if...
 			OR = {
 				# System has no owner
-				NOT = {
-					exists = from
-				}
-				# System's owner has not closed borders to you
+				NOT = { exists = from }
 				from = {
-					NOT = {
-						has_closed_borders = root
+					OR = {
+						# System's owner has not closed borders to you
+						NOT = { has_closed_borders = root  }
+						# System's owner is at war with you
+						is_at_war_with = root
+						# System's owner is not a proper empire
+						is_country_type_with_subjects = no
 					}
 				}
-				# System's owner is at war with you
-				from = {
-					is_at_war_with = root
-				}
-				# System's owner is not a proper empire
-				from = {
-					NOR = {
-						is_country_type = default
-						is_country_type = awakened_fallen_empire
-						is_country_type = fallen_empire
-					}
-				}
+				# from = {
+				# 	NOR = {
+				# 		is_country_type = default
+				# 		is_country_type = awakened_fallen_empire
+				# 		is_country_type = fallen_empire
+				# 	}
+				# }
 			}
 		}
 	}
@@ -183,28 +165,45 @@ lgate = {
 	animation_time = 1
 	ftl_ship_effect = "gateway_ftl_ship_effect_entity"
 	ftl_bypass_effect = "gateway_ftl_bypass_effect_entity"
-	# prerequisites = {
-	# 	tech_gateway_activation
-	# }
+	# prerequisites = { tech_lgate_activation }
+	on_pre_explore = {
+		# Fallback for defect save games
+		if = {
+			limit = {
+				exists = owner
+				has_global_flag = lgates_activated_globally
+				owner = {
+					has_country_flag = lgates_activated
+					has_technology = tech_lgate_activation
+				}
+			}
+			fromfrom = {
+				if = {
+					limit = { CmtTriggerIsClosedLgate = yes }
+					# Enable L-Gates over time
+					prev.owner = { country_event = { id = distar.10960 } }
+				} else = {
+					CmtEffectOpenLgate = yes
+					# random_system_megastructure = {
+					# 	limit = { CmtTriggerIsOpenedLgate = yes }
+					# 	CmtEffectOpenLgate = yes
+					# }
+				}
+			}
+		}
+	}
 	country_can_use = {
 		custom_tooltip = {
 			fail_text = LGATE_COUNTRY_CANNOT_USE
 			#has_global_flag = l_cluster_opened
+			exists = this
+			is_scope_type = country
 			OR = {
 				has_global_flag = lgates_activated_globally
-				if = {
-					limit = {
-						exists = owner
-					}
-					owner = {
-						has_country_flag = lgates_activated
-					}
-				}
-				else_if = {
-					limit = {
-						is_scope_type = country
-					}
-					has_country_flag = lgates_activated
+				has_country_flag = lgates_activated
+				AND = {
+					exists = owner
+					owner = { has_country_flag = lgates_activated }
 				}
 			}
 			# invalid object???
@@ -221,7 +220,7 @@ lgate = {
 			}
 		}
 	}
-	on_action = "on_entering_lgate"
+	# on_action = "on_entering_lgate"
 	scripted_connection = {
 		# defines endpoints that can only reach the "nexus"
 		node = {

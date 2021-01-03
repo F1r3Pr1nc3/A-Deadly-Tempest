@@ -115,7 +115,6 @@ country_event = {
 			limit = {
 				NOT = { has_global_flag = l_cluster_opened }
 			}
-			set_global_flag = l_cluster_opened
 			country_event = { id = distar.11000 }
 		}
 		### Set 1st L-Gate as Target
@@ -305,16 +304,17 @@ country_event = {
 			limit = { has_global_flag = gray_goo_empire_set }
 			country_event = {
 				id = graygoo.100
-				days = 3
+				days = 2
 			}
 			country_event = {
 				id = a_deadly_tempest.137
 				days = 24
 			}
 		}
-		# else = { # seems vanilla bug
-		# Cancel projects for all other, call AFTER everything
-		country_event = { id = distar.10951 days = 5 }
+		else = {
+			# Abandoned, cancel projects for all other
+			country_event = { id = distar.10951 }
+		}
 		# Enable other L-Gates over time (anyway)
 		random_country = {
 			limit = { is_country_type = global_event }
@@ -345,20 +345,25 @@ country_event = {
 				}
 			}
 		}
-		### Technology Control: Put AFTER graygoo.100 ?
-		every_playable_country = {
-			limit = {
-				OR = {
-					is_researching_technology = tech_lgate_activation
-					has_tech_option = tech_lgate_activation
-					has_event_chain = l_cluster_chain
+		### Technology Control: Put AFTER graygoo.110 (copy on graygoo.116)
+		if = {
+			limit = { NOT = { has_global_flag = gray_goo_empire_set } }
+			every_playable_country = {
+				limit = {
+					OR = {
+						is_researching_technology = tech_lgate_activation
+						has_tech_option = tech_lgate_activation
+						has_event_chain = l_cluster_chain
+					}
+				}
+				give_technology = {
+					tech = tech_lgate_activation
+					message = no
 				}
 			}
-			give_technology = {
-				tech = tech_lgate_activation
-				message = no
-			}
+			set_global_flag = l_cluster_opened
 		}
+
 		## Make dragons friendly (sometimes not working so call it twice)
 		country_event = {
 			id = a_deadly_tempest.13006
@@ -566,7 +571,7 @@ country_event = {
 								owner = {
 									if = {
 										limit = {
-											NOT = { is_same_value = root }
+											NOT = { is_same_empire = root }
 										}
 										set_country_flag = knows_ldragon
 										country_event = { id = distar.13010 }
@@ -600,13 +605,13 @@ country_event = {
 										prefix = no
 										upgradable = yes
 									}
-									set_location = prevprevprev									# megastructure
+									set_location = prevprevprev							# megastructure
 									set_fleet_stance = passive
 									set_aggro_range_measure_from = self
 									# set_aggro_range = 10
 									auto_move_to_planet = {
-										target = prev										# dragon_point star
-										clear_auto_move_on_arrival = yes										# hang around
+										target = prev									# dragon_point star
+										clear_auto_move_on_arrival = yes				# hang around
 									}
 								}
 							}

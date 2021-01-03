@@ -6,7 +6,7 @@ lgate_base = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	#build_outside_gravity_well = yes
-	show_galactic_map_icon = no
+	# show_galactic_map_icon = no
 	# can_disable = yes
 	bypass_type = lgate
 	build_time = 500
@@ -46,9 +46,10 @@ lgate_disabled = {
 	construction_entity = "gateway_portal_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	#build_outside_gravity_well = yes
+	build_outside_gravity_well = yes
 	show_galactic_map_icon = no
 	# can_disable = yes
+	bypass_type = lgate
 	build_time = 1500
 	resources = {
 		category = megastructures
@@ -61,13 +62,13 @@ lgate_disabled = {
 		upkeep = { }
 		produces = { }
 	}
-	entity_offset = { x = -8 y = -8 }
+	entity_offset = { x = 8 y = 8 }
 	construction_blocks_others = no
 	construction_blocked_by_others = no
 	prerequisites = { "tech_lgate_construction" }
 	potential = {
-		always = yes
-		# has_technology = tech_lgate_construction
+		# always = yes
+		has_technology = tech_lgate_construction
 	}
 	# trigger, scope: galactic object, from: country
 	possible = {
