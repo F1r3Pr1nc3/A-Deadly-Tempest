@@ -110,13 +110,7 @@ country_event = {
 			flag = CmtFlagLgateOpenedNow
 			days = 5
 		}
-		# Spawn L-Cluster
-		if = {
-			limit = {
-				NOT = { has_global_flag = l_cluster_opened }
-			}
-			country_event = { id = distar.11000 }
-		}
+
 		### Set 1st L-Gate as Target
 		if = {
 			limit = {
@@ -282,6 +276,21 @@ country_event = {
 				save_event_target_as = candidate_gateway
 			}
 		}
+		# Spawn L-Cluster (try to hide lag with desc window)
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = l_cluster_opened
+					has_global_flag = dragon_season
+				}
+				# To omit this, the event must be started at graygoo (which is still too risky)
+				OR = {
+					has_global_flag = gray_goo_empire_set
+					has_global_flag = gray_goo_crisis_set
+				}
+			}
+			country_event = { id = distar.11000 }
+		}
 		# Outcome, to be determined at game start
 		if = {
 			limit = { has_global_flag = dragon_season }
@@ -312,7 +321,7 @@ country_event = {
 			}
 		}
 		else = {
-			# Abandoned, cancel projects for all other
+			# Abandoned (and cancel projects for all other)
 			country_event = { id = distar.10951 }
 		}
 		# Enable other L-Gates over time (anyway)
@@ -469,6 +478,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		country_event = { id = distar.11000 }
 		create_country = {
 			name = "NAME_Spawning_Dragons"
 			type = ldragon_country

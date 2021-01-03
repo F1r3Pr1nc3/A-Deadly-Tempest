@@ -28,7 +28,7 @@ tech_lgate_activation = {
 
 tech_repeatable_lcluster_clue = {
 	area = engineering
-	cost = @tier2cost1
+	cost = @tier1cost3
 	cost_per_level = @repeatableTechLevelCost
 	tier = 2
 	is_rare = yes
