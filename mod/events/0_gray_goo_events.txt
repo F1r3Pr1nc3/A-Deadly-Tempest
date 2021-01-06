@@ -148,8 +148,7 @@ country_event = {
 				country_event = { id = graygoo.13 days = 1 }
 			} else = {
 				country_event = { id = graygoo.11 days = 1 }
-				# Remove Quest (FIX vanilla!?)
-				country_event = { id = distar.10959 days = 1 }
+				liquidate_clues = yes
 			}
 		}
 		observer_event = { id = observer.64 }
@@ -809,7 +808,7 @@ country_event = {
 					}
 					country_event = { id = graygoo.111 }
 					# Remove Quest (FIX vanilla!?)
-					country_event = { id = distar.10959 days = 1 }
+					liquidate_clues = yes
 				} else = { country_event = { id = graygoo.112 } }
 			}
 		}
