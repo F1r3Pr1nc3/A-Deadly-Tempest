@@ -152,11 +152,10 @@ country_event = {
 	}
 
 	immediate = {
-		print_scope_effect = yes # DEBUG
-		# FIXME vanilla: not used anywhere?
-		random_country = { limit = { is_country_type = ai_empire }
-			save_event_target_as = contingency
-		}
+		# FIXME vanilla: not used anywhere, not finished?
+		# random_country = { limit = { is_country_type = ai_empire }
+		# 	save_event_target_as = contingency
+		# }
 
 		create_leader = {
 			class = admiral
@@ -169,7 +168,7 @@ country_event = {
 		}
 		last_created_leader = { set_age = 0 }
 		capital_scope = {
-			save_event_target_as = cybrex_home
+			# save_event_target_as = cybrex_home # FIXME vanilla: not used anywhere, not finished?
 			create_fleet = {
 				effect = {
 					set_owner = prevprev

@@ -52,7 +52,7 @@ event = {
 			}
 		}
 	}
-	after = { log = "1 a_deadly_tempest_mod_active [GlobalVar.random_nhsc_value]" }
+	# after = { log = "1 a_deadly_tempest_mod_active [GlobalVar.random_nhsc_value]" }
 }
 
 event = {
@@ -68,7 +68,6 @@ event = {
 	# 	custom_tooltip = CmtTextOK.tooltip
 	# }
 	trigger = {
-		# always = no
 		# is_country_type = global_event is none
 		OR = {
 			NAND = {
@@ -128,7 +127,7 @@ event = {
 			}
 		}
 	}
-	after = { log = "2 a_deadly_tempest_mod_active [GlobalVar.random_nhsc_value]" }
+	# after = { log = "2 a_deadly_tempest_mod_active [GlobalVar.random_nhsc_value]" }
 }
 
 ####################################
@@ -187,10 +186,10 @@ country_event = {
 						set_planet_flag = hatchling_egg
 						random_list = {
 							60 = { set_planet_flag = hatchling_will_trigger }
-							40 = { 	 }
+							40 = { }
 						}
 					}
-					40 = { 	 }
+					40 = { }
 				}
 			}
 		}
@@ -502,10 +501,505 @@ country_event = {
 				# change_pc = pc_molten
 				reset_planet = yes
 			}
-			every_fleet_in_system = { destroy_fleet = this }
+			every_fleet_in_system = {
+				every_owned_ship = {
+					reduce_hp_percent = 50
+					reduce_hp = 1000
+				}
+				# destroy_fleet = this
+			}
 			break = yes
 		}
 		clear_global_event_target = lcluster_factory_system
+	}
+}
+
+# on_ship_destroyed_perp
+# This = owner of ship 1 (combatant)
+# From = owner of ship 2 (destroyed)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
+# nanite_assimilating_effect
+country_event = {
+	id = a_deadly_tempest.36
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = lgates_activated_globally
+		OR = {
+			is_robot_empire = yes
+			is_species_class = ROBOT # has_authority = auth_ancient_machine_intelligence
+			# is_country_type = gray_goo
+			# is_country_type = gate_builders
+			# is_country_type = cybrex_empire
+			# is_fallen_empire_machine = yes
+			# is_country_type = ai_empire
+			# is_country_type = global_event
+		}
+		fromfromfrom = {
+			is_ship_class = shipclass_military
+			NOT = { has_ship_flag = assimilate_that_robot_ship }
+		}
+		fromfrom = {
+			OR = {
+				is_ship_size = graygoo_mothership
+				is_ship_size = graygoo_interdictor
+				is_ship_size = nanite_dragon
+				is_ship_size = large_ship_ai
+				# is_ship_size = small_ship_ai
+			}
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					is_country_type = gray_goo
+					is_country_type = gate_builders
+					is_country_type = cybrex_empire
+				}
+				fromfromfrom = {
+					OR = {
+						is_ship_size = graygoo_mothership
+						is_ship_size = graygoo_interdictor
+						is_ship_size = nanite_dragon
+						is_ship_size = nanite_space_dragon_baby
+						is_ship_size = small_ship_ai
+						is_ship_size = large_ship_ai
+					}
+				}
+			}
+			random_list = {
+				2 = { }
+				8 = {
+					fromfrom = { nanite_assimilating_effect = yes }
+				}
+			}
+		}
+		else_if = {
+			limit = { from = { is_robot_empire = yes is_species_class = ROBOT } }
+			random_list = {
+				8 = { }
+				2 = {
+					fromfrom = { nanite_assimilating_effect = yes }
+				}
+			}
+		}
+	}
+}
+
+# on_emergency_ftl
+fleet_event = {
+	id = a_deadly_tempest.37
+	hide_window = yes
+	is_triggered_only = yes
+	location = root
+	trigger = {
+		any_owned_ship = {
+			is_disabled = yes
+		}
+	}
+	immediate = {
+		every_owned_ship = {
+			limit = {
+				has_ship_flag = assimilate_that_robot_ship
+				is_disabled = yes
+			}
+			# remove_ship_flag = assimilate_that_robot_ship
+			set_disable_at_health = -1
+			set_disabled = no
+			log= "assimilating escaped on [This.GetName] owner [This.Owner.GetName]"
+		}
+		# TEST fleet_combat_emergency_ftl, destroy and build new
+	}
+}
+
+
+# TODO desc
+# assimilate_that_ship
+ship_event = {
+	id = a_deadly_tempest.38
+	hide_window = yes
+	show_sound = event_ground_battle
+	is_triggered_only = yes
+	location = this
+	trigger = {
+		exists = this
+		is_scope_type = ship
+		has_ship_flag = assimilate_that_robot_ship
+	}
+	immediate = {
+		if = {
+			limit = {
+				NAND = {
+					exists = event_target:assimilate_that_ship
+					exists = event_target:assimilate_that_ship.owner
+				}
+			}
+			save_event_target_as = assimilate_that_ship
+			log = "ADT 38 assimilate_that_ship NOT exists"
+		}
+		event_target:assimilate_that_ship = {
+			if = {
+				limit = {
+					NAND = {
+						exists = event_target:assimilating_fleet
+						exists = event_target:assimilating_fleet.owner
+					}
+				}
+				solar_system = {
+					random_fleet_in_system = {
+						limit = {
+							is_ship_class = shipclass_military
+							NOR = {
+								is_same_value = from.fleet
+								is_same_value = event_target:assimilate_that_ship
+								has_fleet_flag = assimilate_that_ship_flag_temp
+							}
+							is_disabled = no
+							fleet_power > 0 # This alone is not sure as some ships can be on escape!?
+							# has_fleet_flag = commands_merge_fleet_flag_temp
+							# OR = { owner = { is_same_empire = root.owner } }
+							owner = {
+								OR = {
+									is_robot_empire = yes
+									is_species_class = ROBOT # has_authority = auth_ancient_machine_intelligence
+								}
+							}
+						}
+						save_event_target_as = assimilating_fleet
+					}
+				}
+			}
+			# if = {
+			# 	limit = { NOT = { exists = event_target:assimilating_fleet } }
+			# 	log = "WARNING 38 assimilating_fleet NOT exists"
+			# 	## Try fallback without flag (take own ships back)!?
+			# 	## ToDo: first change to owner design
+			# 	if = {
+			# 		limit = {
+			# 			fleet = { is_in_combat = no fleet_power < 1 }
+			# 		}
+			# 		destroy_fleet = {
+			# 			target = from.fleet
+			# 			kill_leader = no
+			# 			destroy_template = yes
+			# 		}
+			# 	}
+			# 	break = yes
+			# }
+			# else = {
+			fleet = {
+				if = {
+					limit = { is_in_combat = no }
+					if = {
+						limit = {
+							exists = event_target:assimilating_fleet
+							exists = event_target:assimilating_fleet.owner
+						}
+						if = {
+							limit = {
+								event_target:assimilating_fleet = { NOT = { is_same_value = PREV } is_in_combat = no }
+							}
+							set_owner = event_target:assimilating_fleet.owner
+							if = {
+								limit = { owner = { is_ai = no } }
+								enable_special_project = { name = NANITE_BOARDED_SHIP_REPAIR_PROJECT location = PREV owner = owner }
+							} else = {
+								fleet_event = { id = a_deadly_tempest.39 days = 7 }
+							}
+						}
+						else = {
+							PREV = { ship_event = { id = a_deadly_tempest.38 days = 8 } }
+						}
+					} else_if = {
+						limit = { fleet_power < 1 }
+						destroy_fleet = {
+							target = this
+							kill_leader = no
+							destroy_template = yes
+						}
+						log = "WARNING 38 assimilating_fleet NOT exists"
+					}
+				} else = {
+					PREV = { ship_event = { id = a_deadly_tempest.38 days = 8 } }
+				}
+			}
+		}
+	}
+}
+
+# Integrate assimilate_that_ship
+# This = disabled target fleet
+fleet_event = {
+	id = a_deadly_tempest.39
+	hide_window = yes
+	is_triggered_only = yes
+	location = this
+	trigger = {
+		exists = this
+		# exists = owner
+		is_scope_type = fleet
+	}
+	immediate = {
+		# log = " merge [This.GetName] " #  to [ROOT.FromFrom.fleet.GetName]
+		remove_fleet_flag = commands_merge_fleet_flag_temp
+		if = {
+			limit = {
+				NAND = {
+					exists = event_target:assimilate_that_ship
+					exists = event_target:assimilate_that_ship.owner
+				}
+			}
+			random_owned_ship = {
+				limit = { is_disabled = yes }
+				save_event_target_as = assimilate_that_ship
+			}
+			if = {
+				limit = {
+					NOT = { exists = event_target:assimilate_that_ship }
+				}
+				log = "WARNING assimilate_that_ship NOT exists"
+				solar_system = {
+					random_fleet_in_system = {
+						limit = { has_fleet_flag = assimilate_that_ship_flag_temp }
+						random_owned_ship = {
+							limit = { is_disabled = yes is_owned_by = root.owner }
+							save_event_target_as = assimilate_that_ship
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_fleet_flag = assimilate_that_ship_flag_temp
+							any_owned_ship = { count < 1 }
+						}
+					}
+					log = "WARNING assimilate_that_ship NOT exists, delete temp fleet"
+					delete_fleet = {
+						target = fleet
+						kill_leader = no
+						destroy_template = yes
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				exists = this # could be destroyd
+				NAND = {
+					exists = event_target:assimilating_fleet
+					exists = event_target:assimilating_fleet.owner
+				}
+			}
+			solar_system = {
+				random_fleet_in_system = {
+					limit = {
+						is_ship_class = shipclass_military
+						NOR = {
+							is_same_value = FROM
+							is_same_value = event_target:assimilate_that_ship
+							has_fleet_flag = assimilate_that_ship_flag_temp
+							owner = { is_country = event_target:global_event_country }
+						}
+						is_disabled = no
+						fleet_power > 0 # This alone is not sure as some ships can be on escape!?
+						has_fleet_flag = commands_merge_fleet_flag_temp
+						owner = {
+							OR = {
+								is_robot_empire = yes
+								is_species_class = ROBOT # has_authority = auth_ancient_machine_intelligence
+							}
+						}
+					}
+					save_event_target_as = assimilating_fleet
+				}
+			}
+		}
+		# log = "assimilating_fleet [assimilating_fleet.GetFleetName]"
+
+		if = {
+			limit = {
+				exists = this # could be destroyd
+				NAND = {
+					exists = event_target:assimilate_that_ship
+					exists = event_target:assimilate_that_ship.owner
+				}
+			}
+			every_owned_ship = {
+				limit = { is_disabled = yes }
+				set_disable_at_health = -1
+				set_disabled = no
+				destroy_ship = this
+			}
+			if = {
+				limit = { any_owned_ship = { count < 1 } }
+				delete_fleet = {
+					target = this
+					kill_leader = no
+					destroy_template = yes
+				}
+			}
+			log = "WARNING assimilate_that_ship NOT exists, delete_fleet"
+			no_scope = { save_global_event_target_as = assimilate_that_ship }
+			break = yes
+		}
+		if = {
+			limit = {
+				exists = this
+				is_scope_type = fleet
+				any_owned_ship = { is_disabled = yes }
+			}
+			save_event_target_as = assimilate_that_fleet
+		}
+		else_if = {
+			limit = { exists = event_target:assimilate_that_ship }
+			event_target:assimilate_that_ship.fleet = { save_event_target_as = assimilate_that_fleet }
+		} else = { break = yes }
+
+		event_target:assimilate_that_fleet = {
+			if = {
+				limit = { NOT = { exists = event_target:assimilating_fleet } }
+				# Try fallback without temp flag (take own ships back)!?
+				# ToDo: first change to owner design!?
+				solar_system = {
+					random_fleet_in_system = {
+						limit = {
+							is_ship_class = shipclass_military
+							NOR = {
+								is_same_value = FROM
+								is_same_value = event_target:assimilate_that_ship
+								has_fleet_flag = assimilate_that_ship_flag_temp
+								owner = { is_country = event_target:global_event_country }
+							}
+							fleet_power > 0
+						}
+						save_event_target_as = assimilating_fleet
+					}
+				}
+				if = {
+					limit = { NOT = { exists = event_target:assimilating_fleet } }
+					event_target:assimilate_that_ship = {
+						if = {
+							limit = { is_disabled = yes }
+							set_disable_at_health = -1
+							destroy_ship = this # delete_ship = this
+						}
+						# fleet = { remove_fleet_flag = assimilate_that_ship_flag_temp }
+					}
+					log = "WARNING assimilating_fleet NOT exists, abort merge"
+					# no_scope = { save_global_event_target_as = assimilating_fleet clear_global_event_target = assimilating_fleet }
+					break = yes
+				}
+			}
+			else_if = {
+				# We could also merge in combat, but this would be too strong!?
+				limit = { exists = event_target:assimilating_fleet }
+				if = {
+					limit = {
+						event_target:assimilating_fleet = { is_in_combat = no }
+					}
+					set_owner = event_target:assimilating_fleet.owner
+					remove_fleet_flag = assimilate_that_ship_flag_temp
+					unassign_leader = this.leader
+
+					every_owned_ship = {
+						limit = { is_disabled = yes }
+						set_disable_at_health = -1
+						set_disabled = no
+						reduce_hp_percent = 99
+						# repair_percentage = 1
+						remove_ship_flag = assimilate_that_robot_ship
+					}
+					if = {
+						limit = {
+							NOR = {
+								has_fleet_order = merge_fleet_order
+								is_same_value = event_target:assimilating_fleet
+							}
+						}
+						# set_location = { target = event_target:assimilating_fleet }
+						queue_actions = {
+							# move_to = ROOT.FromFrom.fleet # Disabled as it will order move fleet to the point in space, not follow the target fleet.
+							move_to = event_target:assimilating_fleet
+							find_closest_fleet = {
+								found_fleet = {
+									merge_fleet = {
+										target = event_target:assimilating_fleet
+										allow_ftl = yes
+									}
+								}
+							}
+						}
+					}
+					# another ship?
+					if = {
+						limit ={
+							event_target:assimilating_fleet.solar_system = {
+								any_fleet_in_system = { has_fleet_flag = assimilate_that_ship_flag_temp is_disabled = yes }
+							}
+						}
+						event_target:assimilating_fleet.solar_system = {
+							random_fleet_in_system = {
+								limit = {
+									is_ship_class = shipclass_military
+									is_disabled = yes # fleet_power < 1
+									has_fleet_flag = assimilate_that_ship_flag_temp
+								}
+								fleet_event = { id = a_deadly_tempest.39 }
+							}
+						}
+					}
+				}
+				else = {
+					fleet_event = { id = a_deadly_tempest.39 days = 7 }
+					# no_scope = { save_event_target_as = assimilate_that_ship }
+				}
+			}
+		}
+		no_scope = {
+			save_global_event_target_as = assimilate_that_ship save_global_event_target_as = assimilating_fleet
+			# clear_global_event_target = assimilate_that_ship clear_global_event_target = assimilating_fleet
+		}
+	}
+}
+
+# on_space_battle_won
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+country_event = {
+	id = a_deadly_tempest.40
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = lgates_activated_globally
+		OR = {
+			is_robot_empire = yes
+			is_species_class = ROBOT # has_authority = auth_ancient_machine_intelligence
+		}
+		exists = FromFromFrom
+		FromFrom = {
+			any_owned_ship = {
+				is_disabled = yes
+			}
+		}
+	}
+	immediate = {
+		if = {
+			limit = { FromFromFrom = { is_scope_type = fleet } }
+			FromFromFrom = {
+				if = {
+					limit = { is_disabled = yes }
+					fleet_event = { id = a_deadly_tempest.39 }
+				} else = {
+					fleet_event = { id = a_deadly_tempest.37 }
+				}
+			}
+		}
 	}
 }
 
@@ -829,7 +1323,7 @@ country_event = {
 					which = "fleetCounter"
 					value = 8
 				}
-				log = "set fleetCounter [graygoo_country.fleetCounter]"
+				# log = "set fleetCounter [graygoo_country.fleetCounter]"
 			}
 			set_timed_country_flag = {
 				flag = gk_told_to_leave
@@ -1003,7 +1497,7 @@ country_event = {
 									arrival_effect = shoal_factory_guard_move
 								}
 							}
-							1 = { 	 }
+							1 = { }
 						}
 					}
 				}
@@ -1094,7 +1588,7 @@ country_event = {
 				which = CmtVarCapitalDefenceNumber
 				value = -1
 			}
-			log = "CmtVarCapitalDefenceNumber [graygoo_country.CmtVarCapitalDefenceNumber] - [lcluster_factory_system.CmtVarCapitalDefenceNumber] while [graygoo_country.fleetCounter]"
+			# log = "CmtVarCapitalDefenceNumber [graygoo_country.CmtVarCapitalDefenceNumber] - [lcluster_factory_system.CmtVarCapitalDefenceNumber] while [graygoo_country.fleetCounter]"
 			if = {
 				limit = {
 					check_variable = {
@@ -1133,7 +1627,7 @@ country_event = {
 					# solar_system = { is_same_value = event_target:lcluster_factory_system }
 					# solar_system = { has_star_flag = lcluster }
 				}
-				log = "shoal base Guard [This.GetFleetName] returning to [Prev.Planet.GetName]"
+				# log = "shoal base Guard [This.GetFleetName] returning to [Prev.Planet.GetName]"
 				event_target:graygoo_country = {
 					change_variable = {
 						which = "fleetCounter"
@@ -1295,7 +1789,7 @@ country_event = {
 				who = event_target:graygoo_country
 				amount = 200
 			}
-			# establish_contact = { who = event_target:graygoo_country location =  }
+			# establish_contact = { who = event_target:graygoo_country location = }
 			establish_communications_no_message = event_target:graygoo_country
 			set_faction_hostility = {
 				set_hostile = no
@@ -1304,7 +1798,7 @@ country_event = {
 				target = event_target:graygoo_country
 			}
 		}
-		#log = "- goo_dragon_friendship: [spawning_dragons.GetName] - [graygoo_country.GetName]"
+		# log = "- goo_dragon_friendship: [spawning_dragons.GetName] - [graygoo_country.GetName]"
 	}
 }
 
@@ -1358,7 +1852,7 @@ country_event = {
 	trigger = {
 		NOR = {
 			has_country_flag = encountered_first_lgate
-			has_event_chain = "l_cluster_chain"
+			has_event_chain = l_cluster_chain
 		}
 		has_federation = yes
 		federation = {
@@ -1480,10 +1974,13 @@ country_event = {
 		add_global_ship_design = "NAME_Nanite_Interdictor"
 		add_global_ship_design = "NAME_Nanite_Dragon_Young"
 		add_global_ship_design = "NAME_Gatebuilder_Starbase"
-		add_global_ship_design = "NAME_Scavenger_Bot"
+		# add_global_ship_design = "NAME_Scavenger_Bot"
 		# add_global_ship_design = "NAME_Type_69"
 		set_country_flag = synthetic_empire
-		country_event = { id = a_deadly_tempest.13006 days = 1 }
+		country_event = {
+			id = a_deadly_tempest.13006
+			days = 1
+		}
 		#last_created_country
 		create_ship_design = { design = "NAME_Gatebuilder_Starbase" }
 		add_ship_design = last_created_design

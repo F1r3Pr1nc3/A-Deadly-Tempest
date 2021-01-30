@@ -27,7 +27,7 @@
 # 	on_pre_explore = {					# an effect that is called just before the jump of a right click "explore" action of a fleet
 #
 # 	}
-#	country_can_use = {					# trigger to evaluate if a country can use bypasses of this type. this: country, from: (optional) system owner; default: { always = yes  }
+#	country_can_use = {					# trigger to evaluate if a country can use bypasses of this type. this: country, from: (optional) system owner; default: { always = yes }
 #	}
 # 	on_action = "on_entering_bypass"	# The name of the on-action event that will be fired upon entering FTL (if set)
 # 										# THIS = Fleet
@@ -129,7 +129,7 @@ wormhole = {
 				from = {
 					OR = {
 						# System's owner has not closed borders to you
-						NOT = { has_closed_borders = root  }
+						NOT = { has_closed_borders = root }
 						# System's owner is at war with you
 						is_at_war_with = root
 						# System's owner is not a proper empire

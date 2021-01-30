@@ -1,7 +1,6 @@
 #	on_fail
 #	this = country (project owner)
 #	from = project creation scope (usually equals location)
-
 special_project = {
 	key = LCLUSTER_PROJECT
 	cost = 0
@@ -9,27 +8,23 @@ special_project = {
 	tech_department = engineering_technology
 	picture = GFX_evt_surreal_visions
 	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
-
 	event_scope = ship_event
-
 	requirements = {
 		shipclass_science_ship = 1
 		leader = scientist
-		skill = 3 # it should be really not that easy (so AI could have more problems with this)
+		skill = 3		# it should be really not that easy (so AI could have more problems with this)
 	}
-
 	on_success = {
-		owner = { country_event = { id = distar.10950 } }
+		owner = {
+			country_event = { id = distar.10950 }
+		}
 	}
-
 	on_fail = {
 	}
-
 	on_start = {
 	}
-
 	abort_trigger = {
-		has_global_flag = l_cluster_opened # someone else got to it first
+		has_global_flag = l_cluster_opened		# someone else got to it first
 	}
 }
 
@@ -40,22 +35,21 @@ special_project = {
 	timelimit = -1
 	picture = GFX_evt_space_dragon_young
 	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-
 	event_scope = ship_event
-
 	requirements = {
 		shipclass_science_ship = 1
 		leader = scientist
-		skill = 3 # it should be really not that easy (so AI could have more problems with this)
+		skill = 3		# it should be really not that easy (so AI could have more problems with this)
 	}
-
 	on_success = {
-		owner = { country_event = { id = distar.13035 } }
+		owner = {
+			country_event = { id = distar.13035 }
+		}
 		solar_system.star = { set_planet_flag = ldragon_recruited }
 	}
-
 	abort_trigger = {
-		fromfrom = { # system star
+		fromfrom = {
+			# system star
 			OR = {
 				has_planet_flag = ldragon_recruited
 				AND = {
@@ -67,6 +61,47 @@ special_project = {
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+special_project = {
+	key = "NANITE_BOARDED_SHIP_REPAIR_PROJECT"
+	cost = 0
+	days_to_research = 30
+	timelimit = 1080
+	tech_department = engineering_technology
+	picture = GFX_evt_space_debris
+	event_scope = ship_event
+	requirements = {
+		shipclass_military = 1
+		# always = yes
+		# shipclass_constructor = 1
+	}
+	abort_trigger = {
+		NOT = { exists = fromfrom }
+	}
+	AI_wait_days = {
+		weight = 16
+		modifier = {
+			factor = 0.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+	on_success = {
+		fromfrom = {
+			fleet_event = { id = a_deadly_tempest.39 }
+		}
+	}
+	on_fail = {
+		# destroy_fleet = fromfrom
+		from = {
+			set_disabled = no
+			destroy_fleet = {
+				target = from
+				kill_leader = no
+				destroy_template = yes
 			}
 		}
 	}

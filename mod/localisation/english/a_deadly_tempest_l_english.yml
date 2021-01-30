@@ -299,6 +299,10 @@
  TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_TITLE:0 "§HUnlocks Nanite Ships§!"
  TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_DESC:0 "§H$graygoo_interdictor$, $graygoo_mothership$ & $nanite_dragon$§!\nThese ships are self sufficient, but due to their...'unique' nature, their designs seem hardcoded and may not be compatible with certain technologies. But we can replicate the process to boosters our carrier operation."
 
+ ### Special Projects ###
+ NANITE_BOARDED_SHIP_REPAIR_PROJECT:0 "Seized Ship Repair"
+ NANITE_BOARDED_SHIP_REPAIR_PROJECT_DESC:0 "We have captured some of the ships from the enemy fleet, but they require field repair immediately. If we failed to repair them within given time, we have no choice but to abandon them."
+
  # Guardians
  gateway_guardians:0 "§HGuardians Path§!\n§EThis advanced nanite technology will lead in to the construction and replication of huge powerful guardians.§!"
  tech_nanite_guardians:0 "Guardian Replication Project"
@@ -346,3 +350,7 @@
  nanite_giga_guardian:0 "§M Nanite Defense Warform§!"
  nanite_giga_guardian_desc:0 "The $nanite_giga_guardian$ is an extremely-powerful defensive version of the $nanite_giga_warform$."
  nanite_giga_guardian_plural:0 "§M$nanite_giga_guardian$s§!"
+ spectre_army:0 "Spectre Division"
+ spectre_army_plural:0 "Spectre Divisions"
+ spectre_army_desc:0 "The Spectre is actually not a single unit, but a massive collection of small nanobots that constantly work together to maintain a solid form. They can take many forms but are usually seen as a large quadropedal walker with a turret on the back. Their ability to change form quickly allows them to scatter and dodge incoming fire. Unfortuanetly, being made of many tiny-bots leaves them vunerable if a shot hits."
+

@@ -75,7 +75,14 @@ country_event = {
 				type = "gray_goo"
 				name_list = "graygoo"
 				ignore_initial_colony_error = yes
-				authority = "auth_machine_intelligence"
+				authority = auth_ancient_machine_intelligence
+				ethos = {
+					ethic = ethic_gestalt_consciousness
+				}
+				civics = {
+					civic = civic_machine_terminator
+					civic = civic_machine_warbots
+				}
 				species = last_created
 				flag = {
 					icon= {
@@ -90,6 +97,7 @@ country_event = {
 				}
 				effect = {
 					save_global_event_target_as = graygoo_country
+					set_country_flag = synthetic_empire
 					## add technologies
 					country_event = { id = a_deadly_tempest.107 }
 				}
@@ -640,6 +648,7 @@ country_event = {
 				effect = {
 					save_global_event_target_as = graygoo_country
 					set_graphical_culture = "machine_01"
+					set_country_flag = synthetic_empire
 					add_resource = {
 						minerals = 5000
 						energy = 10000

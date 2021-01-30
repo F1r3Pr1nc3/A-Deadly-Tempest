@@ -16,6 +16,7 @@ lgate_base = {
 		upkeep = { }
 		produces = { }
 	}
+	entity_offset = { x = 8 y = 8 }
 	construction_blocks_others = no
 	upgrade_from = { lgate_disabled }
 	prerequisites = { "tech_lgate_construction" }

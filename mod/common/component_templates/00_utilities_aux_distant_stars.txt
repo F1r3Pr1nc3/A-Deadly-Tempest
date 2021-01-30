@@ -84,6 +84,7 @@ utility_component_template = {
 	}
 }
 
+# FIXME invalid component template
 utility_component_template = {
 	key = "LARGE_NANITE_HULL_2"
 	size = large

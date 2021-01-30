@@ -1,63 +1,63 @@
 "Gray Goo Erasers" = {
-	name="Gray Goo Erasers"
-	ship_prefix="GRAY"
-	species={
-		class="ESGO"
-		portrait="esgoo"
-		name="Gray Goo"
-		plural="Gray Goos"
-		adjective="Gray Goo"
-		name_list="MACHINE1"
-		trait="trait_machine_unit"
-		trait="trait_robot_recycled"
-		trait="trait_robot_high_maintenance"
-		trait="trait_robot_mass_produced"
-		trait="trait_robot_uncanny"
+	name = "Gray Goo Erasers"
+	ship_prefix = "GRAY"
+	species = {
+		class = "ESGO"
+		portrait = "esgoo"
+		name = "Gray Goo"
+		plural = "Gray Goos"
+		adjective = "Gray Goo"
+		name_list = "MACHINE3"
+		trait = "trait_machine_unit"
+		trait = "trait_robot_recycled"
+		trait = "trait_robot_high_maintenance"
+		trait = "trait_robot_mass_produced"
+		trait = "trait_robot_uncanny"
 	}
-	species_bio="They're worse than alien locusts. Gray Goo destroys resources by turning them into more Gray goo - more nano machines or whatever matter the Gray goo is composed of. It's The Virus for nonliving things - though it may be able to take down living things as well, and likely will turn them into nonliving things if they're in the wrong place (ie: outside). In theory, you can end up with a planetary body made of nothing but Gray goo. Physical laws regarding energy, thermodynamics and the like are an obstacle, but even a partial success in this case is likely to suck for everyone involved."
-	adjective="Gray Goo"
-	authority="auth_machine_intelligence"
-	government="gov_machine_terminator"
-	planet_name="0"
-	planet_class="pc_desert"
-	system_name="0"
-	initializer=""
-	graphical_culture="esgoo_01"
-	city_graphical_culture="esgoo_01"
-	empire_flag={
-		icon={
-			category="legion"
-			file="flag_mp_beta_04.dds"
+	species_bio = "They're worse than alien locusts. Gray Goo destroys resources by turning them into more Gray goo - more nano machines or whatever matter the Gray goo is composed of. It's The Virus for nonliving things - though it may be able to take down living things as well, and likely will turn them into nonliving things if they're in the wrong place (ie: outside). In theory, you can end up with a planetary body made of nothing but Gray goo. Physical laws regarding energy, thermodynamics and the like are an obstacle, but even a partial success in this case is likely to suck for everyone involved."
+	adjective = "Gray Goo"
+	authority = "auth_machine_intelligence"
+	government = "gov_machine_terminator"
+	planet_name = "0"
+	planet_class = "pc_desert"
+	system_name = "0"
+	initializer = ""
+	graphical_culture = "esgoo_01"
+	city_graphical_culture = "esgoo_01"
+	empire_flag = {
+		icon = {
+			category = "legion"
+			file = "flag_mp_beta_04.dds"
 		}
-		background={
-			category="backgrounds"
-			file="circle.dds"
+		background = {
+			category = "backgrounds"
+			file = "circle.dds"
 		}
-		colors={
+		colors = {
 			"teal"
 			"grey"
 			"null"
 			"null"
 		}
 	}
-	ruler={
-		gender=male
-		name="Mainframe"
-		portrait="esgoo"
-		texture=0
-		hair=0
-		clothes=0
-		leader_class="ruler"
+	ruler = {
+		gender = male
+		name = "Mainframe"
+		portrait = "esgoo"
+		texture = 0
+		hair = 0
+		clothes = 0
+		leader_class = "ruler"
 	}
-	spawn_as_fallen=yes
-	ignore_portrait_duplication=no
-	room="personality_erudite_explorers_room"
-	spawn_enabled=yes
-	ethic="ethic_gestalt_consciousness"
-	civics={
+	spawn_as_fallen = yes
+	ignore_portrait_duplication = no
+	room = "personality_erudite_explorers_room"
+	spawn_enabled = no
+	ethic = "ethic_gestalt_consciousness"
+	civics = {
 		"civic_machine_replication"
 		"civic_machine_terminator"
 		# "civic_machine_warfleet"
 	}
-	origin="origin_default"
+	origin = "origin_default"
 }

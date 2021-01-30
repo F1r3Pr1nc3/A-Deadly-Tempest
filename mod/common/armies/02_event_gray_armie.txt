@@ -133,7 +133,7 @@ nanite_giga_warform = {
 	allow = {
 		custom_tooltip = {
 			# text = titanic_troop_limit_tooltip
-			#planet = { has_planet_flag =  }
+			#planet = { has_planet_flag = }
 			planet = {
 				OR = {
 					is_capital = yes
@@ -170,4 +170,40 @@ nanite_giga_warform = {
 		}
 	}
 
+}
+
+# Spectre
+spectre_army = {
+	damage = 3.00
+	health = 0.75
+	has_morale = no
+	morale_damage = 1.75
+	collateral_damage = 10
+	war_exhaustion = 0.0
+	time = 180
+	has_species = yes
+
+	icon_frame = 11
+
+	resources = {
+		category = armies
+		cost = {
+			minerals = 200
+		}
+
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	potential = {
+		owner = { has_authority = auth_machine_intelligence }
+		from = {
+			has_trait = "trait_machine_unit"
+		}
+	}
+
+	show_tech_unlock_if = { has_authority = auth_machine_intelligence }
+
+	prerequisites = { "tech_assault_armies" }
 }

@@ -115,6 +115,17 @@ on_join_federation = {
 	}
 }
 
+# This = owner of ship 1 (combatant)
+# From = owner of ship 2 (destroyed)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
+on_ship_destroyed_perp = {
+	random_events = {
+		1 = 0
+		2 = a_deadly_tempest.36
+	}
+}
+
 # Called upon entering FTL (on-action name scripted on the Bypass type)
 # THIS = Fleet
 # FROM = System jumping to
@@ -124,3 +135,23 @@ on_join_federation = {
 # 	# 	ldragon_country_starts_nanite_ecosystem.1
 # 	# }
 # }
+
+# A fleet has successfully escaped from combat, executed right before the fleet enters FTL
+# This = escaping fleet
+# From = system escaped from
+# FromFrom = system escaping to
+on_emergency_ftl = {
+	events = {
+		a_deadly_tempest.37
+	}
+}
+
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_space_battle_won = {
+	events = {
+		a_deadly_tempest.40
+	}
+}

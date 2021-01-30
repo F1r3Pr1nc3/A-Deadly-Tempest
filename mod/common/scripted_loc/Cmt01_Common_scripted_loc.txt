@@ -21,7 +21,7 @@ defined_text = {
 		}
 		localization_key = CmtNameFallenEmpire
 	}
-	
+
 	text = {
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
@@ -143,11 +143,11 @@ defined_text = {
 defined_text = {
 	name = GetCurrnentSetting_SleeperMaterialist
 	text = {
-		trigger = { has_global_flag = CmtFlagSleeperForbidMaterialist  }
+		trigger = { has_global_flag = CmtFlagSleeperForbidMaterialist }
 		localization_key = CmtTextListedNone
 	}
 	text = {
-		trigger = { NOT = { has_global_flag = CmtFlagSleeperForbidMaterialist  } }
+		trigger = { NOT = { has_global_flag = CmtFlagSleeperForbidMaterialist } }
 		localization_key = CmtIconFanaticMaterialist
 	}
 }
@@ -179,11 +179,11 @@ defined_text = {
 defined_text = {
 	name = GetCurrnentSetting_SleeperXenophobe
 	text = {
-		trigger = { has_global_flag = CmtFlagSleeperForbidXenophobe    }
+		trigger = { has_global_flag = CmtFlagSleeperForbidXenophobe }
 		localization_key = CmtTextListedNone
 	}
 	text = {
-		trigger = { NOT = { has_global_flag = CmtFlagSleeperForbidXenophobe    } }
+		trigger = { NOT = { has_global_flag = CmtFlagSleeperForbidXenophobe } }
 		localization_key = CmtIconFanaticXenophobe
 	}
 }
