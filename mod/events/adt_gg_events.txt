@@ -637,7 +637,7 @@ ship_event = {
 				}
 			}
 			save_event_target_as = assimilate_that_ship
-			log = "ADT 38 assimilate_that_ship NOT exists"
+			#log = "ADT 38 assimilate_that_ship NOT exists"
 		}
 		event_target:assimilate_that_ship = {
 			if = {
@@ -719,7 +719,7 @@ ship_event = {
 							kill_leader = no
 							destroy_template = yes
 						}
-						log = "WARNING 38 assimilating_fleet NOT exists"
+						#log = "WARNING 38 assimilating_fleet NOT exists"
 					}
 				} else = {
 					PREV = { ship_event = { id = a_deadly_tempest.38 days = 8 } }
@@ -759,7 +759,7 @@ fleet_event = {
 				limit = {
 					NOT = { exists = event_target:assimilate_that_ship }
 				}
-				log = "WARNING assimilate_that_ship NOT exists"
+				#log = "WARNING assimilate_that_ship NOT exists"
 				solar_system = {
 					random_fleet_in_system = {
 						limit = { has_fleet_flag = assimilate_that_ship_flag_temp }
@@ -776,7 +776,7 @@ fleet_event = {
 							any_owned_ship = { count < 1 }
 						}
 					}
-					log = "WARNING assimilate_that_ship NOT exists, delete temp fleet"
+					#log = "WARNING assimilate_that_ship NOT exists, delete temp fleet"
 					delete_fleet = {
 						target = fleet
 						kill_leader = no
@@ -842,7 +842,7 @@ fleet_event = {
 					destroy_template = yes
 				}
 			}
-			log = "WARNING assimilate_that_ship NOT exists, delete_fleet"
+			#log = "WARNING assimilate_that_ship NOT exists, delete_fleet"
 			no_scope = { save_global_event_target_as = assimilate_that_ship }
 			break = yes
 		}
@@ -889,7 +889,7 @@ fleet_event = {
 						}
 						# fleet = { remove_fleet_flag = assimilate_that_ship_flag_temp }
 					}
-					log = "WARNING assimilating_fleet NOT exists, abort merge"
+					#log = "WARNING assimilating_fleet NOT exists, abort merge"
 					# no_scope = { save_global_event_target_as = assimilating_fleet clear_global_event_target = assimilating_fleet }
 					break = yes
 				}

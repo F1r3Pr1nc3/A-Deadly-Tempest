@@ -52,7 +52,7 @@ shoal_guard_reinforce = {
 }
 
 shoal_global_reinforce = {
-	log = "shoal_global_reinforce [AMOUNT] - [SHIPS]"
+	# log = "shoal_global_reinforce [AMOUNT] - [SHIPS]"
 	every_owned_fleet = {
 		limit = {
 			is_in_combat = no
@@ -620,7 +620,7 @@ nanite_assimilating_effect = {
 				ROOT.FromFromFrom = { is_scope_type = ship }
 			}
 		}
-		log = "WARNING ROOT.FromFromFrom NOT exists " # [ROOT.FromFromFrom.GetName]
+		# log = "WARNING ROOT.FromFromFrom NOT exists " # [ROOT.FromFromFrom.GetName]
 		break=yes
 	}
 	else_if = {
@@ -746,7 +746,7 @@ giveShipDesign = {
 			# add_global_ship_design = $DENAME$
 			create_ship_design = { design = $DENAME$ }
 			add_ship_design = last_created_design
-			log = "Create NEW DESIGN - DENAME for [This.GetName]"
+			# log = "Create NEW DESIGN - DENAME for [This.GetName]"
 
 			# set_timed_country_flag = { flag = nanite_design_temp days = 20 }
 		}
@@ -757,13 +757,13 @@ giveShipDesign = {
 			is_scope_type = ship
 			exists = owner
 		}
-		log = "Create NOT new DESIGN - DENAME "			# [This.GetName] - [FromFromFrom.GetName]
+		#log = "Create NOT new DESIGN - DENAME "			# [This.GetName] - [FromFromFrom.GetName]
 		owner = {
 			set_assimilating_fleet_scope = { "DESIGN" = $DESIGN$ "DENAME" = $DENAME|0$ }
 			# [[DENAME] giveShipDesign = { "DESIGN" = $DESIGN$ "DENAME" = $DENAME|0$ }]
 		}
 	} else = {
-		log = "WARNING giveShipDesign NOT valid scope" #[This.GetName]
+		#log = "WARNING giveShipDesign NOT valid scope" #[This.GetName]
 		event_target:global_event_country = {
 			if = {
 				limit = {
@@ -803,12 +803,12 @@ set_assimilating_fleet_scope = {
 		}
 		Root.From = {
 			nanite_ship_assimilating_effect = { "DESIGN" = $DESIGN$ "DENAME" = $DENAME|0$ }
-			log = "Root.From has design"
+			# log = "Root.From has design"
 		}
 	}
 	else = {
 		# TODO # limit = { event_target:global_event_country = { has_existing_ship_design = $DESIGN$ } } log = "global_event_country has design"
-		log = "design NOT exists"		#[This.GetName]
+		# log = "design NOT exists"		#[This.GetName]
 		event_target:global_event_country = {
 			nanite_ship_assimilating_effect = { "DESIGN" = $DESIGN$ "DENAME" = $DENAME|0$ }
 		}
@@ -849,7 +849,7 @@ nanite_ship_assimilating_effect = {
 				save_event_target_as = assimilate_that_fleet
 			}
 		}
-	} else = { log = "WARNING ROOT.FromFrom.fleet NOT exists [ROOT.FromFrom.fleet.GetFleetName]" }
+	} # else = { log = "WARNING ROOT.FromFrom.fleet NOT exists [ROOT.FromFrom.fleet.GetFleetName]" }
 
 	if = {
 		limit = { NOT = { exists = event_target:assimilate_that_fleet } }
