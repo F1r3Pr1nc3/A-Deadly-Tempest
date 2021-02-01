@@ -295,50 +295,43 @@ country_event = {
 		if = {
 			limit = { has_global_flag = dragon_season }
 			# All gates must not be deactivated, so call it first
-			country_event = { id = distar.13000 }
+			country_event = { id = distar.13000 } # must be called immediately
 		}
 		if = {
 			limit = { has_global_flag = gray_goo_crisis_set }
-			country_event = {
-				id = graygoo.1
-				days = 1
-			}
-			country_event = { id = a_deadly_tempest.13006 days = 1 }
-			country_event = {
-				id = a_deadly_tempest.137
-				days = 24
-			}
+			country_event = { id = graygoo.1 days = 2 }
+			country_event = { id = a_deadly_tempest.13006 days = 2 }
+			country_event = { id = a_deadly_tempest.137 days = 24 }
 		}
 		else_if = {
 			limit = { has_global_flag = gray_goo_empire_set }
-			country_event = {
-				id = graygoo.100
-				days = 2
-			}
-			country_event = {
-				id = a_deadly_tempest.137
-				days = 24
-			}
+			country_event = { id = graygoo.100 days = 3 }
+			country_event = { id = a_deadly_tempest.137 days = 24 }
 		}
 		else = {
 			# Abandoned (and cancel projects for all other)
 			country_event = { id = distar.10951 }
 		}
-		# Enable other L-Gates over time (anyway)
-		random_country = {
-			limit = { is_country_type = global_event }
-			country_event = {
-				id = distar.10960
-				days = 200
-				random = 500
+		if = {
+			limit = { NOT = { exists = event_target:global_event_country } }
+			random_country = {
+				limit = { is_country_type = global_event }
+				save_global_event_target_as = global_event_country
 			}
+		}
+		event_target:global_event_country = {
+			# Enable other L-Gates over time (anyway)
+			country_event = { id = distar.10960 days = 200 random = 500 }
 		}
 		# flip L-Gates
 		# Activate Terminal Egress L-Gate (if not already opened by other outcome)
-		event_target:lcluster1 = {
-			random_system_megastructure = {
-				limit = { CmtTriggerIsClosedLgate = yes }
-				CmtEffectOpenLgate = yes
+		if = {
+			limit = { has_global_flag = l_cluster_opened exists = event_target:lcluster1 }
+			event_target:lcluster1 = {
+				random_system_megastructure = {
+					limit = { CmtTriggerIsClosedLgate = yes }
+					CmtEffectOpenLgate = yes
+				}
 			}
 		}
 		# Activate originating L-Gate: Put AFTER distar.13000 (if not already opened by other outcome)
@@ -365,19 +358,12 @@ country_event = {
 						has_event_chain = l_cluster_chain
 					}
 				}
-				give_technology = {
-					tech = tech_lgate_activation
-					message = no
-				}
+				give_technology = { tech = tech_lgate_activation message = no }
 			}
 			set_global_flag = l_cluster_opened
 		}
-
 		## Make dragons friendly (sometimes not working so call it twice)
-		country_event = {
-			id = a_deadly_tempest.13006
-			days = 2
-		}
+		country_event = { id = a_deadly_tempest.13006 days = 3 }
 	}
 }
 
@@ -459,11 +445,7 @@ country_event = {
 			limit = { CmtTriggerIsClosedLgate = yes }
 			CmtEffectOpenLgate = yes
 			prev = {
-				country_event = {
-					id = distar.10960
-					days = 200
-					random = 500
-				}
+				country_event = { id = distar.10960 days = 200 random = 500 }
 			}
 		}
 	}
@@ -543,7 +525,7 @@ country_event = {
 				}
 				# NOT = { any_system_within_border = { CmtTriggerIsGalaxyLgateSystem = yes } }
 			}
-			country_event = { id = distar.13011 }
+			country_event = { id = distar.13011 days = 1 }
 		}
 		while = {
 			limit = {
@@ -584,12 +566,12 @@ country_event = {
 											NOT = { is_same_empire = root }
 										}
 										set_country_flag = knows_ldragon
-										country_event = { id = distar.13010 }
+										country_event = { id = distar.13010 days = 1 }
 									}
 									else = {
 										## Notification 1
 										root = {
-											country_event = { id = distar.13010 }
+											country_event = { id = distar.13010 days = 1 }
 										}
 									}
 								}
@@ -634,10 +616,7 @@ country_event = {
 				}
 			}
 		}
-		country_event = {
-			id = a_deadly_tempest.13006
-			days = 1
-		}
+		country_event = { id = a_deadly_tempest.13006 days = 1 }
 	}
 }
 

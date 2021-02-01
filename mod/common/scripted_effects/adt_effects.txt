@@ -849,7 +849,7 @@ nanite_ship_assimilating_effect = {
 				save_event_target_as = assimilate_that_fleet
 			}
 		}
-	} else = { log = "WARNING ROOT.FromFrom.fleet NOT exists [ROOT.FromFrom.fleet.GetName]" }
+	} else = { log = "WARNING ROOT.FromFrom.fleet NOT exists [ROOT.FromFrom.fleet.GetFleetName]" }
 
 	if = {
 		limit = { NOT = { exists = event_target:assimilate_that_fleet } }

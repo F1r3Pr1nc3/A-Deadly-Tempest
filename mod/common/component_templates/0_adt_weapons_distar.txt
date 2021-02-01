@@ -18,14 +18,11 @@ strike_craft_component_template = {
 	count = 10
 	regeneration_per_day = @regen
 	launch_time = 1
-	# hits soft but fast (vanilla 2.6.3)
-	# damage = { min = 10 max = 12 } cooldown = 4
-	# hits hard but slow (vanilla 2.6.2)
-	# damage = { min = 19 max = 21 } cooldown = 8
-	damage = { min = 15 max = 17 }
-	cooldown = 6
+	# damage = { min = 19 max = 21 } cooldown = 8 # hits hard but slow (vanilla 2.6.2)
+	damage = { min = 10 max = 12 } # hits soft but fast (vanilla 2.6.3)
+	cooldown = 4
 	range = 20
-	engagement_range = 120
+	engagement_range = 150
 	accuracy = 1
 	tracking = 1
 	health = 100
@@ -35,9 +32,11 @@ strike_craft_component_template = {
 	speed = 600
 	rotation_speed = 0.4
 	acceleration = 0.5
+
 	shield_damage = 1
 	shield_penetration = 1
 	armor_penetration = 0.66
+
 	ship_behavior = "bombers_behavior"
 	weapon_type = instant  # Not PD, unlike normal strike craft
 	projectile_gfx = "strike_craft_laser_3"

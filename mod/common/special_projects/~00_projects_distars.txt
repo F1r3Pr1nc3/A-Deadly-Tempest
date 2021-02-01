@@ -1,33 +1,3 @@
-#	on_fail
-#	this = country (project owner)
-#	from = project creation scope (usually equals location)
-special_project = {
-	key = LCLUSTER_PROJECT
-	cost = 0
-	days_to_research = 180
-	tech_department = engineering_technology
-	picture = GFX_evt_surreal_visions
-	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
-	event_scope = ship_event
-	requirements = {
-		shipclass_science_ship = 1
-		leader = scientist
-		skill = 3		# it should be really not that easy (so AI could have more problems with this)
-	}
-	on_success = {
-		owner = {
-			country_event = { id = distar.10950 }
-		}
-	}
-	on_fail = {
-	}
-	on_start = {
-	}
-	abort_trigger = {
-		has_global_flag = l_cluster_opened		# someone else got to it first
-	}
-}
-
 special_project = {
 	key = TAME_LDRAGON_PROJECT
 	tech_department = society_technology
@@ -63,6 +33,33 @@ special_project = {
 				}
 			}
 		}
+	}
+}
+
+special_project = {
+	key = LCLUSTER_PROJECT
+	cost = 0
+	days_to_research = 180
+	tech_department = engineering_technology
+	picture = GFX_evt_surreal_visions
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	event_scope = ship_event
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill = 3		# it should be really not that easy (so AI could have more problems with this)
+	}
+	on_success = {
+		owner = {
+			country_event = { id = distar.10950 }
+		}
+	}
+	on_fail = {
+	}
+	on_start = {
+	}
+	abort_trigger = {
+		has_global_flag = l_cluster_opened		# someone else got to it first
 	}
 }
 

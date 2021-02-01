@@ -1176,7 +1176,7 @@ country_event = {
 					}
 				}
 			}
-			# Scrapper bot
+			# Scrapperbot
 			if = {
 				limit = { exists = event_target:scavenger_bot_country }
 				set_faction_hostility = {
@@ -1737,68 +1737,112 @@ country_event = {
 	id = a_deadly_tempest.13006
 	hide_window = yes
 	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_global_flag = gray_goo_crisis_set
+			has_global_flag = gray_goo_empire_set
+		}
+		has_global_flag = dragon_season
+	}
 	immediate = {
 		if = {
 			limit = {
 				NOT = { exists = event_target:spawning_dragons }
 			}
-			every_country = {
-				if = {
-					limit = { is_country_type = ldragon_country }
-					save_global_event_target_as = spawning_dragons
-				}
-				else = { break = yes }
+			random_country = {
+				limit = { is_country_type = ldragon_country }
+				save_global_event_target_as = spawning_dragons
 			}
 		}
 		if = {
 			limit = {
 				NOT = { exists = event_target:graygoo_country }
 			}
-			every_country = {
-				if = {
+			random_country = {
+				limit = {
+					OR = {
+						is_country_type = gray_goo
+						is_country_type = gate_builders
+					}
+				}
+				save_global_event_target_as = graygoo_country
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:graygoo_country
+				exists = event_target:spawning_dragons
+			}
+			event_target:graygoo_country = {
+				every_owned_fleet = {
 					limit = {
-						OR = {
-							is_country_type = gray_goo
-							is_country_type = gate_builders
+						is_disabled = no
+						# is_in_combat = yes
+						is_ship_class = shipclass_military
+						solar_system = {
+							NOT = { has_star_flag = lcluster }
 						}
 					}
-					save_global_event_target_as = graygoo_country
+					every_owned_ship = { set_disabled = yes }
+					# set_aggro_range = 0
+					# set_fleet_stance = passive
+					# log = "graygoo fleet tmp disabled"
 				}
-				else = { break = yes }
+				set_country_flag = first_alien_life
+				set_country_flag = has_encountered_other_empire
+				establish_communications_no_message = event_target:spawning_dragons
+				add_trust = {
+					who = event_target:spawning_dragons
+					amount = 2000
+				}
+				set_faction_hostility = {
+					set_hostile = no
+					# set_neutral = no
+					set_friendly = yes
+					target = event_target:spawning_dragons
+				}
+				country_event = { id = a_deadly_tempest.13007 days = 3 }
 			}
+			event_target:spawning_dragons = {
+				set_country_flag = first_alien_life
+				set_country_flag = has_encountered_other_empire
+				# establish_contact = { who = event_target:graygoo_country location =  }
+				establish_communications_no_message = event_target:graygoo_country
+				add_trust = {
+					who = event_target:graygoo_country
+					amount = 2000
+				}
+				set_faction_hostility = {
+					set_hostile = no
+					# set_neutral = no
+					set_friendly = yes
+					target = event_target:graygoo_country
+				}
+				# country_event = { id = a_deadly_tempest.13007 days = 4 }
+			}
+			# log = "goo_dragon_friendship" # [spawning_dragons.GetName] - [graygoo_country.GetName]
 		}
-		event_target:graygoo_country = {
-			set_country_flag = first_alien_life
-			set_country_flag = has_encountered_other_empire
-			add_trust = {
-				who = event_target:spawning_dragons
-				amount = 200
-			}
-			establish_communications_no_message = event_target:spawning_dragons
-			set_faction_hostility = {
-				set_hostile = no
-				#set_neutral = no
-				set_friendly = yes
-				target = event_target:spawning_dragons
-			}
+		# else = {
+		# 	# log = "goo_dragon_friendship country missing"
+		# 	event_target:spawning_dragons = {
+		# 		every_owned_ship = {
+		# 			limit = { is_disabled = no }
+		# 			set_disabled = yes
+		# 		}
+		# 	}
+		# }
+	}
+}
+
+country_event = {
+	id = a_deadly_tempest.13007
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_owned_ship = {
+			limit = { is_disabled = yes }
+			set_disabled = no
 		}
-		event_target:spawning_dragons = {
-			set_country_flag = first_alien_life
-			set_country_flag = has_encountered_other_empire
-			add_trust = {
-				who = event_target:graygoo_country
-				amount = 200
-			}
-			# establish_contact = { who = event_target:graygoo_country location = }
-			establish_communications_no_message = event_target:graygoo_country
-			set_faction_hostility = {
-				set_hostile = no
-				#set_neutral = no
-				set_friendly = yes
-				target = event_target:graygoo_country
-			}
-		}
-		# log = "- goo_dragon_friendship: [spawning_dragons.GetName] - [graygoo_country.GetName]"
 	}
 }
 

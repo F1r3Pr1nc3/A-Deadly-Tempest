@@ -186,7 +186,7 @@ graygoo_mothership = {
 	required_component_set = "special_ship_slot"			# built-in support for New Ship Classes and More
 
 	empire_limit = {
-		base = 1
+		base = 3
 		max = 100
 		naval_cap_div = 100
 	}
