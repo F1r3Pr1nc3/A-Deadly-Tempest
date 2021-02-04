@@ -187,8 +187,8 @@ graygoo_mothership = {
 
 	empire_limit = {
 		base = 3
-		max = 100
-		naval_cap_div = 100
+		max = 90
+		naval_cap_div = 120
 	}
 }
 

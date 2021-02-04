@@ -4,7 +4,7 @@
  ####################################
 
  ### Events
- mother_ship_hire:0 "Gray can create a $NAME_Nanite_Warship$ for our use, however Gray will not create more than five for our empire; for a massive cost in resources to create the nanites for the ship./n/These ships are capable of creating smaller ships to escort them but only if the mothership is still intact. But in times of great crisis they might be able to create more.../n/Gray can create these ships no matter what form it takes as long as Gray is not reforming."
+ mother_ship_hire:0 "Gray can create a $NAME_Nanite_Warship$ for our use, however Gray will not create more than five for our empire; for a massive cost in resources to create the nanites for the ship.\nThese ships are capable of creating smaller ships to escort them but only if the mothership is still intact. But in times of great crisis they might be able to create more...\nGray can create these ships no matter what form it takes as long as Gray is not reforming."
 
  a_deadly_tempest.82.name:0 "[From.GetName] Engulfed"
  a_deadly_tempest.82.desc:0 "A fleet belonging to the §H[From.From.GetName]§! has massacred the population of §H[From.GetName]§!! After a massed and unrelenting orbital bombardment campaign, all population centers on the surface have been systematically wiped out, reducing the [From.GetPlanetMoon] to an lifeless husk that is now only covered in countless nanite swarms."
@@ -352,5 +352,5 @@
  nanite_giga_guardian_plural:0 "§M$nanite_giga_guardian$s§!"
  spectre_army:0 "Spectre Division"
  spectre_army_plural:0 "Spectre Divisions"
- spectre_army_desc:0 "The Spectre is actually not a single unit, but a massive collection of small nanobots that constantly work together to maintain a solid form. They can take many forms but are usually seen as a large quadropedal walker with a turret on the back. Their ability to change form quickly allows them to scatter and dodge incoming fire. Unfortuanetly, being made of many tiny-bots leaves them vunerable if a shot hits."
+ spectre_army_desc:0 "The Spectre is actually not a single unit, but a massive collection of small nanobots that constantly work together to maintain a solid form. They can take many forms but are usually seen as a large quadropedal walker with a turret on the back. Their ability to change form quickly allows them to scatter and dodge incoming fire. Unfortunately, being made of many tiny-dots leaves them vulnerable if a shot hits."
 
