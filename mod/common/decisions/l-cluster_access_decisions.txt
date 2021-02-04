@@ -92,8 +92,10 @@ decision_close_lcluster = {
 		hidden_effect = {
 			remove_global_flag = lgates_activated_globally
 			owner = {
-				remove_country_flag = lgates_activated
 				remove_notification_modifier = lgate_access
+			}
+			every_playable_country = {
+				remove_country_flag = lgates_activated
 			}
 			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
 		}
