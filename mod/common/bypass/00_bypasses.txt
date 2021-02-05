@@ -220,7 +220,7 @@ lgate = {
 			}
 		}
 	}
-	# on_action = "on_entering_lgate"
+	on_action = "on_entering_lgate" # for compatibility (key free to use)
 	scripted_connection = {
 		# defines endpoints that can only reach the "nexus"
 		node = {
