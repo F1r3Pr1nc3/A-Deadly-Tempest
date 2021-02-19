@@ -407,18 +407,26 @@ country_event = {
 	show_sound = event_activating_unknown_technology
 	location = event_target:candidate_gateway
 	is_triggered_only = yes
-	fire_only_once = yes
+	# fire_only_once = yes
 
 	immediate = {
-		if = {
-			limit = { NOT = { exists = event_target:lcluster1 } }
-			country_event = { id = distar.11000 }
-		}
+		# if = {
+		# 	limit = { NOT = { exists = event_target:lcluster1 } }
+		# 	country_event = { id = distar.11000 }
+		# }
+		# every_playable_country = {
+		# 	limit = {
+		# 		has_special_project = LCLUSTER_PROJECT
+		# 		NOT = { is_same_value = root }
+		# 	}
+		# 	country_event = { id = distar.10952 }
+		# }
+
 		every_playable_country = {
 			limit = {
-				NOT = {
+				NOR = {
 					has_country_flag = lcluster_opener
-					# is_same_empire = root
+					is_same_empire = root
 				}
 			}
 			if = {
@@ -432,12 +440,15 @@ country_event = {
 			}
 		}
 		observer_event = { id = observer.62 }
-
-		# Remove Quest for Root (fallback only)
-		liquidate_clues = yes
 	}
-
 	option = {
 		name = "distar.10951.a"
+	}
+	after = {
+		# Remove Quest for Root (fallback only)
+		if = {
+			limit = { has_special_project = LCLUSTER_PROJECT }
+			abort_special_project = { type = LCLUSTER_PROJECT }
+		}
 	}
 }

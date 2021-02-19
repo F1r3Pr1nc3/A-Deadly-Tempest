@@ -1653,7 +1653,7 @@ country_event = {
 		exists = event_target:lcluster_factory_system
 		event_target:lcluster_factory_system = {
 			any_fleet_in_system = {
-				owner = { is_same_value = root }
+				owner = { is_same_empire = root }
 				is_in_combat = no
 				is_ship_size = graygoo_factory
 			}

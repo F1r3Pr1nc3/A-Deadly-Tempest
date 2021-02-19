@@ -106,10 +106,7 @@ country_event = {
 		set_country_flag = lcluster_opener
 		set_country_flag = lgates_activated
 		set_global_flag = lgates_activated_globally
-		set_timed_global_flag = {
-			flag = CmtFlagLgateOpenedNow
-			days = 5
-		}
+		set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 5 }
 
 		### Set 1st L-Gate as Target
 		if = {
@@ -143,7 +140,7 @@ country_event = {
 							exists = owner
 							exists = leader
 							exists = solar_system
-							owner = { is_same_value = root }
+							owner = { is_same_empire = root }
 						}
 						every_ship = {
 							limit = { is_ship_class = shipclass_science_ship }
@@ -277,40 +274,30 @@ country_event = {
 			}
 		}
 		# Spawn L-Cluster (try to hide lag with desc window)
-		if = {
-			limit = {
-				NOR = {
-					has_global_flag = l_cluster_opened
-					has_global_flag = dragon_season
-				}
-				# To omit this, the event must be started at graygoo (which is still too risky)
-				OR = {
-					has_global_flag = gray_goo_empire_set
-					has_global_flag = gray_goo_crisis_set
-				}
-			}
-			country_event = { id = distar.11000 }
-		}
 		# Outcome, to be determined at game start
 		if = {
 			limit = { has_global_flag = dragon_season }
 			# All gates must not be deactivated, so call it first
 			country_event = { id = distar.13000 } # must be called immediately
+			country_event = { id = distar.11000 days = 1 }
 		}
 		if = {
 			limit = { has_global_flag = gray_goo_crisis_set }
+			country_event = { id = distar.11000 }
 			country_event = { id = graygoo.1 days = 2 }
 			country_event = { id = a_deadly_tempest.13006 days = 2 }
 			country_event = { id = a_deadly_tempest.137 days = 24 }
 		}
 		else_if = {
 			limit = { has_global_flag = gray_goo_empire_set }
+			country_event = { id = distar.11000 }
 			country_event = { id = graygoo.100 days = 3 }
 			country_event = { id = a_deadly_tempest.137 days = 24 }
 		}
 		else = {
 			# Abandoned (and cancel projects for all other)
 			country_event = { id = distar.10951 }
+			country_event = { id = distar.11000 days = -1 }
 		}
 		if = {
 			limit = { NOT = { exists = event_target:global_event_country } }
@@ -326,7 +313,7 @@ country_event = {
 		# flip L-Gates
 		# Activate Terminal Egress L-Gate (if not already opened by other outcome)
 		if = {
-			limit = { has_global_flag = l_cluster_opened exists = event_target:lcluster1 }
+			limit = { exists = event_target:lcluster1 }
 			event_target:lcluster1 = {
 				random_system_megastructure = {
 					limit = { CmtTriggerIsClosedLgate = yes }
@@ -347,6 +334,7 @@ country_event = {
 				}
 			}
 		}
+		set_global_flag = l_cluster_opened
 		### Technology Control: Put AFTER graygoo.110 (copy on graygoo.116)
 		if = {
 			limit = { NOT = { has_global_flag = gray_goo_empire_set } }
@@ -360,7 +348,6 @@ country_event = {
 				}
 				give_technology = { tech = tech_lgate_activation message = no }
 			}
-			set_global_flag = l_cluster_opened
 		}
 		## Make dragons friendly (sometimes not working so call it twice)
 		country_event = { id = a_deadly_tempest.13006 days = 3 }
@@ -460,7 +447,6 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		country_event = { id = distar.11000 }
 		create_country = {
 			name = "NAME_Spawning_Dragons"
 			type = ldragon_country
