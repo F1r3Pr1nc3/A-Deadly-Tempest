@@ -572,34 +572,43 @@ country_event = {
 				save_event_target_as = main_star
 			}
 
-			## built-in-support for Twinks Dessanu
+
+			## built-in-support for Twinks Dessanu ##
+			event_target:global_event_country = {
+				give_technology = { tech = tech_graygoo_nanite_jump_drive message = no }
+			}
 			if = {
 				limit = {
-					NOT = {
-						any_playable_country = { has_origin = origin_machine_nanites }
-					}
+					NOT= { any_playable_country = { has_origin = origin_machine_nanites } }
+					event_target:global_event_country = { has_technology = tech_graygoo_nanite_jump_drive }
 				}
 				create_species = {
 					class = "Tempest"
-					portrait = random
+					portrait = "humang"
 					name = "NAME_Dessanu"
 					name_list = "ART4"
 					immortal = yes
-					# traits = { trait = "trait_machine_unit" }
-				}
-			}
-			if = {
-				limit = { last_created_species = { is_species_class = "Tempest" } }
-				last_created_species = {
-					modify_species = {
-						portrait = "humang"
-						add_trait = "trait_grey_tempest_intellect"
-						add_trait = "trait_grey_tempest_form"
-						add_trait = "trait_grey_tempest_nanites"
-						add_trait = "trait_grey_tempest_nanitecommunication"
+					traits = {
+						# trait = "trait_machine_unit"
+						trait = "trait_grey_tempest_intellect"
+						trait = "trait_grey_tempest_form"
+						trait = "trait_grey_tempest_nanites"
+						trait = "trait_grey_tempest_nanitecommunication"
 					}
 				}
+			# }
+			# if = {
+			# 	limit = { last_created_species = { is_species_class = "Tempest" } } # doesnt work
+			# 	last_created_species = {
+			# 		modify_species = {
+			# 			add_trait = "trait_grey_tempest_intellect"
+			# 			add_trait = "trait_grey_tempest_form"
+			# 			add_trait = "trait_grey_tempest_nanites"
+			# 			add_trait = "trait_grey_tempest_nanitecommunication"
+			# 		}
+			# 	}
 			} else = {
+			# if = { limit = { NOT = { last_created_species = { species_portrait = "humang" } } }
 				random_list = {
 					15 = {
 						create_species = {
@@ -684,6 +693,7 @@ country_event = {
 						limit = { NOT = { exists = event_target:graygoo_country } }
 						save_global_event_target_as = graygoo_country
 					} else = { save_global_event_target_as = gate_builders }
+					# set_graphical_culture = "reptilian_01"
 					set_graphical_culture = "machine_01"
 					set_country_flag = synthetic_empire
 					set_country_flag = fallen_empire_machine
@@ -700,19 +710,6 @@ country_event = {
 					# 		# new_pop_resource_requirement = { type = food_surplus value = 0 }
 					# 	}
 					# }
-					modify_species = {
-						species = species
-						add_trait = trait_machine_unit
-						add_trait = trait_mechanical
-						add_traits_at_start_of_list = yes
-						# ideal_planet_class = pc_gray_goo
-						change_scoped_species = yes
-					}
-					set_policy = {
-						policy = orbital_bombardment
-						option = orbital_bombardment_armageddon
-						cooldown = no
-					}
 					create_leader = {
 						class = ruler
 						species = last_created
@@ -733,6 +730,19 @@ country_event = {
 					}
 					set_leader = last_created_leader
 					assign_leader = last_created_leader
+					modify_species = {
+						species = species
+						add_trait = trait_machine_unit
+						add_trait = trait_mechanical
+						add_traits_at_start_of_list = yes
+						# ideal_planet_class = pc_gray_goo
+						change_scoped_species = yes
+					}
+					set_policy = {
+						policy = orbital_bombardment
+						option = orbital_bombardment_armageddon
+						cooldown = no
+					}
 
 					## add technologies
 					country_event = { id = a_deadly_tempest.107 }
@@ -743,9 +753,9 @@ country_event = {
 				## built-in-support for Twinks Dessanu
 				if = {
 					limit = {
+						# has_origin = origin_machine_nanites
 						last_created_species = { species_portrait = "humang" }
 					}
-					# limit = { has_origin = origin_machine_nanites }
 					set_graphical_culture = grey_tempesttw
 					set_city_graphical_culture = grey_tempesttw
 					set_origin = origin_machine_nanites
@@ -761,6 +771,7 @@ country_event = {
 							civic = "civic_machine_nanites_culture"
 						}
 					}
+
 					country_add_ethic="ethic_gestalt_consciousness"
 				}
 			}
