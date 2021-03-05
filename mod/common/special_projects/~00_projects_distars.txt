@@ -36,6 +36,9 @@ special_project = {
 	}
 }
 
+#	on_fail
+#	this = country (project owner)
+#	from = project creation scope (usually equals location)
 special_project = {
 	key = LCLUSTER_PROJECT
 	cost = 0

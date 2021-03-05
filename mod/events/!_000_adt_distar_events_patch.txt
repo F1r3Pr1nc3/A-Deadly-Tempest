@@ -278,8 +278,7 @@ country_event = {
 		if = {
 			limit = { has_global_flag = dragon_season }
 			# All gates must not be deactivated, so call it first
-			country_event = { id = distar.13000 } # must be called immediately
-			country_event = { id = distar.11000 days = 1 }
+			country_event = { id = distar.13000 days = 1 } # must be called before graygoo.100
 		}
 		if = {
 			limit = { has_global_flag = gray_goo_crisis_set }
@@ -288,16 +287,22 @@ country_event = {
 			country_event = { id = a_deadly_tempest.13006 days = 2 }
 			country_event = { id = a_deadly_tempest.137 days = 24 }
 		}
-		else_if = {
+		if = {
 			limit = { has_global_flag = gray_goo_empire_set }
 			country_event = { id = distar.11000 }
-			country_event = { id = graygoo.100 days = 3 }
+			country_event = { id = graygoo.100 days = 1 }
 			country_event = { id = a_deadly_tempest.137 days = 24 }
 		}
-		else = {
-			# Abandoned (and cancel projects for all other)
+		# Abandoned (and cancel projects for all other)
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = gray_goo_crisis_set
+					has_global_flag = gray_goo_empire_set
+				}
+			}
 			country_event = { id = distar.10951 }
-			country_event = { id = distar.11000 days = -1 }
+			country_event = { id = distar.11000 days = 1 }
 		}
 		if = {
 			limit = { NOT = { exists = event_target:global_event_country } }
@@ -425,6 +430,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		no_scope = { has_global_flag = l_cluster_opened }
 		any_megastructure = { CmtTriggerIsClosedLgate = yes }
 	}
 	immediate = {
@@ -479,13 +485,8 @@ country_event = {
 				limit = {
 					CmtTriggerIsClosedLgate = yes
 					# CmtTriggerIsGalaxyLgateSystem = yes # TODO may remove?
-					# any_system_megastructure = { CmtTriggerIsClosedLgate = yes }
-					# OR = {
-					# 	has_megastructure = lgate_base
-					# 	has_megastructure = lgate_disabled
-					# }
 				}
-				# flip L-Gates
+				# Flip L-Gates
 				# random_system_megastructure = { limit = { CmtTriggerIsClosedLgate = yes }
 				CmtEffectOpenLgate = yes
 				# set dragon spawning grounds
@@ -511,7 +512,7 @@ country_event = {
 				}
 				# NOT = { any_system_within_border = { CmtTriggerIsGalaxyLgateSystem = yes } }
 			}
-			country_event = { id = distar.13011 days = 1 }
+			country_event = { id = distar.13011 days = 3 }
 		}
 		while = {
 			limit = {
@@ -552,12 +553,12 @@ country_event = {
 											NOT = { is_same_empire = root }
 										}
 										set_country_flag = knows_ldragon
-										country_event = { id = distar.13010 days = 1 }
+										country_event = { id = distar.13010 days = 2 }
 									}
 									else = {
 										## Notification 1
 										root = {
-											country_event = { id = distar.13010 days = 1 }
+											country_event = { id = distar.13010 days = 2 }
 										}
 									}
 								}
@@ -617,15 +618,24 @@ country_event = {
 	desc = {
 		text = distar.13010.desc.OtherOpened
 		trigger = {
-			NOT = { is_same_value = from }
+			NOT = { is_same_empire = from }
 		}
 	}
 	picture = GFX_evt_space_dragon_young
 	location = event_target:dragons_current_system.star
 	is_triggered_only = yes
 	immediate = {
-		set_country_flag = ldragon_known
-		observer_event = { id = observer.63 }
+		if = {
+			limit = {
+				NOT = { has_country_flag = knows_ldragon }
+			}
+			set_country_flag = ldragon_known
+			observer_event = { id = observer.63 }
+			if = {
+				limit = { NOT = { exists = event_target:lcluster1 } }
+				country_event = { id = distar.11000 }
+			}
+		}
 	}
 	option = {
 		name = distar.13010.a.homicidal

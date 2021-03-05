@@ -209,3 +209,90 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	# id = fallen_empires_awakening.3
+	id = crisis.2003 #adt only
+	title = OK
+	desc = OK
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# set_country_flag = sleepers_awake_first_sleeper
+		set_country_type = awakened_fallen_empire
+		if = { limit = { has_ethic = "ethic_fanatic_xenophile" }
+			country_remove_ethic = "ethic_fanatic_xenophile"
+		}
+		if = { limit = { NOT = { has_ethic = "ethic_gestalt_consciousness" } }
+			country_add_ethic = "ethic_gestalt_consciousness"
+		}
+			# authority = auth_ancient_machine_intelligence
+			# civic = civic_revanchist_fervor
+			# civic = civic_ancient_caches_of_technology
+		change_government = {
+			authority = auth_machine_intelligence
+			civics = {
+				civic = civic_awakened_machine
+				civic = civic_final_defense_protocols
+			}
+		}
+		add_awakened_fallen_empire_resources = yes
+		# event_target:nanite_factory = {
+		# 	CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes	# Garrison Fleets at Capital
+		# }
+		capital_scope = {
+			CmtEffectCreateAdmiralty_DessanuRoamer = yes # Roamers
+		}
+		# Establish communications
+		every_country = {
+			limit = {
+				is_country_type_with_subjects = yes
+				NOT = { has_communications = root }
+			}
+			establish_communications_no_message = root
+			root = { save_event_target_as = contact_empire }
+			country_event = { id = action.1 }
+		}
+		root = { save_event_target_as = awakened_machine_empire }
+		if = {
+			limit = { host_has_dlc = "Apocalypse" }
+			give_technology = { tech = tech_colossus message = no }
+		}
+		set_graphical_culture = "fallen_machine_empire_01"
+
+		add_global_ship_design = "NAME_Omega"
+		add_global_ship_design = "NAME_Alpha"
+		add_global_ship_design = "NAME_Beta"
+		add_global_ship_design = "NAME_Gamma"
+		add_global_ship_design = "NAME_Theta"
+		add_global_ship_design = "NAME_Tau"
+		add_global_ship_design = "NAME_Sigma"
+		add_global_ship_design = "NAME_FE_Starbase"
+
+		create_ship_design = { design = "NAME_Omega" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Alpha" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Beta" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Gamma" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Theta" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Tau" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Sigma" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_FE_Starbase" }
+		add_ship_design = last_created_design
+		# add_awakened_fallen_empire_fleet = yes
+		create_fallen_empire_starting_navy = yes
+
+		if = {
+			limit = { has_origin = origin_machine_nanites }
+			set_graphical_culture = "grey_tempesttw"
+		}
+		else = { set_graphical_culture = "machine_01" }
+	}
+}

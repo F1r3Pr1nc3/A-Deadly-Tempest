@@ -30,12 +30,12 @@ country_event = {
 			# set_global_flag = galactic_crisis_happened # but this prevents other crisis?
 			awaken_guardians_of_the_galaxy = yes
 		}
-		# vanilla double call?
-		every_megastructure = {
-			limit = { CmtTriggerIsClosedLgate = yes }
-			CmtEffectOpenLgate = yes
-		}
-		# vanilla double call?
+		# Vanilla double call? Do not open all same time
+		# every_megastructure = {
+		# 	limit = { CmtTriggerIsClosedLgate = yes }
+		# 	CmtEffectOpenLgate = yes
+		# }
+		# Vanilla double call?
 		if = {
 			limit = { NOT = { exists = event_target:lcluster_factory_system } }
 			random_system = {
@@ -75,7 +75,8 @@ country_event = {
 				type = "gray_goo"
 				name_list = "graygoo"
 				ignore_initial_colony_error = yes
-				authority = auth_ancient_machine_intelligence
+				# authority = auth_ancient_machine_intelligence
+				authority = auth_machine_intelligence
 				ethos = {
 					ethic = ethic_gestalt_consciousness
 				}
@@ -551,11 +552,12 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		every_megastructure = {
-			limit = { CmtTriggerIsClosedLgate = yes }
-			CmtEffectOpenLgate = yes
-		}
-		# vanilla double call?
+		# Do not open all same time
+		# every_megastructure = {
+		# 	limit = { CmtTriggerIsClosedLgate = yes }
+		# 	CmtEffectOpenLgate = yes
+		# }
+		# Vanilla double call?
 		if = {
 			limit = { NOT = { exists = event_target:lcluster_factory_system } }
 			random_system = {
@@ -569,51 +571,81 @@ country_event = {
 				limit = { has_planet_flag = main_star }
 				save_event_target_as = main_star
 			}
-			random_list = {
-				15 = {
-					create_species = {
-						name = "NAME_Dessanu"
-						class = FUN #random_non_machine
-						portrait = random #"sd_fun_robot"
-						traits = { trait = random_traits }
-						#homeworld = random
-						immortal = yes
+
+			## built-in-support for Twinks Dessanu
+			if = {
+				limit = {
+					NOT = {
+						any_playable_country = { has_origin = origin_machine_nanites }
 					}
 				}
-				15 = {
-					create_species = {
-						name = "NAME_Dessanu"
-						class = LITHOID
-						portrait = random
-						traits = { trait = random_traits }
-						immortal = yes
+				create_species = {
+					class = "Tempest"
+					portrait = random
+					name = "NAME_Dessanu"
+					name_list = "ART4"
+					immortal = yes
+					# traits = { trait = "trait_machine_unit" }
+				}
+			}
+			if = {
+				limit = { last_created_species = { is_species_class = "Tempest" } }
+				last_created_species = {
+					modify_species = {
+						portrait = "humang"
+						add_trait = "trait_grey_tempest_intellect"
+						add_trait = "trait_grey_tempest_form"
+						add_trait = "trait_grey_tempest_nanites"
+						add_trait = "trait_grey_tempest_nanitecommunication"
 					}
 				}
-				15 = {
-					create_species = {
-						name = "NAME_Dessanu"
-						class = PLANT
-						portrait = random
-						traits = { trait = random_traits }
-						immortal = yes
+			} else = {
+				random_list = {
+					15 = {
+						create_species = {
+							name = "NAME_Dessanu"
+							class = FUN #random_non_machine
+							portrait = random #"sd_fun_robot"
+							traits = { trait = random_traits }
+							#homeworld = random
+							immortal = yes
+						}
 					}
-				}
-				15 = {
-					create_species = {
-						name = "NAME_Dessanu"
-						class = MOL
-						portrait = random
-						traits = { trait = random_traits }
-						immortal = yes
+					15 = {
+						create_species = {
+							name = "NAME_Dessanu"
+							class = LITHOID
+							portrait = random
+							traits = { trait = random_traits }
+							immortal = yes
+						}
 					}
-				}
-				15 = {
-					create_species = {
-						name = "NAME_Dessanu"
-						class = ESGO
-						portrait = random
-						traits = { trait = random_traits }
-						immortal = yes
+					15 = {
+						create_species = {
+							name = "NAME_Dessanu"
+							class = PLANT
+							portrait = random
+							traits = { trait = random_traits }
+							immortal = yes
+						}
+					}
+					15 = {
+						create_species = {
+							name = "NAME_Dessanu"
+							class = MOL
+							portrait = random
+							traits = { trait = random_traits }
+							immortal = yes
+						}
+					}
+					15 = {
+						create_species = {
+							name = "NAME_Dessanu"
+							class = ESGO
+							portrait = random
+							traits = { trait = random_traits }
+							immortal = yes
+						}
 					}
 				}
 			}
@@ -623,6 +655,7 @@ country_event = {
 				# name_list = "graygoo"
 				ignore_initial_colony_error = yes
 				authority = "auth_democratic"
+				# government = "gov_machine_empire"
 				civics = {
 					civic = civic_meritocracy
 					civic = civic_environmentalist
@@ -646,9 +679,15 @@ country_event = {
 				origin = "origin_fallen_empire"
 				# origin = "origin_life_seeded"
 				effect = {
-					save_global_event_target_as = graygoo_country
+					# change_country_flag =
+					if = {
+						limit = { NOT = { exists = event_target:graygoo_country } }
+						save_global_event_target_as = graygoo_country
+					} else = { save_global_event_target_as = gate_builders }
 					set_graphical_culture = "machine_01"
 					set_country_flag = synthetic_empire
+					set_country_flag = fallen_empire_machine
+
 					add_resource = {
 						minerals = 5000
 						energy = 10000
@@ -669,11 +708,63 @@ country_event = {
 						# ideal_planet_class = pc_gray_goo
 						change_scoped_species = yes
 					}
+					set_policy = {
+						policy = orbital_bombardment
+						option = orbital_bombardment_armageddon
+						cooldown = no
+					}
+					create_leader = {
+						class = ruler
+						species = last_created
+						name = random
+						gender = indeterminable
+						# type
+						skill = 10
+						# set_age = 100
+						leader_age_min = 44
+						leader_age_max = 66
+						immortal = yes
+						traits = {
+							trait = leader_trait_unyielding
+							trait = trait_ruler_logistic_understanding
+							trait = leader_trait_fleet_organizer
+						}
+						# effect = {  }
+					}
+					set_leader = last_created_leader
+					assign_leader = last_created_leader
 
 					## add technologies
 					country_event = { id = a_deadly_tempest.107 }
 				}
 			}
+
+			last_created_country = {
+				## built-in-support for Twinks Dessanu
+				if = {
+					limit = {
+						last_created_species = { species_portrait = "humang" }
+					}
+					# limit = { has_origin = origin_machine_nanites }
+					set_graphical_culture = grey_tempesttw
+					set_city_graphical_culture = grey_tempesttw
+					set_origin = origin_machine_nanites
+					# room="personality_nanite_room"
+					# planet_name="Dessanu"
+					# planet_class="pc_tundra"
+					# system_name="Heart"
+					change_government = {
+						authority = "auth_machine_intelligence"
+						cooldown = no
+						civics = {
+							civic = "civic_machine_unitary_cohesion"
+							civic = "civic_machine_nanites_culture"
+						}
+					}
+					country_add_ethic="ethic_gestalt_consciousness"
+				}
+			}
+
 			### Create Factory/Fleets/Starbases
 			event_target:main_star = { CmtEffectCreateNanitieFactory = yes }
 		}
@@ -704,6 +795,116 @@ country_event = {
 				}
 				create_research_station = { owner = event_target:graygoo_country }
 			}
+			switch = {
+				trigger = has_star_flag
+				lcluster1 = {
+					if = {
+						limit = { host_has_dlc = "Utopia" }
+						random_system_planet = {
+							limit = {
+								has_moon = yes
+								any_moon = { is_planet_class = pc_gray_goo }
+							}
+							random_moon = {
+								limit = { is_planet_class = pc_gray_goo }
+								# save_event_target_as = sentry_moon
+								solar_system = {
+									spawn_megastructure = {
+										# type = "spy_orb_ruined"
+										type = spy_orb_4
+										# location = event_target:sentry_moon
+										location = prev
+										owner = event_target:graygoo_country
+									}
+								}
+							}
+						}
+					}
+				}
+				lcluster3 = {
+					spawn_megastructure = {
+						type = "dyson_sphere_5"
+						location = star
+						owner = event_target:graygoo_country
+					}
+				}
+				lcluster3b = {
+					spawn_megastructure = {
+						type = "dyson_sphere_2"
+						location = star
+						owner = event_target:graygoo_country
+					}
+				}
+				lcluster4b = {
+					# capital
+					if = {
+						limit = { host_has_dlc = "Megacorp" }
+						spawn_megastructure = {
+							# type = "strategic_coordination_center_ruined"
+							type = "strategic_coordination_center_3"
+							location = star
+							owner = event_target:graygoo_country
+						}
+					}
+					spawn_megastructure = {
+						type = "dyson_sphere_1"
+						location = star
+						owner = event_target:graygoo_country
+					}
+					event_target:graygoo_country = {
+						if = {
+							limit = { exists = capital_scope }
+							owner_main_species = {
+								set_species_homeworld = prev.capital_scope
+							}
+						} else = {
+							prev = {
+								random_system_planet = {
+									limit = { is_planet_class = pc_gray_goo }
+									owner_main_species = {
+										set_species_homeworld = prev
+									}
+								}
+							}
+						}
+					}
+				}
+				lcluster5 = {
+					if = {
+						limit = { host_has_dlc = "Federations" }
+						spawn_megastructure = {
+							# type = "mega_shipyard_ruined"
+							type = mega_shipyard_1
+							location = star
+							owner = event_target:graygoo_country
+							init_effect = {
+								create_ambient_object = {
+									type = "large_debris_object"
+									location = this
+								}
+								last_created_ambient_object = {
+									set_location = {
+										target = prev
+										distance = 20
+										angle = 20
+									}
+								}
+							}
+						}
+					}
+				}
+				# TODO
+				# lcluster5b = {
+				# 	# Ringworld
+				# }
+				# limit = { host_has_dlc = "Megacorp" }
+				# spawn_megastructure = {
+				# 	type = "mega_art_installation_ruined"
+				# 	type = "interstellar_assembly_ruined"
+				# 	location = star
+				# }
+			}
+
 			every_system_planet = {
 				limit = { is_planet_class = pc_gray_goo }
 				CmtEffectCreateAdmiralty_DessanuGarryson = yes
@@ -790,7 +991,7 @@ country_event = {
 	desc = "graygoo.110.desc"
 	picture = GFX_evt_l-gateway
 	show_sound = event_radio_chatter
-
+	location = event_target:candidate_gateway
 	is_triggered_only = yes
 
 	after = {
@@ -841,6 +1042,11 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:graygoo_country
+		# planet_background = event_target:graygoo_country
+		# graphical_culture = event_target:graygoo_country
+		# city_level = event_target:graygoo_country
+		# room = event_target:graygoo_country.ruler
+		room = "personality_nanite_room"
 	}
 
 	is_triggered_only = yes
@@ -1011,6 +1217,18 @@ country_event = {
 						}
 					}
 					add_modifier = { modifier = terraforming_candidate days = -1 }
+				}
+			}
+			# Remove any Dessanu Megas.
+			solar_system = {
+				if = {
+					limit = {
+						has_star_flag = lcluster
+						NOT = { any_system_planet = { is_owned_by = from } }
+					}
+					every_system_megastructure = {
+						delete_megastructure = this
+					}
 				}
 			}
 		}
@@ -1385,6 +1603,10 @@ country_event = {
 				every_owned_pop = { kill_pop = yes }
 				generate_new_deposits_and_blockers = yes
 				destroy_colony = yes
+				every_playable_country = {
+					limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
+					PREV = { surveyed = { set_surveyed = no surveyor = PREV } }
+				}
 			}
 			every_planet = {
 				limit = { is_planet_class = pc_gray_goo has_planet_flag = hidden_nanite_world }
@@ -1410,6 +1632,10 @@ country_event = {
 				reroll_planet = yes
 				generate_new_deposits_and_blockers = yes
 				remove_planet_flag = hidden_nanite_world
+				every_playable_country = {
+					limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
+					PREV = { surveyed = { set_surveyed = no surveyor = PREV } }
+				}
 			}
 		} else = {
 			every_owned_planet = {
@@ -1422,6 +1648,10 @@ country_event = {
 				destroy_colony = yes
 				add_modifier = { modifier = terraforming_candidate days = -1 }
 				remove_planet_flag = hidden_nanite_world
+				every_playable_country = {
+					limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
+					PREV = { surveyed = { set_surveyed = no surveyor = PREV } }
+				}
 			}
 		}
 		every_owned_fleet = { destroy_fleet = this }
@@ -1434,9 +1664,46 @@ country_event = {
 			limit = { is_exact_same_species = root.species }
 			kill_pop = yes
 		}
+		every_system = {
+			if = {
+				limit = {
+					has_star_flag = lcluster
+					has_megastructure = yes
+				}
+				# Replace ringworlds, habitats
+				every_system_planet = {
+					limit = {
+						has_planet_flag = hidden_nanite_world
+						OR = {
+							is_planet_class = pc_habitat
+							is_planet_class = pc_shattered
+							is_planet_class = pc_shattered_2
+							is_planet_class = pc_ringworld_habitable
+							is_planet_class = pc_ringworld_habitable_damaged
+							is_planet_class = pc_ringworld_tech
+							is_planet_class = pc_ringworld_tech_damaged
+							is_planet_class = pc_ringworld_seam
+							is_planet_class = pc_ringworld_seam_damaged
+						}
+					}
+					destroy_colony = yes
+					remove_planet_flag = hidden_nanite_world
+					random_list = {
+						8 = { remove_planet = yes }
+						2 = { change_pc = pc_asteroid }
+					}
+				}
+				# Remove megastructures
+				every_system_megastructure = {
+					delete_megastructure = this
+				}
+			}
+		}
 		destroy_country = yes
 		clear_global_event_target = graygoo_country
 		clear_global_event_target = nanite_factory
+
+
 	}
 }
 

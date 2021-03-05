@@ -180,7 +180,7 @@ country_event = {
 		every_system = {
 			limit = { has_star_flag = lcluster }
 			random_system_planet = {
-				limit = { is_planet_class = pc_gray_goo }
+				limit = { is_planet_class = pc_gray_goo has_anomaly = no }
 				random_list = {
 					60 = {
 						set_planet_flag = hatchling_egg
@@ -190,6 +190,19 @@ country_event = {
 						}
 					}
 					40 = { }
+				}
+				# every_playable_country = {
+				# 	limit = {
+				# 		NOR = {
+				# 			is_ai = yes
+				# 			is_same_empire = event_target:goo_slayer
+				# 			exists = event_target:gray_owner
+				# 		}
+				# 	}
+				# 	prev = {
+				add_anomaly = {
+					category = disco_gray_cat
+					# target = prev
 				}
 			}
 		}
@@ -1253,7 +1266,7 @@ country_event = {
 			# Gatebuilders
 			if = {
 				limit = {
-					is_country_type = gate_builders
+					# is_country_type = gate_builders
 					exists = event_target:ratling_country
 				}
 				set_faction_hostility = {
@@ -1727,7 +1740,7 @@ country_event = {
 			country_event = { id = a_deadly_tempest.96 }
 			set_country_flag = adtFlagActiveMothershipRebuild
 			country_event = {
-				id = fallen_empires_awakening.3
+				id = crisis.2003 # id = fallen_empires_awakening.3
 				days = 540
 				random = 500
 			}
@@ -1759,15 +1772,14 @@ country_event = {
 		}
 		if = {
 			limit = {
-				NOT = { exists = event_target:graygoo_country }
+				has_global_flag = gray_goo_crisis_set
+				OR = {
+					NOT = { exists = event_target:graygoo_country }
+					event_target:graygoo_country = { is_country_type = gate_builders }
+				}
 			}
 			random_country = {
-				limit = {
-					OR = {
-						is_country_type = gray_goo
-						is_country_type = gate_builders
-					}
-				}
+				limit = { is_country_type = gray_goo }
 				save_global_event_target_as = graygoo_country
 			}
 		}
@@ -1834,6 +1846,37 @@ country_event = {
 		# 		}
 		# 	}
 		# }
+		# Gatebuilders
+		if = {
+			limit = {
+				has_global_flag = gray_goo_crisis_set
+				has_global_flag = gray_goo_empire_set
+				exists = event_target:graygoo_country
+			}
+			if = {
+				limit = { NOT = { exists = event_target:gate_builders } }
+				random_country = {
+					limit = { is_country_type = gate_builders }
+					save_global_event_target_as = gate_builders
+				}
+			}
+			event_target:graygoo_country = {
+				set_faction_hostility = {
+					set_hostile = no
+					#set_neutral = no
+					set_friendly = yes
+					target = event_target:gate_builders
+				}
+				event_target:gate_builders = {
+					set_faction_hostility = {
+						set_hostile = no
+						#set_neutral = no
+						set_friendly = yes
+						target = prev
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -1945,6 +1988,23 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		give_technology = { tech = tech_mega_engineering message = no }
+		if = {
+			limit = { has_federations_dlc = yes }
+			give_technology = { tech = tech_mega_shipyard message = no }
+		}
+		if = {
+			limit = { has_utopia = yes }
+			give_technology = { tech = tech_ring_world message = no }
+			give_technology = { tech = tech_dyson_sphere message = no }
+			give_technology = { tech = tech_sentry_array message = no }
+			give_technology = { tech = tech_science_nexus message = no }
+		}
+		if = {
+			limit = { has_megacorp = yes }
+			give_technology = { tech = tech_strategic_coordination message = no }
+			give_technology = { tech = tech_interstellar_assembly message = no }
+		}
 		give_technology = {
 			tech = tech_arc_emitter_2
 			message = no

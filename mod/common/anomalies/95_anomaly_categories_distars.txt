@@ -3,7 +3,7 @@
 # 	desc = "disco_gray_cat_desc"
 # 	picture = "GFX_evt_ship_in_orbit_2"
 # 	level = 3
-
+# 	max_once = yes
 # 	spawn_chance = {
 # 		modifier = {
 # 			add = 6
@@ -26,7 +26,7 @@ transmitter_cat = {
 	picture = "GFX_evt_ship_in_orbit_2"
 	level = 2
 	max_once_global = yes
-	
+
 	spawn_chance = {
 		modifier = {
 			add = 3

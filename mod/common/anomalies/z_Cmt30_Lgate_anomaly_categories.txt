@@ -16,12 +16,10 @@ disco_gray_cat = {
 	max_once = yes
 	# max_once_global = yes
 	should_ai_and_humans_use = no
-	potential = {
-		always = yes
-	}
+
 	spawn_chance = {
 		modifier = {
-			add = 6
+			add = 9
 			is_planet_class = pc_gray_goo
 			solar_system = { has_star_flag = lcluster }
 			event_target:CmtGlobalVar = {
@@ -45,7 +43,10 @@ disco_gray_cat = {
 			from.owner = { is_country_type = gate_builders }
 			OR = {
 				exists = event_target:graygoo_country
-				AND = { exists = event_target:goo_slayer is_same_empire = event_target:goo_slayer }
+				AND = {
+					exists = event_target:goo_slayer
+					from.owner = { is_same_empire = event_target:goo_slayer }
+				}
 			}
 		}
 		modifier = {

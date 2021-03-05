@@ -410,10 +410,6 @@ country_event = {
 	# fire_only_once = yes
 
 	immediate = {
-		# if = {
-		# 	limit = { NOT = { exists = event_target:lcluster1 } }
-		# 	country_event = { id = distar.11000 }
-		# }
 		# every_playable_country = {
 		# 	limit = {
 		# 		has_special_project = LCLUSTER_PROJECT
@@ -440,12 +436,16 @@ country_event = {
 			}
 		}
 		observer_event = { id = observer.62 }
+		if = {
+			limit = { NOT = { exists = event_target:lcluster1 } }
+			country_event = { id = distar.11000 }
+		}
 	}
 	option = {
 		name = "distar.10951.a"
 	}
 	after = {
-		# Remove Quest for Root (fallback only)
+		# Remove quest for root (fallback only)
 		if = {
 			limit = { has_special_project = LCLUSTER_PROJECT }
 			abort_special_project = { type = LCLUSTER_PROJECT }
