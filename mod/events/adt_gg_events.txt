@@ -182,30 +182,49 @@ country_event = {
 			random_system_planet = {
 				limit = { is_planet_class = pc_gray_goo has_anomaly = no }
 				random_list = {
-					60 = {
+					4 = {
 						set_planet_flag = hatchling_egg
 						random_list = {
-							60 = { set_planet_flag = hatchling_will_trigger }
-							40 = { }
+							4 = { set_planet_flag = hatchling_will_trigger }
+							6 = { }
 						}
 					}
-					40 = { }
-				}
-				# every_playable_country = {
-				# 	limit = {
-				# 		NOR = {
-				# 			is_ai = yes
-				# 			is_same_empire = event_target:goo_slayer
-				# 			exists = event_target:gray_owner
-				# 		}
-				# 	}
-				# 	prev = {
-				add_anomaly = {
-					category = disco_gray_cat
-					# target = prev
+					6 = { }
 				}
 			}
 		}
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			random_system_planet = {
+				limit = { is_planet_class = pc_gray_goo has_anomaly = no }
+				every_playable_country = {
+					limit = {
+						NOR = {
+							is_ai = yes
+							is_same_empire = event_target:goo_slayer
+							exists = event_target:gray_owner
+						}
+					}
+					random_list = {
+						4 = {
+							set_planet_flag = hatchling_egg
+							random_list = {
+								4 = { set_planet_flag = hatchling_will_trigger }
+								6 = { }
+							}
+						}
+						6 = { }
+					}
+					prev = {
+						add_anomaly = {
+							category = disco_gray_cat
+							target = prev
+						}
+					}
+				}
+			}
+		}
+
 		if = {
 			limit = {
 				is_ai = no
@@ -518,6 +537,8 @@ country_event = {
 				every_owned_ship = {
 					reduce_hp_percent = 50
 					reduce_hp = 1000
+					set_disable_at_health = -1
+					set_disabled = no
 				}
 				# destroy_fleet = this
 			}

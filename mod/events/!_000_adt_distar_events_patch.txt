@@ -625,16 +625,13 @@ country_event = {
 	location = event_target:dragons_current_system.star
 	is_triggered_only = yes
 	immediate = {
+		set_country_flag = ldragon_known
+		observer_event = { id = observer.63 }
 		if = {
 			limit = {
-				NOT = { has_country_flag = knows_ldragon }
+				NOR = { exists = event_target:lcluster1 has_country_flag = knows_ldragon }
 			}
-			set_country_flag = ldragon_known
-			observer_event = { id = observer.63 }
-			if = {
-				limit = { NOT = { exists = event_target:lcluster1 } }
-				country_event = { id = distar.11000 }
-			}
+			country_event = { id = distar.11000 }
 		}
 	}
 	option = {

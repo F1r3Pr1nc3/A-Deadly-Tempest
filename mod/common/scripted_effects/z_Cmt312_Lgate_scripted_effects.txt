@@ -185,7 +185,11 @@ CmtEffectDestroyGraygoo = {
 	}
 
 	event_target:graygoo_country = {
-		every_owned_fleet = { destroy_fleet = this }
+		every_owned_fleet = {
+			set_disable_at_health = -1
+			set_disabled = no
+			destroy_fleet = this
+		}
 		destroy_country = yes
 	}
 	clear_global_event_target = graygoo_country

@@ -31,10 +31,10 @@ country_event = {
 			awaken_guardians_of_the_galaxy = yes
 		}
 		# Vanilla double call? Do not open all same time
-		# every_megastructure = {
-		# 	limit = { CmtTriggerIsClosedLgate = yes }
-		# 	CmtEffectOpenLgate = yes
-		# }
+		every_megastructure = {
+			limit = { CmtTriggerIsClosedLgate = yes }
+			CmtEffectOpenLgate = yes
+		}
 		# Vanilla double call?
 		if = {
 			limit = { NOT = { exists = event_target:lcluster_factory_system } }
@@ -572,16 +572,15 @@ country_event = {
 				save_event_target_as = main_star
 			}
 
-
 			## built-in-support for Twinks Dessanu ##
-			event_target:global_event_country = {
-				give_technology = { tech = tech_graygoo_nanite_jump_drive message = no }
+			if = {
+				limit = { NOT= { any_playable_country = { has_origin = origin_machine_nanites } }
+				event_target:global_event_country = {
+					give_technology = { tech = tech_graygoo_nanite_jump_drive message = no }
+				}
 			}
 			if = {
-				limit = {
-					NOT= { any_playable_country = { has_origin = origin_machine_nanites } }
-					event_target:global_event_country = { has_technology = tech_graygoo_nanite_jump_drive }
-				}
+				limit = { event_target:global_event_country = { has_technology = tech_graygoo_nanite_jump_drive } }
 				create_species = {
 					class = "Tempest"
 					portrait = "humang"
@@ -596,19 +595,7 @@ country_event = {
 						trait = "trait_grey_tempest_nanitecommunication"
 					}
 				}
-			# }
-			# if = {
-			# 	limit = { last_created_species = { is_species_class = "Tempest" } } # doesnt work
-			# 	last_created_species = {
-			# 		modify_species = {
-			# 			add_trait = "trait_grey_tempest_intellect"
-			# 			add_trait = "trait_grey_tempest_form"
-			# 			add_trait = "trait_grey_tempest_nanites"
-			# 			add_trait = "trait_grey_tempest_nanitecommunication"
-			# 		}
-			# 	}
 			} else = {
-			# if = { limit = { NOT = { last_created_species = { species_portrait = "humang" } } }
 				random_list = {
 					15 = {
 						create_species = {
@@ -1665,7 +1652,11 @@ country_event = {
 				}
 			}
 		}
-		every_owned_fleet = { destroy_fleet = this }
+		every_owned_fleet = {
+			set_disable_at_health = -1
+			set_disabled = no
+			destroy_fleet = this
+		}
 		# pop is not removed automatically
 		every_owned_pop = {
 			kill_pop = yes

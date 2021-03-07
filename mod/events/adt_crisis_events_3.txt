@@ -259,8 +259,7 @@ country_event = {
 			limit = { host_has_dlc = "Apocalypse" }
 			give_technology = { tech = tech_colossus message = no }
 		}
-		set_graphical_culture = "fallen_machine_empire_01"
-
+		set_graphical_culture = "fallen_machine_empire_01" # temporary
 		add_global_ship_design = "NAME_Omega"
 		add_global_ship_design = "NAME_Alpha"
 		add_global_ship_design = "NAME_Beta"
@@ -269,7 +268,6 @@ country_event = {
 		add_global_ship_design = "NAME_Tau"
 		add_global_ship_design = "NAME_Sigma"
 		add_global_ship_design = "NAME_FE_Starbase"
-
 		create_ship_design = { design = "NAME_Omega" }
 		add_ship_design = last_created_design
 		create_ship_design = { design = "NAME_Alpha" }
