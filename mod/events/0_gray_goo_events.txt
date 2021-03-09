@@ -574,7 +574,7 @@ country_event = {
 
 			## built-in-support for Twinks Dessanu ##
 			if = {
-				limit = { NOT= { any_playable_country = { has_origin = origin_machine_nanites } }
+				limit = { NOT= { any_playable_country = { has_origin = origin_machine_nanites } } }
 				event_target:global_event_country = {
 					give_technology = { tech = tech_graygoo_nanite_jump_drive message = no }
 				}
@@ -702,7 +702,7 @@ country_event = {
 						species = last_created
 						name = random
 						gender = indeterminable
-						# type
+						# type = ruler
 						skill = 10
 						# set_age = 100
 						leader_age_min = 44
@@ -758,7 +758,6 @@ country_event = {
 							civic = "civic_machine_nanites_culture"
 						}
 					}
-
 					country_add_ethic="ethic_gestalt_consciousness"
 				}
 			}
@@ -852,14 +851,14 @@ country_event = {
 					event_target:graygoo_country = {
 						if = {
 							limit = { exists = capital_scope }
-							owner_main_species = {
+							last_created_species = {
 								set_species_homeworld = prev.capital_scope
 							}
 						} else = {
 							prev = {
 								random_system_planet = {
 									limit = { is_planet_class = pc_gray_goo }
-									owner_main_species = {
+									last_created_species = {
 										set_species_homeworld = prev
 									}
 								}
@@ -1280,6 +1279,7 @@ country_event = {
 	picture_event_data = {
 		portrait = event_target:gate_builders
 	}
+	location = from
 	is_triggered_only = yes
 
 	# trigger = {
@@ -1653,8 +1653,12 @@ country_event = {
 			}
 		}
 		every_owned_fleet = {
-			set_disable_at_health = -1
-			set_disabled = no
+			every_owned_ship = {
+				limit = { is_disabled = yes }
+				set_disable_at_health = -1
+				set_disabled = no
+				destroy_ship = this
+			}
 			destroy_fleet = this
 		}
 		# pop is not removed automatically
@@ -1858,7 +1862,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = gray_diplomacy_engaged }
+		NOT = {
+			exists = event_target:gray_owner
+		}
+		is_ai = no
 	}
 	immediate = {
 		create_species = {
@@ -1878,6 +1885,9 @@ country_event = {
 			}
 			homeworld = event_target:gray_homeworld
 			immortal = yes
+			effect = {
+				save_global_event_target_as = gray_species
+			}
 		}
 
 		create_country = {
@@ -1907,6 +1917,15 @@ country_event = {
 			establish_communications_no_message = root
 		}
 		save_global_event_target_as = gray_owner
+		set_country_flag = gray_owner
+		set_variable = {
+			which = gray_affection
+			value = 1
+		}
+		set_variable = {
+			which = gray_affection_level
+			value = 1
+		}
 	}
 }
 
@@ -1918,20 +1937,26 @@ country_event = {
 	desc = "graygoo.503.b.desc"
 	desc = "graygoo.503.c.desc"
 	desc = "graygoo.503.d.desc"
-
 	diplomatic = yes
-
+	# custom_gui = wg_gray_commu_window
+	# custom_gui_option = wg_gray_commu_option
 	picture_event_data = {
 		room = no_video_feed_room
 	}
-
 	is_triggered_only = yes
-
 	trigger = {
-		from = { is_country_type = gray }
+		from = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		has_country_flag = gray_army_active
-		NOT = { has_country_flag = gray_reforming }
-		NOT = { has_country_flag = gray_diplomacy_engaged }
+		NOR = {
+			has_country_flag = gray_reforming
+			has_country_flag = gray_diplomacy_engaged
+			has_country_flag = ban_commu_with_gray
+		}
 		is_same_empire = event_target:gray_owner
 		any_owned_army = {
 			army_type = gray_army
@@ -1944,20 +1969,21 @@ country_event = {
 			}
 		}
 	}
-
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
 	}
-
 	after = {
-		hidden_effect = { remove_country_flag = gray_diplomacy_engaged }
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
+		}
 	}
-
-	option = { # Governor
+	option = {
+		# Governor
 		name = graygoo.500.a
 		response_text = graygoo.503.a.response
 		allow = {
-			hidden_trigger = {  # To prevent exploit
+			hidden_trigger = {
+				# To prevent exploit
 				any_owned_army = {
 					army_type = gray_army
 					OR = {
@@ -1975,10 +2001,12 @@ country_event = {
 					army_type = gray_army
 					OR = {
 						AND = {
-							exists = planet planet = { has_ground_combat = no }
+							exists = planet
+							planet = { has_ground_combat = no }
 						}
 						AND = {
-							exists = fleet fleet = { is_in_combat = no }
+							exists = fleet
+							fleet = { is_in_combat = no }
 						}
 					}
 				}
@@ -1988,11 +2016,13 @@ country_event = {
 			create_gray_governor = yes
 		}
 	}
-	option = { # Warship
+	option = {
+		# Warship
 		name = graygoo.500.b
 		response_text = graygoo.503.b.response
 		allow = {
-			hidden_trigger = { # To prevent exploit
+			hidden_trigger = {
+				# To prevent exploit
 				any_owned_army = {
 					army_type = gray_army
 					OR = {
@@ -2010,10 +2040,12 @@ country_event = {
 					army_type = gray_army
 					OR = {
 						AND = {
-							exists = planet planet = { has_ground_combat = no }
+							exists = planet
+							planet = { has_ground_combat = no }
 						}
 						AND = {
-							exists = fleet fleet = { is_in_combat = no }
+							exists = fleet
+							fleet = { is_in_combat = no }
 						}
 					}
 				}
@@ -2024,10 +2056,44 @@ country_event = {
 		}
 	}
 	option = {
+		name = marry_gray
+		trigger = {
+			check_variable = {
+				which = gray_affection_level
+				value >= 4
+			}
+			NOT = {
+				has_country_flag = married_gray
+			}
+		}
+		allow = {
+			OR = {
+				has_wg_special_authority = no
+				custom_tooltip = {
+					check_variable = {
+						which = wsg_rings
+						value >= 1
+					}
+					fail_text = not_enough_engagement_rings
+				}
+			}
+		}
+		subtract_variable = {
+			which = wsg_rings
+			value = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = wg_aft.30000
+			}
+		}
+	}
+	option = {
 		name = graygoo.500.d
 		default_hide_option = yes
 	}
 }
+
 
 # Entering "Empty" L-Cluster
 ship_event = {
@@ -2036,7 +2102,7 @@ ship_event = {
 	desc = "graygoo.550.desc"
 	picture = GFX_evt_ruined_system
 	show_sound = event_radio_chatter
-
+	location = from
 	is_triggered_only = yes
 
 	trigger = {

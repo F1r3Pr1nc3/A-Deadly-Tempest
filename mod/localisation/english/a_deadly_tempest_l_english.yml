@@ -350,7 +350,7 @@
  nanite_giga_guardian:0 "§M Nanite Defense Warform§!"
  nanite_giga_guardian_desc:0 "The $nanite_giga_guardian$ is an extremely-powerful defensive version of the $nanite_giga_warform$."
  nanite_giga_guardian_plural:0 "§M$nanite_giga_guardian$s§!"
+ gray_army_desc:0 "Gray Nanite Swarm"
  spectre_army:0 "Spectre Division"
  spectre_army_plural:0 "Spectre Divisions"
  spectre_army_desc:0 "The Spectre is actually not a single unit, but a massive collection of small nanobots that constantly work together to maintain a solid form. They can take many forms but are usually seen as a large quadropedal walker with a turret on the back. Their ability to change form quickly allows them to scatter and dodge incoming fire. Unfortunately, being made of many tiny-dots leaves them vulnerable if a shot hits."
-

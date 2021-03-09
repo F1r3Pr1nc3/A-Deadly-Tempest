@@ -196,29 +196,42 @@ country_event = {
 		random_system = {
 			limit = { has_star_flag = lcluster }
 			random_system_planet = {
-				limit = { is_planet_class = pc_gray_goo has_anomaly = no }
+				limit = {
+					has_moon = yes
+					# is_planet_class = pc_gray_goo
+					# is_preventing_anomaly = no
+					has_anomaly = no
+				}
 				every_playable_country = {
 					limit = {
 						NOR = {
 							is_ai = yes
-							is_same_empire = event_target:goo_slayer
+							# is_same_empire = event_target:goo_slayer
 							exists = event_target:gray_owner
 						}
 					}
-					random_list = {
-						4 = {
-							set_planet_flag = hatchling_egg
+					prev = {
+						random_moon = {
+							limit = {
+								is_planet_class = pc_gray_goo
+								# is_preventing_anomaly = no
+								has_anomaly = no
+							}
 							random_list = {
-								4 = { set_planet_flag = hatchling_will_trigger }
+								4 = {
+									set_planet_flag = hatchling_egg
+									random_list = {
+										4 = { set_planet_flag = hatchling_will_trigger }
+										6 = { }
+									}
+								}
 								6 = { }
 							}
-						}
-						6 = { }
-					}
-					prev = {
-						add_anomaly = {
-							category = disco_gray_cat
-							target = prev
+							surveyed = { set_surveyed = no surveyor = prevprev }
+							add_anomaly = {
+								category = disco_gray_cat
+								target = prevprev
+							}
 						}
 					}
 				}

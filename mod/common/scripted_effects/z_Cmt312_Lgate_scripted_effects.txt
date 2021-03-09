@@ -186,8 +186,12 @@ CmtEffectDestroyGraygoo = {
 
 	event_target:graygoo_country = {
 		every_owned_fleet = {
-			set_disable_at_health = -1
-			set_disabled = no
+			every_owned_ship = {
+				limit = { is_disabled = yes }
+				set_disable_at_health = -1
+				set_disabled = no
+				destroy_ship = this
+			}
 			destroy_fleet = this
 		}
 		destroy_country = yes

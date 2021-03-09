@@ -238,10 +238,10 @@ country_event = {
 			}
 		}
 		add_awakened_fallen_empire_resources = yes
-		# event_target:nanite_factory = {
-		# 	CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes	# Garrison Fleets at Capital
-		# }
 		capital_scope = {
+			CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes	# Garrison Fleets at Capital
+		}
+		event_target:nanite_factory = {
 			CmtEffectCreateAdmiralty_DessanuRoamer = yes # Roamers
 		}
 		# Establish communications
@@ -290,7 +290,21 @@ country_event = {
 		if = {
 			limit = { has_origin = origin_machine_nanites }
 			set_graphical_culture = "grey_tempesttw"
-		}
-		else = { set_graphical_culture = "machine_01" }
+			create_fleet = {
+				effect = {
+					set_owner = prev.owner
+					create_ship = {
+						name = random
+						design = "NAME_mardak_vol_haters_colossus"
+						graphical_culture = owner
+					}
+					set_location = {
+						target = prev.capital_scope
+						distance = 30
+						angle = random
+					}
+				}
+			}
+		} else = { set_graphical_culture = "machine_01" }
 	}
 }

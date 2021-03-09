@@ -180,7 +180,7 @@ gray_goo = {
 		needs_border_access = no
 		generate_borders = no #no?
 		needs_colony = no
-		show_borders_in_us = no # Error: "Unexpected token"???
+		# show_borders_in_us = no # Error: "Unexpected token"???
 	}
 	modules = {
 		exclusive_diplomacy_module = {

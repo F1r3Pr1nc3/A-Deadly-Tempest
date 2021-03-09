@@ -1,16 +1,16 @@
 # Gray Nanite Army
 gray_army = {
-	damage = 20.0
-	health = 36.0
+	damage = 22.5
+	health = 33.0
 	has_morale = no
-	morale_damage = 12.0
-	collateral_damage = 10.0
-	war_exhaustion = 8.0
+	morale_damage = 11.0
+	collateral_damage = 7.5
+	war_exhaustion = 6.0
 	time = 5
 	resources = {
 		category = armies
 		produces = {
-			energy = 1
+			energy = 2
 		}
 	}
 	has_species = no

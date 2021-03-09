@@ -126,27 +126,27 @@ CmtEffectDestroyGraygoo = {
 liquidate_clues = {
 	hidden_effect = {
 		if = {
-			limit = { has_event_chain = l_cluster_chain }
-			end_event_chain = l_cluster_chain
-		}
-		if = {
 			limit = {
-				OR = {
-					check_variable = {
-						which = num_lcluster_clues
-						value > 6
-					}
-					has_special_project = LCLUSTER_PROJECT
-				}
+				has_special_project = LCLUSTER_PROJECT
 			}
 			custom_tooltip = liquidated_7
 			add_resource = {
 				engineering_research = 3500
 				energy = 3500
 			}
-			if = {
-				limit = { has_special_project = LCLUSTER_PROJECT }
-				abort_special_project = { type = LCLUSTER_PROJECT }
+			abort_special_project = { type = LCLUSTER_PROJECT }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = num_lcluster_clues
+					value > 6
+				}
+			}
+			custom_tooltip = liquidated_7
+			add_resource = {
+				engineering_research = 3500
+				energy = 3500
 			}
 		}
 		else_if = {
@@ -229,6 +229,10 @@ liquidate_clues = {
 		}
 		else = {
 			custom_tooltip = liquidated_0
+		}
+		if = {
+			limit = { has_event_chain = l_cluster_chain }
+			end_event_chain = l_cluster_chain
 		}
 	}
 }
