@@ -1862,9 +1862,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			exists = event_target:gray_owner
-		}
+		NOT = { exists = event_target:gray_owner }
 		is_ai = no
 	}
 	immediate = {
@@ -1908,7 +1906,8 @@ country_event = {
 			}
 			effect = {
 				save_global_event_target_as = graygoo_country
-				set_graphical_culture = root
+				set_graphical_culture = machine_01 # root
+				set_city_graphical_culture = root
 				## add technologies
 				country_event = { id = a_deadly_tempest.107 }
 			}
@@ -1918,14 +1917,9 @@ country_event = {
 		}
 		save_global_event_target_as = gray_owner
 		set_country_flag = gray_owner
-		set_variable = {
-			which = gray_affection
-			value = 1
-		}
-		set_variable = {
-			which = gray_affection_level
-			value = 1
-		}
+		set_variable = { which = gray_affection value = 1 }
+		set_variable = { which = gray_affection_level value = 1 }
+
 	}
 }
 
@@ -1938,19 +1932,15 @@ country_event = {
 	desc = "graygoo.503.c.desc"
 	desc = "graygoo.503.d.desc"
 	diplomatic = yes
-	# custom_gui = wg_gray_commu_window
-	# custom_gui_option = wg_gray_commu_option
 	picture_event_data = {
-		room = no_video_feed_room
+		room = root.ruler #no_video_feed_room
 	}
+	custom_gui = wg_gray_commu_window # compat. Warship Girls R mod
+	custom_gui_option = wg_gray_commu_option # compat. Warship Girls R mod
+
 	is_triggered_only = yes
 	trigger = {
-		from = {
-			OR = {
-				is_country_type = gray
-				is_same_value = ROOT
-			}
-		}
+		from = { is_country_type = gray }
 		has_country_flag = gray_army_active
 		NOR = {
 			has_country_flag = gray_reforming

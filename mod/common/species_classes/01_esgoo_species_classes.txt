@@ -25,6 +25,6 @@ ESGO = {
 		"creature"
 	}
 
-	graphical_culture = esgoo_01
+	graphical_culture = machine_01 # esgoo_01
 	move_pop_sound_effect = "robot_pops_move"
 }

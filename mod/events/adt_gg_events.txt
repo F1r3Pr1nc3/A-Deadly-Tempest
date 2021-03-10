@@ -198,9 +198,8 @@ country_event = {
 			random_system_planet = {
 				limit = {
 					has_moon = yes
-					# is_planet_class = pc_gray_goo
+					any_moon = { is_planet_class = pc_gray_goo has_anomaly = no is_colony = no }
 					# is_preventing_anomaly = no
-					has_anomaly = no
 				}
 				every_playable_country = {
 					limit = {
@@ -214,8 +213,8 @@ country_event = {
 						random_moon = {
 							limit = {
 								is_planet_class = pc_gray_goo
-								# is_preventing_anomaly = no
 								has_anomaly = no
+								# is_preventing_anomaly = no
 							}
 							random_list = {
 								4 = {
