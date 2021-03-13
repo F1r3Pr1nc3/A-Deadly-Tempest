@@ -724,6 +724,9 @@ country_event = {
 						add_traits_at_start_of_list = yes
 						# ideal_planet_class = pc_gray_goo
 						change_scoped_species = yes
+						effect = {
+							save_global_event_target_as = gray_species
+						}
 					}
 					set_policy = {
 						policy = orbital_bombardment
@@ -746,7 +749,6 @@ country_event = {
 					set_graphical_culture = grey_tempesttw
 					set_city_graphical_culture = grey_tempesttw
 					set_origin = origin_machine_nanites
-					# room="personality_nanite_room"
 					# planet_name="Dessanu"
 					# planet_class="pc_tundra"
 					# system_name="Heart"
@@ -1038,10 +1040,10 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:graygoo_country
-		# planet_background = event_target:graygoo_country
-		# graphical_culture = event_target:graygoo_country
-		# city_level = event_target:graygoo_country
+		portrait = event_target:gray_species
+		planet_background = event_target:graygoo_country
+		graphical_culture = event_target:graygoo_country
+		city_level = event_target:graygoo_country
 		# room = event_target:graygoo_country.ruler
 		room = "personality_nanite_room"
 	}
@@ -1086,11 +1088,14 @@ country_event = {
 	id = graygoo.116
 	title = "TRANSMISSION"
 	desc = "graygoo.116.desc"
-
 	diplomatic = yes
-
 	picture_event_data = {
-		portrait = event_target:graygoo_country
+		portrait = event_target:gray_species
+		planet_background = event_target:graygoo_country
+		graphical_culture = event_target:graygoo_country
+		city_level = event_target:graygoo_country
+		# room = event_target:graygoo_country.ruler
+		room = "personality_nanite_room"
 	}
 
 	is_triggered_only = yes
@@ -1146,7 +1151,12 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gate_builders
+		portrait = event_target:gray_species
+		planet_background = event_target:graygoo_country
+		graphical_culture = event_target:graygoo_country
+		city_level = event_target:graygoo_country
+		# room = event_target:graygoo_country.ruler
+		room = "personality_nanite_room"
 	}
 
 	is_triggered_only = yes
@@ -1277,7 +1287,7 @@ country_event = {
 	desc = graygoo.160.desc
 	diplomatic = yes
 	picture_event_data = {
-		portrait = event_target:gate_builders
+		portrait = event_target:gate_builders.species
 	}
 	location = from
 	is_triggered_only = yes
@@ -1371,7 +1381,7 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gate_builders
+		portrait = event_target:gate_builders.species
 	}
 
 	is_triggered_only = yes
@@ -1482,7 +1492,7 @@ fleet_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gate_builders
+		portrait = event_target:gate_builders.species
 	}
 
 	fire_only_once = yes
@@ -1667,14 +1677,20 @@ country_event = {
 		}
 		# kill also every not owned pop!?
 		every_galaxy_pop = {
-			limit = { is_exact_same_species = root.species }
+			limit = { is_exact_same_species = root.owner_species }
 			kill_pop = yes
 		}
 		every_system = {
 			if = {
 				limit = {
 					has_star_flag = lcluster
-					has_megastructure = yes
+					count_system_megastructure = {
+						count = 1
+						limit = {
+							is_scope_valid = yes
+							NOT = { is_megastructure_type = lgate_base }
+						}
+					}
 				}
 				# Replace ringworlds, habitats
 				every_system_planet = {
@@ -1811,279 +1827,7 @@ country_event = {
 	}
 }
 
-### Gray
-
-# Encountered Gray
-ship_event = {
-	id = graygoo.400
-	title = "graygoo.400.name"
-	desc = {
-		trigger = {
-			owner = {
-				# NOT = { has_authority = auth_machine_intelligence }
-				is_synthetic_empire = no
-			}
-		}
-		text = "graygoo.400.a.desc"
-	}
-	desc = {
-		trigger = { owner = {
-			# has_authority = auth_machine_intelligence
-			is_synthetic_empire = yes
-		} }
-		text = "graygoo.400.b.desc"
-	}
-	picture = GFX_evt_ship_in_orbit_2
-	show_sound = event_radio_chatter
-	fire_only_once = yes
-	is_triggered_only = yes
-	# To everyone except goo_slayer
-	# trigger = {}
-
-	immediate = {
-		from = { save_event_target_as = gray_homeworld }
-	}
-
-	option = {
-		name = graygoo.400.a
-		hidden_effect = {
-			owner = {
-				country_event = { id = graygoo.401 }
-			}
-		}
-	}
-}
-
-# Create Gray
-country_event = {
-	id = graygoo.499
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	trigger = {
-		NOT = { exists = event_target:gray_owner }
-		is_ai = no
-	}
-	immediate = {
-		create_species = {
-			name = "NAME_Gray"
-			class = "ESGO"
-			portrait = root.species
-			traits = {
-				trait = "trait_machine_unit"
-				trait = "trait_robot_enhanced_memory"
-				trait = "trait_robot_superconductive"
-				trait = "trait_robot_loyalty_circuits"
-				trait = "trait_robot_mass_produced"
-				trait = "trait_robot_durable"
-				trait = "trait_robot_recycled"
-				trait = "trait_robot_high_maintenance"
-				trait = "trait_robot_uncanny"
-			}
-			homeworld = event_target:gray_homeworld
-			immortal = yes
-			effect = {
-				save_global_event_target_as = gray_species
-			}
-		}
-
-		create_country = {
-			name = "NAME_Gray"
-			type = "gray"
-			name_list = "graygoo"
-			ignore_initial_colony_error = yes
-			flag = {
-				icon= {
-					category = "special"
-					file = "gray_goo.dds"
-				}
-				background= {
-					category = "backgrounds"
-					file = "sinus.dds"
-				}
-				colors={ "grey" "dark_grey" "null" "null" }
-			}
-			effect = {
-				save_global_event_target_as = graygoo_country
-				set_graphical_culture = machine_01 # root
-				set_city_graphical_culture = root
-				## add technologies
-				country_event = { id = a_deadly_tempest.107 }
-			}
-		}
-		last_created_country = {
-			establish_communications_no_message = root
-		}
-		save_global_event_target_as = gray_owner
-		set_country_flag = gray_owner
-		set_variable = { which = gray_affection value = 1 }
-		set_variable = { which = gray_affection_level value = 1 }
-
-	}
-}
-
-# Main Menu (Army)
-country_event = {
-	id = graygoo.503
-	title = "graygoo.500.title"
-	desc = "graygoo.503.a.desc"
-	desc = "graygoo.503.b.desc"
-	desc = "graygoo.503.c.desc"
-	desc = "graygoo.503.d.desc"
-	diplomatic = yes
-	picture_event_data = {
-		room = root.ruler #no_video_feed_room
-	}
-	custom_gui = wg_gray_commu_window # compat. Warship Girls R mod
-	custom_gui_option = wg_gray_commu_option # compat. Warship Girls R mod
-
-	is_triggered_only = yes
-	trigger = {
-		from = { is_country_type = gray }
-		has_country_flag = gray_army_active
-		NOR = {
-			has_country_flag = gray_reforming
-			has_country_flag = gray_diplomacy_engaged
-			has_country_flag = ban_commu_with_gray
-		}
-		is_same_empire = event_target:gray_owner
-		any_owned_army = {
-			army_type = gray_army
-			OR = {
-				exists = planet
-				AND = {
-					exists = fleet
-					fleet = { num_ships > 0 }
-				}
-			}
-		}
-	}
-	immediate = {
-		set_country_flag = gray_diplomacy_engaged
-	}
-	after = {
-		hidden_effect = {
-			remove_country_flag = gray_diplomacy_engaged
-		}
-	}
-	option = {
-		# Governor
-		name = graygoo.500.a
-		response_text = graygoo.503.a.response
-		allow = {
-			hidden_trigger = {
-				# To prevent exploit
-				any_owned_army = {
-					army_type = gray_army
-					OR = {
-						exists = planet
-						AND = {
-							exists = fleet
-							fleet = { num_ships > 0 }
-						}
-					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					OR = {
-						AND = {
-							exists = planet
-							planet = { has_ground_combat = no }
-						}
-						AND = {
-							exists = fleet
-							fleet = { is_in_combat = no }
-						}
-					}
-				}
-			}
-		}
-		hidden_effect = {
-			create_gray_governor = yes
-		}
-	}
-	option = {
-		# Warship
-		name = graygoo.500.b
-		response_text = graygoo.503.b.response
-		allow = {
-			hidden_trigger = {
-				# To prevent exploit
-				any_owned_army = {
-					army_type = gray_army
-					OR = {
-						exists = planet
-						AND = {
-							exists = fleet
-							fleet = { num_ships > 0 }
-						}
-					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					OR = {
-						AND = {
-							exists = planet
-							planet = { has_ground_combat = no }
-						}
-						AND = {
-							exists = fleet
-							fleet = { is_in_combat = no }
-						}
-					}
-				}
-			}
-		}
-		hidden_effect = {
-			create_gray_warship = yes
-		}
-	}
-	option = {
-		name = marry_gray
-		trigger = {
-			check_variable = {
-				which = gray_affection_level
-				value >= 4
-			}
-			NOT = {
-				has_country_flag = married_gray
-			}
-		}
-		allow = {
-			OR = {
-				has_wg_special_authority = no
-				custom_tooltip = {
-					check_variable = {
-						which = wsg_rings
-						value >= 1
-					}
-					fail_text = not_enough_engagement_rings
-				}
-			}
-		}
-		subtract_variable = {
-			which = wsg_rings
-			value = 1
-		}
-		hidden_effect = {
-			country_event = {
-				id = wg_aft.30000
-			}
-		}
-	}
-	option = {
-		name = graygoo.500.d
-		default_hide_option = yes
-	}
-}
-
+### Gray outsourced
 
 # Entering "Empty" L-Cluster
 ship_event = {

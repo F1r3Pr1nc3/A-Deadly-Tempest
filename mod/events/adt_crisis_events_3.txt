@@ -119,7 +119,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = ai_crisis_2
-		room = ethic_spaceship_room
+		room = ship_room
 	}
 
 	is_triggered_only = yes
@@ -282,8 +282,8 @@ country_event = {
 		add_ship_design = last_created_design
 		create_ship_design = { design = "NAME_Sigma" }
 		add_ship_design = last_created_design
-		create_ship_design = { design = "NAME_FE_Starbase" }
-		add_ship_design = last_created_design
+		# create_ship_design = { design = "NAME_FE_Starbase" }
+		# add_ship_design = last_created_design
 		# add_awakened_fallen_empire_fleet = yes
 		create_fallen_empire_starting_navy = yes
 

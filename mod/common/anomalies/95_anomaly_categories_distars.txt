@@ -25,7 +25,8 @@
 transmitter_cat = {
 	picture = "GFX_evt_ship_in_orbit_2"
 	level = 2
-	max_once_global = yes
+	max_once = yes
+	max_once_global = no
 
 	spawn_chance = {
 		modifier = {
