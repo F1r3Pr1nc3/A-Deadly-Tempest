@@ -1794,6 +1794,16 @@ country_event = {
 		has_global_flag = dragon_season
 	}
 	immediate = {
+		# Activate Terminal Egress L-Gate (Fallback - if not already opened by other outcome)
+		if = {
+			limit = { exists = event_target:lcluster1 }
+			event_target:lcluster1 = {
+				random_system_megastructure = {
+					limit = { CmtTriggerIsClosedLgate = yes }
+					CmtEffectOpenLgate = yes
+				}
+			}
+		}
 		if = {
 			limit = {
 				NOT = { exists = event_target:spawning_dragons }

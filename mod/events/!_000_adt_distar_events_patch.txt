@@ -278,7 +278,15 @@ country_event = {
 		if = {
 			limit = { has_global_flag = dragon_season }
 			# All gates must not be deactivated, so call it first
-			country_event = { id = distar.13000 days = 1 } # must be called before graygoo.100
+			event_target:CmtTargetLgateOrininatingSystem = {
+				closest_system = {
+					min_steps = 3
+					limit = { NOT = { any_system_planet = { is_colony = yes } } }
+					set_star_flag = dragon_point
+				}
+			}
+			# Theoretically Must be called immediately (because graygoo.100 and candidate_gateway)
+			country_event = { id = distar.13000 days = 1 }
 			# country_event = { id = distar.11000 days = 1 } # Spawn L-Cluster
 		}
 		if = {
@@ -315,8 +323,8 @@ country_event = {
 			# Enable other L-Gates over time (anyway)
 			country_event = { id = distar.10960 days = 200 random = 500 }
 		}
-		# flip L-Gates
-		# Activate Terminal Egress L-Gate (if not already opened by other outcome)
+		# Flip L-Gates
+		# Activate Terminal Egress L-Gate (Fallback - if not already opened by other outcome)
 		if = {
 			limit = { exists = event_target:lcluster1 }
 			event_target:lcluster1 = {
@@ -326,21 +334,42 @@ country_event = {
 				}
 			}
 		}
-		# Activate originating L-Gate: Put AFTER distar.13000 (if not already opened by other outcome)
-		event_target:CmtTargetLgateOrininatingSystem = {
+		# Try to refresh posssible missing target
+		if = {
+			limit = { NOT = { exists = event_target:candidate_gateway } }
 			if = {
 				limit = {
-					any_system_megastructure = { CmtTriggerIsClosedLgate = yes }
+					exists = event_target:candidate_gateway_system
+					event_target:candidate_gateway_system = { any_system_megastructure = { CmtTriggerIsClosedLgate = yes } }
 				}
-				save_event_target_as = candidate_gateway				# for desc only
-				random_system_megastructure = {
-					limit = { CmtTriggerIsClosedLgate = yes }
-					CmtEffectOpenLgate = yes
+				event_target:candidate_gateway_system = {
+					random_system_megastructure = {
+						limit = { CmtTriggerIsClosedLgate = yes }
+						save_event_target_as = candidate_gateway
+					}
+				}
+			} else = {
+				event_target:CmtTargetLgateOrininatingSystem = {
+					if = {
+						limit = { any_system_megastructure = { CmtTriggerIsClosedLgate = yes } }
+						save_event_target_as = candidate_gateway_system # for desc only
+						random_system_megastructure = {
+							limit = { CmtTriggerIsClosedLgate = yes }
+							save_event_target_as = candidate_gateway
+						}
+					}
 				}
 			}
 		}
-		set_global_flag = l_cluster_opened
-		### Technology Control: Put AFTER graygoo.110 (copy on graygoo.116)
+		# Activate originating L-Gate: Put AFTER distar.13000 (if not already opened by other outcome)
+		if = {
+			limit = {
+				exists = event_target:candidate_gateway
+				event_target:candidate_gateway = { CmtTriggerIsClosedLgate = yes }
+			}
+			event_target:candidate_gateway = { CmtEffectOpenLgate = yes }
+		}
+		### Technology Control: Put AFTER graygoo.110 (copy on graygoo.116) and before l_cluster_opened!
 		if = {
 			limit = { NOT = { has_global_flag = gray_goo_empire_set } }
 			every_playable_country = {
@@ -354,6 +383,8 @@ country_event = {
 				give_technology = { tech = tech_lgate_activation message = no }
 			}
 		}
+		set_global_flag = l_cluster_opened
+
 		## Make dragons friendly (sometimes not working so call it twice)
 		country_event = { id = a_deadly_tempest.13006 days = 3 }
 	}

@@ -30,12 +30,12 @@ country_event = {
 			# set_global_flag = galactic_crisis_happened # but this prevents other crisis?
 			awaken_guardians_of_the_galaxy = yes
 		}
-		# Vanilla double call? Do not open all same time
+		# Vanilla double call!? Do not open all same time!?
 		every_megastructure = {
 			limit = { CmtTriggerIsClosedLgate = yes }
 			CmtEffectOpenLgate = yes
 		}
-		# Vanilla double call?
+		# Vanilla double call!?
 		if = {
 			limit = { NOT = { exists = event_target:lcluster_factory_system } }
 			random_system = {
@@ -552,12 +552,22 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		# Do not open all same time
+		# Do not open all same time!?
 		# every_megastructure = {
 		# 	limit = { CmtTriggerIsClosedLgate = yes }
 		# 	CmtEffectOpenLgate = yes
 		# }
-		# Vanilla double call?
+		# Activate Terminal Egress L-Gate (Fallback - if not already opened by other outcome)
+		if = {
+			limit = { exists = event_target:lcluster1 }
+			event_target:lcluster1 = {
+				random_system_megastructure = {
+					limit = { CmtTriggerIsClosedLgate = yes }
+					CmtEffectOpenLgate = yes
+				}
+			}
+		}
+		# Vanilla double call!?
 		if = {
 			limit = { NOT = { exists = event_target:lcluster_factory_system } }
 			random_system = {
