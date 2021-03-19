@@ -68,7 +68,7 @@ tech_lgate_construction = {
 	prerequisites = {
 		"tech_gateway_construction"
 		"tech_lgate_activation"
-		# "tech_nanite_mega_engineering"
+		# "tech_nanite_mega_construction"
 	}
 	feature_flags = { lgate_construction }
 	prereqfor_desc = {

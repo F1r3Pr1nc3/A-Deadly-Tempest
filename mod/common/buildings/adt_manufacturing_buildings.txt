@@ -1,0 +1,463 @@
+#############
+# Resource buildings
+#############
+building_nanite_plant_1 = {
+	base_buildtime = 360
+	icon = building_nanite_foundry_1
+	category = manufacturing
+	upgrades = { building_nanite_plant_2 }
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		owner = { NOT = { has_origin = origin_machine_nanites has_civic = civic_machine_nanites_culture } }
+	}
+	destroy_trigger = {
+		OR = {
+			NOT = { exists = owner }
+			owner = { has_civic = civic_machine_nanites_culture } # Twinks comp.
+			AND = {
+				is_planet_class = pc_city
+				owner = {
+					# Need to check nanites income to make sure that the AI has built a couple of plants on the new city world.
+					is_ai = yes
+					has_monthly_income = { resource = nanites value > 40 }
+				}
+			}
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_nanite_forger_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_nanite_forger_drone_add = 3 }
+	}
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 500 }
+		upkeep = { energy = 9 }
+	}
+	prerequisites = { "tech_nanite_transmutation" "tech_basic_industry" }
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_nanite_forger_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_nanite_forger_drone_effect_desc
+	}
+	ai_weight = { weight = 0.5 }
+	ai_resource_production = {
+		nanites = 1
+		trigger = { always = yes }
+	}
+}
+
+building_nanite_plant_2 = {
+	base_buildtime = 480
+	icon = building_nanite_foundry_2
+	can_build = no
+	category = manufacturing
+	upgrades = { building_nanite_plant_3 }
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		buildings_upgrade_allow = yes
+		owner = { NOR = { has_origin = origin_machine_nanites has_civic = civic_machine_nanites_culture } }
+	}
+	destroy_trigger = {
+		OR = {
+			NOT = { exists = owner }
+			owner = { has_civic = civic_machine_nanites_culture } # Twinks comp.
+			AND = {
+				is_planet_class = pc_city
+				owner = {
+					# Need to check nanites income to make sure that the AI has built a couple of plants on the new city world.
+					is_ai = yes
+					has_monthly_income = { resource = nanites value > 40 }
+				}
+			}
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_nanite_forger_add = 5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_nanite_forger_drone_add = 5 }
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 750
+			nanites = 50
+		}
+		upkeep = { energy = 12 }
+	}
+	prerequisites = { "tech_nanite_transmutation" "tech_alloys_1" }
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_nanite_forger_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_nanite_forger_drone_effect_desc
+	}
+	ai_weight = { weight = 0.5 }
+	ai_resource_production = {
+		nanites = 1
+		trigger = { always = yes }
+	}
+}
+
+building_nanite_plant_3 = {
+	base_buildtime = 600
+	icon = building_nanite_foundry_3
+	can_build = no
+	category = manufacturing
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+	allow = {
+		has_major_upgraded_capital = yes
+		buildings_upgrade_allow = yes
+		owner = { NOR = { has_origin = origin_machine_nanites has_civic = civic_machine_nanites_culture } }
+	}
+
+	destroy_trigger = {
+		OR = {
+			NOT = { exists = owner }
+			owner = { has_civic = civic_machine_nanites_culture } # Twinks comp.
+			AND = {
+				is_planet_class = pc_city
+				owner = {
+					# Need to check nanites income to make sure that the AI has built a couple of plants on the new city world.
+					is_ai = yes
+					has_monthly_income = { resource = nanites value > 40 }
+				}
+			}
+			buildings_no_motes = yes
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_nanite_forger_add = 8
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_nanite_forger_drone_add = 8 }
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+			nanites = 40
+			volatile_motes = 60
+		}
+		upkeep = { energy = 15 volatile_motes = 2 }
+	}
+	prerequisites = { "tech_nanite_transmutation" "tech_alloys_2" }
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_nanite_forger_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_nanite_forger_drone_effect_desc
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 5
+			buildings_has_motes = yes
+			owner = {
+				has_monthly_income = { resource = nanites value > 20 }
+			}
+		}
+	}
+	ai_resource_production = {
+		nanites = 1
+		trigger = { always = yes }
+	}
+}
+
+####################
+# Nanite Replicators
+####################
+building_nanite_industrial_replicator_1 = {
+	base_buildtime = 600
+	category = manufacturing
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 750
+			nanites = 50
+		}
+		produces = { minerals = 40 }
+		upkeep = {
+			nanites = 5
+			energy = 20
+		}
+	}
+	prerequisites = { "tech_nanite_transmutation" }
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = { job_nanite_worker_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_nanite_drone_add = 2 }
+	}
+
+	ai_weight = { weight = 0.5 }
+	ai_resource_production = {
+		minerals = 5
+		trigger = { always = yes }
+	}
+}
+
+building_nanite_food_replicator = {
+	base_buildtime = 600
+	icon = building_nanite_food_replicator
+	category = manufacturing
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+	allow = { has_upgraded_capital = yes }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 750
+			nanites = 50
+		}
+		produces = { food = 40 }
+		upkeep = {
+			nanites = 5
+			energy = 20
+		}
+	}
+	prerequisites = { "tech_nanite_transmutation" }
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = { job_nanite_agri_worker_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_nanite_agri_drone_add = 2 }
+	}
+
+	ai_weight = { weight = 0.5 }
+	ai_resource_production = {
+		food = 2
+		trigger = { always = yes }
+	}
+}
+
+building_machinedlc_nanite_living_metal_forge = {
+	base_buildtime = 600
+	category = manufacturing
+	prerequisites = {
+		"tech_nanite_living_metal"
+		"tech_alloys_2"
+	}
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				has_civic = civic_machine_nanites_culture
+				has_ascension_perk = ap_machinedlc_micro_machine_project
+				check_variable = { which = nano_forge_build_count value >= 1 }
+				is_fallen_empire = yes
+			}
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+	destroy_trigger = {
+		owner = { NOR = {
+			has_civic = civic_machine_nanites_culture
+			has_ascension_perk = ap_machinedlc_micro_machine_project
+		} }
+	}
+	allow = { has_upgraded_capital = yes }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+			nanites = 100
+		}
+		produces = { sr_living_metal = 2 }
+		upkeep = {
+			energy = 4
+			minerals = 4
+			nanites = 2
+		}
+	}
+	ai_weight = { weight = 0.5 }
+}
+
+# nanite_building_center_1 = {
+# 	base_buildtime = 360
+# 	resources = {
+# 		category = planet_buildings
+# 		cost = { minerals = 500 }
+# 		upkeep = { energy = 10 }
+# 	}
+# 	upgrades = { nanite_building_center_2 }
+# 	prerequisites = { "tech_nanite_assemblers" }
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = no }
+# 		}
+# 		modifier = { job_nanite_builder_add = 2 }
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		modifier = { job_nanite_builder_drone_add = 2 }
+# 	}
+# 	triggered_desc = { text = job_nanite_builder_desc }
+# 	ai_weight = { weight = 0 }
+# }
+
+# nanite_building_center_2 = {
+# 	base_buildtime = 360
+# 	can_build = no
+# 	resources = {
+# 		category = planet_buildings
+# 		cost = { minerals = 500 }
+# 		upkeep = { energy = 25 }
+# 	}
+# 	upgrades = { nanite_building_center_3 }
+# 	prerequisites = { "tech_nanite_living_metal" "tech_nanite_repair_system" }
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = no }
+# 		}
+# 		modifier = { job_nanite_builder_add = 4 }
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		modifier = { job_nanite_builder_drone_add = 4 }
+# 	}
+# 	triggered_desc = { text = job_nanite_builder_desc }
+# 	ai_weight = { weight = 0 }
+# }
+
+# nanite_building_center_3 = {
+# 	base_buildtime = 360
+# 	can_build = no
+# 	resources = {
+# 		category = planet_buildings
+# 		cost = { minerals = 500 }
+# 		upkeep = { energy = 50 }
+# 	}
+# 	# upgrades = { nanite_building_center_4 }
+# 	prerequisites = { "tech_nanite_mega_construction" "tech_nanite_modular_engineering" }
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = no }
+# 		}
+# 		modifier = { job_nanite_builder_add = 6 }
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		modifier = { job_nanite_builder_drone_add = 6 }
+# 	}
+# 	triggered_desc = { text = job_nanite_builder_desc }
+# 	ai_weight = { weight = 0 }
+# }

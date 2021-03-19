@@ -41,7 +41,7 @@ nanite_giga_guardian = {
 			energy = 2
 		}
 	}
-	prerequisites = { tech_nanite_mega_engineering }
+	prerequisites = { tech_nanite_mega_construction }
 
 	potential = {
 		# always = no
@@ -95,7 +95,7 @@ nanite_giga_warform = {
 		}
 	}
 
-	prerequisites = { tech_nanite_mega_engineering }
+	prerequisites = { tech_nanite_mega_construction }
 
 	potential = {
 		# NOR = {

@@ -160,8 +160,8 @@ tech_nanite_living_metal = {
 		# hide_prereq_for_desc = component
 		# component = {
 		custom = {
-			title = "tech_nanite_mega_engineering"
-			desc = "tech_nanite_mega_engineering_desc"
+			title = "tech_nanite_mega_construction"
+			desc = "tech_nanite_mega_construction_desc"
 		}
 	}
 	# add Living Metal
@@ -328,6 +328,50 @@ tech_nanite_modular_engineering = {
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+tech_nanite_armor = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { materials }
+	weight = @tier4weight3
+	is_rare = yes
+	prerequisites = { "tech_ship_armor_5" }
+
+	potential = {
+		has_distar = yes
+	}
+
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = 0
+			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
 			}
 		}
 	}

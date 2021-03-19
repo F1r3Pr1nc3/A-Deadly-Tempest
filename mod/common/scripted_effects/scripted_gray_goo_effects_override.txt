@@ -17,7 +17,7 @@ create_gray_governor = {
 		}
 	}
 	set_country_flag = gray_governor_active
-	create_leader = {							#创建灰风总督
+	create_leader = {
 		class = governor
 		species = root.species
 		name = "NAME_Gray"
@@ -114,12 +114,12 @@ create_gray_warship = {
 		create_fleet = {
 			name = "NAME_Gray"
 			settings = {
-				can_upgrade = no						#是否可以升级
-				can_change_composition = no			#是否可以改变舰队结构
+				can_upgrade = no
+				can_change_composition = no
 				can_disband = no
-				can_change_leader = no					#是否可以更换领袖
-				uses_naval_capacity = yes				#使用舰队容量
-				spawn_debris = no						#产生残骸
+				can_change_leader = no
+				uses_naval_capacity = yes
+				spawn_debris = no
 			}
 			effect = {
 				set_owner = prev
@@ -127,7 +127,7 @@ create_gray_warship = {
 					name = "NAME_Gray"
 					design = "NAME_Gray_Warship"
 					prefix = no
-					upgradable = yes					#可以升级
+					upgradable = yes
 					effect = {
 						save_global_event_target_as = gray_warship_ship
 					}
@@ -163,7 +163,7 @@ create_gray_warship = {
 		add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
 	}
 }
-#创造灰风地面单位
+
 create_gray_army = {
 	if = {
 		limit = { has_country_flag = gray_governor_active }

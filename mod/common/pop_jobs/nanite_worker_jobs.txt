@@ -1,13 +1,12 @@
 ###################
 # Basic Jobs
-###################
+##################
 
 nanite_worker = {
 	category = worker
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_crystal_mines
 	clothes_texture_index = 2
-
 	possible = {
 		hidden_trigger = { exists = owner }
 		worker_job_check_trigger = yes
@@ -16,17 +15,11 @@ nanite_worker = {
 			is_fallen_empire_spiritualist = no
 		}
 	}
-
 	resources = {
 		category = planet_miners
-		produces = {
-			minerals = 4
-		}
-		upkeep = {
-			energy = 6
-		}
+		produces = { minerals = 4 }
+		upkeep = { energy = 6 }
 	}
-	
 	weight = {
 		weight = @worker_job_weight
 		modifier = {
@@ -34,31 +27,29 @@ nanite_worker = {
 			OR = {
 				has_trait = trait_industrious
 				has_trait = trait_robot_power_drills
-			}		
+			}
 		}
 		modifier = {
 			factor = 10
 			is_enslaved = yes
 			can_take_servant_job = no
-		}	
+		}
 		modifier = {
 			factor = 2
-			OR = {	
+			OR = {
 				is_non_sapient_robot = yes
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-		}	
+		}
 		modifier = {
 			factor = 0.25
 			can_take_servant_job = yes
-		}		
+		}
 		modifier = {
 			factor = 2
-			species = {
-				has_species_flag = racket_species_flag
-			}
-		}		
+			species = { has_species_flag = racket_species_flag }
+		}
 		modifier = {
 			factor = 1.2
 			has_trait = trait_very_strong
@@ -66,34 +57,37 @@ nanite_worker = {
 		modifier = {
 			factor = 1.1
 			has_trait = trait_strong
-		}	
+		}
 		modifier = {
 			factor = 0.9
 			has_trait = trait_weak
 		}
 	}
 }
-
 nanite_drone = {
 	category = worker
-	condition_string = WORKER_JOB_TRIGGER
+	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_crystal_mines
 	clothes_texture_index = 2
-
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
 	possible = {
+		hidden_trigger = {
+			owner = {
+				is_gestalt = yes
+				is_fallen_empire_spiritualist = no
+			}
+		}
 		drone_job_check_trigger = yes
 	}
-
 	resources = {
 		category = planet_miners
-		produces = {
-			minerals = 4
-		}
-		upkeep = {
-			energy = 6
-		}
+		produces = { minerals = 4 }
+		upkeep = { energy = 6 }
 	}
-	
 	weight = {
 		weight = @worker_job_weight
 		modifier = {
@@ -101,31 +95,29 @@ nanite_drone = {
 			OR = {
 				has_trait = trait_industrious
 				has_trait = trait_robot_power_drills
-			}		
+			}
 		}
 		modifier = {
 			factor = 10
 			is_enslaved = yes
 			can_take_servant_job = no
-		}	
+		}
 		modifier = {
 			factor = 2
-			OR = {	
+			OR = {
 				is_non_sapient_robot = yes
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-		}	
+		}
 		modifier = {
 			factor = 0.25
 			can_take_servant_job = yes
-		}		
+		}
 		modifier = {
 			factor = 2
-			species = {
-				has_species_flag = racket_species_flag
-			}
-		}		
+			species = { has_species_flag = racket_species_flag }
+		}
 		modifier = {
 			factor = 1.2
 			has_trait = trait_very_strong
@@ -133,7 +125,7 @@ nanite_drone = {
 		modifier = {
 			factor = 1.1
 			has_trait = trait_strong
-		}	
+		}
 		modifier = {
 			factor = 0.9
 			has_trait = trait_weak
@@ -146,26 +138,19 @@ nanite_agri_worker = {
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_food_processing_facility
 	clothes_texture_index = 2
-	
 	possible = {
 		hidden_trigger = { exists = owner }
 		worker_job_check_trigger = yes
-		owner = { 
+		owner = {
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
 		}
 	}
-
 	resources = {
 		category = planet_farmers
-		produces = {
-			food = 6
-		}
-		upkeep = {
-			energy = 8
-		}
-	}			
-	
+		produces = { food = 6 }
+		upkeep = { energy = 8 }
+	}
 	weight = {
 		weight = @worker_job_weight
 		modifier = {
@@ -183,10 +168,10 @@ nanite_agri_worker = {
 			factor = 10
 			is_enslaved = yes
 			can_take_servant_job = no
-		}	
+		}
 		modifier = {
 			factor = 2
-			OR = {	
+			OR = {
 				is_non_sapient_robot = yes
 				is_shackled_robot = yes
 			}
@@ -195,11 +180,11 @@ nanite_agri_worker = {
 		modifier = {
 			factor = 0.25
 			can_take_servant_job = yes
-		}	
+		}
 		modifier = {
 			factor = 2
 			has_trait = trait_syncretic_proles
-		}	
+		}
 		modifier = {
 			factor = 1.2
 			has_trait = trait_very_strong
@@ -207,7 +192,7 @@ nanite_agri_worker = {
 		modifier = {
 			factor = 1.1
 			has_trait = trait_strong
-		}	
+		}
 		modifier = {
 			factor = 0.9
 			has_trait = trait_weak
@@ -227,30 +212,21 @@ nanite_agri_worker = {
 }
 
 nanite_agri_drone = {
-	category = worker
-	condition_string = WORKER_JOB_TRIGGER
+	category = simple_drone
+	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_food_processing_facility
 	clothes_texture_index = 2
-	
-	possible = {
-		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
-		owner = { 
-			is_gestalt = no
-			is_fallen_empire_spiritualist = no
-		}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
 	}
-
+	possible = { drone_job_check_trigger = yes }
 	resources = {
 		category = planet_farmers
-		produces = {
-			food = 6
-		}
-		upkeep = {
-			energy = 8
-		}
+		produces = { food = 6 }
+		upkeep = { energy = 8 }
 	}
-	
 	weight = {
 		weight = @worker_job_weight
 		modifier = {
@@ -268,10 +244,10 @@ nanite_agri_drone = {
 			factor = 10
 			is_enslaved = yes
 			can_take_servant_job = no
-		}	
+		}
 		modifier = {
 			factor = 2
-			OR = {	
+			OR = {
 				is_non_sapient_robot = yes
 				is_shackled_robot = yes
 			}
@@ -280,11 +256,11 @@ nanite_agri_drone = {
 		modifier = {
 			factor = 0.25
 			can_take_servant_job = yes
-		}	
+		}
 		modifier = {
 			factor = 2
 			has_trait = trait_syncretic_proles
-		}	
+		}
 		modifier = {
 			factor = 1.2
 			has_trait = trait_very_strong
@@ -292,7 +268,7 @@ nanite_agri_drone = {
 		modifier = {
 			factor = 1.1
 			has_trait = trait_strong
-		}	
+		}
 		modifier = {
 			factor = 0.9
 			has_trait = trait_weak
@@ -307,6 +283,252 @@ nanite_agri_drone = {
 					value >= 0
 				}
 			}
-		}		
+		}
 	}
 }
+
+# nanite_builder = {
+# 	icon = job_machinedlc_nanite_programming_drone
+# 	category = specialist
+# 	condition_string = SPECIALIST_JOB_TRIGGER
+# 	building_icon = building_center_1
+# 	clothes_texture_index = 3
+# 	possible_pre_triggers = {
+# 		has_owner = yes
+# 		is_being_purged = no
+# 		is_being_assimilated = no
+# 	}
+# 	possible = {
+# 		complex_specialist_job_check_trigger = yes
+# 	}
+# 	resources = {
+# 		# category = nanite_builders
+# 		category = planet_researchers
+# 		produces = { engineering_research = 4 }
+# 		upkeep = {
+# 			energy = 3
+# 			minerals = 2
+# 		}
+# 	}
+# 	planet_modifier = {
+# 		planet_building_build_speed_mult = 0.25
+# 	}
+# 	weight = {
+# 		weight = @specialist_job_weight
+# 		modifier = {
+# 			factor = 0.2
+# 			has_citizenship_rights = no
+# 		}
+# 	}
+# }
+
+# nanite_builder_drone = {
+# 	icon = job_machinedlc_nanite_programming_drone
+# 	category = complex_drone
+# 	condition_string = DRONE_JOB_TRIGGER
+# 	building_icon = building_center_1
+# 	clothes_texture_index = 3
+# 	possible_pre_triggers = {
+# 		has_owner = yes
+# 		is_enslaved = no
+# 		is_being_purged = no
+# 		is_being_assimilated = no
+# 	}
+# 	possible = {
+# 		drone_job_check_trigger = yes
+# 	}
+# 	resources = {
+# 		# category = nanite_builders
+# 		category = planet_researchers
+# 		produces = { engineering_research = 2 }
+# 		upkeep = {
+# 			energy = 3
+# 			minerals = 3
+# 		}
+# 	}
+# 	planet_modifier = {
+# 		planet_building_build_speed_mult = 0.25
+# 		planet_amenities_add = 2
+# 	}
+# 	weight = {
+# 		weight = @spawner_drone_job_weight
+# 		modifier = {
+# 			factor = 0.01			# crisis purge
+# 			exists = planet
+# 			exists = planet.controller
+# 			planet.controller = {
+# 				OR = {
+# 					is_country_type = swarm
+# 					is_country_type = ai_empire
+# 				}
+# 			}
+# 		}
+# 	}
+# }
+
+###################
+# Specialist Jobs
+###################
+
+nanite_forger = {
+	icon = job_esc_nanite_breeder
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_crystal_plant
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible = { specialist_job_check_trigger = yes }
+
+	resources = {
+		category = planet_translucers
+		produces = { nanites = 2 }
+		upkeep = { minerals = 10 }
+	}
+
+	weight = {
+		weight = @specialist_job_weight
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 2
+			species = { has_species_flag = racket_species_flag }
+		}
+		modifier = {
+			factor = 1.5
+			has_job = translucer
+		}
+		modifier = {
+			factor = 1.2
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_indentured }
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_void_dweller_1
+		}
+	}
+}
+
+nanite_forger_drone = {
+	icon = job_esc_nanite_breeder
+	category = complex_drone
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_crystal_plant
+	clothes_texture_index = 3
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+	possible = { specialist_job_check_trigger = yes }
+	resources = {
+		category = planet_translucers
+		produces = { nanites = 3 }
+		upkeep = { minerals = 10 }
+	}
+	weight = {
+		weight = @specialist_job_weight
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		# modifier = {
+		# 	factor = 2
+		# 	species = {
+		# 		has_species_flag = racket_species_flag
+		# 	}
+		# }
+		modifier = {
+			factor = 1.5
+			has_job = translucer
+		}
+		modifier = {
+			factor = 1.2
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_indentured }
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_void_dweller_1
+		}
+	}
+}
+
+# nanite_fabricator = {
+# 	icon = job_nanite_drone
+# 	category = complex_drone
+# 	condition_string = DRONE_JOB_TRIGGER
+# 	building_icon = building_nanite_foundry_3
+# 	possible_pre_triggers = {
+# 		has_owner = yes
+# 		is_enslaved = no
+# 		is_being_purged = no
+# 		is_being_assimilated = no
+# 	}
+# 	possible = {
+# 		owner = { has_origin = origin_machine_nanites }
+# 	}
+# 	resources = {
+# 		category = planet_metallurgists
+# 		produces = { nanites = 6 }
+# 		upkeep = { minerals = 16 }
+# 	}
+# 	weight = {
+# 		weight = 2
+# 		modifier = {
+# 			factor = 1.5
+# 			has_job = metallurgists
+# 		}
+# 	}
+# }
+
+# nanite_replicator = {
+# 	icon = job_replicator_drone
+# 	category = simple_drone
+# 	building_icon = building_nanite_transmuter
+# 	is_capped_by_modifier = no
+# 	possible_pre_triggers = {
+# 		has_owner = yes
+# 		is_enslaved = no
+# 		is_being_purged = no
+# 		is_being_assimilated = no
+# 	}
+# 	possible = {
+# 		owner = { has_valid_civic = civic_machine_nanites }
+# 	}
+# 	resources = {
+# 		category = planet_metallurgists
+# 		upkeep = { energy = 5 }
+# 	}
+# 	planet_modifier = {
+# 		planet_pop_assembly_add = 1
+# 		planet_amenities_no_happiness_add = 0.5
+# 		planet_pops_upkeep_mult = 0.03
+# 	}
+# 	pop_modifier = { pop_amenities_usage_mult = -0.5 }
+# 	weight = {
+# 		weight = 0.1
+# 		modifier = {
+# 			factor = 2
+# 			has_job = metallurgists
+# 		}
+# 	}
+# }

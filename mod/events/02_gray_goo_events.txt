@@ -283,14 +283,8 @@ country_event = {
 			name_list = "graygoo"
 			ignore_initial_colony_error = yes
 			flag = {
-				icon= {
-					category = "special"
-					file = "gray_goo.dds"
-				}
-				background= {
-					category = "backgrounds"
-					file = "sinus.dds"
-				}
+				icon= { category = "special" file = "gray_goo.dds" }
+				background= { category = "backgrounds" file = "sinus.dds" }
 				colors={ "grey" "dark_grey" "null" "null" }
 			}
 			effect = {

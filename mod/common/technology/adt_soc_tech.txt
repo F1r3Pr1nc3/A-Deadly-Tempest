@@ -1,17 +1,15 @@
-
 # ##################
 # Terraformation
 # ##################
-
 #Climate Transformation
 tech_nanite_terraforming = {
-	cost = @tier5cost1
+	cost = @tier4cost1
 	area = society
-	tier = 5
+	tier = 4
 	category = { new_worlds }
+	weight = @tier4weight1
+	is_rare = yes
 	prerequisites = { "tech_climate_restoration" }
-	weight = @tier5weight1
-
 	# unlocks additional terraforming-options
 	prereqfor_desc = {
 		diplo_action = {
@@ -19,28 +17,63 @@ tech_nanite_terraforming = {
 			desc = "TECH_UNLOCK_NANITE_TERRAFORMING_DESC"
 		}
 	}
-
 	potential = {
-		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		no_scope = {
+			has_distar = yes
+			has_global_flag = l_cluster_opened
+		}
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain
 		}
 	}
-
 	weight_modifier = {
+		factor = 0.5
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			NOT = {
+				any_system_within_border = {
+					any_system_planet = {
+						has_resource = {
+							type = nanites
+							amount > 0
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
 		}
 	}
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+	modifier = { terraform_speed_mult = 0.5 }
 }
 
 # ##################
 # Nano Resources
 # ##################
-
 #Nano Dust
 tech_nano_dust = {
 	cost = @tier4cost1
@@ -48,61 +81,77 @@ tech_nano_dust = {
 	tier = 4
 	category = { biology }
 	weight = @tier5weight1
-
 	# add Nanodust
 	modifier = {
-		terraform_speed_mult = 0.50
+		terraform_speed_mult = 0.5
 		terraforming_cost_mult = -0.25
 	}
-
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain
 		}
 	}
-
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			NOT = {
+				any_system_within_border = {
+					any_system_planet = {
+						has_resource = {
+							type = nanites
+							amount > 0
+						}
+					}
+				}
+			}
 		}
 	}
 }
 
 #Nano Scales
 tech_nano_scales = {
+	icon = "old_tech_icons/tech_mine_garanthium"
 	cost = @tier4cost1
 	area = society
 	tier = 4
 	category = { biology }
 	weight = @tier5weight1
-
 	gateway = biological
 	# add NanoScales
-	modifier = {
-		country_food_produces_mult = 0.20
-	}
-
+	modifier = { country_food_produces_mult = 0.2 }
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain
 		}
 	}
-
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			NOT = {
+				any_system_within_border = {
+					any_system_planet = {
+						has_resource = {
+							type = nanites
+							amount > 0
+						}
+					}
+				}
+			}
 		}
 	}
 }
-
 
 ## Nano-material Armor
 nhsc_tech_armor_nanite_1 = {
@@ -113,16 +162,17 @@ nhsc_tech_armor_nanite_1 = {
 	cost = @tier5cost2
 	weight = @tier5weight2
 	prerequisites = { "tech_nanite_hull" }
-
 	potential = {
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-		has_resource = { type = nanites amount > 0 }
+		has_resource = {
+			type = nanites
+			amount > 0
+		}
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain
 		}
 	}
-
 	weight_modifier = {
 		modifier = {
 			factor = 1.15
@@ -131,7 +181,7 @@ nhsc_tech_armor_nanite_1 = {
 				has_ethic = ethic_fanatic_materialist
 			}
 		}
-		modifier ={
+		modifier = {
 			factor = 1.25
 			research_leader = {
 				area = society
@@ -139,7 +189,6 @@ nhsc_tech_armor_nanite_1 = {
 			}
 		}
 	}
-
 	ai_weight = {
 		factor = 2
 		modifier = {
@@ -149,7 +198,7 @@ nhsc_tech_armor_nanite_1 = {
 				has_ethic = ethic_fanatic_materialist
 			}
 		}
-		modifier ={
+		modifier = {
 			factor = 1.25
 			research_leader = {
 				area = society

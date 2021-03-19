@@ -130,11 +130,11 @@ on_ship_destroyed_perp = {
 # THIS = Fleet
 # FROM = System jumping to
 # FROMFROM = System jumped from
-# on_entering_lgate = {
-# 	# events = {
-# 	# 	ldragon_country_starts_nanite_ecosystem.1
-# 	# }
-# }
+on_entering_lgate = {
+	# events = {
+	# 	ldragon_country_starts_nanite_ecosystem.1
+	# }
+}
 
 # A fleet has successfully escaped from combat, executed right before the fleet enters FTL
 # This = escaping fleet

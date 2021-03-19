@@ -1,4 +1,4 @@
-## Increased weight modifier for ADT 
+## Increased weight modifier for ADT
 # Nanite Transmutation
 tech_nanite_transmutation = {
 	cost = @tier2cost3
@@ -10,13 +10,25 @@ tech_nanite_transmutation = {
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		no_scope = { has_distar = yes }
+		no_scope = {
+			has_distar = yes
+			NOT = { has_global_flag = l_cluster_opened }
+		}
 	}
 	weight_modifier = {
-		# factor = 0.5
+		factor = 0.5
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			NOT = {
+				any_system_within_border = {
+					any_system_planet = {
+						has_resource = {
+							type = nanites
+							amount > 0
+						}
+					}
+				}
+			}
 		}
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech
@@ -62,7 +74,7 @@ tech_nanite_transmutation = {
 		}
 	}
 	ai_weight = {
-		factor = 6 #important resource
+		factor = 5		#important resource
 		modifier = {
 			factor = 2
 			research_leader = {

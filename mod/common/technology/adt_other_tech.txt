@@ -2,7 +2,7 @@
 # Megastructures
 ###################
 
-tech_nanite_mega_engineering = {
+tech_nanite_mega_construction = {
 	area = engineering
 	cost = @tier4cost3
 	tier = 5
@@ -13,6 +13,7 @@ tech_nanite_mega_engineering = {
 	weight = @tier5weight2
 
 	potential = {
+		has_distar = yes
 		has_global_flag = l_cluster_opened
 		has_resource = { type = nanites amount > 0 }
 		OR = {
@@ -22,21 +23,43 @@ tech_nanite_mega_engineering = {
 	}
 
 	modifier = {
-		megastructure_build_speed_mult = 0.5
-		starbase_building_build_speed_mult = 0.2
-		starbase_module_build_speed_mult = 0.2
-		shipsize_starbase_gatebuilders_build_speed_mult = 0.2
-		shipsize_military_station_nanite_bulwark_build_speed_mult = 0.2
-		shipsize_scavenger_bot_build_speed_mult = 0.2
-		shipsize_dreadnought_build_speed_mult = 0.2
-		shipsize_graygoo_mothership_build_speed_mult = 0.2
-		shipsize_graygoo_interdictor_build_speed_mult = 0.2
+		megastructure_build_speed_mult = 0.3
+		starbase_building_build_speed_mult = 0.1
+		starbase_module_build_speed_mult = 0.1
+		shipsize_starbase_gatebuilders_build_speed_mult = 0.1
+		shipsize_military_station_nanite_bulwark_build_speed_mult = 0.1
+		shipsize_scavenger_bot_build_speed_mult = 0.1
+		shipsize_dreadnought_build_speed_mult = 0.1
+		shipsize_graygoo_mothership_build_speed_mult = 0.1
+		shipsize_graygoo_interdictor_build_speed_mult = 0.1
 	}
 
 	weight_modifier = {
+		factor = 0.50
 		modifier = {
 			factor = 0
 			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
 		}
 	}
 }

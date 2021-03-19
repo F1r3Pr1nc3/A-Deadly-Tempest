@@ -166,7 +166,7 @@ tech_scavenger_bot = {
 	category = { voidcraft }
 	prerequisites = {
 		"tech_nanite_guardians"
-		"tech_nanite_mega_engineering"
+		"tech_nanite_mega_construction"
 		"tech_nanite_modular_engineering"
 	}
 	weight = @tier4weight3
@@ -378,7 +378,7 @@ tech_voidspawn = {
 	category = { voidcraft }
 	prerequisites = {
 		"tech_nanite_guardians"
-		"tech_nanite_mega_engineering"
+		"tech_nanite_mega_construction"
 		"tech_nanite_modular_engineering"
 	}
 	weight = @tier5weight2

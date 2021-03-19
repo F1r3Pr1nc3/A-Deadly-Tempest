@@ -452,11 +452,11 @@ country_event = {
 			# give_tech_option = { TECH = tech_enigmatic_decoder }
 			give_tech_option = {
 				TECH = tech_nanite_guardians
-				INFO = no
+				# INFO = no
 			}
 			give_tech_option = {
 				TECH = tech_nanite_dragon
-				INFO = no
+				# INFO = no
 			}
 			fromfrom = {
 				create_ambient_object = {
@@ -496,7 +496,7 @@ country_event = {
 			}
 			# else = { # 	# give_tech_option = { TECH = tech_nanite_build_speed }
 			# 	# give_tech_option = { TECH = tech_nanite_modular_engineering }
-			# 	give_tech_option = { TECH = tech_nanite_mega_engineering }
+			# 	give_tech_option = { TECH = tech_nanite_mega_construction }
 			# }
 		}
 	}
@@ -2095,7 +2095,7 @@ country_event = {
 			message = no
 		}
 		give_technology = {
-			tech = tech_nanite_mega_engineering
+			tech = tech_nanite_mega_construction
 			message = no
 		}
 		give_technology = {
