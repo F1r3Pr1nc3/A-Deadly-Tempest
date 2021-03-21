@@ -2120,10 +2120,10 @@ country_event = {
 			tech = tech_nanite_dragon
 			message = no
 		}
-		add_global_ship_design = "NAME_Nanite_Mothership"
-		add_global_ship_design = "NAME_Nanite_Interdictor"
-		add_global_ship_design = "NAME_Nanite_Dragon_Young"
-		add_global_ship_design = "NAME_Gatebuilder_Starbase"
+		# add_global_ship_design = "NAME_Nanite_Mothership"
+		# add_global_ship_design = "NAME_Nanite_Interdictor"
+		# add_global_ship_design = "NAME_Nanite_Dragon_Young"
+		# add_global_ship_design = "NAME_Gatebuilder_Starbase"
 		# add_global_ship_design = "NAME_Scavenger_Bot"
 		# add_global_ship_design = "NAME_Type_69"
 		set_country_flag = synthetic_empire
@@ -2139,6 +2139,8 @@ country_event = {
 		create_ship_design = { design = "NAME_Nanite_Dragon_Young" }
 		add_ship_design = last_created_design
 		create_ship_design = { design = "NAME_Nanite_Mothership" }
+		add_ship_design = last_created_design
+		create_ship_design = { design = "NAME_Nanite_Warship" }
 		add_ship_design = last_created_design
 		create_ship_design = { design = "NAME_Nanite_Interdictor" }
 		add_ship_design = last_created_design

@@ -686,10 +686,7 @@ country_event = {
 				# origin = "origin_life_seeded"
 				effect = {
 					# change_country_flag =
-					if = {
-						limit = { NOT = { exists = event_target:graygoo_country } }
-						save_global_event_target_as = graygoo_country
-					} else = { save_global_event_target_as = gate_builders }
+					save_global_event_target_as = gate_builders
 					# set_graphical_culture = "reptilian_01"
 					set_graphical_culture = "machine_01"
 					set_country_flag = synthetic_empire
@@ -772,17 +769,21 @@ country_event = {
 					}
 					country_add_ethic="ethic_gestalt_consciousness"
 				}
+				if = {
+					limit = { NOT = { exists = event_target:graygoo_country } }
+					save_global_event_target_as = graygoo_country
+				}
 			}
 
 			### Create Factory/Fleets/Starbases
 			event_target:main_star = { CmtEffectCreateNanitieFactory = yes }
 		}
 
-		every_country = { establish_communications_no_message = event_target:graygoo_country }
+		every_country = { establish_communications_no_message = event_target:gate_builders }
 
 		event_target:nanite_factory = {
 			CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes	# Garrison Fleets at Capital
-			CmtEffectCreateAdmiralty_DessanuRoamer = yes # Roamers
+			CmtEffectCreateAdmiralty_DessanuRoamer = yes 			# Roamers
 		}
 
 		### Change Planet to Gaia, Create Buildings, Orbital Station
@@ -790,19 +791,19 @@ country_event = {
 			limit = { has_star_flag = lcluster }
 			create_starbase = {
 				size = "starbase_gatebuilders"
-				owner = event_target:graygoo_country
+				owner = event_target:gate_builders
 			}
 			every_system_planet = {
 				limit = {
 					has_deposit_for = shipclass_mining_station
 				}
-				create_mining_station = { owner = event_target:graygoo_country }
+				create_mining_station = { owner = event_target:gate_builders }
 			}
 			every_system_planet = {
 				limit = {
 					has_deposit_for = shipclass_research_station
 				}
-				create_research_station = { owner = event_target:graygoo_country }
+				create_research_station = { owner = event_target:gate_builders }
 			}
 			switch = {
 				trigger = has_star_flag
@@ -823,7 +824,7 @@ country_event = {
 										type = spy_orb_4
 										# location = event_target:sentry_moon
 										location = prev
-										owner = event_target:graygoo_country
+										owner = event_target:gate_builders
 									}
 								}
 							}
@@ -834,15 +835,16 @@ country_event = {
 					spawn_megastructure = {
 						type = "dyson_sphere_5"
 						location = star
-						owner = event_target:graygoo_country
+						owner = event_target:gate_builders
 					}
 				}
 				lcluster3b = {
 					spawn_megastructure = {
 						type = "dyson_sphere_2"
 						location = star
-						owner = event_target:graygoo_country
+						owner = event_target:gate_builders
 					}
+					set_star_flag = dragon_point
 				}
 				lcluster4b = {
 					# capital
@@ -852,15 +854,15 @@ country_event = {
 							# type = "strategic_coordination_center_ruined"
 							type = "strategic_coordination_center_3"
 							location = star
-							owner = event_target:graygoo_country
+							owner = event_target:gate_builders
 						}
 					}
 					spawn_megastructure = {
 						type = "dyson_sphere_1"
 						location = star
-						owner = event_target:graygoo_country
+						owner = event_target:gate_builders
 					}
-					event_target:graygoo_country = {
+					event_target:gate_builders = {
 						if = {
 							limit = { exists = capital_scope }
 							last_created_species = {
@@ -885,7 +887,7 @@ country_event = {
 							# type = "mega_shipyard_ruined"
 							type = mega_shipyard_1
 							location = star
-							owner = event_target:graygoo_country
+							owner = event_target:gate_builders
 							init_effect = {
 								create_ambient_object = {
 									type = "large_debris_object"
@@ -921,7 +923,7 @@ country_event = {
 				reset_planet = yes
 				set_planet_flag = hidden_nanite_world
 				prevent_anomaly = yes
-				set_owner = event_target:graygoo_country
+				set_owner = event_target:gate_builders
 
 				add_deposit = d_energy_5
 				add_deposit = d_natural_farmland
@@ -951,7 +953,7 @@ country_event = {
 				}
 				if = {
 					limit = {
-						event_target:graygoo_country.species = {
+						event_target:gate_builders.species = {
 							is_lithoid = yes
 						}
 					}
@@ -982,12 +984,13 @@ country_event = {
 				add_building = building_foundry_1
 
 				create_army = {
-					owner = event_target:graygoo_country
+					owner = event_target:gate_builders
 					species = last_created
 					type = "nanite_giga_guardian"
 				}
 			}
 		}
+
 		country_event = { id = graygoo.110 }
 		observer_event = { id = observer.66 }
 	}
@@ -1000,7 +1003,7 @@ country_event = {
 	desc = "graygoo.110.desc"
 	picture = GFX_evt_l-gateway
 	show_sound = event_radio_chatter
-	location = event_target:candidate_gateway
+	location = event_target:candidate_gateway_system
 	is_triggered_only = yes
 
 	after = {

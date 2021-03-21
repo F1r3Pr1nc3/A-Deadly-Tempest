@@ -743,8 +743,14 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		any_country = { is_country_type = gray }
 		exists = event_target:gray_owner
+		OR = {
+			AND = {
+				exists = event_target:graygoo_country
+				event_target:graygoo_country = { is_country_type = gray }
+			}
+			any_country = { is_country_type = gray }
+		}
 		event_target:gray_owner = {
 			OR = {
 				AND = {

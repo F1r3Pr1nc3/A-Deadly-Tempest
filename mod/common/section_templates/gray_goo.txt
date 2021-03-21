@@ -2,8 +2,19 @@ ship_section_template = {
 	key = "nanite_mothership_key"
 	ship_size = graygoo_mothership
 	fits_on_slot = mid
+	should_draw_components = no
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
+	ai_weight = {
+		modifier = {
+			factor = 10
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+	}
 	component_slot = {
 		name = "TITAN_01"
 		template = "invisible_titanic_fixed"
@@ -84,11 +95,38 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "nanite_mothership_battleship_key"
+	key = "nanite_mothership_alt_key"
 	ship_size = graygoo_mothership
 	fits_on_slot = mid
+	should_draw_components = no
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
+	prerequisites = {
+		tech_energy_lance_1
+		tech_energy_lance_2
+		tech_arc_emitter_1
+		tech_arc_emitter_2
+		tech_mass_accelerator_1
+		tech_mass_accelerator_2
+	}
+	ai_weight = {
+		modifier = {
+			factor = 10
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+		modifier = {
+			factor = 2
+			NOT = { is_preferred_weapons = weapon_type_energy }
+		}
+		modifier = {
+			factor = 0.5
+			is_preferred_weapons = weapon_type_energy
+		}
+	}
 	component_slot = {
 		name = "TITAN_01"
 		template = "extra_large_turret"
@@ -174,11 +212,46 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "nanite_warship_battleship_key"
+	key = "nanite_warship_key"
 	ship_size = graygoo_mothership
 	fits_on_slot = mid
+	should_draw_components = no
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
+	prerequisites = {
+		tech_energy_lance_1
+		tech_energy_lance_2
+		tech_arc_emitter_1
+		tech_arc_emitter_2
+		tech_mass_accelerator_1
+		tech_mass_accelerator_2
+	}
+	ai_weight = {
+		modifier = {
+			factor = 10
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+		modifier = {
+			factor = 0.1
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 2
+			is_preferred_weapons = weapon_type_kinetic
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_kinetic }
+		}
+		modifier = {
+			factor = 2
+			is_preferred_weapons = weapon_type_energy
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { is_preferred_weapons = weapon_type_energy }
+		}
+	}
 	component_slot = {
 		name = "TITAN_01"
 		template = "extra_large_turret"
@@ -263,12 +336,34 @@ ship_section_template = {
 	aux_utility_slots = 3
 }
 
+# Gray Warship
 ship_section_template = {
 	key = "gray_warship_key"
 	ship_size = graygoo_mothership
 	fits_on_slot = mid
+	should_draw_components = no
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_nanite_mega_construction } # because advanced design
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 4
+			is_preferred_weapons = weapon_type_kinetic
+		}
+		modifier = {
+			factor = 0.2
+			NOT = { is_preferred_weapons = weapon_type_kinetic }
+		}
+		modifier = {
+			factor = 2
+			is_preferred_weapons = weapon_type_point_defense
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { is_preferred_weapons = weapon_type_point_defense }
+		}
+	}
 	component_slot = {
 		name = "TITAN_01"
 		template = "invisible_titanic_fixed"
@@ -276,7 +371,7 @@ ship_section_template = {
 	}
 	# component_slot = {
 	# 	name = "TITAN_02"
-	# 	template = "invisible_titanic_fixed"
+	# 	template = "extra_large_turret"
 	# 	locatorname = "xl_gun_01"
 	# }
 	component_slot = {
@@ -382,8 +477,40 @@ ship_section_template = {
 	key = "nanite_interdictor_key"
 	ship_size = graygoo_interdictor
 	fits_on_slot = mid
+	should_draw_components = no
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
+	ai_weight = {
+		modifier = {
+			factor = 10
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+		modifier = {
+			factor = 2
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}
+		modifier = { factor = 2 is_preferred_weapons = weapon_type_energy }
+		modifier = {
+			factor = 0.5
+			NOT = { is_preferred_weapons = weapon_type_energy }
+		}
+		modifier = {
+			factor = 0.1
+			is_preferred_weapons = weapon_type_kinetic
+		}
+		modifier = {
+			factor = 2
+			NOT = { is_preferred_weapons = weapon_type_kinetic }
+		}
+	}
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "invisible_missile_turret"
@@ -427,8 +554,27 @@ ship_section_template = {
 	key = "nanite_interdictor_alt_key"
 	ship_size = graygoo_interdictor
 	fits_on_slot = mid
+	should_draw_components = no
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
+	ai_weight = {
+		modifier = {
+			factor = 10
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+		modifier = {
+			factor = 0.1
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 10
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}
+	}
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "large_turret"
@@ -472,8 +618,43 @@ ship_section_template = {
 	key = "nanite_interdictor_combat_key"
 	ship_size = graygoo_interdictor
 	fits_on_slot = mid
+	should_draw_components = no
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
+	ai_weight = {
+		modifier = {
+			factor = 0.1
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 10
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+		modifier = {
+			factor = 2
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}
+		modifier = {
+			factor = 2
+			is_preferred_weapons = weapon_type_energy
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { is_preferred_weapons = weapon_type_energy }
+		}
+		modifier = {
+			factor = 0.1
+			is_preferred_weapons = weapon_type_kinetic
+		}
+		modifier = {
+			factor = 2
+			NOT = { is_preferred_weapons = weapon_type_kinetic }
+		}
+	}
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "invisible_missile_turret"
@@ -517,8 +698,27 @@ ship_section_template = {
 	key = "nanite_interdictor_heavy_combat_key"
 	ship_size = graygoo_interdictor
 	fits_on_slot = mid
+	should_draw_components = no
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
+	ai_weight = {
+		modifier = {
+			factor = 0.1
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 10
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+		modifier = {
+			factor = 2
+			is_preferred_weapons = weapon_type_energy
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { is_preferred_weapons = weapon_type_energy }
+		}
+	}
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "large_turret"
@@ -563,6 +763,7 @@ ship_section_template = {
 	key = "nanite_dragon_key"
 	ship_size = nanite_dragon
 	fits_on_slot = mid
+	should_draw_components = no
 	entity = "nanite_dragon_section_entity"
 	# entity = "nanite_space_dragon_baby_section_entity"
 	icon = "GFX_ship_part_core_mid"
@@ -652,12 +853,23 @@ ship_section_template = {
 			nanites = 20
 		}
 	}
+	ai_weight = {
+		modifier = {
+			factor = 10
+			is_preferred_weapons = weapon_type_point_defense
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_point_defense }
+		}
+	}
 }
 
 ship_section_template = {
 	key = "nanite_factory_key"
 	ship_size = graygoo_factory
 	fits_on_slot = "mid"
+	# should_draw_components = yes
 	#entity = "gatebuilder_01_space_station_section_entity"
 	entity = "gatebuilder_02_space_station_section_entity"
 	icon = "GFX_ship_part_core_mid"
@@ -805,9 +1017,7 @@ ship_section_template = {
 	aux_utility_slots = 3
 	resources = {
 		category = ship_sections
-		cost = {
-			alloys = 360
-		}
+		cost = { alloys = 360 }
 	}
 }
 
@@ -815,7 +1025,7 @@ ship_section_template = {
 	key = "gatebuilder_starbase_key"
 	ship_size = starbase_gatebuilders
 	fits_on_slot = "mid"
-	should_draw_components = yes
+	# should_draw_components = yes
 	entity = "gatebuilder_01_space_station_section_entity"
 	icon = "GFX_ship_part_core_mid"
 	component_slot = {
@@ -825,7 +1035,7 @@ ship_section_template = {
 	}
 	component_slot = {
 		name = "TORPEDO_01"
-		template = "invisible_missile_turret" #large_turret
+		template = "invisible_missile_turret"		#large_turret
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
