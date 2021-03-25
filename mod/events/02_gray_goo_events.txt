@@ -311,8 +311,38 @@ country_event = {
 					effect = { set_owner = prev prev = { assign_leader = prev } }
 				}
 				copy_techs_from = {
-					target = ROOT
+					target = root
 					except = {
+						# Food
+						tech_hydroponics
+						tech_gene_crops
+						tech_nano_vitality_crops
+						tech_nutrient_replication
+						# Misc
+						tech_frontier_health
+						tech_frontier_hospital
+						tech_telepathy
+						tech_precognition_interface
+						tech_psi_jump_drive_1
+						tech_galactic_markets
+						tech_subdermal_stimulation
+						tech_global_research_initiative
+						tech_neural_implants
+						tech_psionic_theory
+						# Genetics
+						tech_genome_mapping
+						tech_vitality_boosters
+						tech_epigenetic_triggers
+						tech_cloning
+						tech_gene_banks
+						tech_gene_seed_purification
+						tech_morphogenetic_field_mastery
+						tech_gene_tailoring
+						tech_glandular_acclimation
+						tech_gene_expressions
+						tech_selected_lineages
+						tech_capacity_boosters
+						# Horizon Signal
 						tech_akx_worm_1
 						tech_akx_worm_2
 						tech_akx_worm_3

@@ -529,7 +529,7 @@ CmtEffectCreateAdmiralty_DessanuRoamer = {
 				CmtFleetSetAuxParam_DessanuRoamer = { NUM = 6 }
 			}
 			CmtEffectCreateFleet_DessanuRoamer = yes
-			event_target:lcluster5 = {
+			event_target:lcluster_factory_system = {
 				CmtFleetSetAuxParam_DessanuRoamer = { NUM = 7 }
 			}
 		}
@@ -672,41 +672,41 @@ CmtEffectCreateAdmiralty_GraygooRoamer = {
 			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 01 }
 		}
 		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-		random_system = {
-			limit = { has_star_flag = lcluster1 }
+		event_target:lcluster1 = {
+				# limit = { has_star_flag = lcluster1 }
 			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 02 }
 		}
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 0.375 } } }
 			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster2 }
+			event_target:lcluster2 = {
+				# limit = { has_star_flag = lcluster2 }
 				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 03 }
 			}
 			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster3 }
+			event_target:lcluster3 = {
+				# limit = { has_star_flag = lcluster3 }
 				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 04 }
 			}
 		}
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 0.625 } } }
 			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster4 }
+			event_target:lcluster4 = {
+				# limit = { has_star_flag = lcluster4 }
 				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 05 }
 			}
 		}
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 0.875 } } }
 			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster5 }
+			event_target:lcluster_factory_system = {
+				# limit = { has_star_flag = lcluster5 }
 				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 06 }
 			}
 			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster6 }
+			event_target:lcluster6 = {
+				# limit = { has_star_flag = lcluster6 }
 				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 07 }
 			}
 		}

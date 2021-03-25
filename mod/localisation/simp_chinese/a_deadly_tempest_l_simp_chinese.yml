@@ -194,7 +194,7 @@
  mod_job_nanite_worker_add:0 "$job_nanite_worker$岗位"
  mod_job_nanite_worker_per_pop:0 "每$VALUE$人口§G+1§! $job_nanite_worker$岗位"
  mod_job_nanite_worker_per_pop_short:0 "\n每$VALUE$ £pop£ §G+1§! £mod_job_nanite_worker_add£"
- mother_ship_hire:0 "小灰可以创造$NAME_Gray_Warship$供我们使用，但是小灰无法创建超过五艘船，因为制造纳米机器人需要消耗大量的资源。\n这些母舰能分裂出小船为自己护航，前提是母舰完好无损。但在面临重大危机时它们也许能造出更多来······\n只要小灰没重组，不管它是什么形态，都可以创造母舰。"
+ mother_ship_hire:0 "小灰可以创造$NAME_Nanite_Warship$供我们使用，但是小灰无法创建超过五艘船，因为制造纳米机器人需要消耗大量的资源。\n这些母舰能分裂出小船为自己护航，前提是母舰完好无损。但在面临重大危机时它们也许能造出更多来······\n只要小灰没重组，不管它是什么形态，都可以创造母舰。"
  nanite_dragon:0 "纳米星龙"
  nanite_dragon_key:0 "$nanite_dragon$"
  nanite_dragon_plural:0 "纳米星龙"

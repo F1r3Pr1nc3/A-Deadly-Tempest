@@ -194,7 +194,7 @@
  mod_job_nanite_worker_add:0 "$job_nanite_worker$ Jobs"
  mod_job_nanite_worker_per_pop:0 "§G+1§! $job_nanite_worker$ Job per $VALUE$ Pops"
  mod_job_nanite_worker_per_pop_short:0 "\n§G+1§! £mod_job_nanite_worker_add£ per $VALUE$ £pop£"
- mother_ship_hire:0 "Gray can create a $NAME_Gray_Warship$ for our use, however Gray will not create more than five for our empire; for a massive cost in resources to create the nanites for the ship./n/These ships are capable of creating smaller ships to escort them but only if the mothership is still intact. But in times of great crisis they might be able to create more.../n/Gray can create these ships no matter what form it takes as long as Gray is not reforming."
+ mother_ship_hire:0 "Gray can create a $NAME_Nanite_Warship$ for our use, however Gray will not create more than five for our empire; for a massive cost in resources to create the nanites for the ship./n/These ships are capable of creating smaller ships to escort them but only if the mothership is still intact. But in times of great crisis they might be able to create more.../n/Gray can create these ships no matter what form it takes as long as Gray is not reforming."
  nanite_dragon:0 "Nanite Dragon"
  nanite_dragon_key:0 "$nanite_dragon$"
  nanite_dragon_plural:0 "Nanite Dragons"

@@ -109,10 +109,7 @@ event = {
 			# 	which = current_adt_version
 			# 	value = @latest_adt_version
 			# }
-			set_variable = {
-				which = random_nhsc_value
-				value = @armor_s_t8_strength
-			}
+			set_variable = { which = random_nhsc_value value = @armor_s_t8_strength }
 			if = {
 				limit = {
 					has_global_flag = nhsc_v30
@@ -124,6 +121,12 @@ event = {
 					}
 				}
 				remove_global_flag = nhsc_v30
+			}
+
+			change_country_flag = {
+				icon = { category = "special" file = "unknown.dds" }
+				background = { category = "backgrounds" file = "00_solid.dds" }
+				colors = { "black" "black" "null" "null" }
 			}
 		}
 	}
@@ -848,7 +851,7 @@ fleet_event = {
 							is_same_value = FROM
 							is_same_value = event_target:assimilate_that_ship
 							has_fleet_flag = assimilate_that_ship_flag_temp
-							owner = { is_country = event_target:global_event_country }
+							owner = { is_country = event_target:CmtGlobalVar }
 						}
 						is_disabled = no
 						fleet_power > 0 # This alone is not sure as some ships can be on escape!?
@@ -918,7 +921,7 @@ fleet_event = {
 								is_same_value = FROM
 								is_same_value = event_target:assimilate_that_ship
 								has_fleet_flag = assimilate_that_ship_flag_temp
-								owner = { is_country = event_target:global_event_country }
+								owner = { is_country = event_target:CmtGlobalVar }
 							}
 							fleet_power > 0
 						}

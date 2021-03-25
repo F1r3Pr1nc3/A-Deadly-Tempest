@@ -22,7 +22,7 @@
 	@CmtT001_ConstActivatedEventMidgame = yes		## for events of Mid-Game Crisis (Khan, L-Gate)
 	@CmtT001_ConstActivatedEventSleeper = no		## for events of Fallen Empire Awaking except Guarians of Galaxy
 	@CmtT001_ConstActivatedPowerEndgame = no		## for military power of End-Game Crisis
-	@CmtT001_ConstActivatedPowerMidgame = no		## for military power of Khan and Gray Tempest
+	@CmtT001_ConstActivatedPowerMidgame = yes		## for military power of Khan and Gray Tempest
 		### yes: this template is activated for specified parameters.
 		### no : this template is ignored for specified parameters.
 		### * No configurations exist for military power of Fallen/Awakened Empires.
@@ -583,7 +583,6 @@
 #
 
 
-### Template of Crisis Power
 ### Template of Crisis Power
 	@CmtT001_ConstCrisisStrengthEnd = 2		## for End-Game Crisis
 	@CmtT001_ConstCrisisStrengthMid = 2		## for Mid-Game Crisis (Khan & Gray Tempest)

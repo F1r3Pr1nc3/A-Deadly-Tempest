@@ -142,7 +142,7 @@ country_event = {
 							exists = solar_system
 							owner = { is_same_empire = root }
 						}
-						every_ship = {
+						every_owned_ship = {
 							limit = { is_ship_class = shipclass_science_ship }
 							solar_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
 						}
@@ -492,20 +492,9 @@ country_event = {
 				every_playable_country = { establish_communications_no_message = prev }
 			}
 			flag = {
-				icon = {
-					category = "zoological"
-					file = "flag_zoological_905.dds"
-				}
-				background = {
-					category = "backgrounds"
-					file = "00_solid.dds"
-				}
-				colors = {
-					"dark_grey"
-					"black"
-					"null"
-					"null"
-				}
+				icon = { category = "zoological" file = "flag_zoological_905.dds" }
+				background = { category = "backgrounds" file = "00_solid.dds" }
+				colors = { "dark_grey" "black" "null" "null" }
 			}
 		}
 		while = {
@@ -513,10 +502,7 @@ country_event = {
 				any_megastructure = { CmtTriggerIsClosedLgate = yes }
 			}
 			random_megastructure = {
-				limit = {
-					CmtTriggerIsClosedLgate = yes
-					# CmtTriggerIsGalaxyLgateSystem = yes # TODO may remove?
-				}
+				limit = { CmtTriggerIsClosedLgate = yes }
 				# Flip L-Gates
 				# random_system_megastructure = { limit = { CmtTriggerIsClosedLgate = yes }
 				CmtEffectOpenLgate = yes
@@ -548,7 +534,8 @@ country_event = {
 		while = {
 			limit = {
 				any_system = {
-					CmtTriggerIsGalaxyLgateSystem = yes
+					has_star_flag = lgate
+					# CmtTriggerIsGalaxyLgateSystem = yes
 					NOT = { has_star_flag = young_dragon_spawned }
 				}
 			}
@@ -556,8 +543,8 @@ country_event = {
 			# every_system = {
 				limit = {
 					has_star_flag = lgate
-					NOT = { has_star_flag = young_dragon_spawned }
 					# CmtTriggerIsGalaxyLgateSystem = yes
+					NOT = { has_star_flag = young_dragon_spawned }
 					any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
 				}
 				set_star_flag = young_dragon_spawned
