@@ -51,7 +51,12 @@ country_event = {
 				save_event_target_as = candidate_gateway
 			}
 			# enable project
-			country_event = { id = distar.10905 }
+			if = {
+				limit = {
+					NOT = { any_playable_country = { has_country_flag = lcluster_opener } }
+				}
+				country_event = { id = distar.10905 }
+			}
 		}
 		else = {
 			# looping check
@@ -370,6 +375,7 @@ country_event = {
 			event_target:candidate_gateway = { CmtEffectOpenLgate = yes }
 		}
 		### Technology Control: Put AFTER graygoo.110 (copy on graygoo.116) and before l_cluster_opened!
+		set_global_flag = CmtFlagLgateSkipTech
 		if = {
 			limit = { NOT = { has_global_flag = gray_goo_empire_set } }
 			every_playable_country = {

@@ -1,4 +1,4 @@
-version="1.6.9"
+version="1.7.0"
 name="A Deadly Tempest (2.8)"
 dependencies={
 	"Fix Fire From The Stars"

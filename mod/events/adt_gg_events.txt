@@ -1,19 +1,19 @@
 namespace = a_deadly_tempest
-# @latest_adt_version = 1.43
-####################################################
-####################################################
-#####                                          #####
-#####        Nanites Goo Special Events        #####
-#####           For A Deadly Tempest           #####
-#####          Written by FirePrince           #####
-#####                                          #####
-####################################################
-####################################################
+# @latest_adt_version = 1.7.0
+#################################################
+#################################################
+#####										#####
+#####		Nanites Goo Special Events		#####
+#####		For A Deadly Tempest			#####
+#####		Written by FirePrince			#####
+#####										#####
+#################################################
+#################################################
 #
-#####################################################
-##           Setting up mod-is-in-use flags        ##
-##        Activation on Game Start/Saved Game      ##
-#####################################################
+##################################################
+##		Setting up mod-is-in-use flags			##
+##		Activation on Game Start/Saved Game		##
+##################################################
 event = {
 	id = a_deadly_tempest.1
 	hide_window = yes
@@ -299,7 +299,7 @@ country_event = {
 						value < 2
 					}
 				}
-				#  tech_nanite_torpedo tech_nanite_build_speed tech_adt_energymissiles tech_nanite_strike_craft tech_adt_gg_beam tech_nanocrystals tech_nanite_modular_engineering tech_nanite_living_metal
+				# tech_nanite_torpedo tech_nanite_build_speed tech_adt_energymissiles tech_nanite_strike_craft tech_adt_gg_beam tech_nanocrystals tech_nanite_modular_engineering tech_nanite_living_metal
 				random_list = {
 					1 = {
 						modifier = {
@@ -487,14 +487,8 @@ country_event = {
 						is_researching_technology = nhsc_tech_synthetic_lifeform_studies
 					}
 				}
-				give_technology = {
-					tech = nhsc_tech_new_age_warfare
-					message = no
-				}
-				give_technology = {
-					tech = nhsc_tech_advanced_materials
-					message = no
-				}
+				give_technology = { tech = nhsc_tech_new_age_warfare message = no }
+				give_technology = { tech = nhsc_tech_advanced_materials message = no }
 				give_tech_option = { TECH = nhsc_tech_synthetic_lifeform_studies }
 			}
 			# else = { # 	# give_tech_option = { TECH = tech_nanite_build_speed }
@@ -791,7 +785,7 @@ fleet_event = {
 		is_scope_type = fleet
 	}
 	immediate = {
-		# log = " merge [This.GetName] " #  to [ROOT.FromFrom.fleet.GetName]
+		# log = " merge [This.GetName] " # to [ROOT.FromFrom.fleet.GetName]
 		remove_fleet_flag = commands_merge_fleet_flag_temp
 		if = {
 			limit = {
@@ -1867,7 +1861,7 @@ country_event = {
 			event_target:spawning_dragons = {
 				set_country_flag = first_alien_life
 				set_country_flag = has_encountered_other_empire
-				# establish_contact = { who = event_target:graygoo_country location =  }
+				# establish_contact = { who = event_target:graygoo_country location = }
 				establish_communications_no_message = event_target:graygoo_country
 				add_trust = {
 					who = event_target:graygoo_country
@@ -2051,78 +2045,24 @@ country_event = {
 			give_technology = { tech = tech_strategic_coordination message = no }
 			give_technology = { tech = tech_interstellar_assembly message = no }
 		}
-		give_technology = {
-			tech = tech_arc_emitter_2
-			message = no
-		}
-		give_technology = {
-			tech = tech_energy_lance_2
-			message = no
-		}
-		give_technology = {
-			tech = tech_disruptors_3
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanite_ships
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanite_hull
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanite_torpedo
-			message = no
-		}
-		give_technology = {
-			tech = tech_adt_energymissiles
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanite_strike_craft
-			message = no
-		}
-		give_technology = {
-			tech = tech_adt_gg_beam
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanocrystals
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanite_modular_engineering
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanite_living_metal
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanite_repair_system
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanite_bombardment
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanite_mega_construction
-			message = no
-		}
-		give_technology = {
-			tech = tech_lgate_construction
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanite_guardians
-			message = no
-		}
-		give_technology = {
-			tech = tech_nanite_dragon
-			message = no
-		}
+		give_technology = { tech = tech_arc_emitter_2 message = no }
+		give_technology = { tech = tech_energy_lance_2 message = no }
+		give_technology = { tech = tech_disruptors_3 message = no }
+		give_technology = { tech = tech_nanite_ships message = no }
+		give_technology = { tech = tech_nanite_hull message = no }
+		give_technology = { tech = tech_nanite_torpedo message = no }
+		give_technology = { tech = tech_adt_energymissiles message = no }
+		give_technology = { tech = tech_nanite_strike_craft message = no }
+		give_technology = { tech = tech_adt_gg_beam message = no }
+		give_technology = { tech = tech_nanocrystals message = no }
+		give_technology = { tech = tech_nanite_modular_engineering message = no }
+		give_technology = { tech = tech_nanite_living_metal message = no }
+		give_technology = { tech = tech_nanite_repair_system message = no }
+		give_technology = { tech = tech_nanite_bombardment message = no }
+		give_technology = { tech = tech_nanite_mega_construction message = no }
+		give_technology = { tech = tech_lgate_construction message = no }
+		give_technology = { tech = tech_nanite_guardians message = no }
+		give_technology = { tech = tech_nanite_dragon message = no }
 		# add_global_ship_design = "NAME_Nanite_Mothership"
 		# add_global_ship_design = "NAME_Nanite_Interdictor"
 		# add_global_ship_design = "NAME_Nanite_Dragon_Young"

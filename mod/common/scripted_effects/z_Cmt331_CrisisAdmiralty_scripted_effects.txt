@@ -705,8 +705,8 @@ CmtEffectCreateAdmiralty_GraygooRoamer = {
 				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 06 }
 			}
 			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			event_target:lcluster6 = {
-				# limit = { has_star_flag = lcluster6 }
+			random_system = {
+				limit = { has_star_flag = lcluster6 }
 				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 07 }
 			}
 		}
