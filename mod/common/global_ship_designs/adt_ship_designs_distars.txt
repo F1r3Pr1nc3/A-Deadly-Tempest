@@ -1121,7 +1121,7 @@ ship_design = {
 ship_design = {
 	name = "NAME_Gatebuilder_Starbase"
 	ship_size = starbase_gatebuilders
-	# is_event_design = yes #vanilla no
+	is_event_design = yes #vanilla no
 	is_special_buildable = yes
 	section = {
 		template = "gatebuilder_starbase_key"
@@ -1187,7 +1187,6 @@ ship_design = {
 	required_component = "TITAN_ANTIMATTER_REACTOR"
 	required_component = "COMBAT_COMPUTER_PLATFORM_ADVANCED"
 }
-
 
 # Scavenger Bot
 ship_design = {

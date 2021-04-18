@@ -6,7 +6,6 @@
 ##                     New Age Warfare                    ##
 ############################################################
 
-
 nhsc_tech_new_age_warfare = {
 	area = society
 	icon = tech_nanite

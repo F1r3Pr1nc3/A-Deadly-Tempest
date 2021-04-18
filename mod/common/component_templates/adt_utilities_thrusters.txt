@@ -72,7 +72,6 @@
 @colossus_cost4 = 240
 @colossus_cost5 = 300
 
-
 #############
 # THRUSTERS #
 #############

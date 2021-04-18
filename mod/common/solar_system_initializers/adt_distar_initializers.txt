@@ -595,7 +595,10 @@ distantstars_init_05 = {
 		size = 18
 		has_ring = no
 	}
-	init_effect = { save_global_event_target_as = lcluster_factory_system }
+	init_effect = {
+		save_global_event_target_as = lcluster_factory_system	# can change
+		save_global_event_target_as = lcluster5					# static
+	}
 }
 
 # EXTRAS
@@ -861,6 +864,8 @@ distantstars_init_05b = {
 		radius = 100
 	}
 	usage = misc_system_init
+	# usage = fallen_empire_init
+	name = "NAME_Dessanu"
 	usage_odds = 0
 	flags = {
 		hostile_system
@@ -868,6 +873,7 @@ distantstars_init_05b = {
 		empire_cluster
 		lcluster5b
 		ring_world_built
+		graygoo_factory_system
 	}
 	planet = {
 		class = star
@@ -875,10 +881,17 @@ distantstars_init_05b = {
 		orbit_angle = 0
 	}
 	change_orbit = 45
+
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "NAME_Circuit_I"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
 	planet = {
 		class = "pc_ringworld_seam"
-		name = "NAME_Ring_Section"
-		orbit_angle = 240
+		name = "NAME_Superstructure_I"
+		orbit_angle = 30
 		orbit_distance = 0
 	}
 	planet = {
@@ -889,18 +902,149 @@ distantstars_init_05b = {
 		modifiers = none
 		starting_planet = yes
 		flags = { ignore_startup_effect megastructure }
-		init_effect = { prevent_anomaly = yes }
+		init_effect = {
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = event_target:gate_builders
+			set_controller = event_target:gate_builders
+			set_capital = yes
+
+			add_building = building_ancient_control_center
+			add_building = building_nourishment_center
+			add_building = building_nourishment_center
+			add_building = building_nourishment_center
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+
+			while = {
+				count = 5
+				add_district = district_rw_science
+			}
+			while = {
+				count = 105
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+			# create_fallen_empire_starting_navy = yes
+
+			while = {
+				count = 20
+				create_army = {
+					name = random
+					owner = event_target:gate_builders
+					species = owner_main_species
+					type = "machine_assault_2"
+				}
+			}
+		}
 	}
 	planet = {
 		class = "pc_ringworld_tech"
-		name = "NAME_Ring_Section"
+		name = "NAME_Circuit_II"
 		orbit_angle = 30
 		orbit_distance = 0
 	}
 	planet = {
+		class = "pc_ringworld_seam"
+		name = "NAME_Superstructure_II"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "NAME_Production_Unit"
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = event_target:gate_builders
+
+			add_building = building_ancient_control_center
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+
+			while = {
+				count = 5
+				add_district = district_rw_nexus
+			}
+			while = {
+				count = 50
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+		}
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "NAME_Circuit_III"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "NAME_Superstructure_III"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "NAME_Processing_Unit"
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = event_target:gate_builders
+
+			add_building = building_ancient_control_center
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+
+			while = {
+				count = 5
+				add_district = district_rw_generator
+			}
+			while = {
+				count = 22
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+		}
+	}
+	planet = {
 		class = "pc_ringworld_tech_damaged"
 		name = "NAME_Ring_Section"
-		orbit_angle = 120
+		orbit_angle = 30
 		orbit_distance = 0
 	}
 	planet = {
@@ -909,7 +1053,7 @@ distantstars_init_05b = {
 		name = "NAME_Ring_Section"
 		orbit_angle = 30
 		orbit_distance = 0
-		# flags = { ignore_startup_effect starting_mining_target starting_deposit }
+		flags = { ignore_startup_effect starting_mining_target starting_deposit }
 		init_effect = {
 			create_ambient_object = {
 				type = "medium_debris_01_object"
@@ -930,30 +1074,27 @@ distantstars_init_05b = {
 	}
 	planet = {
 		class = "pc_shattered_2"
-		# name = "The Interloper"
+		name = "SG2 5x23" # Fulcrum
 		orbit_distance = -5
 		orbit_angle = 0
 		size = 5
 		has_ring = no
-		# flags = { ignore_startup_effect starting_mining_target starting_deposit }
+		flags = { ignore_startup_effect starting_mining_target starting_deposit }
 		init_effect = { set_deposit = d_minerals_10 }
 	}
-	planet = {
-		class = "pc_ringworld_tech_damaged"
-		name = "NAME_Ring_Section"
-		orbit_angle = 30
-		orbit_distance = 5
-	}
+
 	change_orbit = 55
 	planet = {
 		count = { min = 1 max = 4 }
 		class = pc_asteroid
 		orbit_distance = 0
 		orbit_angle = { min = 90 max = 270 }
+		flags = { main_star }
 	}
 	change_orbit = 45
 	planet = {
 		class = pc_gas_giant
+		name = "Herz "
 		orbit_angle = { min = 90 max = 270 }
 		size = 25
 		change_orbit = @base_moon_distance
@@ -978,12 +1119,12 @@ distantstars_init_05b = {
 			orbit_distance = 45
 			location = planet
 		}
-		spawn_megastructure = {
-			type = "ring_world_ruined"
-			orbit_angle = 180
-			orbit_distance = 45
-			location = planet
-		}
+		# spawn_megastructure = {
+		# 	type = "ring_world_ruined"
+		# 	orbit_angle = 180
+		# 	orbit_distance = 45
+		# 	location = planet
+		# }
 		save_global_event_target_as = lcluster5b
 	}
 }

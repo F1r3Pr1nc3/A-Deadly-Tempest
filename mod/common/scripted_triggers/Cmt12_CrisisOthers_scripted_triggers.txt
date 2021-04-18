@@ -10,7 +10,6 @@
 ######################################################
 ######################################################
 
-
 ###################
 ###  Prethoryn  ###
 ###################
@@ -76,8 +75,6 @@ CmtTriggerPrethorynUnconectableCountry = {
 		owner_species = { has_trait = trait_hive_mind }
 	}
 }
-
-
 
 ###########################
 ###  Extradimensionals  ###
@@ -282,8 +279,6 @@ CmtTriggerAnchorForPortalDestroy = {		## This = Country (Exds)
 	}
 }
 
-
-
 #####################
 ###  Contingency  ###
 #####################
@@ -309,7 +304,6 @@ CmtTriggerRepeatableTerror = {
 		}
 	}
 }
-
 
 CmtTriggerTerrorOrganicGlobal = {
 	has_global_flag = synth_terror
@@ -339,7 +333,6 @@ CmtTriggerTerrorMachineCountry = {
 	}
 }
 
-
 ### Ghost Signal
 
 CmtTriggerGhostTargetPop = {
@@ -361,8 +354,6 @@ CmtTriggerUnderGhostSignalCountry = {
 		has_notification_modifier = ghost_signal_4_machine
 	}
 }
-
-
 
 #############################
 ###  Guardians of Galaxy  ###
@@ -386,8 +377,6 @@ CmtTriggerEmpireAwakenableGuardians = {
 		fleet_power > 40000
 	}
 }
-
-
 
 #################################
 ###  For Forced End of Cycle  ###

@@ -119,12 +119,12 @@ weapon_component_template = {
 	component_set = "NANITE_BEAM"
 	size_restriction = {
 		titan
-		fe_titan
 		colossus
 		graygoo_mothership
 		dreadnought
 		scavenger_bot
 		nanite_dragon
+		fe_titan
 	}
 	tags = { weapon_type_energy }
 	projectile_gfx = "gatebuilder_titan_weapon"
@@ -295,8 +295,9 @@ weapon_component_template = {
 	# component_set = "SCRAP_WEAPON"
 	tags = { weapon_type_explosive }
 	projectile_gfx = "scavenger_bot_secondary_weapon"
-	hidden = no
-}
+	hidden = yes
+}		fe_titan
+
 
 weapon_component_template = {
 	key = "SCAVENGER_MAIN_WEAPON"
@@ -311,5 +312,5 @@ weapon_component_template = {
 	min_range = 30
 	tags = { weapon_type_kinetic }
 	projectile_gfx = "scavenger_bot_main_weapon"
-	hidden = no
+	hidden = yes
 }

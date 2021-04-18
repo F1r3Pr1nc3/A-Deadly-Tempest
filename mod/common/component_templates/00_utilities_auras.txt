@@ -11,7 +11,6 @@
 @stationMediumAuraRange = 90
 @stationLargeAuraRange = 110
 
-
 ### Empty Aura-slot
 utility_component_template = {
 	key = "SHIP_AURA_EMPTY"

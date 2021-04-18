@@ -272,7 +272,7 @@ country_event = {
 				root = { set_country_flag = only_one_lgate }
 			}
 			# also try to refresh the other posssible missing targets
-			save_event_target_as = candidate_gateway_system
+			save_global_event_target_as = candidate_gateway_system
 			random_system_megastructure = {
 				limit = { CmtTriggerIsClosedLgate = yes }
 				save_event_target_as = candidate_gateway
@@ -357,7 +357,7 @@ country_event = {
 				event_target:CmtTargetLgateOrininatingSystem = {
 					if = {
 						limit = { any_system_megastructure = { CmtTriggerIsClosedLgate = yes } }
-						save_event_target_as = candidate_gateway_system # for desc only
+						save_global_event_target_as = candidate_gateway_system # for desc only
 						random_system_megastructure = {
 							limit = { CmtTriggerIsClosedLgate = yes }
 							save_event_target_as = candidate_gateway

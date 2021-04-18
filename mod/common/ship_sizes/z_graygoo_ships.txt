@@ -536,7 +536,6 @@ scavenger_bot = {
 	}
 }
 
-
 voidspawn = {
 	is_space_object = yes
 	graphical_culture = no
@@ -752,6 +751,9 @@ starbase_gatebuilders = {
 		ship_shield_add = 30000 # vanilla 10000; NSC 80000
 		ship_armor_add = 30000 # vanilla 10000; NSC 80000
 		ship_piracy_suppression_add = 16
+		starbase_module_capacity_add = 6
+		starbase_building_capacity_add = 4
+		starbase_defense_platform_capacity_add = 15
 	}
 	ship_modifier = {
 		ship_weapon_range_mult = 0.25

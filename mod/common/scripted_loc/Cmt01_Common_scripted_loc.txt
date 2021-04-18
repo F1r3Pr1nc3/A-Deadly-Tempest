@@ -7,8 +7,6 @@
 ########################################
 ########################################
 
-
-
 #######################
 ###  Title of Menu  ###
 #######################
@@ -46,8 +44,6 @@ defined_text = {
 		localization_key = CmtTextErrUndefined.name
 	}
 }
-
-
 
 ##############################################
 ###  Return Plus/Minus Sign  for Variable  ###
@@ -133,8 +129,6 @@ defined_text = {
 	}
 }
 
-
-
 ########################
 ###  Toggle Options  ###
 ########################
@@ -188,7 +182,6 @@ defined_text = {
 	}
 }
 
-
 ### Awakenable Ancient Rival
 defined_text = {
 	name = GetCurrnentSetting_HeavenMaterialist
@@ -237,7 +230,6 @@ defined_text = {
 		localization_key = CmtIconFanaticXenophobe
 	}
 }
-
 
 ### What Lurks Beyond L-Gates
 defined_text = {
@@ -288,7 +280,6 @@ defined_text = {
 	}
 }
 
-
 ### Uprisable Exploitee
 defined_text = {
 	name = GetCurrnentSetting_UprisingSynth
@@ -337,8 +328,6 @@ defined_text = {
 		localization_key = CrisisManagerMenu.5112d.title
 	}
 }
-
-
 
 ######################
 ###  Crisis Power  ###
@@ -440,8 +429,6 @@ defined_text = {
 	}
 }
 
-
-
 ###########################
 ###  Manual Operations  ###
 ###########################
@@ -520,8 +507,6 @@ defined_text = {
 		localization_key = CrisisManagerMenu.7140c4.name
 	}
 }
-
-
 
 ######################
 ###  For Template  ###
@@ -629,12 +614,4 @@ defined_text = {
 		localization_key = CmtTemplateError
 	}
 }
-
-
-
-
-
-
-
-
 

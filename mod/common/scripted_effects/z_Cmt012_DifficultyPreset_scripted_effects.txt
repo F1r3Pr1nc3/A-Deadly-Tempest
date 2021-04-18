@@ -183,7 +183,6 @@ CmtEffectDifficulty_MidgameHard = {
 	}
 }
 
-
 ###################
 ###  Very Hard  ###
 ###################
@@ -242,8 +241,6 @@ CmtEffectDifficulty_MidgameHard = {
 # 	}
 # }
 
-
-
 ##########################
 ###  Constructor Spam  ###
 ##########################
@@ -269,7 +266,6 @@ CmtEffectDifficulty_MidgameConstructorSpam = {
 		set_variable = { which = CmtVarConstructorNumber_Khan        value = 2.00 }
 	}
 }
-
 
 #################
 ###  Legacy   ###

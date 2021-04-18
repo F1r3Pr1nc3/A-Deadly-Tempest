@@ -226,7 +226,6 @@ country_event = {
 	#	hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	#}
 
-
 	### Player Crisis
 	option = {
 		name = CrisisManagerMenu.7000.7150.A.name
@@ -259,8 +258,6 @@ country_event = {
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
 
-
-
 	option = {
 		name = CmtTextSeparator.name
 		custom_tooltip = CmtTextSeparator.tooltip
@@ -273,8 +270,6 @@ country_event = {
 		}
 		allow = { hidden_trigger = { always = no } }
 	}
-
-
 
 	### Terminate Eng-Game Crisis
 	option = {
@@ -338,7 +333,6 @@ country_event = {
 		hidden_effect = { CmtEffectExitMenu = yes }
 	}
 }
-
 
 ###########################################
 ###  Trigger End-Game Crisis Manuallly  ###
@@ -464,7 +458,6 @@ country_event = {
 		trigger = { has_global_flag = extradimensional_second_portal }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7110 } }
 	}
-
 
 	### Vehement
 	option = {
@@ -957,8 +950,6 @@ country_event = {
 		hidden_effect = { CmtEffectExitMenu = yes }
 	}
 }
-
-
 
 ### Sleeper Awakening
 country_event = {
@@ -1607,7 +1598,6 @@ country_event = {
 	}
 }
 
-
 #### Uprising
 #country_event = {
 #	id = CrisisManagerMenu.7146
@@ -1777,7 +1767,6 @@ country_event = {
 #	}
 #}
 
-
 ### Player Crisis
 country_event = {
 	id = CrisisManagerMenu.7150
@@ -1894,7 +1883,6 @@ country_event = {
 		allow = { hidden_trigger = { always = no } }
 	}
 
-
 	### Trigger on Another Empire
 	option = {
 		name = CrisisManagerMenu.7150c1.name
@@ -2001,8 +1989,6 @@ country_event = {
 		}
 	}
 }
-
-
 
 ##############################################
 ###  Forced Termination of Crisis Country  ###
@@ -2129,7 +2115,6 @@ country_event = {
 		}
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7209 } }
 	}
-
 
 	### Go Back, etc.
 	option = {
@@ -2322,7 +2307,6 @@ country_event = {
 	}
 }
 
-
 ### Termination of Khan/Marauder
 country_event = {
 	id = CrisisManagerMenu.7208
@@ -2436,8 +2420,6 @@ country_event = {
 	}
 }
 
-
-
 ##################################
 ### Create Fleet for Sleepers  ###
 ##################################
@@ -2484,7 +2466,6 @@ country_event = {
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7419 } }
 	}
 
-
 	### Go Back, etc.
 	option = {
 		name = CmtTextSeparator.name
@@ -2503,7 +2484,6 @@ country_event = {
 		hidden_effect = { CmtEffectExitMenu = yes }
 	}
 }
-
 
 ### Create Standard Fleet for Sleeper
 country_event = {
@@ -2534,7 +2514,6 @@ country_event = {
 		trigger = { NOT = { has_global_flag = CmtFlagNoSeparator } }
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 	### Standard Creation
 	option = {
@@ -2707,7 +2686,6 @@ country_event = {
 		trigger = { NOT = { has_global_flag = CmtFlagNoSeparator } }
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 	### Standard Creation
 	option = {
@@ -2994,7 +2972,6 @@ country_event = {
 		allow = { hidden_trigger = { always = no } }
 	}
 
-
 	### Standard Creation
 	option = {
 		name = CrisisManagerMenu.7413b1.name
@@ -3162,7 +3139,6 @@ country_event = {
 	}
 }
 
-
 ### Create Titan for Sleeper
 country_event = {
 	id = CrisisManagerMenu.7419
@@ -3192,7 +3168,6 @@ country_event = {
 		trigger = { NOT = { has_global_flag = CmtFlagNoSeparator } }
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 	### Weak
 	option = {
@@ -3365,8 +3340,6 @@ country_event = {
 	}
 }
 
-
-
 ##############################
 ###  Create/Delete L-Gate  ###
 ##############################
@@ -3499,7 +3472,6 @@ country_event = {
 		}
 	}
 }
-
 
 ### Create L-Gate
 country_event = {

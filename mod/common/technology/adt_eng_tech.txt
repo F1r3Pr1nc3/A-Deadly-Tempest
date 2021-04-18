@@ -289,7 +289,6 @@ tech_nanite_bulwark = {
 	}
 }
 
-
 # Modular Engineering
 tech_nanite_modular_engineering = {
 	cost = @tier5cost3

@@ -119,7 +119,6 @@ country_event = {
 	}
 }
 
-
 ### Interval for Awakening of Sleeper
 country_event = {
 	id = CrisisManagerMenu.4520
@@ -195,8 +194,6 @@ country_event = {
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 }
-
-
 
 ### Sleeper to Awake at Earliest
 country_event = {
@@ -309,8 +306,6 @@ country_event = {
 	}
 }
 
-
-
 ### MTTH for Sleeper Awakening
 country_event = {
 	id = CrisisManagerMenu.4540
@@ -401,8 +396,6 @@ country_event = {
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 }
-
-
 
 ### Required Fleet Power of Young for Awakening
 country_event = {
@@ -509,8 +502,6 @@ country_event = {
 	}
 }
 
-
-
 ### Required Fleet Power of Own for Awakening
 country_event = {
 	id = CrisisManagerMenu.4560
@@ -615,7 +606,6 @@ country_event = {
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 }
-
 
 ### Awakenable Sleepers
 country_event = {
@@ -758,7 +748,6 @@ country_event = {
 	}
 }
 
-
 ### Punishment for Holy-Cracker
 country_event = {
 	id = CrisisManagerMenu.4580
@@ -830,7 +819,6 @@ country_event = {
 	}
 }
 
-
 ### Dummy
 country_event = {
 	id = CrisisManagerMenu.4590
@@ -838,8 +826,6 @@ country_event = {
 	is_triggered_only = yes
 	trigger = { always = no }
 }
-
-
 
 #######################
 ###  War in Heaven  ###
@@ -939,8 +925,6 @@ country_event = {
 	}
 }
 
-
-
 ### Ancient Rival
 country_event = {
 	id = CrisisManagerMenu.4620
@@ -1031,8 +1015,6 @@ country_event = {
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 }
-
-
 
 ### Awakenable Ancient Rival
 country_event = {
@@ -1227,8 +1209,6 @@ country_event = {
 	}
 }
 
-
-
 ### Indomitable Rival
 country_event = {
 	id = CrisisManagerMenu.4640
@@ -1299,8 +1279,6 @@ country_event = {
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 }
-
-
 
 ### Progress Speed of Prelude Event to War in Heaven
 country_event = {
@@ -1382,8 +1360,6 @@ country_event = {
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 }
-
-
 
 ### League of Non-Aligned Powers
 country_event = {
@@ -1476,8 +1452,6 @@ country_event = {
 	}
 }
 
-
-
 ### League of Non-Aligned Powers
 country_event = {
 	id = CrisisManagerMenu.4670
@@ -1568,8 +1542,6 @@ country_event = {
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 }
-
-
 
 ### Exhaustion from War in Heaven
 country_event = {
@@ -1662,8 +1634,6 @@ country_event = {
 	}
 }
 
-
-
 ### Dummy
 country_event = {
 	id = CrisisManagerMenu.4690
@@ -1671,5 +1641,4 @@ country_event = {
 	is_triggered_only = yes
 	trigger = { always = no }
 }
-
 

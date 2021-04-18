@@ -37,7 +37,6 @@
 		### Never change this value.
 		### For example, ''1.03'' means ''ver.1.3'' but not ''ver.1.0.3''
 
-
 ##############################################
 ###  Event Conditions for End-Game Crises  ###
 ##############################################
@@ -82,7 +81,6 @@
 	@CmtT001_ConstSubmarineCrisis = no
 		### yes: Activate Submarine Crisis
 		### no : Disable Submarine Crisis (Default)
-
 
 #########################################################
 ###  Configurations for Expansion of Crisis Factions  ###
@@ -131,7 +129,6 @@
 		### Friendly with Each Other Except Extradimensionals = 3
 		### Friendly with Each Other = 4
 
-
 ############################################
 ###  Advanced Configurations: Prethoryn  ###
 ############################################
@@ -168,7 +165,6 @@
 ### Unlimited Flavor Text of Prethoryn
 	@CmtT001_ConstPrethorynUnlimitedFlavor = no
 		### yes: Unlimited, no: Limited (Default)
-
 
 ####################################################
 ###  Advanced Configurations: Extradimensionals  ###
@@ -210,7 +206,6 @@
 		### It must be 1, 3, 5, 10, 25, 50, 100, 250, 500 or 9999.
 		### Exception: 9999 means ''Never Stabilized''
 
-
 ##############################################
 ###  Advanced Configurations: Contingency  ###
 ##############################################
@@ -249,7 +244,6 @@
 		### Never Resurface = 1, Resurface with Delay = 2
 		### Resurface Standardly = 3 (Default), Resurface Early = 4, Power State S1 = 5
 
-
 ######################################################
 ###  Advanced Configurations: Forced End of Cycle  ###
 ######################################################
@@ -287,7 +281,6 @@
 		### no:  Term of the convenant is 50 years (Default)
 
 ### * Don't forget ''Guardians of Galaxy'' and/or ''Crisis Power''
-
 
 ########################################################
 ###  Advanced Configurations: Awakening of Sleepers  ###
@@ -347,7 +340,6 @@
 	@CmtT001_ConstSleeperHolyClacker = 3
 		### No Punishment = 1, Punished Later = 2, Punished Urgently = 3 (Default)
 
-
 ################################################
 ###  Advanced Configurations: War in Heaven  ###
 ################################################
@@ -400,7 +392,6 @@
 	@CmtT001_ConstHeavenExhaustion = 2
 		### Spineless = 1, Fickle = 2 (Default), Tough = 3, Vindictive = 4, All-Out War = 5
 
-
 ######################################################
 ###  Advanced Configurations: Guardians of Galaxy  ###
 ######################################################
@@ -434,7 +425,6 @@
 	@CmtT001_ConstMechFeAwaking = 3
 		### Never Awake = 1, Awakening Surely as Guardians = 2
 		### Awakening Randomly = 3 (Default), Awakening Surely as Berserkers = 4
-
 
 #######################################
 ###  Advanced Configurations: Khan  ###
@@ -501,7 +491,6 @@
 	@CmtT001_ConstKhanPostDeathSummary = 1
 		### Random = 1 (Default), Democracy = 2, Democracy or New Khanate = 3
 		### New Khanate = 4, New Khanate or Splinter Diadochi = 5, Splinter Diadochi = 6
-
 
 #########################################
 ###  Advanced Configurations: L-Gate  ###
@@ -573,7 +562,6 @@
 		### Can Terraformed after War = 4 (Default), Auto-Terraformed after War = 5
 		### Can Terraformed for Any L-Cluster = 6
 
-
 ######################
 ###  Crisis Power  ###
 ######################
@@ -581,7 +569,6 @@
 #	Required for activating: Crisis Manager - End-Game Edition and/or Mid-Game Edition
 #	Required for activating: @CmtT001_ConstActivatedFleetPower = yes
 #
-
 
 ### Template of Crisis Power
 	@CmtT001_ConstCrisisStrengthEnd = 2		## for End-Game Crisis

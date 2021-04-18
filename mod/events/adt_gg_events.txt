@@ -163,6 +163,41 @@ event = {
 	}
 }
 
+###########################
+###  Dessanu / Graygoo  ###
+###########################
+# CmtEffectCreateNanitieFactory
+planet_event = {
+	id = a_deadly_tempest.4
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		create_fleet = {
+			settings = {
+				spawn_debris = yes
+				is_boss = yes
+				can_upgrade = no
+				can_change_composition = no
+				uses_naval_capacity = no
+			}
+			effect = {
+				set_owner = last_created_country
+				create_ship = {
+					name = random
+					design = "NAME_Nanite_Factory"
+					graphical_culture = machine_01 #"reptilian_01"
+				}
+				set_location = {
+					target = prev
+					distance = 55
+					angle = 270
+				}
+				save_global_event_target_as = nanite_factory
+			}
+		}
+	}
+}
+
 ### Nanites
 # nanite_factory_destroyed gives tech
 country_event = {
@@ -657,7 +692,6 @@ fleet_event = {
 	}
 }
 
-
 # TODO desc
 # assimilate_that_ship
 ship_event = {
@@ -665,9 +699,10 @@ ship_event = {
 	hide_window = yes
 	show_sound = event_ground_battle
 	is_triggered_only = yes
-	location = this
+	location = fleet
 	trigger = {
 		exists = this
+		is_scope_valid = yes
 		is_scope_type = ship
 		has_ship_flag = assimilate_that_robot_ship
 	}
@@ -693,6 +728,7 @@ ship_event = {
 				solar_system = {
 					random_fleet_in_system = {
 						limit = {
+							exists = owner # idk why but it is needed
 							is_ship_class = shipclass_military
 							NOR = {
 								is_same_value = from.fleet
@@ -781,8 +817,9 @@ fleet_event = {
 	location = this
 	trigger = {
 		exists = this
-		# exists = owner
+		is_scope_valid = yes
 		is_scope_type = fleet
+		# exists = owner
 	}
 	immediate = {
 		# log = " merge [This.GetName] " # to [ROOT.FromFrom.fleet.GetName]
@@ -2066,15 +2103,13 @@ country_event = {
 		# add_global_ship_design = "NAME_Nanite_Mothership"
 		# add_global_ship_design = "NAME_Nanite_Interdictor"
 		# add_global_ship_design = "NAME_Nanite_Dragon_Young"
-		# add_global_ship_design = "NAME_Gatebuilder_Starbase"
+		add_global_ship_design = "NAME_Sigma"
+		add_global_ship_design = "NAME_Gatebuilder_Starbase"
 		# add_global_ship_design = "NAME_Scavenger_Bot"
 		# add_global_ship_design = "NAME_Type_69"
 		set_country_flag = synthetic_empire
-		country_event = {
-			id = a_deadly_tempest.13006
-			days = 1
-		}
-		#last_created_country
+		## Nanite_dragon_friendship
+		# country_event = { id = a_deadly_tempest.13006 days = 1 }
 		create_ship_design = { design = "NAME_Gatebuilder_Starbase" }
 		add_ship_design = last_created_design
 		create_ship_design = { design = "NAME_Scavenger_Bot" }

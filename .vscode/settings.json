@@ -1,4 +1,20 @@
 {
+	"hoi4ModUtilities.modFile": "c:\\Users\\Max\\Documents\\Paradox Interactive\\Stellaris\\mod\\ADeadlyTempest\\descriptor.mod",
+	"spellright.language": [
+		"English (American)"
+	],
+	"spellright.documentTypes": [
+		"markdown",
+		"latex",
+		"plaintext",
+		"yaml",
+		"yml"
+	],
+	"spellright.parserByClass": {
+		"stellaris": {
+			"parser": "code"
+		}
+	},
 	"zenMode.centerLayout": false,
 	"workbench.enableExperiments": false,
 	"cSpell.words": [
@@ -11,4 +27,3 @@
 		"warform"
 	]
 }
-

@@ -1,12 +1,13 @@
 gate_builders = {
+	has_difficulty_bonuses = yes
 	scaled_difficulty_bonuses = 3.0
 	counts_for_victory = no
 	sub_title = "COUNTRY_FALLEN_EMPIRE"
 	sub_title_desc = "COUNTRY_FALLEN_EMPIRE_DESC"
-	destroys_starbases = yes
+	# destroys_starbases = yes
 	share_survey_data = no
 	# relations = yes
-	# fallen_empire = yes # TODO!?
+	fallen_empire = yes # TODO!?
 	piracy_risk	= no
 	custom_diplomacy = yes
 	enforces_borders = no
@@ -19,13 +20,13 @@ gate_builders = {
 	# diplomatic_wars = yes
 	# ship_disengagement = yes
 	army_disengagement = yes
-	observable = yes
 	pop_growth = no
-	# uses_special_buildables = yes
+	uses_special_buildables = yes
 	custom_starbase = starbase_gatebuilders
 	can_use_invalid_technology = yes
+	observable = yes
 	# can_receive_envoys = yes
-	uses_origins = yes #
+	# uses_origins = yes # origin_fallen_empire
 
 	ai = {
 		enabled = yes
@@ -34,9 +35,9 @@ gate_builders = {
 		min_assault_armies_for_wars = 5
 		colonizer = no
 		internal_policies = no
+		starbase_upgrade = no
 		modification = no
 		construction = yes
-		starbase_upgrade = yes
 		limited_construction = yes
 		tech = no
 		avoid_enemies = no
@@ -126,27 +127,267 @@ gate_builders = {
 			energy = 250
 			minerals = 150
 			food = 100
-			physics_research = 10
-			society_research = 10
-			engineering_research = 10
-			sr_dark_matter = 1
-			sr_living_metal = 1
-			sr_zro = 1
+			alloys = 100
+			consumer_goods = 100
+			rare_crystals = 3
+			exotic_gases = 3
+			volatile_motes = 10
+			# physics_research = 10
+			# society_research = 10
+			# engineering_research = 10
+			# sr_dark_matter = 1
+			# sr_living_metal = 1
+			# sr_zro = 1
+			nanites = 30
+			influence = 2
+			unity = 1
+
+		}
+	}
+}
+
+awakened_gate_builders = {
+	attack_unarmed_orbital_stations = yes
+	scaled_difficulty_bonuses = 1.25	# scales to setting
+	destroys_starbases = yes
+	show_in_contacts_list = yes
+	counts_for_victory = yes
+	sub_title = "COUNTRY_AWAKENED_FALLEN_EMPIRE"
+	sub_title_desc = "COUNTRY_AWAKENED_FALLEN_EMPIRE_DESC"
+	share_survey_data = no
+	relations = yes
+	fallen_empire = yes
+	awakened_fallen_empire = yes
+	needs_survey = no
+	has_complete_sensor = yes
+	diplomatic_wars = yes
+	ship_disengagement = yes
+	army_disengagement = yes
+	home_system = lcluster4b
+	hub_system = lcluster5
+	pop_growth = yes
+	uses_special_buildables = yes
+	custom_starbase = starbase_gatebuilders
+	can_use_invalid_technology = yes
+	observable = yes
+	# can_receive_envoys = yes
+	uses_origins = no
+
+	ai = {
+		enabled = yes
+		declare_war = yes
+		min_navy_for_wars = 0.2
+		min_assault_armies_for_wars = 6
+		colonizer = yes
+		internal_policies = yes
+		starbase_upgrade = yes
+		modification = yes
+		government = no
+		construction = yes
+		tech = yes
+		avoid_enemies = no
+		modules = {
+			# anti_crisis_military_minister_module
+			# invaders_military_minister_module
+			# machine_interior_minister_module
+			# machine_military_minister_module
+			military_minister_module
+			foreign_minister_module
+			interior_minister_module
+		}
+
+		army_data = {
+			# gene_warrior_army = {
+			# 	fraction = {
+			# 		factor = 75
+			# 		modifier = {
+			# 			factor = 0
+			# 			NOT = { has_ethic = ethic_fanatic_xenophile }
+			# 		}
+			# 	}
+			# }
+
+			psionic_army = {
+				fraction = {
+					factor = 75
+					modifier = {
+						factor = 0
+						NOT = { has_ethic = ethic_fanatic_spiritualist }
+					}
+				}
+			}
+
+			xenomorph_army = {
+				fraction = {
+					factor = 75
+					modifier = {
+						factor = 0
+						NOT = { has_ethic = ethic_fanatic_xenophobe }
+					}
+				}
+			}
+			robotic_army = {
+				fraction = {
+					factor = 75
+					modifier = {
+						factor = 0
+						NOT = { has_ethic = ethic_fanatic_materialist }
+					}
+				}
+			}
+			nanite_giga_guardian = {
+				fraction = {
+					factor = 35
+					# modifier = {
+					# 	factor = 0
+					# 	NOT = { has_authority = auth_machine_intelligence }
+					# }
+				}
+			}
+			nanite_giga_warform = {
+				fraction = {
+					factor = 45
+					# modifier = {
+					# 	factor = 0
+					# 	NOT = { has_authority = auth_machine_intelligence }
+					# }
+				}
+			}
+		}
+
+		ship_data = {
+			constructor = {
+				min = 1
+				max = 3
+				system_mult = 0.25
+			}
+
+			colonizer = {
+				min = 1
+				max = 1
+			}
+
+			colossus = {
+				min = 1
+				max = 1
+			}
+
+			massive_ship_fallen_empire = {
+				# min = 1
+				max = 2
+				planet_mult = 0.05
+			}
+
+			large_ship_fallen_empire = {
+				fraction = {
+					base = 25
+				}
+			}
+			small_ship_fallen_empire = {
+				fraction = {
+					base = 75
+				}
+			}
+			graygoo_mothership = {
+				min = 2
+				fraction = {
+					base = 20
+				}
+			}
+			graygoo_interdictor = {
+				min = 10
+				fraction = {
+					base = 60
+				}
+			}
+		}
+	}
+
+	faction = {
+		hostile = no
+		auto_delete = yes
+		needs_border_access = yes
+		needs_colony = no
+		generate_borders = yes
+		hostile_when_attacked = yes
+	}
+
+	modules = {
+		tiered_technology_module = {
+			tier = 3
+			rare = yes
+		}
+		all_technology_module = {}
+		standard_event_module = {}
+		standard_leader_module = {}
+		standard_economy_module = {}
+		standard_expansion_module = {}
+		standard_species_rights_module = {}
+		exclusive_diplomacy_module = {
+			can_receive = {
+				action_declare_war
+				action_offer_peace
+				action_make_rival
+				action_end_rivalry
+				action_offer_trade_deal
+				action_cancel_trade_deal
+				action_insult
+				action_ask_to_become_thrall
+				action_ask_to_become_dominion
+				action_ask_to_become_satellite
+				action_ask_to_become_signatory
+				action_ask_to_be_released_subject
+				action_ask_to_join_federation
+				action_invite_to_federation
+				action_leave_federation
+				action_kick_from_federation
+			}
+			can_send = {
+				action_declare_war
+				action_make_rival
+				action_end_rivalry
+				action_offer_peace
+				action_offer_trade_deal
+				action_cancel_trade_deal
+				action_demand_thrall
+				action_demand_dominion
+				action_demand_satellite
+				action_demand_signatory
+				action_release_subject
+				action_invite_to_federation
+				action_leave_federation
+				action_kick_from_federation
+				action_open_borders
+				action_close_borders
+			}
+		}
+	}
+
+	resources = {
+		category = country_base
+		produces = {
+			energy = 1000
+			minerals = 250
+			food = 100
+			alloys = 125
+			consumer_goods = 200
+			rare_crystals = 10
+			exotic_gases = 10
+			volatile_motes = 20
+			sr_dark_matter = 2
+			sr_living_metal = 2
+			sr_zro = 2
 			nanites = 50
 			influence = 3
 			unity = 2
-			consumer_goods = 200
-			alloys = 125
-			volatile_motes = 20
-			rare_crystals = 3
-			exotic_gases = 3
 		}
 	}
 }
 
 gray_goo = {
 	attack_unarmed_orbital_stations = yes
-	scaled_difficulty_bonuses = 1.0 # even 1.2 seems to powerful
+	has_difficulty_bonuses = yes
+	scaled_difficulty_bonuses = 1.1 # even 1.2 seems to powerful
 	counts_for_victory = no
 	destroys_starbases = yes
 	show_in_contacts_list = no

@@ -592,14 +592,13 @@ country_event = {
 					is_discovered = no
 				}
 			}
-			# We need only one target for the same issue, so take the better instead of "lcluster5"
-			if = { limit = { NOT = { exists = event_target:lcluster_factory_system } }
+			if = { limit = { NOT = { exists = event_target:lcluster5 } }
 				random_system = {
 					limit = { has_star_flag = lcluster5 }
-					save_global_event_target_as = lcluster_factory_system
+					save_global_event_target_as = lcluster5
 				}
 			}
-			# TODO later on kill event
+			# DO later on kill event
 			# event_target:lcluster5 = {
 			# 	spawn_system = {
 			# 		min_distance >= 12
@@ -609,12 +608,6 @@ country_event = {
 			# 		initializer = distantstars_init_05b
 			# 		hyperlane = no
 			# 		is_discovered = no
-			# 	}
-			# }
-			# if = { limit = { NOT = { exists = event_target:lcluster5b } }
-			# 	random_system = {
-			# 		limit = { has_star_flag = lcluster5b }
-			# 		save_global_event_target_as = lcluster5b
 			# 	}
 			# }
 

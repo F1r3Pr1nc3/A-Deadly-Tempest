@@ -55,7 +55,6 @@ start_lcluster_chain = {
 	}
 }
 
-
 generate_lcluster_clue = {
 	hidden_effect = {
 		if = {
@@ -89,8 +88,6 @@ CmtEffectOpenLgate = {		## Scope: this = megastructure (L-Gate)
 	activate_gateway = this
 	set_megastructure_flag = lgate_activated
 }
-
-
 
 #################
 ###  Dessanu  ###
@@ -136,8 +133,6 @@ CmtEffectRemoveDessanuGift = {
 		CmtModifierDessanuGift_14 = { remove_modifier = CmtModifierDessanuGift_14 }
 	}
 }
-
-
 
 #################
 ###  Graygoo  ###
@@ -200,7 +195,6 @@ CmtEffectDestroyGraygoo = {
 	clear_global_event_target = nanite_factory
 	clear_global_event_target = lcluster_factory_system
 }
-
 
 #################################
 ###  Abosorbe Vanilla Script  ###

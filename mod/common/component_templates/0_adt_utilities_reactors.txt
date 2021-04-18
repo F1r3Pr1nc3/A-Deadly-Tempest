@@ -28,7 +28,6 @@
 @platform_cost_5 = 56
 @platform_cost_6 = 74
 
-
 ## Vanilla Reactors ##
 
 ########################
@@ -185,7 +184,6 @@ utility_component_template = {
 		weight = 5
 	}
 }
-
 
 ####################
 # Engimatic Reactors

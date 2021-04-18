@@ -9,13 +9,9 @@
 #################################################################
 #################################################################
 
-
-
 ###################
 ###  Constants  ###
 ###################
-
-
 
 ################
 ###  Effect  ###
@@ -50,7 +46,6 @@ CmtEffectProgressLoop4 = {
 	}
 }
 
-
 CmtEffectProgressLoop2 = {
 	switch = {
 		trigger = has_global_flag
@@ -65,11 +60,9 @@ CmtEffectProgressLoop2 = {
 	}
 }
 
-
 ###########################
 ###  Modify Ship Speed  ###
 ###########################
-
 
 ### Apply Modifier
 
@@ -265,8 +258,6 @@ CmtEffectFasterCybrexCombatShip = {
 	}
 }
 
-
-
 ### Change Modifier
 
 CmtEffectFasterConstructorChanged = {
@@ -329,7 +320,6 @@ CmtEffectFasterConstructorChanged = {
 		}
 	}
 }
-
 
 CmtEffectFasterCombatShipChanged = {
 	every_country = {

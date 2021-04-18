@@ -97,12 +97,12 @@ country_event = {
 # 			establish_communications_no_message = event_target:cybrex
 # 			event_target:cybrex_beta = {
 # 				every_system_planet = {
-#  					surveyed = {
-#  						set_surveyed = yes
-#  						surveyor = root
-#  					}
-#  				}
-#  			}
+# 					surveyed = {
+# 						set_surveyed = yes
+# 						surveyor = root
+# 					}
+# 				}
+# 			}
 # 		}
 # 	}
 # }
@@ -220,16 +220,16 @@ country_event = {
 
 	immediate = {
 		# set_country_flag = sleepers_awake_first_sleeper
-		set_country_type = awakened_fallen_empire
+		set_country_type = awakened_gate_builders # awakened_fallen_empire
 		if = { limit = { has_ethic = "ethic_fanatic_xenophile" }
 			country_remove_ethic = "ethic_fanatic_xenophile"
 		}
 		if = { limit = { NOT = { has_ethic = "ethic_gestalt_consciousness" } }
 			country_add_ethic = "ethic_gestalt_consciousness"
 		}
-			# authority = auth_ancient_machine_intelligence
-			# civic = civic_revanchist_fervor
-			# civic = civic_ancient_caches_of_technology
+		# authority = auth_ancient_machine_intelligence
+		# civic = civic_revanchist_fervor
+		# civic = civic_ancient_caches_of_technology
 		change_government = {
 			authority = auth_machine_intelligence
 			civics = {
@@ -238,9 +238,9 @@ country_event = {
 			}
 		}
 		add_awakened_fallen_empire_resources = yes
-		capital_scope = {
-			CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes	# Garrison Fleets at Capital
-		}
+		# capital_scope = {
+		# 	CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes # Garrison Fleets at Capital
+		# }
 		event_target:nanite_factory = {
 			CmtEffectCreateAdmiralty_DessanuRoamer = yes # Roamers
 		}
@@ -255,8 +255,7 @@ country_event = {
 			country_event = { id = action.1 }
 		}
 		root = { save_event_target_as = awakened_machine_empire }
-		if = {
-			limit = { host_has_dlc = "Apocalypse" }
+		if = { limit = { host_has_dlc = "Apocalypse" }
 			give_technology = { tech = tech_colossus message = no }
 		}
 		set_graphical_culture = "fallen_machine_empire_01" # temporary

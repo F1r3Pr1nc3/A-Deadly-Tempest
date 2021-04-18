@@ -83,7 +83,6 @@ utility_component_template = {
 	}
 }
 
-
 utility_component_template = {
 	key = "COMBAT_COMPUTER_LINE_PRECOG"
 	size = small
@@ -273,8 +272,6 @@ utility_component_template = {
 		weight = 5
 	}
 }
-
-
 
 utility_component_template = {
 	key = "COMBAT_COMPUTER_CARRIER_PRECOG"

@@ -14,7 +14,6 @@
 
 @CmtConstEdictDebugMode = no
 
-
 #######################
 ###  Basic Trigger  ###
 #######################
@@ -69,7 +68,6 @@ CmtTriggerIsHabitableRingWorld = {
 CmtTriggerIsHabitat = {
 	is_planet_class = pc_habitat
 }
-
 
 ########################################
 ###  For Aggressor of Player Crisis  ###
@@ -135,8 +133,6 @@ CmtTriggerPlayerCrisisAggressorCandidateEdict = {
 	}
 }
 
-
-
 ########################################
 ###  For Defenders of Player Crisis  ###
 ########################################
@@ -168,7 +164,6 @@ CmtTriggerPlayerCrisisResistibleCountry = {
 		is_hostile = event_target:CmtTargetPlayerCrisisAggressor
 	}
 }
-
 
 ################
 ###  Legacy  ###

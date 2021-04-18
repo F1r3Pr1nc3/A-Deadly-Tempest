@@ -295,7 +295,7 @@ country_event = {
 				country_event = { id = a_deadly_tempest.107 }
 				create_leader = {
 					class = ruler
-					species = last_created
+					species = last_created_species
 					name = "NAME_Gray"
 					event_leader = yes
 					gender = indeterminable

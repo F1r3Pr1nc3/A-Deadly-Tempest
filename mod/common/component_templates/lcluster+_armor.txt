@@ -16,7 +16,6 @@
 @l_t8_nanite_upkeep_energy = 1.10
 @l_t8_nanite_upkeep_alloys = 0.220
 
-
 # Nanite Armor
 utility_component_template = {
 	key = "SMALL_NANITE_ARMOR"

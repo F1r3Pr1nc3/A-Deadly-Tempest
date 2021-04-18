@@ -110,7 +110,6 @@ CmtEffectCreateAdmiralty_KhanStarterPack = {
 	}
 }
 
-
 ### Mercenaries
 CmtEffectCreateAdmiralty_KhanMercenaries1 = {
 	event_target:raider_khanate = {
@@ -139,7 +138,6 @@ CmtEffectCreateAdmiralty_KhanMercenaries1 = {
 		}
 	}
 }
-
 
 CmtEffectCreateAdmiralty_KhanMercenaries2 = {
 	event_target:raider_khanate = {
@@ -196,7 +194,6 @@ CmtEffectCreateAdmiralty_KhanMercenaries3 = {
 		}
 	}
 }
-
 
 ### Reinforcement (Capital/Sub-Capital)
 CmtEffectCreateAdmiralty_KhanReinforcement = {
@@ -346,7 +343,6 @@ CmtEffectCreateAdmiralty_KhanReinforcement = {
 	}
 }
 
-
 ### Garrison (Satrap)
 CmtEffectCreateAdmiralty_KhanEncourager = {
 	event_target:raider_khanate = {
@@ -414,27 +410,27 @@ CmtEffectInitFleetUpperLimit = {
 	}
 	if = {
 		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 1.875 } } }
-		set_variable = { which = CmtVarCapitalDefenceNumber value = 8 }
-	} else_if = {
-		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 1.625 } } }
 		set_variable = { which = CmtVarCapitalDefenceNumber value = 7 }
 	} else_if = {
-		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 1.375 } } }
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 1.625 } } }
 		set_variable = { which = CmtVarCapitalDefenceNumber value = 6 }
 	} else_if = {
-		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 1.125 } } }
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 1.375 } } }
 		set_variable = { which = CmtVarCapitalDefenceNumber value = 5 }
 	} else_if = {
-		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.875 } } }
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 1.125 } } }
 		set_variable = { which = CmtVarCapitalDefenceNumber value = 4 }
 	} else_if = {
-		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.625 } } }
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.875 } } }
 		set_variable = { which = CmtVarCapitalDefenceNumber value = 3 }
 	} else_if = {
-		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.375 } } }
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.625 } } }
 		set_variable = { which = CmtVarCapitalDefenceNumber value = 2 }
-	} else = {
+	} else_if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.375 } } }
 		set_variable = { which = CmtVarCapitalDefenceNumber value = 1 }
+	} else = {
+		set_variable = { which = CmtVarCapitalDefenceNumber value = 0 }
 	}
 
 	set_variable = { which = CmtGraygooFleetNumberGuardAwakeLimit value = @CmtGraygooFleetNumberGuardAwakeLimit }
@@ -529,7 +525,7 @@ CmtEffectCreateAdmiralty_DessanuRoamer = {
 				CmtFleetSetAuxParam_DessanuRoamer = { NUM = 6 }
 			}
 			CmtEffectCreateFleet_DessanuRoamer = yes
-			event_target:lcluster_factory_system = {
+			event_target:lcluster5 = {
 				CmtFleetSetAuxParam_DessanuRoamer = { NUM = 7 }
 			}
 		}
@@ -618,7 +614,6 @@ CmtEffectCreateAdmiralty_DessanuRoamer = {
 	}
 }
 
-
 #################
 ###  Graygoo  ###
 #################
@@ -700,7 +695,7 @@ CmtEffectCreateAdmiralty_GraygooRoamer = {
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 0.875 } } }
 			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			event_target:lcluster_factory_system = {
+			event_target:lcluster5 = {
 				# limit = { has_star_flag = lcluster5 }
 				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 06 }
 			}

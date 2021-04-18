@@ -461,7 +461,6 @@ utility_component_template = {
 	}
 }
 
-
 ####################
 # Crystal Plating  #
 ####################
