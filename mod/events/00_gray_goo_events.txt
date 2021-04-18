@@ -718,7 +718,7 @@ country_event = {
 		# 	limit = { has_star_flag = lcluster }
 		# 	set_surveyed = { surveyed = yes surveyor = event_target:gate_builders }
 		# 	every_system_planet = {
-		# 		surveyed = { set_surveyed = yes surveyor = event_target:gate_builders }
+		# 		set_surveyed = { surveyed = yes surveyor = event_target:gate_builders }
 		# 	}
 		# }
 		### Change Planet to Gaia, Create Buildings, Orbital Station
@@ -841,7 +841,7 @@ country_event = {
 						limit = { is_star_class = sc_black_hole has_megacorp = yes }
 						spawn_megastructure = {
 							type = "matter_decompressor_ruined"
-							location = prev.star
+							planet = prev.star
 							init_effect = {
 								create_ambient_object = {
 									type = "large_debris_object"
@@ -904,7 +904,7 @@ country_event = {
 												spawn_megastructure = {
 													# type = "spy_orb_ruined"
 													type = spy_orb_4
-													location = prev
+													planet = prev
 													owner = event_target:gate_builders
 												}
 											}
@@ -926,7 +926,7 @@ country_event = {
 									spawn_megastructure = {
 										# type = "spy_orb_ruined"
 										type = spy_orb_4
-										location = prev
+										planet = prev
 										owner = event_target:gate_builders
 									}
 								}
@@ -937,7 +937,7 @@ country_event = {
 					# 	event_target:lcluster3 = {
 					# 		spawn_megastructure = {
 					# 			type = "dyson_sphere_ruined"
-					# 			location = star
+					# 			planet = star
 					# 			owner = event_target:gate_builders
 					# 		}
 					# 	}
@@ -948,7 +948,6 @@ country_event = {
 				event_target:lcluster3b = {
 					spawn_megastructure = {
 						type = "dyson_sphere_2"
-						location = star
 						owner = event_target:gate_builders
 					}
 				}
@@ -961,13 +960,11 @@ country_event = {
 						spawn_megastructure = {
 							# type = "strategic_coordination_center_ruined"
 							type = "strategic_coordination_center_3"
-							location = star
-							owner = event_target:gate_builders
+								owner = event_target:gate_builders
 						}
 					}
 					spawn_megastructure = {
 						type = "dyson_sphere_1"
-						location = star
 						owner = event_target:gate_builders
 					}
 					event_target:gate_builders = {
@@ -997,7 +994,7 @@ country_event = {
 						spawn_megastructure = {
 							# type = "mega_shipyard_ruined"
 							type = mega_shipyard_1
-							location = event_target:main_star
+							planet = event_target:main_star
 							owner = event_target:gate_builders
 							init_effect = {
 								create_ambient_object = {
@@ -1825,21 +1822,19 @@ country_event = {
 					event_target:main_star = { planet_event = { id = a_deadly_tempest.4 } }
 					spawn_megastructure = {
 						type = "dyson_sphere_4"
-						location = star
 						owner = event_target:gate_builders
 					}
 					# if = { limit = { host_has_dlc = "Megacorp" }
 					spawn_megastructure = {
 						type = "mega_art_installation_ruined"
 						# type = "interstellar_assembly_ruined"
-						location = star
 					}
 
 					# if = { limit = { host_has_dlc = "Federations" }
 					spawn_megastructure = {
 						# type = "mega_shipyard_ruined"
 						type = mega_shipyard_1
-						location = event_target:main_star
+						planet = event_target:main_star
 						owner = event_target:gate_builders
 						init_effect = {
 							create_ambient_object = {
@@ -1990,10 +1985,10 @@ country_event = {
 				destroy_colony = yes
 				every_playable_country = {
 					limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
-					PREV = { surveyed = { set_surveyed = no surveyor = PREV } }
+					PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
 				}
 			}
-			# every_planet is only working until 2.8
+			# every_galaxy_planet is only working until 2.8
 			every_system = {
 				limit = { has_star_flag = lcluster }
 				every_system_planet = {
@@ -2023,7 +2018,7 @@ country_event = {
 				remove_planet_flag = hidden_nanite_world
 				every_playable_country = {
 					limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
-					PREV = { surveyed = { set_surveyed = no surveyor = PREV } }
+					PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
 				}
 			}
 		} else = {
@@ -2039,7 +2034,7 @@ country_event = {
 				remove_planet_flag = hidden_nanite_world
 				every_playable_country = {
 					limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
-					PREV = { surveyed = { set_surveyed = no surveyor = PREV } }
+					PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
 				}
 			}
 		}

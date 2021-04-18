@@ -1,8 +1,6 @@
-version="1.7.0"
-name="A Deadly Tempest (2.8)"
-dependencies={
-	"Fix Fire From The Stars"
-}
+version="1.7.2"
+name="A Deadly Tempest (3.0)"
+dependencies={}
 tags={
 	"Events"
 	"Gameplay"
@@ -17,5 +15,5 @@ tags={
 	"Nanites"
 }
 picture="thumbnail.png"
-supported_version="2.8.*"
+supported_version="3.0.*"
 remote_file_id="2028826064"

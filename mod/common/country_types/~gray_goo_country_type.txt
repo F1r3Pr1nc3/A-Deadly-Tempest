@@ -96,8 +96,8 @@ gate_builders = {
 	}
 	# trade_routes_available = { always = no }
 	modules = {
-		# Nothing is allowed, but we need this for relationships.
 		exclusive_diplomacy_module = {
+			contact_rule = on_action_only # Nothing is allowed, but we need this for relationships.
 			can_receive = {
 				action_declare_war
 				action_offer_peace
@@ -425,8 +425,9 @@ gray_goo = {
 	}
 	modules = {
 		exclusive_diplomacy_module = {
+			contact_rule = on_action_only # Nothing is allowed, but we need this for relationships.
 			#contact_rule = script_only
-		} # Nothing is allowed, but we need this for relationships.
+		}
 		tiered_technology_module = {
 			tier = 3
 			rare = no

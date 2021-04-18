@@ -54,7 +54,7 @@ CmtEffectOpenLgate = {
 ### End of Graygoo
 CmtEffectDestroyGraygoo = {
 	remove_global_flag = active_gray_goo
-	remove_global_flag = gray_goo_crisis_active # Fix vanilla Federation resolution
+	remove_global_flag = gray_goo_crisis_active
 
 	from = {
 		save_global_event_target_as = goo_slayer
@@ -75,13 +75,13 @@ CmtEffectDestroyGraygoo = {
 					is_colony = no
 					is_surveyed = { who = PREVPREV status = yes }
 				}
-				surveyed = { set_surveyed = no surveyor = PREVPREV }
+				set_surveyed = { surveyed = no surveyor = PREVPREV }
 			}
 		}
 	}
 	observer_event = { id = observer.65 }
 
-	# Only LCluster!? (every_planet worked only until 2.8)
+	# Only LCluster!? (every_galaxy_planet worked only until 2.8)
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = {

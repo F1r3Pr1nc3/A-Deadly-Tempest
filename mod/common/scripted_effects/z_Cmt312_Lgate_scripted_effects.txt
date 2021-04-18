@@ -141,7 +141,7 @@ CmtEffectRemoveDessanuGift = {
 ### End of Graygoo
 CmtEffectDestroyGraygoo = {
 	remove_global_flag = active_gray_goo
-	remove_global_flag = gray_goo_crisis_active # Fix vanilla Federation resolution
+	remove_global_flag = gray_goo_crisis_active
 
 	from = {
 		save_event_target_as = goo_slayer
@@ -164,14 +164,14 @@ CmtEffectDestroyGraygoo = {
 					check_variable = { which = CmtVarLgateTerraformNanite value = 5 }
 				}
 			}
-			every_planet = {
+			every_galaxy_planet = {
 				limit = { is_planet_class = pc_gray_goo }
 				add_modifier = { modifier = CmtModifierAutoTerraform days = -1 }
 				planet_event = { id = CrisisManagerControl.6211 days = 90 random = 450 }	## Auto-Terraform
 			}
 		} else_if = {
 			limit = { NOT = { check_variable = { which = CmtVarLgateTerraformNanite value = 1 } } }
-			every_planet = {
+			every_galaxy_planet = {
 				limit = { is_planet_class = pc_gray_goo }
 				add_modifier = { modifier = terraforming_candidate days = -1 }
 			}

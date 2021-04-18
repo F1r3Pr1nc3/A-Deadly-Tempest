@@ -78,8 +78,7 @@ utility_component_template = {
 		weight = 1
 		modifier = {
 			factor = 0
-			is_country_type = default
-			has_monthly_income = { resource = nanites value <= 0 }
+			no_resource_for_component = { RESOURCE = nanites }
 		}
 	}
 }

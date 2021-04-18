@@ -40,7 +40,6 @@ CmtInitManualLgate00 = {
 			type = lgate_base
 			orbit_angle = 225
 			orbit_distance = 30
-			location = solar_system
 		}
 	}
 }
@@ -72,7 +71,6 @@ CmtInitManualLgate00RealSpace = {
 			type = lgate_base
 			orbit_angle = 225
 			orbit_distance = 30
-			location = solar_system
 		}
 	}
 }

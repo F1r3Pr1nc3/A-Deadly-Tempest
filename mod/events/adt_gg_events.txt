@@ -264,7 +264,7 @@ country_event = {
 								}
 								6 = { }
 							}
-							surveyed = { set_surveyed = no surveyor = prevprev }
+							set_surveyed = { surveyed = no surveyor = prevprev }
 							add_anomaly = {
 								category = disco_gray_cat
 								target = prevprev

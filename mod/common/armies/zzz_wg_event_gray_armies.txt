@@ -54,7 +54,7 @@ nanite_giga_guardian = {
 			}
 		}
 		planet = {
-			has_building = building_stronghold
+			has_active_building = building_stronghold
 		}
 	}
 }
@@ -111,7 +111,7 @@ nanite_giga_warform = {
 				is_capital = yes
 				solar_system = { has_star_flag = graygoo_factory_system }
 			}
-			has_building = building_stronghold
+			has_active_building = building_stronghold
 		}
 		owner = {
 			OR = {
