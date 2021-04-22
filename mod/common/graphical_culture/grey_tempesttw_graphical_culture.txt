@@ -1,5 +1,6 @@
+# Twinks Dessanu
 grey_tempesttw = {
-	fallback = esgoo_01
+	fallback = machine_01
 	ship_color = yes
 	ship_lighting = {
 		cam_light_1_dir = { 0.4 0.0 0.0 }

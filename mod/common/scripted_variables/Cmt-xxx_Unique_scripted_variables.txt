@@ -44,7 +44,6 @@
 		### For exaple, 7 means ''8 Anchors Required to Stabilize Portals''.
 
 
-
 ###########################
 ###  Sleeper Awakening  ###
 ###########################
@@ -63,7 +62,6 @@
 
 ### Minimum Own Fleet Power for Awakening
 	@CmtConstTUnq_ConstSleeperFleetPowerOwn = 25000
-
 
 
 #########################

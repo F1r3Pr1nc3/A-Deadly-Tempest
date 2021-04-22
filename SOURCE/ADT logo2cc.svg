@@ -269,8 +269,8 @@
       <text
          id="v"
          transform="rotate(45)"
-         x="1.8757151"
-         y="-19.39809"
+         x="2.5"
+         y="-19"
          font-family="Orbitron"
          font-size="29.36px"
          font-weight="bold"
@@ -278,7 +278,7 @@
          text-anchor="middle"
          word-spacing="0px">
         <tspan
-           id="tspan1768">3.0.1</tspan>
+           id="tspan1768">3.0.2</tspan>
       </text>
     </g>
     <use

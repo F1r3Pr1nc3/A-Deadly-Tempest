@@ -1,0 +1,309 @@
+@dyson_scale = 32
+@spyorb_scale =  3
+@spyorb_side_pos = 0
+@spyorb_height_pos = 0
+
+#####################################################
+#####											#####
+#####				Arthropoid					#####
+#####											#####
+#####################################################
+
+entity = {
+	name = "grey_tempesttw_dyson_sphere_ring_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 9
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_hole_sphere_ring_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 1.25
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_hole_sphere_ring_a_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 1.0
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_hole_sphere_ring_b_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 0.75
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_hole_sphere_ring_c_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 0.5
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_hole_sphere_ring_d_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 0.25
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_spy_orb_top"
+
+	scale = 1
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+	locator = { name = "root"				position = { 0		0  0 } rotation = { 0 0 90 } }
+	locator = { name = "slot1"				position = { 0		5  0 } rotation = { 0 0 90 } }
+	locator = { name = "slot2"				position = { 0		10  0 } rotation = { 0 0 90 } }
+	locator = { name = "slot3"				position = { 0		15  0 } rotation = { 0 0 90 } }
+	locator = { name = "slot4"				position = { 0		20  0 } rotation = { 0 0 90 } }
+
+	attach = { "slot1" = "grey_tempesttw_hole_sphere_ring_d_entity" }
+	attach = { "slot2" = "grey_tempesttw_hole_sphere_ring_c_entity" }
+	attach = { "slot3" = "grey_tempesttw_hole_sphere_ring_b_entity" }
+	attach = { "slot4" = "grey_tempesttw_hole_sphere_ring_a_entity" }
+	attach = { "root" = "grey_tempesttw_hole_sphere_ring_entity" }
+
+
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_part_1_entity"
+	pdxmesh = "spyorb_part_1_mesh"
+	scale = @spyorb_scale
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		event = { time = 0 node = "light_locator_1" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "spy_orb_hum_dome" } }
+	}
+
+	meshsettings = {
+		name = "spyorb_part_1Shape"
+		index = 0
+		texture_diffuse = "grey_tempesttw_spy_orb_01_diffuse.dds"
+		texture_normal = "arthropoid_spy_orb_01_normal.dds"
+		texture_specular = "arthropoid_spy_orb_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+			 game_data = {
+		custom_texture = "gfx/models/ships/megastructures/spy_orb/spy_orb_01_construction_fadein.dds"
+	}
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_part_2_entity"
+	pdxmesh = "spyorb_part_2_mesh"
+	scale = @spyorb_scale
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		event = { time = 0 node = "light_locator_1" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "spy_orb_hum_spire" } }
+	}
+
+	meshsettings = {
+		name = "spyorb_part_2Shape"
+		index = 0
+		texture_diffuse = "grey_tempesttw_spy_orb_01_diffuse.dds"
+		texture_normal = "arthropoid_spy_orb_01_normal.dds"
+		texture_specular = "arthropoid_spy_orb_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+			 game_data = {
+		custom_texture = "gfx/models/ships/megastructures/spy_orb/spy_orb_01_construction_fadein.dds"
+	}
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_part_3_entity"
+	pdxmesh = "spyorb_part_3_mesh"
+	scale = @spyorb_scale
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		event = { time = 0 node = "light_locator_1" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 1 node = "light_locator_2" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_3" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 1 node = "light_locator_4" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "spy_orb_hum_antennas" } }
+	}
+	meshsettings = {
+		name = "spyorb_part_3Shape"
+		index = 0
+		texture_diffuse = "grey_tempesttw_spy_orb_01_diffuse.dds"
+		texture_normal = "arthropoid_spy_orb_01_normal.dds"
+		texture_specular = "arthropoid_spy_orb_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+			 game_data = {
+		custom_texture = "gfx/models/ships/megastructures/spy_orb/spy_orb_01_construction_fadein.dds"
+	}
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_part_4_entity"
+	pdxmesh = "spyorb_part_4_mesh"
+	scale = @spyorb_scale
+
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "spy_orb_hum_ring" } }
+	}
+
+	meshsettings = {
+		name = "spyorb_part_4Shape"
+		index = 0
+		texture_diffuse = "grey_tempesttw_spy_orb_01_diffuse.dds"
+		texture_normal = "arthropoid_spy_orb_01_normal.dds"
+		texture_specular = "arthropoid_spy_orb_01_specular.dds"
+		shader = "PdxMeshShip"
+	}
+			 game_data = {
+		custom_texture = "gfx/models/ships/megastructures/spy_orb/spy_orb_01_construction_fadein.dds"
+	}
+}
+
+
+entity = {
+	name = "grey_tempesttw_spyorb_phase_01_construction_entity"
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+
+	attach = { "root" = "grey_tempesttw_spyorb_part_1_entity" }
+
+	cull_radius = 500
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_phase_02_construction_entity"
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+
+	attach = { "root" = "grey_tempesttw_spyorb_part_2_entity" }
+
+	cull_radius = 500
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_phase_03_construction_entity"
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+
+	attach = { "root" = "grey_tempesttw_spyorb_part_3_entity" }
+
+	cull_radius = 500
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_phase_04_construction_entity"
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+
+	default_state = "idle"
+	state = { name = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+
+	attach = { "root" = "grey_tempesttw_spyorb_part_4_entity" }
+
+	cull_radius = 500
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_phase_01_entity"
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+
+	attach = { "root" = "grey_tempesttw_spyorb_part_1_entity" }
+
+	cull_radius = 500
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_phase_02_entity"
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+
+	attach = { "root" = "grey_tempesttw_spyorb_part_1_entity" }
+	attach = { "root" = "grey_tempesttw_spyorb_part_2_entity" }
+
+	cull_radius = 500
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_phase_03_entity"
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+
+	attach = { "root" = "grey_tempesttw_spyorb_part_1_entity" }
+	attach = { "root" = "grey_tempesttw_spyorb_part_2_entity" }
+	attach = { "root" = "grey_tempesttw_spyorb_part_3_entity" }
+
+	cull_radius = 500
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_phase_04_entity"
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+
+
+	locator = { name = "roota"				position = { 0		10  0 } rotation = { 0 0 0 } }
+	attach = { "roota" = "grey_tempesttw_spy_orb_top" }
+	attach = { "root" = "grey_tempesttw_spyorb_part_1_entity" }
+	attach = { "root" = "grey_tempesttw_spyorb_part_2_entity" }
+	attach = { "root" = "grey_tempesttw_spyorb_part_3_entity" }
+	attach = { "root" = "grey_tempesttw_spyorb_part_4_entity" }
+
+	cull_radius = 500
+}
+
+
+

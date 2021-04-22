@@ -63,7 +63,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.6000a.Endgame.name
 		custom_tooltip = CrisisManagerMenu.6000a.tooltip
@@ -263,7 +262,6 @@ country_event = {
 		allow = { hidden_trigger = { always = no } }
 	}
 
-
 	option = {
 		name = CrisisManagerMenu.6200.xxx.name
 		custom_tooltip = CrisisManagerMenu.6200.xxx.tooltip
@@ -297,7 +295,6 @@ country_event = {
 		trigger = { has_global_flag = CmtFlagMidGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6211 } }
 	}
-
 
 	option = {
 		name = CmtTextSeparator.name
@@ -364,7 +361,6 @@ country_event = {
 		trigger = { NOT = { has_global_flag = CmtFlagNoSeparator } }
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 
 	option = {
@@ -453,7 +449,6 @@ country_event = {
 		allow = { hidden_trigger = { always = no } }
 	}
 
-
 	option = {
 		name = CrisisManagerMenu.6400.xxx.name
 		custom_tooltip = CrisisManagerMenu.6400.xxx.tooltip
@@ -492,7 +487,6 @@ country_event = {
 		trigger = { has_global_flag = CmtFlagMidGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6411 } }
 	}
-
 
 
 	option = {
@@ -560,7 +554,6 @@ country_event = {
 		trigger = { NOT = { has_global_flag = CmtFlagNoSeparator } }
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 
 	option = {

@@ -1,13 +1,13 @@
 gate_builders = {
-	has_difficulty_bonuses = yes
-	scaled_difficulty_bonuses = 3.0
+	# has_difficulty_bonuses = yes
+	scaled_difficulty_bonuses = 1.5 # has become other advantages
 	counts_for_victory = no
-	sub_title = "COUNTRY_FALLEN_EMPIRE"
-	sub_title_desc = "COUNTRY_FALLEN_EMPIRE_DESC"
+	# sub_title = "COUNTRY_FALLEN_EMPIRE"
+	# sub_title_desc = "COUNTRY_FALLEN_EMPIRE_DESC"
 	# destroys_starbases = yes
 	share_survey_data = no
 	# relations = yes
-	fallen_empire = yes # TODO!?
+	fallen_empire = no # TODO too powerfull!?
 	piracy_risk	= no
 	custom_diplomacy = yes
 	enforces_borders = no
@@ -40,7 +40,7 @@ gate_builders = {
 		construction = yes
 		limited_construction = yes
 		tech = no
-		avoid_enemies = no
+		avoid_enemies = yes
 		modules = {
 			# military_minister_module
 			anti_crisis_military_minister_module
@@ -148,8 +148,8 @@ gate_builders = {
 
 awakened_gate_builders = {
 	attack_unarmed_orbital_stations = yes
-	scaled_difficulty_bonuses = 1.25	# scales to setting
-	destroys_starbases = yes
+	scaled_difficulty_bonuses = 1.0	# TODO
+	# destroys_starbases = yes
 	show_in_contacts_list = yes
 	counts_for_victory = yes
 	sub_title = "COUNTRY_AWAKENED_FALLEN_EMPIRE"
@@ -166,18 +166,24 @@ awakened_gate_builders = {
 	home_system = lcluster4b
 	hub_system = lcluster5
 	pop_growth = yes
-	uses_special_buildables = yes
-	custom_starbase = starbase_gatebuilders
-	can_use_invalid_technology = yes
+	uses_special_buildables = no
+	# custom_starbase = starbase_gatebuilders
+	can_use_invalid_technology = no
 	observable = yes
 	# can_receive_envoys = yes
-	uses_origins = no
+	uses_origins = yes
+
+	targets = {
+		awakened_fallen_empire
+		fallen_empire
+		default
+	}
 
 	ai = {
 		enabled = yes
 		declare_war = yes
 		min_navy_for_wars = 0.2
-		min_assault_armies_for_wars = 6
+		min_assault_armies_for_wars = @armies_for_declaring_war
 		colonizer = yes
 		internal_policies = yes
 		starbase_upgrade = yes
@@ -189,11 +195,11 @@ awakened_gate_builders = {
 		modules = {
 			# anti_crisis_military_minister_module
 			# invaders_military_minister_module
-			# machine_interior_minister_module
-			# machine_military_minister_module
+			machine_military_minister_module
+			machine_interior_minister_module
 			military_minister_module
-			foreign_minister_module
 			interior_minister_module
+			foreign_minister_module
 		}
 
 		army_data = {
@@ -206,16 +212,15 @@ awakened_gate_builders = {
 			# 		}
 			# 	}
 			# }
-
-			psionic_army = {
-				fraction = {
-					factor = 75
-					modifier = {
-						factor = 0
-						NOT = { has_ethic = ethic_fanatic_spiritualist }
-					}
-				}
-			}
+			# psionic_army = {
+			# 	fraction = {
+			# 		factor = 75
+			# 		modifier = {
+			# 			factor = 0
+			# 			NOT = { has_ethic = ethic_fanatic_spiritualist }
+			# 		}
+			# 	}
+			# }
 
 			xenomorph_army = {
 				fraction = {
@@ -387,7 +392,7 @@ awakened_gate_builders = {
 gray_goo = {
 	attack_unarmed_orbital_stations = yes
 	has_difficulty_bonuses = yes
-	scaled_difficulty_bonuses = 1.1 # even 1.2 seems to powerful
+	scaled_difficulty_bonuses = 1.0 # even 1.2 seems to powerful
 	counts_for_victory = no
 	destroys_starbases = yes
 	show_in_contacts_list = no
@@ -408,6 +413,13 @@ gray_goo = {
 	custom_starbase = starbase_gatebuilders
 	can_use_invalid_technology = yes
 	uses_origins = no
+
+	targets = {
+		awakened_fallen_empire
+		fallen_empire
+		default
+	}
+
 	ai = {
 		enabled = yes
 		modules = {

@@ -1,0 +1,56 @@
+#############################
+## Gray Tempest Personalities
+#############################
+
+gate_builders_machine = {
+	aggressiveness = 4.0
+	trade_willingness = 0
+	bravery = 5.0
+	combat_bravery = 7.0
+
+	military_spending = 2
+	colony_spending = 0.4
+
+	federation_acceptance = -1
+	nap_acceptance = 1
+	defensive_pact_acceptance = 0.2
+	migration_pact_acceptance = -1
+	advanced_start_chance = 100
+
+	threat_modifier = 0
+	threat_others_modifier = 1
+	friction_modifier = 2
+	claims_modifier = 10
+
+	behaviour = {
+		conqueror = yes
+		subjugator = no
+		liberator = no
+		opportunist = yes
+		slaver = no
+		uplifter = no
+		purger = yes
+		dominator = yes
+		infiltrator = no
+		robot_exploiter = no
+		robot_liberator = yes
+		propagator = no
+		multispecies = no
+		crisis_fighter = yes
+		# crisis_leader = yes 	# special for awakened fallen empires
+		# custodian = yes	# special for awakened machine fallen empires, prevents colonization & locks attitude
+		attack_neutrals = yes
+		berserker = yes
+		enigmatic = yes # special for machine fallen
+		limited = yes # prevents certain AI behaviours
+	}
+
+	allow = {
+		is_country_type = awakened_gate_builders
+		has_authority = auth_machine_intelligence
+	}
+
+	weight_modifier = {
+		weight = 100
+	}
+}

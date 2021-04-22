@@ -162,7 +162,6 @@ country_event = {
 		hidden_effect = { country_event = { id = CrisisManagerMenu.1023 } }
 	}
 
-
 	option = {
 		name = CmtTextSeparator.name
 		custom_tooltip = CmtTextSeparator.tooltip
@@ -204,7 +203,6 @@ country_event = {
 		hidden_effect = { country_event = { id = CrisisManagerMenu.1028 } }
 	}
 
-
 	option = {
 		name = CmtTextSeparator.name
 		custom_tooltip = CmtTextSeparator.tooltip
@@ -214,7 +212,6 @@ country_event = {
 		}
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 	option = {
 		name = CrisisManagerMenu.1000.1031.name

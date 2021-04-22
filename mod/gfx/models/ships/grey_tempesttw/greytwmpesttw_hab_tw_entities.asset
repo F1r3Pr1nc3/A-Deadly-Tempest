@@ -1,0 +1,108 @@
+# COMPONENTS
+@destroyer_scale = 7.9
+@corvette_scale = 6.5
+@cruiser_scale = 10.0
+@battleship_scale = 12.0
+@missile_scale = 1.0
+@transport_scale = 9.0
+@colonizer_scale = 12.0
+@science_scale = 8.5
+@constructor_scale = 12.0
+@military_station_large = 16.0
+@orbital_station = 17
+@research_station = 13
+@mining_station = 13
+@terraforming_station = 13
+@small_trail_W = 10
+@small_trail_L = 60
+@medium_trail_W = 25
+@medium_trail_L = 150
+@large_trail_W = 50
+@large_trail_L =  300
+
+entity = {
+	name = "grey_tempesttw_habitat_phase_01_entity"
+	pdxmesh = "humanoid_01_orbital_station_frame_mesh"
+	locator = { name = "part1" position = { 0 0 0 }  }
+	attach = { "part1" = "grey_tempesttw_orbital_habitat_entity" }
+	scale = 1.0
+	default_state = "habitat_idle"
+	state = { name = "habitat_idle" looping = yes }
+	state = { name = "construction" looping = yes }
+	game_data = {
+		shader_type = ship
+		emissive_recolor_crunch = 1.0
+	}
+}
+
+entity = {
+	name = "grey_tempesttw_habitat_phase_01_core_entity"
+	pdxmesh = "humanoid_01_orbital_station_frame_mesh"
+	locator = { name = "part1" position = { 0 0 0 }  }
+	attach = { "part1" = "grey_tempesttw_orbital_habitat_entity" }
+	scale = 1.0
+	default_state = "habitat_idle"
+	state = { name = "habitat_idle" looping = yes }
+	state = { name = "construction" looping = yes }
+	game_data = {
+		shader_type = ship
+		emissive_recolor_crunch = 1.0
+	}
+}
+
+entity = {
+	name = "grey_tempesttw_habitat_phase_02_entity"
+	pdxmesh = "humanoid_01_orbital_station_frame_mesh"
+	locator = { name = "part1" position = { 0 0 0 }  }
+	attach = { "part1" = "grey_tempesttw_orbital_habitat_entity" }
+	scale = 1.5
+	default_state = "habitat_idle"
+	state = { name = "habitat_idle" looping = yes }
+	state = { name = "construction" looping = yes }
+	game_data = {
+		shader_type = ship
+		emissive_recolor_crunch = 1.0
+	}
+}
+
+entity = {
+	name = "grey_tempesttw_habitat_phase_02_section_entity"
+}
+
+entity = {
+	name = "grey_tempesttw_habitat_phase_03_entity"
+	locator = { name = part1 }
+	scale = 2
+	default_state = "habitat_idle"
+	state = { name = "habitat_idle" state_time = 5 }
+	state = { name = "construction" state_time = 5 }
+	state = { name = "death" state_time = 5 looping = no
+	event = { time = 4.9 particle = "large_player_ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_large" } }
+	}
+	game_data = {
+		shader_type = ship
+		emissive_recolor_crunch = 1.0
+	}
+	attach = { name = "station" part1 = "grey_tempesttw_orbital_habitat_entity" }
+}
+
+entity = {
+	name = "grey_tempesttw_habitat_phase_03_section_entity"
+	pdxmesh = "humanoid_01_orbital_station_frame_mesh"
+	locator = { name = "part1" position = { 0 0 0 }  }
+	attach = { "part1" = "grey_tempesttw_orbital_habitat_entity" }
+	scale = 0
+	default_state = "habitat_idle"
+	state = { name = "habitat_idle" looping = yes }
+	state = { name = "construction" looping = yes }
+	game_data = {
+		shader_type = ship
+		emissive_recolor_crunch = 1.0
+	}
+	locator = { name = "medium_gun_01"	position = { 0 0 0 } }
+	locator = { name = "medium_gun_02"	position = { 0 0 0 } }
+	locator = { name = "small_gun_01"	position = { 0 0 0 } }
+	locator = { name = "small_gun_02"	position = { 0 0 0 } }
+	locator = { name = "small_gun_03"	position = { 0 0 0 } }
+	locator = { name = "small_gun_04"	position = { 0 0 0 } }
+}

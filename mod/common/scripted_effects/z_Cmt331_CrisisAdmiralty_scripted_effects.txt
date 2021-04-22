@@ -442,7 +442,7 @@ CmtEffectInitFleetUpperLimit = {
 	divide_variable = { which = CmtVarFleetAngle value = 10 } # for more precise rounding
 	multiply_variable = { which = CmtVarFleetAngle value = 100000 }
 	set_variable = { which = CmtVarWhileFleetAngle value = 0 }
-	# log = "Dessanu CmtVarFleetAngle [This.CmtVarFleetAngle] - CmtVarCapitalDefenceNumber [This.CmtVarCapitalDefenceNumber], Ships = [CmtGlobalVar.CmtVarWhileControlFleet], This = [This.GetName]"
+	# log = "Dessanu CmtVarFleetAngle [This.CmtVarFleetAngle] - CmtVarCapitalDefenceNumber [This.CmtVarCapitalDefenceNumber], Ships = [CmtGlobalVar. ], This = [This.GetName]"
 }
 
 #################
@@ -450,16 +450,16 @@ CmtEffectInitFleetUpperLimit = {
 #################
 
 CmtEffectCreateAdmiralty_DessanuCapitalDefence = {
-	event_target:graygoo_country = {
+	owner = {
 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu } }
 		CmtEffectInitFleetUpperLimit = yes
 		while = {
 			count = CmtVarCapitalDefenceNumber
 			CmtEffectCreateFleet_DessanuGarryson = yes
-			# CmtEffectCreateFleet_DessanuGarryson = { DIR = CmtVarWhileFleetAngle }
+			# CmtEffectCreateFleet_DessanuGarryson = { DIR = CmtVarWhileFleetAngle } # "Malformed token
 			last_created_fleet = {
-				set_variable = { which = CmtVarWhileControlFleet value = PREV }
-				if = { limit = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } }
+				set_variable = { which = CmtVarWhileFleetAngle value = PREV }
+				if = { limit = { prev = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } } }
 					set_location = { target = PREVPREV distance = 80 angle = CmtVarWhileFleetAngle }
 				} else = { set_location = { target = PREVPREV distance = 80 angle = random } }
 			}
@@ -469,7 +469,8 @@ CmtEffectCreateAdmiralty_DessanuCapitalDefence = {
 }
 
 CmtEffectCreateAdmiralty_DessanuGarryson = {
-	event_target:graygoo_country = {
+	# space_owner = {
+	event_target:gate_builders = {
 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu } }
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.875 } } }
@@ -491,7 +492,7 @@ CmtEffectCreateAdmiralty_DessanuGarryson = {
 }
 
 CmtEffectCreateAdmiralty_DessanuRoamer = {
-	event_target:graygoo_country = {
+	owner = {
 		CmtEffectCreateFleet_DessanuRoamer = yes
 		event_target:lcluster1 = {
 			CmtFleetSetAuxParam_DessanuRoamer = { NUM = 1 }
@@ -619,7 +620,7 @@ CmtEffectCreateAdmiralty_DessanuRoamer = {
 #################
 
 CmtEffectCreateAdmiralty_GraygooCapitalDefence = {
-	event_target:graygoo_country = {
+	owner = {
 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo } }
 		CmtEffectInitFleetUpperLimit = yes
 		while = {
@@ -627,8 +628,8 @@ CmtEffectCreateAdmiralty_GraygooCapitalDefence = {
 			CmtEffectCreateFleet_GraygooGarryson = yes
 			# CmtEffectCreateFleet_GraygooGarryson = { DIR = CmtVarWhileFleetAngle } # "Malformed token
 			last_created_fleet = {
-				set_variable = { which = CmtVarWhileControlFleet value = PREV }
-				if = { limit = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } }
+				set_variable = { which = CmtVarWhileFleetAngle value = PREV }
+				if = { limit = { prev = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } } }
 					set_location = { target = PREVPREV distance = 80 angle = CmtVarWhileFleetAngle }
 				} else = { set_location = { target = PREVPREV distance = 80 angle = random } }
 			}
@@ -638,163 +639,163 @@ CmtEffectCreateAdmiralty_GraygooCapitalDefence = {
 }
 
 CmtEffectCreateAdmiralty_GraygooGarryson = {
-	event_target:graygoo_country = {
-		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo } }
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.875 } } }
-			CmtEffectCreateFleet_GraygooGarryson = yes
-		}
-		else = {
-			while = {
-				limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.125 } } }
-				event_target:CmtGlobalVar = { change_variable = { which = CmtVarWhileControlFleet value = -0.25 } }
-				random_list = {
-					100 = {
-						event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = 0 } }
-						CmtEffectCreateFleet_GraygooGarryson = yes
-					}
-					300 = { }
+	# event_target:graygoo_country = {
+	event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo } }
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.875 } } }
+		CmtEffectCreateFleet_GraygooGarryson = yes
+	}
+	else = {
+		while = {
+			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.125 } } }
+			event_target:CmtGlobalVar = { change_variable = { which = CmtVarWhileControlFleet value = -0.25 } }
+			random_list = {
+				100 = {
+					event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = 0 } }
+					CmtEffectCreateFleet_GraygooGarryson = yes
 				}
+				300 = { }
 			}
 		}
 	}
+	# }
 }
 
 CmtEffectCreateAdmiralty_GraygooRoamer = {
-	event_target:graygoo_country = {
+# event_target:graygoo_country = {
+	CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+	event_target:lcluster1 = {
+		CmtFleetSetAuxParam_GraygooRoamer = { NUM = 01 }
+	}
+	CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+	event_target:lcluster1 = {
+			# limit = { has_star_flag = lcluster1 }
+		CmtFleetSetAuxParam_GraygooRoamer = { NUM = 02 }
+	}
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 0.375 } } }
 		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-		event_target:lcluster1 = {
-			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 01 }
+		event_target:lcluster2 = {
+			# limit = { has_star_flag = lcluster2 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 03 }
 		}
 		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-		event_target:lcluster1 = {
-				# limit = { has_star_flag = lcluster1 }
-			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 02 }
-		}
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 0.375 } } }
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			event_target:lcluster2 = {
-				# limit = { has_star_flag = lcluster2 }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 03 }
-			}
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			event_target:lcluster3 = {
-				# limit = { has_star_flag = lcluster3 }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 04 }
-			}
-		}
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 0.625 } } }
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			event_target:lcluster4 = {
-				# limit = { has_star_flag = lcluster4 }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 05 }
-			}
-		}
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 0.875 } } }
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			event_target:lcluster5 = {
-				# limit = { has_star_flag = lcluster5 }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 06 }
-			}
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster6 }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 07 }
-			}
-		}
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 1.125 } } }
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 08 }
-			}
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 09 }
-			}
-		}
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 1.375 } } }
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 10 }
-			}
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 11 }
-			}
-		}
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 1.625 } } }
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 12 }
-			}
-		}
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 1.875 } } }
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 13 }
-			}
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 14 }
-			}
-		}
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 2.125 } } }
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 15 }
-			}
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 16 }
-			}
-		}
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 2.375 } } }
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 17 }
-			}
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 18 }
-			}
-		}
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 2.625 } } }
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 19 }
-			}
-		}
-		if = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 2.875 } } }
-			CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
-			random_system = {
-				limit = { has_star_flag = lcluster }
-				CmtFleetSetAuxParam_GraygooRoamer = { NUM = 20 }
-			}
+		event_target:lcluster3 = {
+			# limit = { has_star_flag = lcluster3 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 04 }
 		}
 	}
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 0.625 } } }
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		event_target:lcluster4 = {
+			# limit = { has_star_flag = lcluster4 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 05 }
+		}
+	}
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 0.875 } } }
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		event_target:lcluster5 = {
+			# limit = { has_star_flag = lcluster5 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 06 }
+		}
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster6 }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 07 }
+		}
+	}
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 1.125 } } }
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 08 }
+		}
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 09 }
+		}
+	}
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 1.375 } } }
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 10 }
+		}
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 11 }
+		}
+	}
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 1.625 } } }
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 12 }
+		}
+	}
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 1.875 } } }
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 13 }
+		}
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 14 }
+		}
+	}
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 2.125 } } }
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 15 }
+		}
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 16 }
+		}
+	}
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 2.375 } } }
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 17 }
+		}
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 18 }
+		}
+	}
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 2.625 } } }
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 19 }
+		}
+	}
+	if = {
+		limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Graygoo value > 2.875 } } }
+		CmtEffectCreateFleet_GraygooAttacker = { AMOUNT = $AMOUNT|1$ }
+		random_system = {
+			limit = { has_star_flag = lcluster }
+			CmtFleetSetAuxParam_GraygooRoamer = { NUM = 20 }
+		}
+	}
+	# }
 }
 
 CmtEffectCreateAdmiralty_GraygooAttackerA = {

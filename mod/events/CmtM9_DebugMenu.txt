@@ -182,14 +182,12 @@ country_event = {
 		country_event = { id = CrisisManagerMenu.9200 }
 	}
 
-
 	option = {
 		name = CmtTextSeparator.name
 		custom_tooltip = CmtTextSeparator.tooltip
 		trigger = { NOT = { has_global_flag = CmtFlagNoSeparator } }
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 	option = {
 		name = CrisisManagerMenu.9200.21a.name
@@ -204,14 +202,12 @@ country_event = {
 		country_event = { id = CrisisManagerMenu.9200 }
 	}
 
-
 	option = {
 		name = CmtTextSeparator.name
 		custom_tooltip = CmtTextSeparator.tooltip
 		trigger = { NOT = { has_global_flag = CmtFlagNoSeparator } }
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -227,7 +223,6 @@ country_event = {
 	desc = CrisisManagerMenu.9310.desc
 	picture = GFX_evt_CmtMenuA
 	is_triggered_only = yes
-
 
 	option = {
 		name = CrisisManagerMenu.9310a.name
@@ -262,7 +257,6 @@ country_event = {
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 
-
 	after = {
 		hidden_effect = {
 			if = {
@@ -286,7 +280,6 @@ country_event = {
 	desc = CrisisManagerMenu.9320.desc
 	picture = GFX_evt_CmtMenuA
 	is_triggered_only = yes
-
 
 	option = {
 		name = CrisisManagerMenu.9320a1.name
@@ -332,7 +325,6 @@ country_event = {
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 
-
 	after = {
 		hidden_effect = {
 			if = {
@@ -356,7 +348,6 @@ country_event = {
 	desc = CrisisManagerMenu.9330.desc
 	picture = GFX_evt_CmtMenuA
 	is_triggered_only = yes
-
 
 	option = {
 		name = CrisisManagerMenu.9330a.name
@@ -393,7 +384,6 @@ country_event = {
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 
-
 	after = {
 		hidden_effect = {
 			if = {
@@ -417,7 +407,6 @@ country_event = {
 	desc = CrisisManagerMenu.9340.desc
 	picture = GFX_evt_CmtMenuA
 	is_triggered_only = yes
-
 
 	option = {
 		name = CrisisManagerMenu.9340a.name
@@ -449,7 +438,6 @@ country_event = {
 		custom_tooltip = CmtTextGoBack.tooltip
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
-
 
 	after = {
 		hidden_effect = {
@@ -507,7 +495,6 @@ country_event = {
 					change_variable = { which = CmtVarIfElseCheck value = -1000 }
 				} else = { change_variable = { which = CmtVarIfElseCheck value = 0.2 } }		## Old Structure
 			}
-
 
 			if = {
 				limit = { always = no }

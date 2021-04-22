@@ -4,35 +4,21 @@ graygoo = {
 	randomized = no
 	category = "Machine"
 	should_name_home_system_planets = no
-
 	### SHIPS
-
 	ship_names = {
-		graygoo_mothership = {
-			"Great Confluence"
-		}
-		graygoo_interdictor = {
-			Reconstitutor
-		}
+		graygoo_mothership = { "Great Confluence" }
+		graygoo_interdictor = { "Reconstitutor" }
 	}
-
 	army_names = {
-		robotic_army = {
-			sequential_name = "%O% Preservation Force"
-		}
-		robotic_defense_army = {
-			sequential_name = "%O% Bulwark Force"
-		}
-		spectre_army = {
-			sequential_name = "%O% Spectres"
-		}
+		robotic_army = { sequential_name = "%O% Preservation Force" }
+		robotic_defense_army = { sequential_name = "%O% $NAME_Bulwark$ Force" }
+		spectre_army = { sequential_name = "%O% Spectres" }
 	}
+	fleet_names = { sequential_name = "%R% $SWARM$" }
 }
 
 MACHINE3 = {
 	army_names = {
-		spectre_army = {
-			sequential_name = "%O% Spectres"
-		}
+		spectre_army = { sequential_name = "%O% Spectres" }
 	}
 }

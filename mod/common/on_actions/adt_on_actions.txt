@@ -4,12 +4,19 @@ on_game_start = {
 		CrisisManagerMenu.0001		## Calling menu
 	}
 }
-# No scope, like on_game_start
-on_monthly_pulse = {
+on_single_player_save_game_load = {
+# on_save_game_load = {
 	events = {
 		a_deadly_tempest.2
+		CrisisManagerMenu.0002		## Calling menu
 	}
 }
+# No scope, like on_game_start
+# on_monthly_pulse = {
+# 	events = {
+# 		a_deadly_tempest.2
+# 	}
+# }
 
 # No scope, like on_game_start
 # on_yearly_pulse = {

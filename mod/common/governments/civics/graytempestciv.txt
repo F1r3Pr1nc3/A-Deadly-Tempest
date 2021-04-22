@@ -1,0 +1,35 @@
+civic_machine_nanites_culture = {
+	potential = {
+		authority = {
+			value = auth_machine_intelligence
+		}
+	}
+	modification = no
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		diplo_weight_mult = 0.2
+		envoys_add = 2
+		envoy_improve_relations_mult = 0.2
+	}
+}
+
+origin_machine_nanites = {
+	possible = {
+		authority = { value = auth_machine_intelligence }
+	}
+	icon = "gfx/interface/icons/origins/unused/origins_third_time_charm.dds"
+	is_origin = yes
+	description = nanite_origin
+	playable = {
+		always = no
+		# has_distar = yes
+	}
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		planet_pops_nanites_upkeep_add = 1
+	}
+}

@@ -145,7 +145,7 @@ country_event = {
 							exists = owner
 							exists = leader
 							exists = solar_system
-							owner = { is_same_empire = root }
+							is_owned_by = root
 						}
 						every_owned_ship = {
 							limit = { is_ship_class = shipclass_science_ship }
@@ -292,18 +292,17 @@ country_event = {
 			}
 			# Theoretically Must be called immediately (because graygoo.100 and candidate_gateway)
 			country_event = { id = distar.13000 days = 1 }
-			# country_event = { id = distar.11000 days = 1 } # Spawn L-Cluster
 		}
+		country_event = { id = distar.11000 days = 2 } # Spawn L-Cluster
+
 		if = {
 			limit = { has_global_flag = gray_goo_crisis_set }
-			country_event = { id = distar.11000 days = 2 }
-			country_event = { id = graygoo.1 days = 2 }
+			country_event = { id = graygoo.1 days = 3 }
 			country_event = { id = a_deadly_tempest.13006 days = 2 }
 			country_event = { id = a_deadly_tempest.137 days = 24 }
 		}
 		if = {
 			limit = { has_global_flag = gray_goo_empire_set }
-			country_event = { id = distar.11000 days = 2 }
 			country_event = { id = graygoo.100 days = 3 }
 			country_event = { id = a_deadly_tempest.137 days = 24 }
 		}

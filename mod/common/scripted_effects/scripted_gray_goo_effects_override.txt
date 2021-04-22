@@ -228,7 +228,7 @@ create_gray_army = {
 			set_owner = prev
 			create_army_transport = {
 				ship_name = "NAME_Gray"
-				graphical_culture = event_target:graygoo_country
+				graphical_culture = "grey_tempesttw"
 				army_name = "NAME_Gray"
 				army_type = "gray_army"
 			}

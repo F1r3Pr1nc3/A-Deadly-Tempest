@@ -10,10 +10,9 @@ tech_lcluster_access = {
 	is_rare = no
 	is_dangerous = yes
 	weight = @tier3weight3
-	feature_flags = { lgate_access }
+	# feature_flags = { lgate_access }
 	prerequisites = {
 		"tech_lgate_construction"
-		# "tech_lgate_activation"
 	}
 	prereqfor_desc = {
 		diplo_action = {
@@ -24,10 +23,7 @@ tech_lcluster_access = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		NOT = { has_global_flag = active_gray_goo }
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_resource = { type = nanites amount > 0 }
 		OR = {
 			NOR = {
 				has_global_flag = distar_overhaul_mod_active
@@ -67,10 +63,9 @@ tech_lgate_construction = {
 	icon = "tech_lcluster_access"
 	prerequisites = {
 		"tech_gateway_construction"
-		"tech_lgate_activation"
-		# "tech_nanite_mega_construction"
+		# "tech_nanite_mega_engineering"
 	}
-	feature_flags = { lgate_construction }
+	# feature_flags = { lgate_construction }
 	prereqfor_desc = {
 		diplo_action = {
 			title = "TECH_UNLOCK_L_GATE_TITLE"
@@ -79,10 +74,7 @@ tech_lgate_construction = {
 	}
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_resource = { type = nanites amount > 0 }
 		OR = {
 			NOR = {
 				has_global_flag = distar_overhaul_mod_active

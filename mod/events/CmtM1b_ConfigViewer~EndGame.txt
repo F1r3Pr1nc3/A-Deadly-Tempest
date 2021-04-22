@@ -67,7 +67,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.3110a.name
 		custom_tooltip = CrisisManagerMenu.3110a.tooltip
@@ -126,7 +125,6 @@ country_event = {
 		}
 		hidden_effect = { CmtEffect1010TryCall3110 = yes }
 	}
-
 
 
 	option = {
@@ -189,7 +187,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.3130.V0.name
 		custom_tooltip = CrisisManagerMenu.3130.V0.tooltip
@@ -236,7 +233,6 @@ country_event = {
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarEarliestEgpy value > @CmtConstTriggerEgpy_TA } } }
 		hidden_effect = { CmtEffect1010TryCall3130 = yes }
 	}
-
 
 
 	option = {
@@ -294,7 +290,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.3150a.name
 		custom_tooltip = CrisisManagerMenu.3150a.tooltip
@@ -334,7 +329,6 @@ country_event = {
 		}
 		hidden_effect = { CmtEffect1010TryCall3150 = yes }
 	}
-
 
 
 	option = {
@@ -392,7 +386,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.3170a.name
 		custom_tooltip = CrisisManagerMenu.3170a.tooltip
@@ -407,13 +400,11 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CmtTextSeparator.name
 		custom_tooltip = CmtTextSeparator.tooltip
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 
 	option = {
@@ -462,7 +453,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.3220a.name
 		custom_tooltip = CrisisManagerMenu.3220a.tooltip
@@ -507,7 +497,6 @@ country_event = {
 		}
 		hidden_effect = { CmtEffect1010TryCall3220 = yes }
 	}
-
 
 
 	option = {
@@ -572,7 +561,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.3232a.name
 		custom_tooltip = CrisisManagerMenu.3232a.tooltip
@@ -635,7 +623,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.3240a.name
 		custom_tooltip = CrisisManagerMenu.3240a.tooltip
@@ -682,7 +669,6 @@ country_event = {
 		}
 		hidden_effect = { CmtEffect1010TryCall3240 = yes }
 	}
-
 
 
 	option = {
@@ -733,7 +719,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.3260a.name
 		custom_tooltip = CrisisManagerMenu.3260a.tooltip
@@ -773,7 +758,6 @@ country_event = {
 		}
 		hidden_effect = { CmtEffect1010TryCall3260 = yes }
 	}
-
 
 
 	option = {
@@ -844,14 +828,12 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CmtTextSeparator.name
 		custom_tooltip = CmtTextSeparator.tooltip
 		trigger = { NOT = { has_global_flag = CmtFlagNoSeparator } }
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 
 
@@ -881,7 +863,6 @@ country_event = {
 		}
 		hidden_effect = { CmtEffect1021TryCall4110 = yes }
 	}
-
 
 
 	option = {
@@ -923,7 +904,6 @@ country_event = {
 		}
 		hidden_effect = { CmtEffect1021TryCall4120 = yes }
 	}
-
 
 
 	option = {
@@ -974,7 +954,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.4140a.name
 		custom_tooltip = CrisisManagerMenu.4140a.tooltip
@@ -987,7 +966,6 @@ country_event = {
 		trigger = { NOT = { has_global_flag = CmtFlagForbiddenAnatomy } }
 		hidden_effect = { CmtEffect1021TryCall4140 = yes }
 	}
-
 
 
 	option = {
@@ -1041,7 +1019,6 @@ country_event = {
 		trigger = { has_global_flag = CmtFlagPrethorynUnlimitedFlavor }
 		hidden_effect = { CmtEffect1021TryCall4160 = yes }
 	}
-
 
 
 	option = {
@@ -1122,14 +1099,12 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CmtTextSeparator.name
 		custom_tooltip = CmtTextSeparator.tooltip
 		trigger = { NOT = { has_global_flag = CmtFlagNoSeparator } }
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 
 
@@ -1160,7 +1135,6 @@ country_event = {
 		}
 		hidden_effect = { CmtEffect1022TryCall4210 = yes }
 	}
-
 
 
 	option = {
@@ -1217,7 +1191,6 @@ country_event = {
 		hidden_effect = { CmtEffect1022TryCall4220 = yes }
 	}
 
-
 	option = {
 		name = CrisisManagerMenu.4230a1.name
 		custom_tooltip = CrisisManagerMenu.4230a1.tooltip
@@ -1230,7 +1203,6 @@ country_event = {
 		trigger = { has_global_flag = CmtFlagExdsChaserAnywhere }
 		hidden_effect = { CmtEffect1022TryCall4230 = yes }
 	}
-
 
 
 	option = {
@@ -1267,7 +1239,6 @@ country_event = {
 		trigger = { NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_OnExdAnchorBuilt value > 0.5 } } } }
 		hidden_effect = { CmtEffect1022TryCall4240 = yes }
 	}
-
 
 
 	option = {
@@ -1308,14 +1279,12 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CmtTextSeparator.name
 		custom_tooltip = CmtTextSeparator.tooltip
 		trigger = { NOT = { has_global_flag = CmtFlagNoSeparator } }
 		allow = { hidden_trigger = { always = no } }
 	}
-
 
 
 	### Forced End of Cycle
@@ -1331,7 +1300,6 @@ country_event = {
 		trigger = { has_global_flag = CmtFlagAllowForcedEoc }
 		hidden_effect = { CmtEffect1022TryCall4410 = yes }
 	}
-
 
 
 	option = {
@@ -1368,7 +1336,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.4430a.name
 		custom_tooltip = CrisisManagerMenu.4430a.tooltip
@@ -1401,7 +1368,6 @@ country_event = {
 		}
 		hidden_effect = { CmtEffect1022TryCall4430 = yes }
 	}
-
 
 
 	option = {
@@ -1445,7 +1411,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.4450a.name
 		custom_tooltip = CrisisManagerMenu.4450a.tooltip
@@ -1458,7 +1423,6 @@ country_event = {
 		trigger = { has_global_flag = CmtFlagForcedEocCrisisTerm }
 		hidden_effect = { CmtEffect1022TryCall4450 = yes }
 	}
-
 
 
 	option = {
@@ -1535,7 +1499,6 @@ country_event = {
 	}
 
 
-
 	### Contingency
 	option = {
 		name = CrisisManagerMenu.4310a.name
@@ -1549,7 +1512,6 @@ country_event = {
 		trigger = { NOT = { has_global_flag = CmtFlagForbiddenContingency } }
 		hidden_effect = { CmtEffect1023TryCall4310 = yes }
 	}
-
 
 
 	option = {
@@ -1600,7 +1562,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.4340a.name
 		custom_tooltip = CrisisManagerMenu.4340a.tooltip
@@ -1647,7 +1608,6 @@ country_event = {
 		}
 		hidden_effect = { CmtEffect1023TryCall4340 = yes }
 	}
-
 
 
 	option = {
@@ -1698,7 +1658,6 @@ country_event = {
 	}
 
 
-
 	option = {
 		name = CrisisManagerMenu.4360a.name
 		custom_tooltip = CrisisManagerMenu.4360a.tooltip
@@ -1711,7 +1670,6 @@ country_event = {
 		trigger = { has_global_flag = CmtFlagSynthTerrorAll }
 		hidden_effect = { CmtEffect1023TryCall4360 = yes }
 	}
-
 
 
 	option = {
@@ -1760,7 +1718,6 @@ country_event = {
 		}
 		hidden_effect = { CmtEffect1023TryCall4370 = yes }
 	}
-
 
 
 	option = {

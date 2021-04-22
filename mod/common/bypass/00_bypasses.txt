@@ -126,14 +126,15 @@ wormhole = {
 			OR = {
 				# System has no owner
 				NOT = { exists = from }
+				# System's owner has not closed borders to you
+				from = { NOT = { has_closed_borders = root } }
+				# System's owner is at war with you
+				from = { is_at_war_with = root }
+				# System's owner is not a proper empire
 				from = {
-					OR = {
-						# System's owner has not closed borders to you
-						NOT = { has_closed_borders = root }
-						# System's owner is at war with you
-						is_at_war_with = root
-						# System's owner is not a proper empire
-						is_country_type_with_subjects = no
+					NOR = {
+						is_country_type_with_subjects = yes
+						is_country_type = fallen_empire
 					}
 				}
 			}

@@ -1,0 +1,46 @@
+#####################################################
+#####											#####
+#####				Arthropoid					#####
+#####											#####
+#####################################################
+entity = {
+	name = "grey_tempesttw_strategic_potato_entity"
+	attach = { "slot1" = "greytempest_habitate_entity" }
+	attach = { "slot2" = "greytempest_habitate_entity" }
+	locator = { name = "slot1"				position = { 0		0  0 } rotation = { 0 180 0 } }
+	locator = { name = "slot2"				position = { 0		20  0 } }
+	locator = { name = "root"				position = { 0		0  0 } }
+	scale = 1
+}
+entity = {
+	name = "grey_tempesttw_strategic_coordination_center_stage_1_entity"
+	attach = { "slot1" = "greytempest_habitate_entity" }
+	attach = { "slot2" = "greytempest_habitate_entity" }
+	attach = { "slot3" = "greytempest_habitate_entity" }
+	locator = { name = "slot1"				position = { 0		0  0 } rotation = { 0 0 0 } }
+	locator = { name = "slot2"				position = { 0		0  0 } rotation = { 0 90 0 } }
+	locator = { name = "slot3"				position = { 0		0  0 } rotation = { 90 0 0 } }
+}
+entity = {
+	name = "grey_tempesttw_strategic_coordination_center_stage_2_entity"
+	attach = { "slot1" = "greytempest_habitate_entity" }
+	attach = { "slot2" = "greytempest_habitate_entity" }
+	attach = { "slot3" = "greytempest_habitate_entity" }
+	locator = { name = "slot1"				position = { 0		0  0 } rotation = { 0 0 0 } }
+	locator = { name = "slot2"				position = { 0		0  0 } rotation = { 0 90 0 } }
+	locator = { name = "slot3"				position = { 0		0  0 } rotation = { 90 0 0 } }
+}
+entity = {
+	name = "grey_tempesttw_strategic_coordination_center_stage_3_entity"
+	attach = { "slot1" = "greytempest_habitate_entity" }
+	attach = { "slot2" = "greytempest_habitate_entity" }
+	attach = { "slot3" = "greytempest_habitate_entity" }
+	attach = { "slot4" = "greytempest_habitate_entity" }
+	attach = { "slot5" = "greytempest_habitate_entity" }
+	attach = { "root1" =  "grey_tempesttw_hole_sphere_ring_entity" }
+	locator = { name = "slot1"				position = { 0		0  0 } rotation = { 0 0 0 } }
+	locator = { name = "slot2"				position = { 0		0  0 } rotation = { 0 90 0 } }
+	locator = { name = "slot5"				position = { 0		0  0 } rotation = { 0 -90 0 } }
+	locator = { name = "slot4"				position = { 0		0  0 } rotation = { 0 180 0 } }
+	locator = { name = "slot3"				position = { 0		0  0 } rotation = { 90 0 0 } }
+}

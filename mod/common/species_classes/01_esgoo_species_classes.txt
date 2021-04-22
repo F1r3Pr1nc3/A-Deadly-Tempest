@@ -1,7 +1,6 @@
 ESGO = {
 	archetype = MACHINE
-
-	playable = { has_synthethic_dawn = yes }
+	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
 	randomized = {
 		has_synthethic_dawn = yes
 		# The create_species effect can't properly take the possible trigger below into account.
@@ -21,10 +20,44 @@ ESGO = {
 
 	portraits = {
 		"esgoo"
-		"lithnanite"
 		"creature"
 	}
+	custom_portraits = {
+		randomized = { has_lithoids = yes }
+		playable = { has_lithoids = yes }
+		portraits = {
+			"lithnanite"
+		}
+	}
+	custom_portraits = {
+		randomized = { always = yes }
+		playable = { always = yes }
+		portraits = {
+			"rep2"
+			"rep10"
+			"rep14"
+			"rep3"
+			"rep7"
+			"rep12"
+			"rep9"
+			"rep11"
+			"rep6"
+			"rep13"
+			"rep1"
+			"rep8"
+			"rep4"
+			"rep15"
+			"rep5"
+		}
+	}
+	custom_portraits = {
+		randomized = { host_has_dlc = "Leviathans Story Pack" }
+		playable = { local_has_dlc = "Leviathans Story Pack" }
+		portraits = {
+			"rep16"
+		}
+	}
 
-	graphical_culture = machine_01 # esgoo_01
-	move_pop_sound_effect = "robot_pops_move"
+	graphical_culture = grey_tempesttw # esgoo_01
+	move_pop_sound_effect = "reptilian_pops_move" # "robot_pops_move" moving_pop_confirmation
 }

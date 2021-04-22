@@ -1,6 +1,6 @@
 machine_01 = {
 	randomized = { no_scope = { has_synthethic_dawn = yes } }
-	fallback = grey_tempesttw # Twinks Dessanu
+	fallback = esgoo_01
 	ship_color = yes
 	ship_lighting = {
 		cam_light_1_dir = { 1.0 0.0 0.5 }

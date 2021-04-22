@@ -629,7 +629,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFleetPower_Common value = 3.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextSetIndividually.name
 		custom_tooltip = CmtTextSetIndividually.tooltip
@@ -739,7 +738,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFleetPower_Prethoryn value = 3.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -841,7 +839,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6102.300.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFleetPower_Sentinel value = 3.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -945,7 +942,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFleetPower_Unbidden value = 3.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -1047,7 +1043,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6104.300.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFleetPower_Aberrant value = 3.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -1151,7 +1146,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFleetPower_Vehement value = 3.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -1253,7 +1247,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6106.300.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFleetPower_Contingency value = 3.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -1360,7 +1353,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFleetPower_Cybrex value = 3.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -1466,7 +1458,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFleetPower_Khan value = 3.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -1568,7 +1559,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFleetPower_Graygoo value = 3.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -1669,7 +1659,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6113.300.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFleetPower_Dessanu value = 3.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -1802,7 +1791,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarArmyPower_Common value = 3.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextSetIndividually.name
 		custom_tooltip = CmtTextSetIndividually.tooltip
@@ -1912,7 +1900,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarArmyPower_Prethoryn value = 3.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -2018,7 +2005,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarArmyPower_Contingency value = 3.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -2123,7 +2109,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6211.300.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarArmyPower_Khan value = 3.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -2280,7 +2265,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCombatFleetNumber_Common value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextSetIndividually.name
 		custom_tooltip = CmtTextSetIndividually.tooltip
@@ -2420,7 +2404,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCombatFleetNumber_Prethoryn value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -2552,7 +2535,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6302.A00.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCombatFleetNumber_Sentinel value = 10.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -2686,7 +2668,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCombatFleetNumber_Unbidden value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -2818,7 +2799,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6304.A00.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCombatFleetNumber_Aberrant value = 10.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -2952,7 +2932,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCombatFleetNumber_Vehement value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -3083,7 +3062,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6306.A00.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCombatFleetNumber_Contingency value = 10.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -3220,7 +3198,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCombatFleetNumber_Cybrex value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -3356,7 +3333,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCombatFleetNumber_Khan value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -3489,7 +3465,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCombatFleetNumber_Graygoo value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -3621,7 +3596,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6313.A00.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCombatFleetNumber_Dessanu value = 10.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -3778,7 +3752,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarArmyNumber_Common value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextSetIndividually.name
 		custom_tooltip = CmtTextSetIndividually.tooltip
@@ -3918,7 +3891,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarArmyNumber_Prethoryn value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -4054,7 +4026,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarArmyNumber_Contingency value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -4189,7 +4160,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6411.A00.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarArmyNumber_Khan value = 10.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -4346,7 +4316,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarConstructorNumber_Common value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextSetIndividually.name
 		custom_tooltip = CmtTextSetIndividually.tooltip
@@ -4486,7 +4455,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarConstructorNumber_Prethoryn value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -4618,7 +4586,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6503.A00.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarConstructorNumber_Unbidden value = 10.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -4752,7 +4719,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarConstructorNumber_Aberrant value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -4884,7 +4850,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6505.A00.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarConstructorNumber_Vehement value = 10.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name
@@ -5021,7 +4986,6 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarConstructorNumber_Contingency value = 10.00 } } }
 	}
 
-
 	option = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
@@ -5156,7 +5120,6 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.6511.A00.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarConstructorNumber_Khan value = 10.00 } } }
 	}
-
 
 	option = {
 		name = CmtTextGoBack.name

@@ -97,8 +97,8 @@ country_event = {
 # 			establish_communications_no_message = event_target:cybrex
 # 			event_target:cybrex_beta = {
 # 				every_system_planet = {
-# 					surveyed = {
-# 						set_surveyed = yes
+# 					set_surveyed = {
+# 						surveyed = yes
 # 						surveyor = root
 # 					}
 # 				}
@@ -219,7 +219,6 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		# set_country_flag = sleepers_awake_first_sleeper
 		set_country_type = awakened_gate_builders # awakened_fallen_empire
 		if = { limit = { has_ethic = "ethic_fanatic_xenophile" }
 			country_remove_ethic = "ethic_fanatic_xenophile"
@@ -235,15 +234,27 @@ country_event = {
 			civics = {
 				civic = civic_awakened_machine
 				civic = civic_final_defense_protocols
+				civic = civic_machine_nanites_culture
 			}
 		}
-		add_awakened_fallen_empire_resources = yes
-		# capital_scope = {
-		# 	CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes # Garrison Fleets at Capital
-		# }
-		event_target:nanite_factory = {
-			CmtEffectCreateAdmiralty_DessanuRoamer = yes # Roamers
+		# set_name = "NAME_Graygoo_Consonance"
+		# change_species_characteristics = {}
+		species = {
+			rename_species = {
+				name = "Dessanu"
+				namelist = "MACHINE4"
+			}
 		}
+
+		add_awakened_fallen_empire_resources = yes
+		capital_scope = {
+			prev.species = { set_species_homeworld = prev }
+			starbase = { CmtEffectCreateAdmiralty_GraygooCapitalDefence = yes }
+		}
+		event_target:nanite_factory = {
+			root = { CmtEffectCreateAdmiralty_GraygooRoamer = yes } # Roamers
+		}
+		set_origin = origin_machine_nanites
 		# Establish communications
 		every_country = {
 			limit = {
@@ -258,6 +269,13 @@ country_event = {
 		if = { limit = { host_has_dlc = "Apocalypse" }
 			give_technology = { tech = tech_colossus message = no }
 		}
+
+		change_country_flag = {
+			icon = { category = "paradox" file = "paradox_logo.dds" }
+			background = { category = "backgrounds" file = "sinus.dds" }
+			colors = { "teal" "dark_grey" "null" "null" }
+		}
+
 		set_graphical_culture = "fallen_machine_empire_01" # temporary
 		add_global_ship_design = "NAME_Omega"
 		add_global_ship_design = "NAME_Alpha"
@@ -284,26 +302,129 @@ country_event = {
 		# create_ship_design = { design = "NAME_FE_Starbase" }
 		# add_ship_design = last_created_design
 		# add_awakened_fallen_empire_fleet = yes
-		create_fallen_empire_starting_navy = yes
+		event_target:nanite_factory = {
+			create_fallen_empire_starting_navy = yes # galactic object
+		}
 
-		if = {
-			limit = { has_origin = origin_machine_nanites }
+		if = { limit = { has_origin = origin_machine_nanites }
 			set_graphical_culture = "grey_tempesttw"
-			create_fleet = {
+		} else = { set_graphical_culture = "machine_01" }
+		create_fleet = {
+			effect = {
+				set_owner = root
+				create_ship = {
+					name = random
+					design = "NAME_mardak_vol_haters_colossus"
+					graphical_culture = owner
+				}
+				set_location = {
+					# target = prev.capital_scope
+					target = event_target:nanite_factory
+					distance = 30
+					angle = random
+				}
+			}
+		}
+		## colonize random planet
+		random_system = {
+			limit = {
+				has_star_flag = lcluster
+				has_owner = no
+				NOR = {
+					has_star_flag = lcluster_lgate
+					has_star_flag = graygoo_factory_system
+					# is_same_value = event_target:lcluster_factory_system
+					any_fleet_in_system = { is_in_combat = yes }
+				}
+				any_system_planet = { is_planet_class = pc_gray_goo }
+			}
+			create_starbase = {
+				size = "starbase_starport"
+				owner = root
+				module = "missile_battery"
+				module = "gun_battery"
+				building = "target_uplink_computer"
 				effect = {
-					set_owner = prev.owner
-					create_ship = {
-						name = random
-						design = "NAME_mardak_vol_haters_colossus"
-						graphical_culture = owner
-					}
-					set_location = {
-						target = prev.capital_scope
-						distance = 30
-						angle = random
+					while = { count = 4
+						create_ship = { random_existing_design = military_station_small }
 					}
 				}
 			}
-		} else = { set_graphical_culture = "machine_01" }
+			random_system_planet = {
+				limit = { is_planet_class = pc_gray_goo has_owner = no }
+				remove_modifier = terraforming_candidate
+				## part.copy of graygoo.100
+				root = { CmtEffectCreateAdmiralty_GraygooGarryson = yes }
+				change_pc = pc_gaia
+				reset_planet = yes
+				set_planet_flag = hidden_nanite_world
+				prevent_anomaly = yes
+				set_owner = root
+
+				add_deposit = d_energy_5
+				add_deposit = d_natural_farmland
+				add_deposit = d_minerals_2
+
+				while = {
+					count = 16
+					create_pop = { species = owner_main_species }
+				}
+				while = {
+					count = 2
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_city
+					}
+				}
+				while = {
+					count = 3
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_mining
+					}
+				}
+				while = {
+					count = 4
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_generator
+					}
+				}
+				if = {
+					limit = {
+						event_target:gate_builders.species = {
+							is_lithoid = yes
+						}
+					}
+					while = {
+						count = 2
+						add_district_and_planet_size_if_needed_effect = {
+							district = district_mining
+						}
+					}
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_generator
+					}
+				}
+				else = {
+					while = {
+						count = 3
+						add_district_and_planet_size_if_needed_effect = {
+							district = district_farming
+						}
+					}
+				}
+				add_building = building_capital
+				add_building = building_mineral_purification_hub
+				add_building = building_energy_grid
+				add_building = building_stronghold
+				add_building = building_factory_1
+				add_building = building_holo_theatres
+				add_building = building_foundry_1
+
+				create_army = {
+					owner = root
+					species = owner_main_species
+					type = "nanite_giga_guardian"
+				}
+			}
+		}
 	}
 }

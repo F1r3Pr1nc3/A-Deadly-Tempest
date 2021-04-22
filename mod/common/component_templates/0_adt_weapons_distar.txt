@@ -298,7 +298,6 @@ weapon_component_template = {
 	hidden = yes
 }		fe_titan
 
-
 weapon_component_template = {
 	key = "SCAVENGER_MAIN_WEAPON"
 	size = titanic

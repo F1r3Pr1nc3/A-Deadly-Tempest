@@ -16,81 +16,60 @@ event = {
 	immediate = {
 		CmtEffectSetDetectedEdition = yes
 		random_country = {
-			limit = {
-				is_country_type = global_event
-			}
-			country_event = {
-				id = CrisisManagerMenu.0021
-			}			## Initializing Variables
+			limit = { is_country_type = global_event }
+			country_event = { id = CrisisManagerMenu.0021 }			## Initializing Variables
 		}
 		if = {
 			limit = {
-				NOT = {
-					has_global_flag = CmtFlagNoCall
-				}
+				NOT = { has_global_flag = CmtFlagNoCall }
 			}
 			random_playable_country = {
-				limit = {
-					is_ai = no
-				}
-				country_event = {
-					id = CrisisManagerMenu.0100
-				}				## Main Menu
+				limit = { is_ai = no }
+				country_event = { id = CrisisManagerMenu.0100 }		## Main Menu
 			}
 		}
+		# log="Game started 1"
 	}
 }
 
 ### Activation for Saved Game
-country_event = {
+event = {
 	id = CrisisManagerMenu.0002
 	hide_window = yes
+	is_triggered_only = yes
 	# dayly MTTH  for fire_only_once event is a big waste of performance, but there is still no other way
 	# fire_only_once = yes
 	trigger = {
-		NOT = {
-			has_global_flag = CmtFlagActivated
-		}
-		is_country_type = global_event
+		NOT = { has_global_flag = CmtFlagActivated }
+		# is_country_type = global_event
 	}
 	immediate = {
 		CmtEffectSetDetectedEdition = yes
 		if = {
-			limit = {
-				NOT = {
-					has_global_flag = CmtFlagNoCall
-				}
+			limit = { NOT = { has_global_flag = CmtFlagNoCall } }
+			random_country = {
+				limit = { is_country_type = global_event }
+				country_event = { id = CrisisManagerMenu.0021 }		## Initializing Variables
 			}
-			country_event = {
-				id = CrisisManagerMenu.0021
-			}			## Initializing Variables
 		}
 		else_if = {
-			limit = {
-				CmtTriggerAnyManagedEventTriggered = yes
-			}
+			limit = { CmtTriggerAnyManagedEventTriggered = yes }
 			every_playable_country = {
-				limit = {
-					is_ai = no
-				}
-				country_event = {
-					id = CrisisManagerMenu.0012
-				}				## Warning: Crisis Happened Already
+				limit = { is_ai = no }
+				country_event = { id = CrisisManagerMenu.0012 }		## Warning: Crisis Happened Already
 			}
 		}
 		else = {
-			country_event = {
-				id = CrisisManagerMenu.0021
-			}			## Initializing Variables
+			random_country = {
+				limit = { is_country_type = global_event }
+				country_event = { id = CrisisManagerMenu.0021 }		## Initializing Variables
+			}
 			random_playable_country = {
-				limit = {
-					is_ai = no
-				}
-				country_event = {
-					id = CrisisManagerMenu.0011
-				}				## Activating Notification
+				limit = { is_ai = no }
+				country_event = { id = CrisisManagerMenu.0011 }		## Activating Notification
 			}
 		}
+		# log="Save loaded 2" # [This.GetName]
 	}
 }
 
@@ -99,24 +78,16 @@ country_event = {
 	id = CrisisManagerMenu.0003	# same as CrisisManagerMenu.3
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		is_ai = no
-	}
+	trigger = { is_ai = no }
 	immediate = {
 		if = {
 			limit = {
-				any_country = {
-					has_country_flag = CmtFlagNowInMenu
-				}
+				any_country = { has_country_flag = CmtFlagNowInMenu }
 			}
-			country_event = {
-				id = CrisisManagerMenu.0013
-			}
+			country_event = { id = CrisisManagerMenu.0013 }
 		}
 		else = {
-			country_event = {
-				id = CrisisManagerMenu.0100
-			}
+			country_event = { id = CrisisManagerMenu.0100 }
 		}
 	}
 }
@@ -136,13 +107,9 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					NOT = {
-						has_global_flag = CmtFlagNoCall
-					}
+					NOT = { has_global_flag = CmtFlagNoCall }
 				}
-				country_event = {
-					id = CrisisManagerMenu.0100
-				}
+				country_event = { id = CrisisManagerMenu.0100 }
 			}
 		}
 	}
@@ -158,9 +125,7 @@ country_event = {
 	option = {
 		name = CmtTextOK.name
 		custom_tooltip = CmtTextOK.tooltip
-		hidden_effect = {
-			CmtEffectExitMenu = yes
-		}
+		hidden_effect = { CmtEffectExitMenu = yes }
 	}
 }
 
@@ -173,9 +138,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		is_ai = no
-		any_country = {
-			has_country_flag = CmtFlagNowInMenu
-		}
+		any_country = { has_country_flag = CmtFlagNowInMenu }
 	}
 	option = {
 		name = CmtTextOK.name
@@ -185,9 +148,7 @@ country_event = {
 		name = CrisisManagerMenu.0013b.name
 		custom_tooltip = CrisisManagerMenu.0013b.tooltip
 		hidden_effect = {
-			country_event = {
-				id = CrisisManagerMenu.0100
-			}
+			country_event = { id = CrisisManagerMenu.0100 }
 		}
 	}
 }
@@ -201,9 +162,7 @@ country_event = {
 	is_triggered_only = yes	# no?
 	trigger = {
 		has_country_flag = CmtFlagNowInMenu
-		NOT = {
-			has_country_flag = CmtFlagNeverWarn14
-		}
+		NOT = { has_country_flag = CmtFlagNeverWarn14 }
 		is_ai = no
 	}
 	option = {
@@ -213,9 +172,7 @@ country_event = {
 	option = {
 		name = CrisisManagerMenu.0014b.name
 		custom_tooltip = CrisisManagerMenu.0014b.tooltip
-		hidden_effect = {
-			set_country_flag = CmtFlagNeverWarn14
-		}
+		hidden_effect = { set_country_flag = CmtFlagNeverWarn14 }
 	}
 }
 
@@ -226,27 +183,19 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		random_country = {
-			limit = {
-				is_country_type = global_event
-			}
+			limit = { is_country_type = global_event }
 			set_global_flag = CmtFlagActivated
 			save_global_event_target_as = CmtGlobalVar
 			CmtEffectHardCoatedSettings = yes
-			country_event = {
-				id = CrisisManagerControl.9011
-			}			## For only debugging
-			country_event = {
-				id = CrisisManagerMenu.2000
-			}			## Apply Vanilla Template
-			country_event = {
-				id = CrisisManagerMenu.2001
-			}			## Auto apply of Template
+			country_event = { id = CrisisManagerControl.9011 }	## For only debugging
+			country_event = { id = CrisisManagerMenu.2000 }		## Apply Vanilla Template
+			country_event = { id = CrisisManagerMenu.2001 }		## Auto apply of Template
 			if = {
 				limit = {
 					always = @CmtT201_ConstSleeperFleet_ApplyOnStart
 					has_global_flag = CmtFlagSleeperEdition
 				}
-				CmtEffectApplyTemplate201 = yes				## Apply Template for Initialization for Fleets of Sleepers
+				CmtEffectApplyTemplate201 = yes					## Apply Template for Initialization for Fleets of Sleepers
 			}
 			# Dynamic L-Gate clue req counter
 			event_target:CmtGlobalVar = {
@@ -277,26 +226,26 @@ country_event = {
 						}
 					}
 				}
-				# if = { limit = { galaxy_size = tiny }
+				# if = { limit = { galaxy_size = tiny  }
 				# 	change_variable = {
 				# 		which = CmtVarLgateReqClues
 				# 		value = -1
 				# 	}
 				# }
-				# if = { limit = { galaxy_size = small }
+				# if = { limit = { galaxy_size = small  }
 				# 	change_variable = {
 				# 		which = CmtVarLgateReqClues
 				# 		value = -1
 				# 	}
 				# }
 				# # if = { limit = { galaxy_size = medium # } }
-				# if = { limit = { galaxy_size = large }
+				# if = { limit = { galaxy_size = large  }
 				# 	change_variable = {
 				# 		which = CmtVarLgateReqClues
 				# 		value = 1
 				# 	}
 				# }
-				# if = { limit = { galaxy_size = huge }
+				# if = { limit = { galaxy_size = huge  }
 				# 	change_variable = {
 				# 		which = CmtVarLgateReqClues
 				# 		value = 1
@@ -312,12 +261,8 @@ country_event = {
 	id = CrisisManagerMenu.0900
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		is_ai = no
-	}
+	trigger = { is_ai = no }
 	immediate = {
-		country_event = {
-			id = CrisisManagerMenu.0003
-		}
+		country_event = { id = CrisisManagerMenu.0003 }
 	}
 }

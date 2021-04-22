@@ -133,7 +133,7 @@ distantstars_init_01 = {
 		class = "pc_black_hole"		# "pc_g_star"
 		orbit_distance = 0
 		orbit_angle = 1
-		size = { min = 20 max = 30   }
+		size = { min = 10 max = 20   }
 		has_ring = no
 	}
 
@@ -837,6 +837,7 @@ distantstars_init_04b = {
 		class = pc_gray_goo
 		orbit_distance = 30
 		orbit_angle = { min = 90 max = 270 }
+		size = 20
 	}
 	planet = {
 		class = pc_barren_cold
@@ -846,6 +847,9 @@ distantstars_init_04b = {
 		moon = {
 			class = "pc_frozen"
 			orbit_angle = { min = 90 max = 270 }
+		}
+		init_effect = {
+			set_capital = yes
 		}
 	}
 	init_effect = {
@@ -904,7 +908,7 @@ distantstars_init_05b = {
 			prevent_anomaly = yes
 			set_owner = event_target:gate_builders
 			set_controller = event_target:gate_builders
-			set_capital = yes
+			# set_capital = yes
 
 			add_building = building_ancient_control_center
 			add_building = building_nourishment_center
@@ -936,7 +940,7 @@ distantstars_init_05b = {
 			# create_fallen_empire_starting_navy = yes
 
 			while = {
-				count = 20
+				count = 5
 				create_army = {
 					name = random
 					owner = event_target:gate_builders

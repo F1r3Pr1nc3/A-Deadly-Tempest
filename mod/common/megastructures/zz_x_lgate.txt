@@ -38,6 +38,25 @@ lgate_base = {
 	placement_rules = {
 		# those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
 	}
+	#needs test
+	# on_build_complete = {
+	# 	activate_gateway = fromfrom
+	# 	if = {
+	# 		limit = { exists = owner }
+	# 		fromfrom = { CmtEffectOpenLgate = yes }
+	# 	}
+	# 	# Workaround TEST (since 3.0)?
+	# 	if = {
+	# 		limit = { any_system_megastructure = { is_megastructure_type = lgate_disabled } }
+	# 		random_system_megastructure = {
+	# 			limit = { is_megastructure_type = lgate_disabled }
+	# 			delete_megastructure = this
+	# 			log="DOUBLE LGATE"
+	# 			# upgrade_megastructure_to = lgate_base
+	# 			# finish_upgrade = yes
+	# 		}
+	# 	}
+	# }
 }
 
 # Disabled L-Gate

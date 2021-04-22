@@ -18,7 +18,7 @@ event = {
 	id = a_deadly_tempest.1
 	hide_window = yes
 	is_triggered_only = yes
-	fire_only_once = yes
+	# fire_only_once = yes
 	# trigger = {
 	# 	always = yes
 	# 	#NOT = { has_global_flag = a_deadly_tempest_mod_active }
@@ -28,9 +28,17 @@ event = {
 		set_global_flag = a_deadly_tempest_mod_active
 		if = {
 			limit = {
-				NOT = { exists = event_target:GlobalVar }
+				NOT = { exists = event_target:CmtGlobalVar }
 			}
 			if = {
+				limit = {
+					exists = event_target:global_event_country
+				}
+				event_target:global_event_country = {
+					save_global_event_target_as = CmtGlobalVar
+				}
+			}
+			else_if = {
 				limit = {
 					NAND = {
 						exists = this
@@ -39,20 +47,20 @@ event = {
 				}
 				random_country = {
 					limit = { is_country_type = global_event }
-					save_global_event_target_as = GlobalVar
+					save_global_event_target_as = CmtGlobalVar
 				}
 			}
-			else = { save_global_event_target_as = GlobalVar }
-		}
-		# Support nhsc mod
-		event_target:GlobalVar = {
-			set_variable = {
-				which = random_nhsc_value
-				value = @armor_s_t8_strength
+			else_if = {
+				limit = { is_scope_type = country }
+				save_global_event_target_as = CmtGlobalVar
 			}
 		}
+		# Support nhsc mod
+		event_target:CmtGlobalVar = {
+			set_variable = { which = random_nhsc_value value = @armor_s_t8_strength }
+		}
 	}
-	# after = { log = "1 a_deadly_tempest_mod_active [GlobalVar.random_nhsc_value]" }
+	# after = { log = "1 a_deadly_tempest_mod_active [CmtGlobalVar.random_nhsc_value]" }
 }
 
 event = {
@@ -71,12 +79,12 @@ event = {
 		# is_country_type = global_event is none
 		OR = {
 			NAND = {
-				exists = event_target:GlobalVar
+				exists = event_target:CmtGlobalVar
 				has_global_flag = a_deadly_tempest_mod_active
 			}
 			AND = {
 				has_global_flag = nhsc_v30
-				event_target:GlobalVar = {
+				event_target:CmtGlobalVar = {
 					# check_variable = { which = current_adt_version value = @latest_adt_version }
 					NOT = {
 						check_variable = {
@@ -92,19 +100,27 @@ event = {
 		set_global_flag = a_deadly_tempest_mod_active
 		if = {
 			limit = {
-				NOT = { exists = event_target:GlobalVar }
+				NOT = { exists = event_target:CmtGlobalVar }
 			}
-			# if = { limit = { is_country_type = global_event }
-			# 	save_global_event_target_as = GlobalVar
-			# } else = {
-			random_country = {
-				limit = { is_country_type = global_event }
-				save_global_event_target_as = GlobalVar
+			if = {
+				limit = {
+					exists = event_target:global_event_country
+				}
+				event_target:global_event_country = {
+					save_global_event_target_as = CmtGlobalVar
+				}
 			}
-			# }
+			else_if = { limit = { exists = this is_scope_type = country is_country_type = global_event }
+				save_global_event_target_as = CmtGlobalVar
+			} else = {
+				random_country = {
+					limit = { is_country_type = global_event }
+					save_global_event_target_as = CmtGlobalVar
+				}
+			}
 		}
 		# ESC/nhsc mod savegame support
-		event_target:GlobalVar = {
+		event_target:CmtGlobalVar = {
 			# set_variable = {
 			# 	which = current_adt_version
 			# 	value = @latest_adt_version
@@ -114,10 +130,7 @@ event = {
 				limit = {
 					has_global_flag = nhsc_v30
 					NOT = {
-						check_variable = {
-							which = random_nhsc_value
-							value = 300
-						}
+						check_variable = { which = random_nhsc_value value = 300 }
 					}
 				}
 				remove_global_flag = nhsc_v30
@@ -130,7 +143,7 @@ event = {
 			}
 		}
 	}
-	# after = { log = "2 a_deadly_tempest_mod_active [GlobalVar.random_nhsc_value]" }
+	# after = { log = "2 a_deadly_tempest_mod_active [CmtGlobalVar.random_nhsc_value]" }
 }
 
 ####################################
@@ -321,7 +334,7 @@ country_event = {
 				which = picked_tech
 				value = 0
 			}
-			# event_target:GlobalVar = {
+			# event_target:CmtGlobalVar = {
 			# 	set_variable = {
 			# 		which = random_nhsc_value
 			# 		value = @armor_s_t8_strength
@@ -1107,7 +1120,7 @@ country_event = {
 			}
 			event_target:CmtGlobalVar = {
 				if = {
-					limit = { is_country_type = gate_builders }
+					limit = { prev = { is_country_type = gate_builders } }
 					set_variable = {
 						which = CmtVarWhileControlFleet
 						value = CmtVarCombatFleetNumber_Dessanu
@@ -1201,7 +1214,7 @@ country_event = {
 			}
 			event_target:CmtGlobalVar = {
 				if = {
-					limit = { is_country_type = gate_builders }
+					limit = { prev = { is_country_type = gate_builders } }
 					set_variable = {
 						which = CmtVarWhileControlFleet
 						value = CmtVarCombatFleetNumber_Dessanu
@@ -1610,7 +1623,7 @@ country_event = {
 	immediate = {
 		event_target:CmtGlobalVar = {
 			if = {
-				limit = { is_country_type = gate_builders }
+				limit = { prev = { is_country_type = gate_builders } }
 				set_variable = {
 					which = CmtVarWhileControlFleet
 					value = CmtVarCombatFleetNumber_Dessanu
@@ -1733,7 +1746,7 @@ country_event = {
 		exists = event_target:lcluster_factory_system
 		event_target:lcluster_factory_system = {
 			any_fleet_in_system = {
-				owner = { is_same_empire = root }
+				is_owned_by = root
 				is_in_combat = no
 				is_ship_size = graygoo_factory
 			}
@@ -1767,20 +1780,18 @@ country_event = {
 	id = a_deadly_tempest.162
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		always = yes
-		# OR = {
-		# 	exists = event_target:graygoo_country
-		# 	exists = event_target:gate_builders
-		# }
-	}
+	# trigger = {
+	# 	# always = yes
+	# 	OR = {
+	# 		exists = event_target:graygoo_country
+	# 		exists = event_target:gate_builders
+	# 	}
+	# }
 	immediate = {
 		set_country_flag = gate_builder_diplomacy_engaged
 		set_country_flag = gate_builders_hostility
 		if = {
-			limit = {
-				NOT = { exists = event_target:graygoo_country }
-			}
+			limit = { NOT = { exists = event_target:graygoo_country } }
 			random_country = {
 				limit = { is_country_type = gate_builders }
 				save_global_event_target_as = graygoo_country
@@ -1790,13 +1801,49 @@ country_event = {
 		event_target:graygoo_country = {
 			set_faction_hostility = {
 				target = prev
-				set_neutral = no
-				set_friendly = no
+				# set_neutral = no
+				# set_friendly = no
 				set_hostile = yes
 			}
 			add_resource = {
 				minerals = 1000
 				energy = 10000
+			}
+			capital_scope = {
+				create_army = {
+					name = random
+					owner = prev
+					species = owner.species
+					type = "nanite_giga_warform"
+				}
+				create_leader = {
+					class = general
+					species = owner.species
+					name = "bốn"
+					immortal = yes
+					# event_leader = yes
+					gender = indeterminable
+					skill = 6
+					set_age = 1
+					traits = {
+						trait = gray_general
+						trait = leader_trait_demoralizer
+					}
+					effect = {
+						change_leader_portrait = GrayTempest
+						set_owner = prevprev
+					}
+				}
+				last_created_army = { assign_leader = last_created_leader }
+				while = {
+					count = 8
+					create_army = {
+						name = random
+						owner = prev
+						species = owner.species
+						type = "robotic_army"
+					}
+				}
 			}
 			# Mothership creates ships
 			country_event = {
