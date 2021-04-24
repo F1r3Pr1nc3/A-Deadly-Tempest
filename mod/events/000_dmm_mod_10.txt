@@ -14,21 +14,18 @@ event = {
 	id = dmm_mod.101
 	hide_window = yes
 	is_triggered_only = yes
-	# trigger = {
-	# 	has_global_flag = dmm_installed
-	# }
 	immediate = {
-		# if = { limit = { NOT = { has_global_flag = dmm_installed } }
-		set_global_flag = dmm_mod_10
-		# } else = {
-		dmm_register_mod = {
-			DMM_NAME = dmm_mod_10
-			DMM_FLAG = dmm_mod_10 # a_deadly_tempest_mod_active
+		if = { limit = { NOT = { has_global_flag = dmm_installed } }
+			set_global_flag = dmm_mod_10
+		} else = {
+			dmm_register_mod = {
+				DMM_NAME = dmm_mod_10
+				DMM_FLAG = dmm_mod_10 # a_deadly_tempest_mod_active
+			}
+			if = { limit = { has_global_flag = dmm_mod_10 }
+				remove_global_flag = dmm_mod_10
+			}
 		}
-		if = { limit = { has_global_flag = dmm_mod_10 }
-			remove_global_flag = dmm_mod_10
-		}
-		# }
 	}
 }
 
