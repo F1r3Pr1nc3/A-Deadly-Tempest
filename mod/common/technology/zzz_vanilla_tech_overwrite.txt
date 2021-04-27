@@ -4,31 +4,19 @@ tech_nanite_transmutation = {
 	cost = @tier2cost3
 	area = engineering
 	tier = 2
-	category = {
-		materials
-	}
+	category = { materials  }
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		no_scope = {
-			has_distar = yes
-			NOT = { has_global_flag = l_cluster_opened }
-		}
+		no_scope = { has_distar = yes  }
 	}
 	weight_modifier = {
 		factor = 0.5
 		modifier = {
 			factor = 0
-			NOT = {
-				any_system_within_border = {
-					any_system_planet = {
-						has_resource = {
-							type = nanites
-							amount > 0
-						}
-					}
-				}
-			}
+			NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
+			# has_monthly_income = { resource = nanites value < 1  }
+			# resource_stockpile_compare = { resource = nanites value < 150 }
 		}
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech
@@ -39,9 +27,7 @@ tech_nanite_transmutation = {
 			has_federation = yes
 			federation = {
 				has_federation_perk = rare_tech_boost
-				any_member = {
-					has_technology = tech_nanite_transmutation
-				}
+				any_member = { has_technology = tech_nanite_transmutation }
 			}
 		}
 		modifier = {

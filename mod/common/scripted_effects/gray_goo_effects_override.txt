@@ -1,4 +1,4 @@
-# (Compat. and override Warship Girls R And MIST Species) 创造灰风总督
+# (Compat. will be overwritten by Warship Girls R And MIST Species)
 # Root = gray_owner
 create_gray_governor = {
 	if = {
@@ -35,17 +35,17 @@ create_gray_governor = {
 			change_leader_portrait = root.species
 			set_leader_flag = has_gained_level_trait
 			set_leader_flag = gray_governor
-			set_leader_flag = "灰风领袖"
+			# set_leader_flag = "灰风领袖"
 		}
 	}
-	random_owned_leader = {
-		limit = { has_leader_flag = gray_governor }
-		if = {
-			limit = { owner = { has_country_flag = gray_encountered_the_loop }}
-			add_trait = leader_trait_governor_wg_the_loop
-		}
-		add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
-	}
+	# random_owned_leader = {
+	# 	limit = { has_leader_flag = gray_governor }
+	# 	if = {
+	# 		limit = { owner = { has_country_flag = gray_encountered_the_loop }}
+	# 		add_trait = leader_trait_governor_wg_the_loop
+	# 	}
+	# 	add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
+	# }
 }
 
 create_gray_warship = {
@@ -99,14 +99,14 @@ create_gray_warship = {
 				skill = 10
 				set_age = 0
 				traits = {
-					trait = gray_admiral
+					trait = leader_trait_admiral_gray
 					trait = leader_trait_trickster
 				}
 				effect = {
 					save_global_event_target_as = huifeng_leader_admiral
 					set_leader_flag = gray_admiral
-					set_leader_flag = "灰风领袖"
-					change_leader_portrait = GrayTempest
+					# set_leader_flag = "灰风领袖"
+					change_leader_portrait = lithnanite
 					set_owner = prev
 				}
 			}
@@ -158,14 +158,14 @@ create_gray_warship = {
 			remove_army = yes
 		}
 	}
-	random_owned_leader = {
-		limit = { has_leader_flag = gray_admiral }
-		if = {
-			limit = { owner = { has_country_flag = gray_encountered_the_loop }}
-			add_trait = leader_trait_admiral_wg_the_loop
-		}
-		add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
-	}
+	# random_owned_leader = {
+	# 	limit = { has_leader_flag = gray_admiral }
+	# 	if = {
+	# 		limit = { owner = { has_country_flag = gray_encountered_the_loop }}
+	# 		add_trait = leader_trait_admiral_wg_the_loop
+	# 	}
+	# 	add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
+	# }
 }
 
 create_gray_army = {
@@ -199,14 +199,15 @@ create_gray_army = {
 				gender = indeterminable
 				skill = 10
 				set_age = 0
-				# traits = {
-				# 	# trait = gray_general
-				# 	# trait = leader_trait_demoralizer
-				# }
+				traits = {
+					trait = leader_trait_general_gray
+					trait = leader_trait_demoralizer
+					# trait = leader_trait_general_synthetic
+				}
 				effect = {
 					save_global_event_target_as = gray_leader_general
 					set_leader_flag = gray_general
-					change_leader_portrait = GrayTempest
+					change_leader_portrait = lithnanite
 					set_owner = prev
 				}
 			}

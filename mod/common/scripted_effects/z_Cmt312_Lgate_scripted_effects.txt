@@ -183,7 +183,7 @@ CmtEffectDestroyGraygoo = {
 		every_owned_fleet = {
 			every_owned_ship = {
 				limit = { is_disabled = yes }
-				set_disable_at_health = -1
+				set_disable_at_health = 0
 				set_disabled = no
 				destroy_ship = this
 			}

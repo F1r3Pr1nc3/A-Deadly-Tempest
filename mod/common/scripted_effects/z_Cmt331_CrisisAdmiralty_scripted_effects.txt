@@ -458,10 +458,14 @@ CmtEffectCreateAdmiralty_DessanuCapitalDefence = {
 			CmtEffectCreateFleet_DessanuGarryson = yes
 			# CmtEffectCreateFleet_DessanuGarryson = { DIR = CmtVarWhileFleetAngle } # "Malformed token
 			last_created_fleet = {
-				set_variable = { which = CmtVarWhileFleetAngle value = PREV }
-				if = { limit = { prev = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } } }
-					set_location = { target = PREVPREV distance = 80 angle = CmtVarWhileFleetAngle }
-				} else = { set_location = { target = PREVPREV distance = 80 angle = random } }
+				# not working
+				# set_variable = { which = CmtVarWhileFleetAngle value = prev }
+				# log="CmtVarWhileFleetAngle [This.CmtVarWhileFleetAngle]"
+				# if = { limit = { prev = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } } }
+				# 	set_location = { target = PREVPREV distance = 80 angle = CmtVarWhileFleetAngle }
+				# } else = {
+				set_location = { target = PREVPREV distance = 80 angle = random }
+				# }
 			}
 			change_variable = { which = CmtVarWhileFleetAngle value = CmtVarFleetAngle }
 		}
@@ -628,10 +632,14 @@ CmtEffectCreateAdmiralty_GraygooCapitalDefence = {
 			CmtEffectCreateFleet_GraygooGarryson = yes
 			# CmtEffectCreateFleet_GraygooGarryson = { DIR = CmtVarWhileFleetAngle } # "Malformed token
 			last_created_fleet = {
-				set_variable = { which = CmtVarWhileFleetAngle value = PREV }
-				if = { limit = { prev = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } } }
-					set_location = { target = PREVPREV distance = 80 angle = CmtVarWhileFleetAngle }
-				} else = { set_location = { target = PREVPREV distance = 80 angle = random } }
+				# not working
+				# set_variable = { which = CmtVarWhileFleetAngle value = prev }
+				# log="CmtVarWhileFleetAngle [This.CmtVarWhileFleetAngle]"
+				# if = { limit = { prev = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } } }
+				# 	set_location = { target = PREVPREV distance = 80 angle = CmtVarWhileFleetAngle }
+				# } else = {
+				set_location = { target = PREVPREV distance = 80 angle = random }
+				# }
 			}
 			change_variable = { which = CmtVarWhileFleetAngle value = CmtVarFleetAngle }
 		}

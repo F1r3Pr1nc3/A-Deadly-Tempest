@@ -38,7 +38,9 @@ tech_nanite_mega_construction = {
 		factor = 0.50
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
+			has_monthly_income = { resource = nanites value < 1 }
+			resource_stockpile_compare = { resource = nanites value < 300 }
 		}
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech

@@ -23,11 +23,10 @@ country_event = {
 	immediate = {
 		### Pre-treatment
 		set_global_flag = gray_goo_crisis_active
-
 		# The guardians only awaken if there is a set_global_flag = galactic_crisis_happened !?
 		awaken_guardians_of_the_galaxy = yes
-		if = { limit = { end_game_years_passed >= 10 }
-			# set_global_flag = galactic_crisis_happened # but this prevents other crisis?
+		if = { limit = { end_game_years_passed >= 3 }
+			# set_global_flag = galactic_crisis_happened # this prevents other crisis
 			awaken_guardians_of_the_galaxy = yes
 		}
 		# Vanilla double call!? Do not open all same time!?
@@ -77,6 +76,7 @@ country_event = {
 				ignore_initial_colony_error = yes
 				# authority = auth_ancient_machine_intelligence
 				authority = auth_machine_intelligence
+				ship_prefix = "Gray"
 				ethos = {
 					ethic = ethic_gestalt_consciousness
 				}
@@ -98,7 +98,7 @@ country_event = {
 				}
 			}
 			event_target:main_star = { planet_event = { id = a_deadly_tempest.4 } }
-			create_starbase = { size = "starbase_gatebuilders" owner = last_created_country }
+			create_starbase = { size = "starbase_gatebuilders" owner = event_target:graygoo_country }
 		}
 
 		### Create Fleets
@@ -153,8 +153,7 @@ country_event = {
 		country_event = { id = a_deadly_tempest.13006 }
 	}
 }
-
-# Colony Bombarded (From.From = ship)
+# On_action: Colony Bombarded (FromFrom = ship, - Damage is applied daily)
 planet_event = {
 	id = graygoo.2
 	#hide_window = yes
@@ -166,78 +165,21 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		planet_devastation >= 100
+		planet_devastation > 99
 		OR = {
-			FROM = { is_country_type = gray_goo }
 			has_orbital_bombardment_stance = nanitebombard
+			FROM = {
+				OR = {
+					is_country_type = gray_goo
+					is_country_type = gate_builders
+					is_country_type = awakened_gate_builders
+				}
+			}
 		}
 	}
 
 	immediate = {
-		# small reinforce nanite bombarder
-		random_fleet_in_orbit = {
-			limit = {
-				exists = owner
-				owner = { is_same_empire = event_target:graygoo_country }
-				# any_owned_ship = {
-				is_ship_size = graygoo_mothership
-			}
-			CmtEffectCreateShip_GraygooInterdictor = yes
-		}
-		# destroy_colony = yes
-		if = {
-			limit = {
-				NOR = {
-					is_planet_class = pc_ringworld_habitable
-					is_planet_class = pc_habitat
-				}
-			}
-			change_pc = pc_gray_goo
-			reset_planet = yes
-			# Reset only removes real static modifiers? (2.7.2)
-			# TODO which from 08_static_modifiers_megacorp.txt
-			remove_modifier = planet_food_boost
-			remove_modifier = planet_luxuries_boost
-			remove_modifier = penal_colony
-			remove_modifier = slave_colony
-			remove_modifier = resort_colony
-			remove_modifier = mastery_of_nature
-			remove_modifier = artist_monument_erected
-			remove_modifier = martial_law
-			remove_modifier = hunter_killer_drones
-			remove_modifier = compliance_protocols
-
-			random_list = {
-				4 = {}
-				4 = { add_deposit = d_nanites_deposit }
-				1 = { add_deposit = d_tomb_world_ruins }
-				1 = { add_deposit = d_strip_mine }
-				1 = { add_deposit = d_former_battlefield }
-				1 = { add_deposit = d_failing_infrastructure }
-				16 = {
-					modifier = { NOT = { exists = owner } factor = 0 }
-					generate_new_deposits_and_blockers = yes
-				}
-			}
-		}
-		else = {
-			if = {
-				limit = { is_planet_class = pc_ringworld_habitable }
-				change_pc = pc_ringworld_habitable_damaged
-				reset_planet = yes
-			}
-			if = {
-				limit = { is_planet_class = pc_habitat }
-				ariphaos_patch_remove_habitat = yes
-			}
-		}
-		destroy_colony = yes
-
-		# Sets a short timed flag if bombardment is going on, so the planet can be appropriately nuked.
-		set_timed_planet_flag = {
-			flag = flag_nanite_bombardment
-			days = 6
-		}
+		planet_event = { id = a_deadly_tempest.84 }
 	}
 
 	option = {
@@ -586,6 +528,7 @@ country_event = {
 				ignore_initial_colony_error = yes
 				authority = "auth_democratic"
 				# government = "gov_machine_empire"
+				# ship_prefix = "Gray"
 				civics = {
 					civic = civic_meritocracy
 					civic = civic_environmentalist
@@ -1039,7 +982,8 @@ country_event = {
 	desc = "graygoo.110.desc"
 	picture = GFX_evt_l-gateway
 	show_sound = event_radio_chatter
-	location = event_target:candidate_gateway_system
+	# location = event_target:candidate_gateway_system
+	location = event_target:CmtTargetLgateOrininatingSystem
 	is_triggered_only = yes
 
 	after = {
@@ -1736,6 +1680,7 @@ country_event = {
 				remove_star_flag = graygoo_factory_system
 			}
 			CmtEffectDestroyGraygoo = yes # call graygoo.15
+			break = yes # TODO
 			## colonize random planet
 			random_system = {
 				limit = {
@@ -2076,7 +2021,7 @@ country_event = {
 		every_owned_fleet = {
 			every_owned_ship = {
 				limit = { is_disabled = yes }
-				set_disable_at_health = -1
+				set_disable_at_health = 0
 				set_disabled = no
 				destroy_ship = this
 			}

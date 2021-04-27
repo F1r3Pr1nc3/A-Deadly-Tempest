@@ -22,8 +22,8 @@
 	planet_class = "pc_desert"
 	system_name = "0"
 	initializer = ""
-	graphical_culture = "esgoo_01"
-	city_graphical_culture = "esgoo_01"
+	graphical_culture = "grey_tempesttw"
+	city_graphical_culture = "grey_tempesttw"
 	empire_flag = {
 		icon = {
 			category = "legion"
@@ -33,12 +33,7 @@
 			category = "backgrounds"
 			file = "circle.dds"
 		}
-		colors = {
-			"teal"
-			"grey"
-			"null"
-			"null"
-		}
+		colors = { "teal" "grey" "null" "null" }
 	}
 	ruler = {
 		gender = male

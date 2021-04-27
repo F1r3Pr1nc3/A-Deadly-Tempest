@@ -1123,6 +1123,7 @@ ship_design = {
 	ship_size = starbase_gatebuilders
 	is_event_design = yes #vanilla no
 	is_special_buildable = yes
+	# use_design_name = yes
 	section = {
 		template = "gatebuilder_starbase_key"
 		slot = "mid"

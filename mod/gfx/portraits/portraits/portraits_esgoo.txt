@@ -29,15 +29,15 @@ portraits = {
 		}
 	}
 	# Clone of lithnanite (for compat.)
-	GrayTempest = {
-		entity = "portrait_lithoid_nanite_entity"
-		clothes_selector = "no_texture"
-		hair_selector = "no_texture"
-		greeting_sound = "robot_reptilian_greetings"
-		character_textures = {
-			"gfx/models/portraits/lithoid/lithoid_07_portrait_ai.dds"
-		}
-	}
+	# GrayTempest = {
+	# 	entity = "portrait_lithoid_nanite_entity"
+	# 	clothes_selector = "no_texture"
+	# 	hair_selector = "no_texture"
+	# 	greeting_sound = "robot_reptilian_greetings"
+	# 	character_textures = {
+	# 		"gfx/models/portraits/lithoid/lithoid_07_portrait_ai.dds"
+	# 	}
+	# }
 	#gatebuilder
 	creature = {
 		entity = "portrait_fungoid_11_entity"

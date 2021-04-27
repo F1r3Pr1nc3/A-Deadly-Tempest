@@ -594,7 +594,7 @@ country_event = {
 				every_owned_ship = {
 					reduce_hp_percent = 50
 					reduce_hp = 1000
-					set_disable_at_health = -1
+					set_disable_at_health = 0
 					set_disabled = no
 				}
 				# destroy_fleet = this
@@ -697,7 +697,7 @@ fleet_event = {
 				is_disabled = yes
 			}
 			# remove_ship_flag = assimilate_that_robot_ship
-			set_disable_at_health = -1
+			set_disable_at_health = 0
 			set_disabled = no
 			log= "assimilating escaped on [This.GetName] owner [This.Owner.GetName]"
 		}
@@ -923,7 +923,7 @@ fleet_event = {
 			}
 			every_owned_ship = {
 				limit = { is_disabled = yes }
-				set_disable_at_health = -1
+				set_disable_at_health = 0
 				set_disabled = no
 				destroy_ship = this
 			}
@@ -977,7 +977,7 @@ fleet_event = {
 					event_target:assimilate_that_ship = {
 						if = {
 							limit = { is_disabled = yes }
-							set_disable_at_health = -1
+							set_disable_at_health = 0
 							destroy_ship = this # delete_ship = this
 						}
 						# fleet = { remove_fleet_flag = assimilate_that_ship_flag_temp }
@@ -1000,7 +1000,7 @@ fleet_event = {
 
 					every_owned_ship = {
 						limit = { is_disabled = yes }
-						set_disable_at_health = -1
+						set_disable_at_health = 0
 						set_disabled = no
 						reduce_hp_percent = 99
 						# repair_percentage = 1
@@ -1160,8 +1160,8 @@ country_event = {
 		# 				num_ships < 41
 		# 			}
 		# 			random_list = {
-		# 				1 = { CmtEffectCreateShip_GraygooMother = yes }
-		# 				9 = { CmtEffectCreateShip_GraygooInterdictor = yes }
+		# 				1 = { PREV = { CmtEffectCreateShip_GraygooMother = yes } }
+		# 				9 = { PREV = { CmtEffectCreateShip_GraygooInterdictor = yes } }
 		# 			}
 		# 		}
 		# 	}
@@ -1798,7 +1798,14 @@ country_event = {
 			}
 		}
 		# log = "- This [This.GetName] gets hostility to [graygoo_country.GetName]"
+
 		event_target:graygoo_country = {
+			if = {
+				limit = { NOT = { exists = event_target:gray_species } }
+				species = {
+					save_global_event_target_as = gray_species
+				}
+			}
 			set_faction_hostility = {
 				target = prev
 				# set_neutral = no
@@ -1813,12 +1820,12 @@ country_event = {
 				create_army = {
 					name = random
 					owner = prev
-					species = owner.species
+					species = event_target:gray_species
 					type = "nanite_giga_warform"
 				}
 				create_leader = {
 					class = general
-					species = owner.species
+					species = event_target:gray_species
 					name = "bốn"
 					immortal = yes
 					# event_leader = yes
@@ -1826,11 +1833,13 @@ country_event = {
 					skill = 6
 					set_age = 1
 					traits = {
-						trait = gray_general
+						trait = leader_trait_general_gray
 						trait = leader_trait_demoralizer
+						# trait = leader_trait_general_synthetic
+						# trait = leader_trait_general_erudite
 					}
 					effect = {
-						change_leader_portrait = GrayTempest
+						change_leader_portrait = lithnanite
 						set_owner = prevprev
 					}
 				}
@@ -1840,7 +1849,7 @@ country_event = {
 					create_army = {
 						name = random
 						owner = prev
-						species = owner.species
+						species = event_target:gray_species
 						type = "robotic_army"
 					}
 				}
@@ -2112,6 +2121,31 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		give_technology = { tech = tech_space_construction message = no }
+		give_technology = { tech = tech_starbase_1 message = no }
+		give_technology = { tech = tech_starbase_2 message = no }
+		give_technology = { tech = tech_corvettes message = no }
+		give_technology = { tech = tech_arc_emitter_2 message = no }
+		give_technology = { tech = tech_energy_lance_2 message = no }
+		give_technology = { tech = tech_disruptors_3 message = no }
+		give_technology = { tech = tech_destroyers message = no }
+		give_technology = { tech = tech_cruisers message = no }
+		give_technology = { tech = tech_battleships message = no }
+		give_technology = { tech = tech_nanite_ships message = no }
+		give_technology = { tech = tech_nanite_hull message = no }
+		give_technology = { tech = tech_nanite_torpedo message = no }
+		give_technology = { tech = tech_adt_energymissiles message = no }
+		give_technology = { tech = tech_nanite_strike_craft message = no }
+		give_technology = { tech = tech_adt_gg_beam message = no }
+		give_technology = { tech = tech_nanocrystals message = no }
+		give_technology = { tech = tech_nanite_modular_engineering message = no }
+		give_technology = { tech = tech_nanite_living_metal message = no }
+		give_technology = { tech = tech_nanite_repair_system message = no }
+		give_technology = { tech = tech_nanite_bombardment message = no }
+		give_technology = { tech = tech_nanite_mega_construction message = no }
+		give_technology = { tech = tech_lgate_construction message = no }
+		give_technology = { tech = tech_nanite_guardians message = no }
+		give_technology = { tech = tech_nanite_dragon message = no }
 		give_technology = { tech = tech_mega_engineering message = no }
 		if = {
 			limit = { has_federations_dlc = yes }
@@ -2129,24 +2163,6 @@ country_event = {
 			give_technology = { tech = tech_strategic_coordination message = no }
 			give_technology = { tech = tech_interstellar_assembly message = no }
 		}
-		give_technology = { tech = tech_arc_emitter_2 message = no }
-		give_technology = { tech = tech_energy_lance_2 message = no }
-		give_technology = { tech = tech_disruptors_3 message = no }
-		give_technology = { tech = tech_nanite_ships message = no }
-		give_technology = { tech = tech_nanite_hull message = no }
-		give_technology = { tech = tech_nanite_torpedo message = no }
-		give_technology = { tech = tech_adt_energymissiles message = no }
-		give_technology = { tech = tech_nanite_strike_craft message = no }
-		give_technology = { tech = tech_adt_gg_beam message = no }
-		give_technology = { tech = tech_nanocrystals message = no }
-		give_technology = { tech = tech_nanite_modular_engineering message = no }
-		give_technology = { tech = tech_nanite_living_metal message = no }
-		give_technology = { tech = tech_nanite_repair_system message = no }
-		give_technology = { tech = tech_nanite_bombardment message = no }
-		give_technology = { tech = tech_nanite_mega_construction message = no }
-		give_technology = { tech = tech_lgate_construction message = no }
-		give_technology = { tech = tech_nanite_guardians message = no }
-		give_technology = { tech = tech_nanite_dragon message = no }
 		# add_global_ship_design = "NAME_Nanite_Mothership"
 		# add_global_ship_design = "NAME_Nanite_Interdictor"
 		# add_global_ship_design = "NAME_Nanite_Dragon_Young"

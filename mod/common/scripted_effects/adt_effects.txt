@@ -7,6 +7,8 @@
 #####                                     #####
 ###############################################
 ###############################################
+
+# This = Country
 shoal_guard_reinforce = {
 	# log = "set fleet size +$AMOUNT$ +$SHIPS$"
 	# every_owned_fleet = {
@@ -32,18 +34,20 @@ shoal_guard_reinforce = {
 			is_ship_size = graygoo_mothership			# implicit any_owned_ship
 			num_ships < $AMOUNT|11$
 		}
-		CmtEffectResetLoop = yes
-		while = {
-			count = $SHIPS|1$
-			CmtEffectProgressLoop4 = yes
-			switch = {
-				trigger = has_global_flag
-				CmtFlagLoopA = { CmtEffectCreateShip_GraygooInterdictor = yes }
-				CmtFlagLoopB = { CmtEffectCreateShip_GraygooInterdictor = yes }
-				CmtFlagLoopC = {
-					random_list = {
-						1 = { CmtEffectCreateShip_GraygooMother = yes }
-						9 = { CmtEffectCreateShip_GraygooInterdictor = yes }
+		PREV = {
+			CmtEffectResetLoop = yes
+			while = {
+				count = $SHIPS|1$
+				CmtEffectProgressLoop4 = yes
+				switch = {
+					trigger = has_country_flag
+					CmtFlagLoopA = { PREV = { CmtEffectCreateShip_GraygooInterdictor = yes } }
+					CmtFlagLoopB = { PREV = { CmtEffectCreateShip_GraygooInterdictor = yes } }
+					CmtFlagLoopC = {
+						random_list = {
+							1 = { PREV = { CmtEffectCreateShip_GraygooMother = yes } }
+							9 = { PREV = { CmtEffectCreateShip_GraygooInterdictor = yes } }
+						}
 					}
 				}
 			}
@@ -63,18 +67,20 @@ shoal_global_reinforce = {
 			# }
 			num_ships < $AMOUNT|11$
 		}
-		CmtEffectResetLoop = yes
-		while = {
-			count = $SHIPS|1$
-			CmtEffectProgressLoop4 = yes
-			switch = {
-				trigger = has_global_flag
-				CmtFlagLoopA = { CmtEffectCreateShip_GraygooInterdictor = yes }
-				CmtFlagLoopB = { CmtEffectCreateShip_GraygooInterdictor = yes }
-				CmtFlagLoopC = {
-					random_list = {
-						1 = { CmtEffectCreateShip_GraygooMother = yes }
-						9 = { CmtEffectCreateShip_GraygooInterdictor = yes }
+		PREV = {
+			CmtEffectResetLoop = yes
+			while = {
+				count = $SHIPS|1$
+				CmtEffectProgressLoop4 = yes
+				switch = {
+					trigger = has_country_flag
+					CmtFlagLoopA = { PREV = { CmtEffectCreateShip_GraygooInterdictor = yes } }
+					CmtFlagLoopB = { PREV = { CmtEffectCreateShip_GraygooInterdictor = yes } }
+					CmtFlagLoopC = {
+						random_list = {
+							1 = { PREV = { CmtEffectCreateShip_GraygooMother = yes } }
+							9 = { PREV = { CmtEffectCreateShip_GraygooInterdictor = yes } }
+						}
 					}
 				}
 			}
@@ -87,10 +93,7 @@ shoal_guard_dynamic_reinforce = {
 	# make dynamic with Crisis Manager
 	#event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Graygoo } }
 	# CmtVarCapitalDefenceNumber 1-8 vanilla = 4
-	set_variable = {
-		which = CapitalDefence_tmp
-		value = CmtVarCapitalDefenceNumber
-	}
+	set_variable = { which = CapitalDefence_tmp value = CmtVarCapitalDefenceNumber }
 	# log = "guard_dynamic [$STRENGTH$] - [CmtVarCapitalDefenceNumber]"
 	if = {
 		limit = { end_game_years_passed > 35 }

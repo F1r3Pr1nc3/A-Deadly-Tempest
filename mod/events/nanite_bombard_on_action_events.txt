@@ -1,31 +1,35 @@
 namespace = a_deadly_tempest
 
-### Bombardment
+### Colony Bombarded: Planet is turned into nanite world by special bombing stance (has reached 0 pops)
 planet_event = {
 	id = a_deadly_tempest.81
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
+		# From = Bombarder
+		# planet_devastation > 99
 		OR = {
 			has_orbital_bombardment_stance = nanitebombard
 			has_planet_flag = flag_nanite_bombardment
-			any_fleet_in_orbit = {
-				owner = {
-					has_policy_flag = orbital_bombardment_armageddon
-					has_policy_flag = orbital_bombardment_indiscriminate
-					has_technology = tech_nanite_bombardment
-				}
-			}
+			# any_fleet_in_orbit = {
+			# 	owner = {
+			# 		has_policy_flag = orbital_bombardment_armageddon
+			# 		has_policy_flag = orbital_bombardment_indiscriminate
+			# 		has_technology = tech_nanite_bombardment
+			# 	}
+			# }
 		}
 		from = {
 			OR = {
-				is_country_type = default
+				# is_country_type = default
+				# is_country_type = awakened_fallen_empire
+				is_country_type_with_subjects = yes
+				is_country_type = gray_goo
+				is_country_type = gate_builders
+				is_country_type = awakened_gate_builders
 				is_country_type = cybrex_empire
 				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-				is_country_type = swarm
+				# is_country_type = swarm
 				is_country_type = vol
 			}
 		}
@@ -34,51 +38,10 @@ planet_event = {
 			is_planet_class = pc_ringworld_habitable
 			is_planet_class = pc_habitat
 		}
-		planet_devastation >= 100
 	}
 
 	immediate = {
-		every_owned_pop = {
-			kill_pop = yes
-		}
-		owner = {
-			add_static_war_exhaustion = {
-				attacker = from
-				location = root
-				value_for_planet_destruction = 0.5
-			}
-			country_event = { id = a_deadly_tempest.82 }
-		}
-		from = {
-			country_event = { id = a_deadly_tempest.83 }
-		}
-		remove_all_buildings = yes
-		reset_planet = yes
-		reroll_deposits = yes
-		clear_blockers = yes
-		set_planet_flag = armageddon_nuked
-		if = {
-			limit = {
-				habitable_planet = yes
-				NOR = {
-					is_planet_class = pc_ringworld_habitable
-					is_planet_class = pc_habitat
-				}
-			}
-			change_pc = pc_gray_goo
-		}
-		else = {
-			if = {
-				limit = { is_planet_class = pc_ringworld_habitable }
-				change_pc = pc_ringworld_habitable_damaged
-				spawn_ringworld_cracker_effect = yes
-			}
-			if = {
-				limit = { is_planet_class = pc_habitat }
-				ariphaos_patch_remove_habitat = yes
-				spawn_habitat_cracker_effect = yes
-			}
-		}
+		planet_event = { id = a_deadly_tempest.84 }
 	}
 }
 
@@ -90,9 +53,18 @@ country_event = {
 	desc = a_deadly_tempest.82.desc
 	show_sound = event_ghost_town
 	location = from
-
+	# This = Victim
+	# From = Planet
+	# FromFromFrom = Bombarder
 	is_triggered_only = yes
-	# trigger = { always = yes }
+
+	immediate = {
+		# log="[From.From.GetName] 82ff" # Victim
+		add_opinion_modifier = {
+			modifier = opinion_converted_my_world
+			who = fromfromfrom
+		}
+	}
 
 	option = {
 		name = a_deadly_tempest.82.a
@@ -110,10 +82,135 @@ country_event = {
 	location = from
 
 	is_triggered_only = yes
-	# trigger = { always = yes }
+	# This = Bombarder
+	# From = Planet
+	immediate = {
+		every_country = {
+			limit = {
+				has_communications = fromfrom
+				OR = {
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophile
+					has_civic = civic_machine_servitor
+				}
+			}
+			add_opinion_modifier = {
+				modifier = opinion_converted_a_world
+				who = root
+			}
+		}
+	}
 
 	option = {
 		name = EXCELLENT
 		custom_tooltip = bombed_to_nanite_world
+	}
+}
+
+planet_event = {
+	id = a_deadly_tempest.84
+	hide_window = yes
+	is_triggered_only = yes
+	# From = This
+	# FromFrom = Bombarder
+	# FromFromFrom = Ship
+	immediate = {
+		if = {
+			limit = { fromfrom = { is_same_empire = event_target:graygoo_country } }
+			# small reinforce nanite bombarder
+			random_fleet_in_orbit = {
+				limit = {
+					exists = owner
+					owner = { is_same_empire = fromfrom }
+					is_ship_size = graygoo_mothership
+				}
+				CmtEffectCreateShip_GraygooInterdictor = yes
+			}
+		}
+		else = {
+			owner = {
+				add_static_war_exhaustion = {
+					attacker = fromfrom
+					location = root
+					value_for_planet_destruction = 0.7
+				}
+				country_event = { id = a_deadly_tempest.82 }
+			}
+			fromfrom = { country_event = { id = a_deadly_tempest.83 } }
+		}
+		every_owned_pop = {
+			kill_pop = yes
+		}
+		set_planet_flag = nuked_planet_anomalies_disabled
+		remove_all_buildings = yes
+		reset_planet = yes
+		reroll_deposits = yes
+		clear_blockers = yes
+		set_planet_flag = armageddon_nuked
+		if = {
+			limit = {
+				NOR = {
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_habitat
+				}
+			}
+			change_pc = pc_gray_goo
+			# Reset only removes real static modifiers? (2.7.2)
+			# TODO which from 08_static_modifiers_megacorp.txt
+			remove_modifier = planet_food_boost
+			remove_modifier = planet_luxuries_boost
+			remove_modifier = penal_colony
+			remove_modifier = slave_colony
+			remove_modifier = resort_colony
+			remove_modifier = mastery_of_nature
+			remove_modifier = artist_monument_erected
+			remove_modifier = martial_law
+			remove_modifier = hunter_killer_drones
+			remove_modifier = compliance_protocols
+			remove_modifier = "natural_beauty"
+			remove_modifier = "atmospheric_aphrodisiac"
+			remove_modifier = "atmospheric_hallucinogen"
+			remove_modifier = "lush_planet"
+			remove_modifier = "dangerous_wildlife"
+			if = {
+				limit = {
+					event_target:CmtGlobalVar = {
+						check_variable = { which = CmtVarLgateTerraformNanite value = 4 }
+					}
+				}
+				add_modifier = { modifier = terraforming_candidate days = 30 }
+			}
+			random_list = {
+				4 = {}
+				4 = { add_deposit = d_nanites_deposit }
+				1 = { add_deposit = d_tomb_world_ruins }
+				1 = { add_deposit = d_strip_mine }
+				1 = { add_deposit = d_former_battlefield }
+				1 = { add_deposit = d_failing_infrastructure }
+				16 = {
+					modifier = { NOT = { exists = owner } factor = 0 }
+					generate_new_deposits_and_blockers = yes
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = { is_planet_class = pc_ringworld_habitable }
+				change_pc = pc_ringworld_habitable_damaged
+				spawn_ringworld_nanobot_effect = yes
+			}
+			if = {
+				limit = { is_planet_class = pc_habitat }
+				ariphaos_patch_remove_habitat = yes
+				spawn_habitat_nanobot_effect = yes
+			}
+		}
+		destroy_colony = yes
+
+		# Sets a short timed flag if bombardment is going on, so the planet can be appropriately nuked.
+		set_timed_planet_flag = {
+			flag = flag_nanite_bombardment
+			days = 6
+		}
 	}
 }

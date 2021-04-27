@@ -77,7 +77,7 @@ CmtEffectDestroyGraygoo = {
 				}
 				set_surveyed = { surveyed = no surveyor = PREVPREV }
 			}
-			set_surveyed = { surveyed = no surveyor = PREV }
+			# set_surveyed = { surveyed = no surveyor = PREV }
 		}
 	}
 	observer_event = { id = observer.65 }

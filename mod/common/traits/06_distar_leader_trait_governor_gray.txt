@@ -1,18 +1,16 @@
 ###################
 # Governor Traits #
 ###################
-
 leader_trait_governor_gray = {
 	cost = 0
 	modification = no
-	# icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
-	icon = "gfx/interface/icons/leader_traits/traits/wg_gray.dds"
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
 	immortal_leaders = yes
 	modifier = {
 		planet_buildings_cost_mult = -0.4
 		planet_jobs_energy_produces_mult = 1
 		planet_jobs_minerals_produces_mult = 1
-		planet_jobs_produces_mult = 0.20
+		planet_jobs_produces_mult = 0.2
 		planet_building_build_speed_mult = 0.4
 		planet_clear_blocker_time_mult = -0.5
 		planet_stability_add = 5
@@ -29,22 +27,38 @@ leader_trait_governor_gray = {
 }
 
 ## For Warship Girls R And MIST Species
-gray_admiral = {
+leader_trait_admiral_gray = {
 	cost = 0
 	modification = no
-	# icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
-	icon = "gfx/interface/icons/leader_traits/traits/wg_gray.dds"
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
+	# icon = "gfx/interface/icons/traits/leader_traits/wg_gray.dds"
 	modifier = {
-		ship_weapon_damage = 0.5
-		ship_fire_rate_mult = 0.5
-		ship_speed_mult = 0.3
-		ship_shield_mult = 0.5
-		ship_hull_mult = 1.0
-		ship_hull_regen_add_static = 10
-		ship_armor_regen_add_static = 10
+		ship_weapon_damage = 0.4
+		ship_fire_rate_mult = 0.4
+		ship_speed_mult = 0.2
+		ship_shield_mult = 0.4
+		ship_hull_mult = 1
+		ship_hull_regen_add_static = 8
+		ship_armor_regen_add_static = 8
 	}
 	leader_trait = { admiral }
 	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+
+leader_trait_general_gray = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
+	# icon = "gfx/interface/icons/traits/leader_traits/wg_gray.dds"
+	modifier = {
+		army_collateral_damage_mult = 0.1
+		army_disengage_chance_mult = 0.4
+		army_health = 0.1
+	}
+	leader_trait = { general }
+	leader_class = { general }
 	initial = no
 	randomized = no
 }

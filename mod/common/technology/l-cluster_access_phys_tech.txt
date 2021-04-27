@@ -36,13 +36,10 @@ tech_lcluster_access = {
 	weight_modifier = {
 		modifier = {
 			factor = 20
-			any_system_within_border = {
-				any_system_planet = {
-					has_resource = {
-						type = nanites
-						amount > 0
-					}
-				}
+			# any_planet_within_border = { has_resource = { type = nanites amount > 0 } }
+			OR = {
+				has_monthly_income = { resource = nanites value > 0 }
+				resource_stockpile_compare = { resource = nanites value > 150 }
 			}
 		}
 	}
@@ -88,7 +85,9 @@ tech_lgate_construction = {
 		factor = 0.5
 		modifier = {
 			factor = 0
-			NOT = { any_system_within_border = { any_system_planet = { has_resource = { type = nanites amount > 0 } } } }
+			NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
+			# has_monthly_income = { resource = nanites value < 1 }
+			# resource_stockpile_compare = { resource = nanites value < 300 }
 		}
 		modifier = {
 			factor = 0.1

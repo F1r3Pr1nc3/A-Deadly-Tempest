@@ -399,3 +399,8 @@
  awakened_gate_builders_envoy:0 "$default_envoy$"
  personality_gate_builders_machine:0 "$graygoo.120_title$ $COUNTRY_AWAKENED_FALLEN_EMPIRE$"
  personality_gate_builders_machine_desc:0 "$personality_fallen_empire_machine_desc$"
+
+ leader_trait_admiral_gray:0 "$leader_trait_governor_gray$"
+ leader_trait_admiral_gray_desc:0 "$leader_trait_governor_gray_desc$"
+ leader_trait_general_gray:0 "$leader_trait_governor_gray$"
+ leader_trait_general_gray_desc:0 "$leader_trait_governor_gray_desc$"

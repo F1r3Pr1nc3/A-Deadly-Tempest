@@ -16,17 +16,21 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		# remove_global_flag = gray_goo_empire_set
+		# remove_global_flag = gray_goo_crisis_set
+		# remove_global_flag = active_gray_goo
+		# remove_global_flag = dragon_season
 		random_list = {
-			70 = {
-				set_global_flag = gray_goo_crisis_set
-				set_global_flag = active_gray_goo
-				set_global_flag = dragon_season
-			}
-			30 = {
+			3 = {
 				set_global_flag = gray_goo_empire_set
 				set_global_flag = dragon_season
 			}
-			30 = {
+			3 = {
+				set_global_flag = dragon_season
+			}
+			7 = {
+				set_global_flag = gray_goo_crisis_set
+				set_global_flag = active_gray_goo
 				set_global_flag = dragon_season
 			}
 		}
