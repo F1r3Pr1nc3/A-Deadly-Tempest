@@ -1629,8 +1629,7 @@ country_event = {
 		fromfromfrom = { save_event_target_as = goo_slayer_ship }
 		from = {
 			save_global_event_target_as = goo_slayer # ADT: used later global
-			# Give tech
-			country_event = { id = a_deadly_tempest.7 days = 1 }
+			country_event = { id = a_deadly_tempest.7 days = 1 } # Give tech
 		}
 
 		if = { limit = { event_target:lcluster4b = { has_owner = yes } }
@@ -1923,7 +1922,7 @@ country_event = {
 							every_system_planet = {
 								limit = {
 									is_planet_class = pc_gaia
-									has_planet_modifier = terraforming_candidate
+									has_modifier = terraforming_candidate
 								}
 								remove_modifier = terraforming_candidate
 							}

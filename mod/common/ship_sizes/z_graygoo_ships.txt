@@ -777,7 +777,7 @@ starbase_gatebuilders = {
 	num_target_locators = 0
 	is_space_station = no # vanilla no
 	base_buildtime = 730
-	is_designable = yes ## TODO?
+	is_designable = no ## TODO?
 	icon_frame = -1
 	text_icon = military_size_station
 
@@ -787,9 +787,9 @@ starbase_gatebuilders = {
 	is_civilian = no
 	components_add_to_cost = no
 	is_listed = no
-	can_disable = yes ## TODO yes - not really working
+	can_disable = no ## TODO yes - not really working
 	prerequisites = { "tech_nanite_ships" }
-	enable_default_design = yes # vanilla no
+	enable_default_design = no # vanilla no TODO yes - leads to free starbases?
 	class = shipclass_starbase
 
 	required_component_set = "power_core"

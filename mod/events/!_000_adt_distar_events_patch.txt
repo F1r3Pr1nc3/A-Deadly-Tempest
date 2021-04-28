@@ -18,8 +18,8 @@ namespace = distar
 # 	trigger = {
 # 		NOT = { has_global_flag = l_cluster_opened }
 # 	}
-# 	##		Empty outcome removed		##
-# 	##	Single Dragon outcome removed	##
+#	# Empty outcome removed
+#	# Single Dragon outcome removed
 # 	immediate = {
 # 		remove_global_flag = gray_goo_empire_set
 # 		remove_global_flag = gray_goo_crisis_set
@@ -173,10 +173,10 @@ country_event = {
 				}
 			}
 		}
-		if = { # Temporary due vanilla bug!?
-			limit = { mid_game_years_passed < 0 }
-			country_event = { id = distar.8000 } # Must be re-run due strange bug in 3.0 at game_start
-		}
+		# if = { # Temporary due vanilla bug!?
+		# 	limit = { mid_game_years_passed < 0 }
+		country_event = { id = distar.8000 } # Must be re-run due strange bug in 3.0 at game_start
+		# }
 		### Change Outcome (Crisis Manager) ###
 		if = {
 			limit = {

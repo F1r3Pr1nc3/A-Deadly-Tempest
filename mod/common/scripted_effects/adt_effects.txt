@@ -627,11 +627,12 @@ nanite_assimilating_effect = {
 		break=yes
 	}
 	else_if = {
-		# limit = {
-		# 	NOT = { exists = event_target:assimilate_that_ship }
-		# }
+		limit = { NOT = { exists = event_target:assimilate_that_ship } }
 		ROOT.FromFromFrom = { save_event_target_as = assimilate_that_ship }
 		log = "WARNING assimilate_that_ship NOT exists " #[assimilate_that_ship.GetName]
+	}
+	else = {
+		ROOT.FromFromFrom = { save_event_target_as = assimilate_that_ship }
 	}
 
 	fleet = {
