@@ -15,11 +15,14 @@ event = {
 	id = distar.8000
 	hide_window = yes
 	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = l_cluster_opened }
+	}
 	immediate = {
-		# remove_global_flag = gray_goo_empire_set
-		# remove_global_flag = gray_goo_crisis_set
-		# remove_global_flag = active_gray_goo
-		# remove_global_flag = dragon_season
+		remove_global_flag = gray_goo_empire_set
+		remove_global_flag = gray_goo_crisis_set
+		remove_global_flag = active_gray_goo
+		remove_global_flag = dragon_season
 		random_list = {
 			3 = {
 				set_global_flag = gray_goo_empire_set
