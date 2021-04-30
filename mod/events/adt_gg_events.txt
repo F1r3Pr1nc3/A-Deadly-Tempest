@@ -218,14 +218,29 @@ country_event = {
 	title = "a_deadly_tempest.17.name"	# leviathans.2155.name
 	desc = "distar.137.paci"
 	hide_window = no
-	# fire_only_once = yes
 	is_triggered_only = yes
 	picture = GFX_evt_gray_goo_ships
 	show_sound = event_celebration	# event_ship_explosion
 	location = FromFromFrom
 	trigger = {
-		exists = event_target:goo_slayer
-		is_same_empire = event_target:goo_slayer
+		has_global_flag = l_cluster_opened
+		exists = this
+		# OR = {
+		# 	is_ai = no
+		# 	is_country_type_with_subjects = yes # is_country_type = default #
+		# }
+		OR = {
+			AND = {
+				exists = event_target:goo_slayer
+				is_same_empire = event_target:goo_slayer
+			}
+			# NOT = { exists = event_target:gray_owner }
+			# has_country_flag = gray_owner
+			AND = {
+				exists = event_target:gray_owner
+				is_same_empire = event_target:gray_owner
+			}
+		}
 	}
 	immediate = {
 		every_system = {
@@ -254,10 +269,19 @@ country_event = {
 				}
 				every_playable_country = {
 					limit = {
+						# is_country_type_with_subjects = yes # is_country_type = default #
 						NOR = {
+							# has_country_flag = gray_owner
+							has_country_flag = disco_gray
 							is_ai = yes
-							# is_same_empire = event_target:goo_slayer
-							exists = event_target:gray_owner
+							AND = {
+								exists = event_target:gray_owner
+								is_same_empire = event_target:gray_owner
+							}
+							# AND = {
+							# 	exists = event_target:goo_slayer
+							# 	is_same_empire = event_target:goo_slayer
+							# }
 						}
 					}
 					prev = {
@@ -278,10 +302,8 @@ country_event = {
 								6 = { }
 							}
 							set_surveyed = { surveyed = no surveyor = prevprev }
-							add_anomaly = {
-								category = disco_gray_cat
-								target = prevprev
-							}
+							add_anomaly = { category = disco_gray_cat target = prevprev }
+							prevprev = { set_country_flag = disco_gray }
 						}
 					}
 				}
@@ -996,8 +1018,9 @@ fleet_event = {
 					}
 					set_owner = event_target:assimilating_fleet.owner
 					remove_fleet_flag = assimilate_that_ship_flag_temp
-					unassign_leader = this.leader
-
+					if = { limit = { exists = leader }
+						unassign_leader = leader
+					}
 					every_owned_ship = {
 						limit = { is_disabled = yes }
 						set_disable_at_health = 0
@@ -1823,27 +1846,6 @@ country_event = {
 					species = event_target:gray_species
 					type = "nanite_giga_warform"
 				}
-				create_leader = {
-					class = general
-					species = event_target:gray_species
-					name = "bốn"
-					immortal = yes
-					# event_leader = yes
-					gender = indeterminable
-					skill = 6
-					set_age = 1
-					traits = {
-						trait = leader_trait_general_gray
-						trait = leader_trait_demoralizer
-						# trait = leader_trait_general_synthetic
-						# trait = leader_trait_general_erudite
-					}
-					effect = {
-						change_leader_portrait = lithnanite
-						set_owner = prevprev
-					}
-				}
-				last_created_army = { assign_leader = last_created_leader }
 				while = {
 					count = 8
 					create_army = {
@@ -1854,6 +1856,27 @@ country_event = {
 					}
 				}
 			}
+			create_leader = {
+				class = general
+				species = event_target:gray_species
+				name = "bốn"
+				immortal = yes
+				# event_leader = yes
+				gender = indeterminable
+				skill = 6
+				set_age = 1
+				traits = {
+					trait = leader_trait_general_gray
+					trait = leader_trait_demoralizer
+					# trait = leader_trait_general_synthetic
+					# trait = leader_trait_general_erudite
+				}
+				effect = {
+					change_leader_portrait = lithnanite
+					set_owner = prev
+				}
+			}
+			last_created_army = { assign_leader = last_created_leader }
 			# Mothership creates ships
 			country_event = {
 				id = a_deadly_tempest.105
@@ -1884,16 +1907,6 @@ country_event = {
 		has_global_flag = dragon_season
 	}
 	immediate = {
-		# Activate Terminal Egress L-Gate (Fallback - if not already opened by other outcome)
-		if = {
-			limit = { exists = event_target:lcluster1 }
-			event_target:lcluster1 = {
-				random_system_megastructure = {
-					limit = { CmtTriggerIsClosedLgate = yes }
-					CmtEffectOpenLgate = yes
-				}
-			}
-		}
 		if = {
 			limit = {
 				NOT = { exists = event_target:spawning_dragons }
@@ -2007,6 +2020,15 @@ country_event = {
 						set_friendly = yes
 						target = prev
 					}
+				}
+			}
+			event_target:graygoo_country = {
+				every_owned_fleet = {
+					limit = {
+						has_fleet_flag = trait_biothrall_tolerance
+					}
+					set_fleet_stance = aggressive
+					set_aggro_range = 250
 				}
 			}
 		}

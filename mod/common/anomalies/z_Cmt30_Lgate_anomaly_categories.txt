@@ -15,7 +15,7 @@ disco_gray_cat = {
 	level = 3
 	max_once = yes
 	# max_once_global = yes
-	should_ai_and_humans_use = no
+	# should_ai_and_humans_use = yes
 
 	spawn_chance = {
 		modifier = {
@@ -53,6 +53,13 @@ disco_gray_cat = {
 		modifier = {
 			factor = 100
 			has_global_flag = CmtFlagDebugMode
+		}
+	}
+	# this/root: planet, from: ship
+	on_spawn = {
+		if = {
+			limit = { exists = from exists = from.owner }
+			from.owner = { set_country_flag = disco_gray }
 		}
 	}
 	on_success = graygoo.400

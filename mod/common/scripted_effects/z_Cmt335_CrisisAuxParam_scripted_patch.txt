@@ -53,10 +53,10 @@ CmtFleetSetAuxParam_GraygooGarryson = {
 
 CmtFleetSetAuxParam_GraygooAttacker = {
 	set_formation_scale = 2
-	set_fleet_stance = aggressive
+	set_fleet_stance = passive
 	set_fleet_bombardment_stance = nanitebombard
 	set_aggro_range_measure_from = self
-	set_aggro_range = 250
+	set_aggro_range = 10
 	set_location = {
 		target = prevprev
 		distance = 0

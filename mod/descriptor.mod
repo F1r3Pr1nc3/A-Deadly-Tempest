@@ -1,7 +1,5 @@
 version="1.7.6"
 name="A Deadly Tempest (3.0)"
-"dependencies"={
-}
 tags={
 	"Events"
 	"Gameplay"

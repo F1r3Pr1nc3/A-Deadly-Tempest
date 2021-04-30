@@ -241,8 +241,8 @@ country_event = {
 		# change_species_characteristics = {}
 		species = {
 			rename_species = {
-				name = "Dessanu"
-				namelist = "MACHINE4"
+				name = "NAME_Dessanu"
+				# name_list = "MACHINE4"
 			}
 		}
 

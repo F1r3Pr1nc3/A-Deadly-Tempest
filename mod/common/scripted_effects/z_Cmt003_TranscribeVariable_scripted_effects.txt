@@ -17,7 +17,7 @@ CmtEffectTransferAll = {
 	CmtEffectTransferCrisisPower = yes
 	CmtEffectTransferKhanPostDeath = yes
 	CmtEffectTransferLgateCycle = yes
-	CmtEffectTransferUprisingVariables = yes
+	# CmtEffectTransferUprisingVariables = yes
 }
 
 ##############

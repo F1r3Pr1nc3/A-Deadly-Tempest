@@ -27,9 +27,8 @@ ship_event = {
 	location = this
 	picture = GFX_evt_ship_in_orbit_2
 	show_sound = event_radio_chatter
-	# fire_only_once = yes
 	is_triggered_only = yes
-	# To everyone except goo_slayer
+	# To everyone except goo_slayer?
 	# trigger = {}
 
 	immediate = {
@@ -357,9 +356,19 @@ country_event = {
 			assign_leader = last_created_leader
 		}
 		save_global_event_target_as = gray_owner
-		set_country_flag = gray_owner
+		# set_country_flag = gray_owner
 		# set_variable = { which = gray_affection value = 1 }
 		# set_variable = { which = gray_affection_level value = 1 }
+		every_playable_country = {
+			limit = {
+				# is_ai = no # not sure as this can change
+				# is_country_type_with_subjects = yes # is_country_type = default #
+				has_country_flag = disco_gray
+				# NOT = { is_same_empire = event_target:gray_owner }
+			}
+			remove_country_flag = disco_gray
+		}
+		set_country_flag = disco_gray
 	}
 }
 

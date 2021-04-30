@@ -66,9 +66,9 @@ CmtEffectDestroyGraygoo = {
 			NOT = { is_same_empire = event_target:goo_slayer }
 		}
 		country_event = { id = graygoo.16 }
+		# remove surveyed
 		every_system = {
 			limit = { has_star_flag = lcluster }
-			# remove surveyed
 			every_system_planet = {
 				limit = {
 					is_planet_class = pc_gray_goo
@@ -82,34 +82,37 @@ CmtEffectDestroyGraygoo = {
 	}
 	observer_event = { id = observer.65 }
 
-	# Only LCluster!? (every_galaxy_planet worked only until 2.8)
-	event_target:CmtGlobalVar = {
-		if = {
-			limit = {
-				OR = {
-					check_variable = { which = CmtVarLgateTerraformNanite value = 3 }
-					check_variable = { which = CmtVarLgateTerraformNanite value = 5 }
+	if = {
+		limit = { exists = event_target:CmtGlobalVar }
+		# Only LCluster!? (every_planet worked only until 2.8)
+		event_target:CmtGlobalVar = {
+			if = {
+				limit = {
+					OR = {
+						check_variable = { which = CmtVarLgateTerraformNanite value = 3 }
+						check_variable = { which = CmtVarLgateTerraformNanite value = 5 }
+					}
+				}
+				every_system = {
+					limit = { has_star_flag = lcluster }
+					every_system_planet = {
+						limit = { is_planet_class = pc_gray_goo }
+						add_modifier = { modifier = CmtModifierAutoTerraform days = -1 }
+						planet_event = { id = CrisisManagerControl.6211 days = 90 random = 450 }	## Auto-Terraform
+					}
+				}
+			} else_if = {
+				limit = { NOT = { check_variable = { which = CmtVarLgateTerraformNanite value = 1 } } }
+				every_system = {
+					limit = { has_star_flag = lcluster }
+					every_system_planet = {
+						limit = { is_planet_class = pc_gray_goo }
+						add_modifier = { modifier = terraforming_candidate days = -1 }
+					}
 				}
 			}
-			every_system = {
-				limit = { has_star_flag = lcluster }
-				every_system_planet = {
-					limit = { is_planet_class = pc_gray_goo }
-					add_modifier = { modifier = CmtModifierAutoTerraform days = -1 }
-					planet_event = { id = CrisisManagerControl.6211 days = 90 random = 450 }	## Auto-Terraform
-				}
-			}
-		} else_if = {
-			limit = { NOT = { check_variable = { which = CmtVarLgateTerraformNanite value = 1 } } }
-			every_system = {
-				limit = { has_star_flag = lcluster }
-				every_system_planet = {
-					limit = { is_planet_class = pc_gray_goo }
-					add_modifier = { modifier = terraforming_candidate days = -1 }
-				}
-			}
+			country_event = { id = CrisisManagerControl.6202 }		## Open L-Gates
 		}
-		country_event = { id = CrisisManagerControl.6202 }		## Open L-Gates
 	}
 
 	event_target:graygoo_country = {

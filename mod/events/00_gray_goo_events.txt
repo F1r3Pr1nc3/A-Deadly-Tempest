@@ -21,15 +21,16 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		set_update_modifiers_batch = begin
 		### Pre-treatment
 		set_global_flag = gray_goo_crisis_active
-		# The guardians only awaken if there is a set_global_flag = galactic_crisis_happened !?
+		# The guardians only awaken if there is a set_global_flag = galactic_crisis_happened
 		awaken_guardians_of_the_galaxy = yes
 		if = { limit = { end_game_years_passed >= 3 }
 			# set_global_flag = galactic_crisis_happened # this prevents other crisis
 			awaken_guardians_of_the_galaxy = yes
 		}
-		# Vanilla double call!? Do not open all same time!?
+		# Vanilla double call!? Do open all same time!?
 		every_megastructure = {
 			limit = { CmtTriggerIsClosedLgate = yes }
 			CmtEffectOpenLgate = yes
@@ -118,6 +119,7 @@ country_event = {
 				event_target:graygoo_country = { CmtEffectCreateAdmiralty_GraygooGarryson = yes }
 			}
 		}
+		set_update_modifiers_batch = end
 
 		## Initial Attack Fleets
 		country_event = { id = graygoo.4 days = 2 } # 1 day delay for dragon friendship
@@ -414,22 +416,14 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		# Do not open all same time!?
-		# every_megastructure = {
-		# 	limit = { CmtTriggerIsClosedLgate = yes }
-		# 	CmtEffectOpenLgate = yes
-		# }
-		# Activate Terminal Egress L-Gate (Fallback - if not already opened by other outcome)
-		if = {
-			limit = { exists = event_target:lcluster1 }
-			event_target:lcluster1 = {
-				random_system_megastructure = {
-					limit = { CmtTriggerIsClosedLgate = yes }
-					CmtEffectOpenLgate = yes
-				}
-			}
+		set_update_modifiers_batch = begin
+
+		# Vanilla double call!? Do open all same time!?
+		every_megastructure = {
+			limit = { CmtTriggerIsClosedLgate = yes }
+			CmtEffectOpenLgate = yes
 		}
-		# Vanilla double call!?
+
 		if = {
 			limit = { NOT = { exists = event_target:lcluster_factory_system } }
 			random_system = {
@@ -668,6 +662,7 @@ country_event = {
 					has_star_flag = lcluster4b
 				}
 			}
+			set_star_flag = empire_cluster
 			create_starbase = {
 				size = "starbase_gatebuilders"
 				owner = event_target:gate_builders
@@ -971,6 +966,7 @@ country_event = {
 			# }
 			country_event = { id = graygoo.116 days = 5 }
 		}
+		set_update_modifiers_batch = end
 		observer_event = { id = observer.66 }
 	}
 }
