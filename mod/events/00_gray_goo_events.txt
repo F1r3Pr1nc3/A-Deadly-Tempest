@@ -30,19 +30,18 @@ country_event = {
 			# set_global_flag = galactic_crisis_happened # this prevents other crisis
 			awaken_guardians_of_the_galaxy = yes
 		}
-		# Vanilla double call!? Do open all same time!?
+		# Do open all same time!?
 		every_megastructure = {
 			limit = { CmtTriggerIsClosedLgate = yes }
 			CmtEffectOpenLgate = yes
 		}
-		# Vanilla double call!?
-		if = {
-			limit = { NOT = { exists = event_target:lcluster_factory_system } }
-			random_system = {
-				limit = { has_star_flag = graygoo_factory_system }
-				save_global_event_target_as = lcluster_factory_system
-			}
-		}
+		# if = {
+		# 	limit = { NOT = { exists = event_target:lcluster_factory_system } }
+		# 	random_system = {
+		# 		limit = { has_star_flag = graygoo_factory_system }
+		# 		save_global_event_target_as = lcluster_factory_system
+		# 	}
+		# }
 		event_target:lcluster_factory_system = {
 			random_system_planet = {
 				limit = { has_planet_flag = main_star }
@@ -418,19 +417,18 @@ country_event = {
 	immediate = {
 		set_update_modifiers_batch = begin
 
-		# Vanilla double call!? Do open all same time!?
+		# Do open all same time!?
 		every_megastructure = {
 			limit = { CmtTriggerIsClosedLgate = yes }
 			CmtEffectOpenLgate = yes
 		}
-
-		if = {
-			limit = { NOT = { exists = event_target:lcluster_factory_system } }
-			random_system = {
-				limit = { has_star_flag = graygoo_factory_system }
-				save_global_event_target_as = lcluster_factory_system
-			}
-		}
+		# if = {
+		# 	limit = { NOT = { exists = event_target:lcluster_factory_system } }
+		# 	random_system = {
+		# 		limit = { has_star_flag = graygoo_factory_system }
+		# 		save_global_event_target_as = lcluster_factory_system
+		# 	}
+		# }
 		### Create Country
 		event_target:lcluster_factory_system = {
 			random_system_planet = {
@@ -2016,7 +2014,7 @@ country_event = {
 		every_owned_fleet = {
 			every_owned_ship = {
 				limit = { is_disabled = yes }
-				set_disable_at_health = 0
+				set_disable_at_health = -1
 				set_disabled = no
 				destroy_ship = this
 			}

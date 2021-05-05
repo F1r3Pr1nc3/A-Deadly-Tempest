@@ -35,7 +35,7 @@ event = {
 		}
 	}
 }
-
+# Temp Vanilla Workaround Fix
 country_event = {
 	id = distar.8001
 	hide_window = yes
@@ -49,6 +49,7 @@ country_event = {
 		remove_global_flag = gray_goo_crisis_set
 		remove_global_flag = active_gray_goo
 		remove_global_flag = dragon_season
+		# country_event = { id = distar.8000 } TODO?
 		random_list = {
 			3 = {
 				set_global_flag = gray_goo_empire_set
@@ -440,12 +441,12 @@ country_event = {
 	show_sound = event_activating_unknown_technology
 	location = event_target:candidate_gateway
 	is_triggered_only = yes
-	fire_only_once = yes
+	# fire_only_once = yes
 
 	immediate = {
 		if = {
 			limit = { NOT = { exists = event_target:lcluster1 } }
-			country_event = { id = distar.11000 days = 2 }
+			country_event = { id = distar.11000 days = -1 }
 		}
 		# every_playable_country = {
 		# 	limit = {

@@ -295,6 +295,7 @@
  mod_job_nanite_agri_worker_per_pop:0 "§G+1§! $job_nanite_agri_worker$ Job per $VALUE$ Pops"
  mod_job_nanite_agri_worker_per_pop_short:0 "\n§G+1§! £mod_job_nanite_agri_worker_add£ per $VALUE$ £pop£"
 
+ mod_planet_pops_nanites_upkeep_add:0 "Nanite Upkeep"
 #  job_nanite_builder:0 "Nanite-builder"
 #  job_nanite_builder_plural:0 "Nanite-builders"
 #  job_nanite_builder_desc:0 "£job_nanite_builder£ $job_nanite_builder_plural$ produce £engineering£ §YEngineering Research§! and increase §YBuilding Speed§!."
@@ -390,6 +391,7 @@
  ### Empire
  origin_machine_nanites:0 "Dessanu Descendants"
  origin_machine_nanites_desc:0 "Once belonging to the enigmatic Dessanu, this nanite based species decided to end the bonds to its former heritage and become something of its own."
+ nanite_origin:0 "Ships, Buildings, Megastructures cost nanites instead of alloys. Able to construct L-Gates. Starts with additional technologies which add nanite based weapons."
  awakened_gate_builders:0 "$graygoo.120_title$"
  awakened_gate_builders_admiral:0 "$admiral$"
  awakened_gate_builders_general:0 "$general$"

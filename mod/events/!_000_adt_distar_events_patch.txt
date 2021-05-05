@@ -35,22 +35,35 @@ namespace = distar
 # 		}
 # 	}
 # }
-country_event = {
-	id = distar.8001
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		is_country_type = global_event
-		NOT = { has_global_flag = l_cluster_opened }
-	}
-	immediate = {
-		remove_global_flag = gray_goo_empire_set
-		remove_global_flag = gray_goo_crisis_set
-		remove_global_flag = active_gray_goo
-		remove_global_flag = dragon_season
-		country_event = { id = distar.8000 }
-	}
-}
+# Temp Vanilla Workaround Fix
+# country_event = {
+# 	id = distar.8001
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		is_country_type = global_event
+# 		NOT = { has_global_flag = l_cluster_opened }
+# 	}
+# 	immediate = {
+# 		remove_global_flag = gray_goo_empire_set
+# 		remove_global_flag = gray_goo_crisis_set
+# 		remove_global_flag = active_gray_goo
+# 		remove_global_flag = dragon_season
+# 		# country_event = { id = distar.8000 } TODO?
+# 		random_list = {
+# 			8 = {
+# 				set_global_flag = gray_goo_crisis_set
+# 				set_global_flag = active_gray_goo
+# 				set_global_flag = dragon_season
+# 			}
+# 			4 = {
+# 				set_global_flag = gray_goo_empire_set
+# 				set_global_flag = dragon_season
+# 			}
+# 			# 2 = { set_global_flag = dragon_season }
+# 		}
+# 	}
+# }
 # check for gateway within borders
 country_event = {
 	id = distar.10900
@@ -130,7 +143,6 @@ country_event = {
 	immediate = {
 		set_country_flag = lcluster_opener
 		set_country_flag = lgates_activated
-		set_global_flag = lgates_activated_globally
 		set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 5 }
 
 		### Set 1st L-Gate as Target
@@ -185,14 +197,19 @@ country_event = {
 				}
 			}
 		}
+		# if = {
+		# 	limit = { NOT = { exists = event_target:global_event_country } }
+		# 	random_country = {
+		# 		limit = { is_country_type = global_event }
+		# 		save_global_event_target_as = global_event_country
+		# 	}
+		# }
 		# if = { # Temporary due vanilla bug!?
 		# 	limit = { mid_game_years_passed < 0 }
 		# Workaround Fix: Must be re-run due strange bug in 3.0 at game_start
 		event_target:global_event_country = {
-		# random_country = { limit = { is_country_type = global_event }
 			country_event = { id = distar.8001 }
 		}
-		# }
 		### Change Outcome (Crisis Manager) ###
 		if = {
 			limit = {
@@ -224,7 +241,7 @@ country_event = {
 			remove_global_flag = gray_goo_crisis_set
 			remove_global_flag = active_gray_goo
 			random_list = {
-				30 = {
+				3 = {
 					modifier = {
 						factor = 0
 						has_global_flag = CmtFlagLgateForbidSilence
@@ -235,7 +252,7 @@ country_event = {
 						}
 					}
 				}
-				30 = {
+				3 = {
 					modifier = {
 						factor = 0
 						# OR = {
@@ -249,14 +266,14 @@ country_event = {
 					}
 					set_global_flag = dragon_season
 				}
-				30 = {
+				3 = {
 					modifier = {
 						factor = 0
 						has_global_flag = CmtFlagLgateForbidDessanu
 					}
 					set_global_flag = gray_goo_empire_set
 				}
-				50 = {
+				5 = {
 					modifier = {
 						factor = 0
 						has_global_flag = CmtFlagLgateForbidGraygoo
@@ -316,7 +333,7 @@ country_event = {
 			# Theoretically Must be called immediately (because graygoo.100 and candidate_gateway)
 			country_event = { id = distar.13000 }
 		}
-		country_event = { id = distar.11000 days = 2 } # Spawn L-Cluster
+		country_event = { id = distar.11000 days = 1 } # Spawn L-Cluster
 
 		if = {
 			limit = { has_global_flag = gray_goo_crisis_set }
@@ -339,19 +356,13 @@ country_event = {
 			}
 			country_event = { id = distar.10951 }
 		}
-		if = {
-			limit = { NOT = { exists = event_target:global_event_country } }
-			random_country = {
-				limit = { is_country_type = global_event }
-				save_global_event_target_as = global_event_country
-			}
-		}
+
 		event_target:global_event_country = {
 			# Enable other L-Gates over time (anyway)
 			country_event = { id = distar.10960 days = 200 random = 500 }
 		}
 		# # Flip L-Gates
-		# # Activate Terminal Egress L-Gate (Fallback - if not already opened by other outcome)
+		# # Activate Terminal Egress L-Gate (moved to direct to cluster init)
 		# if = {
 		# 	limit = { exists = event_target:lcluster1 }
 		# 	event_target:lcluster1 = {
@@ -412,6 +423,7 @@ country_event = {
 			}
 		}
 		set_global_flag = l_cluster_opened
+		set_global_flag = lgates_activated_globally
 
 		## Make dragons friendly (sometimes not working so call it twice)
 		country_event = { id = a_deadly_tempest.13006 days = 3 }
@@ -503,7 +515,7 @@ country_event = {
 	}
 }
 
-# Spawn L-Cluster (bit optimized by FirePrince 2.8)
+# Spawn L-Cluster (bit optimized by FirePrince pre 3.0.3)
 country_event = {
 	id = distar.11000
 	hide_window = yes
@@ -512,11 +524,11 @@ country_event = {
 
 	immediate = {
 		set_spawn_system_batch = begin
-		# batch-processes the spawn_system effects between "begin" and "end",
-		# so caches are recalculated only once rather than for every system spawned
-		# can also be used when removing and adding hyperlanes
+		# Batch-processes the spawn_system effects between "begin" and "end"
+		# So caches are recalculated only once rather than for every system spawned
+		# Can also be used when removing and adding hyperlanes
 		no_scope = {
-			# makes system positions originate from galactic core
+			# Makes system positions originate from galactic core
 			spawn_system = {
 				min_distance >= 550
 				max_distance <= 560
@@ -525,6 +537,12 @@ country_event = {
 				initializer = distantstars_init_01
 				hyperlane = no
 				effect = {
+					save_global_event_target_as = lcluster1
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster1 } }
+				random_system = {
+					limit = { has_star_flag = lcluster1 }
 					save_global_event_target_as = lcluster1
 				}
 			}
@@ -563,6 +581,12 @@ country_event = {
 					}
 				}
 			}
+			if = { limit = { NOT = { exists = event_target:lcluster2 } }
+				random_system = {
+					limit = { has_star_flag = lcluster2 }
+					save_global_event_target_as = lcluster2
+				}
+			}
 			event_target:lcluster2 = {
 				spawn_system = {
 					min_distance >= 30
@@ -574,6 +598,12 @@ country_event = {
 					effect = {
 						save_global_event_target_as = lcluster2b
 					}
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster3 } }
+				random_system = {
+					limit = { has_star_flag = lcluster3 }
+					save_global_event_target_as = lcluster3
 				}
 			}
 			event_target:lcluster3 = {
@@ -598,6 +628,12 @@ country_event = {
 					effect = {
 						save_global_event_target_as = lcluster3b
 					}
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster4 } }
+				random_system = {
+					limit = { has_star_flag = lcluster4 }
+					save_global_event_target_as = lcluster4
 				}
 			}
 			event_target:lcluster4 = {
@@ -625,68 +661,91 @@ country_event = {
 					}
 				}
 			}
-
-			# ## Clear all hyperlanes to and within the cluster (obsolete since hyperlane = no)
-			# every_system = {
-			# 	limit = { has_star_flag = lcluster }
-			# 	isolate_system = yes
-			# }
-
-			# add hyperlanes
+			if = { limit = { NOT = { exists = event_target:lcluster5 } }
+				random_system = {
+					limit = { has_star_flag = lcluster5 }
+					save_global_event_target_as = lcluster5
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster1b } }
+				random_system = {
+					limit = { has_star_flag = lcluster1b }
+					save_global_event_target_as = lcluster1b
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster2b } }
+				random_system = {
+					limit = { has_star_flag = lcluster2b }
+					save_global_event_target_as = lcluster2b
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster3b } }
+				random_system = {
+					limit = { has_star_flag = lcluster3b }
+					save_global_event_target_as = lcluster3b
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster4b } }
+				random_system = {
+					limit = { has_star_flag = lcluster4b }
+					save_global_event_target_as = lcluster4b
+				}
+			}
+			# Add hyperlanes
 			event_target:lcluster5 = {
 				add_hyperlane = {
-				from = event_target:lcluster5
+				from = this
 					to = event_target:lcluster4
 				}
 				# For backward compat.
 				if = { limit = { exists = event_target:lcluster5b }
 					add_hyperlane = {
-						from = event_target:lcluster_factory_system
+						from = this
 						to = event_target:lcluster5b
 					}
 				}
 			}
 			event_target:lcluster4 = {
 				add_hyperlane = {
-					from = event_target:lcluster4
+					from = this
 					to = event_target:lcluster3
 				}
 				add_hyperlane = {
-					from = event_target:lcluster4
+					from = this
 					to = event_target:lcluster2
 				}
 				add_hyperlane = {
-					from = event_target:lcluster4
+					from = this
 					to = event_target:lcluster4b
 				}
 			}
 			event_target:lcluster3 = {
 				add_hyperlane = {
-					from = event_target:lcluster3
+					from = this
 					to = event_target:lcluster1
 				}
 				add_hyperlane = {
-					from = event_target:lcluster3
+					from = this
 					to = event_target:lcluster3b
 				}
 			}
 			event_target:lcluster2 = {
 				add_hyperlane = {
-					from = event_target:lcluster2
+					from = this
 					to = event_target:lcluster1
 				}
 				add_hyperlane = {
-					from = event_target:lcluster2
+					from = this
 					to = event_target:lcluster3
 				}
 				add_hyperlane = {
-					from = event_target:lcluster2
+					from = this
 					to = event_target:lcluster2b
 				}
 			}
 			event_target:lcluster1 = {
 				add_hyperlane = {
-					from = event_target:lcluster1
+					from = this
 					to = event_target:lcluster1b
 				}
 				# Activate Terminal Egress L-Gate
@@ -698,12 +757,26 @@ country_event = {
 			}
 			event_target:lcluster1b = {
 				add_hyperlane = {
-					from = event_target:lcluster1b
+					from = this
 					to = event_target:lcluster2b
 				}
 			}
 		}
 		set_spawn_system_batch = end
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = dragon_season
+					has_global_flag = gray_goo_crisis_set
+					# has_global_flag = gray_goo_empire_set
+				}
+			}
+			# Do open all same time!?
+			every_megastructure = {
+				limit = { CmtTriggerIsClosedLgate = yes }
+				CmtEffectOpenLgate = yes
+			}
+		}
 	}
 }
 

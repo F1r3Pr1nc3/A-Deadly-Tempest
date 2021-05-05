@@ -84,6 +84,7 @@ CmtEffectDestroyGraygoo = {
 
 	if = {
 		limit = { exists = event_target:CmtGlobalVar }
+		set_update_modifiers_batch = begin
 		# Only LCluster!? (every_planet worked only until 2.8)
 		event_target:CmtGlobalVar = {
 			if = {
@@ -112,6 +113,7 @@ CmtEffectDestroyGraygoo = {
 				}
 			}
 			country_event = { id = CrisisManagerControl.6202 }		## Open L-Gates
+			set_update_modifiers_batch = end
 		}
 	}
 

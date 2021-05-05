@@ -24,7 +24,7 @@ origin_machine_nanites = {
 	description = nanite_origin
 	playable = {
 		always = no
-		# has_distar = yes
+		has_distar = yes
 	}
 	random_weight = {
 		base = 0

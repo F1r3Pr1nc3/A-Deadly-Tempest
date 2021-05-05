@@ -12,7 +12,9 @@ special_project = {
 		skill = 3		# it should be really not that easy (so AI could have more problems with this)
 	}
 	on_success = {
-		owner = { country_event = { id = distar.13035 } }
+		owner = {
+			country_event = { id = distar.13035 }
+		}
 		solar_system.star = { set_planet_flag = ldragon_recruited }
 	}
 	abort_trigger = {
