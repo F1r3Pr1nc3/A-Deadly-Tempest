@@ -356,9 +356,8 @@ country_event = {
 			}
 			country_event = { id = distar.10951 }
 		}
-
+		# Enable other L-Gates over time (anyway)
 		event_target:global_event_country = {
-			# Enable other L-Gates over time (anyway)
 			country_event = { id = distar.10960 days = 200 random = 500 }
 		}
 		# # Flip L-Gates
@@ -830,7 +829,7 @@ country_event = {
 			limit = {
 				NOT = { any_system_within_border = { has_star_flag = lgate } }
 			}
-			country_event = { id = distar.13011 days = 1 }
+			country_event = { id = distar.13011 days = 2 }
 		}
 		while = {
 			limit = {
@@ -877,8 +876,21 @@ country_event = {
 											country_event = { id = distar.13010 }
 										}
 									}
+									if = { limit = { is_ai = yes is_country_type = default }
+										event_target:dragons_target = {
+											system_event = { id = distar.13012 days = 120 random = 40 }
+										}
+									}
 								}
 							}
+						} else_if = {
+							limit = {
+								exists = space_owner
+								space_owner = { is_ai = yes is_country_type = default }
+							}
+							system_event = { id = distar.13012 days = 150 random = 50 }
+						} else = {
+							system_event = { id = distar.13012 days = 360 random = 120 }
 						}
 						star = {
 							create_fleet = {
@@ -900,13 +912,13 @@ country_event = {
 										prefix = no
 										upgradable = yes
 									}
-									set_location = prevprevprev							# megastructure
+									set_location = prevprevprev						# megastructure
 									set_fleet_stance = passive
 									set_aggro_range_measure_from = self
 									# set_aggro_range = 10
 									auto_move_to_planet = {
-										target = prev									# dragon_point star
-										clear_auto_move_on_arrival = yes				# hang around
+										target = prev								# dragon_point star
+										clear_auto_move_on_arrival = yes			# hang around
 									}
 								}
 							}
@@ -919,7 +931,7 @@ country_event = {
 				}
 			}
 		}
-		country_event = { id = a_deadly_tempest.13006 days = 1 }
+		country_event = { id = a_deadly_tempest.13006 days = 3 }
 	}
 }
 
@@ -970,6 +982,77 @@ country_event = {
 	option = { name = distar.13011.a }
 }
 
+# AI Helper Anomaly (3.0.3 added by FirePrince (ADT))
+system_event = {
+	id = distar.13012
+	hide_window = yes
+	is_triggered_only = yes
+	# trigger = {
+	# 	is_ai = yes
+	# 	is_country_type = default
+	# 	has_country_flag = knows_ldragon
+	# }
+	immediate = {
+		#create_point_of_interest
+		# save_event_target_as = disturbance_system
+		if = {
+			limit = {
+				exists = space_owner
+				space_owner = {
+					is_ai = yes
+					is_country_type = default
+					# has_country_flag = knows_ldragon
+					NOR = {
+						is_homicidal = yes
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+			}
+			# add_anomaly = {
+			# 	category = DISTAR_LDRAGON_AI_CAT target = root.space_owner
+			# }
+			enable_special_project = {
+				name = TAME_LDRAGON_PROJECT
+				location = star
+				owner = root.space_owner
+			}
+			root.space_owner = {
+				if = {
+					limit = { has_federation = yes }
+					every_federation_ally = {
+						limit = { is_ai = yes is_country_type = default }
+						enable_special_project = {
+							name = TAME_LDRAGON_PROJECT
+							location = root.star
+							owner = this
+						}
+					}
+				}
+			}
+		}
+		else = {
+			every_playable_country = {
+				limit = {
+					is_ai = yes
+					is_country_type = default
+					# has_country_flag = knows_ldragon
+					NOR = {
+						is_homicidal = yes
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+				root.star = {
+					enable_special_project = {
+						name = TAME_LDRAGON_PROJECT
+						location = this
+						owner = prev
+					}
+				}
+			}
+		}
+	}
+}
+
 # Killed dragon
 country_event = {
 	id = distar.13020
@@ -988,7 +1071,8 @@ country_event = {
 	location = fromfrom
 	is_triggered_only = yes
 	trigger = {
-		is_country_type = default
+		# is_country_type = default
+		is_country_type_with_subjects = yes
 		from = { is_country_type = ldragon_country }
 	}
 	option = {

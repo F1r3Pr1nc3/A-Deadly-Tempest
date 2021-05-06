@@ -1,5 +1,5 @@
 namespace = a_deadly_tempest
-# @latest_adt_version = 1.7.0
+# @latest_adt_version = 1.8.0
 #################################################
 #################################################
 #####										#####
@@ -31,12 +31,8 @@ event = {
 				NOT = { exists = event_target:CmtGlobalVar }
 			}
 			if = {
-				limit = {
-					exists = event_target:global_event_country
-				}
-				event_target:global_event_country = {
-					save_global_event_target_as = CmtGlobalVar
-				}
+				limit = { exists = event_target:global_event_country }
+				event_target:global_event_country = { save_global_event_target_as = CmtGlobalVar }
 			}
 			else_if = {
 				limit = {
@@ -103,12 +99,8 @@ event = {
 				NOT = { exists = event_target:CmtGlobalVar }
 			}
 			if = {
-				limit = {
-					exists = event_target:global_event_country
-				}
-				event_target:global_event_country = {
-					save_global_event_target_as = CmtGlobalVar
-				}
+				limit = { exists = event_target:global_event_country }
+				event_target:global_event_country = { save_global_event_target_as = CmtGlobalVar }
 			}
 			else_if = { limit = { exists = this is_scope_type = country is_country_type = global_event }
 				save_global_event_target_as = CmtGlobalVar
@@ -162,22 +154,16 @@ event = {
 	immediate = {
 		# incrase fleet power over time
 		event_target:CmtGlobalVar = {
-			change_variable = {
-				which = CmtVarFleetPower_Graygoo
-				value = 0.5
-			}
+			change_variable = { which = CmtVarFleetPower_Graygoo value = 0.5 }
 		}
 		event_target:graygoo_country = {
-			country_event = {
-				id = graygoo.3
-				days = 3
-			}
+			country_event = { id = graygoo.3 days = 3 }
 		}
 	}
 }
 
 ###########################
-###  Dessanu / Graygoo  ###
+### Dessanu / Graygoo ###
 ###########################
 # CmtEffectCreateNanitieFactory
 planet_event = {
@@ -342,10 +328,7 @@ country_event = {
 					}
 				}
 			}
-			country_event = {
-				id = a_deadly_tempest.8
-				days = 2
-			}
+			country_event = { id = a_deadly_tempest.8 days = 2 }
 		}
 	}
 	option = {
@@ -378,10 +361,7 @@ country_event = {
 							has_technology = tech_nanite_torpedo
 						}
 						give_technology = { tech = tech_nanite_torpedo }
-						change_variable = {
-							which = "picked_tech"
-							value = 1
-						}
+						change_variable = { which = "picked_tech" value = 1 }
 						tooltip = {
 							give_technology = { tech = tech_nanite_torpedo }
 						}
@@ -393,10 +373,7 @@ country_event = {
 							has_technology = tech_adt_energymissiles
 						}
 						give_technology = { tech = tech_adt_energymissiles }
-						change_variable = {
-							which = "picked_tech"
-							value = 1
-						}
+						change_variable = { which = "picked_tech" value = 1 }
 						tooltip = {
 							give_technology = { tech = tech_adt_energymissiles }
 						}
@@ -408,10 +385,7 @@ country_event = {
 							has_technology = tech_nanite_strike_craft
 						}
 						give_technology = { tech = tech_nanite_strike_craft }
-						change_variable = {
-							which = "picked_tech"
-							value = 1
-						}
+						change_variable = { which = "picked_tech" value = 1 }
 						tooltip = {
 							give_technology = { tech = tech_nanite_strike_craft }
 						}
@@ -423,10 +397,7 @@ country_event = {
 							has_technology = tech_adt_gg_beam
 						}
 						give_technology = { tech = tech_adt_gg_beam }
-						change_variable = {
-							which = "picked_tech"
-							value = 1
-						}
+						change_variable = { which = "picked_tech" value = 1 }
 						tooltip = {
 							give_technology = { tech = tech_adt_gg_beam }
 						}
@@ -438,10 +409,7 @@ country_event = {
 							has_technology = tech_nanocrystals
 						}
 						give_technology = { tech = tech_nanocrystals }
-						change_variable = {
-							which = "picked_tech"
-							value = 1
-						}
+						change_variable = { which = "picked_tech" value = 1 }
 						tooltip = {
 							give_technology = { tech = tech_nanocrystals }
 						}
@@ -453,10 +421,7 @@ country_event = {
 							has_technology = tech_nanite_living_metal
 						}
 						give_technology = { tech = tech_nanite_living_metal }
-						change_variable = {
-							which = "picked_tech"
-							value = 1
-						}
+						change_variable = { which = "picked_tech" value = 1 }
 						tooltip = {
 							give_technology = { tech = tech_nanite_living_metal }
 						}
@@ -468,10 +433,7 @@ country_event = {
 							has_technology = tech_nanite_modular_engineering
 						}
 						give_technology = { tech = tech_nanite_modular_engineering }
-						change_variable = {
-							which = "picked_tech"
-							value = 1
-						}
+						change_variable = { which = "picked_tech" value = 1 }
 						tooltip = {
 							give_technology = { tech = tech_nanite_modular_engineering }
 						}
@@ -483,10 +445,7 @@ country_event = {
 							has_technology = tech_nanite_build_speed
 						}
 						give_technology = { tech = tech_nanite_build_speed }
-						change_variable = {
-							which = "picked_tech"
-							value = 1
-						}
+						change_variable = { which = "picked_tech" value = 1 }
 						tooltip = {
 							give_technology = { tech = tech_nanite_build_speed }
 						}
@@ -572,8 +531,8 @@ country_event = {
 
 country_event = {
 	id = a_deadly_tempest.8
-	title = "leviathans.2152.c"
-	desc = "leviathans.2157.a.tooltip"
+	# title = "leviathans.2152.c"
+	# desc = "leviathans.2157.a.tooltip"
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -690,7 +649,14 @@ country_event = {
 			}
 		}
 		else_if = {
-			limit = { from = { is_robot_empire = yes is_species_class = ROBOT } }
+			limit = {
+				from = {
+					OR = {
+						is_robot_empire = yes is_species_class = ROBOT
+						has_technology = tech_nanite_ships
+					}
+				}
+			}
 			random_list = {
 				8 = { }
 				2 = {
@@ -708,9 +674,7 @@ fleet_event = {
 	is_triggered_only = yes
 	location = root
 	trigger = {
-		any_owned_ship = {
-			is_disabled = yes
-		}
+		any_owned_ship = { is_disabled = yes }
 	}
 	immediate = {
 		every_owned_ship = {
@@ -1099,9 +1063,7 @@ country_event = {
 		}
 		exists = FromFromFrom
 		FromFrom = {
-			any_owned_ship = {
-				is_disabled = yes
-			}
+			any_owned_ship = { is_disabled = yes }
 		}
 	}
 	immediate = {
@@ -1272,9 +1234,7 @@ country_event = {
 	id = a_deadly_tempest.137
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		exists = event_target:graygoo_country
-	}
+	trigger = { exists = event_target:graygoo_country }
 	immediate = {
 		event_target:graygoo_country = {
 			# Pre-Ketlings
@@ -1491,10 +1451,7 @@ country_event = {
 								remove_auto_move_target = yes
 								clear_fleet_actions = this
 								event_target:graygoo_country = {
-									change_variable = {
-										which = "fleetCounter"
-										value = 1
-									}
+									change_variable = { which = "fleetCounter" value = 1 }
 								}
 								queue_actions = {
 									move_to = event_target:main_star
@@ -1508,14 +1465,9 @@ country_event = {
 					}
 				}
 			}
-			country_event = {
-				id = a_deadly_tempest.161				# break
-				days = 61
-			}
-			country_event = {
-				id = a_deadly_tempest.97
-				days = 90
-			}
+			# break
+			country_event = { id = a_deadly_tempest.161 days = 61 }
+			country_event = { id = a_deadly_tempest.97 days = 90 }
 		}
 	}
 }
@@ -1622,10 +1574,7 @@ country_event = {
 				}
 			}
 		}
-		country_event = {
-			id = a_deadly_tempest.98
-			days = 30
-		}
+		country_event = { id = a_deadly_tempest.98 days = 30 }
 	}
 }
 
@@ -1679,10 +1628,7 @@ country_event = {
 					value = PREV
 				}
 			}
-			change_variable = {
-				which = CmtVarCapitalDefenceNumber
-				value = 3
-			}
+			change_variable = { which = CmtVarCapitalDefenceNumber value = 3 }
 			# +3 minimum
 			# log = "CmtVarCapitalDefenceNumber [graygoo_country.CmtVarCapitalDefenceNumber] - [lcluster_factory_system.CmtVarCapitalDefenceNumber]."
 			if = {
@@ -1696,10 +1642,7 @@ country_event = {
 						is_ship_size = graygoo_mothership
 					}
 					PREV = {
-						change_variable = {
-							which = CmtVarCapitalDefenceNumber
-							value = -1
-						}
+						change_variable = { which = CmtVarCapitalDefenceNumber value = -1 }
 					}
 				}
 			}
@@ -1748,10 +1691,7 @@ country_event = {
 				}
 				# log = "shoal base Guard [This.GetFleetName] returning to [Prev.Planet.GetName]"
 				event_target:graygoo_country = {
-					change_variable = {
-						which = "fleetCounter"
-						value = 1
-					}
+					change_variable = { which = "fleetCounter" value = 1 }
 				}
 				shoal_factory_guard_queue = { NUM = "graygoo_country.fleetCounter" }
 			}
@@ -1790,10 +1730,7 @@ country_event = {
 			remove_auto_move_target = yes			# works although has_auto_move_target says no!?
 			# set_timed_fleet_flag = { flag = guard_returning days = 61 }
 		}
-		country_event = {
-			id = a_deadly_tempest.97
-			days = 18
-		}
+		country_event = { id = a_deadly_tempest.97 days = 18 }
 	}
 }
 
@@ -1825,9 +1762,7 @@ country_event = {
 		event_target:graygoo_country = {
 			if = {
 				limit = { NOT = { exists = event_target:gray_species } }
-				species = {
-					save_global_event_target_as = gray_species
-				}
+				species = { save_global_event_target_as = gray_species }
 			}
 			set_faction_hostility = {
 				target = prev
@@ -1878,10 +1813,7 @@ country_event = {
 			}
 			last_created_army = { assign_leader = last_created_leader }
 			# Mothership creates ships
-			country_event = {
-				id = a_deadly_tempest.105
-				days = 1800
-			}
+			country_event = { id = a_deadly_tempest.105 days = 1800 }
 			# Run Patrol
 			country_event = { id = a_deadly_tempest.96 }
 			set_country_flag = adtFlagActiveMothershipRebuild
@@ -2085,10 +2017,7 @@ country_event = {
 			limit = {
 				NOT = { has_country_flag = encountered_first_lgate }
 			}
-			country_event = {
-				id = a_deadly_tempest.13080
-				days = 5
-			}
+			country_event = { id = a_deadly_tempest.13080 days = 5 }
 			# }
 		}
 	}
@@ -2237,5 +2166,153 @@ country_event = {
 		# 	option = orbital_bombardment_indiscriminate
 		# 	cooldown = no
 		# }
+	}
+}
+
+## Limit Bulwarks, add restore feature
+# on build defense bulwark station
+ship_event = {
+	id = a_deadly_tempest.221
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		# is_ship_class = shipclass_military_station
+		is_ship_size = military_station_nanite_bulwark
+		# owner = {
+		# 	OR = {
+		# 		has_technology = tech_nanite_ships
+		# 		is_robot_empire = yes
+		# 	}
+		# }
+	}
+	immediate = {
+		set_disable_at_health = 0.001
+	}
+}
+
+# on Bulwark Disabled
+# This = Ship
+# From = Disabler Ship
+ship_event = {
+	id = a_deadly_tempest.222
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		# is_ship_class = shipclass_military_station
+		is_ship_size = military_station_nanite_bulwark
+		is_disabled = yes
+		# owner = { is_country_type_with_subjects = yes }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				from.owner = {
+					OR = {
+						is_robot_empire = yes
+						has_technology = tech_nanite_ships
+					}
+				}
+			}
+			ship_event = { id = a_deadly_tempest.223 days = 30 }
+			set_disable_at_health = 0.001
+		} else = {
+			set_disable_at_health = -1
+			set_disabled = no
+		}
+	}
+}
+# restore defense station
+ship_event = {
+	id = a_deadly_tempest.223
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ship_class = shipclass_military_station
+		is_ship_size = military_station_nanite_bulwark
+		is_disabled = yes
+		# owner = { is_valid_nanite_country = yes }
+	}
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						is_robot_empire = yes
+						has_technology = tech_nanite_ships
+					}
+				}
+			}
+			if = {
+				limit = { has_hp_percentage >= 0.9 }
+				set_disabled = no
+			} else = {
+				repair_percentage = 0.1
+				ship_event = { id = a_deadly_tempest.223 days = 30 }
+			}
+		} else = {
+			set_disable_at_health = -1
+			# set_disabled = no
+			if = {
+				limit = { has_hp_percentage < 0.15 }
+				destroy_ship = this
+			}
+		}
+	}
+}
+
+# on_starbase_transfer - destroy nanite tech
+# THIS = Ship (Starbase)
+# FROM = Former Owner (Country)
+ship_event = {
+	id = a_deadly_tempest.224
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { exists = starbase }
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = owner }
+					owner = {
+						NOR = {
+							is_robot_empire = yes
+							has_technology = tech_nanite_ships
+						}
+					}
+				}
+			}
+			starbase = {
+				remove_starbase_building = { building = nanite_yards }
+				# remove_starbase_module = { module = }
+			}
+			if = {
+				limit = {
+					exists = fleet
+					fleet = { any_owned_ship = { is_ship_size = military_station_nanite_bulwark } }
+				}
+				fleet = {
+					every_owned_ship = {
+						limit = { is_ship_size = military_station_nanite_bulwark }
+						set_disable_at_health = -1
+						set_disabled = no
+						destroy_ship = this
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				exists = fleet
+				fleet = { any_owned_ship = { is_ship_size = military_station_nanite_bulwark } }
+			}
+			fleet = {
+				every_owned_ship = {
+					limit = { is_ship_size = military_station_nanite_bulwark }
+					ship_event = { id = a_deadly_tempest.221 days = 1 }
+					ship_event = { id = a_deadly_tempest.222 days = 2 }
+				}
+			}
+		}
 	}
 }

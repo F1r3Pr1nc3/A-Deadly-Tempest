@@ -87,12 +87,20 @@ country_event = {
 	immediate = {
 		every_country = {
 			limit = {
+				is_country_type_with_subjects = yes
 				has_communications = fromfrom
-				OR = {
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophile
-					has_civic = civic_machine_servitor
+				NOR = {
+					is_same_empire = ROOT
+					has_policy_flag = orbital_bombardment_armageddon
+					has_civic = civic_fanatic_purifiers
+					has_civic = civic_hive_devouring_swarm
+					has_civic = civic_machine_assimilator
 				}
+				# OR = {
+				# 	has_ethic = ethic_fanatic_xenophile
+				# 	has_ethic = ethic_xenophile
+				# 	has_civic = civic_machine_servitor
+				# }
 			}
 			add_opinion_modifier = {
 				modifier = opinion_converted_a_world

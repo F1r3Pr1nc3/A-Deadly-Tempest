@@ -122,6 +122,11 @@ on_join_federation = {
 		a_deadly_tempest.13079
 	}
 }
+on_ship_built = {
+	events = {
+		a_deadly_tempest.221
+	}
+}
 
 # This = owner of ship 1 (combatant)
 # From = owner of ship 2 (destroyed)
@@ -133,7 +138,17 @@ on_ship_destroyed_perp = {
 		2 = a_deadly_tempest.36
 	}
 }
-
+# This = Ship
+# From = Disabler Ship
+on_ship_disabled = {
+	events = {
+		a_deadly_tempest.222
+	}
+	# random_events = {
+	# 	1 = 0
+	# 	9 = a_deadly_tempest.222
+	# }
+}
 # Called upon entering FTL (on-action name scripted on the Bypass type)
 # THIS = Fleet
 # FROM = System jumping to
@@ -161,5 +176,14 @@ on_emergency_ftl = {
 on_space_battle_won = {
 	events = {
 		a_deadly_tempest.40
+	}
+}
+# Called when a Starbase changes owner
+# THIS = Ship (Starbase)
+# FROM = Former Owner (Country)
+on_starbase_transfer = {
+	events = {
+		# action.223
+		a_deadly_tempest.224
 	}
 }
