@@ -33,3 +33,19 @@ check_fleet_count_in_system = {
 	}
 	# else = { log = "Wrong scope in count_fleet_in_system [This.GetName]" }
 }
+
+is_nanite_country = {
+	OR = {
+		is_country_type = gate_builders
+		is_country_type = awakened_gate_builders
+		is_country_type = gray_goo
+		AND = {
+			exists = event_target:graygoo_country
+			is_same_empire = event_target:graygoo_country
+		}
+		AND = {
+			exists = event_target:gate_builders
+			is_same_empire = event_target:gate_builders
+		}
+	}
+}

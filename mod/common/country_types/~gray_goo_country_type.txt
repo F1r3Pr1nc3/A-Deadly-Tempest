@@ -1,7 +1,7 @@
 gate_builders = {
 	# has_difficulty_bonuses = yes
-	scaled_difficulty_bonuses = 1.5 # has become other advantages
-	counts_for_victory = no
+	scaled_difficulty_bonuses = 2.0 # 3.0 has become other advantages
+	# counts_for_victory = no
 	# sub_title = "COUNTRY_FALLEN_EMPIRE"
 	# sub_title_desc = "COUNTRY_FALLEN_EMPIRE_DESC"
 	# destroys_starbases = yes
@@ -17,7 +17,7 @@ gate_builders = {
 	has_complete_sensor = yes
 	# government = yes
 	playable = no
-	# diplomatic_wars = yes
+	diplomatic_wars = no
 	# ship_disengagement = yes
 	army_disengagement = yes
 	pop_growth = no
@@ -40,12 +40,12 @@ gate_builders = {
 		construction = yes
 		limited_construction = yes
 		tech = no
-		avoid_enemies = yes
+		# avoid_enemies = yes
 		modules = {
-			# military_minister_module
+			military_minister_module
 			anti_crisis_military_minister_module
-			foreign_minister_module
-			interior_minister_module
+			# foreign_minister_module
+			# interior_minister_module
 		}
 		army_data = {
 			xenomorph_army = {
@@ -117,8 +117,8 @@ gate_builders = {
 		}
 		all_technology_module = {}
 		standard_event_module = {}
-		# standard_leader_module = {} # get  Savegame compatibility warning
 		standard_economy_module = {}
+		# standard_leader_module = {} # get  Savegame compatibility warning
 	}
 
 	resources = {
@@ -151,16 +151,17 @@ awakened_gate_builders = {
 	scaled_difficulty_bonuses = 1.0	# TODO
 	# destroys_starbases = yes
 	show_in_contacts_list = yes
-	counts_for_victory = yes
+	counts_for_victory = no
 	sub_title = "COUNTRY_AWAKENED_FALLEN_EMPIRE"
 	sub_title_desc = "COUNTRY_AWAKENED_FALLEN_EMPIRE_DESC"
 	share_survey_data = no
-	relations = yes
+	enforces_borders = no
+	relations = no
 	fallen_empire = yes
 	awakened_fallen_empire = yes
 	needs_survey = no
 	has_complete_sensor = yes
-	diplomatic_wars = yes
+	diplomatic_wars = no
 	ship_disengagement = yes
 	army_disengagement = yes
 	home_system = lcluster4b
@@ -171,7 +172,7 @@ awakened_gate_builders = {
 	can_use_invalid_technology = no
 	observable = yes
 	# can_receive_envoys = yes
-	uses_origins = yes
+	# uses_origins = yes
 
 	targets = {
 		awakened_fallen_empire
@@ -188,7 +189,7 @@ awakened_gate_builders = {
 		internal_policies = yes
 		starbase_upgrade = yes
 		modification = yes
-		government = no
+		government = yes
 		construction = yes
 		tech = yes
 		avoid_enemies = no
@@ -197,8 +198,8 @@ awakened_gate_builders = {
 			# invaders_military_minister_module
 			machine_military_minister_module
 			machine_interior_minister_module
-			military_minister_module
-			interior_minister_module
+			# military_minister_module
+			# interior_minister_module
 			foreign_minister_module
 		}
 
@@ -311,7 +312,7 @@ awakened_gate_builders = {
 	faction = {
 		hostile = no
 		auto_delete = yes
-		needs_border_access = yes
+		needs_border_access = no
 		needs_colony = no
 		generate_borders = yes
 		hostile_when_attacked = yes

@@ -878,7 +878,7 @@ country_event = {
 									}
 									if = { limit = { is_ai = yes is_country_type = default }
 										event_target:dragons_target = {
-											system_event = { id = distar.13012 days = 120 random = 40 }
+											system_event = { id = distar.13012 days = 160 random = 40 }
 										}
 									}
 								}
@@ -888,10 +888,11 @@ country_event = {
 								exists = space_owner
 								space_owner = { is_ai = yes is_country_type = default }
 							}
-							system_event = { id = distar.13012 days = 150 random = 50 }
+							system_event = { id = distar.13012 days = 240 random = 60 }
 						} else = {
-							system_event = { id = distar.13012 days = 360 random = 120 }
+							system_event = { id = distar.13012 days = 480 random = 120 }
 						}
+						system_event = { id = distar.13012 days = 800 random = 200 }
 						star = {
 							create_fleet = {
 								name = "NAME_Young_Dragon"
@@ -982,19 +983,18 @@ country_event = {
 	option = { name = distar.13011.a }
 }
 
-# AI Helper Anomaly (3.0.3 added by FirePrince (ADT))
+# AI Helper Anomaly (3.0.2 added by FirePrince (ADT))
 system_event = {
 	id = distar.13012
 	hide_window = yes
 	is_triggered_only = yes
-	# trigger = {
-	# 	is_ai = yes
-	# 	is_country_type = default
-	# 	has_country_flag = knows_ldragon
-	# }
+	trigger = {
+		star = {
+			NOT = { has_planet_flag = ldragon_recruited }
+		}
+	}
 	immediate = {
-		#create_point_of_interest
-		# save_event_target_as = disturbance_system
+		# create point of interest
 		if = {
 			limit = {
 				exists = space_owner
@@ -1008,9 +1008,6 @@ system_event = {
 					}
 				}
 			}
-			# add_anomaly = {
-			# 	category = DISTAR_LDRAGON_AI_CAT target = root.space_owner
-			# }
 			enable_special_project = {
 				name = TAME_LDRAGON_PROJECT
 				location = star
@@ -1020,7 +1017,15 @@ system_event = {
 				if = {
 					limit = { has_federation = yes }
 					every_federation_ally = {
-						limit = { is_ai = yes is_country_type = default }
+						limit = {
+							is_ai = yes
+							is_country_type = default
+							NOR = {
+								is_homicidal = yes
+								has_ethic = ethic_fanatic_xenophobe
+								has_special_project = TAME_LDRAGON_PROJECT
+							}
+						}
 						enable_special_project = {
 							name = TAME_LDRAGON_PROJECT
 							location = root.star
@@ -1039,6 +1044,7 @@ system_event = {
 					NOR = {
 						is_homicidal = yes
 						has_ethic = ethic_fanatic_xenophobe
+						has_special_project = TAME_LDRAGON_PROJECT
 					}
 				}
 				root.star = {
@@ -1071,7 +1077,6 @@ country_event = {
 	location = fromfrom
 	is_triggered_only = yes
 	trigger = {
-		# is_country_type = default
 		is_country_type_with_subjects = yes
 		from = { is_country_type = ldragon_country }
 	}

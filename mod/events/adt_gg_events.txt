@@ -139,7 +139,7 @@ event = {
 }
 
 ####################################
-# Nanites spawn more fleets and ships over time
+# Nanites spawn more ships over time
 ####################################
 ## Reinforcements 1
 event = {
@@ -162,9 +162,9 @@ event = {
 	}
 }
 
-###########################
+#########################
 ### Dessanu / Graygoo ###
-###########################
+#########################
 # CmtEffectCreateNanitieFactory
 planet_event = {
 	id = a_deadly_tempest.4

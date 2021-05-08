@@ -167,14 +167,11 @@ planet_event = {
 
 	trigger = {
 		planet_devastation > 99
+		count_planet_army = { count < 2 }
 		OR = {
 			has_orbital_bombardment_stance = nanitebombard
 			FROM = {
-				OR = {
-					is_country_type = gray_goo
-					is_country_type = gate_builders
-					is_country_type = awakened_gate_builders
-				}
+				is_nanite_country = yes
 			}
 		}
 	}
@@ -353,11 +350,7 @@ country_event = {
 		FROMFROM = { is_ship_size = npc_warship_01 }
 		FROM = {
 			is_ai = yes
-			OR = {
-				is_country_type = gate_builders
-				is_country_type = gray_goo
-				is_same_empire = event_target:graygoo_country
-			}
+			is_nanite_country = yes
 		}
 	}
 
@@ -422,13 +415,14 @@ country_event = {
 			limit = { CmtTriggerIsClosedLgate = yes }
 			CmtEffectOpenLgate = yes
 		}
-		# if = {
-		# 	limit = { NOT = { exists = event_target:lcluster_factory_system } }
-		# 	random_system = {
-		# 		limit = { has_star_flag = graygoo_factory_system }
-		# 		save_global_event_target_as = lcluster_factory_system
-		# 	}
-		# }
+		# Fallback needed for second attempt
+		if = {
+			limit = { NOT = { exists = event_target:lcluster_factory_system } }
+			random_system = {
+				limit = { has_star_flag = graygoo_factory_system }
+				save_global_event_target_as = lcluster_factory_system
+			}
+		}
 		### Create Country
 		event_target:lcluster_factory_system = {
 			random_system_planet = {
@@ -1213,6 +1207,8 @@ country_event = {
 }
 
 ### Invaded Dessanu Planet
+# Triggers country_event for the attacker upon victory (Before controller is switched)
+# IDENTITIES: attacker is the side that "IsHostile" to the planet controller; e.g. spawned monster armies are attackers, but if they win and the player attempts to retake the planet, the player is the attacker
 country_event = {
 	id = graygoo.150
 	title = graygoo.150.name
@@ -1237,9 +1233,14 @@ country_event = {
 	location = fromfrom
 
 	is_triggered_only = yes
-
+	# This = country, leader attacker
+	# From = country, planet owner
+	# FromFrom = planet
 	trigger = {
-		from = { is_country_type = gate_builders }
+		NOT = {
+			is_nanite_country = yes
+		}
+		from = { is_nanite_country = yes }
 	}
 
 	immediate = {
@@ -1268,9 +1269,12 @@ country_event = {
 				if = {
 					limit = {
 						has_star_flag = lcluster
-						NOT = { any_system_planet = { is_owned_by = from } }
+						# NOT = { has_star_flag = lcluster1 }
+						# from.owner = planet
+						NOT = { any_system_planet = { is_owned_by = root.from } }
 					}
 					every_system_megastructure = {
+						limit = { NOT = { is_megastructure_type = lgate_base } }
 						delete_megastructure = this
 					}
 				}
@@ -1376,10 +1380,7 @@ ship_event = {
 				is_ship_size = graygoo_factory
 				exists = owner
 				owner = {
-					OR = {
-						is_country_type = gray_goo
-						is_country_type = gate_builders
-					}
+					is_nanite_country = yes
 				}
 			}
 		}
@@ -1401,7 +1402,7 @@ ship_event = {
 		owner = { country_event = { id = graygoo.158 } }
 
 		if = {
-			limit = { event_target:nanite_factory = { owner = { is_country_type = gate_builders } } }
+			limit = { event_target:nanite_factory = { owner = { is_nanite_country = yes } } }
 			owner = { country_event = { id = graygoo.159 days = 1 } }
 		}
 	}
@@ -1604,18 +1605,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			is_country_type = gate_builders
-			is_country_type = gray_goo
-			AND = {
-				exists = event_target:graygoo_country
-				is_same_empire = event_target:graygoo_country
-			}
-			AND = {
-				exists = event_target:gate_builders
-				is_same_empire = event_target:gate_builders
-			}
-		}
+		is_nanite_country = yes
 		fromfrom = { is_ship_size = graygoo_factory }
 	}
 
@@ -1673,7 +1663,7 @@ country_event = {
 				remove_star_flag = graygoo_factory_system
 			}
 			CmtEffectDestroyGraygoo = yes # call graygoo.15
-			break = yes # TODO
+			# break = yes # TODO
 			## colonize random planet
 			random_system = {
 				limit = {
@@ -2086,6 +2076,7 @@ country_event = {
 				}
 				# Remove megastructures
 				every_system_megastructure = {
+					limit = { NOT = { is_megastructure_type = lgate_base } }
 					remove_megastructure = this
 					# TODO explosion
 					# create_ambient_object = {
