@@ -1,9 +1,25 @@
 ESGO = {
 	esgoo = {
 		name = "Gray Goo"
-		plural = "Gray Goos"
+		plural = "Gray Goo"
 		home_planet = Dessanu
 		home_system = Dessanu
 		name_list = "graygoo"
+	}
+}
+named_lists = {
+	graygoo = {
+		Species_1 = {
+			name = "Nanite"
+			plural = "Nanites"
+		}
+		Species_2 = {
+			name = "Gray Goo"
+			plural = "Gray Goos"
+		}
+		Species_3 = {
+			name = "Gray Dessanu"
+			plural = "Gray Dessanu"
+		}
 	}
 }

@@ -7,9 +7,8 @@
  mother_ship_hire:0 "Gray can create a $NAME_Nanite_Warship$ for our use, however Gray will not create more than five for our empire; for a massive cost in resources to create the nanites for the ship.\nThese ships are capable of creating smaller ships to escort them but only if the mothership is still intact. But in times of great crisis they might be able to create more...\nGray can create these ships no matter what form it takes as long as Gray is not reforming."
 
  a_deadly_tempest.82.name:0 "[From.GetName] Engulfed"
- a_deadly_tempest.82.desc:0 "A fleet belonging to the §H[From.From.GetName]§! has massacred the population of §H[From.GetName]§!! After a massed and unrelenting orbital bombardment campaign, all population centers on the surface have been systematically wiped out, reducing the [From.GetPlanetMoon] to an lifeless husk that is now only covered in countless nanite swarms."
- a_deadly_tempest.82.a:0 "This atrocity must be avenged!"
- a_deadly_tempest.83.desc:0 "Our forces report that they have concluded the orbital bombardment of §H[From.GetName]§!. All population centers have been systematically eradicated, and the surface [From.GetPlanetMoon] is now only covered in countless nanite swarms."
+ a_deadly_tempest.82.desc:0 "A fleet belonging to the §H[FromFromFrom.GetName]§! has massacred the population of §H[From.GetName]§!! After a massed and unrelenting orbital bombardment campaign, all population centers on the surface have been systematically wiped out, reducing the [From.GetPlanetMoon] to an lifeless husk that is now only covered in countless nanite swarms." # mod copy of action.82.desc
+ a_deadly_tempest.83.desc:0 "Our forces report that they have concluded the orbital bombardment of §H[From.GetName]§!. All population centers have been systematically eradicated, and the surface [From.GetPlanetMoon] is now only covered in countless nanite swarms." # mod copy of action.83.desc
 
  a_deadly_tempest.17.name:0 "The End of [graygoo_country.GetName]"
  a_deadly_tempest.17.desc:0 ""

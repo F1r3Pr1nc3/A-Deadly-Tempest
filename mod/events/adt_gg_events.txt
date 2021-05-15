@@ -626,8 +626,7 @@ country_event = {
 		if = {
 			limit = {
 				OR = {
-					is_country_type = gray_goo
-					is_country_type = gate_builders
+					is_nanite_country = yes
 					is_country_type = cybrex_empire
 				}
 				fromfromfrom = {
@@ -1708,7 +1707,7 @@ country_event = {
 		NOT = { has_country_flag = gk_told_to_leave }
 		exists = event_target:lcluster_factory_system
 		event_target:lcluster_factory_system = {
-			any_fleet_in_system = {
+			any_ship_in_system = {
 				is_owned_by = root
 				is_in_combat = no
 				is_ship_size = graygoo_factory
@@ -1751,10 +1750,17 @@ country_event = {
 		set_country_flag = gate_builder_diplomacy_engaged
 		set_country_flag = gate_builders_hostility
 		if = {
-			limit = { NOT = { exists = event_target:graygoo_country } }
+			limit = { NOT = { exists = event_target:gate_builders } }
 			random_country = {
 				limit = { is_country_type = gate_builders }
-				save_global_event_target_as = graygoo_country
+				save_global_event_target_as = gate_builders
+				save_event_target_as = graygoo_country
+			}
+		}
+		else_if = {
+			limit = { NOT = { exists = event_target:graygoo_country } }
+			event_target:gate_builders = {
+				save_event_target_as = graygoo_country
 			}
 		}
 		# log = "- This [This.GetName] gets hostility to [graygoo_country.GetName]"
@@ -1960,6 +1966,17 @@ country_event = {
 			limit = {
 				has_global_flag = a_deadly_tempest_mod_active
 				exists = event_target:graygoo_country
+				exists = event_target:lcluster_factory_system
+			}
+			# Fallback (savegame comp.) re-save event_targets
+			if = {
+				limit = { NOT = { exists = event_target:nanite_factory } }
+				event_target:lcluster_factory_system = {
+					random_ship_in_system = {
+						limit = { is_ship_size = graygoo_factory }
+						save_global_event_target_as = nanite_factory
+					}
+				}
 			}
 			country_event = { id = a_deadly_tempest.13008 days = 7 }
 		}
@@ -2090,9 +2107,17 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		give_technology = { tech = tech_fission_power message = no }
+		give_technology = { tech = tech_fusion_power message = no }
+		give_technology = { tech = tech_cold_fusion_power message = no }
+		give_technology = { tech = tech_antimatter_power message = no }
+		give_technology = { tech = tech_zero_point_power message = no }
 		give_technology = { tech = tech_space_construction message = no }
 		give_technology = { tech = tech_starbase_1 message = no }
 		give_technology = { tech = tech_starbase_2 message = no }
+		give_technology = { tech = tech_starbase_3 message = no }
+		give_technology = { tech = tech_starbase_4 message = no }
+		give_technology = { tech = tech_starbase_5 message = no }
 		give_technology = { tech = tech_corvettes message = no }
 		give_technology = { tech = tech_arc_emitter_2 message = no }
 		give_technology = { tech = tech_energy_lance_2 message = no }
@@ -2111,11 +2136,11 @@ country_event = {
 		give_technology = { tech = tech_nanite_living_metal message = no }
 		give_technology = { tech = tech_nanite_repair_system message = no }
 		give_technology = { tech = tech_nanite_bombardment message = no }
+		give_technology = { tech = tech_mega_engineering message = no }
 		give_technology = { tech = tech_nanite_mega_construction message = no }
 		give_technology = { tech = tech_lgate_construction message = no }
 		give_technology = { tech = tech_nanite_guardians message = no }
 		give_technology = { tech = tech_nanite_dragon message = no }
-		give_technology = { tech = tech_mega_engineering message = no }
 		if = {
 			limit = { has_federations_dlc = yes }
 			give_technology = { tech = tech_mega_shipyard message = no }

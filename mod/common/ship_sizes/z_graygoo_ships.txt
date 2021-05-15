@@ -750,12 +750,12 @@ starbase_gatebuilders = {
 	acceleration = 0
 	rotation_speed = 0
 	entity = gatebuilder_01_space_station_entity
-	can_be_inspected = yes
+	# can_be_inspected = yes
 
 	modifier = {
 		ship_evasion_mult = -1
-		ship_shield_add = 30000 # vanilla 10000; NSC 80000
-		ship_armor_add = 30000 # vanilla 10000; NSC 80000
+		ship_shield_add = 20000 # vanilla 10000; NSC 80000
+		ship_armor_add = 20000 # vanilla 10000; NSC 80000
 		ship_piracy_suppression_add = 16
 		starbase_module_capacity_add = 6
 		starbase_building_capacity_add = 4
@@ -768,10 +768,10 @@ starbase_gatebuilders = {
 		ship_accuracy_add = 25
 		ship_shield_mult = 1
 	}
-	max_hitpoints = 45000 # vanilla 20000; NSC 90000
+	max_hitpoints = 40000 # vanilla 20000; NSC 90000
 	combat_size_multiplier = 50
-	size_multiplier = 12
-	fleet_slot_size = 6
+	size_multiplier = 8 # v.4
+	fleet_slot_size = 4 # v.2
 	section_slots = { "mid" = { locator = "part1" } }
 
 	num_target_locators = 0

@@ -1058,11 +1058,11 @@ ship_section_template = {
 		template = "invisible_missile_turret"
 		locatorname = "xl_gun_01"
 	}
-	component_slot = {
-		name = "TORPEDO_06"
-		template = "invisible_missile_turret"
-		locatorname = "xl_gun_01"
-	}
+	# component_slot = {
+	# 	name = "TORPEDO_06"
+	# 	template = "invisible_missile_turret"
+	# 	locatorname = "xl_gun_01"
+	# }
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "large_strike_craft"

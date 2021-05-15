@@ -7,7 +7,7 @@ gate_builders = {
 	# destroys_starbases = yes
 	share_survey_data = no
 	# relations = yes
-	fallen_empire = no # TODO too powerfull!?
+	# fallen_empire = yes # TODO too powerful!?
 	piracy_risk	= no
 	custom_diplomacy = yes
 	enforces_borders = no
@@ -17,7 +17,7 @@ gate_builders = {
 	has_complete_sensor = yes
 	# government = yes
 	playable = no
-	diplomatic_wars = no
+	# diplomatic_wars = no
 	# ship_disengagement = yes
 	army_disengagement = yes
 	pop_growth = no
@@ -26,26 +26,26 @@ gate_builders = {
 	can_use_invalid_technology = yes
 	observable = yes
 	# can_receive_envoys = yes
-	# uses_origins = yes # origin_fallen_empire
+	uses_origins = yes # origin_fallen_empire
 
 	ai = {
 		enabled = yes
-		declare_war = yes
-		min_navy_for_wars = 0
-		min_assault_armies_for_wars = 5
-		colonizer = no
-		internal_policies = no
-		starbase_upgrade = no
-		modification = no
-		construction = yes
+		# declare_war = yes
+		# min_navy_for_wars = 0
+		# min_assault_armies_for_wars = @armies_for_declaring_war
+		# colonizer = no
+		# internal_policies = no
+		# starbase_upgrade = no
+		# modification = no
+		# construction = no
 		limited_construction = yes
-		tech = no
+		# tech = no
 		# avoid_enemies = yes
 		modules = {
-			military_minister_module
+			# military_minister_module
 			anti_crisis_military_minister_module
-			# foreign_minister_module
-			# interior_minister_module
+			foreign_minister_module
+			interior_minister_module
 		}
 		army_data = {
 			xenomorph_army = {
@@ -88,7 +88,7 @@ gate_builders = {
 	}
 	faction = {
 		hostile = no
-		# auto_delete = yes
+		auto_delete = yes
 		needs_border_access = no
 		needs_colony = no
 		generate_borders = yes
@@ -107,14 +107,9 @@ gate_builders = {
 				action_declare_war
 				action_offer_peace
 				action_release_subject
-				# action_open_borders
-				# action_close_borders
 			}
 		}
-		tiered_technology_module = {
-			tier = 3
-			rare = yes
-		}
+		tiered_technology_module = { tier = 3 rare = yes }
 		all_technology_module = {}
 		standard_event_module = {}
 		standard_economy_module = {}
@@ -147,32 +142,44 @@ gate_builders = {
 }
 
 awakened_gate_builders = {
+	has_difficulty_bonuses = yes
 	attack_unarmed_orbital_stations = yes
 	scaled_difficulty_bonuses = 1.0	# TODO
-	# destroys_starbases = yes
+	destroys_starbases = yes
+	can_own_empty_planets = yes
 	show_in_contacts_list = yes
 	counts_for_victory = no
 	sub_title = "COUNTRY_AWAKENED_FALLEN_EMPIRE"
 	sub_title_desc = "COUNTRY_AWAKENED_FALLEN_EMPIRE_DESC"
-	share_survey_data = no
+	share_survey_data = yes
+	# custom_diplomacy = yes # TODO?
+	mid_game_crisis = yes
+	# end_game_crisis = yes
 	enforces_borders = no
-	relations = no
+	minimalist_contacts_list_profile = yes
+	orbital_bombardment = yes
+	relations = no # yes
 	fallen_empire = yes
 	awakened_fallen_empire = yes
+	piracy_risk	= no
 	needs_survey = no
 	has_complete_sensor = yes
+	can_planets_be_attacked = yes
+	can_have_their_comms_shared = yes
 	diplomatic_wars = no
+	playable = no
+	# government = no
 	ship_disengagement = yes
 	army_disengagement = yes
 	home_system = lcluster4b
 	hub_system = lcluster5
 	pop_growth = yes
 	uses_special_buildables = yes
-	# custom_starbase = starbase_gatebuilders
-	can_use_invalid_technology = no
+	custom_starbase = starbase_gatebuilders
+	can_use_invalid_technology = yes
 	observable = yes
-	# can_receive_envoys = yes
-	# uses_origins = yes
+	can_receive_envoys = no
+	uses_origins = yes
 
 	targets = {
 		awakened_fallen_empire
@@ -182,25 +189,27 @@ awakened_gate_builders = {
 
 	ai = {
 		enabled = yes
-		declare_war = yes
+		# declare_war = yes
 		min_navy_for_wars = 0.2
 		min_assault_armies_for_wars = @armies_for_declaring_war
 		colonizer = yes
-		internal_policies = yes
+		internal_policies = no
 		starbase_upgrade = yes
-		modification = yes
-		government = yes
+		modification = no
+		government = no
 		construction = yes
+		# limited_construction = yes
 		tech = yes
 		avoid_enemies = no
 		modules = {
 			# anti_crisis_military_minister_module
 			# invaders_military_minister_module
+			# invaders_interior_minister_module
 			machine_military_minister_module
 			machine_interior_minister_module
 			# military_minister_module
 			# interior_minister_module
-			foreign_minister_module
+			# foreign_minister_module
 		}
 
 		army_data = {
@@ -310,19 +319,16 @@ awakened_gate_builders = {
 	}
 
 	faction = {
-		hostile = no
+		hostile = yes
 		auto_delete = yes
 		needs_border_access = no
 		needs_colony = no
 		generate_borders = yes
-		hostile_when_attacked = yes
+		# hostile_when_attacked = yes
 	}
 
 	modules = {
-		tiered_technology_module = {
-			tier = 3
-			rare = yes
-		}
+		tiered_technology_module = { tier = 3 rare = yes }
 		all_technology_module = {}
 		standard_event_module = {}
 		standard_leader_module = {}
@@ -330,42 +336,54 @@ awakened_gate_builders = {
 		standard_expansion_module = {}
 		standard_species_rights_module = {}
 		exclusive_diplomacy_module = {
-			can_receive = {
-				action_declare_war
-				action_offer_peace
-				action_make_rival
-				action_end_rivalry
-				action_offer_trade_deal
-				action_cancel_trade_deal
-				action_insult
-				action_ask_to_become_thrall
-				action_ask_to_become_dominion
-				action_ask_to_become_satellite
-				action_ask_to_become_signatory
-				action_ask_to_be_released_subject
-				action_ask_to_join_federation
-				action_invite_to_federation
-				action_leave_federation
-				action_kick_from_federation
-			}
-			can_send = {
-				action_declare_war
-				action_make_rival
-				action_end_rivalry
-				action_offer_peace
-				action_offer_trade_deal
-				action_cancel_trade_deal
-				action_demand_thrall
-				action_demand_dominion
-				action_demand_satellite
-				action_demand_signatory
-				action_release_subject
-				action_invite_to_federation
-				action_leave_federation
-				action_kick_from_federation
-				action_open_borders
-				action_close_borders
-			}
+			# contact_rule = always
+			contact_rule = on_action_only
+			# can_receive = {
+			# 	action_declare_war
+			# 	action_offer_peace
+			# 	action_ask_to_be_released_subject
+			# }
+			# can_send = {
+			# 	action_declare_war
+			# 	action_offer_peace
+			# 	action_release_subject
+			# }
+			# can_receive = {
+			# 	action_declare_war
+			# 	action_offer_peace
+			# 	action_make_rival
+			# 	action_end_rivalry
+			# 	action_offer_trade_deal
+			# 	action_cancel_trade_deal
+			# 	action_insult
+			# 	action_ask_to_become_thrall
+			# 	action_ask_to_become_dominion
+			# 	action_ask_to_become_satellite
+			# 	action_ask_to_become_signatory
+			# 	action_ask_to_be_released_subject
+			# 	action_ask_to_join_federation
+			# 	action_invite_to_federation
+			# 	action_leave_federation
+			# 	action_kick_from_federation
+			# }
+			# can_send = {
+			# 	action_declare_war
+			# 	action_make_rival
+			# 	action_end_rivalry
+			# 	action_offer_peace
+			# 	action_offer_trade_deal
+			# 	action_cancel_trade_deal
+			# 	action_demand_thrall
+			# 	action_demand_dominion
+			# 	action_demand_satellite
+			# 	action_demand_signatory
+			# 	action_release_subject
+			# 	action_invite_to_federation
+			# 	action_leave_federation
+			# 	action_kick_from_federation
+			# 	action_open_borders
+			# 	action_close_borders
+			# }
 		}
 	}
 
@@ -432,7 +450,7 @@ gray_goo = {
 		hostile = yes
 		# auto_delete = yes
 		needs_border_access = no
-		generate_borders = no #no?
+		generate_borders = no
 		needs_colony = no
 		# show_borders_in_us = no # Error: "Unexpected token"???
 	}
@@ -441,10 +459,7 @@ gray_goo = {
 			contact_rule = on_action_only # Nothing is allowed, but we need this for relationships.
 			#contact_rule = script_only
 		}
-		tiered_technology_module = {
-			tier = 3
-			rare = no
-		}
+		tiered_technology_module = { tier = 3 rare = no }
 		standard_event_module = {}
 	}
 }

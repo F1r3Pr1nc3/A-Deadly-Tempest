@@ -753,6 +753,7 @@ country_event = {
 					activate_gateway = this
 					set_megastructure_flag = lgate_activated
 				}
+				set_star_flag = swarm_invasion_warning
 			}
 			event_target:lcluster1b = {
 				add_hyperlane = {

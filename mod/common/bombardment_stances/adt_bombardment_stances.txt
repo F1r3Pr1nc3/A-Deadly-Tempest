@@ -6,8 +6,10 @@ nanitebombard = {
 				is_nanite_country = yes
 				AND = {
 					has_technology = tech_nanite_bombardment
-					has_policy_flag = orbital_bombardment_armageddon
-					# OR = { has_policy_flag = orbital_bombardment_indiscriminate }
+					OR = {
+						has_policy_flag = orbital_bombardment_armageddon
+						has_policy_flag = orbital_bombardment_indiscriminate
+					}
 				}
 			}
 		}

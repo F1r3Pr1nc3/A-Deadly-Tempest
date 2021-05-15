@@ -210,6 +210,7 @@ country_event = {
 	}
 }
 
+# (ADT)
 country_event = {
 	# id = fallen_empires_awakening.3
 	id = crisis.2003 #adt only
@@ -219,30 +220,123 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_country_type = awakened_gate_builders # awakened_fallen_empire
-		if = { limit = { has_ethic = "ethic_fanatic_xenophile" }
-			country_remove_ethic = "ethic_fanatic_xenophile"
+		if = {
+			limit = { NOT = { exists = event_target:gray_species } }
+			species = { save_event_target_as = gray_species }
 		}
+		clear_ethos = yes
+		if = {
+			limit = {
+				has_policy_flag = robots_outlawed
+			}
+			set_policy = {
+				policy = robot_pop_policy
+				option = robot_pops_allowed
+				cooldown = no
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_policy_flag = ai_servitude
+					has_policy_flag = ai_outlawed
+				}
+			}
+			set_policy = {
+				policy = artificial_intelligence_policy
+				option = ai_full_rights
+				cooldown = no
+			}
+		}
+		set_government_cooldown = no
+		shift_ethic = ethic_gestalt_consciousness
+
 		if = { limit = { NOT = { has_ethic = "ethic_gestalt_consciousness" } }
 			country_add_ethic = "ethic_gestalt_consciousness"
 		}
-		# authority = auth_ancient_machine_intelligence
-		# civic = civic_revanchist_fervor
-		# civic = civic_ancient_caches_of_technology
+
 		change_government = {
 			authority = auth_machine_intelligence
-			civics = {
-				civic = civic_awakened_machine
-				civic = civic_final_defense_protocols
-				civic = civic_machine_nanites_culture
-			}
+			# authority = auth_ancient_machine_intelligence
+			cooldown = no
+			# civics = {
+			# 	# civic = civic_final_defense_protocols
+			# 	# civic = civic_awakened_machine
+			# 	civic = civic_machine_nanites_culture
+			# }
+			remove_invalid_civics = yes
 		}
+
+		create_species = {
+			name = "ESGO"
+			class = "ESGO" #MACHINE
+			portrait = lithnanite # event_target:gray_species
+			traits = {
+				trait = "trait_pc_machine_preference"
+				trait = "trait_machine_unit"
+				# trait = "trait_robot_enhanced_memory"
+				# trait = "trait_robot_loyalty_circuits"
+				trait = "trait_robot_superconductive"
+				trait = "trait_robot_mass_produced"
+				trait = "trait_robot_streamlined_protocols"
+				trait = "trait_robot_durable"
+				trait = "trait_robot_recycled"
+				trait = "trait_robot_high_maintenance"
+				trait = "trait_robot_uncanny"
+			}
+			immortal = yes
+			# effect = {}
+		}
+		change_dominant_species = { species = last_created_species change_all = yes } #it's still broken do NOT use this #it will make the species right of the species to unchangeable #stellaris v3.0.1
+
+
+		# civic = civic_revanchist_fervor
+		# civic = civic_ancient_caches_of_technology
+		force_remove_civic = civic_meritocracy
+		force_remove_civic = civic_environmentalist
+		set_country_type = awakened_gate_builders # awakened_fallen_empire
+		force_add_civic = civic_machine_terminator
+		force_add_civic = civic_awakened_machine
 		# set_name = "NAME_Graygoo_Consonance"
-		# change_species_characteristics = {}
 		species = {
 			rename_species = {
 				name = "NAME_Dessanu"
-				# name_list = "MACHINE4"
+				name_list = "graygoo"
+			}
+			remove_self_modified = yes
+			change_species_characteristics = {
+				immortal = yes
+				pops_can_be_colonizers = yes
+				pops_can_migrate = no
+				pops_can_join_factions = no
+				pops_have_happiness = no
+				# pops_can_be_slaves = no
+				pops_can_reproduce = yes
+				can_generate_leaders = yes
+				can_be_modified = yes
+				# pops_auto_growth = <1, speed at which the pops from that species grow automatically
+				# pop_maintenance = <1, amount of energy each pop of that species consume monthly
+				# new_pop_resource_requirement = { type = food_surplus value = 0 }
+				portrait = event_target:gray_species
+			}
+			modify_species = {
+				# species = this # if pop
+				remove_trait = "trait_nomadic"
+				add_trait = "trait_pc_relic_preference"
+				add_trait = "trait_machine_unit"
+				# add_trait = "trait_pc_gray_goo_preference" TODO
+				# add_trait = "trait_pc_ai_preference"
+				# add_trait = "trait_pc_machine_preference"
+				# add_trait = "trait_hive_mind"
+				add_trait = "trait_robot_superconductive"
+				add_trait = "trait_robot_recycled"
+				add_trait = "trait_robot_mass_produced"
+				add_trait = "trait_robot_streamlined_protocols"
+				add_traits_at_start_of_list = yes
+				# change_scoped_species = yes # if pop
+				# effect = {
+				# 	set_species_identity = last_created_species
+				# }
 			}
 		}
 
@@ -251,10 +345,48 @@ country_event = {
 			prev.species = { set_species_homeworld = prev }
 			starbase = { CmtEffectCreateAdmiralty_GraygooCapitalDefence = yes }
 		}
-		event_target:nanite_factory = {
-			root = { CmtEffectCreateAdmiralty_GraygooRoamer = yes } # Roamers
+
+		# create_half_species = { species_one = last_created_species species_two = event_target:gray_species }
+		# change_dominant_species = { species = last_created_species change_all = yes }
+		# change_dominant_species = { species = event_target:gray_species change_all = yes }
+		last_created_species = {
+			set_citizenship_type = { country = root type = citizenship_full cooldown = yes }
+			# set_species_identity = event_target:gray_species
 		}
+		set_built_species = last_created_species
 		set_origin = origin_machine_nanites
+		set_government_cooldown = no
+		## Start Workaround to change gov completely (as change_government is not working)
+		## FIXEM: does not work: Required authority [auth_machine_intelligence] is excluded by other restrictions. Result authority [auth_machine_intelligence] is not valid
+		# change_government = {
+		# 	authority = auth_machine_intelligence
+		# 	cooldown = no
+		# 	remove_invalid_civics = yes
+		# }
+
+		## WORKAROUND
+		create_country = {
+			name = random
+			type = awakened_fallen_empire
+			species = last_created_species
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			ethos = { ethic = ethic_gestalt_consciousness }
+			authority = auth_machine_intelligence
+			civics = {
+				civic = civic_awakened_machine
+				civic = civic_machine_terminator
+				# civic = civic_fanatic_purifiers
+			}
+			flag = random
+			effect = {
+				root = { copy_ethos_and_authority = prev }
+			}
+		}
+		last_created_country = { destroy_country = yes }
+		## WORKAROUND END
+		force_add_civic = civic_fanatic_purifiers
+
 		# Establish communications
 		every_country = {
 			limit = {
@@ -271,11 +403,42 @@ country_event = {
 		}
 
 		change_country_flag = {
-			icon = { category = "paradox" file = "paradox_logo.dds" }
+			# icon = { category = "paradox" file = "paradox_logo.dds" }
+			icon = { category = "special" file = "gray_goo.dds" }
 			background = { category = "backgrounds" file = "sinus.dds" }
 			colors = { "teal" "dark_grey" "null" "null" }
 		}
-
+		if = {
+			limit = {
+				NOT = { has_policy_flag = orbital_bombardment_armageddon }
+				can_set_policy = {
+					policy = orbital_bombardment
+					option = orbital_bombardment_armageddon
+				}
+				# has_policy_flag = orbital_bombardment_selective
+			}
+			set_policy = {
+				policy = orbital_bombardment
+				option = orbital_bombardment_armageddon
+				cooldown = no
+			}
+		} else_if = {
+			limit = {
+				NOT = { has_policy_flag = orbital_bombardment_indiscriminate }
+				can_set_policy = {
+					policy = orbital_bombardment
+					option = orbital_bombardment_indiscriminate
+				}
+			}
+			set_policy = {
+				policy = orbital_bombardment
+				option = orbital_bombardment_indiscriminate
+				cooldown = no
+			}
+		}
+		event_target:nanite_factory = {
+			root = { CmtEffectCreateAdmiralty_GraygooRoamer = yes } # Roamers
+		}
 		set_graphical_culture = "fallen_machine_empire_01" # temporary
 		add_global_ship_design = "NAME_Omega"
 		add_global_ship_design = "NAME_Alpha"
@@ -325,6 +488,7 @@ country_event = {
 				}
 			}
 		}
+		set_country_flag = declared_crisis
 		## colonize random planet
 		random_system = {
 			limit = {
@@ -333,13 +497,27 @@ country_event = {
 				NOR = {
 					has_star_flag = lcluster_lgate
 					has_star_flag = graygoo_factory_system
+					has_star_flag = lcluster5
 					# is_same_value = event_target:lcluster_factory_system
 					any_fleet_in_system = { is_in_combat = yes }
 				}
 				any_system_planet = { is_planet_class = pc_gray_goo }
+				OR = {
+					NOT = { exists=event_target:goo_slayer }
+					event_target:goo_slayer = {
+						OR = {
+							is_ai = yes
+							is_surveyed = {
+								who = event_target:goo_slayer
+								status = no
+							}
+						}
+					}
+				}
 			}
 			create_starbase = {
-				size = "starbase_starport"
+				# size = "starbase_starport"
+				size = "starbase_gatebuilders"
 				owner = root
 				module = "missile_battery"
 				module = "gun_battery"
@@ -425,6 +603,10 @@ country_event = {
 					type = "nanite_giga_guardian"
 				}
 			}
+		}
+		every_owned_leader = {
+			limit = { leader_class = ruler }
+			change_leader_portrait = lithnanite
 		}
 	}
 }

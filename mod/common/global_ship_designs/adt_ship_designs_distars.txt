@@ -1151,10 +1151,10 @@ ship_design = {
 			slot = "TORPEDO_05"
 			template = "GG_ENERGY_MISSILE"
 		}
-		component = {
-			slot = "TORPEDO_06"
-			template = "GG_ENERGY_MISSILE"
-		}
+		# component = {
+		# 	slot = "TORPEDO_06"
+		# 	template = "GG_ENERGY_MISSILE"
+		# }
 		component = {
 			slot = "STRIKE_CRAFT_01"
 			template = "GG_STRIKE_CRAFT"

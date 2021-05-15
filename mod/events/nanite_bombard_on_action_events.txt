@@ -1,6 +1,6 @@
 namespace = a_deadly_tempest
 
-### Colony Bombarded: Planet is turned into nanite world by special bombing stance (has reached 0 pops)
+### On Colony Bombarded (on_planet_zero_pops): Planet is turned into nanite world by special bombing stance
 planet_event = {
 	id = a_deadly_tempest.81
 	hide_window = yes
@@ -39,7 +39,13 @@ planet_event = {
 	}
 
 	immediate = {
-		planet_event = { id = a_deadly_tempest.84 }
+		change_variable = { which = nanite_bomb_counter value = 1 }
+		if = { # only if certain amount of days
+			limit = {
+				check_variable = { which = nanite_bomb_counter value > 15 }
+			}
+			planet_event = { id = a_deadly_tempest.84 }
+		}
 	}
 }
 
@@ -65,7 +71,7 @@ country_event = {
 	}
 
 	option = {
-		name = a_deadly_tempest.82.a
+		name = action.82.a
 		custom_tooltip = bombed_to_nanite_world
 	}
 }
@@ -93,6 +99,7 @@ country_event = {
 					has_civic = civic_fanatic_purifiers
 					has_civic = civic_hive_devouring_swarm
 					has_civic = civic_machine_assimilator
+					is_same_empire = from.owner
 				}
 				# OR = {
 				# 	has_ethic = ethic_fanatic_xenophile
@@ -103,6 +110,9 @@ country_event = {
 			add_opinion_modifier = {
 				modifier = opinion_converted_a_world
 				who = root
+			}
+			if = { limit = { is_ai = no }
+				from = { planet_event = { id = a_deadly_tempest.85 } }
 			}
 		}
 	}
@@ -116,13 +126,34 @@ country_event = {
 planet_event = {
 	id = a_deadly_tempest.84
 	hide_window = yes
+	# title = "graygoo.2.name"
+	# desc = "graygoo.2.desc"
+	# picture = GFX_evt_gray_gooed_planet
+	# show_sound = event_ghost_town
+	location = this
 	is_triggered_only = yes
 	# From = This
 	# FromFrom = Bombarder
 	# FromFromFrom = Ship
 	immediate = {
 		if = {
-			limit = { fromfrom = { is_same_empire = event_target:graygoo_country } }
+			limit = {
+				check_variable = { which = nanite_bomb_counter value > 120 }
+				fromfrom = { is_same_empire = event_target:graygoo_country }
+			}
+			random_fleet_in_orbit = {
+				limit = {
+					exists = owner
+					owner = { is_same_empire = fromfrom }
+					is_ship_size = graygoo_mothership
+				}
+				CmtEffectCreateShip_GraygooMother = yes
+			}
+		} else_if = {
+			limit = {
+				check_variable = { which = nanite_bomb_counter value > 30 }
+				fromfrom = { is_same_empire = event_target:graygoo_country }
+			}
 			# small reinforce nanite bombarder
 			random_fleet_in_orbit = {
 				limit = {
@@ -133,8 +164,14 @@ planet_event = {
 				CmtEffectCreateShip_GraygooInterdictor = yes
 			}
 		}
-		else = {
+
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_country_type_with_subjects = yes }
+			}
 			owner = {
+				set_country_flag = nanite_bomb_affected # Workaround for Galactic Resolution (ADT 3.0.3)
 				add_static_war_exhaustion = {
 					attacker = fromfrom
 					location = root
@@ -142,7 +179,9 @@ planet_event = {
 				}
 				country_event = { id = a_deadly_tempest.82 }
 			}
-			fromfrom = { country_event = { id = a_deadly_tempest.83 } }
+		}
+		fromfrom = {
+			country_event = { id = a_deadly_tempest.83 }
 		}
 		every_owned_pop = {
 			kill_pop = yes
@@ -218,5 +257,24 @@ planet_event = {
 			flag = flag_nanite_bombardment
 			days = 6
 		}
+		clear_variable = nanite_bomb_counter
+	}
+
+}
+
+planet_event = {
+	id = a_deadly_tempest.85
+	# hide_window = yes
+	title = "graygoo.2.name"
+	desc = "graygoo.2.desc"
+	picture = GFX_evt_gray_gooed_planet
+	show_sound = event_ghost_town
+	location = this
+	is_triggered_only = yes
+	immediate = {
+	}
+
+	option = {
+		name = graygoo.2.a
 	}
 }

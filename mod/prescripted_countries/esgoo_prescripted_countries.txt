@@ -7,7 +7,7 @@
 		name = "Gray Goo"
 		plural = "Gray Goos"
 		adjective = "Gray Goo"
-		name_list = "MACHINE3"
+		name_list = "graygoo"
 		trait = "trait_machine_unit"
 		trait = "trait_robot_recycled"
 		trait = "trait_robot_high_maintenance"
