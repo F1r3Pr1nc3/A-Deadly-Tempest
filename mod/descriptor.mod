@@ -1,5 +1,5 @@
-version="1.8.3"
-name="A Deadly Tempest (3.0b)"
+version="1.8.4"
+name="A Deadly Tempest (3.0)"
 tags={
 	"Events"
 	"Gameplay"

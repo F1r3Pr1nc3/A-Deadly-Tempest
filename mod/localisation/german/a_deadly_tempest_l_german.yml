@@ -123,7 +123,7 @@
  a_deadly_tempest.17.name:0 "Das [graygoo_country.GetName] Ende"
  a_deadly_tempest.17.tooltip:0 "Erhält zwei der folgenden Technologien:\n"
  a_deadly_tempest.82.a:0 "Diese Gräueltat muss gerächt werden!"
- a_deadly_tempest.82.desc:0 "Eine Flotte des §H[From.From.GetName]§! hat die Bevölkerung von §H[From.GetName]§!! Nach einer massiven und unerbittlichen Orbitalbombardierungskampagne wurden alle Bevölkerungszentren an der Oberfläche systematisch ausgelöscht, wodurch der [From.GetPlanetMoon] zu einer leblosen Schale wurde, die nur noch von unzähligen Nanitschwärmen bedeckt ist."
+ a_deadly_tempest.82.desc:0 "Eine Flotte des §H[FromFromFrom.GetName]§! hat die Bevölkerung von §H[From.GetName]§!! Nach einer massiven und unerbittlichen Orbitalbombardierungskampagne wurden alle Bevölkerungszentren an der Oberfläche systematisch ausgelöscht, wodurch der [From.GetPlanetMoon] zu einer leblosen Schale wurde, die nur noch von unzähligen Nanitschwärmen bedeckt ist."
  a_deadly_tempest.82.name:0 "[From.GetName] Engulfed"
  a_deadly_tempest.83.desc:0 "Unsere Streitkräfte berichten, dass sie das Orbitalbombardement von §H[From.GetName]§! abgeschlossen haben. Alle Bevölkerungszentren wurden systematisch ausgerottet, und die Oberfläche [From.GetPlanetMoon] ist nur noch von unzähligen Nanitschwärmen bedeckt."
  awakened_gate_builders:0 "$graygoo.120_title$"

@@ -123,7 +123,7 @@
  a_deadly_tempest.17.name:0 "El fin de la sustancia gris"
  a_deadly_tempest.17.tooltip:0 "Obtenga dos de las siguientes tecnologías:\n"
  a_deadly_tempest.82.a:0 "¡Esta atrocidad debe ser vengada!"
- a_deadly_tempest.82.desc:0 "¡Una flota perteneciente al §H[From.From.GetName]§! ha masacrado a la población de §H[From.GetName]§!! Después de una campaña de bombardeo orbital masivo e implacable, todos los centros de población en la superficie han sido sistemáticamente eliminados, reduciendo [From.GetPlanetMoon] a una cáscara sin vida que ahora solo está cubierta por innumerables enjambres de nanitos."
+ a_deadly_tempest.82.desc:0 "¡Una flota perteneciente al §H[FromFromFrom.GetName]§! ha masacrado a la población de §H[From.GetName]§!! Después de una campaña de bombardeo orbital masivo e implacable, todos los centros de población en la superficie han sido sistemáticamente eliminados, reduciendo [From.GetPlanetMoon] a una cáscara sin vida que ahora solo está cubierta por innumerables enjambres de nanitos."
  a_deadly_tempest.82.name:0 "[From.GetName] Envuelta"
  a_deadly_tempest.83.desc:0 "Nuestras fuerzas informan que han concluido el bombardeo orbital de §H[From.GetName]§!. Todos los centros de población han sido erradicados sistemáticamente, y la superficie [From.GetPlanetMoon] ahora solo está cubierta por innumerables enjambres de nanitos."
  awakened_gate_builders:0 "$graygoo.120_title$"

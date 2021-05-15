@@ -123,7 +123,7 @@
  a_deadly_tempest.17.name:0 "The End of [graygoo_country.GetName]"
  a_deadly_tempest.17.tooltip:0 "Gain two of the following technologies:\n"
  a_deadly_tempest.82.a:0 "This atrocity must be avenged!"
- a_deadly_tempest.82.desc:0 "A fleet belonging to the §H[From.From.GetName]§! has massacred the population of §H[From.GetName]§!! After a massed and unrelenting orbital bombardment campaign, all population centers on the surface have been systematically wiped out, reducing the [From.GetPlanetMoon] to an lifeless husk that is now only covered in countless nanite swarms."
+ a_deadly_tempest.82.desc:0 "A fleet belonging to the §H[FromFromFrom.GetName]§! has massacred the population of §H[From.GetName]§!! After a massed and unrelenting orbital bombardment campaign, all population centers on the surface have been systematically wiped out, reducing the [From.GetPlanetMoon] to an lifeless husk that is now only covered in countless nanite swarms."
  a_deadly_tempest.82.name:0 "[From.GetName] Engulfed"
  a_deadly_tempest.83.desc:0 "Our forces report that they have concluded the orbital bombardment of §H[From.GetName]§!. All population centers have been systematically eradicated, and the surface [From.GetPlanetMoon] is now only covered in countless nanite swarms."
  awakened_gate_builders:0 "$graygoo.120_title$"
