@@ -12,12 +12,6 @@ cb_lgate_port = {
 	show_notification = no
 	#  (Country scope, THIS = casus belli owner, FROM = casus belli target)
 	potential = {
-		# OR = {
-		# 	is_country_type = default
-		# 	is_country_type = awakened_fallen_empire
-		# 	is_country_type = ascended_empire	#_ZOFE
-		# 	is_country_type = lost_empire		#_ZOFE
-		# }
 		is_country_type_with_subjects = yes # better compatiblity
 		NOR = {
 			has_global_flag = lgates_activated_globally

@@ -362,7 +362,7 @@ country_event = {
 		every_playable_country = {
 			limit = {
 				# is_ai = no # not sure as this can change
-				# is_country_type_with_subjects = yes # is_country_type = default #
+				# is_country_type_with_subjects = yes
 				has_country_flag = disco_gray
 				# NOT = { is_same_empire = event_target:gray_owner }
 			}

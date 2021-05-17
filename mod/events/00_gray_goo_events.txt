@@ -250,7 +250,7 @@ country_event = {
 			if = {
 				limit = {
 					NOT = { exists = event_target:graygoo_country }
-					is_country_type = gray_goo
+					CmtTriggerIsGraygoo = yes
 				}
 				save_global_event_target_as = graygoo_country
 			}
@@ -269,11 +269,11 @@ country_event = {
 				# Reinforce at factory if someone else is in the cluster...
 				# AMOUNT integer 1 = 4 Ships per CM factor (so 3.0 = 12)
 				event_target:nanite_factory = {
-					if = { limit = { end_game_years_passed >= 30 }
+					if = { limit = { end_game_years_passed >= 80 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 4 }
-					} else_if = { limit = { mid_game_years_passed >= 40 }
+					} else_if = { limit = { mid_game_years_passed >= 100 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 3 }
-					} else_if = { limit = { mid_game_years_passed >= 10 }
+					} else_if = { limit = { mid_game_years_passed >= 40 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 2 }
 					} else = {
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 1 }
@@ -360,14 +360,14 @@ country_event = {
 		destroy_country = yes
 		every_country = {
 			limit = {
-				is_country_type = default
+				is_country_type_with_subjects = yes
 				has_modifier = automated_dreadnought_weak_points
 			}
 			remove_modifier = "automated_dreadnought_weak_points"
 		}
 		every_country = {
 			limit = {
-				is_country_type = default
+				is_country_type_with_subjects = yes
 				has_event_chain = curator_poi_chain
 				event_target:guardians_dreadnought_system = {
 					is_point_of_interest = {
@@ -1667,7 +1667,7 @@ country_event = {
 		}
 
 		if = {
-			limit = { is_country_type = gray_goo }
+			limit = { CmtTriggerIsGraygoo = yes }
 			if = { limit = { NOT = { exists = event_target:lcluster5 } }
 				if = { limit = { exists = event_target:lcluster_factory_system }
 					event_target:lcluster_factory_system = {

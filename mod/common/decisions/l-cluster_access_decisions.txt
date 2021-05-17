@@ -45,6 +45,10 @@ decision_open_lcluster = {
 				add_notification_modifier = lgate_access
 			}
 			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
+			# Workaround Fix AI bypassing
+			event_target:lcluster1 = {
+				remove_star_flag = pike_star_flag_banned_system
+			}
 		}
 	}
 
@@ -98,6 +102,11 @@ decision_close_lcluster = {
 				remove_country_flag = lgates_activated
 			}
 			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
+			# owner = { set_country_flag = lgates_activated }
+			# Workaround Fix AI bypassing
+			event_target:lcluster1 = {
+				set_star_flag = pike_star_flag_banned_system
+			}
 		}
 	}
 

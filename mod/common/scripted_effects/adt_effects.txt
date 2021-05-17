@@ -343,7 +343,7 @@ shoal_cluster_defense = {
 		}
 		min_steps = 1
 		max_steps = 4
-		use_bypasses = yes
+		use_bypasses = no
 		# Error Current Scope: fleet???
 		random_system_planet = {
 			limit = {
@@ -629,11 +629,11 @@ nanite_assimilating_effect = {
 		# log = "WARNING ROOT.FromFromFrom NOT exists " # [ROOT.FromFromFrom.GetName]
 		break=yes
 	}
-	else_if = {
-		limit = { NOT = { exists = event_target:assimilate_that_ship } }
-		ROOT.FromFromFrom = { save_event_target_as = assimilate_that_ship }
-		log = "warning: assimilate_that_ship not exists " #[assimilate_that_ship.GetName]
-	}
+	# else_if = {
+	# 	limit = { NOT = { exists = event_target:assimilate_that_ship } }
+	# 	ROOT.FromFromFrom = { save_event_target_as = assimilate_that_ship }
+	# 	log = "create assimilate_that_ship event_target " #[assimilate_that_ship.GetName]
+	# }
 	else = {
 		ROOT.FromFromFrom = { save_event_target_as = assimilate_that_ship }
 	}
@@ -822,9 +822,11 @@ set_assimilating_fleet_scope = {
 }
 
 # Final assimilating_effect
-# This = From = country
+# This = From = victim/dummy country
 # Root =  Combatant country
 # Root.From = From = victim country
+# FromFrom = ship 1 (combatant)
+# FromFromFrom = ship 2 (destroyed)
 nanite_ship_assimilating_effect = {
 
 	if = {
@@ -835,22 +837,38 @@ nanite_ship_assimilating_effect = {
 		}
 	}
 
+	## search already existing victim fleet
 	if = {
-		limit = { exists = event_target:assimilating_fleet exists = event_target:assimilating_fleet.solar_system }
+		limit = {
+			exists = event_target:assimilating_fleet
+			exists = event_target:assimilating_fleet.solar_system
+		}
 		event_target:assimilating_fleet.solar_system = {
 			random_fleet_in_system = {
 				limit = {
-					is_ship_class = shipclass_military
-					is_disabled = yes # fleet_power < 1
+					any_owned_ship = {
+						is_ship_class = shipclass_military
+						is_disabled = yes
+					}
+					fleet_power < 1
 					has_fleet_flag = assimilate_that_ship_flag_temp
 					NOT = { is_same_value = event_target:assimilating_fleet }
-					owner = {
-						OR = {
-							is_same_empire = FROM
-							is_same_empire = ROOT
-							is_same_empire = event_target:global_event_country
-						}
-					}
+					is_owned_by = ROOT.FROM # each faction one fleet
+					# owner = {
+					# 	OR = {
+					# 		is_same_empire = FROM
+					# 		is_same_empire = ROOT
+					# 		is_same_empire = event_target:global_event_country
+					# 	}
+					# }
+					# event_target:assimilate_that_fleet = {
+					# 	distance = {
+					# 		source = event_target:assimilate_that_ship
+					# 		max_distance < 6
+					# 		type = euclidean
+					# 		same_solar_system = yes
+					# 	}
+					# }
 				}
 				save_event_target_as = assimilate_that_fleet
 			}
@@ -858,7 +876,9 @@ nanite_ship_assimilating_effect = {
 	} # else = { log = "WARNING ROOT.FromFrom.fleet NOT exists [ROOT.FromFrom.fleet.GetFleetName]" }
 
 	if = {
-		limit = { NOT = { exists = event_target:assimilate_that_fleet } }
+		limit = {
+			NOT = { exists = event_target:assimilate_that_fleet } # use only one fleet per faction
+		}
 		create_fleet = {
 			settings = {
 				spawn_debris = no
@@ -870,10 +890,10 @@ nanite_ship_assimilating_effect = {
 				set_fleet_stance = passive
 				set_aggro_range_measure_from = self
 				set_aggro_range = 0
-				# set_location = { target = ROOT.FromFrom }
-				set_location = event_target:assimilate_that_ship
+				set_location = event_target:assimilate_that_ship # ROOT.FromFrom
 				save_event_target_as = assimilate_that_fleet
-				set_owner = prev
+				set_owner = prev # ROOT.FROM
+				set_event_locked = yes
 			}
 		}
 	}
@@ -883,6 +903,16 @@ nanite_ship_assimilating_effect = {
 		remove_fleet_flag = commands_merge_fleet_flag_temp
 		set_owner = prev # needed for design
 		# log = "assimilate_that_fleet Prev country [Prev.GetName]"
+		# set_location = event_target:assimilate_that_ship # this moves the whole fleet, set_location is not working for single ships
+		# remove_auto_move_target = yes
+		# clear_orders = yes
+		# clear_fleet_actions = this
+		queue_actions = {
+			wait = 1
+			move_to = event_target:assimilate_that_ship
+			wait = 1
+			move_to = event_target:assimilate_that_fleet
+		}
 
 		if = {
 			limit = { event_target:assimilate_that_ship = { is_designable = yes } }
@@ -892,12 +922,14 @@ nanite_ship_assimilating_effect = {
 				graphical_culture = event_target:assimilate_that_ship				# ROOT.owner
 				upgradable = yes
 				effect = {
+					# [prev] would be invalid context switch.
 					event_target:assimilate_that_ship = { delete_ship = this }
 					save_event_target_as = assimilate_that_ship
 				}
 			}
 
 		} else = {
+			# the same but with design option
 			# log = "WARNING assimilated ship is not designable"
 			create_ship = {
 				name = event_target:assimilate_that_ship #random # $DENAME$
@@ -925,37 +957,50 @@ nanite_ship_assimilating_effect = {
 				exists = event_target:assimilate_that_fleet
 				event_target:assimilating_fleet.solar_system = {
 					any_fleet_in_system = {
-						is_ship_class = shipclass_military
-						is_disabled = yes # fleet_power < 1
+						any_owned_ship = {
+							is_ship_class = shipclass_military
+							is_disabled = yes
+						}
+						fleet_power < 1
 						has_fleet_flag = assimilate_that_ship_flag_temp
 						NOR = {
 							is_same_value = event_target:assimilating_fleet
 							is_same_value = event_target:assimilate_that_fleet
 						}
+						is_owned_by = ROOT.FROM
 					}
 				}
 			}
 			event_target:assimilating_fleet.solar_system = {
 				random_fleet_in_system = {
 					limit = {
-						is_ship_class = shipclass_military
-						is_disabled = yes # fleet_power < 1
+						any_owned_ship = {
+							is_ship_class = shipclass_military
+							is_disabled = yes
+						}
+						fleet_power < 1
 						has_fleet_flag = assimilate_that_ship_flag_temp
 						NOR = {
 							is_same_value = event_target:assimilating_fleet
 							is_same_value = event_target:assimilate_that_fleet
 						}
-						owner = {
-							OR = {
-								is_same_empire = FROM
-								is_same_empire = ROOT
-								is_same_empire = event_target:global_event_country
-							} #PREVPREVPREV
-						}
+						is_owned_by = ROOT.FROM
+						# owner = {
+						# 	OR = {
+						# 		is_same_empire = FROM
+						# 		is_same_empire = ROOT
+						# 		is_same_empire = event_target:global_event_country
+						# 	} #PREVPREVPREV
+						# }
 					}
-					set_location = { target = event_target:assimilate_that_fleet }
+					# set_location = { target = event_target:assimilate_that_fleet }
+					remove_auto_move_target = yes
+					# clear_orders = yes
+					# clear_fleet_actions = this
 					queue_actions = {
-						wait = { duration = 2 }
+						wait = { duration = 1 }
+						move_to = event_target:assimilate_that_fleet
+						wait = { duration = 1 }
 						merge_fleet = {
 							target = event_target:assimilate_that_fleet
 							allow_ftl = no
@@ -969,5 +1014,6 @@ nanite_ship_assimilating_effect = {
 
 	# log = "assimilate_that_fleet ROOT country [ROOT.GetName]"
 	# because design and auto-merge?
-	event_target:assimilate_that_fleet = { set_owner = event_target:global_event_country }
+	# event_target:assimilate_that_fleet = { set_owner = event_target:global_event_country }
+	event_target:assimilate_that_fleet = { set_owner = ROOT.FROM }
 }

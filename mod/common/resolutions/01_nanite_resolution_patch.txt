@@ -81,40 +81,40 @@ resolution_galactic_focus_crisis_nanites = {
 			factor = 1.1
 			event_target:graygoo_country = {
 				fleet_power > 300000
-				fleet_power <= 500000
+				# fleet_power <= 500000 # not needed as the next modifier triggers anyway (simple math op. should be cheaper than EUD conditional statements)
 				# galaxy_percentage > 0.1
 				# galaxy_percentage <= 0.2
 			}
 		}
 		modifier = {
-			factor = 1.5
+			factor = 1.37 # 1.5
 			event_target:graygoo_country = {
 				fleet_power > 500000
-				fleet_power <= 750000
+				# fleet_power <= 750000
 				# galaxy_percentage > 0.2
 				# galaxy_percentage <= 0.3
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 1.33 # 2
 			event_target:graygoo_country = {
 				fleet_power > 750000
-				fleet_power <= 1100000
+				# fleet_power <= 1100000
 				# galaxy_percentage > 0.3
 				# galaxy_percentage <= 0.4
 			}
 		}
 		modifier = {
-			factor = 3
+			factor = 1.5 # 3
 			event_target:graygoo_country = {
 				fleet_power > 1100000
-				fleet_power <= 1600000
+				# fleet_power <= 1600000
 				# galaxy_percentage > 0.4
 				# galaxy_percentage <= 0.5
 			}
 		}
 		modifier = {
-			factor = 10
+			factor = 3.33 # 10
 			event_target:graygoo_country = {
 				fleet_power > 1600000
 				# galaxy_percentage > 0.5

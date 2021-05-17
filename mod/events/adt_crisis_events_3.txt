@@ -22,7 +22,7 @@ country_event = {
 			}
 			AND = {
 				has_global_flag = gray_goo_crisis_active
-				is_country_type = gray_goo
+				CmtTriggerIsGraygoo = yes
 				num_fleets > 60 # TODO dynamically!?
 			}
 		}
@@ -39,8 +39,8 @@ country_event = {
 		random_rim_system = {
 			limit = { NOT = { has_star_flag = sealed_system } }
 			spawn_system = {
-				min_distance >= 15
-				max_distance <= 40
+				min_distance >= 20
+				max_distance <= 50
 				initializer = "cybrex_beta"
 			}
 		}
@@ -55,8 +55,9 @@ country_event = {
 		save_event_target_as = cybrex_target
 
 		observer_event = { id = observer.52 }
+		# Cybrex Notification
 		every_country = {
-			limit = { is_country_type = default }
+			limit = { is_country_type_with_subjects = yes }
 			country_event = { id = crisis.2401 days = 2 }
 		}
 
@@ -81,7 +82,7 @@ country_event = {
 # 	# }
 # 	# desc = {
 # 	# 	text ="crisis.2401.b.desc"
-# 	# 	trigger = { is_country_type = gray_goo }
+# 	# 	trigger = { CmtTriggerIsGraygoo = yes }
 # 	# }
 
 # 	picture = GFX_evt_physics_research

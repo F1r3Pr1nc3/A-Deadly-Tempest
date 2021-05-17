@@ -76,19 +76,19 @@ CmtTriggerIsFallenEmpire = {
 }
 
 ### Standard For ZoFE
-CmtTriggerIsLostEmpire = {
-	always = no
-}
+# CmtTriggerIsLostEmpire = {
+# 	always = no
+# }
 
-CmtTrigggerIsAscendedEmpire = {
-	always = no
-}
+# CmtTrigggerIsAscendedEmpire = {
+# 	always = no
+# }
 
-CmtTriggerIsZofeEmpireA = {
-	always = no
-}
+# CmtTriggerIsZofeEmpireA = {
+# 	always = no
+# }
 
-### End-Game Crisis
+### End-Game Crises ###
 CmtTriggerIsPrethoryn = {
 	is_country_type = swarm
 }
@@ -174,7 +174,7 @@ CmtTriggerIsOrganicSleeper = {		## change to CmtTriggerSleeperPotentialAwakening
 	}
 }
 
-### Mid-Game Crisis
+### Mid-Game Crises ###
 CmtTriggerIsMarauder = {
 	OR = {
 		is_country_type = dormant_marauders

@@ -137,7 +137,7 @@ utility_component_template = {
 		weight = 7
 		modifier = {
 			factor = 0
-			is_country_type = default
+			is_country_type_with_subjects = yes
 			resource_stockpile_compare = { resource = nanites value < 9 }
 			# has_monthly_income = { resource = sr_dark_matter value < 1 }
 		}

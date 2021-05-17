@@ -72,9 +72,8 @@ event = {
 	# 	custom_tooltip = CmtTextOK.tooltip
 	# }
 	trigger = {
-		# is_country_type = global_event is none
 		OR = {
-			NAND = {
+			NOR = {
 				exists = event_target:CmtGlobalVar
 				has_global_flag = a_deadly_tempest_mod_active
 			}
@@ -213,7 +212,7 @@ country_event = {
 		exists = this
 		# OR = {
 		# 	is_ai = no
-		# 	is_country_type_with_subjects = yes # is_country_type = default #
+		# 	is_country_type_with_subjects = yes
 		# }
 		OR = {
 			AND = {
@@ -255,7 +254,7 @@ country_event = {
 				}
 				every_playable_country = {
 					limit = {
-						# is_country_type_with_subjects = yes # is_country_type = default #
+						# is_country_type_with_subjects = yes
 						NOR = {
 							# has_country_flag = gray_owner
 							has_country_flag = disco_gray
@@ -601,7 +600,7 @@ country_event = {
 		OR = {
 			is_robot_empire = yes
 			is_species_class = ROBOT # has_authority = auth_ancient_machine_intelligence
-			# is_country_type = gray_goo
+			# CmtTriggerIsGraygoo = yes
 			# is_country_type = gate_builders
 			# is_country_type = cybrex_empire
 			# is_fallen_empire_machine = yes
@@ -727,7 +726,9 @@ ship_event = {
 					random_fleet_in_system = {
 						limit = {
 							exists = owner # idk why but it is needed
-							is_ship_class = shipclass_military
+							any_owned_ship = {
+								is_ship_class = shipclass_military
+							}
 							NOR = {
 								is_same_value = from.fleet
 								is_same_value = event_target:assimilate_that_ship
@@ -800,6 +801,38 @@ ship_event = {
 					}
 				} else = {
 					PREV = { ship_event = { id = a_deadly_tempest.38 days = 8 } }
+					# Fallback if battle not ends
+					solar_system = {
+						if = {
+							limit = {
+								exists = event_target:assimilating_fleet
+								exists = event_target:assimilating_fleet.owner
+								any_fleet_in_system = {
+									is_in_combat = yes
+									# NOT = { has_fleet_flag = assimilate_that_ship_flag_temp }
+									NOT = { is_same_value = event_target:assimilating_fleet }
+									any_owned_ship = {
+										is_ship_class = shipclass_military
+										is_disabled = yes
+									}
+									fleet_power < 1
+								}
+							}
+							random_fleet_in_system = {
+								limit = {
+									is_in_combat = yes
+									NOT = { is_same_value = event_target:assimilating_fleet }
+									any_owned_ship = {
+										is_ship_class = shipclass_military
+										is_disabled = yes
+									}
+									fleet_power < 1
+								}
+								set_timed_fleet_flag = { flag = assimilate_that_ship_flag_temp days = 36 }
+								fleet_event = { id = a_deadly_tempest.39 days = 4 }
+							}
+						}
+					}
 				}
 			}
 		}
@@ -875,7 +908,9 @@ fleet_event = {
 			solar_system = {
 				random_fleet_in_system = {
 					limit = {
-						is_ship_class = shipclass_military
+						any_owned_ship = {
+							is_ship_class = shipclass_military
+						}
 						NOR = {
 							is_same_value = FROM
 							is_same_value = event_target:assimilate_that_ship
@@ -945,7 +980,9 @@ fleet_event = {
 				solar_system = {
 					random_fleet_in_system = {
 						limit = {
-							is_ship_class = shipclass_military
+							any_owned_ship = {
+								is_ship_class = shipclass_military
+							}
 							NOR = {
 								is_same_value = FROM
 								is_same_value = event_target:assimilate_that_ship
@@ -999,6 +1036,7 @@ fleet_event = {
 								is_same_value = event_target:assimilating_fleet
 							}
 						}
+						set_event_locked = no
 						# set_location = { target = event_target:assimilating_fleet }
 						queue_actions = {
 							# move_to = ROOT.FromFrom.fleet # Disabled as it will order move fleet to the point in space, not follow the target fleet.
@@ -1023,8 +1061,10 @@ fleet_event = {
 						event_target:assimilating_fleet.solar_system = {
 							random_fleet_in_system = {
 								limit = {
-									is_ship_class = shipclass_military
-									is_disabled = yes # fleet_power < 1
+									any_owned_ship = {
+										is_ship_class = shipclass_military
+										is_disabled = yes # fleet_power < 1
+									}
 									has_fleet_flag = assimilate_that_ship_flag_temp
 								}
 								fleet_event = { id = a_deadly_tempest.39 }
@@ -1864,7 +1904,7 @@ country_event = {
 				}
 			}
 			random_country = {
-				limit = { is_country_type = gray_goo }
+				limit = { CmtTriggerIsGraygoo = yes }
 				save_global_event_target_as = graygoo_country
 			}
 		}
@@ -1876,9 +1916,11 @@ country_event = {
 			event_target:graygoo_country = {
 				every_owned_fleet = {
 					limit = {
-						is_disabled = no
 						# is_in_combat = yes
-						is_ship_class = shipclass_military
+						any_owned_ship = {
+							is_ship_class = shipclass_military
+							is_disabled = no
+						}
 						solar_system = {
 							NOT = { has_star_flag = lcluster }
 						}

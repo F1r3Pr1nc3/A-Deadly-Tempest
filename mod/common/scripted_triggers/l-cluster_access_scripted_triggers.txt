@@ -6,7 +6,7 @@ can_set_lcluster_policiy = {
 		any_relation = {
 			has_communications = prev
 			OR = {
-				is_country_type = default
+				is_country_type_with_subjects = yes
 				has_technology = tech_gateway_activation
 			}
 		}

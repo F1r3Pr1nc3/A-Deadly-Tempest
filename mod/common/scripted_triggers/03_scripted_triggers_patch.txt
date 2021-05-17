@@ -1,4 +1,5 @@
-## Needs to test
+## For  Compatibility
+
 is_fallen_empire = {
 	OR = {
 		is_country_type = fallen_empire
@@ -12,7 +13,7 @@ has_total_war_cb = {
 		#attacker checks
 		AND = {
 			OR = {
-				is_country_type = default
+				is_country_type_with_subjects = yes
 				is_fallen_empire = yes
 			}
 			OR = {
@@ -36,7 +37,7 @@ has_total_war_cb = {
 		}
 		#end threat checks
 		AND = {
-			is_country_type = default
+			CmtTriggerIsPlayableEmpire = yes
 			NOR = {
 				is_country_type = awakened_fallen_empire
 				has_valid_civic = civic_fanatic_purifiers

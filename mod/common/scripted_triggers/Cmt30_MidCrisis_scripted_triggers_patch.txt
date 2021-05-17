@@ -27,3 +27,8 @@ CmtTriggerIsGalaxyLgateSystem = {
 	has_star_flag = lgate
 	NOT = { has_star_flag = lcluster_lgate }
 }
+
+CmtTriggerIsGraygoo = {
+	is_country_type = gray_goo
+	is_country_type = awakened_gate_builders
+}
