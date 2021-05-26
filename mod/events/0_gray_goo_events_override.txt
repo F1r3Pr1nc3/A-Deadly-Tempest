@@ -1,3 +1,5 @@
+namespace = graygoo
+
 #############################################
 #####									#####
 #####	 Gray Goo/Dessanu Events		#####
@@ -7,8 +9,6 @@
 #####									#####
 #############################################
 
-namespace = graygoo
-
 ###############
 ###	Graygoo	###
 ###############
@@ -17,7 +17,6 @@ namespace = graygoo
 country_event = {
 	id = graygoo.1
 	hide_window = yes
-
 	is_triggered_only = yes
 
 	immediate = {
@@ -25,7 +24,6 @@ country_event = {
 		### Pre-treatment
 		set_global_flag = gray_goo_crisis_active
 		# The guardians only awaken if there is a set_global_flag = galactic_crisis_happened
-		awaken_guardians_of_the_galaxy = yes
 		if = { limit = { end_game_years_passed >= 3 }
 			# set_global_flag = galactic_crisis_happened # this prevents other crisis
 			awaken_guardians_of_the_galaxy = yes
@@ -35,13 +33,14 @@ country_event = {
 			limit = { CmtTriggerIsClosedLgate = yes }
 			CmtEffectOpenLgate = yes
 		}
-		# if = {
-		# 	limit = { NOT = { exists = event_target:lcluster_factory_system } }
-		# 	random_system = {
-		# 		limit = { has_star_flag = graygoo_factory_system }
-		# 		save_global_event_target_as = lcluster_factory_system
-		# 	}
-		# }
+		### Create Country & Factory
+		if = { # Fallback only
+			limit = { NOT = { exists = event_target:lcluster_factory_system } }
+			random_system = {
+				limit = { has_star_flag = graygoo_factory_system }
+				save_global_event_target_as = lcluster_factory_system
+			}
+		}
 		event_target:lcluster_factory_system = {
 			random_system_planet = {
 				limit = { has_planet_flag = main_star }
@@ -146,8 +145,8 @@ country_event = {
 				}
 				country_event = { id = graygoo.13 days = 1 }
 			} else = {
-				country_event = { id = graygoo.11 days = 1 }
 				liquidate_clues = yes
+				country_event = { id = graygoo.11 days = 1 }
 			}
 		}
 		observer_event = { id = observer.64 }
@@ -283,7 +282,7 @@ country_event = {
 			} else = {
 				every_system = {
 					limit = {
-						CmtTriggerIsGalaxyLgateSystem = yes
+						has_star_flag = lgate
 						NOT = { has_star_flag = lgate_originating_system }
 						any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
 					}
@@ -326,7 +325,7 @@ country_event = {
 	immediate = {
 		every_system = {
 			limit = {
-				CmtTriggerIsGalaxyLgateSystem = yes
+				has_star_flag = lgate
 				NOT = { has_star_flag = lgate_originating_system }
 				any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
 			}
@@ -411,27 +410,28 @@ country_event = {
 
 	immediate = {
 		set_update_modifiers_batch = begin
-
 		# Do open all same time!?
 		every_megastructure = {
 			limit = { CmtTriggerIsClosedLgate = yes }
 			CmtEffectOpenLgate = yes
 		}
-		# Fallback needed for second attempt
-		if = {
+		### Create Country
+		if = { # Fallback (second attempt)
 			limit = { NOT = { exists = event_target:lcluster_factory_system } }
 			random_system = {
 				limit = { has_star_flag = graygoo_factory_system }
 				save_global_event_target_as = lcluster_factory_system
 			}
 		}
-		### Create Country
 		event_target:lcluster_factory_system = {
 			random_system_planet = {
 				limit = { has_planet_flag = main_star }
 				save_event_target_as = main_star
 			}
-
+			random_system_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				save_event_target_as = start_5
+			}
 			## built-in-support for Twinks Dessanu ##
 			if = {
 				limit = { NOT= { any_playable_country = { has_origin = origin_machine_nanites } } }
@@ -570,6 +570,7 @@ country_event = {
 						# ideal_planet_class = pc_gray_goo # valid target?
 						ideal_planet_class = pc_gaia
 						effect = {
+							set_species_homeworld = start_5
 							save_global_event_target_as = gray_species
 							# change_species_characteristics = {
 							# 	immortal = yes
@@ -658,6 +659,7 @@ country_event = {
 
 		every_country = { establish_communications_no_message = event_target:gate_builders }
 		# only initial
+		### Create Fleets/Starbases
 		if = { limit = { exists = event_target:nanite_factory } # has_global_flag = gray_goo_empire_set
 			event_target:nanite_factory = {
 				CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes	# Garrison Fleets at Capital
@@ -990,8 +992,7 @@ country_event = {
 	desc = "graygoo.110.desc"
 	picture = GFX_evt_l-gateway
 	show_sound = event_radio_chatter
-	# location = event_target:candidate_gateway_system
-	location = event_target:CmtTargetLgateOrininatingSystem
+	location = event_target:candidate_gateway_system
 	is_triggered_only = yes
 
 	after = {
@@ -1015,8 +1016,8 @@ country_event = {
 							has_event_chain = l_cluster_chain
 						}
 					}
-					country_event = { id = graygoo.111 }
 					liquidate_clues = yes # Remove Quest (FIX vanilla)
+					country_event = { id = graygoo.111 }
 				} else = { country_event = { id = graygoo.112 } }
 			}
 			clear_global_event_target = candidate_gateway_system
@@ -1317,6 +1318,69 @@ country_event = {
 	}
 }
 
+# Turned Hostile (Space Battle)
+country_event = {
+	id = graygoo.155
+	title = TRANSMISSION
+	desc = "graygoo.155.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = from
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = { is_country_type = gate_builders }
+		NOT = { has_country_flag = gate_builders_hostility }
+	}
+
+	immediate = {
+		country_event = { id = a_deadly_tempest.162 }
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.155.a
+	}
+}
+
+# Turned Hostile (Ground Battle)
+country_event = {
+	id = graygoo.156
+	title = TRANSMISSION
+	desc = "graygoo.155.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = fromfrom
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = gate_builders_hostility }
+	}
+
+	immediate = {
+		country_event = { id = a_deadly_tempest.162 }
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.155.a
+	}
+}
+
 # (ADT) Entered Factory System (First Time)
 country_event = {
 	id = graygoo.158
@@ -1466,14 +1530,11 @@ country_event = {
 	}
 
 	immediate = {
-		# set_faction_hostility
 		country_event = { id = a_deadly_tempest.162 }
 	}
 
 	after = {
-		hidden_effect = {
-			remove_country_flag = gate_builder_diplomacy_engaged
-		}
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
 	}
 
 	option = {
@@ -2140,6 +2201,7 @@ country_event = {
 		clear_global_event_target = lcluster1b
 		clear_global_event_target = lcluster1
 		clear_global_event_target = candidate_gateway_system
+		clear_global_event_target = CmtTargetLgateOrininatingSystem
 	}
 }
 
@@ -2176,8 +2238,7 @@ country_event = {
 		text = graygoo.182.b.desc
 	}
 	picture = GFX_evt_large_explosion
-	show_sound = event_ship_explosion
-
+	show_sound = event_super_explosion
 	location = event_target:lcluster_factory_system
 
 	is_triggered_only = yes
@@ -2202,18 +2263,18 @@ event = {
 	is_triggered_only = yes
 
 	trigger = {
-		exists = event_target:graygoo_country
+		exists = event_target:gate_builders
 		any_playable_country = {
 			CmtTriggerHasDessanuGift = yes
-			event_target:graygoo_country = { is_hostile = prev }
+			event_target:gate_builders = { is_hostile = prev }
 		}
 	}
 
 	immediate = {
-		random_playable_country = {
+		every_playable_country = {
 			limit = {
 				CmtTriggerHasDessanuGift = yes
-				event_target:graygoo_country = { is_hostile = prev }
+				event_target:gate_builders = { is_hostile = prev }
 			}
 			country_event = { id = graygoo.184 }
 		}

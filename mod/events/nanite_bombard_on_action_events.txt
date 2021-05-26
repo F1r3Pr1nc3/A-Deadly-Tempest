@@ -121,6 +121,7 @@ country_event = {
 	}
 }
 
+# Colony Bombarded
 planet_event = {
 	id = a_deadly_tempest.84
 	hide_window = yes
@@ -170,12 +171,16 @@ planet_event = {
 			}
 			owner = {
 				set_country_flag = nanite_bomb_affected # Workaround for Galactic Resolution (ADT 3.0.3)
-				add_static_war_exhaustion = {
-					attacker = fromfrom
-					location = root
-					value_for_planet_destruction = 0.7
+				country_event = { id = a_deadly_tempest.82 } # turn into nanite world
+				if = {
+					limit = { is_at_war_with = fromfrom }
+					# isn't the case when the crisis bombards planets, for instance
+					add_static_war_exhaustion = {
+						attacker = fromfrom
+						location = root
+						value_for_planet_destruction = 0.7
+					}
 				}
-				country_event = { id = a_deadly_tempest.82 }
 			}
 		}
 		fromfrom = {

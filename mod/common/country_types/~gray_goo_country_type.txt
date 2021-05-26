@@ -1,6 +1,6 @@
 gate_builders = {
 	# has_difficulty_bonuses = yes
-	scaled_difficulty_bonuses = 2.0 # 3.0 has become other advantages
+	scaled_difficulty_bonuses = 2.5 # 3.0 has become other advantages
 	# counts_for_victory = no
 	# sub_title = "COUNTRY_FALLEN_EMPIRE"
 	# sub_title_desc = "COUNTRY_FALLEN_EMPIRE_DESC"
@@ -12,11 +12,11 @@ gate_builders = {
 	custom_diplomacy = yes
 	enforces_borders = no
 	orbital_bombardment = yes
-	can_have_their_comms_shared = yes
+	# can_have_their_comms_shared = yes
 	needs_survey = no
 	has_complete_sensor = yes
 	# government = yes
-	playable = no
+	# playable = no
 	# diplomatic_wars = no
 	# ship_disengagement = yes
 	army_disengagement = yes
@@ -44,7 +44,7 @@ gate_builders = {
 		modules = {
 			# military_minister_module
 			anti_crisis_military_minister_module
-			foreign_minister_module
+			# foreign_minister_module
 			interior_minister_module
 		}
 		army_data = {
@@ -88,7 +88,7 @@ gate_builders = {
 	}
 	faction = {
 		hostile = no
-		auto_delete = yes
+		# auto_delete = yes
 		needs_border_access = no
 		needs_colony = no
 		generate_borders = yes

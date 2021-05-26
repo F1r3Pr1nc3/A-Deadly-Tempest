@@ -206,7 +206,7 @@ country_event = {
 		# }
 		# if = { # Temporary due vanilla bug!?
 		# 	limit = { mid_game_years_passed < 0 }
-		# Workaround Fix: Must be re-run due strange bug in 3.0 at game_start
+		# Save game workaround fix: must be re-run due strange bug in 3.0 at game_start
 		event_target:global_event_country = {
 			country_event = { id = distar.8001 }
 		}
@@ -302,7 +302,7 @@ country_event = {
 				# do not set the flag if there's only one l-gate system
 				limit = {
 					any_system = {
-						CmtTriggerIsGalaxyLgateSystem = yes
+						has_star_flag = lgate
 						NOT = { is_same_value = prev }
 					}
 				}
@@ -825,6 +825,17 @@ country_event = {
 				}
 			}
 		}
+		# Cancel project for others with compensation (vanilla fix)
+		every_playable_country = {
+			limit = {
+				NOT = { is_same_empire = root }
+				OR = {
+					has_event_chain = l_cluster_chain
+					has_special_project = LCLUSTER_PROJECT
+				}
+			}
+			liquidate_clues = yes
+		}
 		# Notify those without l-gate systems
 		every_playable_country = {
 			limit = {
@@ -836,14 +847,14 @@ country_event = {
 			limit = {
 				any_system = {
 					has_star_flag = lgate
-					# CmtTriggerIsGalaxyLgateSystem = yes
+					# has_star_flag = lgate
 					NOT = { has_star_flag = young_dragon_spawned }
 				}
 			}
 			random_system = {
 				limit = {
 					has_star_flag = lgate
-					# CmtTriggerIsGalaxyLgateSystem = yes
+					# has_star_flag = lgate
 					NOT = { has_star_flag = young_dragon_spawned }
 					any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
 				}

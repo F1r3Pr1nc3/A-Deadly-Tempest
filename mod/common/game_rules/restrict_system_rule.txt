@@ -5,7 +5,12 @@
 ai_should_restrict_system = {
 	OR = {
 		AND = {
-			root = { has_country_flag = pike_assisted_ai }
+			root = {
+				OR = {
+					is_crisis_faction = yes
+					has_country_flag = pike_assisted_ai
+				}
+			}
 			has_star_flag = pike_star_flag_banned_system
 		}
 		AND = {

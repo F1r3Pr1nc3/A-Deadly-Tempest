@@ -1276,116 +1276,32 @@ country_event = {
 	trigger = { exists = event_target:graygoo_country }
 	immediate = {
 		event_target:graygoo_country = {
-			# Pre-Ketlings
-			if = {
-				limit = { exists = event_target:ratling_pre_space_country }
-				set_faction_hostility = {
-					set_hostile = no
-					#set_neutral = no
-					set_friendly = yes
-					target = event_target:ratling_pre_space_country
-				}
-				event_target:ratling_pre_space_country = {
-					set_faction_hostility = {
-						set_hostile = no
-						#set_neutral = no
-						set_friendly = yes
-						target = prev
-					}
-				}
-			}
+
+			# set_faction_neutral = { TARGET = event_target:gate_builders } # Gatebuilders
+			# Pre-Ketlings / ratlings
+			set_faction_neutral = { TARGET = event_target:ratling_pre_space_country }
+			set_faction_neutral = { TARGET = event_target:ratling_country }
 			# Scrapperbot
-			if = {
-				limit = { exists = event_target:scavenger_bot_country }
-				set_faction_hostility = {
-					set_hostile = no
-					#set_neutral = no
-					set_friendly = yes
-					target = event_target:scavenger_bot_country
-				}
-				event_target:scavenger_bot_country = {
-					set_faction_hostility = {
-						set_hostile = no
-						#set_neutral = no
-						set_friendly = yes
-						target = prev
-					}
-				}
-			}
+			set_faction_neutral = { TARGET = event_target:scavenger_bot_country }
 			# Enigmatic Fortress (enigmatic_cache)
-			# if = { # 	limit = { exists = event_target:fortress_country }
-			# 	set_faction_hostility = {
-			# 		set_hostile = no
-			# 		#set_neutral = no
-			# 		set_friendly = yes
-			# 		target = event_target:fortress_country
-			# 	}
-			# 	event_target:fortress_country = {
-			# 		set_faction_hostility = {
-			# 			set_hostile = no
-			# 			#set_neutral = no
-			# 			set_friendly = yes
-			# 			target = prev
-			# 		}
-			# 	}
-			# }
+			set_faction_neutral = { TARGET = event_target:fortress_country }
 			# Enigmatic Cache (guardian_fortress)
-			if = {
-				limit = { exists = event_target:enigmatic_cache_present_host }
-				set_faction_hostility = {
-					set_hostile = no
-					#set_neutral = no
-					set_friendly = yes
-					target = event_target:enigmatic_cache_present_host
-				}
-				event_target:enigmatic_cache_present_host = {
-					set_faction_hostility = {
-						set_hostile = no
-						#set_neutral = no
-						set_friendly = yes
-						target = prev
-					}
-				}
-			}
-			# mardak_vol
-			if = {
-				limit = { exists = event_target:mardak_vol_country }
-				set_faction_hostility = {
-					set_hostile = no
-					#set_neutral = no
-					set_friendly = yes
-					target = event_target:mardak_vol_country
-				}
-				event_target:mardak_vol_country = {
-					set_faction_hostility = {
-						set_hostile = no
-						#set_neutral = no
-						set_friendly = yes
-						target = prev
-					}
-				}
-			}
-			# Gatebuilders
-			if = {
-				limit = {
-					# is_country_type = gate_builders
-					exists = event_target:ratling_country
-				}
-				set_faction_hostility = {
-					set_hostile = no
-					#set_neutral = no
-					set_friendly = yes
-					target = event_target:ratling_country
-				}
-				event_target:ratling_country = {
-					set_faction_hostility = {
-						set_hostile = no
-						#set_neutral = no
-						set_friendly = yes
-						target = prev
-					}
-				}
-			}
+			set_faction_neutral = { TARGET = event_target:enigmatic_cache_present_host }
+
+			#################
+			# SPACE MONSTERS
+			#################
+			set_faction_neutral = { TARGET = event_target:mardak_vol_country }
+			set_faction_neutral = { TARGET = event_target:drone_country }
+			set_faction_neutral = { TARGET = event_target:mining_drone_expansion_country }
+			set_faction_neutral = { TARGET = event_target:amoeba_country }
+			set_faction_neutral = { TARGET = event_target:amoeba_country_borderless }
+			set_faction_neutral = { TARGET = event_target:amoeba_garrison_country }
+			# set_faction_neutral = { TARGET = event_target:amoeba_faction }
+			set_faction_neutral = { TARGET = event_target:crystal_country }
+			set_faction_neutral = { TARGET = event_target:crystal_splitter_country }
+			set_faction_neutral = { TARGET = event_target:tiyanki_country }
+			set_faction_neutral = { TARGET = event_target:tiyanki_garrison_country }
 		}
 	}
 }
@@ -1863,11 +1779,8 @@ country_event = {
 			# Run Patrol
 			country_event = { id = a_deadly_tempest.96 }
 			set_country_flag = adtFlagActiveMothershipRebuild
-			country_event = {
-				id = crisis.2003 # id = fallen_empires_awakening.3
-				days = 540
-				random = 500
-			}
+			# fallen_empires_awakening.3
+			country_event = { id = crisis.2003 days = 540 random = 500 }
 		}
 	}
 }
@@ -1988,20 +1901,7 @@ country_event = {
 				}
 			}
 			event_target:graygoo_country = {
-				set_faction_hostility = {
-					set_hostile = no
-					#set_neutral = no
-					set_friendly = yes
-					target = event_target:gate_builders
-				}
-				event_target:gate_builders = {
-					set_faction_hostility = {
-						set_hostile = no
-						#set_neutral = no
-						set_friendly = yes
-						target = prev
-					}
-				}
+				set_faction_neutral = { TARGET = event_target:gate_builders }
 			}
 		}
 		if = {
