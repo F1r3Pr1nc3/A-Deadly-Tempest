@@ -29,6 +29,7 @@ decision_open_lcluster = {
 			set_global_flag = lgates_activated_globally
 			owner = {
 				set_country_flag = lgates_activated
+				remove_country_flag = lcluster_closer
 				capital_scope = { add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 } }
 				add_notification_modifier = lgate_access
 			}
@@ -37,6 +38,9 @@ decision_open_lcluster = {
 				remove_star_flag = pike_star_flag_banned_system
 			}
 		}
+	}
+	ai_weight = {
+		weight = 0
 	}
 }
 
@@ -75,11 +79,14 @@ decision_close_lcluster = {
 			every_playable_country = {
 				remove_country_flag = lgates_activated
 			}
-			# owner = { set_country_flag = lgates_activated }
+			owner = { set_country_flag = lcluster_closer }
 			# Workaround Fix AI bypassing
 			event_target:lcluster1 = {
 				set_star_flag = pike_star_flag_banned_system
 			}
 		}
+	}
+	ai_weight = {
+		weight = 0
 	}
 }

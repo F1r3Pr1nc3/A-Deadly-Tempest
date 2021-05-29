@@ -1,0 +1,16 @@
+# INITIALIZERS
+@base_moon_distance = 10 # 6
+
+@standard_min = 24 # 20
+@standard_max = 30 # 35
+@standard_sat_min = 12 # 15
+@standard_sat_max = 23 # 30
+
+# OBJECTS
+@object_distance_30 = 22
+@object_distance_40 = 25
+@object_distance_50 = 30
+@object_distance_60 = 32
+@object_distance_65 = 35
+@object_distance_70 = 38
+@object_distance_210 = 190

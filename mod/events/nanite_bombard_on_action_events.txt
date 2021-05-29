@@ -143,7 +143,7 @@ planet_event = {
 			random_fleet_in_orbit = {
 				limit = {
 					exists = owner
-					owner = { is_same_empire = fromfrom }
+					is_owned_by = fromfrom
 					is_ship_size = graygoo_mothership
 				}
 				CmtEffectCreateShip_GraygooMother = yes
@@ -157,7 +157,7 @@ planet_event = {
 			random_fleet_in_orbit = {
 				limit = {
 					exists = owner
-					owner = { is_same_empire = fromfrom }
+					is_owned_by = fromfrom
 					is_ship_size = graygoo_mothership
 				}
 				CmtEffectCreateShip_GraygooInterdictor = yes

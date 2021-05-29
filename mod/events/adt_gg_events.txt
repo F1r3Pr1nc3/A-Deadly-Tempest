@@ -1785,6 +1785,24 @@ country_event = {
 	}
 }
 
+# Open L-Cluster
+# This = destroyed country
+country_event = {
+	id = a_deadly_tempest.2404
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = lgates_activated_globally }
+		has_country_flag = lcluster_closer
+	}
+	immediate = {
+		set_global_flag = lgates_activated_globally
+		event_target:lcluster1 = {
+			remove_star_flag = pike_star_flag_banned_system
+		}
+	}
+}
+
 # Nanite_dragon_friendship (in fact it is more a scripted effect)
 country_event = {
 	id = a_deadly_tempest.13006
