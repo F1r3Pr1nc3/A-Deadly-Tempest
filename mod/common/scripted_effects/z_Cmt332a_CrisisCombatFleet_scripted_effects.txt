@@ -42,8 +42,10 @@ CmtEffectCreateFleet_Khan1stFleet = {	### Exception: Leader = event_target:great
 					switch = {
 						trigger = has_country_flag
 						CmtFlagLoopA = {
-							PREV = { CmtEffectCreateShip_Outrider = yes }
-							PREV = { CmtEffectCreateShip_VoidChampion = yes }
+							PREV = {
+								CmtEffectCreateShip_Outrider = yes
+								CmtEffectCreateShip_VoidChampion = yes
+							}
 						}
 						CmtFlagLoopB = { PREV = { CmtEffectCreateShip_Outrider = yes } }
 						CmtFlagLoopC = { PREV = { CmtEffectCreateShip_AncestralGlory = yes } }		## 1
@@ -82,8 +84,10 @@ CmtEffectCreateFleet_Khan2ndFleet = {	### Exception: Leader = exiled_khan
 					switch = {
 						trigger = has_country_flag
 						CmtFlagLoopA = {
-							PREV = { CmtEffectCreateShip_Outrider = yes }
-							PREV = { CmtEffectCreateShip_VoidChampion = yes }
+							PREV = {
+								CmtEffectCreateShip_Outrider = yes
+								CmtEffectCreateShip_VoidChampion = yes
+							}
 						}
 						CmtFlagLoopB = { PREV = { CmtEffectCreateShip_Outrider = yes } }
 						CmtFlagLoopC = { PREV = { CmtEffectCreateShip_AncestralGlory = yes } }		## 1
