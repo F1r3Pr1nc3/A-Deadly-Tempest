@@ -21,13 +21,11 @@
 # 	}
 # 	on_success = graygoo.400
 # }
-
 transmitter_cat = {
 	picture = "GFX_evt_ship_in_orbit_2"
 	level = 2
 	max_once = yes
 	max_once_global = no
-
 	spawn_chance = {
 		modifier = {
 			add = 3
@@ -57,4 +55,26 @@ transmitter_cat = {
 		}
 	}
 	on_success = distar.2045
+}
+corrupt_data_cat = {
+	picture = "GFX_evt_ship_in_orbit_2"
+	level = 4
+	max_once_global = yes
+	spawn_chance = {
+		modifier = {
+			add = 3
+			has_distar = yes
+			habitable_planet = yes
+			is_under_colonization = no
+			has_anomaly = no # vanilla fix
+			NOR = {
+				solar_system = { has_star_flag = empire_cluster }
+				is_planet_class = pc_gaia
+				has_deposit = d_betharian_deposit
+				has_deposit = d_alien_pets_deposit
+				exists = archaeological_site # vanilla fix
+			}
+		}
+	}
+	on_success = distar.1065
 }

@@ -1395,7 +1395,9 @@ country_event = {
 		is_ai = no
 	}
 
-	immediate = {}
+	immediate = {
+		set_country_flag = gk_first_entry # for fallback goo_slayer
+	}
 	option = {
 		name = leviathans.2105.a # leviathans.2101.b
 	}
@@ -1692,10 +1694,14 @@ country_event = {
 	}
 
 	immediate = {
-		fromfromfrom = { save_event_target_as = goo_slayer_ship }
-		from = {
-			save_global_event_target_as = goo_slayer # ADT: used later global
-			country_event = { id = a_deadly_tempest.7 days = 1 } # Give tech
+		if = { limit = { exists = from }
+			from = {
+				save_global_event_target_as = goo_slayer # ADT: used later global
+				country_event = { id = a_deadly_tempest.7 days = 1 } # Give tech
+			}
+			if = { limit = { exists = fromfromfrom }
+				fromfromfrom = { save_event_target_as = goo_slayer_ship }
+			}
 		}
 
 		if = { limit = { event_target:lcluster4b = { has_owner = yes } }
@@ -1728,7 +1734,7 @@ country_event = {
 		}
 
 		if = {
-			limit = { CmtTriggerIsGraygoo = yes }
+			limit = { is_country_type = gray_goo }
 			if = { limit = { NOT = { exists = event_target:lcluster5 } }
 				if = { limit = { exists = event_target:lcluster_factory_system }
 					event_target:lcluster_factory_system = {
@@ -1761,12 +1767,14 @@ country_event = {
 							any_fleet_in_system = { is_in_combat = yes }
 						}
 						any_system_planet = { is_planet_class = pc_gray_goo }
-						event_target:goo_slayer = {
-							OR = {
-								is_ai = yes
-								is_surveyed = {
-									who = event_target:goo_slayer
-									status = no
+						if = { limit = { exists = event_target:goo_slayer }
+							event_target:goo_slayer = {
+								OR = {
+									is_ai = yes
+									is_surveyed = {
+										who = event_target:goo_slayer
+										status = no
+									}
 								}
 							}
 						}
@@ -1777,11 +1785,30 @@ country_event = {
 					}
 					save_global_event_target_as = lcluster_factory_system
 				}
-
-				event_target:goo_slayer = {
-					country_event = { id = graygoo.100 }
-					country_event = { id = a_deadly_tempest.162 days = 1800 random = 900 } # awaken
+				if = { limit = { exists = event_target:goo_slayer }
+					event_target:goo_slayer = {
+						country_event = { id = graygoo.100 }
+						country_event = { id = a_deadly_tempest.162 days = 1800 random = 900 } # awaken
+					}
+				} else = {
+					random_playable_country = {
+						limit = {
+							OR = {
+								has_country_flag = gk_first_entry
+								any_owned_fleet = {
+									fleet_size > 1
+									exists = solar_system
+									solar_system = {
+										has_star_flag = lcluster
+									}
+								}
+							}
+						}
+						country_event = { id = graygoo.100 }
+						country_event = { id = a_deadly_tempest.162 days = 1800 random = 900 } # awaken
+					}
 				}
+
 				## Init hidden system
 				event_target:lcluster5 = {
 					spawn_system = {
@@ -2022,12 +2049,18 @@ country_event = {
 			}
 			break = yes
 		}
-
-		from = { country_event = { id = graygoo.181 } }
+		if = { limit = { exists = event_target:goo_slayer }
+			event_target:goo_slayer = {
+				country_event = { id = graygoo.181 }
+			}
+		}
 		every_playable_country = {
 			limit = {
 				is_ai = no
-				NOT = { is_same_empire = event_target:goo_slayer }
+				NAND = {
+					exists = event_target:goo_slayer
+					is_same_empire = event_target:goo_slayer
+				}
 			}
 			country_event = { id = graygoo.182 }
 		}

@@ -504,7 +504,7 @@ country_event = {
 				}
 				any_system_planet = { is_planet_class = pc_gray_goo }
 				OR = {
-					NOT = { exists=event_target:goo_slayer }
+					NOT = { exists = event_target:goo_slayer }
 					event_target:goo_slayer = {
 						OR = {
 							is_ai = yes
