@@ -202,7 +202,6 @@
      font-size="62px"
      letter-spacing="10.49px"
      text-anchor="middle"
-     word-spacing="-11px"
      id="g1764">
     <g
        transform="translate(0,1)"
@@ -227,13 +226,16 @@
          id="text"
          x="-150"
          y="230"
-         sodipodi:role="line">A Deadly<tspan
+         word-spacing="-18px"
+         sodipodi:role="line"><tspan
+   style="font-weight:900;font-size:110%;">A D</tspan>eadly<tspan
    x="-155"
    y="542"
    letter-spacing="14.5px"
-   id="tspan1757">Tem<tspan
+   id="tspan1757"><tspan
+   style="font-weight:900;font-size:110%">T</tspan>em<tspan
    dx="-2"
-   id="tspan1753">p</tspan>es<tspan dx="-11" id="tspan1755">t</tspan>
+   id="tspan1753">p</tspan>es<tspan dx="-12" id="tspan1755">t</tspan>
 </tspan>
 </text>
     </g>
@@ -278,7 +280,7 @@
          text-anchor="middle"
          word-spacing="0px">
         <tspan
-           id="tspan1768">3.0.2</tspan>
+           id="tspan1768">3.0.3</tspan>
       </text>
     </g>
     <use

@@ -68,7 +68,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { destroyer cruiser battleship graygoo_interdictor }
+	size_restriction = { destroyer cruiser battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_combat_computers_autonomous" }
@@ -96,7 +96,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { destroyer cruiser battleship graygoo_interdictor }
+	size_restriction = { destroyer cruiser battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_precognition_interface" }
@@ -109,6 +109,11 @@ utility_component_template = {
 
 	ai_weight = {
 		weight = 4
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			NOT = { has_ascension_perk = ap_transcendence }
+		}
 	}
 }
 
@@ -171,16 +176,14 @@ utility_component_template = {
 			alloys = @cost3
 		}
 	}
-	class_restriction = {
-		shipclass_military
-		shipclass_starbase
-	}
+	class_restriction = { shipclass_military shipclass_starbase shipclass_military_special }
 	size_restriction = {
 		destroyer
 		cruiser
 		battleship
 		titan
 		juggernaut
+		crisis_destroyer crisis_cruiser star_eater
 		dreadnought
 		scavenger_bot
 	}
@@ -217,6 +220,8 @@ utility_component_template = {
 		battleship
 		titan
 		juggernaut
+		crisis_destroyer
+		crisis_cruiser
 		dreadnought
 		scavenger_bot
 	}
@@ -232,6 +237,11 @@ utility_component_template = {
 
 	ai_weight = {
 		weight = 4
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			NOT = { has_ascension_perk = ap_transcendence }
+		}
 	}
 }
 
@@ -248,15 +258,13 @@ utility_component_template = {
 			alloys = @cost3
 		}
 	}
-	class_restriction = {
-		shipclass_military
-		shipclass_starbase
-	}
+	class_restriction = { shipclass_military shipclass_starbase shipclass_military_special }
 	size_restriction = {
 		cruiser
 		battleship
 		juggernaut
 		titan
+		star_eater
 		dreadnought
 		scavenger_bot
 	}
@@ -285,15 +293,14 @@ utility_component_template = {
 			alloys = @cost3
 		}
 	}
-	class_restriction = {
-		shipclass_military
-		shipclass_starbase
-	}
+	class_restriction = { shipclass_military shipclass_starbase shipclass_military_special }
+
 	size_restriction = {
 		cruiser
 		battleship
 		juggernaut
 		titan
+		star_eater
 		dreadnought
 		scavenger_bot
 	}
@@ -308,5 +315,10 @@ utility_component_template = {
 	}
 	ai_weight = {
 		weight = 4
+		modifier = {
+			factor = 0.0
+			is_country_type = default
+			NOT = { has_ascension_perk = ap_transcendence }
+		}
 	}
 }

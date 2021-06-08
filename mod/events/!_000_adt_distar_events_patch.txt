@@ -825,24 +825,6 @@ country_event = {
 				}
 			}
 		}
-		# Cancel project for others with compensation (vanilla fix)
-		every_playable_country = {
-			limit = {
-				NOT = { is_same_empire = root }
-				OR = {
-					has_event_chain = l_cluster_chain
-					has_special_project = LCLUSTER_PROJECT
-				}
-			}
-			liquidate_clues = yes
-		}
-		# Notify those without l-gate systems
-		every_playable_country = {
-			limit = {
-				NOT = { any_system_within_border = { has_star_flag = lgate } }
-			}
-			country_event = { id = distar.13011 days = 2 }
-		}
 		while = {
 			limit = {
 				any_system = {
@@ -943,6 +925,22 @@ country_event = {
 					}
 				}
 			}
+		}
+		# Cancel project for others with compensation (vanilla fix)
+		every_playable_country = {
+			limit = {
+				NOT = { is_same_empire = root }
+				OR = {
+					has_event_chain = l_cluster_chain
+					has_special_project = LCLUSTER_PROJECT
+				}
+			}
+			liquidate_clues = yes
+		}
+		### Notify 2 those without l-gate systems
+		every_playable_country = {
+			limit = { NOT = { any_system_within_border = { has_star_flag = lgate } } }
+			country_event = { id = distar.13011 }
 		}
 		country_event = { id = a_deadly_tempest.13006 days = 3 }
 	}

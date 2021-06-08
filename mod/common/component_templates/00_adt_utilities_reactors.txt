@@ -10,10 +10,10 @@
 @titan_power_5 = 3200
 @titan_power_6 = 5200
 @colossus_power = 10000
+@starbase_power_5 = 6200 # 4550
+@starbase_power_6 = 8100 # 6200
 @platform_power_5 = 575
 @platform_power_6 = 750
-@starbase_power_5 = 3200
-@starbase_power_6 = 4200
 
 #############
 #	COST	#
@@ -53,7 +53,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser graygoo_interdictor }
+	size_restriction = { cruiser crisis_cruiser graygoo_interdictor }
 	upgrades_to = "CRUISER_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -209,7 +209,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { cruiser graygoo_interdictor }
+	size_restriction = { cruiser crisis_cruiser graygoo_interdictor }
 	upgrades_to = CRUISER_GRAVITON_REACTOR
 
 	ai_weight = {
@@ -406,7 +406,8 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			is_country_type_with_subjects = yes
-			resource_stockpile_compare = { resource = nanites value < 9 }
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			# resource_stockpile_compare = { resource = sr_dark_matter value < 9 }
 		}
 	}
 }

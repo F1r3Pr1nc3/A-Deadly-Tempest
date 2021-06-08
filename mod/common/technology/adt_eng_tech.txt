@@ -19,7 +19,7 @@ tech_nanite_ships = {
 		}
 	}
 	potential = {
-		no_scope = { has_distar = yes }
+		has_distar = yes
 		has_global_flag = l_cluster_opened
 		has_resource = {
 			type = nanites

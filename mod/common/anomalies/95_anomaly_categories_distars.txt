@@ -29,7 +29,7 @@ transmitter_cat = {
 	spawn_chance = {
 		modifier = {
 			add = 3
-			no_scope = { has_distar = yes }
+			has_distar = yes
 			is_star = no
 			from.owner = {
 				NOR = {
@@ -67,12 +67,15 @@ corrupt_data_cat = {
 			habitable_planet = yes
 			is_under_colonization = no
 			has_anomaly = no # vanilla fix
+			NAND = {
+				exists = archaeological_site # vanilla fix
+				archaeological_site = { is_site_completed = no }
+			}
 			NOR = {
 				solar_system = { has_star_flag = empire_cluster }
 				is_planet_class = pc_gaia
 				has_deposit = d_betharian_deposit
 				has_deposit = d_alien_pets_deposit
-				exists = archaeological_site # vanilla fix
 			}
 		}
 	}
