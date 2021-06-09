@@ -140,15 +140,20 @@ country_event = {
 	id = distar.10950
 	hide_window = yes
 	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = l_cluster_opened }
+	}
+
 	immediate = {
-		set_country_flag = lcluster_opener
-		set_country_flag = lgates_activated
 		set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 5 }
+		set_country_flag = lcluster_opener
+		country_event = { id = distar.11000 days = 1 }	# Spawn L-Cluster
 
 		### Set 1st L-Gate as Target
 		if = {
 			limit = {
-				NOT = { exists = event_target:CmtTargetLgateOrininatingSystem }
+				NOT = { exists = event_target:CmtTargetLgateOriginatingSystem }
 			}
 			# from = ship
 			if = {
@@ -156,16 +161,16 @@ country_event = {
 					exists = from
 					from = { is_scope_type = ship }
 				}
-				from.solar_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
+				from.solar_system = { save_global_event_target_as = CmtTargetLgateOriginatingSystem }
 			}
 			else_if = {
 				limit = { exists = event_target:candidate_gateway_system }
-				event_target:candidate_gateway_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
+				event_target:candidate_gateway_system = { save_global_event_target_as = CmtTargetLgateOriginatingSystem }
 			}
 			else_if = {
 				limit = { exists = event_target:candidate_gateway }
 				event_target:candidate_gateway = {
-					solar_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
+					solar_system = { save_global_event_target_as = CmtTargetLgateOriginatingSystem }
 				}
 			}
 			else = {
@@ -181,7 +186,7 @@ country_event = {
 						}
 						every_owned_ship = {
 							limit = { is_ship_class = shipclass_science_ship }
-							solar_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
+							solar_system = { save_global_event_target_as = CmtTargetLgateOriginatingSystem }
 						}
 					}
 				}
@@ -189,11 +194,11 @@ country_event = {
 			if = {
 				# only last fallback
 				limit = {
-					NOT = { exists = event_target:CmtTargetLgateOrininatingSystem }
+					NOT = { exists = event_target:CmtTargetLgateOriginatingSystem }
 				}
 				random_megastructure = {
 					limit = { CmtTriggerIsClosedLgate = yes }
-					solar_system = { save_global_event_target_as = CmtTargetLgateOrininatingSystem }
+					solar_system = { save_global_event_target_as = CmtTargetLgateOriginatingSystem }
 				}
 			}
 		}
@@ -210,7 +215,7 @@ country_event = {
 		event_target:global_event_country = {
 			country_event = { id = distar.8001 }
 		}
-		### Change Outcome (Crisis Manager) ###
+		### Change Outcome (Crisis Manager)
 		if = {
 			limit = {
 				OR = {
@@ -241,7 +246,7 @@ country_event = {
 			remove_global_flag = gray_goo_crisis_set
 			remove_global_flag = active_gray_goo
 			random_list = {
-				3 = {
+				30 = {
 					modifier = {
 						factor = 0
 						has_global_flag = CmtFlagLgateForbidSilence
@@ -252,7 +257,7 @@ country_event = {
 						}
 					}
 				}
-				3 = {
+				30 = {
 					modifier = {
 						factor = 0
 						# OR = {
@@ -266,14 +271,14 @@ country_event = {
 					}
 					set_global_flag = dragon_season
 				}
-				3 = {
+				30 = {
 					modifier = {
 						factor = 0
 						has_global_flag = CmtFlagLgateForbidDessanu
 					}
 					set_global_flag = gray_goo_empire_set
 				}
-				5 = {
+				50 = {
 					modifier = {
 						factor = 0
 						has_global_flag = CmtFlagLgateForbidGraygoo
@@ -282,7 +287,7 @@ country_event = {
 					set_global_flag = active_gray_goo
 				}
 			}
-			## ADT: Always L-Drake
+			## ADT: Always L-Drake TODO CM ready
 			if = {
 				limit = {
 					NOT = { has_global_flag = CmtFlagLgateForbidLdrake }
@@ -296,22 +301,23 @@ country_event = {
 			}
 		}
 		### Activate L-Gate
-		event_target:CmtTargetLgateOrininatingSystem = {
+		country_event = { id = CrisisManagerControl.6201 }		## Open L-Gates Cycle
+		event_target:CmtTargetLgateOriginatingSystem = {
 			if = {
 				# flag prevents the Tempest from using this gate,
 				# do not set the flag if there's only one l-gate system
-				limit = {
+				limit = {		## 2 or More L-Gates Exist in Galaxy
 					any_system = {
 						has_star_flag = lgate
 						NOT = { is_same_value = prev }
 					}
 				}
-				set_star_flag = lgate_originating_system
+				set_star_flag = lgate_originating_system		## For Graygoo (Non-spawn from Here)
 			}
 			else = {
 				root = { set_country_flag = only_one_lgate }
 			}
-			# also try to refresh the other posssible missing targets
+			# Try to refresh the posssible missing target (for unusual reason)
 			save_global_event_target_as = candidate_gateway_system
 			random_system_megastructure = {
 				limit = { CmtTriggerIsClosedLgate = yes }
@@ -319,11 +325,11 @@ country_event = {
 			}
 		}
 
-		# Outcome, to be determined at game start
+		### Call Outcome (to be determined at game start)
 		if = {
 			limit = { has_global_flag = dragon_season }
 			# All gates must not be deactivated, so call it first
-			event_target:CmtTargetLgateOrininatingSystem = {
+			event_target:CmtTargetLgateOriginatingSystem = {
 				closest_system = {
 					min_steps = 3
 					limit = { NOT = { any_system_planet = { is_colony = yes } } }
@@ -333,7 +339,6 @@ country_event = {
 			# Theoretically Must be called immediately (because graygoo.100 and candidate_gateway)
 			country_event = { id = distar.13000 }
 		}
-		country_event = { id = distar.11000 days = 1 } # Spawn L-Cluster
 
 		if = {
 			limit = { has_global_flag = gray_goo_crisis_set }
@@ -386,7 +391,7 @@ country_event = {
 					}
 				}
 			} else = {
-				event_target:CmtTargetLgateOrininatingSystem = {
+				event_target:CmtTargetLgateOriginatingSystem = {
 					if = {
 						limit = { any_system_megastructure = { CmtTriggerIsClosedLgate = yes } }
 						save_global_event_target_as = candidate_gateway_system # for desc only
@@ -406,20 +411,37 @@ country_event = {
 			}
 			event_target:candidate_gateway = { CmtEffectOpenLgate = yes }
 		}
-		### Technology Control: Put AFTER graygoo.110 (copy on graygoo.116) and before l_cluster_opened!
-		set_global_flag = CmtFlagLgateSkipTech
+
+		### Terraformablity
 		if = {
-			limit = { NOT = { has_global_flag = gray_goo_empire_set } }
-			every_playable_country = {
-				limit = {
-					OR = {
-						is_researching_technology = tech_lgate_activation
-						has_tech_option = tech_lgate_activation
-						has_event_chain = l_cluster_chain
-					}
+			limit = {
+				event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 6 } }
+				NOR = {
+					has_global_flag = gray_goo_crisis_set
+					has_global_flag = gray_goo_empire_set
 				}
-				give_technology = { tech = tech_lgate_activation message = no }
 			}
+			every_galaxy_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				add_modifier = { modifier = terraforming_candidate days = -1 }
+			}
+		} # The L-Cluster gets on distar.11000
+
+		### Technology Control: Put AFTER graygoo.100 (copy on graygoo.116) and before l_cluster_opened!
+		every_playable_country = {
+			limit = {
+				OR = {
+					is_researching_technology = tech_lgate_activation
+					has_technology = tech_lgate_activation
+					has_special_project = LCLUSTER_PROJECT
+				}
+			}
+			# For Dessanu Gift
+			if = {
+				limit = { has_global_flag = gray_goo_empire_set }
+				set_timed_country_flag = { flag = CmtFlagLgateOpenFinalPhase days = 15 }
+			}
+			give_technology = { tech = tech_lgate_activation message = no }
 		}
 		set_global_flag = l_cluster_opened
 		set_global_flag = lgates_activated_globally
@@ -690,10 +712,49 @@ country_event = {
 					save_global_event_target_as = lcluster4b
 				}
 			}
+
+			# Mod GUILLI / Crisis Manager support
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = has_guillis_planet_modifiers_mod
+						AND = {
+							event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 6 } }
+							NOR = {
+								has_global_flag = gray_goo_crisis_set
+								has_global_flag = gray_goo_empire_set
+							}
+						}
+					}
+				}
+				every_system = {
+					limit = { has_star_flag = lcluster }
+					if = { limit = { has_global_flag = has_guillis_planet_modifiers_mod }
+						every_system_planet = {
+							planet_event = { id = gpm_engine.1 }
+						}
+					}
+					### Terraformablity
+					if = {
+						limit = {
+							event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 6 } }
+							NOR = {
+								has_global_flag = gray_goo_crisis_set
+								has_global_flag = gray_goo_empire_set
+							}
+						}
+						every_system_planet = {
+							limit = { is_planet_class = pc_gray_goo }
+							add_modifier = { modifier = terraforming_candidate days = -1 }
+						}
+					}
+				}
+			} # GUILLI END
+
 			# Add hyperlanes
 			event_target:lcluster5 = {
 				add_hyperlane = {
-				from = this
+					from = this
 					to = event_target:lcluster4
 				}
 				# For backward compat.
@@ -763,6 +824,7 @@ country_event = {
 			}
 		}
 		set_spawn_system_batch = end
+		set_country_flag = lgates_activated
 		if = {
 			limit = {
 				OR = {

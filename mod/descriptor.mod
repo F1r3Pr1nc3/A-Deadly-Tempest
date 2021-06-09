@@ -1,4 +1,4 @@
-version="1.8.6"
+version="1.8.8"
 name="A Deadly Tempest (3.0)"
 tags={
 	"Events"
@@ -12,6 +12,10 @@ tags={
 	"L-Gates"
 	"Gatebuilders"
 	"Nanites"
+}
+dependencies={
+	"Guilli's Planet Modifiers and Features"
+	"Crisis Manager - Mid-Game Edition (3.0.¢)"
 }
 picture="thumbnail.png"
 supported_version="3.0.*"

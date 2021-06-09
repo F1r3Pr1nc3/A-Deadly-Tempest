@@ -1000,22 +1000,7 @@ country_event = {
 			every_playable_country = {
 				limit = { NOR = { is_same_empire = root has_country_flag = lcluster_opener } }
 				if = {
-					limit = {
-						OR = {
-							is_researching_technology = tech_lgate_activation
-							has_technology = tech_lgate_activation
-							has_special_project = LCLUSTER_PROJECT
-						}
-					}
-					set_country_flag = CmtFlagLgateOpenFinalPhase
-				}
-				if = {
-					limit = {
-						OR = {
-							has_special_project = LCLUSTER_PROJECT
-							has_event_chain = l_cluster_chain
-						}
-					}
+					limit = { has_country_flag = CmtFlagLgateOpenFinalPhase }
 					liquidate_clues = yes # Remove Quest (FIX vanilla)
 					country_event = { id = graygoo.111 }
 				} else = { country_event = { id = graygoo.112 } }
@@ -1100,23 +1085,7 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-
-	immediate = {
-		every_playable_country = {
-			limit = {
-				OR = {
-					is_researching_technology = tech_lgate_activation
-					has_tech_option = tech_lgate_activation
-					has_event_chain = l_cluster_chain
-				}
-			}
-			give_technology = {
-				tech = tech_lgate_activation
-				message = no
-			}
-		}
-		set_global_flag = l_cluster_opened
-	}
+	# immediate = {}
 
 	option = {
 		name = graygoo.116.d
@@ -2234,7 +2203,7 @@ country_event = {
 		clear_global_event_target = lcluster1b
 		clear_global_event_target = lcluster1
 		clear_global_event_target = candidate_gateway_system
-		clear_global_event_target = CmtTargetLgateOrininatingSystem
+		clear_global_event_target = CmtTargetLgateOriginatingSystem
 	}
 }
 

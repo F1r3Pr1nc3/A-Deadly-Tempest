@@ -1,15 +1,12 @@
 namespace = CrisisManagerMenu
 
-#################################
-#################################
-#####						#####
-#####	T101 Template ADT	#####
-#####						#####
-#################################
-#################################
-#
-# this template controls CmtFlagNoCall.
-#
+###############################
+###############################
+#####                     #####
+#####    Template T101    #####
+#####                     #####
+###############################
+###############################
 
 country_event = {
 	id = CrisisManagerMenu.2101
@@ -24,10 +21,6 @@ country_event = {
 			### Common Configurations
 			set_variable = { which = CmtVarVersion value = @CmtT101_ConstVersionInfo }
 			set_variable = { which = CmtVarTemplateCode value = 2101 }
-			if = {
-				limit = { always = @CmtT101_ConstCallOnGameStart }
-				remove_global_flag = CmtFlagNoCall
-			} else = { set_global_flag = CmtFlagNoCall }
 
 			### End Game Edition
 			if = {

@@ -318,7 +318,7 @@ country_event = {
 					has_total_war_cb = yes
 					# any_playable_country = {
 					any_country = {
-						# NOT = { is_same_empire = prev }
+						NOT = { is_same_empire = prev }
 						relative_power = {
 							who = prev
 							category = all							#fleet

@@ -1,4 +1,6 @@
 
+# @NSC_TitanAuraComponent	= "nsc_titan_aura"
+
 # Gray Goo Interdictor
 graygoo_interdictor = {
 	graphical_culture = no

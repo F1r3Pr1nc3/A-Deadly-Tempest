@@ -161,24 +161,6 @@ country_event = {
 		}
 	}
 
-	### Apply Configuration Template: ADT Template
-	option = {
-		name = CrisisManagerTemplate_T101.name
-		custom_tooltip = CrisisManagerTemplate_T101.tooltip
-		trigger = {
-			CmtTriggerTemplateActivated_T101 = yes
-			OR = {
-				NOT = { CmtTriggerAnyManagedEventTriggered = yes }
-				has_global_flag = CmtFlagDebugMode
-			}
-		}
-		hidden_effect = {
-			set_global_flag = CmtFlagTemplateAppliedNow
-			country_event = { id = CrisisManagerMenu.2101 }
-			country_event = { id = CrisisManagerMenu.0100 }
-		}
-	}
-
 	### Apply Configuration Template: Primacy Template
 	option = {
 		name = CrisisManagerTemplate_T001.name

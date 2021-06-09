@@ -152,6 +152,6 @@ CmtEffectDestroyGraygoo = {
 			}
 		}
 		# Cybrex Depart Galaxy
-		event_target:cybrex = { country_event = { id = crisis.2406 days = 365 random = 800 } }
+		event_target:cybrex = { country_event = { id = crisis.2406 days = 360 random = 720 } }
 	}
 }
