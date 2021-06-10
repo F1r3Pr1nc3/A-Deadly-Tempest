@@ -372,7 +372,7 @@ nanite_agri_drone = {
 ###################
 
 nanite_forger = {
-	icon = job_esc_nanite_breeder
+	icon = esc_nanite_breeder
 	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_crystal_plant
@@ -424,7 +424,7 @@ nanite_forger = {
 }
 
 nanite_forger_drone = {
-	icon = job_esc_nanite_breeder
+	icon = esc_nanite_breeder
 	category = complex_drone
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_crystal_plant

@@ -306,10 +306,11 @@ country_event = {
 			if = {
 				# flag prevents the Tempest from using this gate,
 				# do not set the flag if there's only one l-gate system
-				limit = {		## 2 or More L-Gates Exist in Galaxy
+				limit = {		## 2 or more l-gates exist in galaxy
 					any_system = {
 						has_star_flag = lgate
 						NOT = { is_same_value = prev }
+						any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
 					}
 				}
 				set_star_flag = lgate_originating_system		## For Graygoo (Non-spawn from Here)
