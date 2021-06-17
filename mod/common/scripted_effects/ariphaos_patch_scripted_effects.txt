@@ -2,11 +2,11 @@
 
 ariphaos_patch_remove_habitat = {
 	save_event_target_as = habitat_to_remove
-	solar_system= { 
-		random_system_planet = { 
-		limit = { any_moon = { is_planet = event_target:habitat_to_remove } } 
-			remove_planet_flag = has_megastructure 
-		} 
+	solar_system= {
+		random_system_planet = {
+		limit = { any_moon = { is_planet = event_target:habitat_to_remove } }
+			remove_planet_flag = has_megastructure
+		}
 	}
 	#destroy_colony = yes
 	remove_planet = yes
@@ -67,8 +67,8 @@ ariphaos_patch_leader_change_traits = {
 	###########################################
 	if = {
 		limit = {
-			species = { 
-				has_trait = trait_erudite 
+			species = {
+				has_trait = trait_erudite
 				NOR = {
 					has_trait = trait_machine_unit
 					has_trait = trait_mechanical
@@ -101,7 +101,7 @@ ariphaos_patch_leader_change_traits = {
 			add_ruler_trait = leader_trait_ruler_erudite
 		}
 	}
-	
+
 	# Remove
 	if = {
 		limit = {
@@ -153,11 +153,11 @@ ariphaos_patch_leader_change_traits = {
 	###########################################
 	# Cyborg
 	###########################################
-	
+
 	if = {
 		limit = {
-			species = { 
-				has_trait = trait_cybernetic 
+			species = {
+				has_trait = trait_cybernetic
 				NOR = {
 					has_trait = trait_machine_unit
 					has_trait = trait_mechanical
@@ -190,11 +190,11 @@ ariphaos_patch_leader_change_traits = {
 			add_ruler_trait = leader_trait_ruler_cyborg
 		}
 	}
-	
+
 	# Remove
 	if = {
 		limit = {
-			species = {  
+			species = {
 				OR = {
 					NOT = { has_trait = trait_cybernetic }
 					has_trait = trait_machine_unit
@@ -228,14 +228,14 @@ ariphaos_patch_leader_change_traits = {
 			remove_ruler_trait = leader_trait_ruler_cyborg
 		}
 	}
-	
+
 	###########################################
 	# Synthetic
 	###########################################
-	
+
 	if = {
 		limit = {
-			species = { 
+			species = {
 				has_trait = trait_mechanical
 			}
 		}
@@ -265,14 +265,14 @@ ariphaos_patch_leader_change_traits = {
 			add_ruler_trait = leader_trait_ruler_synthetic
 		}
 	}
-	
+
 	###########################################
 	# Psionic
 	###########################################
-	
+
 	if = {
 		limit = {
-			species = { 
+			species = {
 				has_trait = trait_psionic
 				NOR = {
 					has_trait = trait_machine_unit
@@ -281,15 +281,15 @@ ariphaos_patch_leader_change_traits = {
 			}
 		}
 		if = {
-			limit = { 
-				leader_class = admiral 
+			limit = {
+				leader_class = admiral
 				NOT = { has_trait = leader_trait_admiral_chosen }
 			}
 			add_trait = leader_trait_admiral_psionic
 			add_ruler_trait = leader_trait_ruler_psionic
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				leader_class = general
 				NOT = { has_trait = leader_trait_general_chosen }
 			}
@@ -297,7 +297,7 @@ ariphaos_patch_leader_change_traits = {
 			add_ruler_trait = leader_trait_ruler_psionic
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				leader_class = governor
 				NOT = { has_trait = leader_trait_governor_chosen }
 			}
@@ -305,7 +305,7 @@ ariphaos_patch_leader_change_traits = {
 			add_ruler_trait = leader_trait_ruler_psionic
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				leader_class = scientist
 				NOT = { has_trait = leader_trait_scientist_chosen }
 			}
@@ -313,23 +313,23 @@ ariphaos_patch_leader_change_traits = {
 			add_ruler_trait = leader_trait_ruler_psionic
 		}
 		else_if = {
-			limit = { 
-				leader_class = ruler 
+			limit = {
+				leader_class = ruler
 				NOT = { has_ruler_trait = leader_trait_ruler_chosen }
 			}
 			add_trait = leader_trait_ruler_psionic
 			add_ruler_trait = leader_trait_ruler_psionic
 		}
 	}
-	
+
 	# Remove
 	if = {
 		limit = {
-			species = {  
+			species = {
 				OR = {
-					NOR = { 
-						has_trait = trait_psionic 
-						has_trait = trait_latent_psionic 
+					NOR = {
+						has_trait = trait_psionic
+						has_trait = trait_latent_psionic
 					}
 					has_trait = trait_machine_unit
 					has_trait = trait_mechanical
@@ -360,6 +360,118 @@ ariphaos_patch_leader_change_traits = {
 			limit = { has_trait = leader_trait_ruler_psionic }
 			remove_trait = leader_trait_ruler_psionic
 			remove_ruler_trait = leader_trait_ruler_psionic
+		}
+	}
+}
+
+liquidate_clues = {
+	hidden_effect = {
+		if = {
+			limit = { has_special_project = LCLUSTER_PROJECT }
+			custom_tooltip = liquidated_7
+			add_resource = {
+				engineering_research = 3500
+				energy = 3500
+			}
+			abort_special_project = { type = LCLUSTER_PROJECT }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = num_lcluster_clues
+					value > 6
+				}
+			}
+			custom_tooltip = liquidated_7
+			add_resource = {
+				engineering_research = 3500
+				energy = 3500
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = num_lcluster_clues
+					value = 6
+				}
+			}
+			custom_tooltip = liquidated_6
+			add_resource = {
+				engineering_research = 3000
+				energy = 3000
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = num_lcluster_clues
+					value = 5
+				}
+			}
+			custom_tooltip = liquidated_5
+			add_resource = {
+				engineering_research = 2500
+				energy = 2500
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = num_lcluster_clues
+					value = 4
+				}
+			}
+			custom_tooltip = liquidated_4
+			add_resource = {
+				engineering_research = 2000
+				energy = 2000
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = num_lcluster_clues
+					value = 3
+				}
+			}
+			custom_tooltip = liquidated_3
+			add_resource = {
+				engineering_research = 1500
+				energy = 1500
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = num_lcluster_clues
+					value = 2
+				}
+			}
+			custom_tooltip = liquidated_2
+			add_resource = {
+				engineering_research = 1000
+				energy = 1000
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = num_lcluster_clues
+					value = 1
+				}
+			}
+			custom_tooltip = liquidated_1
+			add_resource = {
+				engineering_research = 500
+				energy = 500
+			}
+		}
+		else = {
+			custom_tooltip = liquidated_0
+		}
+		if = {
+			limit = { has_event_chain = l_cluster_chain }
+			end_event_chain = l_cluster_chain
 		}
 	}
 }

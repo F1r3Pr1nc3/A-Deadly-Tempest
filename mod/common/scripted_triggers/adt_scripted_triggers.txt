@@ -30,6 +30,20 @@ check_fleet_count_in_system = {
 ## For Mod Compatibility
 ########################
 
+
+
+### Standard
+CmtTriggerIsPlayableEmpire = {
+	OR = {		## Written in Cmt00 Cmt40 and Cmt50
+		is_country_type = default
+		is_zofe_country = yes # is_zofe_compatible
+	}
+}
+
+is_zofe_country = {
+	always = no
+}
+
 has_nhsc = {
 	has_global_flag = nhsc_v30
 	# exists = event_target:CmtGlobalVar
@@ -38,13 +52,13 @@ has_nhsc = {
 	# }
 }
 
-is_zofe_compatible = {
-	OR = {
-		is_country_type = default
-		# is_country_type = ascended_empire
-		# is_country_type = lost_empire
-	}
-}
+# is_zofe_compatible = {
+# 	# OR = {
+# 		is_country_type = default
+# 		# is_country_type = ascended_empire
+# 		# is_country_type = lost_empire
+# 	# }
+# }
 
 is_nanite_country = {
 	OR = {

@@ -302,7 +302,7 @@
  tech_scavenger_bot:0 "$scavenger_bot$计划"
  tech_scavenger_bot_desc:0 "允许建造$scavenger_bot_plural$"
  tech_voidspawn:0 "$voidspawn$计划"
- tech_voidspawn_desc:0 "允许建造$voidspawn_plural$"
+ tech_voidspawn_desc:0 "允许复制巨大的$voidspawn_plural$"
  voidspawn:0 "$leviathan_01_voidspawn$"
  voidspawn_key:0 ""
  voidspawn_plural:0 "$leviathan_01_voidspawn_plural$"

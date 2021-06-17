@@ -195,3 +195,17 @@ on_country_destroyed = {
 		a_deadly_tempest.2404 # open lcluster
 	}
 }
+
+on_destroy_planet_with_PLANET_KILLER_HARVESTER = {
+	events = {
+		# harvester_engine.100
+		a_deadly_tempest.500
+	}
+}
+
+on_destroy_planet_with_PLANET_KILLER_NANOBOTS = {
+	events = {
+		# planet_destruction.500
+		a_deadly_tempest.500
+	}
+}

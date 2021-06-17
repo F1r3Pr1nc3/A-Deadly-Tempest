@@ -372,23 +372,43 @@ tech_nanite_dragon = {
 }
 
 tech_voidspawn = {
-	cost = @tier4cost1
+	cost = @tier5cost1
 	area = engineering
 	tier = 5
 	category = { voidcraft }
 	prerequisites = {
+		"tech_colossus" # ap too restrictive?
+		# "tech_pk_nanobots"
+		# "tech_gargantuan_evolution"
 		"tech_nanite_guardians"
 		"tech_nanite_mega_construction"
 		"tech_nanite_modular_engineering"
 	}
-	weight = @tier5weight2
+	weight = @tier5weight3
 	is_rare = yes
+	is_dangerous = yes
 
 	potential = {
 		no_scope = {
 			has_distar = yes
-			has_global_flag = hatchling_triggered
+			# has_global_flag = hatchling_triggered
+			exists = event_target:hatchling_egg
 			NOT = { has_global_flag = voidspawn_disabled }
+		}
+		OR = {
+			has_global_flag = distar_overhaul_mod_active
+			has_ethic = ethic_gestalt_consciousness
+			has_technology = tech_pk_nanobots
+		}
+		OR = {
+			has_country_flag = killed_hatchling
+			any_neighbor_country = {
+				has_technology = tech_voidspawn
+			}
+			AND = {
+				exists = event_target:gray_owner
+				is_same_empire = event_target:gray_owner
+			}
 		}
 	}
 
@@ -400,7 +420,7 @@ tech_voidspawn = {
 	}
 
 	weight_modifier = {
-		factor = 0.01
+		factor = 0.005 # 0.01
 		modifier = {
 			factor = 1.25
 			has_country_flag = encountered_hatchling
@@ -411,7 +431,7 @@ tech_voidspawn = {
 			is_same_empire = event_target:egg_owner
 		}
 		modifier = {
-			factor = 2
+			factor = 5
 			has_country_flag = hatchling_killed
 		}
 		modifier = {
@@ -439,6 +459,12 @@ tech_voidspawn = {
 				has_ethic = ethic_fanatic_egalitarian
 			}
 		}
+		modifier = {
+			factor = 3
+			any_neighbor_country = {
+				has_technology = tech_voidspawn
+			}
+		}
 	}
 
 	ai_weight = {
@@ -453,7 +479,7 @@ tech_voidspawn = {
 			is_same_empire = event_target:egg_owner
 		}
 		modifier = {
-			factor = 2
+			factor = 5
 			has_country_flag = hatchling_killed
 		}
 		modifier = {
@@ -466,6 +492,12 @@ tech_voidspawn = {
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 3
+			any_neighbor_country = {
+				has_technology = tech_voidspawn
 			}
 		}
 	}

@@ -302,7 +302,7 @@
  tech_scavenger_bot:0 "Proyecto $scavenger_bot$"
  tech_scavenger_bot_desc:0 "Permitir la construcción de $scavenger_bot_plural$"
  tech_voidspawn:0 "Proyecto $voidspawn$"
- tech_voidspawn_desc:0 "Permitir la construcción de $voidspawn_plural$"
+ tech_voidspawn_desc:0 "Permite la replicación de gigantes $voidspawn_plural$." # (por §M$PLANET_KILLER_NANOBOTS$§!).
  voidspawn:0 "$leviathan_01_voidspawn$"
  voidspawn_key:0 ""
  voidspawn_plural:0 "$leviathan_01_voidspawn_plural$"

@@ -232,15 +232,13 @@ country_event = {
 			limit = { has_star_flag = lcluster }
 			random_system_planet = {
 				limit = { is_planet_class = pc_gray_goo has_anomaly = no }
-				random_list = {
-					4 = {
-						set_planet_flag = hatchling_egg
-						random_list = {
-							4 = { set_planet_flag = hatchling_will_trigger }
-							6 = { }
-						}
+				random = {
+					chance = 40
+					set_planet_flag = hatchling_egg
+					random = {
+						chance = 40
+						set_planet_flag = hatchling_will_trigger
 					}
-					6 = { }
 				}
 			}
 		}
@@ -276,15 +274,13 @@ country_event = {
 								has_anomaly = no
 								# is_preventing_anomaly = no
 							}
-							random_list = {
-								4 = {
-									set_planet_flag = hatchling_egg
-									random_list = {
-										4 = { set_planet_flag = hatchling_will_trigger }
-										6 = { }
-									}
+							random = {
+								chance = 40
+								set_planet_flag = hatchling_egg
+								random = {
+									chance = 40
+									set_planet_flag = hatchling_will_trigger
 								}
-								6 = { }
 							}
 							set_surveyed = { surveyed = no surveyor = prevprev }
 							add_anomaly = { category = disco_gray_cat target = prevprev }
@@ -508,7 +504,7 @@ country_event = {
 			# Support nhsc mod
 			if = {
 				limit = {
-					no_scope = { has_nhsc = yes }
+					has_nhsc = yes
 					NOR = {
 						has_technology = nhsc_tech_synthetic_lifeform_studies
 						has_tech_option = nhsc_tech_synthetic_lifeform_studies
@@ -2296,6 +2292,48 @@ ship_event = {
 					limit = { is_ship_size = military_station_nanite_bulwark }
 					ship_event = { id = a_deadly_tempest.221 days = 1 }
 					ship_event = { id = a_deadly_tempest.222 days = 2 }
+				}
+			}
+		}
+	}
+}
+
+# on_destroy_planet_with_PLANET_DESTRUCTION
+# By Nanobot Assimilation
+planet_event = {
+	id = a_deadly_tempest.500
+	is_triggered_only = yes
+	hide_window = yes
+	# this/root = planet that have been fired upon
+	# from = fleet that fired
+	# pre_triggers = {  }
+	trigger = {
+		has_distar = yes
+		# has_global_flag = hatchling_triggered
+		exists = event_target:hatchling_egg
+		has_global_flag = l_cluster_opened
+		NOT = { has_global_flag = voidspawn_disabled }
+		exists = from.owner
+		from.owner = { has_technology = tech_voidspawn }
+	}
+	immediate = {
+		random = {
+			chance = 60
+			set_planet_flag = hatchling_egg
+			random = {
+				chance = 60
+				# 50 = { set_planet_flag = hatchling_will_trigger }
+				set_planet_flag = hatchling_will_trigger
+				set_planet_flag = fired_nanobots
+				from.owner = {
+					set_country_flag = fired_nanobots@root
+				}
+				# set_planet_flag = space_owner_triggered
+				set_timed_planet_flag = { flag = space_owner_triggered days = 900 random = 100 }
+			}
+			every_playable_country = {
+				PREV = {
+					set_surveyed = { surveyed = no surveyor = PREV }
 				}
 			}
 		}

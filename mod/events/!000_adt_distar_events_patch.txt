@@ -10,7 +10,7 @@ namespace = distar
 ###############################################
 ###############################################
 
-# Randomize L-Cluster outcome on_game_start
+# # Randomize L-Cluster outcome on_game_start
 # event = {
 # 	id = distar.8000
 # 	hide_window = yes
@@ -35,7 +35,7 @@ namespace = distar
 # 		}
 # 	}
 # }
-# Temp Vanilla Workaround Fix
+# ### Temp Vanilla Workaround Fix
 # country_event = {
 # 	id = distar.8001
 # 	hide_window = yes
@@ -214,6 +214,7 @@ country_event = {
 		# Save game workaround fix: must be re-run due strange bug in 3.0 at game_start
 		event_target:global_event_country = {
 			country_event = { id = distar.8001 }
+			# save_global_event_target_as = CmtGlobalVar
 		}
 		### Change Outcome (Crisis Manager)
 		if = {
@@ -416,6 +417,7 @@ country_event = {
 		### Terraformablity
 		if = {
 			limit = {
+				exists = event_target:CmtGlobalVar
 				event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 6 } }
 				NOR = {
 					has_global_flag = gray_goo_crisis_set
@@ -465,7 +467,7 @@ event = {
 				has_special_project = LCLUSTER_PROJECT
 			}
 			any_relation = {
-				is_zofe_compatible = yes
+				CmtTriggerIsPlayableEmpire = yes
 				has_communications = prev
 				has_event_chain = l_cluster_chain
 				NOT = { has_country_flag = lgate_warned@prev }
@@ -486,7 +488,7 @@ event = {
 					has_special_project = LCLUSTER_PROJECT
 				}
 				any_relation = {
-					is_zofe_compatible = yes
+					CmtTriggerIsPlayableEmpire = yes
 					has_communications = prev
 					has_event_chain = l_cluster_chain
 					NOT = { has_country_flag = lgate_warned@prev }
@@ -499,7 +501,7 @@ event = {
 			}
 			random_relation = {
 				limit = {
-					is_zofe_compatible = yes
+					CmtTriggerIsPlayableEmpire = yes
 					has_communications = prev
 					has_event_chain = l_cluster_chain
 					NOT = { has_country_flag = lgate_warned@prev }
@@ -720,6 +722,7 @@ country_event = {
 					OR = {
 						has_global_flag = has_guillis_planet_modifiers_mod
 						AND = {
+							exists = event_target:CmtGlobalVar
 							event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 6 } }
 							NOR = {
 								has_global_flag = gray_goo_crisis_set
@@ -738,6 +741,7 @@ country_event = {
 					### Terraformablity
 					if = {
 						limit = {
+							exists = event_target:CmtGlobalVar
 							event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 6 } }
 							NOR = {
 								has_global_flag = gray_goo_crisis_set
@@ -933,7 +937,11 @@ country_event = {
 											country_event = { id = distar.13010 }
 										}
 									}
-									if = { limit = { is_ai = yes is_zofe_compatible = yes }
+									if = {
+										limit = {
+											is_ai = yes
+											CmtTriggerIsPlayableEmpire = yes
+										}
 										event_target:dragons_target = {
 											system_event = { id = distar.13012 days = 160 random = 40 }
 										}
@@ -943,7 +951,10 @@ country_event = {
 						} else_if = {
 							limit = {
 								exists = space_owner
-								space_owner = { is_ai = yes is_zofe_compatible = yes }
+								space_owner = {
+									is_ai = yes
+									CmtTriggerIsPlayableEmpire = yes
+								}
 							}
 							system_event = { id = distar.13012 days = 240 random = 60 }
 						} else = {
@@ -1073,7 +1084,7 @@ system_event = {
 				exists = space_owner
 				space_owner = {
 					is_ai = yes
-					is_zofe_compatible = yes
+					CmtTriggerIsPlayableEmpire = yes
 					# has_country_flag = knows_ldragon
 					NOR = {
 						is_homicidal = yes
@@ -1092,7 +1103,7 @@ system_event = {
 					every_federation_ally = {
 						limit = {
 							is_ai = yes
-							is_zofe_compatible = yes
+							CmtTriggerIsPlayableEmpire = yes
 							NOR = {
 								is_homicidal = yes
 								has_ethic = ethic_fanatic_xenophobe
@@ -1112,7 +1123,7 @@ system_event = {
 			every_playable_country = {
 				limit = {
 					is_ai = yes
-					is_zofe_compatible = yes
+					CmtTriggerIsPlayableEmpire = yes
 					# has_country_flag = knows_ldragon
 					NOR = {
 						is_homicidal = yes

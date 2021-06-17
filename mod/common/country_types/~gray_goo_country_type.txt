@@ -142,7 +142,7 @@ gate_builders = {
 }
 
 awakened_gate_builders = {
-	# always_valid_target_aggressive = yes
+	always_valid_target_aggressive = yes
 	has_difficulty_bonuses = yes
 	attack_unarmed_orbital_stations = yes
 	scaled_difficulty_bonuses = 1.0	# TODO

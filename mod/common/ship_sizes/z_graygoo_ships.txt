@@ -46,6 +46,8 @@ graygoo_interdictor = {
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
 
+	default_behavior = line
+
 	potential_construction = {
 		OR = {
 			is_scope_type = starbase
@@ -91,6 +93,11 @@ graygoo_interdictor = {
 			nanites = 1
 		}
 	}
+
+	min_upgrade_cost = {
+		alloys = 6
+		nanites = 3
+	}
 }
 
 # Gray Goo Mothership
@@ -130,6 +137,7 @@ graygoo_mothership = {
 
 	construction_type = starbase_shipyard
 	enable_default_design = no
+	default_behavior = artillery
 
 	potential_construction = {
 		OR = {
@@ -177,10 +185,6 @@ graygoo_mothership = {
 		}
 	}
 
-	min_upgrade_cost = {
-		alloys = 16
-	}
-
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "combat_computers"
@@ -192,6 +196,11 @@ graygoo_mothership = {
 		base = 3
 		max = 90
 		naval_cap_div = 120
+	}
+
+	min_upgrade_cost = {
+		alloys = 24
+		nanites = 12
 	}
 }
 
@@ -340,6 +349,8 @@ nanite_dragon = {
 	takes_name_from_ship_design = yes
 	can_have_federation_design = no
 	enable_default_design = no
+	components_add_to_cost = no
+
 	default_behavior = artillery
 	prerequisites = { "tech_nanite_dragon" }
 	combat_disengage_chance = 1.25
@@ -442,7 +453,7 @@ scavenger_bot = {
 
 	combat_size_multiplier = 5
 	size_multiplier = 32
-	fleet_slot_size = 16
+	fleet_slot_size = 24
 	section_slots = { "mid" = { locator = "part1" } "bot_1" = { locator = "bot_1" } "bot_2" = { locator = "bot_2" } "bot_3" = { locator = "bot_3" } }
 	prerequisites = { "tech_scavenger_bot" }
 
@@ -510,16 +521,16 @@ scavenger_bot = {
 		}
 	}
 
-	# empire_limit = { base = 1 } # is shown globally!?
+	# empire_limit = { base = 1 } # is shown globally?!?
 	num_target_locators = 0
 	is_space_station = no
 	takes_name_from_ship_design = yes
 	can_have_federation_design = no
 	enable_default_design = no
 	can_disable = no ## TODO yes!?
-	icon_frame = 7
+	icon_frame = 12
 	text_icon = military_size_32
-	ship_class_icon_frame = 35
+	ship_class_icon_frame = 28
 
 	default_behavior = carrier
 	combat_disengage_chance = 0.25
@@ -538,20 +549,21 @@ scavenger_bot = {
 	required_component_set = "nsc_titan_aura"				# built-in support for New Ship Classes and More
 
 	min_upgrade_cost = {
-		alloys = 16
-		nanites = 16
+		alloys = 40
+		nanites = 8
 	}
 }
 
 voidspawn = {
+	formation_priority = @juggernaut_formation_priority
 	is_space_object = yes
 	graphical_culture = no
+	can_be_inspected = no
 	entity = leviathan_01_voidspawn_entity
-	formation_priority = @titan_formation_priority
 	max_speed = @aj_speed_slow
 	acceleration = 0.2
 	rotation_speed = 0.20
-	collision_radius = 7
+	collision_radius = @titan_collision_radius
 	modifier = {
 		ship_evasion_add = 25
 		ship_armor_add = 100000
@@ -560,23 +572,33 @@ voidspawn = {
 	max_hitpoints = 100000
 	combat_size_multiplier = 50
 	size_multiplier = 32
-	fleet_slot_size = 8
+	fleet_slot_size = 24
 	section_slots = { "mid" = { locator = "spine" } }
 	num_target_locators = 0
 	icon_frame = 12
+	ship_class_icon_frame = 28
+	is_space_station = no
 	text_icon = military_size_space_creature
 	base_buildtime = 1800
 	uses_name_prefix = no
 	takes_name_from_ship_design = yes
 	can_have_federation_design = no
 	enable_default_design = no
-
+	components_add_to_cost = no
+	enable_3dview_in_ship_browser = no #if yes, ship design will have a 3d view in the ship browser
+	can_disable = no
 	default_behavior = artillery
 	is_designable = no ## TODO?
 
 	prerequisites = { "tech_voidspawn" }
 
 	combat_disengage_chance = 1.25
+
+	# empire_limit = {  # is shown globally?!?
+	# 	base = 1
+	# 	max = 2
+	# 	naval_cap_div = 700
+	# }
 
 	class = shipclass_military
 	construction_type = starbase_shipyard
@@ -594,9 +616,9 @@ voidspawn = {
 				is_scope_type = starbase
 				has_starbase_size >= starbase_citadel
 				# NOT = { has_starbase_size = juggernaut }
-				#NOT = { has_starbase_size = scavenger_bot }
+				# NOT = { has_starbase_size = scavenger_bot }
 				# OR = {
-					has_starbase_building = nanite_yards
+				has_starbase_building = nanite_yards
 					# has_starbase_size = graygoo_factory
 				# }
 			}
@@ -613,10 +635,10 @@ voidspawn = {
 		custom_tooltip = {
 			fail_text = starbase_nanite_yards_trigger
 			is_scope_type = starbase
-			OR = {
+			# OR = {
 				has_starbase_building = nanite_yards
 				# has_starbase_size = graygoo_factory
-			}
+			# }
 		}
 		custom_tooltip = {
 			fail_text = starbase_citadel_trigger
@@ -661,9 +683,9 @@ voidspawn = {
 	}
 
 	min_upgrade_cost = {
-		alloys = 16
+		alloys = 25
+		nanites = 50
 	}
-
 }
 
 ##  Nanite Starbase  ##
@@ -742,8 +764,8 @@ military_station_nanite_bulwark = {
 	# 		alloys = 2000
 	# 	}
 	# }
-	# ship_class_icon_frame = 26
-	# icon_frame = 1
+	ship_class_icon_frame = 24
+	icon_frame = 1
 }
 
 starbase_gatebuilders = {
@@ -756,8 +778,8 @@ starbase_gatebuilders = {
 
 	modifier = {
 		ship_evasion_mult = -1
-		ship_shield_add = 20000 # vanilla 10000; NSC 80000
-		ship_armor_add = 20000 # vanilla 10000; NSC 80000
+		ship_shield_add = 20000 # v.10000; NSC 80000
+		ship_armor_add = 20000 # v.10000; NSC 80000
 		ship_piracy_suppression_add = 16
 		starbase_module_capacity_add = 6
 		starbase_building_capacity_add = 4
@@ -770,17 +792,17 @@ starbase_gatebuilders = {
 		ship_accuracy_add = 25
 		ship_shield_mult = 1
 	}
-	max_hitpoints = 40000 # vanilla 20000; NSC 90000
+	max_hitpoints = 40000 # v.20000; NSC 90000
 	combat_size_multiplier = 50
 	size_multiplier = 8 # v.4
 	fleet_slot_size = 4 # v.2
 	section_slots = { "mid" = { locator = "part1" } }
 
 	num_target_locators = 0
-	is_space_station = no # vanilla no
+	is_space_station = no # v.no
 	base_buildtime = 730
 	is_designable = no ## TODO?
-	icon_frame = -1
+	icon_frame = 1
 	text_icon = military_size_station
 
 	uses_name_prefix = no
@@ -791,7 +813,7 @@ starbase_gatebuilders = {
 	is_listed = no
 	can_disable = no ## TODO yes - not really working
 	prerequisites = { "tech_nanite_ships" }
-	enable_default_design = no # vanilla no TODO yes - leads to free starbases?
+	enable_default_design = no # v.no TODO yes - leads to free starbases?
 	class = shipclass_starbase
 
 	required_component_set = "power_core"

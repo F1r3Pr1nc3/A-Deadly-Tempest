@@ -377,7 +377,8 @@ country_event = {
 			civics = {
 				civic = civic_awakened_machine
 				civic = civic_machine_terminator
-				# civic = civic_fanatic_purifiers
+				civic = civic_machine_assimilator
+				civic = civic_fanatic_purifiers
 			}
 			flag = random
 			effect = {
@@ -400,7 +401,16 @@ country_event = {
 		}
 		root = { save_event_target_as = awakened_machine_empire }
 		if = { limit = { host_has_dlc = "Apocalypse" }
+			set_country_flag = pk_nanobots
+			set_country_flag = colossus_project
+			set_country_flag = killed_hatchling
+			give_technology = { tech = tech_gargantuan_evolution message = no }
 			give_technology = { tech = tech_colossus message = no }
+			give_technology = { tech = tech_pk_nanobots message = no }
+			give_technology = { tech = tech_nanite_guardians message = no }
+			give_technology = { tech = tech_nanite_mega_construction message = no }
+			give_technology = { tech = tech_nanite_modular_engineering message = no }
+			give_technology = { tech = tech_voidspawn message = no }
 		}
 
 		change_country_flag = {
@@ -440,34 +450,40 @@ country_event = {
 		event_target:nanite_factory = {
 			root = { CmtEffectCreateAdmiralty_GraygooRoamer = yes } # Roamers
 		}
-		set_graphical_culture = "fallen_machine_empire_01" # temporary
-		add_global_ship_design = "NAME_Omega"
-		add_global_ship_design = "NAME_Alpha"
-		add_global_ship_design = "NAME_Beta"
-		add_global_ship_design = "NAME_Gamma"
-		add_global_ship_design = "NAME_Theta"
-		add_global_ship_design = "NAME_Tau"
-		add_global_ship_design = "NAME_Sigma"
-		add_global_ship_design = "NAME_FE_Starbase"
-		create_ship_design = { design = "NAME_Omega" }
-		add_ship_design = last_created_design
-		create_ship_design = { design = "NAME_Alpha" }
-		add_ship_design = last_created_design
-		create_ship_design = { design = "NAME_Beta" }
-		add_ship_design = last_created_design
-		create_ship_design = { design = "NAME_Gamma" }
-		add_ship_design = last_created_design
-		create_ship_design = { design = "NAME_Theta" }
-		add_ship_design = last_created_design
-		create_ship_design = { design = "NAME_Tau" }
-		add_ship_design = last_created_design
-		create_ship_design = { design = "NAME_Sigma" }
-		add_ship_design = last_created_design
+		# set_graphical_culture = "fallen_machine_empire_01" # temporary
+		# add_global_ship_design = "NAME_Omega"
+		# add_global_ship_design = "NAME_Alpha"
+		# add_global_ship_design = "NAME_Beta"
+		# add_global_ship_design = "NAME_Gamma"
+		# add_global_ship_design = "NAME_Theta"
+		# add_global_ship_design = "NAME_Tau"
+		# add_global_ship_design = "NAME_Sigma"
+		# add_global_ship_design = "NAME_FE_Starbase"
+		# create_ship_design = { design = "NAME_Omega" }
+		# add_ship_design = last_created_design
+		# create_ship_design = { design = "NAME_Alpha" }
+		# add_ship_design = last_created_design
+		# create_ship_design = { design = "NAME_Beta" }
+		# add_ship_design = last_created_design
+		# create_ship_design = { design = "NAME_Gamma" }
+		# add_ship_design = last_created_design
+		# create_ship_design = { design = "NAME_Theta" }
+		# add_ship_design = last_created_design
+		# create_ship_design = { design = "NAME_Tau" }
+		# add_ship_design = last_created_design
+		# create_ship_design = { design = "NAME_Sigma" }
+		# add_ship_design = last_created_design
 		# create_ship_design = { design = "NAME_FE_Starbase" }
 		# add_ship_design = last_created_design
 		# add_awakened_fallen_empire_fleet = yes
-		event_target:nanite_factory = {
-			create_fallen_empire_starting_navy = yes # galactic object
+		# event_target:nanite_factory = {
+		# 	create_fallen_empire_starting_navy = yes # galactic object
+		# }
+		capital_scope.solar_system = {
+			every_system_planet = {
+				limit = { can_colonize = { who = root status = yes } }
+				root = { CmtEffectCreateAdmiralty_GraygooGarryson = yes }
+			}
 		}
 
 		if = { limit = { has_origin = origin_machine_nanites }
@@ -478,7 +494,7 @@ country_event = {
 				set_owner = root
 				create_ship = {
 					name = random
-					design = "NAME_mardak_vol_haters_colossus"
+					design = "NAME_Nanobot_colossus"
 					graphical_culture = owner
 				}
 				set_location = {

@@ -8,7 +8,7 @@ tech_nanite_transmutation = {
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		no_scope = { has_distar = yes  }
+		has_distar = yes
 	}
 	weight_modifier = {
 		factor = 0.5
