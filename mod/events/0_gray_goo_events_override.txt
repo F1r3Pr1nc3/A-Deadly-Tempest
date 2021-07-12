@@ -1062,10 +1062,7 @@ country_event = {
 			limit = { NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateDessanuGift value = 1 } } } }
 			CmtEffectAddDessanuGift4 = yes
 		}
-		if = {
-			limit = { NOT = { has_technology = tech_mine_living_metal } }
-			give_technology = { tech = tech_mine_living_metal }
-		}
+		give_tech_no_error_effect = { MESSAGE = yes TECH = tech_mine_living_metal }
 	}
 }
 
@@ -2044,10 +2041,11 @@ country_event = {
 				every_owned_pop = { kill_pop = yes }
 				generate_new_deposits_and_blockers = yes
 				destroy_colony = yes
-				every_playable_country = {
-					limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
-					PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
-				}
+				# FIXME set_surveyed is bugged 3.0.3!
+				# every_playable_country = {
+				# 	limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
+				# 	PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
+				# }
 			}
 			# every_galaxy_planet is only working until 2.8
 			every_system = {
@@ -2077,10 +2075,11 @@ country_event = {
 				reroll_planet = yes
 				generate_new_deposits_and_blockers = yes
 				remove_planet_flag = hidden_nanite_world
-				every_playable_country = {
-					limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
-					PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
-				}
+				# FIXME set_surveyed is bugged 3.0.3!
+				# every_playable_country = {
+				# 	limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
+				# 	PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
+				# }
 			}
 		} else = {
 			every_owned_planet = {
@@ -2093,10 +2092,11 @@ country_event = {
 				destroy_colony = yes
 				add_modifier = { modifier = terraforming_candidate days = -1 }
 				remove_planet_flag = hidden_nanite_world
-				every_playable_country = {
-					limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
-					PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
-				}
+				# FIXME set_surveyed is bugged 3.0.3!
+				# every_playable_country = {
+				# 	limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
+				# 	PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
+				# }
 			}
 		}
 		every_owned_fleet = {

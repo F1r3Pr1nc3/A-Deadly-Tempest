@@ -57,7 +57,7 @@ CmtEffectCreateFleet_Khan1stFleet = {	### Exception: Leader = event_target:great
 			assign_leader = event_target:great_khan
 		}
 		settings = {
-			can_upgrade = no
+			can_upgrade = yes
 			can_disband = no
 			can_change_composition = no
 			can_change_leader = no

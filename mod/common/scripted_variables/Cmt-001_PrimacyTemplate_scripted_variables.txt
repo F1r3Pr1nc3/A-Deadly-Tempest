@@ -1,13 +1,13 @@
-
-#################################
-#################################
-#####						#####
-#####	Crisis Manager		#####
-#####						#####
-#####	Primacy Template 	#####
-#####						#####
-#################################
-#################################
+##################################
+##################################
+#####                        #####
+#####    Crisis Manager      #####
+#####                        #####
+#####    Primacy Template    #####
+#####                        #####
+##################################
+##################################
+#
 #	This template can be applied automatially on game start.
 #	You can omit set configurations on game start if you activate this template and set value.
 #	How to use: See ''ReadMe_for_making_template.txt''
@@ -434,7 +434,7 @@
 #
 
 ### Multiple Great Khans
-	@CmtT001_ConstKhanMultiple = 2
+	@CmtT001_ConstKhanMultiple = 3
 		### No Khan = 1, Single Khan = 2 (Default), Multiple Khans = 3
 		### N/A = 4, Great Great Khan = 5 (Beta)
 
@@ -483,7 +483,7 @@
 		### Enduring = 4, Venerable = 5, Immortality = 6
 
 ### Latent Strength of Horde in Adversity
-	@CmtT001_ConstReinforceCycle_Khan = 2
+	@CmtT001_ConstReinforceCycle_Khan = 1
 		### Disable = 1 (Default), Weak = 2, Middle = 3, Strong = 4
 
 ### Future of Horde
@@ -571,7 +571,7 @@
 
 ### Template of Crisis Power
 	@CmtT001_ConstCrisisStrengthEnd = 2		## for End-Game Crisis
-	@CmtT001_ConstCrisisStrengthMid = 2		## for Mid-Game Crisis (Khan & Gray Tempest)
+	@CmtT001_ConstCrisisStrengthMid = 0		## for Mid-Game Crisis (Khan & Gray Tempest)
 		### Set configurations individually = 0
 		### Easy = 1, Normal = 2 (Default), Hard = 3, Doomsday = 4
 
@@ -594,7 +594,7 @@
 
 ### Individual Configurations of Crisis Power
 ### Fleet Power
-	@CmtT001_ConstFleetPower_Common				= 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
+	@CmtT001_ConstFleetPower_Common				= 1.25		## This value must be set to zero(0) if you set the value individually for each crisis.
 	@CmtT001_ConstFleetPower_Prethoryn			= 1.00
 	@CmtT001_ConstFleetPower_Sentinel			= 1.00
 	@CmtT001_ConstFleetPower_Unbidden			= 1.00
@@ -603,18 +603,18 @@
 	@CmtT001_ConstFleetPower_Contingency		= 1.00
 	@CmtT001_ConstFleetPower_Cybrex				= 1.00
 	@CmtT001_ConstFleetPower_ForcedEoc			= 1.00		## Forced End of Cycle
-	@CmtT001_ConstFleetPower_Khan				= 1.00
-	@CmtT001_ConstFleetPower_Graygoo			= 1.00		## Gray Tempest
-	@CmtT001_ConstFleetPower_Dessanu			= 1.00
+	@CmtT001_ConstFleetPower_Khan				= 1.25
+	@CmtT001_ConstFleetPower_Graygoo			= 1.25		## Gray Tempest
+	@CmtT001_ConstFleetPower_Dessanu			= 1.25
 
 ### Army Power
-	@CmtT001_ConstArmyPower_Common				= 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
+	@CmtT001_ConstArmyPower_Common				= 1.25		## This value must be set to zero(0) if you set the value individually for each crisis.
 	@CmtT001_ConstArmyPower_Prethoryn			= 1.00
 	@CmtT001_ConstArmyPower_Contingency			= 1.00
-	@CmtT001_ConstArmyPower_Khan				= 1.00
+	@CmtT001_ConstArmyPower_Khan				= 1.25
 
 ### Number of Combat Fleets
-	@CmtT001_ConstCombatFleetNumber_Common		= 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
+	@CmtT001_ConstCombatFleetNumber_Common		= 1.25		## This value must be set to zero(0) if you set the value individually for each crisis.
 	@CmtT001_ConstCombatFleetNumber_Prethoryn	= 1.00
 	@CmtT001_ConstCombatFleetNumber_Sentinel	= 1.00
 	@CmtT001_ConstCombatFleetNumber_Unbidden	= 1.00
@@ -622,21 +622,21 @@
 	@CmtT001_ConstCombatFleetNumber_Vehement	= 1.00
 	@CmtT001_ConstCombatFleetNumber_Contingency = 1.00
 	@CmtT001_ConstCombatFleetNumber_Cybrex		= 1.00
-	@CmtT001_ConstCombatFleetNumber_Khan		= 1.00
-	@CmtT001_ConstCombatFleetNumber_Graygoo		= 1.00		## Gray Tempest
-	@CmtT001_ConstCombatFleetNumber_Dessanu		= 1.00
+	@CmtT001_ConstCombatFleetNumber_Khan		= 1.25
+	@CmtT001_ConstCombatFleetNumber_Graygoo		= 1.25		## Gray Tempest
+	@CmtT001_ConstCombatFleetNumber_Dessanu		= 1.25
 
 ### Number of Army Fleets
-	@CmtT001_ConstArmyNumber_Common				= 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
+	@CmtT001_ConstArmyNumber_Common				= 1.25		## This value must be set to zero(0) if you set the value individually for each crisis.
 	@CmtT001_ConstArmyNumber_Prethoryn			= 1.00
 	@CmtT001_ConstArmyNumber_Contingency		= 1.00
 	@CmtT001_ConstArmyNumber_Khan				= 1.00
 
 ### Number of Auxiliary Ships/Fleets (Constructor, Colonizer)
-	@CmtT001_ConstConstructorNumber_Common		= 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
+	@CmtT001_ConstConstructorNumber_Common		= 1.25		## This value must be set to zero(0) if you set the value individually for each crisis.
 	@CmtT001_ConstConstructorNumber_Prethoryn	= 1.00
 	@CmtT001_ConstConstructorNumber_Unbidden	= 1.00
 	@CmtT001_ConstConstructorNumber_Aberrant	= 1.00
 	@CmtT001_ConstConstructorNumber_Vehement	= 1.00
 	@CmtT001_ConstConstructorNumber_Contingency = 1.00
-	@CmtT001_ConstConstructorNumber_Khan		= 1.00
+	@CmtT001_ConstConstructorNumber_Khan		= 1.25

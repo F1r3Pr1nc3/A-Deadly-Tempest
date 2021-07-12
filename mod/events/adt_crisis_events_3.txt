@@ -404,13 +404,14 @@ country_event = {
 			set_country_flag = pk_nanobots
 			set_country_flag = colossus_project
 			set_country_flag = killed_hatchling
-			give_technology = { tech = tech_gargantuan_evolution message = no }
-			give_technology = { tech = tech_colossus message = no }
-			give_technology = { tech = tech_pk_nanobots message = no }
-			give_technology = { tech = tech_nanite_guardians message = no }
-			give_technology = { tech = tech_nanite_mega_construction message = no }
-			give_technology = { tech = tech_nanite_modular_engineering message = no }
-			give_technology = { tech = tech_voidspawn message = no }
+
+			give_tech_no_error_effect = { TECH = tech_gargantuan_evolution MESSAGE = no }
+			give_tech_no_error_effect = { TECH = tech_colossus MESSAGE = no }
+			give_tech_no_error_effect = { TECH = tech_pk_nanobots MESSAGE = no }
+			give_tech_no_error_effect = { TECH = tech_nanite_guardians MESSAGE = no }
+			give_tech_no_error_effect = { TECH = tech_nanite_mega_construction MESSAGE = no }
+			give_tech_no_error_effect = { TECH = tech_nanite_modular_engineering MESSAGE = no }
+			give_tech_no_error_effect = { TECH = tech_voidspawn MESSAGE = no }
 		}
 
 		change_country_flag = {

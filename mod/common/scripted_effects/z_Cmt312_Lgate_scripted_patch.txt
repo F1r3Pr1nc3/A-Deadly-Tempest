@@ -75,19 +75,20 @@ CmtEffectDestroyGraygoo = {
 			}
 		}
 		country_event = { id = graygoo.16 }
+		# FIXME set_surveyed is bugged 3.0.3!
 		# remove surveyed
-		every_system = {
-			limit = { has_star_flag = lcluster }
-			every_system_planet = {
-				limit = {
-					is_planet_class = pc_gray_goo
-					is_colony = no
-					is_surveyed = { who = PREVPREV status = yes }
-				}
-				set_surveyed = { surveyed = no surveyor = PREVPREV }
-			}
-			# set_surveyed = { surveyed = no surveyor = PREV }
-		}
+		# every_system = {
+		# 	limit = { has_star_flag = lcluster }
+		# 	every_system_planet = {
+		# 		limit = {
+		# 			is_planet_class = pc_gray_goo
+		# 			is_colony = no
+		# 			is_surveyed = { who = PREVPREV status = yes }
+		# 		}
+		# 		set_surveyed = { surveyed = no surveyor = PREVPREV }
+		# 	}
+		# 	# set_surveyed = { surveyed = no surveyor = PREV }
+		# }
 	}
 	observer_event = { id = observer.65 }
 

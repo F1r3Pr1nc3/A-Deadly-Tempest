@@ -184,8 +184,9 @@ awakened_gate_builders = {
 
 	targets = {
 		awakened_fallen_empire
-		fallen_empire
-		default
+		# fallen_empire
+		ai_empire
+		# default
 	}
 
 	ai = {
@@ -204,13 +205,14 @@ awakened_gate_builders = {
 		avoid_enemies = no
 		modules = {
 			# anti_crisis_military_minister_module
-			# invaders_military_minister_module
+			invaders_military_minister_module
 			# invaders_interior_minister_module
-			machine_military_minister_module
-			machine_interior_minister_module
+			# machine_military_minister_module
+			# machine_interior_minister_module
+			# berserk_military_minister_module
 			# military_minister_module
-			# interior_minister_module
-			# foreign_minister_module
+			interior_minister_module
+			foreign_minister_module
 		}
 
 		army_data = {

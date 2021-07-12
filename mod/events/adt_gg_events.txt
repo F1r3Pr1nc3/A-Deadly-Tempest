@@ -282,7 +282,8 @@ country_event = {
 									set_planet_flag = hatchling_will_trigger
 								}
 							}
-							set_surveyed = { surveyed = no surveyor = prevprev }
+							# FIXME set_surveyed is bugged 3.0.3!
+							# set_surveyed = { surveyed = no surveyor = prevprev }
 							add_anomaly = { category = disco_gray_cat target = prevprev }
 							prevprev = { set_country_flag = disco_gray }
 						}
@@ -2331,11 +2332,12 @@ planet_event = {
 				# set_planet_flag = space_owner_triggered
 				set_timed_planet_flag = { flag = space_owner_triggered days = 900 random = 100 }
 			}
-			every_playable_country = {
-				PREV = {
-					set_surveyed = { surveyed = no surveyor = PREV }
-				}
-			}
+			# FIXME set_surveyed is bugged 3.0.3!
+			# every_playable_country = {
+			#	PREV = {
+			#		set_surveyed = { surveyed = no surveyor = PREV }
+			#	}
+			# }
 		}
 	}
 }

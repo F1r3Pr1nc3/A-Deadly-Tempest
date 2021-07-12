@@ -35,7 +35,14 @@ CmtTriggerKhanAwakingMultipleCheck = {
 ### Country Conditions
 
 CmtTriggerHasPotentialKhanAwaking = {		## Scope = country
-	CmtTriggerIsSleepingMarauder = yes
+	OR = {
+		CmtTriggerIsSleepingMarauder = yes
+		AND = { # Fallback
+			is_country_type = dormant_marauders
+			has_country_flag = restored_marauders_flag
+			NOT = { any_country = { CmtTriggerIsSleepingMarauder = yes } }
+		}
+	}
 	OR = {
 		AND = {
 			has_country_flag = marauder_1
