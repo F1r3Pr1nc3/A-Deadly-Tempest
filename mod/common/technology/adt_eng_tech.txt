@@ -202,27 +202,28 @@ tech_nanocrystals = {
 # ##################################
 # tech_space_defense_station_4
 tech_nanite_bulwark = {
-	cost = @tier4cost3
+	cost = @tier5cost1
 	area = engineering
 	icon = tech_nanite_starbase
-	tier = 4
+	tier = 5
 	category = { voidcraft }
 	ai_update_type = all
 	prerequisites = {
-		"tech_space_defense_station_improvement"
 		"tech_nanite_strike_craft"
-		# "tech_space_defense_station_1" "tech_starbase_4"
+		"tech_space_defense_station_improvement" # "tech_starbase_4"
+		"tech_nanite_guardians"
 	}
 	is_rare = yes
-	weight = @tier4weight2
+	weight = @tier5weight1
 
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 3 }
+		has_resource = { type = nanites amount > 30 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_technology = tech_nanite_clouds
 		}
+		exists = event_target:goo_slayer
 	}
 	modifier = {
 		starbase_defense_platform_capacity_add = 12
@@ -238,7 +239,7 @@ tech_nanite_bulwark = {
 	weight_modifier = {
 		factor = 0.1
 		modifier = {
-			factor = 10
+			factor = 5
 			any_neighbor_country = {
 				OR = {
 					has_technology = tech_nanite_bulwark
@@ -256,7 +257,7 @@ tech_nanite_bulwark = {
 	}
 
 	ai_weight = {
-		# factor = 10
+		# factor = 1
 		modifier = {
 			factor = 1.5
 			research_leader = {

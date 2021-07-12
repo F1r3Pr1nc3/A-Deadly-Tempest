@@ -10,18 +10,25 @@ tech_nanite_guardians = {
 		"tech_battleships"
 		"tech_nanite_ships"
 	}
-	weight = @tier2weight3
+	weight = @tier5weight1
 	is_rare = yes
-	gateway = guardians
+	gateway = guardians # there are 5 techs behind
 	potential = {
-		no_scope = {
-			has_global_flag = l_cluster_opened
-			NAND = {
-				has_global_flag = auto_dread_disabled
-				has_global_flag = scavenger_disabled
-				has_global_flag = dragon_disabled
-				has_global_flag = voidspawn_disabled
-			}
+		has_global_flag = l_cluster_opened
+		NAND = {
+			has_global_flag = auto_dread_disabled
+			has_global_flag = scavenger_disabled
+			has_global_flag = voidspawn_disabled
+			has_global_flag = dragon_disabled
+		}
+		NAND = {
+			exists = event_target:scavenger_bot_country
+			exists = event_target:automated_dreadnought_country
+			exists = event_target:hatchling_country
+		}
+		OR = {
+			exists = event_target:goo_slayer
+			NOT = { exists = event_target:graygoo_country }
 		}
 	}
 	prereqfor_desc = {
@@ -60,6 +67,10 @@ tech_nanite_guardians = {
 				has_trait = "leader_trait_expertise_voidcraft"
 			}
 		}
+		# modifier = {
+		# 	factor = 0.01
+		# 	NOT = { exists = event_target:goo_slayer }
+		# }
 	}
 	ai_weight = {
 		factor = 0.05
@@ -92,12 +103,15 @@ tech_dreadnought = {
 	prerequisites = {
 		"tech_nanite_guardians"
 	}
-	weight = @tier3weight2
+	weight = @tier4weight2
 	is_rare = yes
 	potential = {
 		no_scope = {
 			has_leviathans = yes
-			NOT = { has_global_flag = auto_dread_disabled }
+			NOR = {
+				has_global_flag = auto_dread_disabled
+				exists = event_target:automated_dreadnought_country
+			}
 		}
 	}
 
@@ -118,7 +132,7 @@ tech_dreadnought = {
 			has_country_flag = restored_dreadnought
 		}
 		modifier = {
-			factor = 1.25
+			factor = 1.5
 			exists = event_target:gray_owner
 			is_same_empire = event_target:gray_owner
 		}
@@ -169,18 +183,19 @@ tech_scavenger_bot = {
 		"tech_nanite_mega_construction"
 		"tech_nanite_modular_engineering"
 	}
-	weight = @tier4weight3
+	weight = @tier5weight3
 	is_rare = yes
 	potential = {
 		no_scope = {
 			has_distar = yes
 			# has_federations_dlc = yes
-			NOT = { has_global_flag = scavenger_disabled }
+			NOR = {
+				has_global_flag = scavenger_disabled
+				exists = event_target:scavenger_bot_country
+				exists = event_target:scavenger_bot_fleet
+			}
 		}
-		has_resource = {
-			type = sr_living_metal
-			amount > 0
-		}
+		has_resource = { type = sr_living_metal amount > 0 }
 	}
 	prereqfor_desc = {
 		ship = {
@@ -189,9 +204,14 @@ tech_scavenger_bot = {
 		}
 	}
 	weight_modifier = {
+		factor = 0.5
 		modifier = {
-			factor = 0
+			factor = 0.05
 			NOT = { has_country_flag = scrapper_killed }
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = encountered_scavenger_bot
 		}
 		modifier = {
 			factor = 1.25
@@ -219,10 +239,6 @@ tech_scavenger_bot = {
 		# factor = 0
 	}
 	ai_weight = {
-		modifier = {
-			factor = 0
-			NOT = { has_country_flag = scrapper_killed }
-		}
 		# modifier = {
 		# 	factor = 1.25
 		# 	research_leader = {
@@ -245,7 +261,7 @@ tech_nanite_dragon = {
 		"tech_nanite_guardians"
 		"tech_nanite_ships"
 	}
-	weight = @tier3weight1
+	weight = @tier4weight2
 	is_rare = yes
 	prereqfor_desc = {
 		ship = {
@@ -264,7 +280,6 @@ tech_nanite_dragon = {
 		factor = 0.01
 		modifier = {
 			factor = 1.5
-			exists = event_target:spawning_dragons
 			OR = {
 				has_country_flag = ldragon_known
 				has_country_flag = knows_ldragon
@@ -272,8 +287,16 @@ tech_nanite_dragon = {
 		}
 		modifier = {
 			factor = 1.5
+			exists = event_target:spawning_dragons
+		}
+		modifier = {
+			factor = 2
 			exists = event_target:gray_owner
 			is_same_empire = event_target:gray_owner
+		}
+		modifier = {
+			factor = 2
+			has_global_flag = dragon_season
 		}
 		# modifier = {
 		#	switch not woring in modifier!?
@@ -391,9 +414,12 @@ tech_voidspawn = {
 	potential = {
 		no_scope = {
 			has_distar = yes
-			# has_global_flag = hatchling_triggered
+			has_global_flag = hatchling_triggered
 			exists = event_target:hatchling_egg
-			NOT = { has_global_flag = voidspawn_disabled }
+			NOR = {
+				has_global_flag = voidspawn_disabled
+				exists = event_target:hatchling_fleet
+			}
 		}
 		OR = {
 			has_global_flag = distar_overhaul_mod_active
@@ -422,16 +448,16 @@ tech_voidspawn = {
 	weight_modifier = {
 		factor = 0.01
 		modifier = {
-			factor = 1.25
+			factor = 1.5
 			has_country_flag = encountered_hatchling
 		}
 		modifier = {
-			factor = 1.5
+			factor = 2
 			exists = event_target:egg_owner
 			is_same_empire = event_target:egg_owner
 		}
 		modifier = {
-			factor = 6
+			factor = 8
 			has_country_flag = hatchling_killed
 		}
 		modifier = {
