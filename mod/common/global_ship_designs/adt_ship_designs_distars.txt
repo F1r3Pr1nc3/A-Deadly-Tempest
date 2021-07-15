@@ -1066,10 +1066,6 @@ ship_design = {
 			template = "LARGE_SHIELD_5"
 		}
 		component = {
-			slot = "LARGE_UTILITY_15"
-			template = "LARGE_SHIELD_5"
-		}
-		component = {
 			slot = "LARGE_UTILITY_16"
 			template = "LARGE_SHIELD_5"
 		}
@@ -1087,6 +1083,10 @@ ship_design = {
 		}
 		component = {
 			slot = "LARGE_UTILITY_20"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_21"
 			template = "LARGE_SHIELD_5"
 		}
 		component = {
