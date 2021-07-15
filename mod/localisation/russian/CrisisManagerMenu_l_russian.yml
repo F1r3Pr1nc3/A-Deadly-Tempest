@@ -1467,7 +1467,7 @@
  CrisisManagerMenu.4630n1.tooltip:0 ""
  CrisisManagerMenu.4630n2.footnote:0 "$CrisisManagerMenu.4630n2.tooltip$"
  CrisisManagerMenu.4630n2.name:0 "$CrisisManagerMenu.4630x1.title$$CrisisManagerMenu.4630n2.title$"
- CrisisManagerMenu.4630n2.title:0 "§GConfilm для стандартного пробуждения§!"
+ CrisisManagerMenu.4630n2.title:0 "§GПодтверждать для стандартного пробуждения§!"
  CrisisManagerMenu.4630n2.tooltip:0 "Конфигурация установлена в ''$CrisisManagerMenu.4570.title$'' применяется к этой конфигурации: $CrisisManagerMenu.4570.current$."
  CrisisManagerMenu.4630x.name:0 "$CrisisManagerMenu.4630x2.title$: $CrisisManagerMenu.4630.current$"
  CrisisManagerMenu.4630x1.title:0 "$CrisisManagerMenu.4630.title$: "

@@ -322,55 +322,55 @@ shoal_factory_guard_queue = {
 	}
 }
 
-# Scope fleet
-shoal_cluster_defense = {
-	closest_system = {
-		limit = {
-			has_star_flag = lcluster
-			NOT = { has_star_flag = graygoo_factory_system }
-			any_system_planet = {
-				OR = {
-					is_planet_class = pc_gray_goo
-					is_planet_class = pc_gaia
-				}
-				NOT = {
-					any_fleet_in_orbit = {
-						exists = owner
-						has_fleet_flag = nanite_mother_ship
-					}
-				}
-			}
-		}
-		min_steps = 1
-		max_steps = 4
-		use_bypasses = no
-		# Error Current Scope: fleet???
-		random_system_planet = {
-			limit = {
-				OR = {
-					is_planet_class = pc_gray_goo
-					is_planet_class = pc_gaia
-				}
-				NOT = {
-					any_fleet_in_orbit = {
-						exists = owner
-						has_fleet_flag = nanite_mother_ship
-					}
-				}
-			}
-			FROM = {
-				auto_move_to_planet = {
-					target = PREV
-					clear_auto_move_on_arrival = yes
-				}
-			}
-			# break = yes
-		}
-	}
-	# TODO Unknown error!?
-	# event_target:graygoo_country = { change_variable = { which = fleetCounter value = 1 } }
-	# shoal_continue_cluster_defense = { NUM = "graygoo_country.fleetCounter" }
-}
+# Scope fleet now at a_deadly_tempest.99
+# shoal_cluster_defense = {
+# 	closest_system = {
+# 		min_steps = 1
+# 		max_steps = 4
+# 		use_bypasses = no
+# 		# Error Current Scope: fleet???
+# 		limit = {
+# 			has_star_flag = lcluster
+# 			NOT = { has_star_flag = graygoo_factory_system }
+# 			any_system_planet = {
+# 				OR = {
+# 					is_planet_class = pc_gray_goo
+# 					is_planet_class = pc_gaia
+# 				}
+# 				NOT = {
+# 					any_fleet_in_orbit = {
+# 						exists = owner
+# 						has_fleet_flag = nanite_mother_ship
+# 					}
+# 				}
+# 			}
+# 		}
+# 		random_system_planet = {
+# 			limit = {
+# 				OR = {
+# 					is_planet_class = pc_gray_goo
+# 					is_planet_class = pc_gaia
+# 				}
+# 				NOT = {
+# 					any_fleet_in_orbit = {
+# 						exists = owner
+# 						has_fleet_flag = nanite_mother_ship
+# 					}
+# 				}
+# 			}
+# 			FROM = {
+# 				auto_move_to_planet = {
+# 					target = PREV
+# 					clear_auto_move_on_arrival = yes
+# 				}
+# 			}
+# 			# break = yes
+# 		}
+# 	}
+# 	# TODO Unknown error!?
+# 	# event_target:graygoo_country = { change_variable = { which = fleetCounter value = 1 } }
+# 	# shoal_continue_cluster_defense = { NUM = "graygoo_country.fleetCounter" }
+# }
 
 # Scope fleet
 # TODO Unknown error!?

@@ -130,7 +130,7 @@
 
  ### Sleeper Edition, Guardians of Galaxy
  CmtDescStdAwakingOnly:0 "$CmtWarn1$\nThis configuration controls only standard awakening, but not the guardians of the galaxy or the War in Heaven."
- CmtDescExceptMechFe:0 "$CmtWarn1$\nAncient Caretakers (Fallen Machine Empire) does not comply this configuration."
+ CmtDescExceptMechFe:0 "$CmtWarn1$\n$personality_fallen_empire_machine$ ($fallen_machine_empire$) does not comply this configuration."
  CmtDescApocalypseColossus:0 "DLC ''Apocalypse'' is required to create Colossus."
 
  ### Mid-Game Edition
@@ -1724,7 +1724,7 @@
  CrisisManagerMenu.4630.title:0 "Ancient Rival for War in Heaven 2"
  CrisisManagerMenu.4630.desc:0 "A configuration which fallen empires can awaken as ancient rival for the War in Heaven.\n\n$CmtDescToggleConfig$"
  CrisisManagerMenu.4630n1.title:0 "§HSet Independently§! from Standard Awakening"
- CrisisManagerMenu.4630n2.title:0 "§GConfilm to Standard Awakening§!"
+ CrisisManagerMenu.4630n2.title:0 "§GConfirm to Standard Awakening§!"
  CrisisManagerMenu.4630a.title:1 "$CmtNameFallenMaterialist$"
  CrisisManagerMenu.4630b.title:1 "$CmtNameFallenSpiritualist$"
  CrisisManagerMenu.4630c.title:1 "$CmtNameFallenXenophile$"
@@ -4647,7 +4647,7 @@
  CrisisManagerMenu.7000.7136.C.tooltip:0 "The War in Heaven can be triggered only once.\nSo, no more the War in Heaven can be triggered."
  CrisisManagerMenu.7000.7138.A.tooltip:1 ""
  CrisisManagerMenu.7000.7138.B.tooltip:0 "No marauder exists or their drums are broken.\nGreat Khan will not rise in this galaxy."
- CrisisManagerMenu.7000.7138.C.tooltip:0 "Great Khan exists and is leading Hordes.\nOnly one Great Khan can regin at the same time."
+ CrisisManagerMenu.7000.7138.C.tooltip:0 "Great Khan exists and is leading Hordes.\nOnly one Great Khan can reign at the same time."
  CrisisManagerMenu.7000.7140.A.tooltip:1 ""
  CrisisManagerMenu.7000.7140.B.tooltip:0 "404 Error\nL-Gate cannot be found in the galaxy."
  CrisisManagerMenu.7000.7140.C.tooltip:0 "$lgates$ has been opened already.\nThey cannot be opened twice."

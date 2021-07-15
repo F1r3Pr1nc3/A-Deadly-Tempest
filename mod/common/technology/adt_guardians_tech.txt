@@ -21,14 +21,14 @@ tech_nanite_guardians = {
 			has_global_flag = voidspawn_disabled
 			has_global_flag = dragon_disabled
 		}
+		OR = {
+			exists = event_target:goo_slayer
+			NOT = { exists = event_target:graygoo_country }
+		}
 		NAND = {
 			exists = event_target:scavenger_bot_country
 			exists = event_target:automated_dreadnought_country
 			exists = event_target:hatchling_country
-		}
-		OR = {
-			exists = event_target:goo_slayer
-			NOT = { exists = event_target:graygoo_country }
 		}
 	}
 	prereqfor_desc = {

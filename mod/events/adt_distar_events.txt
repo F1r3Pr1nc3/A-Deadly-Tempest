@@ -198,7 +198,7 @@ planet_event = {
 											has_country_flag = fired_nanobots
 											has_country_flag = fired_nanobots_on@prev
 										}
-										set_owner = this
+										prevprev = { set_owner = prev }
 										remove_country_flag = fired_nanobots@prev
 									}
 								}
