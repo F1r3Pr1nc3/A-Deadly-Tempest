@@ -330,6 +330,11 @@
  building_nanite_food_replicator:0 "Food Replicator"
  building_nanite_food_replicator_desc:0 "These replicators create edible foodstuffs from energy molecules with the help of nanites. Almost has the same taste as grown and raised foods."
 
+ civic_machine_nanites:0 "Nanite Precursor"
+ civic_machine_nanites_desc:0 "An empire made of quadrillions of tiny, self-replicating machines forming together to create fully sapient androids. For millennia, this species has been locked inside the mysterious L-Cluster, only recently having re-emerged. As old as the Fallen Empires themselves, there is no telling how their long isolation in the L-Cluster has affected them, or their view of the Galaxy."
+ civic_machine_nanites_culture:0 "Nanite Culture"
+ civic_machine_nanites_culture_desc:0 "The Nanite denizens of this empire seemingly evolved into something higher than a mere machine intelligence. They developed a form of culture which is unlike anything seen yet. Previously merely imitating their creators, these machines now forged their own style and their own destiny."
+
  TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_TITLE:0 "§HUnlocks Nanite Ships§!"
  TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_DESC:0 "§H$graygoo_interdictor$, $graygoo_mothership$ & $nanite_dragon$§!\nThese ships are self sufficient, but due to their...'unique' nature, their designs seem hardcoded and may not be compatible with certain technologies. But we can replicate the process to boosters our carrier operation."
 

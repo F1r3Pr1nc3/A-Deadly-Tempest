@@ -25,7 +25,7 @@ CmtTriggerKhanAwakingMultipleCheck = {
 			NOT = { has_global_flag = marauder_crisis_started }
 			AND = {
 				check_variable = { which = CmtVarKhanMultiple value = 3 }
-				NOT = { CmtTriggerNowInKhanCrisis = yes }
+				CmtTriggerNowInKhanCrisis = no
 			}
 		}
 		any_country = { CmtTriggerHasPotentialKhanAwaking = yes }
@@ -46,15 +46,42 @@ CmtTriggerHasPotentialKhanAwaking = {		## Scope = country
 	OR = {
 		AND = {
 			has_country_flag = marauder_1
-			any_system_within_border = { has_star_flag = marauder_capital_1 }
+			any_system_within_border = {
+				has_star_flag = marauder_system
+				OR = {
+					has_star_flag = marauder_capital_1
+					any_neighbor_system = {
+						has_owner = no
+						has_star_flag = marauder_capital_1
+					}
+				}
+			}
 		}
 		AND = {
 			has_country_flag = marauder_2
-			any_system_within_border = { has_star_flag = marauder_capital_2 }
+			any_system_within_border = {
+				has_star_flag = marauder_system
+				OR = {
+					has_star_flag = marauder_capital_2
+					any_neighbor_system = {
+						has_owner = no
+						has_star_flag = marauder_capital_2
+					}
+				}
+			}
 		}
 		AND = {
 			has_country_flag = marauder_3
-			any_system_within_border = { has_star_flag = marauder_capital_3 }
+			any_system_within_border = {
+				has_star_flag = marauder_system
+				OR = {
+					has_star_flag = marauder_capital_3
+					any_neighbor_system = {
+						has_owner = no
+						has_star_flag = marauder_capital_3
+					}
+				}
+			}
 		}
 	}
 }

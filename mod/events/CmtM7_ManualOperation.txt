@@ -129,7 +129,7 @@ country_event = {
 		trigger = {
 			host_has_dlc = "Apocalypse"
 			has_global_flag = CmtFlagMidGameEdition
-			NOT = { CmtTriggerNowInKhanCrisis = yes }
+			CmtTriggerNowInKhanCrisis = no
 			any_country = { CmtTriggerHasPotentialKhanAwaking = yes }
 		}
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7138 } }

@@ -1224,7 +1224,7 @@ country_event = {
 	# From = country, planet owner
 	# FromFrom = planet
 	trigger = {
-		NOT = { is_nanite_country = yes }
+		is_nanite_country = no
 		from = { is_nanite_country = yes }
 	}
 

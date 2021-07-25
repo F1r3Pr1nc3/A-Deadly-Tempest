@@ -126,10 +126,10 @@
  CmtDescUnlimitedExds:0 "$CmtWarn1$: Extradimensional invasion can happen even if jump drive has not been developed yet."
  CmtDescForOnlyEndgame:0 "$CmtWarn2$: This configuration is applied to only basic 3 end-game crisis."
  CmtDescNoTotalWarPack:0 "$CmtWarn0$\nThis configuration is not activated since ''$CrisisManagerTitleB$ - $CrisisManagerTotalWar$'' (mod) is not subscribed/enabled."
- CmtDescTotalWarTarget:0 "$CmtWarn2$\nThis configuration is applied to not only end-game crises, but also Horde crisis (Great Khan).\nHowever, it is NOT applied to Gray Tempest since they does not have starbases or territory."
+ CmtDescTotalWarTarget:0 "$CmtWarn2$\nThis configuration is applied to not only end-game crises, but also Horde crisis ($RT_GREAT_KHAN$).\nHowever, it is NOT applied to Gray Tempest since they does not have starbases or territory."
 
  ### Sleeper Edition, Guardians of Galaxy
- CmtDescStdAwakingOnly:0 "$CmtWarn1$\nThis configuration controls only standard awakening, but not the guardians of the galaxy or the War in Heaven."
+ CmtDescStdAwakingOnly:0 "$CmtWarn1$\nThis configuration controls only standard awakening, but not the guardians of the galaxy or the $mod_war_in_heaven$."
  CmtDescExceptMechFe:0 "$CmtWarn1$\n$personality_fallen_empire_machine$ ($fallen_machine_empire$) does not comply this configuration."
  CmtDescApocalypseColossus:0 "DLC ''Apocalypse'' is required to create Colossus."
 
@@ -172,7 +172,7 @@
  CmtNameFallenXenophobe:0 "$CmtIconFanaticXenophobe$ §YMilitant Isolationists§!"
 
  CmtNameKhan:0 "$RT_GREAT_KHAN$"
- CmtNameHordeCrisis:0 "Reign of Great Khan"
+ CmtNameHordeCrisis:0 "Reign of $RT_GREAT_KHAN$"
  CmtNameLgateEvents:0 "L-Gate Events"
  CmtNameSilense:0 "Eerie Silence"
  CmtNameLdrake:0 "$nanite_space_dragon_baby$"
@@ -1397,7 +1397,7 @@
  CrisisManagerMenu.4510b.tooltip:0 "Only one fallen empire can awaken.\nHowever, no more fallen empire can awaken if aother fallen empire has awakened as guardians of the galaxy."
  CrisisManagerMenu.4510c.tooltip:0 "Only one fallen empire can do standard type of awakening.\nThey can awaken even if another fallen empire has awakened as guardians of the galaxy."
  CrisisManagerMenu.4510d.tooltip:0 "A fallen empire can awaken if other awakened empire unexists: unawakened or annihilated."
- CrisisManagerMenu.4510e.tooltip:0 "Fallen empires can awaken even if other awakened empire exists.\n\n$CmtWarn0$: This does not mean the War in Heaven. Awakening chance for next fallen empire will start after the end of process for triggering the War in Heaven."
+ CrisisManagerMenu.4510e.tooltip:0 "Fallen empires can awaken even if other awakened empire exists.\n\n$CmtWarn0$: This does not mean the War in Heaven. Awakening chance for next fallen empire will start after the end of process for triggering the $mod_war_in_heaven$."
 
  CrisisManagerMenu.4510.name:1 "$CrisisManagerMenu.4510.title$ $CrisisManagerTitleC$"
  CrisisManagerMenu.4510.desc1:1 "$CrisisManagerMenu.4510.desc$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.4510a.title$§!"
@@ -1582,7 +1582,7 @@
  CrisisManagerMenu.4560.V0.title:0 "§HUnlimited§! by Own Fleet Power"
  CrisisManagerMenu.4560.VC.title:0 "§Y[CmtGlobalVar.CmtVarSleeperFleetPowerOwnDisplay] k§!"
  CrisisManagerMenu.4560.Vx.title:1 "$CmtTextTemplateUnique.name$"
- CrisisManagerMenu.4560.tooltip:0 "This configuration is applied not only to standard awakening, but also awakening as gurdians and the War in Heaven."
+ CrisisManagerMenu.4560.tooltip:0 "This configuration is applied not only to standard awakening, but also awakening as gurdians and the $mod_war_in_heaven$."
  CrisisManagerMenu.4560.V9.tooltip:1 "$CrisisManagerMenu.4560.tooltip$"
  CrisisManagerMenu.4560.V8.tooltip:1 "$CrisisManagerMenu.4560.tooltip$"
  CrisisManagerMenu.4560.V7.tooltip:1 "$CrisisManagerMenu.4560.tooltip$"
@@ -1663,8 +1663,8 @@
  ################################################
 
  ### Probability of War in Heaven
- CrisisManagerMenu.4610.title:0 "Probability of War in Heaven"
- CrisisManagerMenu.4610.desc:0 "A configuration for a probability of the War in Heaven.\nA fallen empire that can become a ancient rival is required for the War actual happening."
+ CrisisManagerMenu.4610.title:0 "Probability of $mod_war_in_heaven$"
+ CrisisManagerMenu.4610.desc:0 "A configuration for a probability of the $mod_war_in_heaven$.\nA fallen empire that can become a ancient rival is required for the War actual happening."
  CrisisManagerMenu.4610a.title:0 "War in Heaven §MNever§! Happen"
  CrisisManagerMenu.4610b.title:0 "§BLow§!"
  CrisisManagerMenu.4610c.title:0 "§GMiddle§!"
@@ -1692,8 +1692,8 @@
  CrisisManagerMenu.4610z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
  ### Ancient Rival for War in Heaven 1
- CrisisManagerMenu.4620.title:0 "Ancient Rival for War in Heaven 1"
- CrisisManagerMenu.4620.desc:0 "A configuration which fallen empire is selected as ancient rival for the War in Heaven.\n\n$CmtWarn0$\nA probability of the War in Heaven is decreased if $CrisisManagerMenu.4620d.title$ or $CrisisManagerMenu.4620e.title$ is selected.\nSo, these 2 options should not be selected if you want to absolutely trigger the War in Heaven."
+ CrisisManagerMenu.4620.title:0 "Ancient Rival for $mod_war_in_heaven$ 1"
+ CrisisManagerMenu.4620.desc:0 "A configuration which fallen empire is selected as ancient rival for the War in Heaven.\n\n$CmtWarn0$\nA probability of the War in Heaven is decreased if $CrisisManagerMenu.4620d.title$ or $CrisisManagerMenu.4620e.title$ is selected.\nSo, these 2 options should not be selected if you want to absolutely trigger the $mod_war_in_heaven$."
  CrisisManagerMenu.4620a.title:0 "§BCompletely Random§!"
  CrisisManagerMenu.4620b.title:0 "Opposite Ethics §GPrefered§!"
  CrisisManagerMenu.4620c.title:0 "Opposite Ethics §YHas Priority§!"
@@ -1704,7 +1704,7 @@
  CrisisManagerMenu.4620b.tooltip:0 "A middle option between ''$CrisisManagerMenu.4620a.title$'' and ''$CrisisManagerMenu.4620c.title$''.\n\nA probability of the outbreak of the War dose not be lessen even if no fallen empires has a opposing ethic."
  CrisisManagerMenu.4620c.tooltip:0 "The empire having a opposing ethic is surly chosen as the ancient rival if it exists.\nIn other cases, random fallen empire are chosen.\n\nA probability of the outbreak of the War dose not be lessen even if no fallen empire has a opposing ethic."
  CrisisManagerMenu.4620d.tooltip:0 "A middle option between ''$CrisisManagerMenu.4620a.title$'' and ''$CrisisManagerMenu.4620e.title$''.\n\nA probability of the outbreak of the War becomes low if no fallen empire has a opposing ethic."
- CrisisManagerMenu.4620e.tooltip:0 "The fallen empire having a opposing ethic is surly chosen as the ancient rival.\n\nThe War in Heaven will be cancelled if there is not such a empire."
+ CrisisManagerMenu.4620e.tooltip:0 "The fallen empire having a opposing ethic is surly chosen as the ancient rival.\n\nThe $mod_war_in_heaven$ will be cancelled if there is not such a empire."
 
  CrisisManagerMenu.4620.name:1 "$CrisisManagerMenu.4620.title$ $CrisisManagerTitleC$"
  CrisisManagerMenu.4620.desc1:1 "$CrisisManagerMenu.4620.desc$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.4620a.title$§!"
@@ -1721,8 +1721,8 @@
  CrisisManagerMenu.4620z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
  ### Ancient Rival for War in Heaven 2
- CrisisManagerMenu.4630.title:0 "Ancient Rival for War in Heaven 2"
- CrisisManagerMenu.4630.desc:0 "A configuration which fallen empires can awaken as ancient rival for the War in Heaven.\n\n$CmtDescToggleConfig$"
+ CrisisManagerMenu.4630.title:0 "Ancient Rival for $mod_war_in_heaven$ 2"
+ CrisisManagerMenu.4630.desc:0 "A configuration which fallen empires can awaken as ancient rival for the $mod_war_in_heaven$.\n\n$CmtDescToggleConfig$"
  CrisisManagerMenu.4630n1.title:0 "§HSet Independently§! from Standard Awakening"
  CrisisManagerMenu.4630n2.title:0 "§GConfirm to Standard Awakening§!"
  CrisisManagerMenu.4630a.title:1 "$CmtNameFallenMaterialist$"
@@ -1777,13 +1777,13 @@
  CrisisManagerMenu.4640z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
  ### Progress Speed of Prelude to War in Heaven
- CrisisManagerMenu.4650.title:0 "Progress Speed of Prelude to War in Heaven"
- CrisisManagerMenu.4650.desc:0 "A configuration for a progress speed of the prelude events to the War in Heaven.\nFaster option makes the time, from 1st awakening to the outbreak of the War in Heaven and forming the Neutral League, shorter."
+ CrisisManagerMenu.4650.title:0 "Progress Speed of Prelude to $mod_war_in_heaven$"
+ CrisisManagerMenu.4650.desc:0 "A configuration for a progress speed of the prelude events to the War in Heaven.\nFaster option makes the time, from 1st awakening to the outbreak of the $mod_war_in_heaven$ and forming the Neutral League, shorter."
  CrisisManagerMenu.4650a.title:0 "§BSlow§!"
  CrisisManagerMenu.4650b.title:0 "§GMiddle Speed§!"
  CrisisManagerMenu.4650c.title:0 "§HFast§!"
  CrisisManagerMenu.4650d.title:0 "§RSuper-Expless§!"
- CrisisManagerMenu.4650x.title:0 "Prelude to War in Heaven: "
+ CrisisManagerMenu.4650x.title:0 "Prelude to $mod_war_in_heaven$: "
  CrisisManagerMenu.4650a.tooltip:0 "The speed is about 1/3 of default."
  CrisisManagerMenu.4650b.tooltip:1 ""
  CrisisManagerMenu.4650c.tooltip:0 "The speed is about 3 times of default."
@@ -1803,7 +1803,7 @@
 
  ### Subjecting to Precursor (NPCs)
  CrisisManagerMenu.4660.title:0 "Subjecting to Precursor (NPCs)"
- CrisisManagerMenu.4660.desc:0 "A configuration for a probability that each young NPCs diplomatically become subject of one of awakened empires when the War in Heaven happens.\n($CmtDescNpc$)"
+ CrisisManagerMenu.4660.desc:0 "A configuration for a probability that each young NPCs diplomatically become subject of one of awakened empires when the $mod_war_in_heaven$ happens.\n($CmtDescNpc$)"
  CrisisManagerMenu.4660a.title:0 "NPCs §MHardly§! Become Subject"
  CrisisManagerMenu.4660b.title:0 "NPCs §BPossibly§! Become Subject"
  CrisisManagerMenu.4660c.title:0 "NPCs §GMaybe§! Become Subject"
@@ -1860,15 +1860,15 @@
  CrisisManagerMenu.4670z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
  ### Exhaustion from War in Heaven
- CrisisManagerMenu.4680.title:0 "Exhaustion from War in Heaven"
- CrisisManagerMenu.4680.desc:0 "A configuration for a coefficient of war exhaustion in the War in Heaven."
- CrisisManagerMenu.4680a.title:0 "§BSpineless§! War in Heaven"
- CrisisManagerMenu.4680b.title:0 "§GFickle§! War in Heaven"
- CrisisManagerMenu.4680c.title:0 "§YTough§! War in Heaven"
- CrisisManagerMenu.4680d.title:0 "§HVindictive§! War in Heaven"
- CrisisManagerMenu.4680e.title:0 "§RAll-Out§! War in Heaven"
+ CrisisManagerMenu.4680.title:0 "Exhaustion from $mod_war_in_heaven$"
+ CrisisManagerMenu.4680.desc:0 "A configuration for a coefficient of war exhaustion in the $mod_war_in_heaven$."
+ CrisisManagerMenu.4680a.title:0 "§BSpineless§! $mod_war_in_heaven$"
+ CrisisManagerMenu.4680b.title:0 "§GFickle§! $mod_war_in_heaven$"
+ CrisisManagerMenu.4680c.title:0 "§YTough§! $mod_war_in_heaven$"
+ CrisisManagerMenu.4680d.title:0 "§HVindictive§! $mod_war_in_heaven$"
+ CrisisManagerMenu.4680e.title:0 "§RAll-Out§! $mod_war_in_heaven$"
  CrisisManagerMenu.4680x.title:1 "$CrisisManagerMenu.4680.title$: "
- CrisisManagerMenu.4680a.tooltip:0 "War Exhaustion increases 3 times of vanilla.\n\nProbably, the War in Heaven will end in short time with neither side able to achieve dominance over the other."
+ CrisisManagerMenu.4680a.tooltip:0 "War Exhaustion increases 3 times of vanilla.\n\nProbably, the $mod_war_in_heaven$ will end in short time with neither side able to achieve dominance over the other."
  CrisisManagerMenu.4680b.tooltip:1 ""
  CrisisManagerMenu.4680c.tooltip:0 "War Exhaustion increases about 1/3 of vanilla."
  CrisisManagerMenu.4680d.tooltip:0 "War Exhaustion increases about 1/8 of vanilla."
@@ -2027,7 +2027,7 @@
 
  ### Multiple Great Khans
  CrisisManagerMenu.4810.title:0 "Multiple Great Khans"
- CrisisManagerMenu.4810.desc:0 "A configuration how many times Great Khan reigns over Horde.\nFor all options, only one Khan can exist at same time in the galaxy. In other word, next Great Khan can not reign until previous Great Khan dies.\n\n$CmtWarn1$: This configuration works only if the DLC ''Apocalypse'' is installed."
+ CrisisManagerMenu.4810.desc:0 "A configuration how many times $RT_GREAT_KHAN$ reigns over Horde.\nFor all options, only one Khan can exist at same time in the galaxy. In other word, next $RT_GREAT_KHAN$ can not reign until previous $RT_GREAT_KHAN$ dies.\n\n$CmtWarn1$: This configuration works only if the DLC ''Apocalypse'' is installed."
  CrisisManagerMenu.4810a.title:0 "§BNo Great Khan§!"
  CrisisManagerMenu.4810b.title:0 "§GSingle Great Khan§!"
  CrisisManagerMenu.4810c.title:0 "§YMultiple Great Khans§!"
@@ -2038,7 +2038,7 @@
  CrisisManagerMenu.4810b.tooltip:1 ""
  CrisisManagerMenu.4810c.tooltip:1 ""
  CrisisManagerMenu.4810d.tooltip:0 "§RNot Implemented!§!"
- CrisisManagerMenu.4810e.tooltip:0 "Great Khan is truly great!\nThey will succeed to unit all marauders in the galaxy."
+ CrisisManagerMenu.4810e.tooltip:0 "$RT_GREAT_KHAN$ is truly great!\nThey will succeed to unit all marauders in the galaxy."
 
  CrisisManagerMenu.4810.name:1 "$CrisisManagerMenu.4810.title$ $CrisisManagerTitleC$"
  CrisisManagerMenu.4810.desc1:1 "$CrisisManagerMenu.4810.desc$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.4810a.title$§!"
@@ -2056,7 +2056,7 @@
 
  ### Interval of Khan Reigning
  CrisisManagerMenu.4821.title:0 "Interval of Khan Reigning"
- CrisisManagerMenu.4821.desc:0 "A configuration of interval of Great Khan crowned.\nThis ''interval'' means minimum time from the end of previous Khan empire to next Great Khan crowned.\n\n$CmtWarn0$:  Next Great Khan is not always triggered immediately when the interval is over."
+ CrisisManagerMenu.4821.desc:0 "A configuration of interval of $RT_GREAT_KHAN$ crowned.\nThis ''interval'' means minimum time from the end of previous Khan empire to next $RT_GREAT_KHAN$ crowned.\n\n$CmtWarn0$:  Next $RT_GREAT_KHAN$ is not always triggered immediately when the interval is over."
  CrisisManagerMenu.4821.V5.title:0 "§Y100 Years§!"
  CrisisManagerMenu.4821.V4.title:0 "§Y75 Years§!"
  CrisisManagerMenu.4821.V3.title:0 "§Y50 Years§!"
@@ -2091,7 +2091,7 @@
 
  ### Khan to Reign at Earliest
  CrisisManagerMenu.4822.title:0 "Khan to Reign at Earliest"
- CrisisManagerMenu.4822.desc:0 "A configuration of the year Great Khan crowned at the earliest.\n\n$CmtDescMgsy$"
+ CrisisManagerMenu.4822.desc:0 "A configuration of the year $RT_GREAT_KHAN$ crowned at the earliest.\n\n$CmtDescMgsy$"
  CrisisManagerMenu.4822.V9.title:0 "Khan to Reign at Earliest §YMGSY +75 Years§!"
  CrisisManagerMenu.4822.V8.title:0 "Khan to Reign at Earliest §YMGSY +50 Years§!"
  CrisisManagerMenu.4822.V7.title:0 "Khan to Reign at Earliest §YMGSY +25 Years§!"
@@ -2113,7 +2113,7 @@
  CrisisManagerMenu.4822.V3.tooltip:1 "$CmtDescMgsy$"
  CrisisManagerMenu.4822.V2.tooltip:1 "$CmtDescMgsy$"
  CrisisManagerMenu.4822.V1.tooltip:1 "$CmtDescMgsy$"
- CrisisManagerMenu.4822.V0.tooltip:0 "In the long history of the galaxy, hundreds years are just a bit time.\nGreat Khan was born a little earlier by a quirk of fate."
+ CrisisManagerMenu.4822.V0.tooltip:0 "In the long history of the galaxy, hundreds years are just a bit time.\n$RT_GREAT_KHAN$ was born a little earlier by a quirk of fate."
  CrisisManagerMenu.4822.VC.tooltip:1 "$CmtDescMgsy$"
 
  CrisisManagerMenu.4822.name:1 "$CrisisManagerMenu.4822.title$ $CrisisManagerTitleC$"
@@ -2138,7 +2138,7 @@
 
  ### Last Chance of Khan Reigning
  CrisisManagerMenu.4823.title:0 "Last Chance of Khan Reigning"
- CrisisManagerMenu.4823.desc:0 "A configuration of the last year for Great Khan crowned.\nIf they do not awaken until this year, they never awaken.\n\n$CmtDescEgsy$"
+ CrisisManagerMenu.4823.desc:0 "A configuration of the last year for $RT_GREAT_KHAN$ crowned.\nIf they do not awaken until this year, they never awaken.\n\n$CmtDescEgsy$"
  CrisisManagerMenu.4823.V1.title:0 "§YEGSY -100 Years§!"
  CrisisManagerMenu.4823.V2.title:0 "§YEGSY -75 Years§!"
  CrisisManagerMenu.4823.V3.title:0 "§YEGSY -50 Years§!"
@@ -2185,7 +2185,7 @@
 
  ### MTTH for Khan Reigning
  CrisisManagerMenu.4831.title:0 "MTTH for Khan Reigning"
- CrisisManagerMenu.4831.desc:0 "A configuration of MTTH for Great Khan reigning.\n\n$CmtDescMtth$"
+ CrisisManagerMenu.4831.desc:0 "A configuration of MTTH for $RT_GREAT_KHAN$ reigning.\n\n$CmtDescMtth$"
  CrisisManagerMenu.4831a.title:0 "§BVery Long§!"
  CrisisManagerMenu.4831b.title:0 "§GLong§!"
  CrisisManagerMenu.4831c.title:0 "§YMiddle§!"
@@ -2214,7 +2214,7 @@
 
  ### Khan to Rise Up for Vengeance
  CrisisManagerMenu.4832.title:0 "Khan to Rise up for Vengeance"
- CrisisManagerMenu.4832.desc:0 "Hordes and Great Khan might rise up if their Void Dwelling is destroyed by any empire.\nThis is a configuration for this probability.\n\n$CmtWarn0$:  This is another vengeance events than vengeance events when ALL their Dwellings are destroyed."
+ CrisisManagerMenu.4832.desc:0 "Hordes and $RT_GREAT_KHAN$ might rise up if their Void Dwelling is destroyed by any empire.\nThis is a configuration for this probability.\n\n$CmtWarn0$:  This is another vengeance events than vengeance events when ALL their Dwellings are destroyed."
  CrisisManagerMenu.4832a.title:0 "§BNever§!"
  CrisisManagerMenu.4832b.title:0 "§GLow Probability§!"
  CrisisManagerMenu.4832c.title:0 "§YMiddle Probability§!"
@@ -2243,7 +2243,7 @@
 
  ### Resurgence of Khan
  CrisisManagerMenu.4841.title:0 "Resurgence of Khan"
- CrisisManagerMenu.4841.desc:0 "A configuration how many times do Great Khan flee form destroyed ship and resume to conquest when they meet defeat.\n\n$CrisisManagerMenu.4841.warn$"
+ CrisisManagerMenu.4841.desc:0 "A configuration how many times do $RT_GREAT_KHAN$ flee from destroyed ship and resume to conquest when they meet defeat.\n\n$CrisisManagerMenu.4841.warn$"
  CrisisManagerMenu.4841.warn:0 "$CmtWarn3$\nHorde crisis never end when both of ''$CrisisManagerMenu.4841e.title$'' and ''$CrisisManagerMenu.4842f.title$'' (next configuration) are set."
  CrisisManagerMenu.4841a.title:0 "Khan §BNever§! Resurge"
  CrisisManagerMenu.4841b.title:0 "Khan Resurge §GOnly Once§!"
@@ -2277,7 +2277,7 @@
 
  ### Lifespan of Khan
  CrisisManagerMenu.4842.title:0 "Lifespan of Khan"
- CrisisManagerMenu.4842.desc:0 "A configuration for lifespan of Great Khan. It control a probability/span that Great Khan dies all reason except the defeat in a combat.\n\n$CrisisManagerMenu.4842.warn$"
+ CrisisManagerMenu.4842.desc:0 "A configuration for lifespan of $RT_GREAT_KHAN$. It control a probability/span that $RT_GREAT_KHAN$ dies all reason except the defeat in a combat.\n\n$CrisisManagerMenu.4842.warn$"
  CrisisManagerMenu.4842.warn:0 "$CmtWarn3$\nHorde crisis never end when both of ''$CrisisManagerMenu.4842f.title$'' and ''$CrisisManagerMenu.4841e.title$'' (previous configuration) are set."
  CrisisManagerMenu.4842a.title:0 "Khan §MCritical§!"
  CrisisManagerMenu.4842b.title:0 "Khan §BFleeting§!"
@@ -2286,7 +2286,7 @@
  CrisisManagerMenu.4842e.title:0 "Khan §HVenerable§!"
  CrisisManagerMenu.4842f.title:0 "Khan §RImmortality§!"
  CrisisManagerMenu.4842x.title:1 "$CrisisManagerMenu.4842.title$: "
- CrisisManagerMenu.4842a.tooltip:0 "Although Great Khan has critical illness, they rise up for Horde.\n\n§HThey will die about a month later from they reigning.§!\n\nRecommended to use for only test play."
+ CrisisManagerMenu.4842a.tooltip:0 "Although $RT_GREAT_KHAN$ has critical illness, they rise up for Horde.\n\n§HThey will die about a month later from they reigning.§!\n\nRecommended to use for only test play."
  CrisisManagerMenu.4842b.tooltip:0 "Thier lifespan is 14 years from reigning on median."
  CrisisManagerMenu.4842c.tooltip:0 "Thier lifespan is 23 years from reigning on median."
  CrisisManagerMenu.4842d.tooltip:0 "Thier lifespan is 38 years from reigning on median."
@@ -2311,7 +2311,7 @@
 
  ### Latent Strength of Horde in Adversity
  CrisisManagerMenu.4850.title:0 "Latent Strength of Horde in Adversity"
- CrisisManagerMenu.4850.desc:0 "A configuration to create more reinforcement fleets of Hordes with Great Khan when their combat ships are used up and the number of them gets small.\n\n$CmtWarn0$\nFor any options, the number of reinforcement fleets are same as vanilla if Horde has many ships."
+ CrisisManagerMenu.4850.desc:0 "A configuration to create more reinforcement fleets of Hordes with $RT_GREAT_KHAN$ when their combat ships are used up and the number of them gets small.\n\n$CmtWarn0$\nFor any options, the number of reinforcement fleets are same as vanilla if Horde has many ships."
  CrisisManagerMenu.4850a.title:0 "§MDisable§!"
  CrisisManagerMenu.4850b.title:0 "§BWeak§!"
  CrisisManagerMenu.4850c.title:0 "§GMiddle§!"
@@ -2334,10 +2334,10 @@
  CrisisManagerMenu.4850z.name:1 "$CrisisManagerMenu.4850x.title$$CmtTextErrUndefined.name$"
  CrisisManagerMenu.4850z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
- ### Future of Horde
- CrisisManagerMenu.4860.title:0 "Future of Horde"
- CrisisManagerMenu.4860.desc:0 "A configuration for the future of Horde after death of Great Khan.\n\n$CmtWarn1$\nEach future has a necessary condition. This configuration will be ignored if Horde the conditions are not satisfied when Great Khan dies.\nThe required conditions are to own at least followings.\n- Democracy: 2 satraps, and 1 habitable planet\n- New Khanate: 1 habitable planet\n- Splinter Diadochi: 6 habitable planets\n * They revert to old ways if they have no planets."
- CrisisManagerMenu.4860a.title:0 "Future of Horde §BVariable§!"
+ ### Future of the Horde
+ CrisisManagerMenu.4860.title:0 "Future of the Horde"
+ CrisisManagerMenu.4860.desc:0 "A configuration for the future of the Horde after death of $RT_GREAT_KHAN$.\n\n$CmtWarn1$\nEach future has a necessary condition. This configuration will be ignored if Horde the conditions are not satisfied when $RT_GREAT_KHAN$ dies.\nThe required conditions are to own at least followings.\n- Democracy: 2 satraps, and 1 habitable planet\n- New Khanate: 1 habitable planet\n- Splinter Diadochi: 6 habitable planets\n * They revert to old ways if they have no planets."
+ CrisisManagerMenu.4860a.title:0 "Future of the Horde §BVariable§!"
  CrisisManagerMenu.4860b.title:0 "Horde to §YDemocracy§! after Death of Khan"
  CrisisManagerMenu.4860c.title:0 "Horde to §YKeep Single Country§! after Death of Khan"
  CrisisManagerMenu.4860d.title:0 "Horde to §YNew Khanate§! after Death of Khan"
@@ -2345,10 +2345,11 @@
  CrisisManagerMenu.4860f.title:0 "Horde to §YSplinter Diadochi§! after Death of Khan"
  CrisisManagerMenu.4860x.title:1 "$CrisisManagerMenu.4860.title$: "
  CrisisManagerMenu.4860a.tooltip:1 ""
- CrisisManagerMenu.4860b.tooltip:0 "They will be Democratic country or New Khanate."
- CrisisManagerMenu.4860c.tooltip:1 ""
- CrisisManagerMenu.4860d.tooltip:0 "They will be New Khanate or split by Diadochi."
- CrisisManagerMenu.4860e.tooltip:1 ""
+ CrisisManagerMenu.4860b.tooltip:0 "They will be a Democratic empire."
+ CrisisManagerMenu.4860c.tooltip:1 "They will be a Democratic empire or a New Khanate."
+ CrisisManagerMenu.4860d.tooltip:0 "They will be a New Khanate."
+ CrisisManagerMenu.4860e.tooltip:1 "They will be a New Khanate or split by Diadochi."
+ CrisisManagerMenu.4860f.tooltip:1 "They will be split by Diadochi."
 
  CrisisManagerMenu.4860.name:1 "$CrisisManagerMenu.4860.title$ $CrisisManagerTitleC$"
  CrisisManagerMenu.4860.desc1:1 "$CrisisManagerMenu.4860.desc$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.4860a.title$§!"
@@ -3207,7 +3208,7 @@
  CrisisManagerMenu.6002.title:0 "More Information of Crisis Power 2"
  CrisisManagerMenu.6002.name:1 "$CrisisManagerMenu.6002.title$ $CrisisManagerTitleC$"
  CrisisManagerMenu.6002.desc:0 "These configurations modify the strength following factions.\n- $CmtNamePrethoryn$, $CmtNameSentinels$\n- $CmtNameUnbidden$, $CmtNameAberrant$, $CmtNameVehement$\n- $CmtNameContingency$, $CmtNameCybrex$\n- $CmtNameShroudSpirits$ (Only $CmtNameForcedEoc$)\n\nThese configurations do §HNOT§! modify the strength following factions.\n- Standard End of Cycle\n- $CmtNameFallenEmpire$, $CmtNameAwakenedEmpire$"
-     # CrisisManagerMenu.6002.desc:0 "These configurations modify the strength following factions.\n\n<$CrisisManagerEndgame$>\n- $CmtNamePrethoryn$, $CmtNameSentinels$\n- $CmtNameUnbidden$, $CmtNameAberrant$, $CmtNameVehement$\n- $CmtNameContingency$, $CmtNameCybrex$\n- $CmtNameShroudSpirits$ (Only $CmtNameForcedEoc$)\n\n<$CrisisManagerMidgame$>\n- $CmtNameKhan$\n- $CmtNameGraygoo$\n\nThese configurations do §HNOT§! modify the strength following factions.\n- Standard End of Cycle\n- $CmtNameFallenEmpire$, $CmtNameAwakenedEmpire$\n- Marauders with no Great Khan and the Empire after death of Great Khan\n- $CmtNameLdrake$"
+     # CrisisManagerMenu.6002.desc:0 "These configurations modify the strength following factions.\n\n<$CrisisManagerEndgame$>\n- $CmtNamePrethoryn$, $CmtNameSentinels$\n- $CmtNameUnbidden$, $CmtNameAberrant$, $CmtNameVehement$\n- $CmtNameContingency$, $CmtNameCybrex$\n- $CmtNameShroudSpirits$ (Only $CmtNameForcedEoc$)\n\n<$CrisisManagerMidgame$>\n- $CmtNameKhan$\n- $CmtNameGraygoo$\n\nThese configurations do §HNOT§! modify the strength following factions.\n- Standard End of Cycle\n- $CmtNameFallenEmpire$, $CmtNameAwakenedEmpire$\n- Marauders with no $RT_GREAT_KHAN$ and the Empire after death of $RT_GREAT_KHAN$\n- $CmtNameLdrake$"
 
  ### Target of Template
  CrisisManagerMenu.601x.title:0 "Select Target of Difficulty"
@@ -4643,11 +4644,11 @@
  CrisisManagerMenu.7000.7135.A.tooltip:1 ""
  CrisisManagerMenu.7000.7135.B.tooltip:0 "Fallen empire cannot be awakening since no sleeping one exists"
  CrisisManagerMenu.7000.7136.A.tooltip:1 ""
- CrisisManagerMenu.7000.7136.B.tooltip:0 "There are not enough fallen empires for the War in Heaven."
- CrisisManagerMenu.7000.7136.C.tooltip:0 "The War in Heaven can be triggered only once.\nSo, no more the War in Heaven can be triggered."
+ CrisisManagerMenu.7000.7136.B.tooltip:0 "There are not enough fallen empires for the $mod_war_in_heaven$."
+ CrisisManagerMenu.7000.7136.C.tooltip:0 "The War in Heaven can be triggered only once.\nSo, no more the $mod_war_in_heaven$ can be triggered."
  CrisisManagerMenu.7000.7138.A.tooltip:1 ""
- CrisisManagerMenu.7000.7138.B.tooltip:0 "No marauder exists or their drums are broken.\nGreat Khan will not rise in this galaxy."
- CrisisManagerMenu.7000.7138.C.tooltip:0 "Great Khan exists and is leading Hordes.\nOnly one Great Khan can reign at the same time."
+ CrisisManagerMenu.7000.7138.B.tooltip:0 "No marauder exists or their drums are broken.\n$RT_GREAT_KHAN$ will not rise in this galaxy."
+ CrisisManagerMenu.7000.7138.C.tooltip:0 "$leader_trait_great_khan$ already exists and leads the Horde.\nOnly one $RT_GREAT_KHAN$ can reign at a time."
  CrisisManagerMenu.7000.7140.A.tooltip:1 ""
  CrisisManagerMenu.7000.7140.B.tooltip:0 "404 Error\nL-Gate cannot be found in the galaxy."
  CrisisManagerMenu.7000.7140.C.tooltip:0 "$lgates$ has been opened already.\nThey cannot be opened twice."
@@ -4731,7 +4732,7 @@
 
  ### Trigger Mid-Game Crisis and Awakening of Sleepers
  CrisisManagerMenu.7135.title:1 "$CrisisManagerMenu.7000.7135.A.name$"
- CrisisManagerMenu.7135.tail:0 "$CmtWarn1$: It is random whether the War in Heaven happens or not; a probability depends on configurations of ''$CrisisManagerMenu.4610.title$'' and others."
+ CrisisManagerMenu.7135.tail:0 "$CmtWarn1$: It is random whether the $mod_war_in_heaven$ happens or not; a probability depends on configurations of ''$CrisisManagerMenu.4610.title$'' and others."
  CrisisManagerMenu.7135b.name:0 "Yes, forcibly awaken random fallen empire up."
  CrisisManagerMenu.7135c1.name:0 "Yes, forcibly awaken $CmtProperNameSleeper1$ up."
  CrisisManagerMenu.7135c2.name:0 "Yes, forcibly awaken $CmtProperNameSleeper2$ up."
@@ -4741,26 +4742,26 @@
  CrisisManagerMenu.7135c.tooltip:1 ""
 
  CrisisManagerMenu.7136.title:1 "$CrisisManagerMenu.7000.7136.A.name$"
- CrisisManagerMenu.7136.desc1:0 "Select 1st fallen empire to awaken for the War in Heaven.\nThe empire awakened already cannot be selected."
- CrisisManagerMenu.7136.desc2:0 "Select 2nd fallen empire to awaken for the War in Heaven.\nThe empire awakened already cannot be selected.\n\n§W1st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperA]§! §Y[CmtTargetManualSleeperA.GetName]§!"
- CrisisManagerMenu.7136.desc3:0 "$CmtDescNoCancelHead$\n§WSelected Operation: the War in Heaven§!\n\n§W1st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperA] §Y[CmtTargetManualSleeperA.GetName]§!\n\n§W2st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperB] §Y[CmtTargetManualSleeperB.GetName]§!"
+ CrisisManagerMenu.7136.desc1:0 "Select 1st fallen empire to awaken for the $mod_war_in_heaven$.\nThe empire awakened already cannot be selected."
+ CrisisManagerMenu.7136.desc2:0 "Select 2nd fallen empire to awaken for the $mod_war_in_heaven$.\nThe empire awakened already cannot be selected.\n\n§W1st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperA]§! §Y[CmtTargetManualSleeperA.GetName]§!"
+ CrisisManagerMenu.7136.desc3:0 "$CmtDescNoCancelHead$\n§WSelected Operation: the $mod_war_in_heaven$§!\n\n§W1st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperA] §Y[CmtTargetManualSleeperA.GetName]§!\n\n§W2st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperB] §Y[CmtTargetManualSleeperB.GetName]§!"
  CrisisManagerMenu.7136a.name:0 "I changed my mind."
  CrisisManagerMenu.7136b.name:0 "Randam fallen empire."
  CrisisManagerMenu.7136c1.name:1 "$CmtProperNameSleeper1$"
  CrisisManagerMenu.7136c2.name:1 "$CmtProperNameSleeper2$"
  CrisisManagerMenu.7136c3.name:1 "$CmtProperNameSleeper3$"
  CrisisManagerMenu.7136c4.name:1 "$CmtProperNameSleeper4$"
- CrisisManagerMenu.7136d.name:0 "Yes, trigger the War in Heaven."
+ CrisisManagerMenu.7136d.name:0 "Yes, trigger the $mod_war_in_heaven$."
  CrisisManagerMenu.7136a.tooltip:1 ""
  CrisisManagerMenu.7136b.tooltip:1 ""
  CrisisManagerMenu.7136c.tooltip:1 ""
  CrisisManagerMenu.7136d.tooltip:1 ""
 
  CrisisManagerMenu.7138.title:1 "$CrisisManagerMenu.7000.7138.A.name$"
- CrisisManagerMenu.7138b.name:0 "Yes, wake random Great Khan reign over random marauder."
- CrisisManagerMenu.7138c1.name:0 "Yes, make Great Khan reign over $CmtProperNameMarauder1$."
- CrisisManagerMenu.7138c2.name:0 "Yes, make Great Khan reign over $CmtProperNameMarauder2$."
- CrisisManagerMenu.7138c3.name:0 "Yes, make Great Khan reign over $CmtProperNameMarauder3$."
+ CrisisManagerMenu.7138b.name:0 "Yes, wake random $RT_GREAT_KHAN$ reign over random marauder."
+ CrisisManagerMenu.7138c1.name:0 "Yes, make $RT_GREAT_KHAN$ reign over $CmtProperNameMarauder1$."
+ CrisisManagerMenu.7138c2.name:0 "Yes, make $RT_GREAT_KHAN$ reign over $CmtProperNameMarauder2$."
+ CrisisManagerMenu.7138c3.name:0 "Yes, make $RT_GREAT_KHAN$ reign over $CmtProperNameMarauder3$."
  CrisisManagerMenu.7138b.tooltip:1 ""
  CrisisManagerMenu.7138c.tooltip:1 ""
 
@@ -4925,7 +4926,7 @@
  CrisisManagerMenu.7205c3.name:0 "Yes, ruin $CmtProperNameSleeper3$."
  CrisisManagerMenu.7205c4.name:0 "Yes, ruin $CmtProperNameSleeper4$."
  CrisisManagerMenu.7205c5.name:0 "Yes, ruin $CmtProperNameSleeper5$."
- CrisisManagerMenu.7208b.name:0 "Yes, assassinate Great Khan"
+ CrisisManagerMenu.7208b.name:0 "Yes, assassinate $RT_GREAT_KHAN$"
  CrisisManagerMenu.7208c1.name:0 "Yes, murder $CmtProperNameMarauder1$."
  CrisisManagerMenu.7208c2.name:0 "Yes, murder $CmtProperNameMarauder2$."
  CrisisManagerMenu.7208c3.name:0 "Yes, murder $CmtProperNameMarauder3$."
@@ -5187,7 +5188,7 @@
  ### Ancient Rival Selected Counter
  CrisisManagerMenu.9330.name:1 "$CrisisManagerMenu.9000.9340.name$ $CrisisManagerTitleC$"
  CrisisManagerMenu.9330.desc:0 "$CrisisManagerMenu.9000.desc$\n\n§WOpposite Ethics: [CmtGlobalVar.GmtVarDebugCountAncientRivalOpposite]\nRandom: [CmtGlobalVar.GmtVarDebugCountAncientRivalRandom]\nNo Rival: [CmtGlobalVar.GmtVarDebugCountAncientRivalNon]\n§!"
- CrisisManagerMenu.9330a.name:0 "Trigger War in Heaven 10000 Times"
+ CrisisManagerMenu.9330a.name:0 "Trigger $mod_war_in_heaven$ 10000 Times"
  CrisisManagerMenu.9330b.name:0 "Reset Counter"
 
  ### Guardians Triggered Counter

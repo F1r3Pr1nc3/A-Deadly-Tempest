@@ -46,11 +46,11 @@
 ##############
 
 ### The Fleet for Khan Own
-CmtEffectCreateAdmiralty_Khan1stFleet = {		### Exception: Leader = event_target:great_khan
-	event_target:raider_khanate = {
-		CmtEffectCreateFleet_Khan1stFleet = yes
-	}
-}
+# CmtEffectCreateAdmiralty_Khan1stFleet = {		### Exception: Leader = event_target:great_khan
+# 	event_target:raider_khanate = {
+# 		CmtEffectCreateFleet_Khan1stFleet = yes
+# 	}
+# }
 
 CmtEffectCreateAdmiralty_Khan2ndFleetSet = {		### Exception: Leader = exiled_khan
 	event_target:raider_khanate = {
@@ -343,11 +343,11 @@ CmtEffectCreateAdmiralty_KhanReinforcement = {
 }
 
 ### Garrison (Satrap)
-CmtEffectCreateAdmiralty_KhanEncourager = {
-	event_target:raider_khanate = {
-		CmtEffectCreateFleet_KhanEncourager = yes
-	}
-}
+# CmtEffectCreateAdmiralty_KhanEncourager = {
+# 	event_target:raider_khanate = {
+# 		CmtEffectCreateFleet_KhanEncourager = yes
+# 	}
+# }
 
 ### Reinforcement (Satrap)
 CmtEffectCreateAdmiralty_KhanSubReinforcement = {
