@@ -30,8 +30,6 @@ check_fleet_count_in_system = {
 ## For Mod Compatibility
 ########################
 
-
-
 ### Standard
 CmtTriggerIsPlayableEmpire = {
 	OR = {		## Written in Cmt00 Cmt40 and Cmt50

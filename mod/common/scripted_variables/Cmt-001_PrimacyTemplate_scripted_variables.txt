@@ -329,7 +329,7 @@
 
 ### Awakenable Sleepers
 	@CmtT001_ConstSleeperForbidMaterialist	= no		## Keepers of Knowledge
-	@CmtT001_ConstSleeperForbidSpirituarist = no		## Holy Guardians
+	@CmtT001_ConstSleeperForbidSpiritualist = no		## Holy Guardians
 	@CmtT001_ConstSleeperForbidXenophile	= no		## Enigmatic Observers
 	@CmtT001_ConstSleeperForbidXenophobe	= no		## Militant Isolationists
 		### yes: Forbid to Standardly Awaken
@@ -363,7 +363,7 @@
 		### no:	Confilm to Standard Awakening (Ignore Following 4 Options, Default)
 
 	@CmtT001_ConstHeavenForbidMaterialist	= no		### Keepers of Knowledge
-	@CmtT001_ConstHeavenForbidSpirituarist	= no		### Holy Guardians
+	@CmtT001_ConstHeavenForbidSpiritualist	= no		### Holy Guardians
 	@CmtT001_ConstHeavenForbidXenophile		= no		### Enigmatic Observers
 	@CmtT001_ConstHeavenForbidXenophobe		= no		### Militant Isolationists
 		### yes: Forbid to Awaken as Ancient Rival
