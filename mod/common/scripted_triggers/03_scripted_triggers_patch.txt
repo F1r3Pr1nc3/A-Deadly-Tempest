@@ -23,10 +23,7 @@ has_total_war_cb = {
 				AND = {
 					has_valid_civic = civic_machine_terminator
 					from = {
-						NOR = {
-							has_country_flag = synthetic_empire
-							has_authority = auth_machine_intelligence
-						}
+						is_synthetic_empire = no
 					}
 				}
 				AND = {
