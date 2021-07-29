@@ -9,7 +9,7 @@
 CmtEffectCreateAdmiral_DessanuStandard = {
 	create_leader = {
 		class = admiral
-		species = owner_main_species
+		species = owner_species
 		name = random
 		skill = 3
 		leader_age_min = 25

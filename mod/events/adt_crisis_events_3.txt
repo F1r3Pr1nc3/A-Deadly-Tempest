@@ -17,19 +17,50 @@ country_event = {
 		OR = {
 			AND = {
 				has_global_flag = ai_invasion_ongoing
-				is_country_type = ai_empire
-				galaxy_percentage > 0.20
+				CmtTriggerIsContingency = yes
+				OR = {
+					galaxy_percentage > 0.45
+					AND = {
+						NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 2 } } }
+						galaxy_percentage > 0.20
+					}
+					AND = {
+						NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } } }
+						galaxy_percentage > 0.05
+					}
+					event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 5 } }
+				}
 			}
-			AND = {
+			AND = { # Also for the Tempest
 				has_global_flag = gray_goo_crisis_active
 				CmtTriggerIsGraygoo = yes
-				num_fleets > 60 # TODO dynamically!?
+				OR = {
+					num_fleets > 110
+					AND = {
+						NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 2 } } }
+						num_fleets > 60
+					}
+					AND = {
+						NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } } }
+						num_fleets > 15
+					}
+					event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 5 } }
+				}
 			}
 		}
 	}
 
+	## Also called by crisis.2025 if CmtVarCybrexResurfacing = 5
 	mean_time_to_happen = {
 		months = 12
+		modifier = {
+			factor = 5
+			event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 2 } }
+		}
+		modifier = {
+			factor = 0.1
+			has_global_flag = CmtFlagDebugMode
+		}
 	}
 
 	immediate = {
@@ -39,34 +70,28 @@ country_event = {
 		random_rim_system = {
 			limit = { NOT = { has_star_flag = sealed_system } }
 			spawn_system = {
-				min_distance >= 20
-				max_distance <= 50
+				min_distance >= 15
+				max_distance <= 35
 				initializer = "cybrex_beta"
 			}
 		}
-		# Vanilla doesnt use/check his own saved targets!?
 		if = { limit = { NOT = { exists = event_target:cybrex } }
 			random_country = {
 				limit = { is_country_type = cybrex_empire }
 				save_global_event_target_as = cybrex
 			}
 		}
-
-		save_event_target_as = cybrex_target
-
-		observer_event = { id = observer.52 }
-		# Cybrex Notification
+		# Cybrex communication
 		every_country = {
 			limit = { is_country_type_with_subjects = yes }
 			country_event = { id = crisis.2401 days = 2 }
 		}
-
+		observer_event = { id = observer.52 }
 		event_target:cybrex = {
 			country_event = { id = crisis.2421 days = 4 }
 			country_event = { id = crisis.2421 days = 120 }
 			country_event = { id = crisis.2421 days = 320 }
 			establish_communications_no_message = root
-			establish_communications_no_message = event_target:cybrex_target
 		}
 	}
 }
@@ -153,23 +178,26 @@ country_event = {
 	}
 
 	immediate = {
-		# FIXME vanilla: not used anywhere, not finished?
-		# random_country = { limit = { is_country_type = ai_empire }
-		# 	save_event_target_as = contingency
-		# }
+		if = { limit = { NOT = { exists = event_target:contingency } }
+			random_country = {
+				limit = { CmtTriggerIsContingency = yes }
+				save_event_target_as = contingency
+			}
+		}
 
 		create_leader = {
 			class = admiral
-			species = owner_main_species
+			species = owner_species
 			name = random
 			skill = 5
+			set_age = 0
 			traits = {
 				trait = leader_trait_cybrex
 			}
 		}
-		last_created_leader = { set_age = 0 }
+		# last_created_leader = { set_age = 0 }
 		capital_scope = {
-			# save_event_target_as = cybrex_home # FIXME vanilla: not used anywhere, not finished?
+			# save_event_target_as = cybrex_home # TODO vanilla: not used anywhere, not finished?
 			create_fleet = {
 				effect = {
 					set_owner = prevprev
@@ -203,10 +231,6 @@ country_event = {
 					set_fleet_flag = cybrex_attack_fleet
 				}
 			}
-		}
-		country_event = {
-			id = crisis.2421
-			days = 1800
 		}
 	}
 }
@@ -562,7 +586,7 @@ country_event = {
 
 				while = {
 					count = 16
-					create_pop = { species = owner_main_species }
+					create_pop = { species = owner_species }
 				}
 				while = {
 					count = 2
@@ -616,7 +640,7 @@ country_event = {
 
 				create_army = {
 					owner = root
-					species = owner_main_species
+					species = owner_species
 					type = "nanite_giga_guardian"
 				}
 			}

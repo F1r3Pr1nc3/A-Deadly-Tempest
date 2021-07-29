@@ -531,7 +531,7 @@ distantstars_init_05b = {
 			while = {
 				count = 50
 				create_pop = {
-					species = owner_main_species
+					species = owner_species
 				}
 			}
 			# create_fallen_empire_starting_navy = yes
@@ -541,7 +541,7 @@ distantstars_init_05b = {
 				create_army = {
 					name = random
 					owner = event_target:gate_builders
-					species = owner_main_species
+					species = owner_species
 					type = "machine_assault_2"
 				}
 			}
@@ -588,7 +588,7 @@ distantstars_init_05b = {
 			while = {
 				count = 30
 				create_pop = {
-					species = owner_main_species
+					species = owner_species
 				}
 			}
 		}
@@ -630,7 +630,7 @@ distantstars_init_05b = {
 			while = {
 				count = 22
 				create_pop = {
-					species = owner_main_species
+					species = owner_species
 				}
 			}
 		}

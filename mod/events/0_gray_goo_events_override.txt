@@ -719,7 +719,7 @@ country_event = {
 
 					while = {
 						count = 30
-						create_pop = { species = owner_main_species }
+						create_pop = { species = owner_species }
 					}
 					while = {
 						count = 2
