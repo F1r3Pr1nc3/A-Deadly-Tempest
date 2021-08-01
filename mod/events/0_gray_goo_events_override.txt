@@ -95,10 +95,10 @@ country_event = {
 					set_country_flag = synthetic_empire
 					## add technologies
 					country_event = { id = a_deadly_tempest.107 }
+					PREV = { create_starbase = { size = "starbase_gatebuilders" owner = PREV } }
 				}
 			}
 			event_target:main_star = { planet_event = { id = a_deadly_tempest.4 } }
-			create_starbase = { size = "starbase_gatebuilders" owner = event_target:graygoo_country }
 		}
 
 		### Create Fleets
@@ -213,6 +213,25 @@ country_event = {
 	}
 
 	immediate = {
+
+		# Fallback for whatever reason
+		if = {
+			limit = { NOT = { exists = event_target:graygoo_country } }
+			if = {
+				limit = { CmtTriggerIsGraygoo = yes }
+				save_global_event_target_as = graygoo_country
+			} else = {
+				random_country = {
+					limit = { CmtTriggerIsGraygoo = yes }
+					save_global_event_target_as = graygoo_country
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { exists = event_target:graygoo_country } }
+			break = yes # Game Over
+		}
+
 		### Time Control
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 2 } } }
@@ -239,19 +258,11 @@ country_event = {
 					save_global_event_target_as = lcluster_factory_system
 				}
 			}
-
 			event_target:lcluster_factory_system = {
 				random_ship_in_system = {
 					limit = { is_ship_size = graygoo_factory }
 					save_global_event_target_as = nanite_factory
 				}
-			}
-			if = {
-				limit = {
-					NOT = { exists = event_target:graygoo_country }
-					CmtTriggerIsGraygoo = yes
-				}
-				save_global_event_target_as = graygoo_country
 			}
 		}
 

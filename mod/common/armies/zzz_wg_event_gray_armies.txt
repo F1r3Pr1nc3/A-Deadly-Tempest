@@ -25,8 +25,8 @@ nanite_giga_guardian = {
 	defensive = yes
 	occupation = yes
 	# is_pop_spawned = yes
-	health = 18
-	damage = 10
+	health = 12 # 18
+	damage = 6.5 # 10
 	has_morale = no
 	morale_damage = 5
 	collateral_damage = 2
@@ -41,10 +41,18 @@ nanite_giga_guardian = {
 			energy = 2
 		}
 	}
+
 	prerequisites = { tech_nanite_mega_construction }
 
 	potential = {
-		# always = no
+		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
+		planet = {
+			OR = {
+				is_capital = yes
+				solar_system = { has_star_flag = graygoo_factory_system }
+			}
+			has_active_building = building_stronghold
+		}
 		owner = {
 			OR = {
 				has_authority = auth_machine_intelligence
@@ -61,8 +69,8 @@ nanite_giga_guardian = {
 
 ### Improved Cybrex-Warform with Nanites, same version as vanilla gray_army
 nanite_giga_warform = {
-	damage = 10.0
-	health = 18.0
+	health = 11 # 18
+	damage = 6 # 10
 	has_morale = no
 	morale_damage = 6.0
 	collateral_damage = 5.0
