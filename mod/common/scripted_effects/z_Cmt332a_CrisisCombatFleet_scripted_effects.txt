@@ -15,10 +15,6 @@
 #	PREV: Location for creating fleets (e.g. planet)
 #
 
-###################
-### Constants ###
-###################
-
 ##############
 ### Khan ###
 ##############
@@ -59,7 +55,7 @@ CmtEffectCreateAdmiralty_Khan1stFleet = {		### Exception: Leader = event_target:
 				assign_leader = event_target:great_khan
 			}
 			settings = {
-				can_upgrade = yes
+				can_upgrade = no
 				can_disband = no
 				can_change_composition = no
 				can_change_leader = no
@@ -143,8 +139,8 @@ CmtEffectCreateFleet_KhanStandard = {
 			assign_leader = last_created_leader
 		}
 		settings = {
-			can_upgrade = no
-			can_change_composition = no
+			can_upgrade = $DIADOCHI|no$
+			can_change_composition = $DIADOCHI|no$
 			uses_naval_capacity = no
 		}
 	}
@@ -536,7 +532,7 @@ CmtEffectCreateFleet_KhanSubReinforcement2 = {
 		}
 		settings = {
 			can_upgrade = no
-					# can_disband = no
+			# can_disband = no
 			can_change_composition = no
 			can_change_leader = no
 			uses_naval_capacity = no

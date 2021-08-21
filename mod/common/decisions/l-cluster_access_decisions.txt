@@ -39,17 +39,7 @@ decision_open_lcluster = {
 		# Make city-planet
 		custom_tooltip = decision_open_lcluster_effects
 		hidden_effect = {
-			set_global_flag = lgates_activated_globally
-			owner = {
-				set_country_flag = lgates_activated
-				remove_country_flag = lcluster_closer
-				add_notification_modifier = lgate_access
-			}
-			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
-			# Workaround Fix AI bypassing
-			event_target:lcluster1 = {
-				remove_star_flag = pike_star_flag_banned_system
-			}
+			open_terminal_egress = yes
 		}
 	}
 
@@ -107,6 +97,18 @@ decision_close_lcluster = {
 			# Workaround Fix AI bypassing
 			event_target:lcluster1 = {
 				set_star_flag = pike_star_flag_banned_system
+				set_star_flag = sealed_system
+				set_star_flag = guardian
+			}
+			every_country = {
+				limit = {
+					is_ai = yes
+					OR = {
+						is_crisis_faction = yes
+						CmtTriggerIsPlayableEmpire = yes
+					}
+				}
+				run_ai_strategic_war_data = yes
 			}
 		}
 	}

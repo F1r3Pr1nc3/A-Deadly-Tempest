@@ -10,7 +10,7 @@ terraform_link = {
 	}
 	energy = @naniteCost
 	duration = @naniteTime
-	
+
 	ai_weight = {
 		weight = 10
 		modifier = {
@@ -33,7 +33,7 @@ terraform_link = {
 	}
 	energy = @naniteCost
 	duration = @naniteTime
-	
+
 	ai_weight = {
 		weight = 10
 		modifier = {
@@ -65,7 +65,7 @@ terraform_link = {
 	}
 	energy = @naniteCost
 	duration = @naniteTime
-	
+
 	ai_weight = {
 		weight = 5
 	}
@@ -91,7 +91,7 @@ terraform_link = {
 	}
 	energy = @naniteCost
 	duration = @naniteTime
-	
+
 	ai_weight = {
 		weight = 5
 	}
@@ -106,7 +106,7 @@ terraform_link = {
 	}
 	energy = @naniteCost
 	duration = @naniteTime
-	
+
 	ai_weight = {
 		weight = 5
 	}
@@ -121,7 +121,7 @@ terraform_link = {
 	}
 	energy = @naniteCost
 	duration = @naniteTime
-	
+
 	ai_weight = {
 		weight = 5
 	}
@@ -136,7 +136,7 @@ terraform_link = {
 	}
 	energy = @naniteCost
 	duration = @naniteTime
-	
+
 	ai_weight = {
 		weight = 5
 	}
@@ -151,7 +151,7 @@ terraform_link = {
 	}
 	energy = @naniteCost
 	duration = @naniteTime
-	
+
 	ai_weight = {
 		weight = 5
 	}
@@ -166,7 +166,7 @@ terraform_link = {
 	}
 	energy = @naniteCost
 	duration = @naniteTime
-	
+
 	ai_weight = {
 		weight = 5
 	}
@@ -181,7 +181,7 @@ terraform_link = {
 	}
 	energy = @naniteCost
 	duration = @naniteTime
-	
+
 	ai_weight = {
 		weight = 5
 	}

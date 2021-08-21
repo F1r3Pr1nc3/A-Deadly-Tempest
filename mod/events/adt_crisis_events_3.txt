@@ -25,7 +25,7 @@ country_event = {
 						galaxy_percentage > 0.20
 					}
 					AND = {
-						NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } } }
+						event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } }
 						galaxy_percentage > 0.05
 					}
 					event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 5 } }
@@ -38,11 +38,11 @@ country_event = {
 					num_fleets > 110
 					AND = {
 						NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 2 } } }
-						num_fleets > 60
+						num_fleets > 64
 					}
 					AND = {
-						NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } } }
-						num_fleets > 15
+						event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } }
+						num_fleets > 32 # initial ca. 27
 					}
 					event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 5 } }
 				}

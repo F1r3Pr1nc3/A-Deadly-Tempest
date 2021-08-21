@@ -52,6 +52,7 @@ country_event = {
 				create_species = {
 					name = "NAME_Gray_Goo"
 					class = "ESGO" #MACHINE
+					# blocked_archetypes = { MACHINE ROBOT }
 					portrait = lithnanite
 					traits = {
 						trait = "trait_machine_unit"

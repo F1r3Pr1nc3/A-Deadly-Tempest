@@ -132,6 +132,17 @@ event = {
 				background = { category = "backgrounds" file = "00_solid.dds" }
 				colors = { "black" "black" "null" "null" }
 			}
+			if = { # Temporary fix (for new var)
+				limit = { NOT = { has_global_flag = l_cluster_opened } }
+				every_playable_country = {
+					limit = {
+						has_event_chain = l_cluster_chain
+						NOR = { has_country_flag = lgate_warned is_variable_set = CmtVarLgateReqClues }
+					}
+					set_variable = { which = CmtVarLgateReqClues value = event_target:CmtGlobalVar }
+					change_variable = { which = CmtVarLgateReqClues value = -1 }
+				}
+			}
 		}
 	}
 	# after = { log = "2 a_deadly_tempest_mod_active [CmtGlobalVar.random_nhsc_value]" }
@@ -2329,7 +2340,10 @@ ship_event = {
 	id = a_deadly_tempest.224
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = { exists = starbase }
+	trigger = {
+		has_global_flag = l_cluster_opened
+		exists = starbase
+	}
 	immediate = {
 		if = {
 			limit = {
@@ -2375,6 +2389,35 @@ ship_event = {
 				}
 			}
 		}
+		# Open Terminal Egress
+		if = {
+			limit = {
+				solar_system = { has_star_flag = lcluster1 }
+				NOT = { has_global_flag = lgates_activated_globally }
+				# exists = owner
+				# owner = { CmtTriggerIsPlayableEmpire = no }
+			}
+			if = { limit = { exists = from }
+				from = { random_owned_planet = { open_terminal_egress = yes } }
+			} else = { open_terminal_egress = yes }
+		}
+	}
+}
+
+# This = starbase being destroyed
+# Open Terminal Egress
+fleet_event = {
+	id = a_deadly_tempest.225
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = l_cluster_opened
+		exists = solar_system
+		solar_system = { has_star_flag = lcluster1 }
+		NOT = { has_global_flag = lgates_activated_globally }
+	}
+	immediate = {
+		open_terminal_egress = yes
 	}
 }
 

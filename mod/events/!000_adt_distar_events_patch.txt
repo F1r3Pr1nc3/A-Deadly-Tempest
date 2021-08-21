@@ -454,67 +454,56 @@ country_event = {
 	}
 }
 
-# Informed about AI being close to opening L-Gate (HIDDEN)
+# Informed about AI being close to opening L-Gate (HIDDEN - on_monthly_pulse)
 event = {
 	id = distar.10955
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		NOT = { has_global_flag = l_cluster_opened } # Vanilla performance fix
 		any_playable_country = {
-			is_ai = no
+			CmtTriggerIsPlayableEmpire = yes
 			OR = {
 				has_event_chain = l_cluster_chain
 				has_special_project = LCLUSTER_PROJECT
 			}
-			any_relation = {
-				CmtTriggerIsPlayableEmpire = yes
-				has_communications = prev
-				has_event_chain = l_cluster_chain
-				NOT = { has_country_flag = lgate_warned@prev }
-				check_variable = {
-					which = num_lcluster_clues
-					value > 5
-				}
-				has_lgate = yes
+			NOT = { has_country_flag = lgate_warned }
+			check_variable = {
+				which = num_lcluster_clues
+				value > CmtVarLgateReqClues
 			}
+			has_lgate = yes
 		}
 	}
 	immediate = {
 		random_playable_country = {
 			limit = {
-				is_ai = no
+				CmtTriggerIsPlayableEmpire = yes
 				OR = {
 					has_event_chain = l_cluster_chain
 					has_special_project = LCLUSTER_PROJECT
 				}
-				any_relation = {
-					CmtTriggerIsPlayableEmpire = yes
-					has_communications = prev
-					has_event_chain = l_cluster_chain
-					NOT = { has_country_flag = lgate_warned@prev }
-					check_variable = {
-						which = num_lcluster_clues
-						value > 5
-					}
-					has_lgate = yes
-				}
+				NOT = { has_country_flag = lgate_warned }
+				check_variable = { which = num_lcluster_clues value > CmtVarLgateReqClues }
+				has_lgate = yes
 			}
-			random_relation = {
+			save_event_target_as = lgate_warning_country
+			set_timed_country_flag = { flag = lgate_warned days = 60 }
+			every_relation = {
 				limit = {
-					CmtTriggerIsPlayableEmpire = yes
 					has_communications = prev
-					has_event_chain = l_cluster_chain
-					NOT = { has_country_flag = lgate_warned@prev }
-					check_variable = {
-						which = num_lcluster_clues
-						value > 5
+					OR = {
+						has_event_chain = l_cluster_chain
+						has_special_project = LCLUSTER_PROJECT
 					}
-					has_lgate = yes
 				}
-				save_event_target_as = lgate_warning_country
 				set_country_flag = lgate_warned@prev
+				if = { limit = { is_ai = no }
+					country_event = { id = distar.10956 } # Notify
+				}
+				# TODO
+				# add_casus_belli = { type = cb_lgate_danger who = PREV days = 60 }
 			}
-			country_event = { id = distar.10956 }
 		}
 	}
 }

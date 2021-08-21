@@ -1,5 +1,5 @@
-# This is a template which multiple species can use. 
-  
+# This is a template which multiple species can use.
+
 esgoo_male_hair_01 = {
 	default = "gfx/models/portraits/esgoo/esiot21.dds"
 	game_setup = {#will run with a limited country scope. species and government is set but the country does not actually exist
@@ -147,8 +147,8 @@ esgoo_male_hair_01 = {
 			}
 		}
 	}
-  
-	#leader scope 
+
+	#leader scope
 	ruler = { #for rulers
 		random = {
 			list = {

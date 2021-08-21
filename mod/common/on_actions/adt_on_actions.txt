@@ -115,6 +115,15 @@ on_planet_zero_pops = {
 # 	}
 # }
 
+# Planet has taken damage from orbital bombardment - Damage is applied daily
+# This = Planet
+# From = Bombarder
+on_planet_bombarded = {
+	events = {
+		crisis.2477
+	}
+}
+
 #This = Federation leader
 #From = Joining member
 on_join_federation = {
@@ -141,13 +150,10 @@ on_ship_destroyed_perp = {
 # This = Ship
 # From = Disabler Ship
 on_ship_disabled = {
-	events = {
-		a_deadly_tempest.222
+	random_events = {
+		1 = 0
+		9 = a_deadly_tempest.222
 	}
-	# random_events = {
-	# 	1 = 0
-	# 	9 = a_deadly_tempest.222
-	# }
 }
 # Called upon entering FTL (on-action name scripted on the Bypass type)
 # THIS = Fleet
@@ -178,6 +184,15 @@ on_space_battle_won = {
 		a_deadly_tempest.40
 	}
 }
+
+# This = starbase being destroyed
+# From = fleet that destroyed the starbase
+on_starbase_destroyed = {
+	events = {
+		a_deadly_tempest.225
+	}
+}
+
 # Called when a Starbase changes owner
 # THIS = Ship (Starbase)
 # FROM = Former Owner (Country)
