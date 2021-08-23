@@ -30,6 +30,11 @@ namespace = distar
 # 			}
 # 			# 2 = { set_global_flag = dragon_season }
 # 		}
+# 		# switch = {
+# 		# 	trigger = has_global_flag
+# 		# 	gray_goo_crisis_set = { log ="ADT gray_goo_crisis_set" }
+# 		# 	gray_goo_empire_set = { log ="ADT gray_goo_empire_set" }
+# 		# }
 # 		event_target:global_event_country = {
 # 			country_event = { id = distar.8001 days = 30 } # Workaround Fix
 # 		}
@@ -467,7 +472,7 @@ event = {
 				has_event_chain = l_cluster_chain
 				has_special_project = LCLUSTER_PROJECT
 			}
-			NOT = { has_country_flag = lgate_warned } # warn only once for all for each related (each 180 - 210 days)
+			NOT = { has_country_flag = lgate_warned } # warn only once for all for each related (each 120 - 240 days)
 			OR = {
 				AND = { # dynamic
 					is_variable_set = CmtVarLgateReqClues

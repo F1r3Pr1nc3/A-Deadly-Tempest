@@ -132,7 +132,7 @@ event = {
 				background = { category = "backgrounds" file = "00_solid.dds" }
 				colors = { "black" "black" "null" "null" }
 			}
-			if = { # Temporary fix (for new var)
+			if = { # TODO temporary fix for new var
 				limit = { NOT = { has_global_flag = l_cluster_opened } }
 				every_playable_country = {
 					limit = {
@@ -140,7 +140,7 @@ event = {
 						NOR = { has_country_flag = lgate_warned is_variable_set = CmtVarLgateReqClues }
 					}
 					set_variable = { which = CmtVarLgateReqClues value = event_target:CmtGlobalVar }
-					change_variable = { which = CmtVarLgateReqClues value = -1 }
+					change_variable = { which = CmtVarLgateReqClues value = -2 }
 				}
 			}
 		}
@@ -1883,10 +1883,11 @@ country_event = {
 		has_country_flag = lcluster_closer
 	}
 	immediate = {
-		set_global_flag = lgates_activated_globally
-		event_target:lcluster1 = {
-			remove_star_flag = pike_star_flag_banned_system
-		}
+		open_terminal_egress = yes
+		# set_global_flag = lgates_activated_globally
+		# event_target:lcluster1 = {
+		# 	remove_star_flag = pike_star_flag_banned_system
+		# }
 	}
 }
 
