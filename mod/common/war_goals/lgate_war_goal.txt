@@ -53,11 +53,11 @@ wg_access_lcluster = {
 	}
 	# Run when war ends in status quo
 	on_status_quo = {
-		set_global_flag = lgates_activated_globally
 		FROM = {
-			set_country_flag = lgates_activated
-			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
+			random_owned_planet = { open_terminal_egress = yes }
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 180 }
 		}
+		set_global_flag = lgates_activated_globally
 		set_country_flag = lgates_activated
 	}
 	# Run when target surrenders after claims are ceded
@@ -73,10 +73,7 @@ wg_access_lcluster = {
 			add_resource = { influence = 100 }
 			end_rivalry = FROM
 			FROM = {
-				add_threat = {
-					who = ROOT
-					amount = 0.5
-				}
+				add_threat = { who = ROOT amount = 0.5 }
 				set_closed_borders = {
 					who = ROOT
 					status = no
@@ -84,11 +81,11 @@ wg_access_lcluster = {
 				 }
 				end_rivalry = ROOT
 				add_opinion_modifier = { modifier = "opinion_wg_access_lcluster_long" who = ROOT }
-				set_country_flag = lgates_activated
-				add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
+				random_owned_planet = { open_terminal_egress = yes }
+				add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 180 }
 			}
 			set_global_flag = lgates_activated_globally
-			ROOT = { set_country_flag = lgates_activated }
+			set_country_flag = lgates_activated
 		}
 	}
 }
@@ -150,8 +147,8 @@ wg_access_lcluster_long = {
 	on_status_quo = {
 		set_global_flag = lgates_activated_globally
 		FROM = {
-			set_country_flag = lgates_activated
-			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
+			random_owned_planet = { open_terminal_egress = yes }
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 180 }
 		}
 		set_country_flag = lgates_activated
 	}
@@ -179,8 +176,8 @@ wg_access_lcluster_long = {
 				 }
 				end_rivalry = ROOT
 				add_opinion_modifier = { modifier = "opinion_wg_access_lcluster_long" who = ROOT }
-				set_country_flag = lgates_activated
-				add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
+				random_owned_planet = { open_terminal_egress = yes }
+				add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 300 }
 			}
 			set_global_flag = lgates_activated_globally
 			ROOT = { set_country_flag = lgates_activated }

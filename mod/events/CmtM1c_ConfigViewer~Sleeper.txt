@@ -815,7 +815,6 @@ country_event = {
 		name = CrisisManagerMenu.4670e.name
 		custom_tooltip = CrisisManagerMenu.4670e.tooltip
 		trigger = {
-			always = no
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenNpcLeague value = 5 } }
 		}
