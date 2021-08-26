@@ -22,7 +22,6 @@ country_event = {
 		text = CrisisManagerMenu.1024.desc1
 		trigger = {
 			CmtTriggerSleeperConfig = yes
-			CmtTriggerHeavenConfig = yes
 			CmtTriggerGuardianFeConfig = yes
 		}
 	}
@@ -31,7 +30,6 @@ country_event = {
 		trigger = {
 			NAND = {
 				CmtTriggerSleeperConfig = yes
-				CmtTriggerHeavenConfig = yes
 				CmtTriggerGuardianFeConfig = yes
 			}
 		}

@@ -1197,7 +1197,7 @@ ship_design = {
 	is_special_buildable = yes
 	use_design_name = yes
 	section = {
-		template = "scavenger_bot_key"
+		template = "scavenger_bot_section"
 		slot = "mid"
 		component = {
 			slot = "TITAN_01"
@@ -1329,7 +1329,7 @@ ship_design = {
 		}
 	}
 	section = {
-		template = "scavenger_bot_small_bot_1_key"
+		template = "scavenger_bot_small_bot_1_section"
 		slot = "bot_1"
 		component = {
 			slot = "TORPEDO_01"
@@ -1341,7 +1341,7 @@ ship_design = {
 		}
 	}
 	section = {
-		template = "scavenger_bot_small_bot_1_key"
+		template = "scavenger_bot_small_bot_1_section"
 		slot = "bot_2"
 		component = {
 			slot = "TORPEDO_01"
@@ -1353,7 +1353,7 @@ ship_design = {
 		}
 	}
 	section = {
-		template = "scavenger_bot_small_bot_1_key"
+		template = "scavenger_bot_small_bot_1_section"
 		slot = "bot_3"
 		component = {
 			slot = "TORPEDO_01"
@@ -1562,7 +1562,7 @@ ship_design = {
 	is_event_design = yes
 
 	section = {
-		template = "voidspawn_key"
+		template = "voidspawn_section"
 		slot = "mid"
 
 		component = {

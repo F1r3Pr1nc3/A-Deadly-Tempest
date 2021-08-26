@@ -1094,10 +1094,12 @@ system_event = {
 					}
 				}
 			}
-			enable_special_project = {
-				name = TAME_LDRAGON_PROJECT
-				location = star
-				owner = root.space_owner
+			star = {
+				enable_special_project = {
+					name = TAME_LDRAGON_PROJECT
+					location = this
+					owner = root.space_owner
+				}
 			}
 			root.space_owner = {
 				if = {
@@ -1112,10 +1114,12 @@ system_event = {
 								has_special_project = TAME_LDRAGON_PROJECT
 							}
 						}
-						enable_special_project = {
-							name = TAME_LDRAGON_PROJECT
-							location = root.star
-							owner = this
+						root.star = {
+							enable_special_project = {
+								name = TAME_LDRAGON_PROJECT
+								location = this
+								owner = root.space_owner
+							}
 						}
 					}
 				}

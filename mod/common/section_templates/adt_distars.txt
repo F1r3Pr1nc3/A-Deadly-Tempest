@@ -106,7 +106,7 @@ ship_section_template = {
 
 # Hatchling/Voidspawn
 ship_section_template = {
-	key = "voidspawn_key"
+	key = "voidspawn_section"
 	ship_size = voidspawn
 	fits_on_slot = mid
 	entity = "leviathan_01_voidspawn_section_entity"
@@ -153,7 +153,7 @@ ship_section_template = {
 
 # Scavenger Bot
 ship_section_template = {
-	key = "scavenger_bot_key"
+	key = "scavenger_bot_section"
 	ship_size = scavenger_bot
 	fits_on_slot = mid
 	should_draw_components = yes
@@ -216,7 +216,7 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "scavenger_bot_small_bot_1_key"
+	key = "scavenger_bot_small_bot_1_section"
 	ship_size = scavenger_bot
 	fits_on_slot = bot_1
 	fits_on_slot = bot_2

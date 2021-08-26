@@ -1211,6 +1211,10 @@ entity = {
 	locator = { name = "large_gun_03" position = { 0 0 -5.3 } rotation = { 0 0 0 } }
 	locator = { name = "medium_gun_01" position = { 10.24 0 -3.17 } rotation = { 0 0 0 } }
 	locator = { name = "medium_gun_02" position = { -10.24 0 -3.17 } rotation = { 0 0 0 } }
+	# TODO check position
+	locator = { name = "medium_gun_03" position = { 10.24 0 -3.17 } rotation = { 0 0 0 } }
+	# TODO check position
+	locator = { name = "medium_gun_04" position = { -10.24 0 -3.17 } rotation = { 0 0 0 } }
 	locator = { name = "small_gun_01" position = { 0 10.24 -3.17 } rotation = { 0 0 0 } }
 	locator = { name = "small_gun_02" position = { 0 -10.24 -3.17 } rotation = { 0 0 0 } }
 	locator = { name = "small_gun_03" position = { 0 10.24 -3.17 } rotation = { 0 0 0 } }

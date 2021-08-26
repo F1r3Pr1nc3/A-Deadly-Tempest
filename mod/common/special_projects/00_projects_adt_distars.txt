@@ -18,10 +18,13 @@ special_project = {
 		solar_system.star = { set_planet_flag = ldragon_recruited }
 	}
 	abort_trigger = {
+		# THIS = country
+		# FROM = project scope (matches setting in "event_scope" i.e. ship/planet/country). Might not exist!
+		# FROMFROM = location scope, if set (usually a planet)
 		fromfrom = {
-			# system star
+			# is_scope_type = star
 			OR = {
-				has_planet_flag = ldragon_recruited
+				has_planet_flag = ldragon_recruited # should be indeed star_flag!?
 				AND = {
 					solar_system = {
 						any_fleet_in_system = {

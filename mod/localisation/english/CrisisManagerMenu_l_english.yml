@@ -1712,12 +1712,12 @@
  CrisisManagerMenu.4620.desc3:1 "$CrisisManagerMenu.4620.desc$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.4620c.title$§!"
  CrisisManagerMenu.4620.desc4:1 "$CrisisManagerMenu.4620.desc$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.4620d.title$§!"
  CrisisManagerMenu.4620.desc5:1 "$CrisisManagerMenu.4620.desc$\n\n$CmtTextCurrent$§W$CrisisManagerMenu.4620e.title$§!"
- CrisisManagerMenu.4620a.name:1 "$CrisisManagerMenu.4620x.title$$CrisisManagerMenu.4620a.title$"
- CrisisManagerMenu.4620b.name:1 "$CrisisManagerMenu.4620x.title$$CrisisManagerMenu.4620b.title$ $CmtTooltipInfo2$"
- CrisisManagerMenu.4620c.name:1 "$CrisisManagerMenu.4620x.title$$CrisisManagerMenu.4620c.title$ $CmtTooltipInfo2$"
- CrisisManagerMenu.4620d.name:1 "$CrisisManagerMenu.4620x.title$$CrisisManagerMenu.4620d.title$ $CmtTextDefault$ $CmtTooltipInfo2$"
- CrisisManagerMenu.4620e.name:1 "$CrisisManagerMenu.4620x.title$$CrisisManagerMenu.4620e.title$ $CmtTooltipInfo2$"
- CrisisManagerMenu.4620z.name:1 "$CrisisManagerMenu.4620x.title$$CmtTextErrUndefined.name$"
+ CrisisManagerMenu.4620a.name:1 "$CrisisManagerMenu.4620x.title$ $CrisisManagerMenu.4620a.title$"
+ CrisisManagerMenu.4620b.name:1 "$CrisisManagerMenu.4620x.title$ $CrisisManagerMenu.4620b.title$ $CmtTooltipInfo2$"
+ CrisisManagerMenu.4620c.name:1 "$CrisisManagerMenu.4620x.title$ $CrisisManagerMenu.4620c.title$ $CmtTooltipInfo2$"
+ CrisisManagerMenu.4620d.name:1 "$CrisisManagerMenu.4620x.title$ $CrisisManagerMenu.4620d.title$ $CmtTextDefault$ $CmtTooltipInfo2$"
+ CrisisManagerMenu.4620e.name:1 "$CrisisManagerMenu.4620x.title$ $CrisisManagerMenu.4620e.title$ $CmtTooltipInfo2$"
+ CrisisManagerMenu.4620z.name:1 "$CrisisManagerMenu.4620x.title$ $CmtTextErrUndefined.name$"
  CrisisManagerMenu.4620z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
  ### $war_in_heaven.2.name$ for War in Heaven 2
@@ -1830,7 +1830,7 @@
  CrisisManagerMenu.4660z.name:1 "$CrisisManagerMenu.4660x.title$$CmtTextErrUndefined.name$"
  CrisisManagerMenu.4660z.tooltip:1 "$CmtTextErrUndefined.tooltip$"
 
- ### $NAME_League_of_Non-Aligned_Powers$
+ ### League of Non-Aligned Powers
  CrisisManagerMenu.4670.title:0 "$NAME_League_of_Non-Aligned_Powers$"
  CrisisManagerMenu.4670.desc:0 "A configuration for a probability that each young NPC empires remaining neutral join the league of non-aligned Powers.\n\n$CmtWarn0$:  ''$CrisisManagerMenu.4660.title$'' has a priority over this configuration."
  CrisisManagerMenu.4670a.title:0 "League §MNever Formed§!"
@@ -4721,7 +4721,7 @@
  CrisisManagerMenu.712x.desc:0 "§HThe crisis is triggered.§!\n\nTriggered crisis: "
  CrisisManagerMenu.7121.descA:0 "Random Crisis"
  CrisisManagerMenu.7121.descB:0 "All Crises (except forbidden ones)"
- CrisisManagerMenu.71xxa.name:0 "No. I reconsider."
+ CrisisManagerMenu.71xxa.name:0 "< No. I reconsider."
  CrisisManagerMenu.711xb1.name:0 "Yes, call them. $CmtTooltipInfo1$"
  CrisisManagerMenu.711xb2.name:0 "Yes, call them."
  CrisisManagerMenu.711xc.name:0 "Yes, hurry up! $CmtTooltipInfo2$"
@@ -4745,7 +4745,7 @@
  CrisisManagerMenu.7136.desc1:0 "Select 1st Fallen Empire to awaken for the $mod_war_in_heaven$.\nThe empire awakened already cannot be selected."
  CrisisManagerMenu.7136.desc2:0 "Select 2nd Fallen Empire to awaken for the $mod_war_in_heaven$.\nThe empire awakened already cannot be selected.\n\n§W1st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperA]§! §Y[CmtTargetManualSleeperA.GetName]§!"
  CrisisManagerMenu.7136.desc3:0 "$CmtDescNoCancelHead$\n§WSelected Operation: the $mod_war_in_heaven$§!\n\n§W1st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperA] §Y[CmtTargetManualSleeperA.GetName]§!\n\n§W2st Sleeper:§! [CmtGlobalVar.GetEthic_ManualSleeperB] §Y[CmtTargetManualSleeperB.GetName]§!"
- CrisisManagerMenu.7136a.name:0 "I changed my mind."
+ CrisisManagerMenu.7136a.name:0 "< I changed my mind."
  CrisisManagerMenu.7136b.name:0 "Random Fallen Empire."
  CrisisManagerMenu.7136c1.name:1 "$CmtProperNameSleeper1$"
  CrisisManagerMenu.7136c2.name:1 "$CmtProperNameSleeper2$"
