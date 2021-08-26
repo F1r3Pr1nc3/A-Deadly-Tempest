@@ -2407,7 +2407,8 @@ ship_event = {
 
 # This = starbase being destroyed
 # Open Terminal Egress
-fleet_event = {
+# From = fleet
+starbase_event = {
 	id = a_deadly_tempest.225
 	hide_window = yes
 	is_triggered_only = yes
