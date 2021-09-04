@@ -1,8 +1,6 @@
 civic_machine_nanites_culture = {
 	potential = {
-		authority = {
-			value = auth_machine_intelligence
-		}
+		authority = { value = auth_machine_intelligence }
 	}
 	modification = no
 	random_weight = {

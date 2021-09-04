@@ -228,12 +228,9 @@ tech_scavenger_bot = {
 		modifier = {
 			factor = 0.25
 			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
+				is_spiritualist = yes
+				is_pacifist = yes
+				is_authoritarian = yes
 			}
 		}
 		# factor = 0
@@ -344,12 +341,9 @@ tech_nanite_dragon = {
 		modifier = {
 			factor = 0.25
 			OR = {
-				has_ethic = "ethic_spiritualist"
-				has_ethic = "ethic_fanatic_spiritualist"
-				has_ethic = "ethic_materialist"
-				has_ethic = "ethic_fanatic_materialist"
-				has_ethic = "ethic_xenophobe"
-				has_ethic = "ethic_fanatic_xenophobe"
+				is_spiritualist = yes
+				is_materialist = yes
+				is_xenophobe = yes
 			}
 		}
 	}
