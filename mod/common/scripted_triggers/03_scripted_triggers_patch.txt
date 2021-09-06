@@ -54,3 +54,19 @@ has_total_war_cb = {
 		}
 	}
 }
+
+# Workaround: as is_overlord_to is not working for Khan
+# This = Satrapy
+is_subject_of_khan = {
+	is_subject = yes
+	exists = overlord
+	exists = event_target:raider_khanate
+	# overlord = { is_same_empire = prevprev }
+	overlord = { is_same_empire = event_target:raider_khanate }
+	OR = { # only to be sure
+		is_subject_type = machinesmith
+		is_subject_type = satrapy
+		is_subject_type = fabricator_satrapy
+		is_subject_type = war_satrapy
+	}
+}
