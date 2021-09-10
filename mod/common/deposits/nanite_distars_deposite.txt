@@ -12,7 +12,7 @@ d_nanites_deposit = {
 	icon = d_mining_tunnels
 
 	station = shipclass_mining_station
-	is_for_colonizeable = no
+	# is_for_colonizeable = no
 
 	drop_weight = {
 		weight = 0

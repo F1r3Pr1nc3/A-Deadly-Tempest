@@ -110,6 +110,23 @@ event = {
 				}
 			}
 		}
+
+		# TODO remove me after a while
+		if = {
+			limit = {
+				has_global_flag = gray_goo_empire_set
+				has_global_flag = l_cluster_opened
+				exists = event_target:gate_builders
+				# NOT = { has_global_flag = a_deadly_tempest_mod_updated }
+			}
+			event_target:gate_builders = {
+				every_owned_megastructure = {
+					set_megastructure_flag = gatebuilders_origin
+				}
+			}
+			# set_global_flag = a_deadly_tempest_mod_updated
+		}
+
 		# ESC/nhsc mod savegame support
 		event_target:CmtGlobalVar = {
 			# set_variable = {
@@ -2268,7 +2285,7 @@ ship_event = {
 	}
 }
 
-# on Bulwark Disabled
+# on Bulwark Disabled/Conquered
 # This = Ship
 # From = Disabler Ship
 ship_event = {

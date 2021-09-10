@@ -1355,6 +1355,12 @@ country_event = {
 
 	after = {
 		hidden_effect = {
+			# TODO 3.1 make it dyn.
+			# event_target:CmtGlobalVar = {
+			# 	set_variable = { which = CmtVarGrayGooCybrexLimit value = CmtVarCybrexResurfacing }
+			# 	multiply_variable = { which = CmtVarGrayGooCybrexLimit value = 1. }
+			# }
+
 			if = {
 				limit = { has_country_flag = CmtFlagGoBack }
 				remove_country_flag = CmtFlagGoBack

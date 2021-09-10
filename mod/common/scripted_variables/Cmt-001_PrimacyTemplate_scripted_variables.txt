@@ -239,7 +239,7 @@
 		### no : Forbid to Happen (Default)
 
 ### Resurfacing of Cybrex
-	@CmtT001_ConstCybrexResurfacing = 4
+	@CmtT001_ConstCybrexResurfacing = 3
 		### Never Resurface = 1, Resurface with Delay = 2
 		### Resurface Standardly = 3 (Default), Resurface Early = 4, Power State S1 = 5
 

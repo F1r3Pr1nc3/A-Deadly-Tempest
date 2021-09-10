@@ -29,11 +29,12 @@ planet_event = {
 				is_country_type = vol
 			}
 		}
-		OR = {
-			habitable_planet = yes
-			is_planet_class = pc_ringworld_habitable
-			is_planet_class = pc_habitat
-		}
+		is_a_habitable_planet_megastructure = yes
+		# OR = {
+		# 	habitable_planet = yes
+		# 	is_planet_class = pc_ringworld_habitable
+		# 	is_planet_class = pc_habitat
+		# }
 	}
 
 	immediate = {
@@ -196,11 +197,22 @@ planet_event = {
 		clear_blockers = yes
 		set_planet_flag = armageddon_nuked
 		if = {
+			limit = { is_planet_class = pc_ringworld_habitable }
+			change_pc = pc_ringworld_habitable_damaged
+			spawn_ringworld_nanobot_effect = yes
+		}
+		else_if = {
+			limit = { is_planet_class = pc_habitat }
+			ariphaos_patch_remove_habitat = yes
+			spawn_habitat_nanobot_effect = yes
+		}
+		else_if = {
 			limit = {
-				NOR = {
-					is_planet_class = pc_ringworld_habitable
-					is_planet_class = pc_habitat
-				}
+				# NOR = {
+				# 	is_planet_class = pc_ringworld_habitable
+				# 	is_planet_class = pc_habitat
+				# }
+				habitable_planet = yes
 			}
 			change_pc = pc_gray_goo
 			# Reset only removes real static modifiers? (2.7.2)
@@ -241,25 +253,10 @@ planet_event = {
 				}
 			}
 		}
-		else = {
-			if = {
-				limit = { is_planet_class = pc_ringworld_habitable }
-				change_pc = pc_ringworld_habitable_damaged
-				spawn_ringworld_nanobot_effect = yes
-			}
-			if = {
-				limit = { is_planet_class = pc_habitat }
-				ariphaos_patch_remove_habitat = yes
-				spawn_habitat_nanobot_effect = yes
-			}
-		}
 		destroy_colony = yes
 
 		# Sets a short timed flag if bombardment is going on, so the planet can be appropriately nuked.
-		set_timed_planet_flag = {
-			flag = flag_nanite_bombardment
-			days = 6
-		}
+		set_timed_planet_flag = { flag = flag_nanite_bombardment days = 7 }
 		clear_variable = nanite_bomb_counter
 	}
 

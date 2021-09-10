@@ -736,11 +736,11 @@ military_station_nanite_bulwark = {
 	# 	is_listed = no
 	enable_default_design = no	#if yes, countries will have an auto-generated design at start
 	# 	components_add_to_cost = no
-	can_disable = no # using a workaround
+	can_disable = no # using a workaround  ## TODO yes
 	# flip_control_on_disable = no
 	prerequisites = { "tech_nanite_bulwark" }
 	class = shipclass_military_station
-	construction_type = starbase_defenses
+	construction_type = starbase_defenses ## TODO remove
 	required_component_set = "power_core"
 	required_component_set = "power_core"
 	required_component_set = "sensor_components"
@@ -766,6 +766,7 @@ military_station_nanite_bulwark = {
 	# }
 	ship_class_icon_frame = 24
 	icon_frame = 1
+	text_icon = military_size_station
 }
 
 starbase_gatebuilders = {

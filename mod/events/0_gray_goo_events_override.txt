@@ -846,6 +846,7 @@ country_event = {
 										angle = 270
 									}
 								}
+								set_megastructure_flag = gatebuilders_origin
 							}
 							owner = event_target:gate_builders
 						}
@@ -865,6 +866,9 @@ country_event = {
 													type = spy_orb_1
 													planet = prev
 													owner = event_target:gate_builders
+													init_effect = {
+														set_megastructure_flag = gatebuilders_origin
+													}
 												}
 											}
 										}
@@ -887,6 +891,9 @@ country_event = {
 										type = spy_orb_1
 										planet = prev
 										owner = event_target:gate_builders
+										init_effect = {
+											set_megastructure_flag = gatebuilders_origin
+										}
 									}
 								}
 							}
@@ -909,6 +916,9 @@ country_event = {
 						# type = "dyson_sphere_ruined"
 						type = "dyson_sphere_1"
 						owner = event_target:gate_builders
+						init_effect = {
+							set_megastructure_flag = gatebuilders_origin
+						}
 					}
 				}
 			}
@@ -920,12 +930,18 @@ country_event = {
 						spawn_megastructure = {
 							# type = "strategic_coordination_center_ruined"
 							type = "strategic_coordination_center_1"
-								owner = event_target:gate_builders
+							owner = event_target:gate_builders
+							init_effect = {
+								set_megastructure_flag = gatebuilders_origin
+							}
 						}
 					}
 					spawn_megastructure = {
 						type = "dyson_sphere_1"
 						owner = event_target:gate_builders
+						init_effect = {
+							set_megastructure_flag = gatebuilders_origin
+						}
 					}
 					event_target:gate_builders = {
 						if = {
@@ -973,6 +989,7 @@ country_event = {
 										angle = 20
 									}
 								}
+								set_megastructure_flag = gatebuilders_origin
 							}
 						}
 					}
@@ -1242,10 +1259,23 @@ country_event = {
 
 	immediate = {
 		fromfrom = {
-			#remove_all_buildings = yes
+			remove_all_buildings = yes
 			destroy_colony = yes
 			if = {
-				limit = { NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 5 } } } }
+				limit = { is_planet_class = pc_ringworld_habitable }
+				change_pc = pc_ringworld_habitable_damaged
+				spawn_ringworld_nanobot_effect = yes
+			}
+			else_if = {
+				limit = { is_planet_class = pc_habitat }
+				ariphaos_patch_remove_habitat = yes
+				spawn_habitat_nanobot_effect = yes
+			}
+			else_if = {
+				limit = {
+					NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 5 } } }
+					is_planet_class = pc_gaia # habitable_planet = yes
+				}
 				change_pc = pc_gray_goo
 				reroll_planet = yes
 				if = {
@@ -1271,7 +1301,40 @@ country_event = {
 						NOT = { any_system_planet = { is_owned_by = root.from } }
 					}
 					every_system_megastructure = {
-						limit = { NOT = { is_megastructure_type = lgate_base } }
+						limit = {
+							has_megastructure_flag = gatebuilders_origin
+							NOT = { is_megastructure_type = lgate_base }
+						}
+						if = {
+							limit = {
+								OR = {
+									is_megastructure_type = ring_world_restored
+									is_megastructure_type = ring_world_ruined
+									is_megastructure_type = ring_world_2
+								}
+							}
+							# asteroid_belt = {
+							# 	type = rocky_asteroid_belt
+							# 	radius = 45
+							# }
+							solar_system = {
+								spawn_planet = {
+									class = "pc_ringworld_tech_damaged"
+									location = prev
+									orbit_angle_offset = 30
+								}
+								spawn_planet = {
+									class = "pc_ringworld_seam_damaged"
+									location = prev
+								}
+								spawn_planet = {
+									class = "pc_ringworld_habitable_damaged"
+									location = prev
+									orbit_angle_offset = -30
+								}
+							}
+							remove_megastructure = this
+						}
 						delete_megastructure = this
 					}
 				}
@@ -1860,11 +1923,17 @@ country_event = {
 							# type = "dyson_sphere_ruined"
 							type = "dyson_sphere_1"
 							owner = event_target:gate_builders
+							init_effect = {
+								set_megastructure_flag = gatebuilders_origin
+							}
 						}
 						if = { limit = { host_has_dlc = "Megacorp" }
 							spawn_megastructure = {
 								type = "mega_art_installation_ruined"
 								# type = "interstellar_assembly_ruined"
+								init_effect = {
+									set_megastructure_flag = gatebuilders_origin
+								}
 							}
 						}
 
@@ -1886,6 +1955,7 @@ country_event = {
 											angle = 20
 										}
 									}
+									set_megastructure_flag = gatebuilders_origin
 								}
 							}
 						}
@@ -2173,7 +2243,7 @@ country_event = {
 					remove_planet_flag = has_megastructure
 					random_list = {
 						8 = { remove_planet = yes }
-						2 = { change_pc = pc_asteroid }
+						2 = { change_pc = pc_asteroid add_deposit = d_nanites_deposit }
 					}
 					# TODO explosion
 					create_ambient_object = {
@@ -2186,7 +2256,10 @@ country_event = {
 				}
 				# Remove megastructures
 				every_system_megastructure = {
-					limit = { NOT = { is_megastructure_type = lgate_base } }
+					limit = {
+						has_megastructure_flag = gatebuilders_origin
+						NOT = { is_megastructure_type = lgate_base }
+					}
 					remove_megastructure = this
 					# TODO explosion
 					# create_ambient_object = {
@@ -2327,7 +2400,8 @@ ship_event = {
 	desc = "graygoo.550.desc"
 	picture = GFX_evt_ruined_system
 	show_sound = event_radio_chatter
-	location = THIS # FROM not always working?
+	trackable = yes
+	location = THIS.fleet # FROM not always working
 	is_triggered_only = yes
 
 	trigger = {

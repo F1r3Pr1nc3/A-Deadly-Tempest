@@ -34,6 +34,8 @@ country_event = {
 			AND = { # Also for the Tempest
 				has_global_flag = gray_goo_crisis_active
 				CmtTriggerIsGraygoo = yes
+				# TODO adding check_variable = { which = CmtVarGrayGooCybrexLimit value = trigger:num_fleets }
+				# same for resolution_galactic_focus_crisis_nanites
 				OR = {
 					num_fleets > 110
 					AND = {
@@ -42,9 +44,9 @@ country_event = {
 					}
 					AND = {
 						event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } }
-						num_fleets > 32 # initial ca. 27
+						num_fleets > 36 # initial ca. 27
 					}
-					event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 5 } }
+					# event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 5 } }
 				}
 			}
 		}
