@@ -144,7 +144,7 @@ create_gray_warship = {
 			}
 		}
 	}
-	last_created_fleet = { set_owner = ROOT }
+	last_created_fleet = { set_owner = root }
 
 	if = {
 		limit = { has_country_flag = gray_army_active }
@@ -213,7 +213,7 @@ create_gray_army = {
 			}
 		}
 	}
-	event_target:gray_leader_general = { set_owner = ROOT } # Needs switch as leader get unassigned
+	event_target:gray_leader_general = { set_owner = root } # Needs switch as leader get unassigned
 
 	create_fleet = {
 		name = "NAME_Gray"
@@ -240,7 +240,7 @@ create_gray_army = {
 			}
 		}
 	}
-	# last_created_fleet = { set_owner = ROOT }
+	# last_created_fleet = { set_owner = root }
 	last_created_army = { assign_leader = event_target:gray_leader_general }
 	event_target:gray_leader_general = { set_owner = event_target:graygoo_country } # Switch back
 

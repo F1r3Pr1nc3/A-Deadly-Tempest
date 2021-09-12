@@ -1,5 +1,5 @@
-version="1.9.9"
-name="A Deadly Tempest (3.0)"
+version="2.0.0"
+name="A Deadly Tempest (3.1)"
 tags={
 	"Events"
 	"Gameplay"
@@ -15,8 +15,8 @@ tags={
 }
 dependencies={
 	"Guilli's Planet Modifiers and Features"
-	"Crisis Manager - Mid-Game Edition (3.0.¢)"
+	"Crisis Manager - Mid-Game Edition (3.1.¢)"
 }
 picture="thumbnail.png"
-supported_version="3.0.*"
+supported_version="3.1.*"
 remote_file_id="2028826064"

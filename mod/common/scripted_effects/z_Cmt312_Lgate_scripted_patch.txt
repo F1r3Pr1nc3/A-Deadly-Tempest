@@ -46,7 +46,7 @@ CmtEffectOpenLgate = {
 		upgrade_megastructure_to = lgate_base
 		finish_upgrade = yes
 	}
-	activate_gateway = THIS
+	activate_gateway = this
 	set_megastructure_flag = lgate_activated
 	# }
 }
@@ -83,11 +83,11 @@ CmtEffectDestroyGraygoo = {
 		# 		limit = {
 		# 			is_planet_class = pc_gray_goo
 		# 			is_colony = no
-		# 			is_surveyed = { who = PREVPREV status = yes }
+		# 			is_surveyed = { who = prevprev status = yes }
 		# 		}
-		# 		set_surveyed = { surveyed = no surveyor = PREVPREV }
+		# 		set_surveyed = { surveyed = no surveyor = prevprev }
 		# 	}
-		# 	# set_surveyed = { surveyed = no surveyor = PREV }
+		# 	# set_surveyed = { surveyed = no surveyor = prev }
 		# }
 	}
 	observer_event = { id = observer.65 }

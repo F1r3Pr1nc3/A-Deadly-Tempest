@@ -96,7 +96,7 @@ country_event = {
 					set_country_flag = synthetic_empire
 					## add technologies
 					country_event = { id = a_deadly_tempest.107 }
-					PREV = { create_starbase = { size = "starbase_gatebuilders" owner = PREV } }
+					prev = { create_starbase = { size = "starbase_gatebuilders" owner = prev } }
 				}
 			}
 			event_target:main_star = { planet_event = { id = a_deadly_tempest.4 } }
@@ -170,7 +170,7 @@ planet_event = {
 		count_planet_army = { count < 2 }
 		OR = {
 			has_orbital_bombardment_stance = nanitebombard
-			FROM = { is_nanite_country = yes }
+			from = { is_nanite_country = yes }
 		}
 	}
 	immediate = {
@@ -302,7 +302,7 @@ country_event = {
 						limit = { CmtTriggerIsOpenedLgate = yes }
 						create_ambient_object = {
 							type = "horror_spawn_object"
-							location = THIS
+							location = this
 							use_3d_location = yes
 							duration = 10
 						}
@@ -360,8 +360,8 @@ country_event = {
 	trigger = {
 		is_country_type = guardian_dreadnought
 		has_country_flag = automated_dreadnought_country
-		FROMFROM = { is_ship_size = npc_warship_01 }
-		FROM = {
+		fromfrom = { is_ship_size = npc_warship_01 }
+		from = {
 			is_ai = yes
 			is_nanite_country = yes
 		}
@@ -392,12 +392,12 @@ country_event = {
 			end_curator_chain = yes
 		}
 		# Nanite Dreadnought
-		FROM = {
+		from = {
 			add_global_ship_design = "NAME_Type_69"
 			create_ship_design = { design = "NAME_Type_69" }
 			add_ship_design = last_created_design
 		}
-		FROMFROMFROM = {
+		fromfromfrom = {
 			fleet = {
 				create_ship = {
 					name = random
@@ -2038,7 +2038,7 @@ country_event = {
 							}
 							set_formation_scale = 0.5
 							# set_location = {
-							# 	target = PREV
+							# 	target = prev
 							# 	distance = 25
 							# 	angle = 150
 							# }
@@ -2125,8 +2125,8 @@ country_event = {
 				destroy_colony = yes
 				# FIXME set_surveyed is bugged 3.0.3!
 				# every_playable_country = {
-				# 	limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
-				# 	PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
+				# 	limit = { is_ai = no prev = { is_surveyed = { who = prev status = yes } } }
+				# 	prev = { set_surveyed = { surveyed = no surveyor = prev } }
 				# }
 			}
 			# every_galaxy_planet is only working until 2.8
@@ -2159,8 +2159,8 @@ country_event = {
 				remove_planet_flag = hidden_nanite_world
 				# FIXME set_surveyed is bugged 3.0.3!
 				# every_playable_country = {
-				# 	limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
-				# 	PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
+				# 	limit = { is_ai = no prev = { is_surveyed = { who = prev status = yes } } }
+				# 	prev = { set_surveyed = { surveyed = no surveyor = prev } }
 				# }
 			}
 		} else = {
@@ -2176,8 +2176,8 @@ country_event = {
 				remove_planet_flag = hidden_nanite_world
 				# FIXME set_surveyed is bugged 3.0.3!
 				# every_playable_country = {
-				# 	limit = { is_ai = no PREV = { is_surveyed = { who = PREV status = yes } } }
-				# 	PREV = { set_surveyed = { surveyed = no surveyor = PREV } }
+				# 	limit = { is_ai = no prev = { is_surveyed = { who = prev status = yes } } }
+				# 	prev = { set_surveyed = { surveyed = no surveyor = prev } }
 				# }
 			}
 		}
@@ -2401,7 +2401,7 @@ ship_event = {
 	picture = GFX_evt_ruined_system
 	show_sound = event_radio_chatter
 	trackable = yes
-	location = THIS.fleet # FROM not always working
+	location = this.fleet # from not always working
 	is_triggered_only = yes
 
 	trigger = {

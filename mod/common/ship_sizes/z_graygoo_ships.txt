@@ -256,10 +256,10 @@ dreadnought = {
 				}
 			}
 		}
-		# FROM = { has_technology = tech_dreadnought }
+		# from = { has_technology = tech_dreadnought }
 	}
 	possible_construction = {
-		# FROM = { has_technology = tech_dreadnought }
+		# from = { has_technology = tech_dreadnought }
 		custom_tooltip = {
 			fail_text = requires_starfortress
 			OR = {
@@ -372,7 +372,7 @@ nanite_dragon = {
 			# 	}
 			# }
 		}
-		# FROM = { has_technology = tech_nanite_dragon }
+		# from = { has_technology = tech_nanite_dragon }
 	}
 	possible_construction = {
 		custom_tooltip = {

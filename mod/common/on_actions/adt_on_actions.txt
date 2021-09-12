@@ -156,9 +156,9 @@ on_ship_disabled = {
 	}
 }
 # Called upon entering FTL (on-action name scripted on the Bypass type)
-# THIS = Fleet
-# FROM = System jumping to
-# FROMFROM = System jumped from
+# this = Fleet
+# from = System jumping to
+# fromfrom = System jumped from
 on_entering_lgate = {
 	# events = {
 	# 	ldragon_country_starts_nanite_ecosystem.1
@@ -194,8 +194,8 @@ on_starbase_destroyed = {
 }
 
 # Called when a Starbase changes owner
-# THIS = Ship (Starbase)
-# FROM = Former Owner (Country)
+# this = Ship (Starbase)
+# from = Former Owner (Country)
 on_starbase_transfer = {
 	events = {
 		# action.223

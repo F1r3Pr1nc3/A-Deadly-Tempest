@@ -463,9 +463,9 @@ CmtEffectCreateAdmiralty_DessanuCapitalDefence = {
 				# set_variable = { which = CmtVarWhileFleetAngle value = prev }
 				# log="CmtVarWhileFleetAngle [This.CmtVarWhileFleetAngle]"
 				# if = { limit = { prev = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } } }
-				# 	set_location = { target = PREVPREV distance = 80 angle = CmtVarWhileFleetAngle }
+				# 	set_location = { target = prevprev distance = 80 angle = CmtVarWhileFleetAngle }
 				# } else = {
-				set_location = { target = PREVPREV distance = 80 angle = random }
+				set_location = { target = prevprev distance = 80 angle = random }
 				# }
 			}
 			change_variable = { which = CmtVarWhileFleetAngle value = CmtVarFleetAngle }
@@ -639,9 +639,9 @@ CmtEffectCreateAdmiralty_GraygooCapitalDefence = {
 				# set_variable = { which = CmtVarWhileFleetAngle value = prev }
 				# log="CmtVarWhileFleetAngle [This.CmtVarWhileFleetAngle]"
 				# if = { limit = { prev = { check_variable = { which = CmtVarWhileFleetAngle value > 0 } } }
-				# 	set_location = { target = PREVPREV distance = 80 angle = CmtVarWhileFleetAngle }
+				# 	set_location = { target = prevprev distance = 80 angle = CmtVarWhileFleetAngle }
 				# } else = {
-				set_location = { target = PREVPREV distance = 80 angle = random }
+				set_location = { target = prevprev distance = 80 angle = random }
 				# }
 			}
 			change_variable = { which = CmtVarWhileFleetAngle value = CmtVarFleetAngle }

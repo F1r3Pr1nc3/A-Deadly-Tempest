@@ -525,7 +525,7 @@ event = {
 					country_event = { id = distar.10956 } # Notify
 				}
 				# TODO
-				# add_casus_belli = { type = cb_lgate_danger who = PREV days = 90 }
+				# add_casus_belli = { type = cb_lgate_danger who = prev days = 90 }
 			}
 		}
 	}
@@ -1011,7 +1011,7 @@ country_event = {
 	}
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_radio_chatter
-	location = FROM
+	location = from
 	is_triggered_only = yes
 	trigger = {
 		NOT = { exists = fromfrom }
@@ -1021,13 +1021,13 @@ country_event = {
 			has_country_flag = encountered_first_lgate
 			has_event_chain = "l_cluster_chain"
 		}
-		FROM = {
+		from = {
 			has_star_flag = lgate
 			any_system_megastructure = { CmtTriggerIsClosedLgate = yes }
 		}
 	}
 	immediate = {
-		FROM = { save_event_target_as = gateway_system }
+		from = { save_event_target_as = gateway_system }
 		set_country_flag = encountered_first_lgate
 	}
 	option = {

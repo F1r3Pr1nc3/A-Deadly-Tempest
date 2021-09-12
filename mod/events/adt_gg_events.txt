@@ -517,7 +517,7 @@ country_event = {
 			fromfrom = {
 				create_ambient_object = {
 					type = explosion_particle_object
-					location = THIS
+					location = this
 					use_3d_location = yes
 					duration = 10
 					scale = 30
@@ -807,18 +807,18 @@ ship_event = {
 						}
 						if = {
 							limit = {
-								event_target:assimilating_fleet = { NOT = { is_same_value = PREV } is_in_combat = no }
+								event_target:assimilating_fleet = { NOT = { is_same_value = prev } is_in_combat = no }
 							}
 							set_owner = event_target:assimilating_fleet.owner
 							if = {
 								limit = { owner = { is_ai = no } }
-								enable_special_project = { name = NANITE_BOARDED_SHIP_REPAIR_PROJECT location = PREV owner = owner }
+								enable_special_project = { name = NANITE_BOARDED_SHIP_REPAIR_PROJECT location = prev owner = owner }
 							} else = {
 								fleet_event = { id = a_deadly_tempest.39 days = 7 }
 							}
 						}
 						else = {
-							PREV = { ship_event = { id = a_deadly_tempest.38 days = 8 } }
+							prev = { ship_event = { id = a_deadly_tempest.38 days = 8 } }
 						}
 					} else_if = {
 						limit = { fleet_power < 1 }
@@ -830,7 +830,7 @@ ship_event = {
 						#log = "WARNING 38 assimilating_fleet NOT exists"
 					}
 				} else = {
-					PREV = { ship_event = { id = a_deadly_tempest.38 days = 8 } }
+					prev = { ship_event = { id = a_deadly_tempest.38 days = 8 } }
 					# Fallback if battle not ends
 					solar_system = {
 						if = {
@@ -942,7 +942,7 @@ fleet_event = {
 							is_ship_class = shipclass_military
 						}
 						NOR = {
-							is_same_value = FROM
+							is_same_value = from
 							is_same_value = event_target:assimilate_that_ship
 							has_fleet_flag = assimilate_that_ship_flag_temp
 							is_owned_by = event_target:CmtGlobalVar
@@ -1014,7 +1014,7 @@ fleet_event = {
 								is_ship_class = shipclass_military
 							}
 							NOR = {
-								is_same_value = FROM
+								is_same_value = from
 								is_same_value = event_target:assimilate_that_ship
 								has_fleet_flag = assimilate_that_ship_flag_temp
 								is_owned_by = event_target:CmtGlobalVar
@@ -1069,7 +1069,7 @@ fleet_event = {
 						set_event_locked = no
 						# set_location = { target = event_target:assimilating_fleet }
 						queue_actions = {
-							# move_to = ROOT.FromFrom.fleet # Disabled as it will order move fleet to the point in space, not follow the target fleet.
+							# move_to = root.FromFrom.fleet # Disabled as it will order move fleet to the point in space, not follow the target fleet.
 							move_to = event_target:assimilating_fleet
 							find_closest_fleet = {
 								found_fleet = {
@@ -1214,8 +1214,8 @@ country_event = {
 		# 				num_ships < 41
 		# 			}
 		# 			random_list = {
-		# 				1 = { PREV = { CmtEffectCreateShip_GraygooMother = yes } }
-		# 				9 = { PREV = { CmtEffectCreateShip_GraygooInterdictor = yes } }
+		# 				1 = { prev = { CmtEffectCreateShip_GraygooMother = yes } }
+		# 				9 = { prev = { CmtEffectCreateShip_GraygooInterdictor = yes } }
 		# 			}
 		# 		}
 		# 	}
@@ -1615,7 +1615,7 @@ country_event = {
 			# copy
 			set_variable = {
 				which = CmtVarCapitalDefenceNumber
-				value = PREV
+				value = prev
 			}
 			if = {
 				limit = {
@@ -1624,10 +1624,10 @@ country_event = {
 						value < 1
 					}
 				}
-				PREV = { CmtEffectInitFleetUpperLimit = yes }
+				prev = { CmtEffectInitFleetUpperLimit = yes }
 				set_variable = {
 					which = CmtVarCapitalDefenceNumber
-					value = PREV
+					value = prev
 				}
 			}
 			change_variable = { which = CmtVarCapitalDefenceNumber value = 3 }
@@ -1643,7 +1643,7 @@ country_event = {
 						has_auto_move_target = no
 						is_ship_size = graygoo_mothership
 					}
-					PREV = {
+					prev = {
 						change_variable = { which = CmtVarCapitalDefenceNumber value = -1 }
 					}
 				}
@@ -1742,9 +1742,9 @@ fleet_event = {
 						}
 					}
 				}
-				FROM = {
+				from = {
 					auto_move_to_planet = {
-						target = PREV
+						target = prev
 						clear_auto_move_on_arrival = yes
 					}
 				}
@@ -2357,8 +2357,8 @@ ship_event = {
 }
 
 # on_starbase_transfer - destroy nanite tech
-# THIS = Ship (Starbase)
-# FROM = Former Owner (Country)
+# this = Ship (Starbase)
+# from = Former Owner (Country)
 ship_event = {
 	id = a_deadly_tempest.224
 	hide_window = yes
@@ -2480,8 +2480,8 @@ planet_event = {
 			}
 			# FIXME set_surveyed is bugged 3.0.3!
 			# every_playable_country = {
-			#	PREV = {
-			#		set_surveyed = { surveyed = no surveyor = PREV }
+			#	prev = {
+			#		set_surveyed = { surveyed = no surveyor = prev }
 			#	}
 			# }
 		}

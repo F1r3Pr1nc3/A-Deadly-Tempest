@@ -26,8 +26,8 @@ wg_access_lcluster = {
 	# This decides whether claims should be listed in the description
 #	show_claims_in_description = yes # Default no
 
-	# FROM = The targeted country
-	# THIS = The acting country
+	# from = The targeted country
+	# this = The acting country
 	potential = {
 		always = yes # no means event only
 	}
@@ -36,11 +36,11 @@ wg_access_lcluster = {
 	}
 
 	on_wargoal_set = {
-		FROM = {
+		from = {
 			random_system_within_border = {
 				limit = { has_star_flag = lcluster1 }
 				add_claims = {
-					who = ROOT
+					who = root
 					num_of_claims = 1
 					show_notification = yes
 				}
@@ -53,7 +53,7 @@ wg_access_lcluster = {
 	}
 	# Run when war ends in status quo
 	on_status_quo = {
-		FROM = {
+		from = {
 			random_owned_planet = { open_terminal_egress = yes }
 			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 180 }
 		}
@@ -63,24 +63,24 @@ wg_access_lcluster = {
 	# Run when target surrenders after claims are ceded
 	on_accept = {
 		custom_tooltip = war_goal_wg_access_lcluster_tooltip
-		FROM = {
+		from = {
 			random_system_within_border = {
 				limit = { has_star_flag = lcluster1 }
-				starbase = { set_owner = ROOT }
+				starbase = { set_owner = root }
 			}
 		}
 		hidden_effect = {
 			add_resource = { influence = 100 }
-			end_rivalry = FROM
-			FROM = {
-				add_threat = { who = ROOT amount = 0.5 }
+			end_rivalry = from
+			from = {
+				add_threat = { who = root amount = 0.5 }
 				set_closed_borders = {
-					who = ROOT
+					who = root
 					status = no
 					forced = 20
 				 }
-				end_rivalry = ROOT
-				add_opinion_modifier = { modifier = "opinion_wg_access_lcluster_long" who = ROOT }
+				end_rivalry = root
+				add_opinion_modifier = { modifier = "opinion_wg_access_lcluster_long" who = root }
 				random_owned_planet = { open_terminal_egress = yes }
 				add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 180 }
 			}
@@ -118,8 +118,8 @@ wg_access_lcluster_long = {
 	# This decides whether claims should be listed in the description
 #	show_claims_in_description = yes # Default no
 
-	# FROM = The targeted country
-	# THIS = The acting country
+	# from = The targeted country
+	# this = The acting country
 	potential = {
 		always = yes # no means event only
 	}
@@ -128,11 +128,11 @@ wg_access_lcluster_long = {
 	}
 
 	on_wargoal_set = {
-		FROM = {
+		from = {
 			random_system_within_border = {
 				limit = { has_star_flag = lcluster1 }
 				add_claims = {
-					who = ROOT
+					who = root
 					num_of_claims = 1
 					show_notification = yes
 				}
@@ -146,7 +146,7 @@ wg_access_lcluster_long = {
 	# Run when war ends in status quo
 	on_status_quo = {
 		set_global_flag = lgates_activated_globally
-		FROM = {
+		from = {
 			random_owned_planet = { open_terminal_egress = yes }
 			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 180 }
 		}
@@ -155,32 +155,32 @@ wg_access_lcluster_long = {
 	# Run when target surrenders after claims are ceded
 	on_accept = {
 		custom_tooltip = war_goal_wg_access_lcluster_long_tooltip
-		FROM = {
+		from = {
 			random_system_within_border = {
 				limit = { has_star_flag = lcluster1 }
-				starbase = { set_owner = ROOT }
+				starbase = { set_owner = root }
 			}
 		}
 		hidden_effect = {
 			add_resource = { influence = 150 }
-			end_rivalry = FROM
-			FROM = {
+			end_rivalry = from
+			from = {
 				add_threat = {
-					who = ROOT
+					who = root
 					amount = 0.5
 				}
 				set_closed_borders = {
-					who = ROOT
+					who = root
 					status = no
 					forced = 50
 				 }
-				end_rivalry = ROOT
-				add_opinion_modifier = { modifier = "opinion_wg_access_lcluster_long" who = ROOT }
+				end_rivalry = root
+				add_opinion_modifier = { modifier = "opinion_wg_access_lcluster_long" who = root }
 				random_owned_planet = { open_terminal_egress = yes }
 				add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 300 }
 			}
 			set_global_flag = lgates_activated_globally
-			ROOT = { set_country_flag = lgates_activated }
+			root = { set_country_flag = lgates_activated }
 		}
 	}
 }
