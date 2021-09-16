@@ -1850,7 +1850,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_fe_titan_mid_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 	scale = 0.5
 
 	locator = { name = "titan_gun_01" position = { 0 0 0 } rotation = { 0 0 0 } }
@@ -1866,7 +1866,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_fe_titan_hangar_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 	scale = 0.5
 
 	locator = { name = "titan_gun_01" position = { 0 0 0 } rotation = { 0 0 0 } }
@@ -1882,7 +1882,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_fe_titan_stern_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 	scale = 0.5
 
 	locator = { name = "titan_gun_01" position = { 0 0 0 } rotation = { 0 0 0 } }
@@ -1992,7 +1992,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_fe_small_station_medium_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 	scale = 0.2
 
 	locator = { name = "root" 	position = { 0 0 0 } }
@@ -2036,7 +2036,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_fe_large_station_xl_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 
 	locator = { name = "root" 			position = { 0 0 0 } }
 	locator = { name = "large_gun_01" position = { 0 30 0 } rotation = { 0 0 0 } }
@@ -2054,7 +2054,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_fe_large_station_heavy_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 	scale = 0.2
 
 	locator = { name = "root" 			position = { 0 0 0 } }
@@ -2073,7 +2073,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_fe_large_station_medium_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 	scale = 0.2
 
 	locator = { name = "root" 			position = { 0 0 0 } }
@@ -2092,7 +2092,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_fe_large_station_pd_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 	scale = 0.2
 
 	locator = { name = "root" 			position = { 0 0 0 } }
@@ -2564,7 +2564,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_military_station_section_heavy_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 	scale = 0.1
 
 	locator = { name = "large_gun_01" position = { 0 0 0 } }
@@ -2576,7 +2576,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_military_station_section_medium_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 	scale = 0.1
 	locator = { name = "medium_gun_01" position = { 0 0 0 } }
 	locator = { name = "medium_gun_02" position = { 0 0 0 } }
@@ -2589,7 +2589,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_military_station_section_light_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 	scale = 0.1
 	locator = { name = "small_gun_01" position = { 0 0 0 } }
 	locator = { name = "small_gun_02" position = { 0 0 0 } }
@@ -2983,7 +2983,7 @@ entity = {
 }
 entity = {
 	name = "grey_tempesttw_orbital_habitat_entity"
-	pdxmesh = ""
+	pdxmesh = "locator_mesh"
 	scale = 0.4
 
 	attach = { "slot1" = "greytempest_habitate_entity" }

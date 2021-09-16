@@ -1,5 +1,5 @@
 version="2.0.0"
-name="A Deadly Tempest (3.1)"
+name="A Deadly Tempest [3.1.☠]"
 tags={
 	"Events"
 	"Gameplay"
@@ -15,7 +15,6 @@ tags={
 }
 dependencies={
 	"Guilli's Planet Modifiers and Features"
-	"Crisis Manager - Mid-Game Edition (3.1.¢)"
 }
 picture="thumbnail.png"
 supported_version="3.1.*"

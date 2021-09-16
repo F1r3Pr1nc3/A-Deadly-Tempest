@@ -30,40 +30,6 @@ event = {
 				set_global_flag = dragon_season
 			}
 		}
-		event_target:global_event_country = {
-			country_event = { id = distar.8001 days = 30 } # Workaround Fix
-		}
-	}
-}
-# Temp Vanilla Workaround Fix
-country_event = {
-	id = distar.8001
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		is_country_type = global_event
-		NOT = { has_global_flag = l_cluster_opened }
-	}
-	immediate = {
-		remove_global_flag = gray_goo_empire_set
-		remove_global_flag = gray_goo_crisis_set
-		remove_global_flag = active_gray_goo
-		remove_global_flag = dragon_season
-		# country_event = { id = distar.8000 } TODO?
-		random_list = {
-			3 = {
-				set_global_flag = gray_goo_empire_set
-				set_global_flag = dragon_season
-			}
-			3 = {
-				set_global_flag = dragon_season
-			}
-			7 = {
-				set_global_flag = gray_goo_crisis_set
-				set_global_flag = active_gray_goo
-				set_global_flag = dragon_season
-			}
-		}
 	}
 }
 
@@ -535,7 +501,8 @@ country_event = {
 	}
 }
 
-# Abandoned Cluster Found (opt. by FirePrince)
+# Abandoned Cluster Found (bit opt. < 3.0)
+# Cancel L-project for others (with compensation)
 country_event = {
 	id = distar.10951
 	title = "distar.10951.name"
@@ -544,55 +511,24 @@ country_event = {
 	show_sound = event_activating_unknown_technology
 	location = event_target:candidate_gateway
 	is_triggered_only = yes
-	# fire_only_once = yes
 
 	immediate = {
 		if = {
 			limit = { NOT = { exists = event_target:lcluster1 } }
 			country_event = { id = distar.11000 days = -1 }
 		}
-		# every_playable_country = {
-		# 	limit = {
-		# 		has_special_project = LCLUSTER_PROJECT
-		# 		NOT = { is_same_value = root }
-		# 	}
-		# 	country_event = { id = distar.10952 }
-		# }
-		# every_playable_country = {
-		# 	limit = {
-		# 		NOR = {
-		# 			has_event_chain = l_cluster_chain
-		# 			has_special_project = LCLUSTER_PROJECT
-		# 			is_same_value = root
-		# 		}
-		# 	}
-		# 	country_event = { id = distar.10954 }
-		# }
-		# every_playable_country = {
-		# 	limit = {
-		# 		NOR = {
-		# 			has_special_project = LCLUSTER_PROJECT
-		# 			is_same_value = root
-		# 		}
-		# 		has_event_chain = l_cluster_chain
-		# 	}
-		# 	country_event = { id = distar.10953 }
-		# }
 		every_playable_country = {
 			limit = {
-				NOR = {
-					is_same_empire = from
-					has_country_flag = lcluster_opener
-				}
+				NOR = { is_same_empire = from has_country_flag = lcluster_opener }
 			}
 			if = {
 				limit = { has_special_project = LCLUSTER_PROJECT }
-				country_event = { id = distar.10952 }
+				country_event = { id = distar.10952 days = 1 }
 			} else_if = {
 				limit = { has_event_chain = l_cluster_chain }
-				country_event = { id = distar.10953 }
+				country_event = { id = distar.10953 days = 1 }
 			} else = {
-				country_event = { id = distar.10954 }
+				country_event = { id = distar.10954 days = 1 }
 			}
 		}
 		observer_event = { id = observer.62 }

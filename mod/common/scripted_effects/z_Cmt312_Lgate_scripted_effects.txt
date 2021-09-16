@@ -39,7 +39,7 @@ start_lcluster_chain = {
 						prev = { set_variable = { which = CmtVarLgateReqClues value = 7 } }
 					} else = {
 						set_variable = { which = CmtVarTemp value = CmtVarLgateReqClues }
-						prev = { set_variable = { which = CmtVarLgateReqClues value = prev } }
+						prev = { set_variable = { which = CmtVarLgateReqClues value = prev.CmtVarLgateReqClues } }
 					}
 				}
 				# set_variable = { which = CmtVarLgateReqClues value = event_target:CmtGlobalVar.CmtVarTemp } # 3.1 makes above absolete

@@ -20,7 +20,8 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_colossus_ship_entity"
-	pdxmesh = "fe_national_colossus_mesh"
+	# pdxmesh = "fe_national_colossus_mesh" TODO
+	pdxmesh = "fallen_machine_empire_01_colossus_mesh"
 
 	default_state = "idle"
 	# Actual idle state when being in idle/moving.

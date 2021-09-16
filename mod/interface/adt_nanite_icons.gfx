@@ -41,6 +41,11 @@ spriteTypes = {
 		name = "GFX_ship_part_scrapper_weapon"
 		texturefile = "gfx/interface/icons/technologies/tech_scavenger_bot.dds"
 	}
+	spriteType = {
+		name = "GFX_army_type_nanite"
+		texturefile = "gfx/interface/planetview/army_icon_nanite.dds"
+	}
+
 	## Spaceport Modules ##
 	spriteType = {
 		name = "GFX_spaceport_module_nanite_yard"
@@ -87,4 +92,3 @@ spriteTypes = {
 		}
 	}
 }
-

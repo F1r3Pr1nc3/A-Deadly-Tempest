@@ -1,4 +1,5 @@
-## For  Compatibility
+## For Compatibility
+## Shared with: The Great Khan Expanded, A Deadly Tempest
 
 is_fallen_empire = {
 	OR = {

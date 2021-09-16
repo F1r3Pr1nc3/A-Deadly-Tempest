@@ -14,7 +14,7 @@ gray_army = {
 		}
 	}
 	has_species = no
-	icon_frame = 13
+	icon = GFX_army_type_nanite
 	potential = {
 		always = no
 	}
@@ -31,7 +31,7 @@ nanite_giga_guardian = {
 	morale_damage = 5
 	collateral_damage = 2
 	war_exhaustion = 2 # No WE from defense armies
-	icon_frame = 13
+	icon = GFX_army_type_nanite
 	has_species = no
 	time = 5
 
@@ -78,7 +78,7 @@ nanite_giga_warform = {
 	time = 500
 	has_species = no
 
-	icon_frame = 13
+	icon = GFX_army_type_nanite
 
 	resources = {
 		category = armies
@@ -191,7 +191,7 @@ spectre_army = {
 	time = 180
 	has_species = yes
 
-	icon_frame = 11
+	icon = GFX_army_type_machine_assault
 
 	resources = {
 		category = armies

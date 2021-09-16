@@ -3,7 +3,6 @@ ROBOT = {
 
 	playable = { has_global_flag = game_started }
 	randomized = no
-	robotic = yes
 	gender = no
 	use_climate_preference = no
 	portrait_modding = yes
@@ -63,7 +62,6 @@ MACHINE = {
 	possible = { authority = { OR = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE } } }
 	possible_secondary = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }
 
-	robotic = yes
 	gender = no
 	use_climate_preference = no
 	portrait_modding = yes

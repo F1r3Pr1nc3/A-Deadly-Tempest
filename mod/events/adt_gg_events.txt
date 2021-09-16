@@ -156,7 +156,7 @@ event = {
 						has_event_chain = l_cluster_chain
 						NOR = { has_country_flag = lgate_warned is_variable_set = CmtVarLgateReqClues }
 					}
-					set_variable = { which = CmtVarLgateReqClues value = event_target:CmtGlobalVar }
+					set_variable = { which = CmtVarLgateReqClues value = event_target:CmtGlobalVar.CmtVarLgateReqClues }
 					change_variable = { which = CmtVarLgateReqClues value = -2 }
 				}
 			}

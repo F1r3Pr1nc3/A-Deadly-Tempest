@@ -19,7 +19,7 @@ nanite_space_dragon_baby = {
 	num_target_locators = 0
 	is_space_station = no
 	icon_frame = 12
-	text_icon = military_size_space_creature
+	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no

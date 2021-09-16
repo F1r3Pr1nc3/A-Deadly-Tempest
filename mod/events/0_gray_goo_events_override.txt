@@ -1030,7 +1030,7 @@ country_event = {
 				limit = { NOR = { is_same_empire = root has_country_flag = lcluster_opener } }
 				if = {
 					limit = { has_country_flag = CmtFlagLgateOpenFinalPhase }
-					liquidate_clues = yes # Remove Quest (FIX vanilla)
+					liquidate_clues = yes
 					country_event = { id = graygoo.111 }
 				} else = { country_event = { id = graygoo.112 } }
 			}
@@ -2401,7 +2401,7 @@ ship_event = {
 	picture = GFX_evt_ruined_system
 	show_sound = event_radio_chatter
 	trackable = yes
-	location = this.fleet # from not always working
+	location = root.from # due on_action bug for fleets
 	is_triggered_only = yes
 
 	trigger = {
@@ -2410,7 +2410,7 @@ ship_event = {
 			# has_global_flag = dragon_season
 			has_global_flag = gray_goo_empire_set
 		}
-		from = { has_star_flag = lcluster1 }
+		root.from = { has_star_flag = lcluster1 }
 	}
 
 	option = {

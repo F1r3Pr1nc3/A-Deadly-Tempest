@@ -37,8 +37,11 @@ CmtTriggerHasPotentialKhanAwaking = { ## Scope = country
 	OR = {
 		is_country_type = dormant_marauders
 		AND = { # Fallback
-			has_country_flag = new_khanate_flag
 			has_origin = "origin_khan_successor"
+			OR = {
+				has_country_flag = new_khanate_flag
+				has_country_flag = diadochi
+			}
 			# NOT = { has_country_flag = restored_marauders_flag }
 			NOT = { any_country = { is_country_type = dormant_marauders } }
 		}

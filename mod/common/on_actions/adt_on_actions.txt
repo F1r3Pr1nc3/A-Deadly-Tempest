@@ -40,7 +40,6 @@ on_single_player_save_game_load = {
 on_mid_game_pulse = {
 	events = {
 		a_deadly_tempest.3
-		# distar.8001 # re-roll, as on_game_start it's not functioning since 3.0
 	}
 }
 
