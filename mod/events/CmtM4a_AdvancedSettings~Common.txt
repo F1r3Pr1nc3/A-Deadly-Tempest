@@ -21,6 +21,31 @@ country_event = {
 	picture = GFX_evt_CmtMenuA
 	is_triggered_only = yes
 
+	after = {
+		hidden_effect = { # since 3.1
+			event_target:CmtGlobalVar = {
+				if = {
+					limit = {
+						has_country_flag = CmtFlagConfigShowing4370
+						is_variable_set = CmtVarCybrexResurfacing
+					}
+					if = { limit = { has_country_flag = CmtFlagConfigShowing4370 }
+						remove_country_flag = CmtFlagConfigShowing4370
+					}
+					if = { limit = { check_variable = { which = CmtVarCybrexResurfacing value = 5 } }
+						set_variable = { which = CmtVarGrayGooCybrexLimit value = 30 }
+					} else_if = { limit = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } }
+						set_variable = { which = CmtVarGrayGooCybrexLimit value = 38 }
+					} else_if = { limit = { check_variable = { which = CmtVarCybrexResurfacing value = 3 } }
+						set_variable = { which = CmtVarGrayGooCybrexLimit value = 66 }
+					} else_if = { limit = { check_variable = { which = CmtVarCybrexResurfacing value = 2 } }
+						set_variable = { which = CmtVarGrayGooCybrexLimit value = 110 }
+					}
+				}
+			}
+		}
+	}
+
 	option = {
 		name = CmtTextSeparator.name
 		custom_tooltip = CmtTextSeparator.tooltip
@@ -82,7 +107,7 @@ country_event = {
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4000 } }
 	}
 
-	### Forced End of Cycle
+	### Forced End of the Cycle
 	option = {
 		name = CrisisManagerMenu.4000.4400.name
 		custom_tooltip = CrisisManagerMenu.4000.4400.tooltip
@@ -120,8 +145,8 @@ country_event = {
 		name = CrisisManagerMenu.4000.4500.fail.name
 		custom_tooltip = CrisisManagerMenu.0100.desc2 #CrisisManagerMenu.4000.4500.fail.tooltip
 		trigger = {
-			CmtTriggerSleeperConfig = no
 			has_global_flag = CmtFlagSleeperEdition
+			CmtTriggerSleeperConfig = no
 		}
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4000 } }
 	}
@@ -137,10 +162,21 @@ country_event = {
 		name = CrisisManagerMenu.4000.4600.fail.name
 		custom_tooltip = CrisisManagerMenu.0100.desc2 #CrisisManagerMenu.4000.4600.fail.tooltip
 		trigger = {
-			CmtTriggerHeavenConfig = no
 			has_global_flag = CmtFlagSleeperEdition
+			CmtTriggerHeavenConfig = no
 		}
-		hidden_effect = { country_event = { id = CrisisManagerMenu.4000 } }
+		hidden_effect = {
+			if = {
+				limit = { ## hidden fallback
+					OR = {
+						has_global_flag = war_in_heaven_started
+						has_global_flag = guardians_of_the_galaxy_happened
+						CmtTriggerAnyCrisisTriggered = yes
+					}
+				}
+				country_event = { id = CrisisManagerMenu.4610 }
+			} else = { country_event = { id = CrisisManagerMenu.4000 } }
+		}
 	}
 
 	### Guardians of Galaxy
@@ -241,4 +277,6 @@ country_event = {
 		custom_tooltip = CmtTextExit.tooltip
 		hidden_effect = { CmtEffectExitMenu = yes }
 	}
+	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
+	abort_effect = { CmtEffectExitMenu = yes }
 }

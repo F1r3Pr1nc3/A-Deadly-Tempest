@@ -82,10 +82,7 @@ event = {
 				event_target:CmtGlobalVar = {
 					# check_variable = { which = current_adt_version value = @latest_adt_version }
 					NOT = {
-						check_variable = {
-							which = random_nhsc_value
-							value = @armor_s_t8_strength
-						}
+						check_variable = { which = random_nhsc_value value = @armor_s_t8_strength }
 					}
 				}
 			}
@@ -120,9 +117,7 @@ event = {
 				# NOT = { has_global_flag = a_deadly_tempest_mod_updated }
 			}
 			event_target:gate_builders = {
-				every_owned_megastructure = {
-					set_megastructure_flag = gatebuilders_origin
-				}
+				every_owned_megastructure = { set_megastructure_flag = gatebuilders_origin }
 			}
 			# set_global_flag = a_deadly_tempest_mod_updated
 		}
@@ -359,10 +354,7 @@ country_event = {
 		name = "distar.137.a"
 		custom_tooltip = "a_deadly_tempest.17.tooltip"
 		hidden_effect = {
-			set_variable = {
-				which = picked_tech
-				value = 0
-			}
+			set_variable = { which = picked_tech value = 0 }
 			# event_target:CmtGlobalVar = {
 			# 	set_variable = {
 			# 		which = random_nhsc_value
@@ -371,10 +363,7 @@ country_event = {
 			# }
 			while = {
 				limit = {
-					check_variable = {
-						which = picked_tech
-						value < 2
-					}
+					check_variable = { which = picked_tech value < 2 }
 				}
 				# tech_nanite_torpedo tech_nanite_build_speed tech_adt_energymissiles tech_nanite_strike_craft tech_adt_gg_beam tech_nanocrystals tech_nanite_modular_engineering tech_nanite_living_metal
 				random_list = {
@@ -756,9 +745,7 @@ ship_event = {
 					random_fleet_in_system = {
 						limit = {
 							exists = owner # idk why but it is needed
-							any_owned_ship = {
-								is_ship_class = shipclass_military
-							}
+							any_owned_ship = { is_ship_class = shipclass_military }
 							NOR = {
 								is_same_value = from.fleet
 								is_same_value = event_target:assimilate_that_ship
@@ -938,9 +925,7 @@ fleet_event = {
 			solar_system = {
 				random_fleet_in_system = {
 					limit = {
-						any_owned_ship = {
-							is_ship_class = shipclass_military
-						}
+						any_owned_ship = { is_ship_class = shipclass_military }
 						NOR = {
 							is_same_value = from
 							is_same_value = event_target:assimilate_that_ship
@@ -1010,9 +995,7 @@ fleet_event = {
 				solar_system = {
 					random_fleet_in_system = {
 						limit = {
-							any_owned_ship = {
-								is_ship_class = shipclass_military
-							}
+							any_owned_ship = { is_ship_class = shipclass_military }
 							NOR = {
 								is_same_value = from
 								is_same_value = event_target:assimilate_that_ship
@@ -1167,24 +1150,15 @@ country_event = {
 		# Check Init
 		if = {
 			limit = {
-				check_variable = {
-					which = CmtVarCapitalDefenceNumber
-					value < 1
-				}
+				check_variable = { which = CmtVarCapitalDefenceNumber value < 1 }
 			}
 			event_target:CmtGlobalVar = {
 				if = {
 					limit = { prev = { is_country_type = gate_builders } }
-					set_variable = {
-						which = CmtVarWhileControlFleet
-						value = CmtVarCombatFleetNumber_Dessanu
-					}
+					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu }
 				}
 				else = {
-					set_variable = {
-						which = CmtVarWhileControlFleet
-						value = CmtVarCombatFleetNumber_Graygoo
-					}
+					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo }
 				}
 			}
 			CmtEffectInitFleetUpperLimit = yes
@@ -1252,10 +1226,7 @@ country_event = {
 		# log = "STRENGTH [graygoo_country.CmtVarCapitalDefenceNumber]"
 		if = {
 			limit = {
-				check_variable = {
-					which = CmtVarCapitalDefenceNumber
-					value > 0
-				}
+				check_variable = { which = CmtVarCapitalDefenceNumber value > 0 }
 			}
 			shoal_guard_dynamic_reinforce = {
 				"KIND" = shoal_global_reinforce
@@ -1278,34 +1249,23 @@ country_event = {
 		# Check Init
 		if = {
 			limit = {
-				check_variable = {
-					which = CmtVarCapitalDefenceNumber
-					value < 1
-				}
+				check_variable = { which = CmtVarCapitalDefenceNumber value < 1 }
 			}
 			event_target:CmtGlobalVar = {
 				if = {
 					limit = { prev = { is_country_type = gate_builders } }
-					set_variable = {
-						which = CmtVarWhileControlFleet
-						value = CmtVarCombatFleetNumber_Dessanu
-					}
+					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu }
 				}
 				else = {
-					set_variable = {
-						which = CmtVarWhileControlFleet
-						value = CmtVarCombatFleetNumber_Graygoo
-					}
+					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo }
 				}
 			}
 			CmtEffectInitFleetUpperLimit = yes
 		}
 		if = {
 			limit = {
-				check_variable = {
-					which = CmtVarCapitalDefenceNumber
-					value > 0
-				}
+				is_variable_set = CmtVarCapitalDefenceNumber
+				check_variable = { which = CmtVarCapitalDefenceNumber value > 0 }
 			}
 			shoal_guard_dynamic_reinforce = {
 				"KIND" = shoal_guard_reinforce
@@ -1395,21 +1355,12 @@ country_event = {
 			}
 			if = {
 				limit = {
-					check_variable = {
-						which = "fleetCounter"
-						value < 1
-					}
+					check_variable = { which = "fleetCounter" value < 1 }
 				}
-				set_variable = {
-					which = "fleetCounter"
-					value = 8
-				}
+				set_variable = { which = "fleetCounter" value = 8 }
 				# log = "set fleetCounter [graygoo_country.fleetCounter]"
 			}
-			set_timed_country_flag = {
-				flag = gk_told_to_leave
-				days = 60
-			}
+			set_timed_country_flag = { flag = gk_told_to_leave days = 60 }
 			every_owned_fleet = {
 				limit = {
 					exists = solar_system
@@ -1598,37 +1549,22 @@ country_event = {
 		event_target:CmtGlobalVar = {
 			if = {
 				limit = { prev = { is_country_type = gate_builders } }
-				set_variable = {
-					which = CmtVarWhileControlFleet
-					value = CmtVarCombatFleetNumber_Dessanu
-				}
+				set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu }
 			}
 			else = {
-				set_variable = {
-					which = CmtVarWhileControlFleet
-					value = CmtVarCombatFleetNumber_Graygoo
-				}
+				set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo }
 			}
 		}
 		# Return to cluster defense
 		event_target:lcluster_factory_system = {
 			# copy
-			set_variable = {
-				which = CmtVarCapitalDefenceNumber
-				value = prev
-			}
+			set_variable = { which = CmtVarCapitalDefenceNumber value = prev.CmtVarCapitalDefenceNumber }
 			if = {
 				limit = {
-					check_variable = {
-						which = CmtVarCapitalDefenceNumber
-						value < 1
-					}
+					check_variable = { which = CmtVarCapitalDefenceNumber value < 1 }
 				}
 				prev = { CmtEffectInitFleetUpperLimit = yes }
-				set_variable = {
-					which = CmtVarCapitalDefenceNumber
-					value = prev
-				}
+				set_variable = { which = CmtVarCapitalDefenceNumber value = prev.CmtVarCapitalDefenceNumber }
 			}
 			change_variable = { which = CmtVarCapitalDefenceNumber value = 3 }
 			# +3 minimum
@@ -1648,17 +1584,11 @@ country_event = {
 					}
 				}
 			}
-			multiply_variable = {
-				which = CmtVarCapitalDefenceNumber
-				value = -1
-			}
+			multiply_variable = { which = CmtVarCapitalDefenceNumber value = -1 }
 			# log = "CmtVarCapitalDefenceNumber [graygoo_country.CmtVarCapitalDefenceNumber] - [lcluster_factory_system.CmtVarCapitalDefenceNumber] while [graygoo_country.fleetCounter]"
 			if = {
 				limit = {
-					check_variable = {
-						which = CmtVarCapitalDefenceNumber
-						value > 0
-					}
+					check_variable = { which = CmtVarCapitalDefenceNumber value > 0 }
 				}
 				while = {
 					count = CmtVarCapitalDefenceNumber
@@ -1819,9 +1749,7 @@ country_event = {
 		}
 		else_if = {
 			limit = { NOT = { exists = event_target:graygoo_country } }
-			event_target:gate_builders = {
-				save_event_target_as = graygoo_country
-			}
+			event_target:gate_builders = { save_event_target_as = graygoo_country }
 		}
 		# log = "- This [This.GetName] gets hostility to [graygoo_country.GetName]"
 
@@ -2280,9 +2208,7 @@ ship_event = {
 		# 	}
 		# }
 	}
-	immediate = {
-		set_disable_at_health = 0.001
-	}
+	immediate = { set_disable_at_health = 0.001 }
 }
 
 # on Bulwark Disabled/Conquered
@@ -2440,9 +2366,7 @@ starbase_event = {
 		solar_system = { has_star_flag = lcluster1 }
 		NOT = { has_global_flag = lgates_activated_globally }
 	}
-	immediate = {
-		open_terminal_egress = yes
-	}
+	immediate = { open_terminal_egress = yes }
 }
 
 # on_destroy_planet_with_PLANET_DESTRUCTION
@@ -2453,7 +2377,7 @@ planet_event = {
 	hide_window = yes
 	# this/root = planet that have been fired upon
 	# from = fleet that fired
-	# pre_triggers = {  }
+	# pre_triggers = { }
 	trigger = {
 		has_distar = yes
 		# has_global_flag = hatchling_triggered
@@ -2472,9 +2396,7 @@ planet_event = {
 				# 50 = { set_planet_flag = hatchling_will_trigger }
 				set_planet_flag = hatchling_will_trigger
 				set_planet_flag = fired_nanobots
-				from.owner = {
-					set_country_flag = fired_nanobots@root
-				}
+				from.owner = { set_country_flag = fired_nanobots@root }
 				# set_planet_flag = space_owner_triggered
 				set_timed_planet_flag = { flag = space_owner_triggered days = 900 }
 			}

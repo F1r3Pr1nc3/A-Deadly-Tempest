@@ -335,4 +335,6 @@ country_event = {
 			country_event = { id = CrisisManagerMenu.2116 }
 		}
 	}
+	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
+	abort_effect = { CmtEffectExitMenu = yes }
 }

@@ -46,12 +46,18 @@ spriteTypes = {
 		texturefile = "gfx/interface/planetview/army_icon_nanite.dds"
 	}
 
+	spriteType = {
+		name = "GFX_planet_modifier_ground_support_nanitebombard"
+		# sprite_sheet_sprite_type = "GFX_planet_view_bombarded"
+		texturefile = "gfx/interface/icons/planet_modifiers/pm_under_orbital_bombardment3.dds"
+		default_frame = 3
+	}
+
 	## Spaceport Modules ##
 	spriteType = {
 		name = "GFX_spaceport_module_nanite_yard"
 		texturefile = "gfx/interface/icons/modules/sm_nanite_yard.dds"
 	}
-
 	spriteType = {
 		name = "GFX_fleet_order_button_ground_support_nanitebombard_selected"
 		texturefile = "gfx/interface/fleet_view/fleet_task_ground_support_nanitebombard_selected.dds"

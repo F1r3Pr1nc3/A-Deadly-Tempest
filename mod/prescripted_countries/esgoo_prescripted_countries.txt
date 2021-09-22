@@ -44,15 +44,16 @@
 		clothes = 0
 		leader_class = "ruler"
 	}
-	spawn_as_fallen = yes
+	spawn_as_fallen = no
 	ignore_portrait_duplication = no
-	room = "personality_erudite_explorers_room"
+	room = personality_nanite_room # "personality_erudite_explorers_room"
 	spawn_enabled = no
+	playable = no # has_synthethic_dawn
 	ethic = "ethic_gestalt_consciousness"
 	civics = {
 		"civic_machine_replication"
 		"civic_machine_terminator"
 		# "civic_machine_warfleet"
 	}
-	origin = "origin_default"
+	origin = "origin_syncretic_evolution"
 }

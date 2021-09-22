@@ -93,18 +93,12 @@ shoal_guard_dynamic_reinforce = {
 	# make dynamic with Crisis Manager
 	#event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Graygoo } }
 	# CmtVarCapitalDefenceNumber 1-8 vanilla = 4
-	set_variable = { which = CapitalDefence_tmp value = CmtVarCapitalDefenceNumber }
+	set_variable = { which = CapitalDefence_tmp value = root.CmtVarCapitalDefenceNumber }
 	# log = "guard_dynamic [$STRENGTH$] - [CmtVarCapitalDefenceNumber]"
 	if = {
 		limit = { end_game_years_passed > 35 }
-		multiply_variable = {
-			which = CapitalDefence_tmp
-			value = 10
-		}
-		change_variable = {
-			which = CapitalDefence_tmp
-			value = 1
-		}
+		multiply_variable = { which = CapitalDefence_tmp value = 10 }
+		change_variable = { which = CapitalDefence_tmp value = 1 }
 		$KIND$ = {
 			# "AMOUNT" = @\[ $STRENGTH|4$ * 10 + 1 ] # 41
 			"AMOUNT" = CapitalDefence_tmp
@@ -112,17 +106,9 @@ shoal_guard_dynamic_reinforce = {
 		}
 	}
 	else_if = {
-		limit = {
-			mid_game_years_passed > 50
-		}		# todo $MidYear|
-		multiply_variable = {
-			which = CapitalDefence_tmp
-			value = 5
-		}
-		change_variable = {
-			which = CapitalDefence_tmp
-			value = 1
-		}
+		limit = { mid_game_years_passed > 50 }		# todo $MidYear|
+		multiply_variable = { which = CapitalDefence_tmp value = 5 }
+		change_variable = { which = CapitalDefence_tmp value = 1 }
 		$KIND$ = {
 			# "AMOUNT" = @\[ $STRENGTH|4$ * 5 + 1 ] # 21
 			"AMOUNT" = CapitalDefence_tmp
@@ -131,14 +117,8 @@ shoal_guard_dynamic_reinforce = {
 	}
 	else_if = {
 		limit = { mid_game_years_passed > 5 }
-		multiply_variable = {
-			which = CapitalDefence_tmp
-			value = 2.5
-		}
-		change_variable = {
-			which = CapitalDefence_tmp
-			value = 1
-		}
+		multiply_variable = { which = CapitalDefence_tmp value = 2.5 }
+		change_variable = { which = CapitalDefence_tmp value = 1 }
 		$KIND$ = {
 			# "AMOUNT" = @\[ $STRENGTH|4$ * 2.5 + 1 ] # 11
 			"AMOUNT" = CapitalDefence_tmp
@@ -146,10 +126,7 @@ shoal_guard_dynamic_reinforce = {
 		}
 	}
 	else = {
-		multiply_variable = {
-			which = CapitalDefence_tmp
-			value = 1.5
-		}
+		multiply_variable = { which = CapitalDefence_tmp value = 1.5 }
 		$KIND$ = {
 			# "AMOUNT" = @\[ $STRENGTH|4$ * 1.5 ] # 6
 			"AMOUNT" = CapitalDefence_tmp
@@ -432,10 +409,7 @@ shoal_continue_cluster_defense = {
 							# log = "Fail graygoo_def [This.GetFleetName] returning from [Prev.GetName] - [From.GetFleetName]"
 							# shoal_continue_cluster_defense = { NUM = @\[$NUM|11$ + 1] }
 							event_target:graygoo_country = {
-								change_variable = {
-									which = "fleetCounter"
-									value = 1
-								}
+								change_variable = { which = "fleetCounter" value = 1 }
 							}
 							from = {
 								shoal_continue_cluster_defense = { NUM = "graygoo_country.fleetCounter" }
@@ -478,7 +452,7 @@ shoal_continue_cluster_defense = {
 	}
 }
 
-# effect = {remove_auto_move_target = yes	clear_fleet_actions = this}
+# effect = { remove_auto_move_target = yes	clear_fleet_actions = this }
 # Called after planet reset (Scope planet, root country)
 generate_new_deposits_and_blockers = {
 	clear_deposits = yes
@@ -1010,32 +984,10 @@ nanite_ship_assimilating_effect = {
 			}
 		}
 		# else = { fleet = { fleet_event = { id = a_deadly_tempest.39 days = 16 random = 8 } } }
-	 }
+ }
 
 	# log = "assimilate_that_fleet root country [ROOT.GetName]"
 	# because design and auto-merge?
 	# event_target:assimilate_that_fleet = { set_owner = event_target:global_event_country }
 	event_target:assimilate_that_fleet = { set_owner = root.from }
-}
-
-# This = country 1
-# TARGET = country 2
-set_faction_neutral = {
-	if = {
-		limit = { exists = $TARGET$ }
-		set_faction_hostility = {
-			set_hostile = no
-			set_neutral = yes
-			# set_friendly = yes
-			target = $TARGET$
-		}
-		$TARGET$ = {
-			set_faction_hostility = {
-				set_hostile = no
-				set_neutral = yes
-				# set_friendly = yes
-				target = prev
-			}
-		}
-	}
 }

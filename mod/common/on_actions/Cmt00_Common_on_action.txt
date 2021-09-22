@@ -1,0 +1,44 @@
+
+#####################################
+#####################################
+#####                           #####
+#####    Crisis Manager         #####
+#####                           #####
+#####    on_actions for Menu    #####
+#####                           #####
+#####################################
+#####################################
+
+on_game_start = {
+	events = {
+		CrisisManagerMenu.0001		## Calling menu
+		## crisis_trigger.0001 		## For only debugging
+	}
+}
+
+on_single_player_save_game_load = {
+	events = {
+		CrisisManagerMenu.0002		## Calling menu
+	}
+}
+
+# on_press_begin = {
+# 	events = {
+# 		CrisisManagerMenu.0001		## Calling menu
+# 	}
+# }
+
+# on_monthly_pulse = {
+# 	events = {
+# 		# crisis_trigger.0001 		## For only debugging
+# 	}
+# }
+
+# Planet has taken damage from orbital bombardment - Damage is applied daily
+# This = Planet
+# From = Bombarder
+on_planet_bombarded = {
+	events = {
+		crisis.2477 # fix Cybrex bombard
+	}
+}

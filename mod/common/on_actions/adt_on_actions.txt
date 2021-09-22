@@ -1,14 +1,12 @@
 on_game_start = {
 	events = {
 		a_deadly_tempest.1
-		CrisisManagerMenu.0001		## Calling menu
 	}
 }
 # on_save_game_load = {
 on_single_player_save_game_load = {
 	events = {
 		a_deadly_tempest.2
-		CrisisManagerMenu.0002		## Calling menu
 	}
 }
 # No scope, like on_game_start

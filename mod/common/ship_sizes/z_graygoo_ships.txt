@@ -29,7 +29,7 @@ graygoo_interdictor = {
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon_frame = 4
+	# icon_frame = 4
 	icon = ship_size_military_4
 	class = shipclass_military
 	enable_default_design = no #if yes, countries will have an auto-generated design at start
@@ -127,7 +127,7 @@ graygoo_mothership = {
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon_frame = 6
+	# icon_frame = 6
 	icon = ship_size_military_16
 	class = shipclass_military
 	prerequisites = { "tech_nanite_ships" }
@@ -229,7 +229,7 @@ dreadnought = {
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon_frame = 6
+	# icon_frame = 6
 	icon = ship_size_military_16
 
 	base_buildtime = @titan_build_time
@@ -343,7 +343,7 @@ nanite_dragon = {
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon_frame = 12
+	# icon_frame = 12
 	icon = ship_size_space_monster
 	base_buildtime = @titan_build_time
 	takes_name_from_ship_design = yes
@@ -528,7 +528,7 @@ scavenger_bot = {
 	can_have_federation_design = no
 	enable_default_design = no
 	can_disable = no ## TODO yes!?
-	icon_frame = 12
+	# icon_frame = 12
 	icon = ship_size_military_32
 	ship_class_icon_frame = 28
 
@@ -575,7 +575,7 @@ voidspawn = {
 	fleet_slot_size = 24
 	section_slots = { "mid" = { locator = "spine" } }
 	num_target_locators = 0
-	icon_frame = 12
+	# icon_frame = 12
 	ship_class_icon_frame = 28
 	is_space_station = no
 	icon = ship_size_space_monster

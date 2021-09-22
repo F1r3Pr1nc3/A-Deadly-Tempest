@@ -1725,23 +1725,24 @@ country_event = {
 	hide_window = yes
 	picture = GFX_evt_exploding_ship
 	show_sound = event_super_explosion
-	location = fromfrom
+	location = root.fromfrom
 
 	is_triggered_only = yes
 
 	trigger = {
 		is_nanite_country = yes
-		fromfrom = { is_ship_size = graygoo_factory }
+		exists = root.from
+		root.fromfrom = { is_ship_size = graygoo_factory }
 	}
 
 	immediate = {
-		if = { limit = { exists = from }
-			from = {
+		if = { limit = { exists = root.from }
+			root.from = {
 				save_global_event_target_as = goo_slayer # ADT: used later global
 				country_event = { id = a_deadly_tempest.7 days = 1 } # Give tech
 			}
-			if = { limit = { exists = fromfromfrom }
-				fromfromfrom = { save_event_target_as = goo_slayer_ship }
+			if = { limit = { exists = root.fromfromfrom }
+				root.fromfromfrom = { save_event_target_as = goo_slayer_ship }
 			}
 		}
 

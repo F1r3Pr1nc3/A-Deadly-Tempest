@@ -13,7 +13,10 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
-		NOT = { has_global_flag = cybrex_resurface }
+		NOR = {
+			has_global_flag = cybrex_resurface
+			event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 1 } }
+		}
 		OR = {
 			AND = {
 				has_global_flag = ai_invasion_ongoing
@@ -34,19 +37,25 @@ country_event = {
 			AND = { # Also for the Tempest
 				has_global_flag = gray_goo_crisis_active
 				CmtTriggerIsGraygoo = yes
-				# TODO adding check_variable = { which = CmtVarGrayGooCybrexLimit value = trigger:num_fleets }
-				# same for resolution_galactic_focus_crisis_nanites
 				OR = {
-					num_fleets > 110
-					AND = {
-						NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 2 } } }
-						num_fleets > 64
+					event_target:CmtGlobalVar = {	# v.3.1
+						is_variable_set = CmtVarGrayGooCybrexLimit
+						check_variable = { which = CmtVarGrayGooCybrexLimit value < prev.trigger:num_fleets }
 					}
-					AND = {
-						event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } }
-						num_fleets > 36 # initial ca. 27
+					AND = {	# pre v.3.1
+						NOT = { event_target:CmtGlobalVar = { is_variable_set = CmtVarGrayGooCybrexLimit } }
+						OR = {
+							num_fleets > 110
+							AND = {
+								NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 2 } } }
+								num_fleets > 64
+							}
+							AND = {
+								event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } }
+								num_fleets > 36 # initial ca. 27
+							}
+						}
 					}
-					# event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 5 } }
 				}
 			}
 		}
@@ -402,12 +411,12 @@ country_event = {
 			authority = auth_machine_intelligence
 			civics = {
 				civic = civic_awakened_machine
-				civic = civic_machine_terminator
-				civic = civic_machine_assimilator
 				civic = civic_fanatic_purifiers
 			}
 			flag = random
 			effect = {
+				force_add_civic = civic_machine_terminator
+				force_add_civic = civic_machine_assimilator
 				root = { copy_ethos_and_authority = prev }
 			}
 		}

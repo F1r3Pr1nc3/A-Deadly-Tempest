@@ -79,7 +79,7 @@ country_event = {
 			} else = { country_event = { id = CrisisManagerMenu.1000 } }
 		}
 	}
-	option = {
+	option = { # All
 		name = CrisisManagerMenu.1000b.name
 		custom_tooltip = CrisisManagerMenu.1000b.tooltip
 		trigger = {
@@ -258,7 +258,9 @@ country_event = {
 		custom_tooltip = CmtTextGoBack.tooltip
 		hidden_effect = {
 			remove_country_flag = CmtFlagIndividual
-			country_event = { id = CrisisManagerMenu.0100 }
+			if = { limit = { NOT = { has_active_event = { CrisisManagerMenu.0100 } } }
+				country_event = { id = CrisisManagerMenu.0100 }
+			}
 		}
 	}
 	option = {
@@ -266,4 +268,6 @@ country_event = {
 		custom_tooltip = CmtTextExit.tooltip
 		hidden_effect = { CmtEffectExitMenu = yes }
 	}
+	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
+	abort_effect = { CmtEffectExitMenu = yes }
 }
