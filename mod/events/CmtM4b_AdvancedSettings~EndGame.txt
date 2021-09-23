@@ -1385,6 +1385,7 @@ country_event = {
 			if = {
 				limit = { has_country_flag = CmtFlagGoBack }
 				remove_country_flag = CmtFlagGoBack
+				remove_country_flag = CmtFlagConfigShowing4370
 				if = {
 					limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarSynthTerrorEventSpeed value = 1 } } }
 					country_event = { id = CrisisManagerMenu.4340 }
@@ -1430,10 +1431,7 @@ country_event = {
 		name = CmtTextGoBack.name
 		custom_tooltip = CmtTextGoBack.tooltip
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
-		hidden_effect = {
-			set_country_flag = CmtFlagGoBack
-			remove_country_flag = CmtFlagConfigShowing4370
-		}
+		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
 }

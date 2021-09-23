@@ -51,6 +51,7 @@ spriteTypes = {
 		# sprite_sheet_sprite_type = "GFX_planet_view_bombarded"
 		texturefile = "gfx/interface/icons/planet_modifiers/pm_under_orbital_bombardment3.dds"
 		default_frame = 3
+		noOfFrames = 3
 	}
 
 	## Spaceport Modules ##
