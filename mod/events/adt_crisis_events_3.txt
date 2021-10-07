@@ -93,6 +93,7 @@ country_event = {
 			}
 		}
 		# Cybrex communication
+		save_event_target_as = cybrex_target # ADT
 		every_country = {
 			limit = { is_country_type_with_subjects = yes }
 			country_event = { id = crisis.2401 days = 2 }
@@ -103,6 +104,7 @@ country_event = {
 			country_event = { id = crisis.2421 days = 120 }
 			country_event = { id = crisis.2421 days = 320 }
 			establish_communications_no_message = root
+			establish_communications_no_message = event_target:cybrex_target # ADT
 		}
 	}
 }
@@ -411,18 +413,17 @@ country_event = {
 			authority = auth_machine_intelligence
 			civics = {
 				civic = civic_awakened_machine
-				civic = civic_fanatic_purifiers
 			}
 			flag = random
 			effect = {
 				force_add_civic = civic_machine_terminator
 				force_add_civic = civic_machine_assimilator
+				force_add_civic = civic_fanatic_purifiers
 				root = { copy_ethos_and_authority = prev }
 			}
 		}
 		last_created_country = { destroy_country = yes }
 		## WORKAROUND END
-		force_add_civic = civic_fanatic_purifiers
 
 		# Establish communications
 		every_country = {

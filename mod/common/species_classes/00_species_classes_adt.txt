@@ -40,6 +40,12 @@ ROBOT = {
 		playable = { always = yes }
 		portraits = {
 			"default_robot"
+		}
+	}
+	custom_portraits = { # use custom_portraits instead of portraits so we can put them after the custom_portraits above
+		randomized = { always = no }
+		playable = { always = yes }
+		portraits = {
 			"esgoo"
 		}
 	}
@@ -85,6 +91,17 @@ MACHINE = {
 			"sd_mol_robot"
 			"sd_fun_robot"
 			"sd_pla_robot"
+		}
+	}
+
+	custom_portraits = {
+		randomized = {
+			always = no
+		}
+		playable = {
+			has_synthethic_dawn = yes
+		}
+		portraits = {
 			"esgoo"
 		}
 	}

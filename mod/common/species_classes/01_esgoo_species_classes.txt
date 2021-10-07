@@ -21,6 +21,7 @@ ESGO = {
 	leader_age_max = 10
 
 	portraits = {
+		randomized = { always = no }
 		"esgoo"
 		"creature"
 	}
@@ -32,7 +33,7 @@ ESGO = {
 		}
 	}
 	custom_portraits = {
-		randomized = { always = yes }
+		randomized = { always = no }
 		playable = { always = yes }
 		portraits = {
 			"rep2"
@@ -53,7 +54,7 @@ ESGO = {
 		}
 	}
 	custom_portraits = {
-		randomized = { host_has_dlc = "Leviathans Story Pack" }
+		randomized = { always = no host_has_dlc = "Leviathans Story Pack" }
 		playable = { local_has_dlc = "Leviathans Story Pack" }
 		portraits = {
 			"rep16"
