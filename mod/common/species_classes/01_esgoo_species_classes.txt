@@ -1,13 +1,13 @@
 ESGO = {
 	archetype = MACHINE
 	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
-	randomized = {
-		always = no
-		has_synthethic_dawn = yes
-		# The create_species effect can't properly take the possible trigger below into account.
-		# Work around this by disabling this class for species randomization after game start.
-		# NOT = { has_global_flag = game_started }
-	}
+	randomized = no
+	# randomized = {
+	# 	# has_synthethic_dawn = yes
+	# 	# The create_species effect can't properly take the possible trigger below into account.
+	# 	# Work around this by disabling this class for species randomization after game start.
+	# 	# NOT = { has_global_flag = game_started }
+	# }
 	possible = {
 		authority = { OR = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE } }
 	}
@@ -21,7 +21,6 @@ ESGO = {
 	leader_age_max = 10
 
 	portraits = {
-		randomized = { always = no }
 		"esgoo"
 		"creature"
 	}
@@ -54,7 +53,7 @@ ESGO = {
 		}
 	}
 	custom_portraits = {
-		randomized = { always = no host_has_dlc = "Leviathans Story Pack" }
+		randomized = { always = no  } # host_has_dlc = "Leviathans Story Pack"
 		playable = { local_has_dlc = "Leviathans Story Pack" }
 		portraits = {
 			"rep16"
