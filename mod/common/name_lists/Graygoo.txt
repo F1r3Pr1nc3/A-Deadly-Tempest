@@ -7,7 +7,7 @@ graygoo = {
 
 	army_names = {
 		robotic_army = { sequential_name = "%O% Preservation Force" }
-		robotic_defense_army = { sequential_name = "%O% $NAME_Bulwark$ Force" }
+		robotic_defense_army = { sequential_name = "%O% Bulwark Force" }
 		spectre_army = { sequential_name = "%O% Spectres" }
 	}
 	ship_names = {

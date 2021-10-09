@@ -221,6 +221,7 @@ planet_event = {
 
 ### Nanites
 # nanite_factory_destroyed gives tech
+# This = fromfrom = country (combatant)
 country_event = {
 	id = a_deadly_tempest.7
 	title = "a_deadly_tempest.17.name"	# leviathans.2155.name
@@ -503,7 +504,8 @@ country_event = {
 				TECH = tech_nanite_dragon
 				# INFO = no
 			}
-			fromfrom = {
+
+			fromfromfrom = {
 				create_ambient_object = {
 					type = explosion_particle_object
 					location = this
@@ -513,7 +515,7 @@ country_event = {
 				}
 				last_created_ambient_object = {
 					set_location = {
-						target = fromfrom
+						target = prev
 						distance = 110
 						angle = 110
 					}

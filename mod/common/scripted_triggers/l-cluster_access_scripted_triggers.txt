@@ -1,5 +1,6 @@
 ## country
 can_set_lcluster_policiy = {
+	exists = capital_scope
 	has_technology = tech_lcluster_access
 	OR = {
 		has_technology = tech_gateway_activation
@@ -14,6 +15,7 @@ can_set_lcluster_policiy = {
 }
 
 controls_lcluster = {
+	# exists = capital_scope
 	any_system_within_border = {
 		has_star_flag = lcluster1
 	}

@@ -444,9 +444,17 @@ country_event = {
 				limit = { is_planet_class = pc_gray_goo }
 				save_event_target_as = start_5
 			}
+			## Fallback for multispawn
+			if = { limit = { NOT = { exists = event_target:start_5 } }
+				random_system_planet = {
+					limit = { is_planet_class = pc_gaia }
+					save_event_target_as = start_5
+				}
+			}
+
 			## built-in-support for Twinks Dessanu ##
 			if = {
-				limit = { NOT= { any_playable_country = { has_origin = origin_machine_nanites } } }
+				limit = { NOT = { any_playable_country = { has_origin = origin_machine_nanites } } }
 				event_target:CmtGlobalVar = {
 					give_technology = { tech = tech_graygoo_nanite_jump_drive message = no }
 				}
@@ -582,7 +590,9 @@ country_event = {
 						# ideal_planet_class = pc_gray_goo # valid target?
 						ideal_planet_class = pc_gaia
 						effect = {
-							set_species_homeworld = event_target:start_5
+							if = { limit = { exists = event_target:start_5 }
+								set_species_homeworld = event_target:start_5
+							}
 							save_global_event_target_as = gray_species
 							# change_species_characteristics = {
 							# 	immortal = yes

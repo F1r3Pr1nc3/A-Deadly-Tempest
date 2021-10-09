@@ -29,25 +29,22 @@ event = {
 		}
 		## Main Menu
 		if = {
-			limit = { NOT = { has_global_flag = CmtFlagNoCall } }
+			limit = {
+				NOR = {
+					has_global_flag = CmtFlagNoCall
+					any_playable_country = { is_ai = no has_country_flag = CmtFlagNowInMenu }
+				}
+			}
 			if = { limit = { is_scope_type = country is_ai = no }
 				if = {
-					limit = {
-						NOR = {
-							has_country_flag = CmtFlagNowInMenu
-							has_active_event = { CrisisManagerMenu.0100 }
-						}
-					}
+					limit = { NOT = { has_active_event = { CrisisManagerMenu.0100 } } }
 					country_event = { id = CrisisManagerMenu.0100 }
 				}
 			} else = {
 				random_playable_country = {
 					limit = {
-						NOR = {
-							is_ai = yes
-							has_country_flag = CmtFlagNowInMenu
-							has_active_event = { CrisisManagerMenu.0100 }
-						}
+						is_ai = no
+						NOT = { has_active_event = { CrisisManagerMenu.0100 } }
 					}
 					country_event = { id = CrisisManagerMenu.0100 }
 				}
@@ -96,10 +93,13 @@ country_event = {
 	is_triggered_only = yes
 	trigger = { is_ai = no }
 	immediate = {
-		if = { limit = { any_country = { has_country_flag = CmtFlagNowInMenu } }
+		if = {
+			limit = {
+				NOT = { has_active_event = { CrisisManagerMenu.0013 } }
+				any_playable_country = { is_ai = no has_country_flag = CmtFlagNowInMenu }
+			}
 			country_event = { id = CrisisManagerMenu.0013 }
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				NOR = {
 					is_ai = yes
@@ -122,6 +122,7 @@ country_event = {
 	option = {
 		name = CmtTextOK.name
 		custom_tooltip = CmtTextOK.tooltip
+		hidden_effect = { CmtEffectExitMenu = yes }
 	}
 	after = {
 		hidden_effect = {
@@ -129,6 +130,7 @@ country_event = {
 				limit = {
 					NOR = {
 						has_global_flag = CmtFlagNoCall
+						has_country_flag = CmtFlagNowInMenu
 						has_active_event = { CrisisManagerMenu.0100 }
 					}
 				}
@@ -150,8 +152,6 @@ country_event = {
 		custom_tooltip = CmtTextOK.tooltip
 		hidden_effect = { CmtEffectExitMenu = yes }
 	}
-	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
-	abort_effect = { CmtEffectExitMenu = yes }
 }
 
 ### Caution: Someone Opening Menu (for Manual Callup)
@@ -163,7 +163,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		is_ai = no
-		any_country = { has_country_flag = CmtFlagNowInMenu }
+		any_playable_country = { is_ai = no has_country_flag = CmtFlagNowInMenu }
 	}
 	option = {
 		name = CmtTextOK.name
@@ -176,7 +176,6 @@ country_event = {
 			if = {
 				limit = {
 					NOR = {
-						is_ai = yes
 						has_country_flag = CmtFlagNowInMenu
 						has_active_event = { CrisisManagerMenu.0100 }
 					}

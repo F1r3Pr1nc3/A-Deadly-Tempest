@@ -803,7 +803,7 @@ starbase_gatebuilders = {
 	is_space_station = no # v.no
 	base_buildtime = 730
 	is_designable = no ## TODO?
-	icon_frame = 1
+	icon_frame = -1
 	icon = ship_size_military_station
 
 	uses_name_prefix = no
