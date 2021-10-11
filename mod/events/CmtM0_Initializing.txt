@@ -94,6 +94,10 @@ country_event = {
 	trigger = { is_ai = no }
 	immediate = {
 		if = {
+			limit = { has_country_flag = CmtFlagNowInMenu }
+			remove_country_flag = CmtFlagNowInMenu
+		}
+		if = {
 			limit = {
 				NOT = { has_active_event = { CrisisManagerMenu.0013 } }
 				any_playable_country = { is_ai = no has_country_flag = CmtFlagNowInMenu }
@@ -103,7 +107,6 @@ country_event = {
 			limit = {
 				NOR = {
 					is_ai = yes
-					has_country_flag = CmtFlagNowInMenu
 					has_active_event = { CrisisManagerMenu.0100 }
 				}
 			}
@@ -175,10 +178,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					NOR = {
-						has_country_flag = CmtFlagNowInMenu
-						has_active_event = { CrisisManagerMenu.0100 }
-					}
+					NOT = { has_active_event = { CrisisManagerMenu.0100 } }
 				}
 				country_event = { id = CrisisManagerMenu.0100 }
 			}

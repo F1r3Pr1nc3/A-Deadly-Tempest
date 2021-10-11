@@ -45,7 +45,7 @@ country_event = {
 				OR = {
 					is_ai = no
 					NOT = { has_global_flag = gray_goo_crisis_set }
-					fleet_power > 30000
+					fleet_power > 40000
 				}
 			}
 			random_owned_megastructure = {

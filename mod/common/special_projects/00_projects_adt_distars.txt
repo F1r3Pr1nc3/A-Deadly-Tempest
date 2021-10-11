@@ -53,7 +53,31 @@ special_project = {
 	requirements = {
 		shipclass_science_ship = 1
 		leader = scientist
-		skill = 3		# it should be really not that easy (so AI could have more problems with this)
+		skill = 3		# should be really not that easy (so AI could have more problems with this)
+	}
+	AI_wait_days = {
+		weight = 180
+		modifier = {
+			factor = 10
+			has_global_flag = gray_goo_crisis_set
+			mid_game_years_passed < 0
+		}
+		modifier = {
+			factor = 10
+			has_global_flag = gray_goo_crisis_set
+			fleet_power < 28000
+
+		}
+		modifier = {
+			factor = 10
+			has_global_flag = gray_goo_crisis_set
+			fleet_power < 41000
+		}
+		modifier = {
+			factor = 2
+			has_global_flag = gray_goo_crisis_set
+			fleet_power < 60000
+		}
 	}
 	on_success = {
 		owner = { country_event = { id = distar.10950 } }

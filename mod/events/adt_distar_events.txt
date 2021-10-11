@@ -35,6 +35,7 @@ event = {
 
 ##### THE ENIGMATIC CACHE ######
 # (vanilla only tweaked for lgate_disabled)
+# on_mid_game_pulse
 event = {
 	id = distar.2050
 	is_triggered_only = yes

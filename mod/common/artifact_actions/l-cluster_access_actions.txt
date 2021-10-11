@@ -92,3 +92,37 @@ decision_close_lcluster = {
 		weight = 0
 	}
 }
+
+artifact_lgate_clue = {
+	resources = {
+		category = artifact_actions
+		cost = {
+			minor_artifacts = 50
+		}
+	}
+
+	potential = {
+		has_country_flag = encountered_first_lgate
+		NOT = { has_country_flag = completed_lcluster_chain }
+		NOT = { has_global_flag = l_cluster_opened }
+		has_distar = yes
+		mid_game_years_passed > 5
+	}
+
+	allow = {
+		NOT = { has_modifier = artifact_lgate_insight_cooldown }
+	}
+
+	effect = {
+		custom_tooltip = artifact_lgate_clue_effect
+
+		hidden_effect = {
+			generate_lcluster_clue = yes
+
+			add_modifier = {
+				modifier = "artifact_lgate_insight_cooldown"
+				days = 3600
+			}
+		}
+	}
+}
