@@ -65,18 +65,23 @@ special_project = {
 		modifier = {
 			factor = 10
 			has_global_flag = gray_goo_crisis_set
-			fleet_power < 28000
+			fleet_power < 26000
 
 		}
 		modifier = {
 			factor = 10
 			has_global_flag = gray_goo_crisis_set
-			fleet_power < 41000
+			fleet_power < 40000
 		}
 		modifier = {
 			factor = 2
 			has_global_flag = gray_goo_crisis_set
-			fleet_power < 60000
+			fleet_power < 52000
+		}
+		modifier = {
+			weight = 2
+			has_global_flag = gray_goo_crisis_set
+			end_game_years_passed > -10
 		}
 	}
 	on_success = {

@@ -166,11 +166,12 @@ planet_event = {
 	# location = this
 	is_triggered_only = yes
 	trigger = {
+		has_global_flag = l_cluster_opened
 		planet_devastation > 99
 		count_planet_army = { count < 2 }
 		OR = {
 			has_orbital_bombardment_stance = nanitebombard
-			from = { is_nanite_country = yes }
+			root.from = { is_nanite_country = yes }
 		}
 	}
 	immediate = {
@@ -2421,10 +2422,43 @@ ship_event = {
 			# has_global_flag = dragon_season
 			has_global_flag = gray_goo_empire_set
 		}
+		exists = root.from
 		root.from = { has_star_flag = lcluster1 }
 	}
 
 	option = {
 		name = graygoo.550.a
+	}
+}
+
+# Planet Bombarded
+planet_event = {
+	id = graygoo.555
+	title = graygoo.555.name
+	desc = graygoo.555.desc
+	picture = GFX_evt_gray_gooed_planet
+	show_sound = event_air_raid_siren
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = l_cluster_opened
+		has_global_flag = gray_goo_crisis_active
+		exists = event_target:graygoo_country
+		has_modifier = tamed_nanite_swarm_modifier
+		exists = root.from # only due vanilla bug
+		root.from = { is_same_empire = event_target:graygoo_country } # is_country_type = gray_goo
+	}
+
+	immediate = {
+		destroy_colony = yes
+		if = { limit = { NOT = { is_planet_class = pc_gray_goo } }
+			change_pc = pc_gray_goo
+		}
+		remove_modifier = tamed_nanite_swarm_modifier # only to be sure
+		reset_planet = yes
+	}
+
+	option = {
+		name= graygoo.555.a
 	}
 }

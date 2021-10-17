@@ -117,7 +117,6 @@ country_event = {
 	immediate = {
 		set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 5 }
 		set_country_flag = lcluster_opener
-		country_event = { id = distar.11000 days = 1 }	# Spawn L-Cluster
 
 		### Set 1st L-Gate as Target
 		if = {
@@ -257,33 +256,8 @@ country_event = {
 				set_global_flag = dragon_season
 			}
 		}
-		### Activate L-Gate
-		country_event = { id = CrisisManagerControl.6201 }		## Open L-Gates Cycle
-		event_target:CmtTargetLgateOriginatingSystem = {
-			if = {
-				# flag prevents the Tempest from using this gate,
-				# do not set the flag if there's only one l-gate system
-				limit = {		## 2 or more l-gates exist in galaxy
-					any_system = {
-						has_star_flag = lgate
-						NOT = { is_same_value = prev }
-						any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
-					}
-				}
-				set_star_flag = lgate_originating_system		## For Graygoo (Non-spawn from Here)
-			}
-			else = {
-				root = { set_country_flag = only_one_lgate }
-			}
-			# Try to refresh the posssible missing target (for unusual reason)
-			save_global_event_target_as = candidate_gateway_system
-			random_system_megastructure = {
-				limit = { CmtTriggerIsClosedLgate = yes }
-				save_event_target_as = candidate_gateway
-			}
-		}
 
-		### Call Outcome (to be determined at game start)
+		### Call outcome (to be determined at game start)
 		if = {
 			limit = { has_global_flag = dragon_season }
 			# All gates must not be deactivated, so call it first
@@ -294,7 +268,7 @@ country_event = {
 					set_star_flag = dragon_point
 				}
 			}
-			# Theoretically Must be called immediately (because graygoo.100 and candidate_gateway)
+			# Theoretically must be called immediately (because graygoo.100 and candidate_gateway)
 			country_event = { id = distar.13000 }
 		}
 
@@ -361,13 +335,40 @@ country_event = {
 				}
 			}
 		}
+
+		### Activate L-Gate
+		country_event = { id = CrisisManagerControl.6201 days = 1 }		## Open L-Gates Cycle
+		event_target:CmtTargetLgateOriginatingSystem = {
+			if = {
+				# flag prevents the Tempest from using this gate,
+				# do not set the flag if there's only one l-gate system
+				limit = {		## 2 or more l-gates exist in galaxy
+					any_system = {
+						has_star_flag = lgate
+						NOT = { is_same_value = prev }
+						any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
+					}
+				}
+				set_star_flag = lgate_originating_system		## For Graygoo (non-spawn from here)
+			}
+			else = {
+				root = { set_country_flag = only_one_lgate }
+			}
+			# Try to refresh the posssible missing target (for unusual reason)
+			save_global_event_target_as = candidate_gateway_system
+			random_system_megastructure = {
+				limit = { CmtTriggerIsClosedLgate = yes }
+				save_event_target_as = candidate_gateway
+			}
+		}
+		country_event = { id = distar.11000 }	# Spawn L-Cluster
 		# Activate originating L-Gate: Put AFTER distar.13000 (if not already opened by other outcome)
 		if = {
 			limit = {
 				exists = event_target:candidate_gateway
 				event_target:candidate_gateway = { CmtTriggerIsClosedLgate = yes }
 			}
-			event_target:candidate_gateway = { CmtEffectOpenLgate = yes }
+			event_target:candidate_gateway = { CmtEffectOpenLgate = yes } # (L-Cluster must exists)
 		}
 
 		### Terraformability

@@ -43,7 +43,10 @@ tech_repeatable_lcluster_clue = {
 			has_country_flag = completed_lcluster_chain
 			has_global_flag = l_cluster_opened
 		}
-		mid_game_years_passed > 0
+		OR = {
+			mid_game_years_passed > 0
+			NOT = { has_global_flag = gray_goo_crisis_set }
+		}
 	}
 
 	prereqfor_desc = {
