@@ -8,7 +8,7 @@
 ###	Default position orientation is lower left.
 ##############################################################
 portraits = {
-	#esgoo male
+	# esgoo male
 	esgoo_male_01 = {
 		entity = "portrait_esgoo_male_01_entity"
 		clothes_selector = "esgoo_male_clothes_01"
@@ -38,7 +38,7 @@ portraits = {
 	# 		"gfx/models/portraits/lithoid/lithoid_07_portrait_ai.dds"
 	# 	}
 	# }
-	#gatebuilder
+	# gatebuilder
 	creature = {
 		entity = "portrait_fungoid_11_entity"
 		clothes_selector = "no_texture"
@@ -54,7 +54,7 @@ portrait_groups = {
 	esgoo = {
 		default = esgoo_male_01
 		game_setup = {
-			#will run with a limited country scope. species and government is set but the country does not actually exist
+			# will run with a limited country scope. species and government is set but the country does not actually exist
 			add = {
 				trigger = {
 					ruler = {
@@ -66,27 +66,27 @@ portrait_groups = {
 				}
 			}
 		}
-		#species scope
+		# species scope
 		species = {
-			#generic portrait for a species
+			# generic portrait for a species
 			add = {
 				portraits = {
 					esgoo_male_01
 				}
 			}
 		}
-		#pop scope
+		# pop scope
 		pop = {
-			#for a specific pop
+			# for a specific pop
 			add = {
 				portraits = {
 					esgoo_male_01
 				}
 			}
 		}
-		#leader scope
+		# leader scope
 		leader = {
-			#scientists, generals, admirals, governor
+			# scientists, generals, admirals, governor
 			add = {
 				trigger = {
 					gender = male
@@ -96,7 +96,7 @@ portrait_groups = {
 				}
 			}
 		}
-		#leader scope
+		# leader scope
 		ruler = {
 			add = {
 				trigger = {

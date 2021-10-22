@@ -118,10 +118,10 @@ tech_repeatable_lcluster_clue = {
 	}
 
 	weight_groups = {
-		#repeatable
+		# repeatable
 	}
 	mod_weight_if_group_picked = {
-		#repeatable = 0.01
+		# repeatable = 0.01
 	}
 }
 
@@ -160,7 +160,7 @@ tech_experimental_subspace_navigation = {
 	}
 
 	ai_weight = {
-		factor = 4 #FTL techs are good
+		factor = 4 # FTL techs are good
 		modifier = {
 			factor = 1.25
 			research_leader = {
@@ -175,7 +175,7 @@ tech_experimental_subspace_navigation = {
 # Sealed System Reward
 # ####################
 
-#Neural Tissue Engineering
+# Neural Tissue Engineering
 tech_neuroregeneration = {
 	cost = @tier4cost2
 	area = society
@@ -194,12 +194,11 @@ tech_neuroregeneration = {
 	}
 }
 
-
 # ####################
 # Scavenger Bot Reward
 # ####################
 
-#Auto-Repair Module
+# Auto-Repair Module
 tech_nanite_repair_system = {
 	area = engineering
 	cost = @tier5cost3

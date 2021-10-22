@@ -1,10 +1,10 @@
 ####################################################
 ####################################################
-#####                                          #####
-#####    Crisis Manager                        #####
-#####                                          #####
-#####    Scripted Effects for L-Gate Events    #####
-#####                                          #####
+#####										  #####
+#####	Crisis Manager						#####
+#####										  #####
+#####	Scripted Effects for L-Gate Events	#####
+#####										  #####
 ####################################################
 ####################################################
 
@@ -187,7 +187,7 @@ CmtEffectDestroyGraygoo = {
 				planet_event = { id = CrisisManagerControl.6211 days = 90 random = 450 }	## Auto-Terraform
 			}
 		} else_if = {
-			limit = { NOT = { check_variable = { which = CmtVarLgateTerraformNanite value = 1 } } }
+			limit = { check_variable = { which = CmtVarLgateTerraformNanite value != 1 } }
 			every_galaxy_planet = {
 				limit = { is_planet_class = pc_gray_goo }
 				add_modifier = { modifier = terraforming_candidate days = -1 }

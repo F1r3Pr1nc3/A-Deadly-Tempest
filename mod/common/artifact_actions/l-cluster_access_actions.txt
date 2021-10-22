@@ -103,8 +103,10 @@ artifact_lgate_clue = {
 
 	potential = {
 		has_country_flag = encountered_first_lgate
-		NOT = { has_country_flag = completed_lcluster_chain }
-		NOT = { has_global_flag = l_cluster_opened }
+		NOR = {
+			has_country_flag = completed_lcluster_chain
+			has_global_flag = l_cluster_opened
+		}
 		has_distar = yes
 		mid_game_years_passed > 0
 	}

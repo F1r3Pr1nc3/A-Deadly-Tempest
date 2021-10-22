@@ -75,7 +75,7 @@ utility_component_template = {
 #  Reworked Auras
 # #################
 
-#Offensive
+# Offensive
 utility_component_template = {
 	key = "SHIP_AURA_SHIELD_DAMPENER"
 	size = medium
@@ -91,7 +91,7 @@ utility_component_template = {
 		radius = @shipAuraRange
 		apply_on = ships
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = hostile_shield_dampener
 			priority = 1
 		}
@@ -137,7 +137,7 @@ utility_component_template = {
 		radius = @shipAuraRange
 		apply_on = ships
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = hostile_quantum_destabilizer
 			priority = 10
 		}
@@ -178,7 +178,7 @@ utility_component_template = {
 		radius = @shipAuraRange
 		apply_on = fleets
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = hostile_snare_aura
 			priority = 1
 		}
@@ -205,7 +205,7 @@ utility_component_template = {
 	}
 }
 
-#Defensive
+# Defensive
 utility_component_template = {
 	key = "SHIP_AURA_INSPIRING_PRESENCE"
 	size = medium
@@ -221,7 +221,7 @@ utility_component_template = {
 		radius = @shipAuraRange
 		apply_on = ships
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = friendly_inspiring_presence
 			priority = 20
 		}
@@ -262,7 +262,7 @@ utility_component_template = {
 		radius = @shipAuraRange
 		apply_on = ships
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = friendly_targeting_grid
 			priority = 20
 		}
@@ -308,7 +308,7 @@ utility_component_template = {
 		radius = @shipAuraRange
 		apply_on = ships
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = friendly_nanobot_cloud
 			priority = 20
 		}
@@ -354,7 +354,7 @@ utility_component_template = {
 		radius = @stationMediumAuraRange
 		apply_on = ships
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = hostile_inhibitor_aura
 			priority = 1
 		}
@@ -400,7 +400,7 @@ utility_component_template = {
 		name = "aura_strike_craft"
 		system_wide = yes
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = friendly_strike_craft
 			priority = 1
 		}
@@ -447,7 +447,7 @@ utility_component_template = {
 		name = "aura_range"
 		system_wide = yes
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = friendly_range
 			priority = 1
 		}
@@ -493,7 +493,7 @@ utility_component_template = {
 		name = "aura_hyperlane"
 		system_wide = yes
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = friendly_hyperlane
 			priority = 1
 		}
@@ -541,7 +541,7 @@ utility_component_template = {
 		name = "aura_pd_penetration"
 		system_wide = yes
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = hostile_pd_penetration
 			priority = 1
 		}
@@ -588,7 +588,7 @@ utility_component_template = {
 		name = "aura_bombardment"
 		system_wide = yes
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = friendly_bombardment
 			priority = 1
 		}

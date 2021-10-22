@@ -103,9 +103,9 @@ tech_repeatable_lcluster_clue = {
 	}
 
 	weight_groups = {
-		#repeatable
+		# repeatable
 	}
 	mod_weight_if_group_picked = {
-		#repeatable = 0.01
+		# repeatable = 0.01
 	}
 }

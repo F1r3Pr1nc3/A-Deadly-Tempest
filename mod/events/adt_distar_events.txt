@@ -192,7 +192,7 @@ planet_event = {
 							direction = in_system
 						}
 						set_fleet_stance = aggressive
-						set_aggro_range_measure_from = self #or return_point
+						set_aggro_range_measure_from = self # or return_point
 						set_aggro_range = 300
 						auto_move_to_planet = {
 							target = event_target:new_location

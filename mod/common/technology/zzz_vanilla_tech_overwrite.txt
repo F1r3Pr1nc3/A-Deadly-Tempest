@@ -60,7 +60,7 @@ tech_nanite_transmutation = {
 		}
 	}
 	ai_weight = {
-		factor = 5		#important resource
+		factor = 5		# important resource
 		modifier = {
 			factor = 2
 			research_leader = {

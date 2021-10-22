@@ -1,5 +1,5 @@
 ## Combat Computers & Thrusters Patch for dreadnought & scavenger_bot
-#Combat Computers
+# Combat Computers
 @power3 = -25
 @cost3 = 20
 # DM Power:

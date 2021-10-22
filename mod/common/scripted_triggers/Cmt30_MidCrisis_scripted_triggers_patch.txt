@@ -1,9 +1,9 @@
 #######################################################
-#####                                             #####
-#####    Crisis Manager                           #####
-#####    Comp Patch for A Deadly Tempest          #####
-#####    Scripted Triggers for Mid-Game Crisis    #####
-#####                                             #####
+#####											 #####
+#####	Crisis Manager						   #####
+#####	Comp Patch for A Deadly Tempest		  #####
+#####	Scripted Triggers for Mid-Game Crisis	#####
+#####											 #####
 #######################################################
 
 #######################

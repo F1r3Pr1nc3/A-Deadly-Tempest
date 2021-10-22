@@ -1,4 +1,4 @@
-##                 ESC : Armor Components                 ##
+##				 ESC : Armor Components				 ##
 
 # - Nanity-Infused Armor				S/M/L
 
@@ -94,8 +94,8 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @l_t6_cost #114
-			nanites = @xl_t5_rare #2.6
+			alloys = @l_t6_cost # 114
+			nanites = @xl_t5_rare # 2.6
 		}
 		upkeep = {
 			energy = @l_t6_upkeep_energy

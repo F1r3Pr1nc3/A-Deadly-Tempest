@@ -10,7 +10,7 @@ tech_nanite_ships = {
 	weight = @tier5weight1
 	is_reverse_engineerable = yes
 	is_rare = yes
-	gateway = nanites #ship
+	gateway = nanites # ship
 	## unlock nanite ships
 	prereqfor_desc = {
 		ship = {

@@ -2,11 +2,11 @@ namespace = CrisisManagerMenu
 
 ##################################################
 ##################################################
-#####                                        #####
-#####    Crisis Manager                      #####
-#####                                        #####
-#####    Advanced Congigurations - Common    #####
-#####                                        #####
+#####										#####
+#####	Crisis Manager					  #####
+#####										#####
+#####	Advanced Congigurations - Common	#####
+#####										#####
 ##################################################
 ##################################################
 
@@ -147,7 +147,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4000.4500.fail.name
-		custom_tooltip = CrisisManagerMenu.0100.desc2 #CrisisManagerMenu.4000.4500.fail.tooltip
+		custom_tooltip = CrisisManagerMenu.0100.desc2 # CrisisManagerMenu.4000.4500.fail.tooltip
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			CmtTriggerSleeperConfig = no
@@ -164,7 +164,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4000.4600.fail.name
-		custom_tooltip = CrisisManagerMenu.0100.desc2 #CrisisManagerMenu.4000.4600.fail.tooltip
+		custom_tooltip = CrisisManagerMenu.0100.desc2 # CrisisManagerMenu.4000.4600.fail.tooltip
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			CmtTriggerHeavenConfig = no

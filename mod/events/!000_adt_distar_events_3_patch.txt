@@ -1,12 +1,12 @@
 namespace = distar
 ###############################################
 ###############################################
-#####                                     #####
-#####     L-Gates Events and Graygoo      #####
-#####      Support A Deadly Tempest       #####
-#####       Support Crisis Manager        #####
-#####       Support Expanded Events       #####
-#####                                     #####
+#####									 #####
+#####	 L-Gates Events and Graygoo	  #####
+#####	  Support A Deadly Tempest	   #####
+#####	   Support Crisis Manager		#####
+#####	   Support Expanded Events	   #####
+#####									 #####
 ###############################################
 ###############################################
 

@@ -1,0 +1,91 @@
+### Compatiblity Fix for ADT and L-Cluster-Access
+
+# Project available
+country_event = {
+	id = distar.10905
+	title = "lclusterplus.10905.name"
+	desc = {
+		text = "distar.10905.desc"
+		# trigger = {
+		# 	NOR = {
+		# 		has_origin = origin_lclusterplus_gatebuilders
+		# 		has_origin = origin_lclusterplus_gatebuilders_advanced
+		# 	}
+		# }
+	}
+	desc = {
+		text = "lclusterplus.10905.desc"
+		exclusive_trigger  = {
+			has_global_flag = l_cluster_origin
+			OR = {
+				has_origin = origin_lclusterplus_gatebuilders
+				has_origin = origin_lclusterplus_gatebuilders_advanced
+			}
+		}
+	}
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_mystic_reveal
+	location = event_target:candidate_gateway
+	is_triggered_only = yes
+	immediate = {
+		end_event_chain = "l_cluster_chain"
+		event_target:candidate_gateway = {
+			solar_system = { save_event_target_as = candidate_gateway_system }
+		}
+	}
+
+	option = {
+		name = "distar.10905.a"
+		event_target:candidate_gateway = {
+			# In fact needless PROJECT_OVERWRITE which causes a lot of additonal event PROJECT_OVERWRITEs with resulting of a lot more incompatiblity
+			if = { limit = { has_global_flag = l_cluster_origin }
+				enable_special_project = {
+					name = LCLUSTER_PROJECT_OVERWRITE
+					location = this
+				}
+			} else = {
+				enable_special_project = {
+					name = LCLUSTER_PROJECT
+					location = this
+				}
+			}
+		}
+	}
+}
+
+# Special project completed (overwrite)
+country_event = {
+	id = lclusterplus.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = { limit = { has_global_flag = l_cluster_origin }
+			set_global_flag = l_cluster_opened
+			# add_relic = r_nanite_artifact (will be fully implemented in the next update)
+			# Activate Terminal Egress L-Gate
+			event_target:lcluster1 = {
+				random_system_megastructure = {
+					limit = {
+						# OR = { CmtTriggerIsClosedLgate = yes
+						NOT = { is_megastructure_type = matter_decompressor_ruined }
+					}
+					activate_gateway = this
+					set_megastructure_flag = lgate_activated
+				}
+			}
+			every_megastructure = {
+				limit = {
+					CmtTriggerIsClosedLgate = yes # is_megastructure_type = lgate_base
+				}
+				activate_gateway = this
+			}
+			set_global_flag = lgates_activated_globally
+			every_playable_country = {
+				if = { limit = { is_researching_technology = tech_lgate_activation }
+					give_technology = { tech = tech_lgate_activation message = no }
+				}
+			}
+			country_event = { id = lclusterplus.10 }
+		} else = { country_event = { id = distar.10950 } }
+	}
+}

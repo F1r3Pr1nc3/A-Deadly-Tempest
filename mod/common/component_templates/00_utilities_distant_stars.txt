@@ -67,7 +67,7 @@ utility_component_template = {
 		category = ship_components
 		cost = {
 			alloys = @l_t6_cost
-			nanites = @xl_t5_rare #2.6
+			nanites = @xl_t5_rare # 2.6
 		}
 		upkeep = {
 			energy = @l_t6_upkeep_energy

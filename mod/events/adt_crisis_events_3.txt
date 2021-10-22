@@ -251,7 +251,7 @@ country_event = {
 # (ADT)
 country_event = {
 	# id = fallen_empires_awakening.3
-	id = crisis.2003 #adt only
+	id = crisis.2003 # adt only
 	title = OK
 	desc = OK
 	hide_window = yes
@@ -307,7 +307,7 @@ country_event = {
 
 		create_species = {
 			name = "ESGO"
-			class = "ESGO" #MACHINE
+			class = "ESGO" # MACHINE
 			portrait = lithnanite # event_target:gray_species
 			traits = {
 				trait = "trait_pc_machine_preference"
@@ -325,7 +325,7 @@ country_event = {
 			immortal = yes
 			# effect = {}
 		}
-		change_dominant_species = { species = last_created_species change_all = yes } #it's still broken do NOT use this #it will make the species right of the species to unchangeable #stellaris v3.0.1
+		change_dominant_species = { species = last_created_species change_all = yes } # it's still broken do NOT use this # it will make the species right of the species to unchangeable # stellaris v3.0.1
 
 		# civic = civic_revanchist_fervor
 		# civic = civic_ancient_caches_of_technology

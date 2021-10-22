@@ -1,7 +1,7 @@
-#this file ( and all files in this folder ) is reloadable with console command "reload behavior"
-#filewatcher is enabled for all files in this folder
+# this file ( and all files in this folder ) is reloadable with console command "reload behavior"
+# filewatcher is enabled for all files in this folder
 # To debug ship behaviours in combat you can visualize most with console command 'debuglines'
-#ship_behavior = {
+# ship_behavior = {
 #	name = "example							# Name
 #
 #	preferred_attack_range = 10					# The distance this ship wants to have to its combat position for 'attack_movement_pattern'.
@@ -34,8 +34,8 @@ ship_behavior = {
 	combat_target_anchor = root
 
 	collision_awareness = 0.2
-	collision_radius = 1.0							#collision_radius is a multiplier on the radius specified in the ship size
-	collision_strafe = 2.5							#collision_strafe allows the ship to move in any direction while colliding with another
+	collision_radius = 1.0							# collision_radius is a multiplier on the radius specified in the ship size
+	collision_strafe = 2.5							# collision_strafe allows the ship to move in any direction while colliding with another
 	attack_move_pattern = stay_at_range
 	passive_move_pattern = stay_at_range
 
@@ -51,8 +51,8 @@ ship_behavior = {
 	combat_target_anchor = root
 
 	collision_awareness = 0.2
-	collision_radius = 1.0							#collision_radius is a multiplier on the radius specified in the ship size
-	collision_strafe = 2.5							#collision_strafe allows the ship to move in any direction while colliding with another
+	collision_radius = 1.0							# collision_radius is a multiplier on the radius specified in the ship size
+	collision_strafe = 2.5							# collision_strafe allows the ship to move in any direction while colliding with another
 	attack_move_pattern = stay_at_range
 	passive_move_pattern = stay_at_range
 

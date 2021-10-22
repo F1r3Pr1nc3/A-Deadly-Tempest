@@ -131,8 +131,8 @@ lgate_disabled = {
 			}
 		}
 	}
-	#root = system
-	#from = country
+	# root = system
+	# from = country
 	ai_weight = {
 		factor = 2
 		modifier = {
@@ -174,7 +174,7 @@ lgate_disabled = {
 	}
 	on_build_start = { }
 	on_build_cancel = { }
-	#effects, scope: galactic object, from: country, fromfrom: megastructure instance
+	# effects, scope: galactic object, from: country, fromfrom: megastructure instance
 	on_build_complete = {
 		# Works, but let's open the gate over the time event?
 		if = {

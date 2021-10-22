@@ -2,12 +2,12 @@ namespace = CrisisManagerMenu
 
 ######################################
 ######################################
-#####                            #####
-#####    Crisis Manager          #####
-#####                            #####
-#####    Configutation Viewer    #####
-#####    for Mid-Game Crisis     #####
-#####                            #####
+#####							#####
+#####	Crisis Manager		  #####
+#####							#####
+#####	Configutation Viewer	#####
+#####	for Mid-Game Crisis	 #####
+#####							#####
 ######################################
 ######################################
 
@@ -1280,13 +1280,13 @@ country_event = {
 	id = CrisisManagerMenu.1028
 	title = CrisisManagerMenu.1028.name
 	desc = CmtDescNotImplemented
-#!!#	desc = {
-#!!#		text = CrisisManagerMenu.1028.desc1
-#!!#		trigger = { CmtTriggerUprisingConfig = yes }
+# !!#	desc = {
+# !!#		text = CrisisManagerMenu.1028.desc1
+# !!#		trigger = { CmtTriggerUprisingConfig = yes }
 #!!#	}
-#!!#	desc = {
-#!!#		text = CrisisManagerMenu.1028.desc2
-#!!#		trigger = { CmtTriggerUprisingConfig = no }
+# !!#	desc = {
+# !!#		text = CrisisManagerMenu.1028.desc2
+# !!#		trigger = { CmtTriggerUprisingConfig = no }
 #!!#	}
 	picture = GFX_evt_organic_oppression
 	is_triggered_only = yes

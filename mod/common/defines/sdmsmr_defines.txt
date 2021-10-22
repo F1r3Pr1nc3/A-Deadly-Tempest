@@ -1,5 +1,5 @@
-        NEconomy = {
-                MILITARY_STATION_MAINTENANCE_MUL        = -0.60         # Monthly military station maintenance reduction
+		NEconomy = {
+				MILITARY_STATION_MAINTENANCE_MUL		= -0.60		 # Monthly military station maintenance reduction
 	}
 	
 	NAI = {

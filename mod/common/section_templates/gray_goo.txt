@@ -870,7 +870,7 @@ ship_section_template = {
 	ship_size = graygoo_factory
 	fits_on_slot = "mid"
 	# should_draw_components = yes
-	#entity = "gatebuilder_01_space_station_section_entity"
+	# entity = "gatebuilder_01_space_station_section_entity"
 	entity = "gatebuilder_02_space_station_section_entity"
 	icon = "GFX_ship_part_core_mid"
 	component_slot = {
@@ -1035,7 +1035,7 @@ ship_section_template = {
 	}
 	component_slot = {
 		name = "TORPEDO_01"
-		template = "invisible_missile_turret"		#large_turret
+		template = "invisible_missile_turret"		# large_turret
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {

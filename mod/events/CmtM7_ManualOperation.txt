@@ -2,11 +2,11 @@ namespace = CrisisManagerMenu
 
 ###################################
 ###################################
-#####                         #####
-#####    Crisis Manager       #####
-#####                         #####
-#####    Manual Operations    #####
-#####                         #####
+#####						 #####
+#####	Crisis Manager	   #####
+#####						 #####
+#####	Manual Operations	#####
+#####						 #####
 ###################################
 ###################################
 
@@ -291,7 +291,7 @@ country_event = {
 	}
 
 	### Uprising
-	#option = {
+	# option = {
 	#	name = CrisisManagerMenu.7000.7146.A.name
 	#	custom_tooltip = CrisisManagerMenu.7000.7146.A.tooltip
 	#	trigger = {
@@ -301,7 +301,7 @@ country_event = {
 	#	}
 	#	hidden_effect = { country_event = { id = CrisisManagerMenu.7146 } }
 	#}
-	#option = {
+	# option = {
 	#	name = CrisisManagerMenu.7000.7146.B.name
 	#	custom_tooltip = CrisisManagerMenu.7000.7146.B.tooltip
 	#	trigger = {
@@ -1101,7 +1101,7 @@ country_event = {
 		}
 		trigger = { ## 1 or more
 			any_country = { is_country_type = fallen_empire }
-			#count_country = { limit = { is_country_type = fallen_empire } count > 0 } # CmtTriggerIsOrganicSleeper = yes
+			# count_country = { limit = { is_country_type = fallen_empire } count > 0 } # CmtTriggerIsOrganicSleeper = yes
 		}
 		hidden_effect = {
 			if = {
@@ -2179,7 +2179,7 @@ country_event = {
 }
 
 #### Uprising
-#country_event = {
+# country_event = {
 #	id = CrisisManagerMenu.7146
 #	title = CrisisManagerMenu.7146.name
 #	desc = CrisisManagerMenu.7146.desc
@@ -2324,7 +2324,7 @@ country_event = {
 #	}
 #}
 #
-#country_event = {
+# country_event = {
 #	id = CrisisManagerMenu.7147
 #	title = CrisisManagerMenu.7147.name
 #	desc = CrisisManagerMenu.7147.desc

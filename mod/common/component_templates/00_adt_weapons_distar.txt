@@ -52,7 +52,7 @@ weapon_component_template = {
 	key = "NANITE_ENERGY_MISSILE"
 	size = torpedo
 	entity = "invisible_turret_entity"
-	type = missile	#instant
+	type = missile	# instant
 	prio_projectile = yes
 	icon = "GFX_ship_part_nanite_energymissiles_1"
 	icon_frame = 1
@@ -133,7 +133,7 @@ weapon_component_template = {
 }
 
 weapon_component_template = {
-	key = "NANITE_BASE_BEAM" #_ION
+	key = "NANITE_BASE_BEAM" # _ION
 	size = titanic
 	entity = "invisible_turret_entity"
 	type = instant
@@ -221,7 +221,7 @@ weapon_component_template = {
 	key = "NANITE_ENERGY_TORPEDO"
 	size = torpedo
 	entity = "turret_energy_torpedo_entity"
-	type = instant #missile
+	type = instant # missile
 	prio_projectile = yes
 	icon = "GFX_ship_part_nanite_energy_torpedo"
 	icon_frame = 1

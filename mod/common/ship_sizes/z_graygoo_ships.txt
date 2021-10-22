@@ -32,7 +32,7 @@ graygoo_interdictor = {
 	# icon_frame = 4
 	icon = ship_size_military_4
 	class = shipclass_military
-	enable_default_design = no #if yes, countries will have an auto-generated design at start
+	enable_default_design = no # if yes, countries will have an auto-generated design at start
 	prerequisites = { "tech_nanite_ships" }
 	is_designable = yes
 
@@ -463,7 +463,7 @@ scavenger_bot = {
 				is_scope_type = starbase
 				has_starbase_size >= starbase_citadel
 				NOT = { has_starbase_size = juggernaut }
-				#NOT = { has_starbase_size = scavenger_bot }
+				# NOT = { has_starbase_size = scavenger_bot }
 				OR = {
 					has_starbase_building = nanite_yards
 					# has_starbase_size = graygoo_factory
@@ -585,7 +585,7 @@ voidspawn = {
 	can_have_federation_design = no
 	enable_default_design = no
 	components_add_to_cost = no
-	enable_3dview_in_ship_browser = no #if yes, ship design will have a 3d view in the ship browser
+	enable_3dview_in_ship_browser = no # if yes, ship design will have a 3d view in the ship browser
 	can_disable = no
 	default_behavior = artillery
 	is_designable = no ## TODO?
@@ -734,7 +734,7 @@ military_station_nanite_bulwark = {
 	# 	can_have_federation_design = no
 	is_civilian = no
 	# 	is_listed = no
-	enable_default_design = no	#if yes, countries will have an auto-generated design at start
+	enable_default_design = no	# if yes, countries will have an auto-generated design at start
 	# 	components_add_to_cost = no
 	can_disable = no # Only Starbases ? Using a Workaround
 	# flip_control_on_disable = no
@@ -869,7 +869,7 @@ graygoo_factory = {
 	# is_civilian = no
 	# components_add_to_cost = no
 	# is_listed = no
-	can_disable = yes #no
+	can_disable = yes # no
 	enable_default_design = no
 	# prerequisites = { "tech_nanite_bulwark" "tech_nanite_mega_construction" }
 	class = shipclass_military_station

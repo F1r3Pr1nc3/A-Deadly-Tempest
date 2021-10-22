@@ -1,11 +1,11 @@
 
 ######################################################
 ######################################################
-#####                                            #####
-#####    Crisis Manager                          #####
-#####                                            #####
-#####    Global Constants for Mid-Game Crisis    #####
-#####                                            #####
+#####											#####
+#####	Crisis Manager						  #####
+#####											#####
+#####	Global Constants for Mid-Game Crisis	#####
+#####											#####
 ######################################################
 ######################################################
 
@@ -22,7 +22,7 @@
 @CmtConstKhanEarliestMgpy_V2 =  -75
 @CmtConstKhanEarliestMgpy_V3 =  -50
 @CmtConstKhanEarliestMgpy_V4 =  -25
-@CmtConstKhanEarliestMgpy_V5 =    0
+@CmtConstKhanEarliestMgpy_V5 =	0
 @CmtConstKhanEarliestMgpy_V6 =   10
 @CmtConstKhanEarliestMgpy_V7 =   25
 @CmtConstKhanEarliestMgpy_V8 =   50
@@ -52,7 +52,7 @@
 @CmtConstKhanLatestEgpy_V2 =  -75
 @CmtConstKhanLatestEgpy_V3 =  -50
 @CmtConstKhanLatestEgpy_V4 =  -25
-@CmtConstKhanLatestEgpy_V5 =    0
+@CmtConstKhanLatestEgpy_V5 =	0
 @CmtConstKhanLatestEgpy_V6 =   25
 @CmtConstKhanLatestEgpy_V7 =   50
 @CmtConstKhanLatestEgpy_V8 =   75
@@ -115,7 +115,7 @@
 @CmtConstUprisingEarliestMgpy_V3 =  -50
 @CmtConstUprisingEarliestMgpy_V4 =  -25
 @CmtConstUprisingEarliestMgpy_V5 =  -10
-@CmtConstUprisingEarliestMgpy_V6 =    0
+@CmtConstUprisingEarliestMgpy_V6 =	0
 @CmtConstUprisingEarliestMgpy_V7 =   25
 @CmtConstUprisingEarliestMgpy_V8 =   50
 @CmtConstUprisingEarliestMgpy_V9 =   75

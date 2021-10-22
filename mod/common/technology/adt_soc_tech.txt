@@ -1,7 +1,7 @@
 # ##################
 # Terraformation
 # ##################
-#Climate Transformation
+# Climate Transformation
 tech_nanite_terraforming = {
 	cost = @tier4cost1
 	area = society
@@ -67,7 +67,7 @@ tech_nanite_terraforming = {
 # ##################
 # Nano Resources
 # ##################
-#Nano Dust
+# Nano Dust
 tech_nano_dust = {
 	cost = @tier4cost1
 	area = society
@@ -100,7 +100,7 @@ tech_nano_dust = {
 	}
 }
 
-#Nano Scales
+# Nano Scales
 tech_nano_scales = {
 	icon = "old_tech_icons/tech_mine_garanthium"
 	cost = @tier4cost1

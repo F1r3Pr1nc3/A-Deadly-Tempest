@@ -121,8 +121,8 @@ on_planet_bombarded = {
 	}
 }
 
-#This = Federation leader
-#From = Joining member
+# This = Federation leader
+# From = Joining member
 on_join_federation = {
 	events = {
 		a_deadly_tempest.13079
@@ -200,8 +200,8 @@ on_starbase_transfer = {
 	}
 }
 
-#This = destroyed country
-#From = optional, destroyer (country)
+# This = destroyed country
+# From = optional, destroyer (country)
 on_country_destroyed = {
 	events = {
 		a_deadly_tempest.2404 # open lcluster

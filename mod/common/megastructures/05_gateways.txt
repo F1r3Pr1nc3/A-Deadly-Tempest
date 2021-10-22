@@ -210,7 +210,7 @@ gateway_restored = {
 			}
 		}
 		if = {
-			limit = { exists = from } #does not always exist when upgraded from script via "finish_upgrade = yes"
+			limit = { exists = from } # does not always exist when upgraded from script via "finish_upgrade = yes"
 			from = {
 				country_event = { id = origin.1050 }
 				country_event = { id = apoc.12 }

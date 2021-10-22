@@ -2,11 +2,11 @@ namespace = CrisisManagerMenu
 
 ###############################################################
 ###############################################################
-#####                                                     #####
-#####    Crisis Manager                                   #####
-#####                                                     #####
-#####    Common Configurations of Crisis Trigger Event    #####
-#####                                                     #####
+#####													 #####
+#####	Crisis Manager								   #####
+#####													 #####
+#####	Common Configurations of Crisis Trigger Event	#####
+#####													 #####
 ###############################################################
 ###############################################################
 
@@ -523,7 +523,7 @@ country_event = {
 		custom_tooltip = CrisisManagerMenu.3150d.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEqualizingProbability value = 4 } } }
 	}
-	#option = {
+	# option = {
 	#	name = CrisisManagerMenu.3150y.name	## What dose it mean?
 	#	custom_tooltip = CrisisManagerMenu.3150y.tooltip
 	#	hidden_effect = { set_country_flag = CmtFlagSpMenu }
@@ -538,7 +538,7 @@ country_event = {
 }
 
 ### About Equalization of Probability
-#country_event = {
+# country_event = {
 #	id = CrisisManagerMenu.3141
 #	title = CrisisManagerMenu.3141.name
 #	desc = CrisisManagerMenu.3141.desc

@@ -14,8 +14,8 @@ machine_01 = {
 		rim_stop_near = 0.99
 		rim_start_far = 0.3
 		rim_stop_far = 0.99
-		#rim_start_far = 1.5
-		#rim_stop_far = 2.0
+		# rim_start_far = 1.5
+		# rim_stop_far = 2.0
 		ambient_near = 0.1
 		ambient_far = 20.0
 	}

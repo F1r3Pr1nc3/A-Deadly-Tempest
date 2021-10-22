@@ -1,10 +1,10 @@
 ###############################################
 ###############################################
-#####                                    #####
-#####     Nanites Goo Special Effects     #####
-#####        For A Deadly Tempest         #####
-#####       Written by FirePrince         #####
-#####                                     #####
+#####									#####
+#####	 Nanites Goo Special Effects	 #####
+#####		For A Deadly Tempest		 #####
+#####	   Written by FirePrince		 #####
+#####									 #####
 ###############################################
 ###############################################
 
@@ -92,7 +92,7 @@ shoal_global_reinforce = {
 # Root = This = event_target:graygoo_country
 shoal_guard_dynamic_reinforce = {
 	# make dynamic with Crisis Manager
-	#event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Graygoo } }
+	# event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Graygoo } }
 	# CmtVarCapitalDefenceNumber 1-8 vanilla = 4
 	set_variable = { which = CapitalDefence_tmp value = root.CmtVarCapitalDefenceNumber }
 	# log = "guard_dynamic [$STRENGTH$] - [CmtVarCapitalDefenceNumber]"
@@ -607,7 +607,7 @@ nanite_assimilating_effect = {
 	# else_if = {
 	# 	limit = { NOT = { exists = event_target:assimilate_that_ship } }
 	# 	root.FromFromFrom = { save_event_target_as = assimilate_that_ship }
-	# 	log = "create assimilate_that_ship event_target " #[assimilate_that_ship.GetName]
+	# 	log = "create assimilate_that_ship event_target " # [assimilate_that_ship.GetName]
 	# }
 	else = {
 		root.FromFromFrom = { save_event_target_as = assimilate_that_ship }
@@ -738,13 +738,13 @@ giveShipDesign = {
 			is_scope_type = ship
 			exists = owner
 		}
-		#log = "Create NOT new DESIGN - DENAME "			# [This.GetName] - [FromFromFrom.GetName]
+		# log = "Create NOT new DESIGN - DENAME "			# [This.GetName] - [FromFromFrom.GetName]
 		owner = {
 			set_assimilating_fleet_scope = { "DESIGN" = $DESIGN$ "DENAME" = $DENAME|0$ }
 			# [[DENAME] giveShipDesign = { "DESIGN" = $DESIGN$ "DENAME" = $DENAME|0$ }]
 		}
 	} else = {
-		#log = "WARNING giveShipDesign NOT valid scope" #[This.GetName]
+		# log = "WARNING giveShipDesign NOT valid scope" # [This.GetName]
 		event_target:global_event_country = {
 			if = {
 				limit = {
@@ -766,7 +766,7 @@ set_assimilating_fleet_scope = {
 	# Only 1 works without special chars?
 	# log = "design r [Root.GetName]" country
 	# log = "design rff [Root.FromFrom.GetName]" ship combatant
-	# log = "design rf [Root.From.GetName]" #country destroyed Freed Dragons
+	# log = "design rf [Root.From.GetName]" # country destroyed Freed Dragons
 	# log = "design rp [Root.Prev.Owner.GetName] " failed country
 	# log = "design f [From.GetName]"
 	# log = "design ff [From.From.GetName]"
@@ -789,7 +789,7 @@ set_assimilating_fleet_scope = {
 	}
 	else = {
 		# TODO # limit = { event_target:global_event_country = { has_existing_ship_design = $DESIGN$ } } log = "global_event_country has design"
-		# log = "design NOT exists"		#[This.GetName]
+		# log = "design NOT exists"		# [This.GetName]
 		event_target:global_event_country = {
 			nanite_ship_assimilating_effect = { "DESIGN" = $DESIGN$ "DENAME" = $DENAME|0$ }
 		}
@@ -892,7 +892,7 @@ nanite_ship_assimilating_effect = {
 		if = {
 			limit = { event_target:assimilate_that_ship = { is_designable = yes } }
 			create_ship = {
-				name = event_target:assimilate_that_ship #random # $DENAME$
+				name = event_target:assimilate_that_ship # random # $DENAME$
 				random_existing_design = $DESIGN$
 				graphical_culture = event_target:assimilate_that_ship				# root.owner
 				upgradable = yes
@@ -907,7 +907,7 @@ nanite_ship_assimilating_effect = {
 			# the same but with design option
 			# log = "WARNING assimilated ship is not designable"
 			create_ship = {
-				name = event_target:assimilate_that_ship #random # $DENAME$
+				name = event_target:assimilate_that_ship # random # $DENAME$
 				design = $DENAME|0$
 				graphical_culture = event_target:assimilate_that_ship
 				upgradable = yes
@@ -965,7 +965,7 @@ nanite_ship_assimilating_effect = {
 						# 		is_same_empire = from
 						# 		is_same_empire = root
 						# 		is_same_empire = event_target:global_event_country
-						# 	} #PREVPREVPREV
+						# 	} # prevprevprev
 						# }
 					}
 					# set_location = { target = event_target:assimilate_that_fleet }

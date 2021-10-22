@@ -172,7 +172,7 @@ nanite_giga_warform = {
 	allow = {
 		# custom_tooltip = {
 			# text = titanic_troop_limit_tooltip
-			#planet = { has_planet_flag = }
+			# planet = { has_planet_flag = }
 		planet = {
 			OR = {
 				is_capital = yes
@@ -180,7 +180,7 @@ nanite_giga_warform = {
 			}
 		}
 		owner = {
-			#has_country_flag =
+			# has_country_flag =
 			check_variable = { which = "nanite_warform_count" value < 4 }
 			NAND = {
 				is_mechanical_empire = no

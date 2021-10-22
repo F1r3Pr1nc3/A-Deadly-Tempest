@@ -1,10 +1,10 @@
 ####################################################
 ####################################################
-#####                                          #####
-#####    Crisis Manager                        #####
-#####    Comp Patch for A Deadly Tempest       #####
-#####    Scripted Effects for L-Gate Events    #####
-#####                                          #####
+#####										  #####
+#####	Crisis Manager						#####
+#####	Comp Patch for A Deadly Tempest	   #####
+#####	Scripted Effects for L-Gate Events	#####
+#####										  #####
 ####################################################
 ####################################################
 
@@ -113,7 +113,7 @@ CmtEffectDestroyGraygoo = {
 					}
 				}
 			} else_if = {
-				limit = { NOT = { check_variable = { which = CmtVarLgateTerraformNanite value = 1 } } }
+				limit = { check_variable = { which = CmtVarLgateTerraformNanite value != 1 } }
 				every_system = {
 					limit = { has_star_flag = lcluster }
 					every_system_planet = {

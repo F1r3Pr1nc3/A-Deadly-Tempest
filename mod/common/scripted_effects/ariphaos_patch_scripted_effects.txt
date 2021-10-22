@@ -8,7 +8,7 @@ ariphaos_patch_remove_habitat = {
 			remove_planet_flag = has_megastructure
 		}
 	}
-	#destroy_colony = yes
+	# destroy_colony = yes
 	remove_planet = yes
 }
 

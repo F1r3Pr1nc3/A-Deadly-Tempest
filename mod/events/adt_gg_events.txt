@@ -21,7 +21,7 @@ event = {
 	# fire_only_once = yes
 	# trigger = {
 	# 	always = yes
-	# 	#NOT = { has_global_flag = a_deadly_tempest_mod_active }
+	# 	# NOT = { has_global_flag = a_deadly_tempest_mod_active }
 	# 	is_country_type = global_event
 	# }
 	immediate = {
@@ -206,7 +206,7 @@ planet_event = {
 				create_ship = {
 					name = random
 					design = "NAME_Nanite_Factory"
-					graphical_culture = machine_01 #"reptilian_01"
+					graphical_culture = machine_01 # "reptilian_01"
 				}
 				set_location = {
 					target = prev
@@ -342,7 +342,7 @@ country_event = {
 						NOT = { is_same_empire = prev }
 						relative_power = {
 							who = prev
-							category = all							#fleet
+							category = all							# fleet
 							value > equivalent
 						}
 					}
@@ -733,7 +733,7 @@ ship_event = {
 				}
 			}
 			save_event_target_as = assimilate_that_ship
-			#log = "ADT 38 assimilate_that_ship NOT exists"
+			# log = "ADT 38 assimilate_that_ship NOT exists"
 		}
 		event_target:assimilate_that_ship = {
 			if = {
@@ -816,7 +816,7 @@ ship_event = {
 							kill_leader = no
 							destroy_template = yes
 						}
-						#log = "WARNING 38 assimilating_fleet NOT exists"
+						# log = "WARNING 38 assimilating_fleet NOT exists"
 					}
 				} else = {
 					prev = { ship_event = { id = a_deadly_tempest.38 days = 8 } }
@@ -889,7 +889,7 @@ fleet_event = {
 				limit = {
 					NOT = { exists = event_target:assimilate_that_ship }
 				}
-				#log = "WARNING assimilate_that_ship NOT exists"
+				# log = "WARNING assimilate_that_ship NOT exists"
 				solar_system = {
 					random_fleet_in_system = {
 						limit = { has_fleet_flag = assimilate_that_ship_flag_temp }
@@ -906,7 +906,7 @@ fleet_event = {
 							any_owned_ship = { count < 1 }
 						}
 					}
-					#log = "WARNING assimilate_that_ship NOT exists, delete temp fleet"
+					# log = "WARNING assimilate_that_ship NOT exists, delete temp fleet"
 					delete_fleet = {
 						target = fleet
 						kill_leader = no
@@ -972,7 +972,7 @@ fleet_event = {
 					destroy_template = yes
 				}
 			}
-			#log = "WARNING assimilate_that_ship NOT exists, delete_fleet"
+			# log = "WARNING assimilate_that_ship NOT exists, delete_fleet"
 			no_scope = { save_global_event_target_as = assimilate_that_ship }
 			break = yes
 		}
@@ -1019,7 +1019,7 @@ fleet_event = {
 						}
 						# fleet = { remove_fleet_flag = assimilate_that_ship_flag_temp }
 					}
-					#log = "WARNING assimilating_fleet NOT exists, abort merge"
+					# log = "WARNING assimilating_fleet NOT exists, abort merge"
 					# no_scope = { save_global_event_target_as = assimilating_fleet clear_global_event_target = assimilating_fleet }
 					break = yes
 				}
@@ -2010,8 +2010,8 @@ country_event = {
 }
 
 ### Federation joined event
-#This = Federation leader
-#From = Joining member
+# This = Federation leader
+# From = Joining member
 country_event = {
 	id = a_deadly_tempest.13079
 	hide_window = yes

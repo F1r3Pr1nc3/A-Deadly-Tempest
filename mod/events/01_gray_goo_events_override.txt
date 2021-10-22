@@ -13,7 +13,7 @@ namespace = graygoo
 ###	Graygoo	###
 ###############
 
-###Invasion begins
+### Invasion begins
 country_event = {
 	id = graygoo.1
 	hide_window = yes
@@ -51,7 +51,7 @@ country_event = {
 				# save_event_target_as = gray_homeworld
 				create_species = {
 					name = "NAME_Gray_Goo"
-					class = "ESGO" #MACHINE
+					class = "ESGO" # MACHINE
 					# blocked_archetypes = { MACHINE ROBOT }
 					portrait = lithnanite
 					traits = {
@@ -481,11 +481,11 @@ country_event = {
 					10 = {
 						create_species = {
 							name = "NAME_Dessanu"
-							class = "ART" #random_non_machine
-							portrait = random #"sd_fun_robot"
+							class = "ART" # random_non_machine
+							portrait = random # "sd_fun_robot"
 							namelist = "ART4"
 							traits = { trait = random_traits }
-							#homeworld = random
+							# homeworld = random
 							immortal = yes
 						}
 					}
@@ -1913,7 +1913,7 @@ country_event = {
 										# graphical_culture = owner
 										# design = last_created_design
 										# random_existing_design = blue_military_station_small_ai
-										# graphical_culture = ai_01 #"fallen_machine_empire_01"
+										# graphical_culture = ai_01 # "fallen_machine_empire_01"
 									}
 								}
 								# set_starbase_building = { slot = 3 building = "titan_yards" }
@@ -1923,7 +1923,7 @@ country_event = {
 							}
 						}
 						# }
-						#last_created_country
+						# last_created_country
 						random_system_planet = {
 							limit = { has_planet_flag = main_star }
 							save_event_target_as = main_star
@@ -2030,23 +2030,23 @@ country_event = {
 								}
 							}
 							set_fleet_formation = {
-								position = { x = 13.0	y = -7.0	} #17
-								position = { x = 11.5	y = -13.0	} #16
-								position = { x = 0.0	y = -15.5	} #15
-								position = { x = 13.0	y = 7.0		} #14
-								position = { x = -11.8	y = -4.0	} #13
-								position = { x = -15.8	y = 6.5		} #12
-								position = { x = -10.0	y = 8.5		} #11
-								position = { x = -1.6	y = 15.0	} #10
-								position = { x = 14.0	y = -3.0	} #9
-								position = { x = 1.3	y = -11.0	} #8
-								position = { x = -10.5	y = 1.0		} #7
-								position = { x = 3.0	y = 8.0		} #6
-								position = { x = -4.3	y = -7.0	} #5
-								position = { x = 8.0	y = 9.0		} #4
-								position = { x = -4.0	y = 7.3		} #3
-								position = { x = 7.5	y = -10.5	} #2
-								position = { x = 0.0	y = 0.0		} #1
+								position = { x = 13.0	y = -7.0	} # 17
+								position = { x = 11.5	y = -13.0	} # 16
+								position = { x = 0.0	y = -15.5	} # 15
+								position = { x = 13.0	y = 7.0		} # 14
+								position = { x = -11.8	y = -4.0	} # 13
+								position = { x = -15.8	y = 6.5		} # 12
+								position = { x = -10.0	y = 8.5		} # 11
+								position = { x = -1.6	y = 15.0	} # 10
+								position = { x = 14.0	y = -3.0	} # 9
+								position = { x = 1.3	y = -11.0	} # 8
+								position = { x = -10.5	y = 1.0		} # 7
+								position = { x = 3.0	y = 8.0		} # 6
+								position = { x = -4.3	y = -7.0	} # 5
+								position = { x = 8.0	y = 9.0		} # 4
+								position = { x = -4.0	y = 7.3		} # 3
+								position = { x = 7.5	y = -10.5	} # 2
+								position = { x = 0.0	y = 0.0		} # 1
 							}
 							set_formation_scale = 0.5
 							# set_location = {
@@ -2054,7 +2054,7 @@ country_event = {
 							# 	distance = 25
 							# 	angle = 150
 							# }
-							#set_fleet_flag = fortress_fleet
+							# set_fleet_flag = fortress_fleet
 							solar_system = { set_star_flag = lcluster }
 						}
 					}
@@ -2417,10 +2417,11 @@ ship_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
+		NOR = {
 			# has_global_flag = gray_goo_crisis_set
 			# has_global_flag = dragon_season
 			has_global_flag = gray_goo_empire_set
+			has_global_flag = l_cluster_origin # L-Cluster Plus
 		}
 		exists = root.from
 		root.from = { has_star_flag = lcluster1 }

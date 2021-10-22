@@ -47,7 +47,7 @@ special_project = {
 	cost = 0
 	days_to_research = 180
 	tech_department = engineering_technology
-	picture = GFX_evt_surreal_visions
+	picture = GFX_evt_surreal_visions # GFX_evt_l-gateway
 	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
 	event_scope = ship_event
 	requirements = {
@@ -85,7 +85,14 @@ special_project = {
 		}
 	}
 	on_success = {
-		owner = { country_event = { id = distar.10950 } }
+		owner = {
+			# Comp. L-Cluster Plus
+			if = { limit = { has_global_flag = l_cluster_origin }
+				country_event = { id = lclusterplus.2 }
+			} else = {
+				country_event = { id = distar.10950 }
+			}
+		}
 	}
 	on_fail = {
 	}
