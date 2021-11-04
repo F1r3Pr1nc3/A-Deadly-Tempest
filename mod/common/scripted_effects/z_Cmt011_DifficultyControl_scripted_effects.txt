@@ -1,16 +1,16 @@
 
-###############################################################
-###############################################################
-#####													 #####
-#####	Crisis Manager								   #####
-#####													 #####
+#############################################################
+#############################################################
+#####													#####
+#####	Crisis Manager									#####
+#####													#####
 #####	Scripted Effects for Controlling Crisis Power	#####
-#####													 #####
-###############################################################
-###############################################################
+#####													#####
+#############################################################
+#############################################################
 
 ###################################
-###  Apply Difficulty Template  ###
+### Apply Difficulty Template	###
 ###################################
 
 CmtEffectApplyDifficulty_Endgame = {
@@ -49,9 +49,9 @@ CmtEffectApplyDifficulty_Midgame = {
 	}
 }
 
-#####################################
-###  Apply Common Strenght Value  ###
-#####################################
+###################################
+### Apply Common Strenght Value ###
+###################################
 
 ### Fleet Power
 CmtEffectApplyCommonPower_FleetPower = {
@@ -193,9 +193,9 @@ CmtEffectApplyCommonPowerMidgame_ConstructorNumber = {
 	}
 }
 
-############################
-###  Reset Common Value  ###
-############################
+###########################
+### Reset Common Value	###
+###########################
 
 CmtEffectResetCrisisPowerCommon = {
 	event_target:CmtGlobalVar = {
@@ -206,4 +206,3 @@ CmtEffectResetCrisisPowerCommon = {
 		set_variable = { which = CmtVarConstructorNumber_Common value = 0 }
 	}
 }
-

@@ -1,14 +1,14 @@
 namespace = CrisisManagerMenu
 
-###############################################################
-###############################################################
-#####													 #####
-#####	Crisis Manager								   #####
-#####													 #####
+#############################################################
+#############################################################
+#####													#####
+#####	Crisis Manager									#####
+#####													#####
 #####	Common Configurations of Crisis Trigger Event	#####
-#####													 #####
-###############################################################
-###############################################################
+#####													#####
+#############################################################
+#############################################################
 
 ### Multiple Crises
 country_event = {
@@ -227,7 +227,7 @@ country_event = {
 	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
 }
 
-### Crises to Happen at Earliest
+### Crises to Happen at Earliest.
 country_event = {
 	id = CrisisManagerMenu.3130
 	title = CrisisManagerMenu.3130.name
@@ -552,7 +552,7 @@ country_event = {
 #	}
 #}
 
-### Progress Speed of Crisis Trigger Event
+### Progress Speed of Crisis Trigger Event.
 country_event = {
 	id = CrisisManagerMenu.3160
 	title = CrisisManagerMenu.3160.name
@@ -667,7 +667,7 @@ country_event = {
 	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
 }
 
-### About Progress Speed of Crisis Event Chain
+### About Progress Speed of Crisis Event Chain.
 country_event = {
 	id = CrisisManagerMenu.3161
 	title = CrisisManagerMenu.3161.name

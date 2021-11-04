@@ -95,10 +95,7 @@ country_event = {
 		}
 		else = {
 			# *THIS* looping check
-			country_event = {
-				id = distar.10902
-				days = 60
-			}
+			country_event = { id = distar.10902 days = 60 }
 		}
 	}
 }
@@ -111,7 +108,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_global_flag = l_cluster_opened }
+		NOT = { has_global_flag = CmtFlagLgateOpenedNow }
 	}
 
 	immediate = {
@@ -361,7 +358,9 @@ country_event = {
 				save_event_target_as = candidate_gateway
 			}
 		}
-		country_event = { id = distar.11000 }	# Spawn L-Cluster
+		if = { limit = { NOT = { has_global_flag = l_cluster_opened } }
+			country_event = { id = distar.11000 }	# Spawn L-Cluster
+		}
 		# Activate originating L-Gate: Put AFTER distar.13000 (if not already opened by other outcome)
 		if = {
 			limit = {
@@ -930,10 +929,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_global_flag = a_deadly_tempest_mod_active }
-				give_technology = {
-					tech = tech_nanite_guardians
-					message = no
-				}
+				give_technology = { tech = tech_nanite_guardians message = no }
 			}
 		}
 	}

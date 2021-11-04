@@ -1,11 +1,11 @@
 ####################################################
 ####################################################
-#####										  #####
-#####	Crisis Manager						#####
-#####										  #####
-#####	Default Template					  #####
-#####	Never Modify Anything in This File	#####
-#####										  #####
+#####                                          #####
+#####    Crisis Manager                        #####
+#####                                          #####
+#####    Default Template                      #####
+#####    Never Modify Anything in This File    #####
+#####                                          #####
 ####################################################
 ####################################################
 #
@@ -330,8 +330,8 @@
 ### Awakenable Sleepers
 	@CmtT000_ConstSleeperForbidMaterialist  = no		## Keepers of Knowledge
 	@CmtT000_ConstSleeperForbidSpiritualist = no		## Holy Guardians
-	@CmtT000_ConstSleeperForbidXenophile	= no		## Enigmatic Observers
-	@CmtT000_ConstSleeperForbidXenophobe	= no		## Militant Isolationists
+	@CmtT000_ConstSleeperForbidXenophile    = no		## Enigmatic Observers
+	@CmtT000_ConstSleeperForbidXenophobe    = no		## Militant Isolationists
 		### yes: Forbid to Standardly Awaken
 		### no:  Allow to Standardly Awaken (Default)
 
@@ -364,8 +364,8 @@
 
 	@CmtT000_ConstHeavenForbidMaterialist   = no		### Keepers of Knowledge
 	@CmtT000_ConstHeavenForbidSpiritualist  = no		### Holy Guardians
-	@CmtT000_ConstHeavenForbidXenophile	 = no		### Enigmatic Observers
-	@CmtT000_ConstHeavenForbidXenophobe	 = no		### Militant Isolationists
+	@CmtT000_ConstHeavenForbidXenophile     = no		### Enigmatic Observers
+	@CmtT000_ConstHeavenForbidXenophobe     = no		### Militant Isolationists
 		### yes: Forbid to Awaken as Ancient Rival
 		### no:  Allow to Awaken as Ancient Rival (Default)
 
@@ -536,8 +536,8 @@
 		### Only One = 1, After Crisis = 2 (For Only Gray Tempest)
 		### One by One Slowly = 3, One by One Quickly = 4, Immediately All = 5
 		### Caution
-		###	 These configurations are activated only if ''@CmtT000_ConstLgateCycleCommon = -1'' is set.
-		###	 Other cases, they are ignored.
+		###     These configurations are activated only if ''@CmtT000_ConstLgateCycleCommon = -1'' is set.
+		###     Other cases, they are ignored.
 
 ### Quiet Stroller
 	@CmtT000_ConstLgateAloneGrayCondition = 2
@@ -578,66 +578,66 @@
 
 ### Common information for ''Individual Configurations''
 	### - '@CmtT000_ConstCrisisStrength' must be set zero(0) for using following configurations.
-	###	 > If it is NOT zero(0), all of following configurations are ignored.
+	###     > If it is NOT zero(0), all of following configurations are ignored.
 	### - To set same parameter for all crisis
-	###	 > Input scale factor to '@CmtT000_Const****_Common'.
-	###	 > In this case, '@CmtT000_Const****_<name of faction>' are ignored.
-	###	 > 0(Zero) or negative number can NOT be inputted.
+	###     > Input scale factor to '@CmtT000_Const****_Common'.
+	###     > In this case, '@CmtT000_Const****_<name of faction>' are ignored.
+	###     > 0(Zero) or negative number can NOT be inputted.
 	### - To set parameter individually for each crisis
-	###	 > Input 0(Zero) to '@CmtT000_Const****_Common'.
-	###	 > Input scale factor to '@CmtT000_Const****_<name of crisis faction>'
+	###     > Input 0(Zero) to '@CmtT000_Const****_Common'.
+	###     > Input scale factor to '@CmtT000_Const****_<name of crisis faction>'
 	### - All factors must be positive number that is multiple of 0.25.
 	### - Caution
-	###	 > Immoderate factor makes heavy load on CPU and GPU
-	###	   because these configurations modify the number of ships.
-	###	 > Also factors grater than 3 can be inputted if you endure processing load excessive.
+	###     > Immoderate factor makes heavy load on CPU and GPU
+	###       because these configurations modify the number of ships.
+	###     > Also factors grater than 3 can be inputted if you endure processing load excessive.
 	###
 
 ### Individual Configurations of Crisis Power
 ### Fleet Power
-	@CmtT000_ConstFleetPower_Common			 = 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
-	@CmtT000_ConstFleetPower_Prethoryn		  = 1.00
-	@CmtT000_ConstFleetPower_Sentinel		   = 1.00
-	@CmtT000_ConstFleetPower_Unbidden		   = 1.00
-	@CmtT000_ConstFleetPower_Aberrant		   = 1.00
-	@CmtT000_ConstFleetPower_Vehement		   = 1.00
-	@CmtT000_ConstFleetPower_Contingency		= 1.00
-	@CmtT000_ConstFleetPower_Cybrex			 = 1.00
-	@CmtT000_ConstFleetPower_ForcedEoc		  = 1.00		## Forced End of the Cycle
-	@CmtT000_ConstFleetPower_Khan			   = 1.00
-	@CmtT000_ConstFleetPower_Graygoo			= 1.00		## Gray Tempest
-	@CmtT000_ConstFleetPower_Dessanu			= 1.00
+	@CmtT000_ConstFleetPower_Common             = 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
+	@CmtT000_ConstFleetPower_Prethoryn          = 1.00
+	@CmtT000_ConstFleetPower_Sentinel           = 1.00
+	@CmtT000_ConstFleetPower_Unbidden           = 1.00
+	@CmtT000_ConstFleetPower_Aberrant           = 1.00
+	@CmtT000_ConstFleetPower_Vehement           = 1.00
+	@CmtT000_ConstFleetPower_Contingency        = 1.00
+	@CmtT000_ConstFleetPower_Cybrex             = 1.00
+	@CmtT000_ConstFleetPower_ForcedEoc          = 1.00		## Forced End of the Cycle
+	@CmtT000_ConstFleetPower_Khan               = 1.00
+	@CmtT000_ConstFleetPower_Graygoo            = 1.00		## Gray Tempest
+	@CmtT000_ConstFleetPower_Dessanu            = 1.00
 
 ### Army Power
-	@CmtT000_ConstArmyPower_Common			  = 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
-	@CmtT000_ConstArmyPower_Prethoryn		   = 1.00
-	@CmtT000_ConstArmyPower_Contingency		 = 1.00
-	@CmtT000_ConstArmyPower_Khan				= 1.00
+	@CmtT000_ConstArmyPower_Common              = 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
+	@CmtT000_ConstArmyPower_Prethoryn           = 1.00
+	@CmtT000_ConstArmyPower_Contingency         = 1.00
+	@CmtT000_ConstArmyPower_Khan                = 1.00
 
 ### Number of Combat Fleets
-	@CmtT000_ConstCombatFleetNumber_Common	  = 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
+	@CmtT000_ConstCombatFleetNumber_Common      = 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
 	@CmtT000_ConstCombatFleetNumber_Prethoryn   = 1.00
-	@CmtT000_ConstCombatFleetNumber_Sentinel	= 1.00
-	@CmtT000_ConstCombatFleetNumber_Unbidden	= 1.00
-	@CmtT000_ConstCombatFleetNumber_Aberrant	= 1.00
-	@CmtT000_ConstCombatFleetNumber_Vehement	= 1.00
+	@CmtT000_ConstCombatFleetNumber_Sentinel    = 1.00
+	@CmtT000_ConstCombatFleetNumber_Unbidden    = 1.00
+	@CmtT000_ConstCombatFleetNumber_Aberrant    = 1.00
+	@CmtT000_ConstCombatFleetNumber_Vehement    = 1.00
 	@CmtT000_ConstCombatFleetNumber_Contingency = 1.00
-	@CmtT000_ConstCombatFleetNumber_Cybrex	  = 1.00
-	@CmtT000_ConstCombatFleetNumber_Khan		= 1.00
-	@CmtT000_ConstCombatFleetNumber_Graygoo	 = 1.00		## Gray Tempest
-	@CmtT000_ConstCombatFleetNumber_Dessanu	 = 1.00
+	@CmtT000_ConstCombatFleetNumber_Cybrex      = 1.00
+	@CmtT000_ConstCombatFleetNumber_Khan        = 1.00
+	@CmtT000_ConstCombatFleetNumber_Graygoo     = 1.00		## Gray Tempest
+	@CmtT000_ConstCombatFleetNumber_Dessanu     = 1.00
 
 ### Number of Army Fleets
-	@CmtT000_ConstArmyNumber_Common			 = 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
-	@CmtT000_ConstArmyNumber_Prethoryn		  = 1.00
-	@CmtT000_ConstArmyNumber_Contingency		= 1.00
-	@CmtT000_ConstArmyNumber_Khan			   = 1.00
+	@CmtT000_ConstArmyNumber_Common             = 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
+	@CmtT000_ConstArmyNumber_Prethoryn          = 1.00
+	@CmtT000_ConstArmyNumber_Contingency        = 1.00
+	@CmtT000_ConstArmyNumber_Khan               = 1.00
 
 ### Number of Auxiliary Ships/Fleets (Constructor, Colonizer)
-	@CmtT000_ConstConstructorNumber_Common	  = 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
+	@CmtT000_ConstConstructorNumber_Common      = 1.00		## This value must be set to zero(0) if you set the value individually for each crisis.
 	@CmtT000_ConstConstructorNumber_Prethoryn   = 1.00
-	@CmtT000_ConstConstructorNumber_Unbidden	= 1.00
-	@CmtT000_ConstConstructorNumber_Aberrant	= 1.00
-	@CmtT000_ConstConstructorNumber_Vehement	= 1.00
+	@CmtT000_ConstConstructorNumber_Unbidden    = 1.00
+	@CmtT000_ConstConstructorNumber_Aberrant    = 1.00
+	@CmtT000_ConstConstructorNumber_Vehement    = 1.00
 	@CmtT000_ConstConstructorNumber_Contingency = 1.00
-	@CmtT000_ConstConstructorNumber_Khan		= 1.00
+	@CmtT000_ConstConstructorNumber_Khan        = 1.00
