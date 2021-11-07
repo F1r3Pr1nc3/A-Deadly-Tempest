@@ -1,15 +1,15 @@
-####################################################
-####################################################
-#####										  #####
-#####	Crisis Manager						#####
-#####										  #####
-#####	Scripted Effects for L-Gate Events	#####
-#####										  #####
-####################################################
-####################################################
+#####################################################
+#####################################################
+#####											#####
+#####	Crisis Manager							#####
+#####											#####
+#####	Scripted Effects for L-Gate Events		#####
+#####											#####
+#####################################################
+#####################################################
 
 ########################
-###  Initial Events  ###
+###- Initial Events -###
 ########################
 
 start_lcluster_chain = {
@@ -98,7 +98,7 @@ CmtEffectOpenLgate = {		## Scope: this = megastructure (L-Gate)
 }
 
 #################
-###  Dessanu  ###
+###- Dessanu -###
 #################
 
 CmtEffectAddDessanuGift4 = {
@@ -143,7 +143,7 @@ CmtEffectRemoveDessanuGift = {
 }
 
 #################
-###  Graygoo  ###
+###- Graygoo -###
 #################
 
 ### End of Graygoo
@@ -213,9 +213,9 @@ CmtEffectDestroyGraygoo = {
 	clear_global_event_target = lcluster_factory_system
 }
 
-#################################
-###  Abosorbe Vanilla Script  ###
-#################################
+###############################
+### Abosorbe Vanilla Script ###
+###############################
 #
 # Roamer Script of Vanilla: for id in trigger being unique.
 #

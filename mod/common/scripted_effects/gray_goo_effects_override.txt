@@ -213,7 +213,7 @@ create_gray_army = {
 			}
 		}
 	}
-	event_target:gray_leader_general = { set_owner = root } # Needs switch as leader get unassigned
+	event_target:gray_leader_general = { set_owner = root } # Needs switch as leader get unassigned.
 
 	create_fleet = {
 		name = "NAME_Gray"

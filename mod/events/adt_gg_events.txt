@@ -108,7 +108,7 @@ event = {
 			}
 		}
 
-		# TODO remove me after a while
+		# TODO remove me after a while.
 		if = {
 			limit = {
 				has_global_flag = gray_goo_empire_set
@@ -144,7 +144,7 @@ event = {
 				background = { category = "backgrounds" file = "00_solid.dds" }
 				colors = { "black" "black" "null" "null" }
 			}
-			if = { # TODO temporary fix for new var
+			if = { # TODO temporary fix for new var.
 				limit = { NOT = { has_global_flag = l_cluster_opened } }
 				every_playable_country = {
 					limit = {
@@ -161,7 +161,7 @@ event = {
 }
 
 ####################################
-# Nanites spawn more ships over time
+# Nanites spawn more ships over time.
 ####################################
 ## Reinforcements 1
 event = {
@@ -706,7 +706,7 @@ fleet_event = {
 			set_disabled = no
 			log= "assimilating escaped on [This.GetName] owner [This.Owner.GetName]"
 		}
-		# TEST fleet_combat_emergency_ftl, destroy and build new
+		# TEST fleet_combat_emergency_ftl, destroy and build new.
 	}
 }
 
@@ -772,7 +772,7 @@ ship_event = {
 			# 	limit = { NOT = { exists = event_target:assimilating_fleet } }
 			# 	log = "WARNING 38 assimilating_fleet NOT exists"
 			# 	## Try fallback without flag (take own ships back)!?
-			# 	## ToDo: first change to owner design
+			# 	## ToDo: first change to owner design.
 			# 	if = {
 			# 		limit = {
 			# 			fleet = { is_in_combat = no fleet_power < 1 }
@@ -820,7 +820,7 @@ ship_event = {
 					}
 				} else = {
 					prev = { ship_event = { id = a_deadly_tempest.38 days = 8 } }
-					# Fallback if battle not ends
+					# Fallback if battle not ends.
 					solar_system = {
 						if = {
 							limit = {
@@ -1066,7 +1066,7 @@ fleet_event = {
 							}
 						}
 					}
-					# another ship?
+					# Another ship?
 					if = {
 						limit ={
 							event_target:assimilating_fleet.solar_system = {
@@ -1183,7 +1183,7 @@ country_event = {
 		# 			limit = { num_ships < 21 }
 		# 			CmtEffectCreateShip_GraygooInterdictor = yes
 		# 		}
-		# 		# Motherships create increased ship numbers during galactic crisis
+		# 		# Motherships create increased ship numbers during galactic crisis.
 		# 		if = {
 		# 			limit = {
 		# 				end_game_years_passed >= 0
@@ -1718,7 +1718,7 @@ country_event = {
 					# NOT = { is_same_value = event_target:lcluster_factory_system }
 				}
 			}
-			remove_auto_move_target = yes			# works although has_auto_move_target says no!?
+			remove_auto_move_target = yes			# Works although has_auto_move_target says no!?
 			# set_timed_fleet_flag = { flag = guard_returning days = 61 }
 		}
 		country_event = { id = a_deadly_tempest.97 days = 18 }
@@ -2194,7 +2194,7 @@ country_event = {
 	}
 }
 
-## Limit Bulwarks, add restore feature
+## Limit Bulwarks, add restore feature.
 # on build defense bulwark station
 ship_event = {
 	id = a_deadly_tempest.221

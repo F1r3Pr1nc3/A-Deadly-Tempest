@@ -588,7 +588,7 @@ country_event = {
 						# add_trait = trait_machine_unit
 						# add_trait = trait_mechanical
 						add_traits_at_start_of_list = yes
-						# ideal_planet_class = pc_gray_goo # valid target?
+						# ideal_planet_class = pc_gray_goo # Valid target?
 						ideal_planet_class = pc_gaia
 						effect = {
 							if = { limit = { exists = event_target:start_5 }
@@ -2126,7 +2126,7 @@ country_event = {
 		}
 
 		observer_event = { id = observer.67 }
-		## Change Gaia Planet to Graygoo
+		## Change Gaia Planet to Graygoo.
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 5 } } }
 			every_owned_planet = {
@@ -2206,7 +2206,7 @@ country_event = {
 		every_owned_pop = {
 			kill_pop = yes
 		}
-		# kill also every not owned pop!?
+		# Kill also every not owned pop!?
 		every_galaxy_pop = {
 			limit = {
 				exists = this
@@ -2380,7 +2380,7 @@ event = {
 	}
 }
 
-# Dessanu Gift terminated due to hostility
+# Dessanu Gift terminated due to hostility.
 country_event = {
 	id = graygoo.184
 	title = "graygoo.184.name"

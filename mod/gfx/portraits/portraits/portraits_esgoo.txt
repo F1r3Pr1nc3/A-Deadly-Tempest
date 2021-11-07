@@ -1,7 +1,7 @@
 ##############################################################
 ###	PORTRAITS SETTINGS
 ###
-### Which portraits are used is set in
+### Which portraits are used is set in.
 ### common\species_classes\00_species_classes.txt
 ###
 ###	This file configures how portraits and planet backgrounds are built.

@@ -1,7 +1,7 @@
 #######################################################
 #######################################################
 #####											 #####
-#####	Crisis Manager						   #####
+#####	Crisis Manager							#####
 #####											 #####
 #####	Scripted Triggers for Mid-Game Crisis	#####
 #####											 #####
@@ -9,7 +9,7 @@
 #######################################################
 
 ##############
-###  Khan  ###
+###  Khan	###
 ##############
 
 ### Global Conditions
@@ -153,7 +153,7 @@ CmtTriggerCountryHiringMarauder3 = {
 }
 
 #######################
-###  L-Gate Common  ###
+###  L-Gate Common	###
 #######################
 
 CmtTriggerIsClosedLgate = {
@@ -172,7 +172,7 @@ CmtTriggerIsOpenedLgate = {
 # }
 
 #################
-###  Dessanu  ###
+###  Dessanu	###
 #################
 
 CmtTriggerHasDessanuGift = {

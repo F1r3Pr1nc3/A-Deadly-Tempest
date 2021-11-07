@@ -1,7 +1,7 @@
 wg_access_lcluster = {
-	# Required, the actor must have a Casus Belli against the target
+	# Required, the actor must have a Casus Belli against the target.
 	casus_belli = cb_lgate_port
-	# Hide this wargoal if country doesn't have the requisite CB
+	# Hide this wargoal if country doesn't have the requisite CB.
 	hide_if_no_cb = yes	# Default no
 	total_war = no
 
@@ -17,13 +17,13 @@ wg_access_lcluster = {
 	surrender_acceptance = 25 # Default 0
 	# This affects how quickly war exhaustion builds up for this side in the war (2.0 = twice as fast)
 	war_exhaustion = 0.5 # Default 1.0
-	# If used as attacker wargoal and set, defender will have their wargoal predetermined by this
-	# If not set, defender gets to pick their own wargoal
+	# If used as attacker wargoal and set, defender will have their wargoal predetermined by this.
+	# If not set, defender gets to pick their own wargoal.
 	set_defender_wargoal = wg_access_lcluster
-	#	# Defenders get this war goal if no war goal is picked in time. If multiple war goals are set to
-#	# be defender default, the first one scripted in the file is chosen.
+	#	# Defenders get this war goal if no war goal is picked in time. If multiple war goals are set to.
+#	# Be defender default, the first one scripted in the file is chosen.
 #	defender_default = yes # Default no
-	# This decides whether claims should be listed in the description
+	# This decides whether claims should be listed in the description.
 #	show_claims_in_description = yes # Default no
 
 	# from = The targeted country
@@ -51,7 +51,7 @@ wg_access_lcluster = {
 	ai_weight = {
 		weight = 25
 	}
-	# Run when war ends in status quo
+	# Run when war ends in status quo.
 	on_status_quo = {
 		from = {
 			random_owned_planet = { open_terminal_egress = yes }
@@ -60,7 +60,7 @@ wg_access_lcluster = {
 		set_global_flag = lgates_activated_globally
 		set_country_flag = lgates_activated
 	}
-	# Run when target surrenders after claims are ceded
+	# Run when target surrenders after claims are ceded.
 	on_accept = {
 		custom_tooltip = war_goal_wg_access_lcluster_tooltip
 		from = {
@@ -91,9 +91,9 @@ wg_access_lcluster = {
 }
 
 wg_access_lcluster_long = {
-	# Required, the actor must have a Casus Belli against the target
+	# Required, the actor must have a Casus Belli against the target.
 	casus_belli = cb_lgate_port
-	# Hide this wargoal if country doesn't have the requisite CB
+	# Hide this wargoal if country doesn't have the requisite CB.
 	hide_if_no_cb = yes	# Default no
 	total_war = no
 
@@ -109,13 +109,13 @@ wg_access_lcluster_long = {
 	surrender_acceptance = -30 # Default 0
 	# This affects how quickly war exhaustion builds up for this side in the war (2.0 = twice as fast)
 	war_exhaustion = 0.5 # Default 1.0
-	# If used as attacker wargoal and set, defender will have their wargoal predetermined by this
-	# If not set, defender gets to pick their own wargoal
+	# If used as attacker wargoal and set, defender will have their wargoal predetermined by this.
+	# If not set, defender gets to pick their own wargoal.
 	set_defender_wargoal = wg_access_lcluster_long
-	#	# Defenders get this war goal if no war goal is picked in time. If multiple war goals are set to
-#	# be defender default, the first one scripted in the file is chosen.
+	#	# Defenders get this war goal if no war goal is picked in time. If multiple war goals are set to.
+#	# Be defender default, the first one scripted in the file is chosen.
 #	defender_default = yes # Default no
-	# This decides whether claims should be listed in the description
+	# This decides whether claims should be listed in the description.
 #	show_claims_in_description = yes # Default no
 
 	# from = The targeted country
@@ -143,7 +143,7 @@ wg_access_lcluster_long = {
 	ai_weight = {
 		weight = 75
 	}
-	# Run when war ends in status quo
+	# Run when war ends in status quo.
 	on_status_quo = {
 		set_global_flag = lgates_activated_globally
 		from = {
@@ -152,7 +152,7 @@ wg_access_lcluster_long = {
 		}
 		set_country_flag = lgates_activated
 	}
-	# Run when target surrenders after claims are ceded
+	# Run when target surrenders after claims are ceded.
 	on_accept = {
 		custom_tooltip = war_goal_wg_access_lcluster_long_tooltip
 		from = {

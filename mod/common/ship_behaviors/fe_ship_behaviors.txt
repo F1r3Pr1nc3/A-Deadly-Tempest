@@ -16,9 +16,9 @@
 #	combat_target_anchor = parent				# What anchor to use for target when calculating the combat position for this ship, this is the combat position of the anchor ship. For `root` this will be the actual target.
 											# Valid values are: 'parent', 'root' ( where 'parent' is the immediate parent ship and 'root' the fleet leader ship )
 #
-#	collision_awareness = 0.5						# How much we try to avoid other ships
-#	collision_strafe = 1.0							# Allows the ship to move in any direction while colliding with another
-#	collision_radius = 1.0						# Multiplier on the radius specified in the ship size
+#	collision_awareness = 0.5						# How much we try to avoid other ships.
+#	collision_strafe = 1.0							# Allows the ship to move in any direction while colliding with another.
+#	collision_radius = 1.0						# Multiplier on the radius specified in the ship size.
 #	attack_move_pattern = orbit					# Valid values: '
 #	passive_move_pattern = charge				#
 #

@@ -3,7 +3,7 @@
 # Project available
 country_event = {
 	id = distar.10905
-	title = "lclusterplus.10905.name"
+	title = "LCLUSTER_PROJECT" # "distar.10905.name" "lclusterplus.10905.name"
 	desc = {
 		text = "distar.10905.desc"
 		# trigger = {
@@ -23,7 +23,7 @@ country_event = {
 			}
 		}
 	}
-	picture = GFX_evt_drifting_gateway
+	picture =  GFX_evt_l-gateway # GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	location = event_target:candidate_gateway
 	is_triggered_only = yes
@@ -37,7 +37,7 @@ country_event = {
 	option = {
 		name = "distar.10905.a"
 		event_target:candidate_gateway = {
-			# In fact needless PROJECT_OVERWRITE which causes a lot of additonal event PROJECT_OVERWRITEs with resulting of a lot more incompatiblity
+			# In fact needless PROJECT_OVERWRITE which causes a lot of additonal event PROJECT_OVERWRITEs with resulting of a lot more incompatiblity.
 			if = { limit = { has_global_flag = l_cluster_origin }
 				enable_special_project = {
 					name = LCLUSTER_PROJECT_OVERWRITE

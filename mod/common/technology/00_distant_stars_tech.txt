@@ -210,6 +210,6 @@ tech_nanite_repair_system = {
 	# 	potential = { # 		has_resource = { type = sr_living_metal amount > 0 }
 
 	weight_modifier = {
-		factor = 0		# Can only be reverse engineered from killing the Scavenger Bot
+		factor = 0		# Can only be reverse engineered from killing the Scavenger Bot.
 	}
 }

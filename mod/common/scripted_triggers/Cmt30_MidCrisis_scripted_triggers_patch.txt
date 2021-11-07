@@ -1,13 +1,13 @@
 #######################################################
 #####											 #####
-#####	Crisis Manager						   #####
-#####	Comp Patch for A Deadly Tempest		  #####
+#####	Crisis Manager							#####
+#####	Comp Patch for A Deadly Tempest			#####
 #####	Scripted Triggers for Mid-Game Crisis	#####
 #####											 #####
 #######################################################
 
 #######################
-###  L-Gate Common  ###
+###  L-Gate Common	###
 #######################
 
 CmtTriggerIsClosedLgate = {

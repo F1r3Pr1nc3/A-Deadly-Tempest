@@ -2,10 +2,10 @@ namespace = distar
 ###############################################
 ###############################################
 #####									 #####
-#####	 L-Gates Events and Graygoo	  #####
-#####	  Support A Deadly Tempest	   #####
+#####	 L-Gates Events and Graygoo		#####
+#####	  Support A Deadly Tempest		#####
 #####	   Support Crisis Manager		#####
-#####	   Support Expanded Events	   #####
+#####	   Support Expanded Events		#####
 #####									 #####
 ###############################################
 ###############################################
@@ -139,7 +139,7 @@ country_event = {
 				}
 			}
 			else = {
-				# If no valid scope search generally
+				# If no valid scope search generally.
 				every_system_within_border = {
 					limit = { has_star_flag = lgate }
 					every_fleet_in_system = {
@@ -215,7 +215,7 @@ country_event = {
 						factor = 0
 						# OR = {
 						has_global_flag = CmtFlagLgateForbidLdrake
-						# remove outcome anyway?
+						# Remove outcome anyway?
 						has_global_flag = CmtFlagLgateForbidSilence
 						NAND = {
 							has_global_flag = CmtFlagLgateForbidDessanu
@@ -240,7 +240,7 @@ country_event = {
 					set_global_flag = active_gray_goo
 				}
 			}
-			## ADT: Always L-Drake TODO CM ready
+			## ADT: Always L-Drake TODO CM ready.
 			if = {
 				limit = {
 					NOT = { has_global_flag = CmtFlagLgateForbidLdrake }
@@ -257,7 +257,7 @@ country_event = {
 		### Call outcome (to be determined at game start)
 		if = {
 			limit = { has_global_flag = dragon_season }
-			# All gates must not be deactivated, so call it first
+			# All gates must not be deactivated, so call it first.
 			event_target:CmtTargetLgateOriginatingSystem = {
 				closest_system = {
 					min_steps = 3
@@ -305,7 +305,7 @@ country_event = {
 		# 		}
 		# 	}
 		# }
-		# Try to refresh posssible missing target
+		# Try to refresh posssible missing target.
 		if = {
 			limit = { NOT = { exists = event_target:candidate_gateway } }
 			if = {
@@ -503,7 +503,7 @@ country_event = {
 }
 
 #################
-###  L-Drake  ###
+###  L-Drake	###
 #################
 # fired from opening event
 country_event = {
@@ -666,7 +666,7 @@ country_event = {
 	}
 }
 
-# Notification telling you where dragons are headed
+# Notification telling you where dragons are headed.
 country_event = {
 	id = distar.13010
 	title = distar.13010.name
@@ -862,7 +862,7 @@ country_event = {
 	}
 }
 
-# Science Ship enters dragon system
+# Science Ship enters dragon system.
 fleet_event = {
 	id = distar.13030
 	title = distar.13030.name

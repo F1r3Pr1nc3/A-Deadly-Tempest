@@ -394,7 +394,7 @@ tech_voidspawn = {
 	tier = 5
 	category = { voidcraft }
 	prerequisites = {
-		"tech_colossus" # ap too restrictive?
+		"tech_colossus" # Ap too restrictive?
 		# "tech_pk_nanobots"
 		# "tech_gargantuan_evolution"
 		"tech_nanite_guardians"

@@ -2,16 +2,16 @@ namespace = CrisisManagerControl
 
 ############################################
 ############################################
-#####								  #####
+#####									#####
 #####	Crisis Manager				#####
-#####								  #####
+#####									#####
 #####	Khan (Horde Crisis) Events	#####
-#####								  #####
+#####									#####
 ############################################
 ############################################
 
 ####################################################
-###  Standard Awakening of Khan (Not Vengeance)  ###
+###  Standard Awakening of Khan (Not Vengeance)	###
 ####################################################
 
 ### Check Trigger Condition
@@ -208,7 +208,7 @@ event = {
 }
 
 ##############################################
-###  Control Flag for Probability of Khan  ###
+###  Control Flag for Probability of Khan	###
 ##############################################
 
 country_event = {

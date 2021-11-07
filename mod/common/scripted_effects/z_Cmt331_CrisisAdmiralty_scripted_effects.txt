@@ -1,10 +1,10 @@
 ##########################################################
 ##########################################################
 #####												#####
-#####	Crisis Manager							  #####
+#####	Crisis Manager								#####
 #####												#####
 #####	Scripted Effects for Creating Fleet Sets	#####
-#####	of Mid-Game Crises						  #####
+#####	of Mid-Game Crises							#####
 #####												#####
 ##########################################################
 ##########################################################
@@ -15,7 +15,7 @@
 #
 
 ###################
-###  Constants  ###
+###  Constants	###
 ###################
 @CmtConstKhanConstructorUpperLimit = 5		## -1
 @CmtConstKhanArmyUpperLimit = 40		## -1
@@ -42,10 +42,10 @@
 @CmtGraygooFleetNumberGuardAwakeLimit = 0.7		# Percent of FleetLimit (1 = 100)
 
 ##############
-###  Khan  ###
+###  Khan	###
 ##############
 
-### The Fleet for Khan Own
+### The Fleet for Khan Own.
 # CmtEffectCreateAdmiralty_Khan1stFleet = {		### Exception: Leader = event_target:great_khan
 # 	event_target:raider_khanate = {
 # 		CmtEffectCreateFleet_Khan1stFleet = yes
@@ -438,7 +438,7 @@ CmtEffectInitFleetUpperLimit = {
 	# set_variable = { which = CmtVarFleetAngle value = 0.03605 }
 	set_variable = { which = CmtVarFleetAngle value = 360.5 }
 	divide_variable = { which = CmtVarFleetAngle value = CmtVarCapitalDefenceNumber }
-	# We need integer not float
+	# We need integer not float.
 	round_variable = CmtVarFleetAngle
 	# divide_variable = { which = CmtVarFleetAngle value = 10 } # for more precise rounding
 	# multiply_variable = { which = CmtVarFleetAngle value = 100000 }
@@ -447,7 +447,7 @@ CmtEffectInitFleetUpperLimit = {
 }
 
 #################
-###  Dessanu  ###
+###  Dessanu	###
 #################
 
 CmtEffectCreateAdmiralty_DessanuCapitalDefence = {
@@ -621,7 +621,7 @@ CmtEffectCreateAdmiralty_DessanuRoamer = {
 }
 
 #################
-###  Graygoo  ###
+###  Graygoo	###
 #################
 
 CmtEffectCreateAdmiralty_GraygooCapitalDefence = {

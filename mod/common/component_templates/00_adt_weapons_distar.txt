@@ -38,7 +38,7 @@ strike_craft_component_template = {
 	armor_penetration = 0.66
 
 	ship_behavior = "bombers_behavior"
-	weapon_type = instant  # Not PD, unlike normal strike craft
+	weapon_type = instant  # Not PD, unlike normal strike craft.
 	projectile_gfx = "strike_craft_laser_3"
 	prerequisites = { "tech_nanite_strike_craft" }
 	component_set = "NANITE_STRIKE_CRAFT"
@@ -46,6 +46,13 @@ strike_craft_component_template = {
 	icon_frame = 1
 	tags = { weapon_type_strike_craft }
 	ai_tags = { weapon_type_strike_craft }
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+	}
 }
 
 weapon_component_template = {
@@ -84,6 +91,13 @@ weapon_component_template = {
 	projectile_gfx = "gatebuilder_torpedo"
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 1
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+	}
 }
 
 weapon_component_template = {
@@ -130,6 +144,13 @@ weapon_component_template = {
 	projectile_gfx = "gatebuilder_titan_weapon"
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 1
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+	}
 }
 
 weapon_component_template = {
@@ -174,7 +195,13 @@ weapon_component_template = {
 	projectile_gfx = "gatebuilder_titan_weapon"
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 2
-	ai_weight = { weight = 2 }
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+	}
 }
 
 weapon_component_template = {
@@ -213,7 +240,13 @@ weapon_component_template = {
 	projectile_gfx = "gatebuilder_titan_weapon"
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 1
-	# ai_weight = { weight = 1 }
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+	}
 }
 
 # ## Energy Torpedo Launchers
@@ -273,11 +306,11 @@ weapon_component_template = {
 			is_country_type_with_subjects = yes
 			has_monthly_income = {
 				resource = exotic_gases
-				value <= 0
+				value < 1
 			}
 			has_monthly_income = {
 				resource = nanites
-				value <= 0
+				value < 1
 			}
 		}
 	}

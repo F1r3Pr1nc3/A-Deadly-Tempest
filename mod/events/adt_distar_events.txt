@@ -283,7 +283,7 @@ event = {
 					set_planet_entity = {
 						entity = pc_arid
 					}
-				}				# vanilla fix!?
+				}				# Vanilla fix!?
 				pc_gray_goo = {
 					set_planet_entity = {
 						entity = pc_gray_goo
@@ -356,13 +356,13 @@ country_event = {
 	}
 }
 
-# Attempts to create new enigmatic cache at safe location
+# Attempts to create new enigmatic cache at safe location.
 country_event = {
 	id = distar.5055
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		# Shouldn't trigger if the enigmatic cache country already has an enigmatic cache in rotation
+		# Shouldn't trigger if the enigmatic cache country already has an enigmatic cache in rotation.
 		NOT = {
 			any_owned_ship = {
 				has_ship_flag = enigmatic_cache_ship
@@ -550,10 +550,10 @@ country_event = {
 	immediate = {
 		set_spawn_system_batch = begin
 		# Batch-processes the spawn_system effects between "begin" and "end"
-		# So caches are recalculated only once rather than for every system spawned
-		# Can also be used when removing and adding hyperlanes
+		# So caches are recalculated only once rather than for every system spawned.
+		# Can also be used when removing and adding hyperlanes.
 		no_scope = {
-			# Makes system positions originate from galactic core
+			# Makes system positions originate from galactic core.
 			spawn_system = {
 				min_distance >= 550
 				max_distance <= 560
@@ -717,7 +717,7 @@ country_event = {
 				}
 			}
 
-			# Mod GUILLI / Crisis Manager support
+			# Mod GUILLI / Crisis Manager support.
 			if = {
 				limit = {
 					OR = {

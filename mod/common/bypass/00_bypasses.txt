@@ -1,6 +1,6 @@
 #
-# These defines the type of bypasses that exist in game. This is only the logical connection between system
-# These can be added to megastructures
+# These defines the type of bypasses that exist in game. This is only the logical connection between system.
+# These can be added to megastructures.
 #
 # bypass_type = {
 # 	name = GATEWAY_GALACTIC 		# the localization key used in triggers and effects for the type
@@ -126,11 +126,11 @@ wormhole = {
 			OR = {
 				# System has no owner
 				NOT = { exists = from }
-				# System's owner has not closed borders to you
+				# System's owner has not closed borders to you.
 				from = { NOT = { has_closed_borders = root } }
-				# System's owner is at war with you
+				# System's owner is at war with you.
 				from = { is_at_war_with = root }
-				# System's owner is not a proper empire
+				# System's owner is not a proper empire.
 				from = {
 					NOR = {
 						is_country_type_with_subjects = yes
@@ -170,7 +170,7 @@ lgate = {
 	ftl_bypass_effect = "gateway_ftl_bypass_effect_entity"
 	# prerequisites = { tech_lgate_activation }
 	on_pre_explore = {
-		# Fallback for defect save games
+		# Fallback for defect save games.
 		if = {
 			limit = {
 				exists = owner
@@ -204,7 +204,7 @@ lgate = {
 				has_global_flag = lgates_activated_globally
 				has_country_flag = lgates_activated
 			}
-			# invalid object???
+			# Invalid object???
 			NOR = {
 				is_country_type = amoeba
 				is_country_type = amoeba_borderless

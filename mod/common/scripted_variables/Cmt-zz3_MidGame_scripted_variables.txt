@@ -2,7 +2,7 @@
 ######################################################
 ######################################################
 #####											#####
-#####	Crisis Manager						  #####
+#####	Crisis Manager							#####
 #####											#####
 #####	Global Constants for Mid-Game Crisis	#####
 #####											#####
@@ -10,7 +10,7 @@
 ######################################################
 
 ########################################
-###  Khan to Awakiening at Earliest  ###
+###  Khan to Awakiening at Earliest	###
 ########################################
 #
 #	Change also localisation file and comment in template event file.
@@ -41,7 +41,7 @@
 @CmtConstKhanEarliestMgpy_TA = 500
 
 ########################################
-###  Last Chance of Khan Awakiening  ###
+###  Last Chance of Khan Awakiening	###
 ########################################
 #
 #	Change also localisation file and comment in template event file.
@@ -72,7 +72,7 @@
 @CmtConstKhanLatestEgpy_TA = 500
 
 #######################
-###  Khan Interval  ###
+###  Khan Interval	###
 #######################
 #
 #	Change also localisation file and comment in template event file.
@@ -102,7 +102,7 @@
 @CmtConstKhanInterval_T5 = 500
 
 ########################################
-###  Uprising to Happen at Earliest  ###
+###  Uprising to Happen at Earliest	###
 ########################################
 #
 #	Change also localisation file and comment in template event file.

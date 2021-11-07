@@ -521,7 +521,7 @@ scavenger_bot = {
 		}
 	}
 
-	# empire_limit = { base = 1 } # is shown globally?!?
+	# empire_limit = { base = 1 } # Is shown globally?!?
 	num_target_locators = 0
 	is_space_station = no
 	takes_name_from_ship_design = yes
@@ -594,7 +594,7 @@ voidspawn = {
 
 	combat_disengage_chance = 1.25
 
-	# empire_limit = {  # is shown globally?!?
+	# empire_limit = {  # Is shown globally?!?
 	# 	base = 1
 	# 	max = 2
 	# 	naval_cap_div = 700
@@ -688,7 +688,7 @@ voidspawn = {
 	}
 }
 
-##  Nanite Starbase  ##
+##  Nanite Starbase	##
 # military_station_xl_bulwark = {
 # military_station_large = {
 military_station_nanite_bulwark = {
@@ -812,9 +812,9 @@ starbase_gatebuilders = {
 	is_civilian = no
 	components_add_to_cost = no
 	is_listed = no
-	can_disable = no ## TODO yes - not really working
+	can_disable = no ## TODO yes - not really working.
 	prerequisites = { "tech_nanite_ships" }
-	enable_default_design = no # v.no TODO yes - leads to free starbases?
+	enable_default_design = no # V.no TODO yes - leads to free starbases?
 	class = shipclass_starbase
 
 	required_component_set = "power_core"
@@ -825,7 +825,7 @@ starbase_gatebuilders = {
 	formation_priority = @aj_starbase_formation_priority
 }
 
-##   Nanite Factory   ##
+##   Nanite Factory	##
 # military_station_xxl_citadel
 graygoo_factory = {
 	is_space_object = yes

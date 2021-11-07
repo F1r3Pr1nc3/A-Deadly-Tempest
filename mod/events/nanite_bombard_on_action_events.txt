@@ -278,3 +278,14 @@ planet_event = {
 		name = graygoo.2.a
 	}
 }
+
+namespace = lclusterplus
+# dummy
+country_event = {
+	id = lclusterplus.10
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		country_event = { id = distar.10950 }
+	}
+}

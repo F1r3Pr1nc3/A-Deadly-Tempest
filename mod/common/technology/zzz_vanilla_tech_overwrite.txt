@@ -1,4 +1,4 @@
-## Increased weight modifier for ADT
+## Increased weight modifier for ADT.
 # Nanite Transmutation
 tech_nanite_transmutation = {
 	cost = @tier2cost3

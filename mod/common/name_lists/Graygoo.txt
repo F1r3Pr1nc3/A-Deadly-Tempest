@@ -32,11 +32,11 @@ graygoo = {
 			# A complete name
 			full_names = {
 			}
-			# Always combined with a second name
+			# Always combined with a second name.
 			first_names = {
 				Ir'B An'K Su'V Te'K In'D Ar'I Be'K Bi'V Ve'K Vi'T Al'D De'B Il'T Ra'B Ra'I Bu'S Se'K Si'V
 			}
-			# Always combined with a first name
+			# Always combined with a first name.
 			second_names = {
 				se'Ska ba'Riv or'Tob ni'Var ki'Rav si'Kor va'Bir ra'Tov il'Tek po'Kar tu'Vak er'Bik
 			}

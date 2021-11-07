@@ -23,9 +23,7 @@ utility_component_template = {
 	icon = "GFX_ship_part_nanite_armor"
 	icon_frame = 1
 	power = 0
-	modifier = {
-		ship_armor_add = @armor_nanite_8S
-	}
+	modifier = { ship_armor_add = @armor_nanite_8S }
 
 	prerequisites = { "tech_nanite_armor" }
 	component_set = "NANITE_ARMOR"
@@ -40,6 +38,13 @@ utility_component_template = {
 			alloys = @s_t8_nanite_upkeep_alloys
 		}
 	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+	}
 }
 
 utility_component_template = {
@@ -48,9 +53,7 @@ utility_component_template = {
 	icon = "GFX_ship_part_nanite_armor"
 	icon_frame = 1
 	power = 0
-	modifier = {
-		ship_armor_add = @armor_nanite_8M
-	}
+	modifier = { ship_armor_add = @armor_nanite_8M }
 
 	prerequisites = { "tech_nanite_armor" }
 	component_set = "NANITE_ARMOR"
@@ -65,6 +68,13 @@ utility_component_template = {
 			alloys = @m_t8_nanite_upkeep_alloys
 		}
 	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+	}
 }
 
 utility_component_template = {
@@ -73,9 +83,7 @@ utility_component_template = {
 	icon = "GFX_ship_part_nanite_armor"
 	icon_frame = 1
 	power = 0
-	modifier = {
-		ship_armor_add = @armor_nanite_8L
-	}
+	modifier = { ship_armor_add = @armor_nanite_8L }
 
 	prerequisites = { "tech_nanite_armor" }
 	component_set = "NANITE_ARMOR"
@@ -88,6 +96,13 @@ utility_component_template = {
 		upkeep = {
 			energy = @l_t8_nanite_upkeep_energy
 			alloys = @l_t8_nanite_upkeep_alloys
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
 		}
 	}
 }

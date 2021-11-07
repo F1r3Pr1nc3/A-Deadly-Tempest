@@ -2,7 +2,7 @@
 ##########################################
 ##########################################
 #####								#####
-#####	Crisis Manager			  #####
+#####	Crisis Manager				#####
 #####								#####
 #####	Scripted Effects to		 #####
 #####	Set Auxiliary Parameters	#####
@@ -18,7 +18,7 @@
 #
 
 #################
-###  Dessanu  ###
+###  Dessanu	###
 #################
 
 CmtFleetSetAuxParam_DessanuGarryson = {
@@ -35,7 +35,7 @@ CmtFleetSetAuxParam_DessanuGarryson = {
 }
 
 #################
-###  Graygoo  ###
+###  Graygoo	###
 #################
 
 CmtFleetSetAuxParam_GraygooGarryson = {

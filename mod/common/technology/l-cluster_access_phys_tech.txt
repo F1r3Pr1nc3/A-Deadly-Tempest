@@ -1,7 +1,7 @@
 # ##################
 # Nanite L-Gate
 # ##################
-# Nanite lgate Access physics technology
+# Nanite lgate Access physics technology.
 tech_lcluster_access = {
 	area = physics
 	cost = @tier5cost2

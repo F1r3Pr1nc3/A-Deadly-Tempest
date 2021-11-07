@@ -32,7 +32,7 @@ utility_component_template = {
 	upgrades_to = "SMALL_NHSC_NANO_ARMOR_2"
 
 	ai_weight = {
-		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		### AI shouldn't use this component if it can't afford at least some upgrades right away.
 		modifier = {
 			factor = 0
 			resource_stockpile_compare = {
@@ -73,7 +73,7 @@ utility_component_template = {
 	upgrades_to = "MEDIUM_NHSC_NANO_ARMOR_2"
 
 	ai_weight = {
-		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		### AI shouldn't use this component if it can't afford at least some upgrades right away.
 		modifier = {
 			factor = 0
 			resource_stockpile_compare = {
@@ -115,7 +115,7 @@ utility_component_template = {
 
 	ai_weight = {
 		weight = 1
-		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		### AI shouldn't use this component if it can't afford at least some upgrades right away.
 		modifier = {
 			factor = 0
 			resource_stockpile_compare = {

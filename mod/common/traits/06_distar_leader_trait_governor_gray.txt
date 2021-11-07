@@ -26,7 +26,7 @@ leader_trait_governor_gray = {
 	randomized = no
 }
 
-## For Warship Girls R And MIST Species
+## For Warship Girls R And MIST Species.
 leader_trait_admiral_gray = {
 	cost = 0
 	modification = no

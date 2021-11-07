@@ -56,7 +56,7 @@ has_total_war_cb = {
 	}
 }
 
-# Workaround: as is_overlord_to is not working for Khan
+# Workaround: as is_overlord_to is not working for Khan.
 # This = Satrapy
 is_subject_of_khan = {
 	is_subject = yes
