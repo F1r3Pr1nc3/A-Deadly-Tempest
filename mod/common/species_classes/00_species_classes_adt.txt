@@ -28,6 +28,7 @@ ROBOT = {
 		portraits = {
 			"lith_machine"
 			"lithnanite"
+			"lithnanite_02"
 		}
 	}
 	custom_portraits = {
@@ -122,6 +123,7 @@ MACHINE = {
 		portraits = {
 			"lith_machine"
 			"lithnanite"
+			"lithnanite_02"
 		}
 	}
 

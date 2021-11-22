@@ -2,7 +2,10 @@
 open_terminal_egress = {
 	set_global_flag = lgates_activated_globally
 	if = {
-		limit = { has_owner = yes }
+		limit = {
+			NOT = { is_scope_type = country }
+			exists = owner # has_owner = yes
+		}
 		owner = {
 			set_country_flag = lgates_activated
 			remove_country_flag = lcluster_closer

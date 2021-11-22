@@ -12,7 +12,7 @@ namespace = CrisisManagerMenu
 #################################################
 
 ###############################
-### Awakening of Sleepers	###
+###- Awakening of Sleepers -###
 ###############################
 
 country_event = {

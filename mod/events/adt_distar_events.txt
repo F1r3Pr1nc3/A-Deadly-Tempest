@@ -9,7 +9,7 @@ namespace = distar
 #
 #################################
 
-### Empty outcome removed ###
+###- Empty outcome removed -###
 # Randomize L-Cluster outcome on_game_start
 event = {
 	id = distar.8000
@@ -21,9 +21,7 @@ event = {
 				set_global_flag = gray_goo_empire_set
 				set_global_flag = dragon_season
 			}
-			3 = {
-				set_global_flag = dragon_season
-			}
+			3 = { set_global_flag = dragon_season }
 			7 = {
 				set_global_flag = gray_goo_crisis_set
 				set_global_flag = active_gray_goo
@@ -43,9 +41,7 @@ event = {
 	trigger = {
 		has_distar = yes
 		NOT = {
-			any_system = {
-				has_star_flag = enigmatic_cache_system
-			}
+			any_system = { has_star_flag = enigmatic_cache_system }
 		}
 		any_playable_country = {
 			is_ai = no
@@ -67,9 +63,7 @@ event = {
 				}
 			}
 			star = {
-				planet_event = {
-					id = distar.20501
-				}
+				planet_event = { id = distar.20501 }
 			}
 		}
 	}
@@ -133,9 +127,7 @@ planet_event = {
 				}
 				save_global_event_target_as = hatchling_country
 				set_country_flag = hatchling_country
-				every_playable_country = {
-					establish_communications_no_message = event_target:hatchling_country
-				}
+				every_playable_country = { establish_communications_no_message = event_target:hatchling_country }
 				create_fleet = {
 					name = "NAME_Voidspawn"
 					settings = {
@@ -175,7 +167,7 @@ planet_event = {
 							create_ship = {
 								name = "NAME_Voidspawn"
 								design = "NAME_Voidspawn"
-								# effect = {  }
+								# effect = { }
 							}
 						}
 						last_created_ship = {
@@ -270,49 +262,31 @@ event = {
 			switch = {
 				trigger = is_planet_class
 				pc_savannah = {
-					set_planet_entity = {
-						entity = pc_savannah
-					}
+					set_planet_entity = { entity = pc_savannah }
 				}
 				pc_desert = {
-					set_planet_entity = {
-						entity = pc_desert
-					}
+					set_planet_entity = { entity = pc_desert }
 				}
-				pc_arid = {
-					set_planet_entity = {
-						entity = pc_arid
-					}
-				}				# Vanilla fix!?
+				pc_arid = {				# Vanilla fix!?
+					set_planet_entity = { entity = pc_arid }
+				}
 				pc_gray_goo = {
-					set_planet_entity = {
-						entity = pc_gray_goo
-					}
+					set_planet_entity = { entity = pc_gray_goo }
 				}
 				pc_gaia = {
-					set_planet_entity = {
-						entity = pc_gaia
-					}
+					set_planet_entity = { entity = pc_gaia }
 				}
 			}
 			if = {
-				limit = {
-					exists = owner
-				}
+				limit = { exists = owner }
 				owner = {
-					country_event = {
-						id = distar.5015
-					}
+					country_event = { id = distar.5015 }
 				}
 			}
 			else_if = {
-				limit = {
-					exists = space_owner
-				}
+				limit = { exists = space_owner }
 				space_owner = {
-					country_event = {
-						id = distar.5015
-					}
+					country_event = { id = distar.5015 }
 				}
 			}
 			set_planet_flag = rifts_removed
@@ -330,9 +304,7 @@ country_event = {
 	show_sound = event_radio_chatter
 	location = event_target:hatchling_egg
 	is_triggered_only = yes
-	option = {
-		name = EXCELLENT
-	}
+	option = { name = EXCELLENT }
 	after = {
 		hidden_effect = {
 			event_target:hatchling_egg = {
@@ -364,9 +336,7 @@ country_event = {
 	trigger = {
 		# Shouldn't trigger if the enigmatic cache country already has an enigmatic cache in rotation.
 		NOT = {
-			any_owned_ship = {
-				has_ship_flag = enigmatic_cache_ship
-			}
+			any_owned_ship = { has_ship_flag = enigmatic_cache_ship }
 		}
 	}
 	immediate = {
@@ -375,13 +345,9 @@ country_event = {
 				any_playable_country = {
 					is_ai = no
 					is_at_war = no
-					NOT = {
-						is_hostile = root.owner
-					}
+					NOT = { is_hostile = root.owner }
 					any_owned_planet = {
-						NOT = {
-							has_planet_flag = has_been_scanned
-						}
+						NOT = { has_planet_flag = has_been_scanned }
 					}
 				}
 			}
@@ -391,28 +357,20 @@ country_event = {
 					owner = {
 						is_ai = no
 						is_at_war = no
-						NOT = {
-							is_hostile = root.owner
-						}
+						NOT = { is_hostile = root.owner }
 					}
 					any_system_planet = {
 						is_colony = yes
-						NOT = {
-							has_planet_flag = has_been_scanned
-						}
+						NOT = { has_planet_flag = has_been_scanned }
 					}
 				}
 				random_system_planet = {
 					limit = {
 						is_colony = yes
-						NOT = {
-							has_planet_flag = has_been_scanned
-						}
+						NOT = { has_planet_flag = has_been_scanned }
 					}
 					save_event_target_as = new_location
-					solar_system = {
-						set_star_flag = enigmatic_cache_system
-					}
+					solar_system = { set_star_flag = enigmatic_cache_system }
 				}
 			}
 			create_enigmatic_cache_fleet = yes
@@ -455,9 +413,7 @@ country_event = {
 						}
 					}
 					save_event_target_as = new_location
-					solar_system = {
-						set_star_flag = enigmatic_cache_system
-					}
+					solar_system = { set_star_flag = enigmatic_cache_system }
 				}
 			}
 			create_enigmatic_cache_fleet = yes
@@ -482,22 +438,15 @@ country_event = {
 					}
 				}
 				random_system_planet = {
-					limit = {
-						has_owner = no
-					}
+					limit = { has_owner = no }
 					save_event_target_as = new_location
-					solar_system = {
-						set_star_flag = enigmatic_cache_system
-					}
+					solar_system = { set_star_flag = enigmatic_cache_system }
 				}
 			}
 			create_enigmatic_cache_fleet = yes
 		}
 		else = {
-			country_event = {
-				id = distar.5055
-				days = 500
-			}
+			country_event = { id = distar.5055 days = 500 }
 		}
 	}
 }
@@ -535,9 +484,7 @@ country_event = {
 		observer_event = { id = observer.62 }
 
 	}
-	option = {
-		name = "distar.10951.a"
-	}
+	option = { name = "distar.10951.a" }
 }
 
 # Spawn L-Cluster (bit optimized by FirePrince pre 3.0.3)
@@ -561,9 +508,7 @@ country_event = {
 				max_orientation_angle = 46
 				initializer = distantstars_init_01
 				hyperlane = no
-				effect = {
-					save_global_event_target_as = lcluster1
-				}
+				effect = { save_global_event_target_as = lcluster1 }
 			}
 			if = { limit = { NOT = { exists = event_target:lcluster1 } }
 				random_system = {
@@ -579,9 +524,7 @@ country_event = {
 					max_orientation_angle = 66
 					initializer = distantstars_init_02
 					hyperlane = no
-					effect = {
-						save_global_event_target_as = lcluster2
-					}
+					effect = { save_global_event_target_as = lcluster2 }
 				}
 				spawn_system = {
 					min_distance >= 29
@@ -590,9 +533,7 @@ country_event = {
 					max_orientation_angle = 156
 					initializer = distantstars_init_03
 					hyperlane = no
-					effect = {
-						save_global_event_target_as = lcluster3
-					}
+					effect = { save_global_event_target_as = lcluster3 }
 				}
 				spawn_system = {
 					min_distance >= 30
@@ -601,9 +542,7 @@ country_event = {
 					max_orientation_angle = 20
 					initializer = distantstars_init_01b
 					hyperlane = no
-					effect = {
-						save_global_event_target_as = lcluster1b
-					}
+					effect = { save_global_event_target_as = lcluster1b }
 				}
 			}
 			if = { limit = { NOT = { exists = event_target:lcluster2 } }
@@ -620,9 +559,7 @@ country_event = {
 					max_orientation_angle = 40
 					initializer = distantstars_init_02b
 					hyperlane = no
-					effect = {
-						save_global_event_target_as = lcluster2b
-					}
+					effect = { save_global_event_target_as = lcluster2b }
 				}
 			}
 			if = { limit = { NOT = { exists = event_target:lcluster3 } }
@@ -639,9 +576,7 @@ country_event = {
 					max_orientation_angle = 66
 					initializer = distantstars_init_04
 					hyperlane = no
-					effect = {
-						save_global_event_target_as = lcluster4
-				}
+					effect = { save_global_event_target_as = lcluster4 }
 				}
 				spawn_system = {
 					min_distance >= 10
@@ -650,9 +585,7 @@ country_event = {
 					max_orientation_angle = 290
 					initializer = distantstars_init_03b
 					hyperlane = no
-					effect = {
-						save_global_event_target_as = lcluster3b
-					}
+					effect = { save_global_event_target_as = lcluster3b }
 				}
 			}
 			if = { limit = { NOT = { exists = event_target:lcluster4 } }
@@ -681,9 +614,7 @@ country_event = {
 					max_orientation_angle = 160
 					initializer = distantstars_init_04b
 					hyperlane = no
-					effect = {
-						save_global_event_target_as = lcluster4b
-					}
+					effect = { save_global_event_target_as = lcluster4b }
 				}
 			}
 			if = { limit = { NOT = { exists = event_target:lcluster5 } }
@@ -759,61 +690,28 @@ country_event = {
 
 			# Add hyperlanes
 			event_target:lcluster5 = {
-				add_hyperlane = {
-					from = this
-					to = event_target:lcluster4
-				}
+				add_hyperlane = { from = this to = event_target:lcluster4 }
 				# For backward compat.
 				if = { limit = { exists = event_target:lcluster5b }
-					add_hyperlane = {
-						from = this
-						to = event_target:lcluster5b
-					}
+					add_hyperlane = { from = this to = event_target:lcluster5b }
 				}
 			}
 			event_target:lcluster4 = {
-				add_hyperlane = {
-					from = this
-					to = event_target:lcluster3
-				}
-				add_hyperlane = {
-					from = this
-					to = event_target:lcluster2
-				}
-				add_hyperlane = {
-					from = this
-					to = event_target:lcluster4b
-				}
+				add_hyperlane = { from = this to = event_target:lcluster3 }
+				add_hyperlane = { from = this to = event_target:lcluster2 }
+				add_hyperlane = { from = this to = event_target:lcluster4b }
 			}
 			event_target:lcluster3 = {
-				add_hyperlane = {
-					from = this
-					to = event_target:lcluster1
-				}
-				add_hyperlane = {
-					from = this
-					to = event_target:lcluster3b
-				}
+				add_hyperlane = { from = this to = event_target:lcluster1 }
+				add_hyperlane = { from = this to = event_target:lcluster3b }
 			}
 			event_target:lcluster2 = {
-				add_hyperlane = {
-					from = this
-					to = event_target:lcluster1
-				}
-				add_hyperlane = {
-					from = this
-					to = event_target:lcluster3
-				}
-				add_hyperlane = {
-					from = this
-					to = event_target:lcluster2b
-				}
+				add_hyperlane = { from = this to = event_target:lcluster1 }
+				add_hyperlane = { from = this to = event_target:lcluster3 }
+				add_hyperlane = { from = this to = event_target:lcluster2b }
 			}
 			event_target:lcluster1 = {
-				add_hyperlane = {
-					from = this
-					to = event_target:lcluster1b
-				}
+				add_hyperlane = { from = this to = event_target:lcluster1b }
 				# Activate Terminal Egress L-Gate
 				random_system_megastructure = {
 					limit = { is_megastructure_type = lgate_base }
@@ -823,10 +721,7 @@ country_event = {
 				set_star_flag = swarm_invasion_warning
 			}
 			event_target:lcluster1b = {
-				add_hyperlane = {
-					from = this
-					to = event_target:lcluster2b
-				}
+				add_hyperlane = { from = this to = event_target:lcluster2b }
 			}
 		}
 		set_spawn_system_batch = end

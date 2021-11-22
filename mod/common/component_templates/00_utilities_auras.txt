@@ -72,7 +72,7 @@ utility_component_template = {
 }
 
 # #################
-#  Reworked Auras
+# Reworked Auras
 # #################
 
 # Offensive
@@ -336,7 +336,7 @@ utility_component_template = {
 }
 
 # #################
-#  Hostile Auras
+# Hostile Auras
 # #################
 
 utility_component_template = {
@@ -382,7 +382,7 @@ utility_component_template = {
 }
 
 # ####################
-#  Juggernaut Auras
+# Juggernaut Auras
 # ####################
 
 # Strike Craft

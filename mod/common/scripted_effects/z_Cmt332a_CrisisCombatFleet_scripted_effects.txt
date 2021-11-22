@@ -16,7 +16,7 @@
 #
 
 ##############
-### Khan ###
+###- Khan -###
 ##############
 
 ### Fleet for Khan Own
@@ -696,7 +696,7 @@ CmtEffectCreateAdmiralty_KhanEncourager = {
 }
 
 #################
-### Dessanu ###
+###- Dessanu -###
 #################
 
 ### Element
@@ -754,7 +754,7 @@ CmtEffectCreateFleet_DessanuRoamer = {
 }
 
 #################
-### Graygoo ###
+###- Graygoo -###
 #################
 
 ### Element

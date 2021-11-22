@@ -981,7 +981,7 @@ country_event = {
 }
 
 ################
-### L-gate	###
+###- L-gate -###
 ################
 
 ### Clues
@@ -2316,7 +2316,7 @@ country_event = {
 }
 
 ##################
-### Uprising	###
+###- Uprising -###
 ##################
 
 ### Chain of Uprising

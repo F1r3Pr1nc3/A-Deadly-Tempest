@@ -503,7 +503,7 @@ country_event = {
 }
 
 #################
-###  L-Drake	###
+###- L-Drake -###
 #################
 # fired from opening event
 country_event = {

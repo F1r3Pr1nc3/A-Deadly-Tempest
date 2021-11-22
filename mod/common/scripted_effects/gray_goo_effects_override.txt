@@ -107,7 +107,6 @@ create_gray_warship = {
 					set_leader_flag = gray_admiral
 					# set_leader_flag = "灰风领袖"
 					change_leader_portrait = lithnanite
-					set_owner = prev
 				}
 			}
 		}
@@ -208,7 +207,6 @@ create_gray_army = {
 					save_global_event_target_as = gray_leader_general
 					set_leader_flag = gray_general
 					change_leader_portrait = lithnanite
-					set_owner = prev
 				}
 			}
 		}
@@ -253,4 +251,3 @@ create_gray_army = {
 	}
 
 }
-

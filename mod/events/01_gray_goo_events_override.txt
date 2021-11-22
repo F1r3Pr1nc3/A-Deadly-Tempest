@@ -453,7 +453,7 @@ country_event = {
 				}
 			}
 
-			## built-in-support for Twinks Dessanu ##
+			## Compat. hack built-in-support for Twinks Dessanu ##
 			if = {
 				limit = { NOT = { any_playable_country = { has_origin = origin_machine_nanites } } }
 				event_target:CmtGlobalVar = {
@@ -486,7 +486,6 @@ country_event = {
 							namelist = "ART4"
 							traits = { trait = random_traits }
 							# homeworld = random
-							immortal = yes
 						}
 					}
 					10 = {
@@ -496,7 +495,6 @@ country_event = {
 							class = "LITHOID"
 							portrait = random
 							traits = { trait = random_traits }
-							immortal = yes
 						}
 					}
 					10 = {
@@ -506,7 +504,6 @@ country_event = {
 							class = "REP"
 							portrait = random
 							traits = { trait = random_traits }
-							immortal = yes
 							effect = {
 								if = { limit = { species_portrait = "rep17" }
 									change_species_portrait = "rep8"
@@ -520,7 +517,6 @@ country_event = {
 							class = "MOL"
 							portrait = random
 							traits = { trait = random_traits }
-							immortal = yes
 						}
 					}
 					# 5 = {
@@ -530,7 +526,6 @@ country_event = {
 					# 		portrait = random
 					# 		namelist = "graygoo"
 					# 		traits = { trait = random_traits }
-					# 		immortal = yes
 					# 	}
 					# }
 				}
@@ -595,15 +590,7 @@ country_event = {
 								set_species_homeworld = event_target:start_5
 							}
 							save_global_event_target_as = gray_species
-							# change_species_characteristics = {
-							# 	immortal = yes
-							# 	pops_can_be_colonizers = yes
-							# 	pops_can_migrate = no
-							# 	pops_can_join_factions = yes
-							# 	pops_have_happiness = yes
-							# 	pops_can_reproduce = yes
-							# 	new_pop_resource_requirement = { type = food_surplus value = 0 }
-							# }
+							change_species_characteristics = { immortal = yes }
 							prev = {
 								change_dominant_species = { species = prev change_all = yes }
 								set_built_species = prev
@@ -1918,7 +1905,6 @@ country_event = {
 								}
 								# set_starbase_building = { slot = 3 building = "titan_yards" }
 								# set_starbase_building = { slot = 4 building = "colossus_yards" }
-								# set_owner = prev.
 								CmtEffectCreateAdmiralty_DessanuCapitalDefence = yes # Garrison Fleets
 							}
 						}

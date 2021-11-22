@@ -342,17 +342,9 @@ country_event = {
 			}
 			change_species_characteristics = {
 				immortal = yes
-				# pops_can_be_colonizers = yes
-				# pops_can_migrate = no
-				# pops_can_join_factions = no
-				# pops_have_happiness = no
-				# pops_can_be_slaves = no
-				# pops_can_reproduce = yes
-				# can_generate_leaders = yes
 				can_be_modified = yes
 				# pops_auto_growth = <1, speed at which the pops from that species grow automatically
 				# pop_maintenance = <1, amount of energy each pop of that species consume monthly
-				# new_pop_resource_requirement = { type = food_surplus value = 0 }
 				portrait = event_target:gray_species
 			}
 			remove_self_modified = yes

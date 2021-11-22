@@ -688,7 +688,7 @@ voidspawn = {
 	}
 }
 
-##  Nanite Starbase	##
+## Nanite Starbase	##
 # military_station_xl_bulwark = {
 # military_station_large = {
 military_station_nanite_bulwark = {
@@ -825,7 +825,7 @@ starbase_gatebuilders = {
 	formation_priority = @aj_starbase_formation_priority
 }
 
-##   Nanite Factory	##
+## Nanite Factory	##
 # military_station_xxl_citadel
 graygoo_factory = {
 	is_space_object = yes

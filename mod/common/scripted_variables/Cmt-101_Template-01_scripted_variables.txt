@@ -576,17 +576,17 @@
 		### Easy = 1, Normal = 2 (Default), Hard = 3, Doomsday = 4
 
 ### Common information for ''Individual Configurations''
-	### - '@CmtT101_ConstCrisisStrength' must be set zero(0) for using following configurations.
+	###- '@CmtT101_ConstCrisisStrength' must be set zero(0) for using following configurations.
 	###		> If it is NOT zero(0), all of following configurations are ignored.
-	### - To set same parameter for all crisis
+	###- To set same parameter for all crisis
 	###		> Input scale factor to '@CmtT101_Const****_Common'.
 	###		> In this case, '@CmtT101_Const****_<name of faction>' are ignored.
 	###		> 0(Zero) or negative number can NOT be inputted.
-	### - To set parameter individually for each crisis
+	###- To set parameter individually for each crisis
 	###		> Input 0(Zero) to '@CmtT101_Const****_Common'.
 	###		> Input scale factor to '@CmtT101_Const****_<name of crisis faction>'
-	### - All factors must be positive number that is multiple of 0.25.
-	### - Caution
+	###- All factors must be positive number that is multiple of 0.25.
+	###- Caution
 	###		> Immoderate factor makes heavy load on CPU and GPU
 	###		because these configurations modify the number of ships.
 	###		> Also factors grater than 3 can be inputted if you endure processing load excessive.

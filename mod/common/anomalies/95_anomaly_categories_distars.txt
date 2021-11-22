@@ -1,4 +1,4 @@
-### Gray ###
+###- Gray -###
 # disco_gray_cat = {
 # 	desc = "disco_gray_cat_desc"
 # 	picture = "GFX_evt_ship_in_orbit_2"

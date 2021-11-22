@@ -10,7 +10,7 @@
 #####################################
 
 ###############
-### Common	###
+###- Common -###
 ###############
 
 CmtEffectTransferAll = {
@@ -21,7 +21,7 @@ CmtEffectTransferAll = {
 }
 
 ###############
-### Khan	###
+###- Khan -###
 ###############
 
 ### Resurgence of Khan (Transcribe when they awakening)
@@ -79,9 +79,9 @@ CmtEffectTransferKhanPostDeath = {
 	}
 }
 
-###############
-### L-Gate	###
-###############
+################
+###- L-Gate -###
+################
 
 CmtEffectTransferLgateCycle = {
 	event_target:CmtGlobalVar = {

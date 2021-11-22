@@ -279,7 +279,7 @@ planet_event = {
 	}
 }
 
-namespace = lclusterplus
+namespace = lclusterplus # not really needed but to omit error.log
 # dummy
 country_event = {
 	id = lclusterplus.10

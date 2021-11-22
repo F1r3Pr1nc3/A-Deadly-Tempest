@@ -1,16 +1,16 @@
 
-############################################
-############################################
+#############################################
+#############################################
 #####									#####
-#####	Crisis Manager				#####
+#####	Crisis Manager					#####
 #####									#####
-#####	Scripted Triggers (Common)	#####
+#####	Scripted Triggers (Common)		#####
 #####									#####
-############################################
-############################################
+#############################################
+#############################################
 
 #######################
-### Basic Trigger	###
+###- Basic Trigger -###
 #######################
 
 ### For Spawning Each Countries, Scope: this = Stellar System
@@ -53,7 +53,7 @@ CmtTriggerIsStarbase = {		## Scope: this = ship
 }
 
 ############################
-### Check Country Type	###
+###- Check Country Type -###
 ############################
 
 ### Standard
@@ -219,7 +219,7 @@ CmtTriggerIsGraygoo = {
 }
 
 ##############################
-### Exist Crisis Country	###
+###- Exist Crisis Country -###
 ##############################
 
 ### End-Game Crisis
@@ -257,7 +257,7 @@ CmtTriggerExistGraygoo = {
 }
 
 #######################
-### Now in Crisis	###
+###- Now in Crisis -###
 #######################
 
 CmtTriggerInCrisisNow = {
@@ -294,7 +294,7 @@ CmtTriggerNowInKhanCrisis = {
 }
 
 #################################
-### Trigger Check of Events	###
+###- Trigger Check of Events -###
 #################################
 
 CmtTriggerAnyCrisisTriggered = {
@@ -374,7 +374,7 @@ CmtTriggerAnyManagedEventTriggered = {
 }
 
 ######################
-### Control Menu	###
+###- Control Menu -###
 ######################
 
 CmtTriggerAllViewerClosed = {
@@ -492,7 +492,7 @@ CmtTriggerUprisingConfig = {
 }
 
 ###################################
-### Check Template Activation	###
+###- Check Template Activation -###
 ###################################
 
 CmtTriggerTemplateActivated_T000 = {

@@ -29,7 +29,7 @@ wg_access_lcluster = {
 	# from = The targeted country
 	# this = The acting country
 	potential = {
-		always = yes # no means event only
+		always = yes # no: means event only
 	}
 	possible = {
 		always = yes
@@ -121,7 +121,7 @@ wg_access_lcluster_long = {
 	# from = The targeted country
 	# this = The acting country
 	potential = {
-		always = yes # no means event only
+		always = yes # no: means event only
 	}
 	possible = {
 		always = yes

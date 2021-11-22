@@ -10,7 +10,7 @@
 #########################################
 
 ######################
-### Basic Effect	###
+###- Basic Effect -###
 ######################
 
 CmtEffectExitMenu = {
@@ -31,7 +31,7 @@ CmtEffectSaveOriginalCountry = {
 }
 
 ###########################
-### Manual Operations	###
+###- Manual Operations -###
 ###########################
 
 CmtEffectManualTargetSleepers = {

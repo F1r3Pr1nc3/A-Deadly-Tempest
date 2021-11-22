@@ -1,6 +1,6 @@
 ##				 ESC : Armor Components				 ##
 
-# - Nanity-Infused Armor				S/M/L
+#- Nanity-Infused Armor				S/M/L
 
 utility_component_template = {
 	key = "SMALL_NHSC_NANO_ARMOR_1"

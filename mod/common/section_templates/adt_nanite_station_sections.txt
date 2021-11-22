@@ -1,4 +1,4 @@
-### Manite Bulwark ###
+###- Nanite Bulwark -###
 
 # ship_section_template = {
 # 	key = "NANITE_BULWARK_SMALL"

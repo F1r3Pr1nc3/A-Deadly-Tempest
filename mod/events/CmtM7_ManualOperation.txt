@@ -11,7 +11,7 @@ namespace = CrisisManagerMenu
 #################################
 
 ###################
-### Main Menu	###
+###- Main Menu -###
 ###################
 
 country_event = {
@@ -2025,16 +2025,17 @@ country_event = {
 							has_global_flag = l_cluster_opened
 							event_target:CmtGlobalVar = { is_variable_set = CmtVarManualTemp }
 						}
+						log="Run manual L-Cluster event with: \\[CmtGlobalVar.CmtVarManualTemp] \\[CmtTempOwner.GetName]"
 						if = {
 							limit = {
-								check_variable = { which = CmtVarManualTemp value = 2 }
+								event_target:CmtGlobalVar = { check_variable = { which = CmtVarManualTemp value = 2 } }
 								NOT = { has_global_flag = dragon_season }
 							}
 							set_global_flag = dragon_season
 							event_target:CmtTempOwner = { country_event = { id = distar.13000 } }
 						} else_if = {
 							limit = {
-								check_variable = { which = CmtVarManualTemp value = 3 }
+								event_target:CmtGlobalVar = { check_variable = { which = CmtVarManualTemp value = 3 } }
 								NAND = {
 									has_global_flag = gray_goo_empire_set
 									exists = event_target:graygoo_country # gate_builders
@@ -2044,8 +2045,11 @@ country_event = {
 							event_target:CmtTempOwner = { country_event = { id = graygoo.100 } }
 						} else_if = {
 							limit = {
-								check_variable = { which = CmtVarManualTemp value = 4 }
-								NAND = { has_global_flag = gray_goo_crisis_active exists = event_target:graygoo_country }
+								event_target:CmtGlobalVar = { check_variable = { which = CmtVarManualTemp value = 4 } }
+								NAND = {
+									has_global_flag = gray_goo_crisis_active
+									exists = event_target:graygoo_country
+								}
 							}
 							set_global_flag = gray_goo_crisis_set
 							event_target:CmtTempOwner = { country_event = { id = graygoo.1 } }

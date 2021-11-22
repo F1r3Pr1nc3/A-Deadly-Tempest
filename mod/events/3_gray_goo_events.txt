@@ -307,7 +307,7 @@ country_event = {
 						trait = trait_ruler_logistic_understanding
 						trait = leader_trait_fleet_organizer
 					}
-					effect = { set_owner = prev prev = { assign_leader = prev } }
+					effect = { prev = { assign_leader = prev } }
 				}
 				copy_techs_from = {
 					target = root

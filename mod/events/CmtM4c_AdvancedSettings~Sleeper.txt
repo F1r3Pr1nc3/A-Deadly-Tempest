@@ -12,7 +12,7 @@ namespace = CrisisManagerMenu
 #################################################
 
 ###############################
-### Awakening of Sleepers	###
+###- Awakening of Sleepers -###
 ###############################
 
 ### Multiple Awakening of Sleepers
@@ -853,7 +853,7 @@ country_event = {
 }
 
 #######################
-### War in Heaven	###
+###- War in Heaven -###
 #######################
 
 ### Probability of War in Heaven.

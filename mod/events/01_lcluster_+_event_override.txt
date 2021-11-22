@@ -52,6 +52,7 @@ country_event = {
 		}
 	}
 }
+namespace = lclusterplus # not really needed but to omit error.log
 
 # Special project completed (overwrite)
 country_event = {

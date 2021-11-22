@@ -28,6 +28,15 @@ portraits = {
 			"gfx/models/portraits/lithoid/lithoid_07_portrait_ai.dds"
 		}
 	}
+	lithnanite_02 = {
+		entity = "portrait_lithoid_02_entity"
+		clothes_selector = "no_texture"
+		hair_selector = "no_texture"
+		greeting_sound = "robot_molluscoid_greetings"
+		character_textures = {
+			"gfx/models/portraits/lithoid/lithoid_02_portrait_gray_cyber.dds"
+		}
+	}
 	# Clone of lithnanite (for compat.)
 	# GrayTempest = {
 	# 	entity = "portrait_lithoid_nanite_entity"

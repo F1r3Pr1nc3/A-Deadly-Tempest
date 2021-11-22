@@ -3,7 +3,7 @@
 #	All scripts to creating leader in this file is scope free
 #
 #################
-###  Dessanu	###
+###- Dessanu -###
 #################
 
 CmtEffectCreateAdmiral_DessanuStandard = {

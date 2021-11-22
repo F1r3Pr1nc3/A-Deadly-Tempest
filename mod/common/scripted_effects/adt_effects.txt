@@ -94,7 +94,7 @@ shoal_guard_dynamic_reinforce = {
 	# make dynamic with Crisis Manager
 	# event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Graygoo } }
 	# CmtVarCapitalDefenceNumber 1-8 vanilla = 4
-	set_variable = { which = CapitalDefence_tmp value = root.CmtVarCapitalDefenceNumber }
+	set_variable = { which = CapitalDefence_tmp value = CmtVarCapitalDefenceNumber }
 	# log = "guard_dynamic [$STRENGTH$] - [CmtVarCapitalDefenceNumber]"
 	if = {
 		limit = { end_game_years_passed > 35 }
@@ -925,7 +925,7 @@ nanite_ship_assimilating_effect = {
 		set_ship_flag = assimilate_that_robot_ship
 		ship_event = { id = a_deadly_tempest.38 days = 3 }
 
-		# Try fallback if multiple temp fleets
+		# Try fallback if multiple temp fleets.
 		if = {
 			limit = {
 				exists = event_target:assimilating_fleet
@@ -988,7 +988,7 @@ nanite_ship_assimilating_effect = {
  }
 
 	# log = "assimilate_that_fleet root country [ROOT.GetName]"
-	# because design and auto-merge?
+	# Because design and auto-merge?
 	# event_target:assimilate_that_fleet = { set_owner = event_target:global_event_country }
 	event_target:assimilate_that_fleet = { set_owner = root.from }
 }

@@ -142,24 +142,25 @@ gate_builders = {
 }
 
 awakened_gate_builders = {
-	attack_unarmed_orbital_stations = yes
 	has_difficulty_bonuses = yes
-	always_valid_target_aggressive = yes
+	# always_valid_target_aggressive = yes
 	scaled_difficulty_bonuses = 1.0	# TODO
-	destroys_starbases = yes
-	can_own_empty_planets = yes
-	show_in_contacts_list = yes
-	counts_for_victory = no
+	counts_for_victory = yes
 	sub_title = "COUNTRY_AWAKENED_FALLEN_EMPIRE"
 	sub_title_desc = "COUNTRY_AWAKENED_FALLEN_EMPIRE_DESC"
-	share_survey_data = yes
+	# attack_unarmed_orbital_stations = yes
+	# destroys_starbases = yes
+	# can_own_empty_planets = yes # crisis faction
+	show_in_contacts_list = yes
+	# minimalist_contacts_list_profile = yes
+
+	share_survey_data = no
 	# custom_diplomacy = yes # TODO?
 	mid_game_crisis = yes
 	# end_game_crisis = yes
 	enforces_borders = no
-	minimalist_contacts_list_profile = yes
 	orbital_bombardment = yes
-	relations = no # yes
+	relations = yes
 	fallen_empire = yes
 	awakened_fallen_empire = yes
 	piracy_risk	= no
@@ -167,7 +168,7 @@ awakened_gate_builders = {
 	has_complete_sensor = yes
 	can_planets_be_attacked = yes
 	can_have_their_comms_shared = yes
-	diplomatic_wars = no
+	diplomatic_wars = yes
 	playable = no
 	# government = no
 	ship_disengagement = yes
@@ -182,21 +183,21 @@ awakened_gate_builders = {
 	can_receive_envoys = no
 	uses_origins = yes
 
-	targets = {
-		awakened_fallen_empire
-		# fallen_empire
-		ai_empire
-		# default
-	}
+	# targets = {
+	# 	awakened_fallen_empire
+	# 	# fallen_empire
+	# 	ai_empire
+	# 	default
+	# }
 
 	ai = {
 		enabled = yes
-		# declare_war = yes
+		declare_war = yes # needed for army invasion?
 		min_navy_for_wars = 0.2
 		min_assault_armies_for_wars = @armies_for_declaring_war
 		colonizer = yes
 		internal_policies = no
-		starbase_upgrade = yes
+		starbase_upgrade = no # yes?
 		modification = no
 		government = no
 		construction = yes
@@ -205,13 +206,13 @@ awakened_gate_builders = {
 		avoid_enemies = no
 		modules = {
 			# anti_crisis_military_minister_module
-			invaders_military_minister_module
-			# invaders_interior_minister_module
+			# invaders_military_minister_module somehow stuck
+			invaders_interior_minister_module
 			# machine_military_minister_module
 			# machine_interior_minister_module
-			# berserk_military_minister_module
+			berserk_military_minister_module
 			# military_minister_module
-			interior_minister_module
+			# interior_minister_module
 			foreign_minister_module
 		}
 
@@ -307,15 +308,15 @@ awakened_gate_builders = {
 				}
 			}
 			graygoo_mothership = {
-				min = 2
+				min = 4
 				fraction = {
-					base = 20
+					base = 40
 				}
 			}
 			graygoo_interdictor = {
-				min = 10
+				min = 20
 				fraction = {
-					base = 60
+					base = 75
 				}
 			}
 		}
@@ -339,8 +340,8 @@ awakened_gate_builders = {
 		standard_expansion_module = {}
 		standard_species_rights_module = {}
 		exclusive_diplomacy_module = {
-			# contact_rule = always
-			contact_rule = on_action_only
+			contact_rule = always
+			# contact_rule = on_action_only
 			# can_receive = {
 			# 	action_declare_war
 			# 	action_offer_peace
@@ -351,42 +352,42 @@ awakened_gate_builders = {
 			# 	action_offer_peace
 			# 	action_release_subject
 			# }
-			# can_receive = {
-			# 	action_declare_war
-			# 	action_offer_peace
-			# 	action_make_rival
-			# 	action_end_rivalry
-			# 	action_offer_trade_deal
-			# 	action_cancel_trade_deal
-			# 	action_insult
-			# 	action_ask_to_become_thrall
-			# 	action_ask_to_become_dominion
-			# 	action_ask_to_become_satellite
-			# 	action_ask_to_become_signatory
-			# 	action_ask_to_be_released_subject
-			# 	action_ask_to_join_federation
-			# 	action_invite_to_federation
-			# 	action_leave_federation
-			# 	action_kick_from_federation
-			# }
-			# can_send = {
-			# 	action_declare_war
-			# 	action_make_rival
-			# 	action_end_rivalry
-			# 	action_offer_peace
-			# 	action_offer_trade_deal
-			# 	action_cancel_trade_deal
-			# 	action_demand_thrall
-			# 	action_demand_dominion
-			# 	action_demand_satellite
-			# 	action_demand_signatory
-			# 	action_release_subject
-			# 	action_invite_to_federation
-			# 	action_leave_federation
-			# 	action_kick_from_federation
-			# 	action_open_borders
-			# 	action_close_borders
-			# }
+			can_receive = {
+				action_declare_war
+				action_offer_peace
+				action_make_rival
+				action_end_rivalry
+				action_offer_trade_deal
+				action_cancel_trade_deal
+				action_insult
+				action_ask_to_become_thrall
+				action_ask_to_become_dominion
+				action_ask_to_become_satellite
+				action_ask_to_become_signatory
+				action_ask_to_be_released_subject
+				action_ask_to_join_federation
+				action_invite_to_federation
+				action_leave_federation
+				action_kick_from_federation
+			}
+			can_send = {
+				action_declare_war
+				action_make_rival
+				action_end_rivalry
+				action_offer_peace
+				action_offer_trade_deal
+				action_cancel_trade_deal
+				action_demand_thrall
+				action_demand_dominion
+				action_demand_satellite
+				action_demand_signatory
+				action_release_subject
+				action_invite_to_federation
+				action_leave_federation
+				action_kick_from_federation
+				action_open_borders
+				action_close_borders
+			}
 		}
 	}
 
@@ -437,11 +438,11 @@ gray_goo = {
 	can_use_invalid_technology = yes
 	uses_origins = no
 
-	targets = {
-		awakened_fallen_empire
-		fallen_empire
-		default
-	}
+	# targets = {
+	# 	awakened_fallen_empire
+	# 	fallen_empire
+	# 	default
+	# }
 
 	ai = {
 		enabled = yes

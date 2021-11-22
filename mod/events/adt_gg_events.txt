@@ -1058,6 +1058,7 @@ fleet_event = {
 							move_to = event_target:assimilating_fleet
 							find_closest_fleet = {
 								found_fleet = {
+									move_to = this
 									merge_fleet = {
 										target = event_target:assimilating_fleet
 										allow_ftl = yes
@@ -1228,6 +1229,7 @@ country_event = {
 		# log = "STRENGTH [graygoo_country.CmtVarCapitalDefenceNumber]"
 		if = {
 			limit = {
+				is_variable_set = CmtVarCapitalDefenceNumber
 				check_variable = { which = CmtVarCapitalDefenceNumber value > 0 }
 			}
 			shoal_guard_dynamic_reinforce = {
@@ -1804,7 +1806,6 @@ country_event = {
 				}
 				effect = {
 					change_leader_portrait = lithnanite
-					set_owner = prev
 				}
 			}
 			last_created_army = { assign_leader = last_created_leader }
@@ -1819,7 +1820,7 @@ country_event = {
 	}
 }
 
-# Open L-Cluster
+# Open L-Cluster (on_country_destroyed)
 # This = destroyed country
 country_event = {
 	id = a_deadly_tempest.2404
@@ -1830,7 +1831,11 @@ country_event = {
 		has_country_flag = lcluster_closer
 	}
 	immediate = {
-		open_terminal_egress = yes
+		if = { limit = { exists = from }
+			from = { random_owned_planet = { open_terminal_egress = yes } }
+		} else = {
+			open_terminal_egress = yes
+		}
 		# set_global_flag = lgates_activated_globally
 		# event_target:lcluster1 = {
 		# 	remove_star_flag = pike_star_flag_banned_system

@@ -29,29 +29,30 @@ ESGO = {
 		playable = { has_lithoids = yes }
 		portraits = {
 			"lithnanite"
+			"lithnanite_02"
 		}
 	}
-	custom_portraits = {
-		randomized = { always = no }
-		playable = { always = yes }
-		portraits = {
-			"rep2"
-			"rep10"
-			"rep14"
-			"rep3"
-			"rep7"
-			"rep12"
-			"rep9"
-			"rep11"
-			"rep6"
-			"rep13"
-			"rep1"
-			"rep8"
-			"rep4"
-			"rep15"
-			"rep5"
-		}
-	}
+	# custom_portraits = {
+	# 	randomized = { always = no }
+	# 	playable = { always = yes }
+	# 	portraits = {
+	# 		"rep2"
+	# 		"rep10"
+	# 		"rep14"
+	# 		"rep3"
+	# 		"rep7"
+	# 		"rep12"
+	# 		"rep9"
+	# 		"rep11"
+	# 		"rep6"
+	# 		"rep13"
+	# 		"rep1"
+	# 		"rep8"
+	# 		"rep4"
+	# 		"rep15"
+	# 		"rep5"
+	# 	}
+	# }
 	custom_portraits = {
 		randomized = { always = no  } # host_has_dlc = "Leviathans Story Pack"
 		playable = { local_has_dlc = "Leviathans Story Pack" }

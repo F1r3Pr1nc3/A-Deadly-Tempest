@@ -4,7 +4,7 @@
 
 tech_nanite_mega_construction = {
 	area = engineering
-	cost = @@tier5cost1
+	cost = @tier5cost1
 	tier = 5
 	is_rare = yes
 
@@ -15,11 +15,11 @@ tech_nanite_mega_construction = {
 	potential = {
 		has_distar = yes
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain
 		}
+		has_resource = { type = nanites amount > 0 }
 	}
 
 	modifier = {
@@ -38,9 +38,8 @@ tech_nanite_mega_construction = {
 		factor = 0.50
 		modifier = {
 			factor = 0
-			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
-			has_monthly_income = { resource = nanites value < 1 }
-			resource_stockpile_compare = { resource = nanites value < 300 }
+			has_monthly_income = { resource = nanites value < 1 } # NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
+			resource_stockpile_compare = { resource = nanites value < 200 }
 		}
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech
@@ -89,11 +88,11 @@ tech_nanite_bombardment = {
 
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain
 		}
+		has_resource = { type = nanites amount > 0 }
 	}
 }

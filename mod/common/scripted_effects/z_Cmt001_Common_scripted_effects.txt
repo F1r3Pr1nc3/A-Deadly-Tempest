@@ -8,7 +8,7 @@
 #####################################
 
 ################################
-### Common Effect for Menu	###
+###- Common Effect for Menu -###
 ################################
 
 ### Hard Coated Option
@@ -202,7 +202,7 @@ CmtEffectChangeAwakenerCivic = {
 }
 
 ####################
-### Debug tool	###
+###- Debug tool -###
 ####################
 
 ### Test of FIOS/LIOS

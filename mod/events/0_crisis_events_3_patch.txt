@@ -77,11 +77,10 @@ planet_event = {
 					event_target:planet_former_owner = { country_event = { id = marauder.519 } }
 				}
 			}
-			# # Planet belonged to liberator
+			## Planet belonged to liberator
 			# else = {
-			# 	# if = { limit = { num_pops > 0  }
-			# 	# # set_owner = from
-			# 	# destroy_colony = yes
+			# 	if = { limit = { num_pops > 0 }
+			# 	destroy_colony = yes # set_owner = from
 			# }
 		}
 	}

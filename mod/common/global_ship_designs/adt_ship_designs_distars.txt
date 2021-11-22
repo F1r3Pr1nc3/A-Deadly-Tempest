@@ -1,4 +1,4 @@
-### Nanite Ships ###
+###- Nanite Ships -###
 # Gray Goo Mothership
 ship_design = {
 	name = "NAME_Nanite_Mothership"
