@@ -1260,7 +1260,7 @@ country_event = {
 			remove_all_buildings = yes
 			destroy_colony = yes
 			if = {
-				limit = { is_planet_class = pc_ringworld_habitable }
+				limit = { is_ringworld = yes }
 				change_pc = pc_ringworld_habitable_damaged
 				spawn_ringworld_nanobot_effect = yes
 			}
@@ -2226,12 +2226,13 @@ country_event = {
 									is_planet_class = pc_shattered_2
 								}
 							}
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_ringworld_habitable_damaged
-							is_planet_class = pc_ringworld_tech
-							is_planet_class = pc_ringworld_tech_damaged
-							is_planet_class = pc_ringworld_seam
-							is_planet_class = pc_ringworld_seam_damaged
+							is_ringworld = yes
+							# is_planet_class = pc_ringworld_habitable
+							# is_planet_class = pc_ringworld_habitable_damaged
+							# is_planet_class = pc_ringworld_tech
+							# is_planet_class = pc_ringworld_tech_damaged
+							# is_planet_class = pc_ringworld_seam
+							# is_planet_class = pc_ringworld_seam_damaged
 						}
 					}
 					# = ring_world_ruined

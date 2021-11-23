@@ -13,9 +13,12 @@
    version="1.1"
    viewBox="0 0 508 508"
    id="svg1847"
-   sodipodi:docname="ADT logo2cc.svg"
+   sodipodi:docname="ADT logo3.2.svg"
    enable-background="new"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:export-filename="D:\GOG Games\Settings\adt.git\SOURCE\thumb\ADT logo3.2.png"
+   inkscape:export-xdpi="25.6"
+   inkscape:export-ydpi="25.6">
   <metadata
      id="metadata1851">
     <rdf:RDF>
@@ -24,6 +27,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -40,13 +44,13 @@
      inkscape:window-height="987"
      id="namedview1849"
      showgrid="false"
-     inkscape:zoom="0.80664063"
-     inkscape:cx="1529.2752"
-     inkscape:cy="1506.2921"
+     inkscape:zoom="0.16542435"
+     inkscape:cx="579.21966"
+     inkscape:cy="1592.7449"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g1837" />
+     inkscape:current-layer="svg1847" />
   <defs
      id="defs1745">
     <filter
@@ -190,13 +194,13 @@
   <image
      sodipodi:absref="D:\GOG Games\Settings\adt.git\SOURCE\thumb\Gray_Tempest_raw3.png"
      xlink:href="Gray_Tempest_raw3.png"
-     id="image1747"
-     preserveAspectRatio="none"
-     stroke-width="1.333"
-     image-rendering="optimizeSpeed"
-     height="508"
+     x="-2.783e-6"
      width="508"
-     x="-2.783e-6" />
+     height="508"
+     image-rendering="optimizeSpeed"
+     stroke-width="1.333"
+     preserveAspectRatio="none"
+     id="image1747" />
   <g
      transform="matrix(1.3 0 0 .8 450 58)"
      font-family="'Nostromo 3D'"
@@ -231,6 +235,7 @@
          sodipodi:role="line"><tspan
    style="font-weight:900;font-size:110%;"
    id="tspan927">A D</tspan>
+
 eadly<tspan
    x="-155"
    y="542"
@@ -238,9 +243,11 @@ eadly<tspan
    id="tspan1757"><tspan
    style="font-weight:900;font-size:110%"
    id="tspan929">T</tspan>
+
 em<tspan
    dx="-2"
    id="tspan1753">p</tspan>
+
 es<tspan
    dx="-12"
    id="tspan1755">t</tspan>
@@ -272,10 +279,9 @@ es<tspan
        stroke-width="1.323"
        id="rect1766" />
     <g
-       fill="#eee"
-       stroke="#000"
-       stroke-width="3"
-       id="g1771">
+       id="g1771"
+       transform="translate(1.5875,1.5875)"
+       style="fill:#eeeeee;stroke:#000000;stroke-width:3">
       <g
          id="v">
         <path
@@ -286,15 +292,13 @@ es<tspan
         <text
            id="text4499"
            transform="rotate(45)"
-           style="font-weight:bold;font-size:29.36000061px;font-family:Orbitron;text-anchor:middle;letter-spacing:1.6px;"
+           style="font-weight:bold;font-size:29.36000061px;font-family:Orbitron;letter-spacing:1.60000002px;text-anchor:middle"
            x="2"
            y="-19"
-           font-family="Orbitron"
            font-size="29.36px"
-           font-weight="bold"
-           text-anchor="middle">
+           font-weight="bold">
           <tspan
-             id="tspan1768">3.1.⠀</tspan>
+             id="tspan1768">3.2.⠀</tspan>
         </text>
       </g>
     </g>
@@ -303,12 +307,10 @@ es<tspan
        y="-1.2"
        width="100%"
        height="100%"
-       fill="#ffffff"
-       filter="url(#e)"
-       stroke="#11ff8c"
-       stroke-width=".7"
        xlink:href="#v"
-       id="use1773" />
+       id="use1773"
+       transform="translate(1.5875,1.5875)"
+       style="fill:#ffffff;stroke:#11ff8c;stroke-width:0.69999999;filter:url(#e)" />
     <rect
        x="45.38"
        y="434.6"

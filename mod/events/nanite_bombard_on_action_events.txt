@@ -197,7 +197,7 @@ planet_event = {
 		clear_blockers = yes
 		set_planet_flag = armageddon_nuked
 		if = {
-			limit = { is_planet_class = pc_ringworld_habitable }
+			limit = { is_ringworld = yes }
 			change_pc = pc_ringworld_habitable_damaged
 			spawn_ringworld_nanobot_effect = yes
 		}
@@ -208,10 +208,7 @@ planet_event = {
 		}
 		else_if = {
 			limit = {
-				# NOR = {
-				# 	is_planet_class = pc_ringworld_habitable
-				# 	is_planet_class = pc_habitat
-				# }
+				is_artificial = no
 				habitable_planet = yes
 			}
 			change_pc = pc_gray_goo

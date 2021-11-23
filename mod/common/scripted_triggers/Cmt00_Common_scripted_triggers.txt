@@ -201,12 +201,11 @@ CmtTriggerIsMarauder = {
 	}
 }
 
-# TODO REMOVE ME
 # DEPRECATED ## Scope = country
-CmtTriggerIsSleepingMarauder = {
-	is_country_type = dormant_marauders
-	NOT = { has_country_flag = restored_marauders_flag }
-}
+# CmtTriggerIsSleepingMarauder = {
+# 	is_country_type = dormant_marauders
+# 	NOT = { has_country_flag = restored_marauders_flag }
+# }
 
 CmtTriggerIsKhanCountry = {
 	is_country_type = awakened_marauders

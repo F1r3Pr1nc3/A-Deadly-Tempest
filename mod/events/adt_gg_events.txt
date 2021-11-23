@@ -108,19 +108,18 @@ event = {
 			}
 		}
 
-		# TODO remove me after a while.
-		if = {
-			limit = {
-				has_global_flag = gray_goo_empire_set
-				has_global_flag = l_cluster_opened
-				exists = event_target:gate_builders
-				# NOT = { has_global_flag = a_deadly_tempest_mod_updated }
-			}
-			event_target:gate_builders = {
-				every_owned_megastructure = { set_megastructure_flag = gatebuilders_origin }
-			}
-			# set_global_flag = a_deadly_tempest_mod_updated
-		}
+		# if = {
+		# 	limit = {
+		# 		has_global_flag = gray_goo_empire_set
+		# 		has_global_flag = l_cluster_opened
+		# 		exists = event_target:gate_builders
+		# 		# NOT = { has_global_flag = a_deadly_tempest_mod_updated }
+		# 	}
+		# 	event_target:gate_builders = {
+		# 		every_owned_megastructure = { set_megastructure_flag = gatebuilders_origin }
+		# 	}
+		# 	# set_global_flag = a_deadly_tempest_mod_updated
+		# }
 
 		# ESC/nhsc mod savegame support
 		event_target:CmtGlobalVar = {
@@ -144,17 +143,17 @@ event = {
 				background = { category = "backgrounds" file = "00_solid.dds" }
 				colors = { "black" "black" "null" "null" }
 			}
-			if = { # TODO temporary fix for new var.
-				limit = { NOT = { has_global_flag = l_cluster_opened } }
-				every_playable_country = {
-					limit = {
-						has_event_chain = l_cluster_chain
-						NOR = { has_country_flag = lgate_warned is_variable_set = CmtVarLgateReqClues }
-					}
-					set_variable = { which = CmtVarLgateReqClues value = event_target:CmtGlobalVar.CmtVarLgateReqClues }
-					change_variable = { which = CmtVarLgateReqClues value = -2 }
-				}
-			}
+			# if = { # TODO temporary fix for new var.
+			# 	limit = { NOT = { has_global_flag = l_cluster_opened } }
+			# 	every_playable_country = {
+			# 		limit = {
+			# 			has_event_chain = l_cluster_chain
+			# 			NOR = { has_country_flag = lgate_warned is_variable_set = CmtVarLgateReqClues }
+			# 		}
+			# 		set_variable = { which = CmtVarLgateReqClues value = event_target:CmtGlobalVar.CmtVarLgateReqClues }
+			# 		change_variable = { which = CmtVarLgateReqClues value = -2 }
+			# 	}
+			# }
 		}
 	}
 	# after = { log = "2 a_deadly_tempest_mod_active [CmtGlobalVar.random_nhsc_value]" }
@@ -568,10 +567,7 @@ country_event = {
 			every_system_planet = {
 				limit = {
 					# habitable_planet = yes
-					# NOR = {
-					# 	is_planet_class = pc_ringworld_habitable
-					# 	is_planet_class = pc_habitat
-					# }
+					# is_artificial = no
 					is_asteroid = no
 					is_star = no
 					NOT = { is_planet_class = pc_gas_giant }
