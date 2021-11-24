@@ -1,5 +1,5 @@
-@naniteCost = 7500
-@naniteTime = 900
+@lClusterCost = 1000
+@lClusterTime = 900
 
 terraform_link = {
 	from = pc_gray_goo
@@ -8,11 +8,19 @@ terraform_link = {
 		has_ascension_perk = ap_world_shaper
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = @naniteCost
-	duration = @naniteTime
-
+	resources = {
+		category = terraforming
+		cost = { energy = @lClusterCost }
+	}
+	duration = @lClusterTime
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+	effect = {
+		from = { remove_modifier = terraforming_candidate }
+	}
 	ai_weight = {
-		weight = 10
+		weight = 20
 		modifier = {
 			factor = 0
 			OR = {
@@ -31,11 +39,19 @@ terraform_link = {
 		has_ascension_perk = ap_machine_worlds
 		has_technology = "tech_nanite_terraforming"
 	}
-	energy = @naniteCost
-	duration = @naniteTime
-
+	resources = {
+		category = terraforming
+		cost = { energy = @lClusterCost }
+	}
+	duration = @lClusterTime
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+	}
+	effect = {
+		from = { remove_modifier = terraforming_candidate }
+	}
 	ai_weight = {
-		weight = 10
+		weight = 20
 		modifier = {
 			factor = 0
 			from = {
@@ -49,140 +65,7 @@ terraform_link = {
 		}
 		modifier = {
 			factor = 0
-			from = {
-				is_colony = no
-			}
+			from = { is_colony = no }
 		}
-	}
-}
-
-terraform_link = {
-	from = pc_gray_goo
-	to = pc_desert
-	condition = {
-		has_technology = "tech_climate_restoration"
-		has_technology = "tech_nanite_terraforming"
-	}
-	energy = @naniteCost
-	duration = @naniteTime
-
-	ai_weight = {
-		weight = 5
-	}
-}
-
-terraform_link = {
-	from = pc_gray_goo
-	to = pc_arid
-	condition = {
-		has_technology = "tech_climate_restoration"
-		has_technology = "tech_nanite_terraforming"
-	}
-	energy = @naniteCost
-	duration = @naniteTime
-}
-
-terraform_link = {
-	from = pc_gray_goo
-	to = pc_savannah
-	condition = {
-		has_technology = "tech_climate_restoration"
-		has_technology = "tech_nanite_terraforming"
-	}
-	energy = @naniteCost
-	duration = @naniteTime
-
-	ai_weight = {
-		weight = 5
-	}
-}
-
-terraform_link = {
-	from = pc_gray_goo
-	to = pc_ocean
-	condition = {
-		has_technology = "tech_climate_restoration"
-		has_technology = "tech_nanite_terraforming"
-	}
-	energy = @naniteCost
-	duration = @naniteTime
-
-	ai_weight = {
-		weight = 5
-	}
-}
-
-terraform_link = {
-	from = pc_gray_goo
-	to = pc_continental
-	condition = {
-		has_technology = "tech_climate_restoration"
-		has_technology = "tech_nanite_terraforming"
-	}
-	energy = @naniteCost
-	duration = @naniteTime
-
-	ai_weight = {
-		weight = 5
-	}
-}
-
-terraform_link = {
-	from = pc_gray_goo
-	to = pc_tropical
-	condition = {
-		has_technology = "tech_climate_restoration"
-		has_technology = "tech_nanite_terraforming"
-	}
-	energy = @naniteCost
-	duration = @naniteTime
-
-	ai_weight = {
-		weight = 5
-	}
-}
-
-terraform_link = {
-	from = pc_gray_goo
-	to = pc_arctic
-	condition = {
-		has_technology = "tech_climate_restoration"
-		has_technology = "tech_nanite_terraforming"
-	}
-	energy = @naniteCost
-	duration = @naniteTime
-
-	ai_weight = {
-		weight = 5
-	}
-}
-
-terraform_link = {
-	from = pc_gray_goo
-	to = pc_alpine
-	condition = {
-		has_technology = "tech_climate_restoration"
-		has_technology = "tech_nanite_terraforming"
-	}
-	energy = @naniteCost
-	duration = @naniteTime
-
-	ai_weight = {
-		weight = 5
-	}
-}
-
-terraform_link = {
-	from = pc_gray_goo
-	to = pc_tundra
-	condition = {
-		has_technology = "tech_climate_restoration"
-		has_technology = "tech_nanite_terraforming"
-	}
-	energy = @naniteCost
-	duration = @naniteTime
-
-	ai_weight = {
-		weight = 5
 	}
 }

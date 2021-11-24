@@ -1,31 +1,3 @@
-###################
-# Governor Traits #
-###################
-leader_trait_governor_gray = {
-	cost = 0
-	modification = no
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
-	immortal_leaders = yes
-	modifier = {
-		planet_buildings_cost_mult = -0.4
-		planet_jobs_energy_produces_mult = 1
-		planet_jobs_minerals_produces_mult = 1
-		planet_jobs_produces_mult = 0.2
-		planet_building_build_speed_mult = 0.4
-		planet_clear_blocker_time_mult = -0.5
-		planet_stability_add = 5
-		deposit_blockers_cost_mult = -0.5
-		planet_jobs_engineering_research_produces_mult = 1
-		planet_jobs_physics_research_produces_mult = 1
-		planet_jobs_society_research_produces_mult = 1
-		planet_jobs_alloys_produces_mult = 1
-	}
-	leader_trait = { governor }
-	leader_class = { governor }
-	initial = no
-	randomized = no
-}
-
 ## For Warship Girls R And MIST Species.
 leader_trait_admiral_gray = {
 	cost = 0

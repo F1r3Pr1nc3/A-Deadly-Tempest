@@ -130,7 +130,7 @@ defined_text = {
 }
 
 ########################
-###- Toggle Options	-###
+###- Toggle Options -###
 ########################
 
 ### Awakenable Sleepers

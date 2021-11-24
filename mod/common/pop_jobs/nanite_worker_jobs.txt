@@ -5,14 +5,21 @@
 nanite_worker = {
 	category = worker
 	condition_string = WORKER_JOB_TRIGGER
-	building_icon = building_crystal_mines
+	building_icon = building_nanite_transmuter
 	clothes_texture_index = 2
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_worker_job
 	possible = {
-		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
-		owner = {
-			is_gestalt = no
-			is_fallen_empire_spiritualist = no
+		hidden_trigger = {
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
 		}
 	}
 	resources = {
@@ -67,13 +74,15 @@ nanite_worker = {
 nanite_drone = {
 	category = worker
 	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_crystal_mines
+	building_icon = building_nanite_transmuter
 	clothes_texture_index = 2
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
+	possible_precalc = can_fill_drone_job
 	possible = {
 		hidden_trigger = {
 			owner = {
@@ -81,7 +90,6 @@ nanite_drone = {
 				is_fallen_empire_spiritualist = no
 			}
 		}
-		drone_job_check_trigger = yes
 	}
 	resources = {
 		category = planet_miners
@@ -138,12 +146,19 @@ nanite_agri_worker = {
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_food_processing_facility
 	clothes_texture_index = 2
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_worker_job
 	possible = {
-		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
-		owner = {
-			is_gestalt = no
-			is_fallen_empire_spiritualist = no
+		hidden_trigger = {
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
 		}
 	}
 	resources = {
@@ -221,8 +236,10 @@ nanite_agri_drone = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
-	possible = { drone_job_check_trigger = yes }
+	possible_precalc = can_fill_drone_job
+	possible = { }
 	resources = {
 		category = planet_farmers
 		produces = { food = 6 }
@@ -298,6 +315,7 @@ nanite_agri_drone = {
 # 		has_owner = yes
 # 		is_being_purged = no
 # 		is_being_assimilated = no
+#		is_sapient = yes
 # 	}
 # 	possible = {
 # 		complex_specialist_job_check_trigger = yes
@@ -334,9 +352,9 @@ nanite_agri_drone = {
 # 		is_enslaved = no
 # 		is_being_purged = no
 # 		is_being_assimilated = no
+#		is_sapient = yes
 # 	}
 # 	possible = {
-# 		drone_job_check_trigger = yes
 # 	}
 # 	resources = {
 # 		# category = nanite_builders
@@ -375,16 +393,19 @@ nanite_forger = {
 	icon = esc_nanite_breeder
 	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = building_crystal_plant
+	building_icon = building_nanite_transmuter
 	clothes_texture_index = 3
 
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
-	possible = { specialist_job_check_trigger = yes }
+	possible_precalc = can_fill_specialist_job
+
+	possible = { }
 
 	resources = {
 		category = planet_translucers
@@ -427,14 +448,16 @@ nanite_forger_drone = {
 	icon = esc_nanite_breeder
 	category = complex_drone
 	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = building_crystal_plant
+	building_icon = building_nanite_transmuter
 	clothes_texture_index = 3
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
-	possible = { specialist_job_check_trigger = yes }
+	possible_precalc = can_fill_specialist_job
+	possible = { }
 	resources = {
 		category = planet_translucers
 		produces = { nanites = 3 }
@@ -483,6 +506,7 @@ nanite_forger_drone = {
 # 		is_enslaved = no
 # 		is_being_purged = no
 # 		is_being_assimilated = no
+#		is_sapient = yes
 # 	}
 # 	possible = {
 # 		owner = { has_origin = origin_machine_nanites }
@@ -511,6 +535,7 @@ nanite_forger_drone = {
 # 		is_enslaved = no
 # 		is_being_purged = no
 # 		is_being_assimilated = no
+#		is_sapient = yes
 # 	}
 # 	possible = {
 # 		owner = { has_valid_civic = civic_machine_nanites }

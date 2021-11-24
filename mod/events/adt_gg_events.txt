@@ -657,7 +657,7 @@ country_event = {
 			random_list = {
 				2 = { }
 				8 = {
-					fromfrom = { nanite_assimilating_effect = yes }
+					fromfrom = { nanite_assimilating_effect = yes } # TODO "Malformed token"? - but it works
 				}
 			}
 		}
@@ -675,7 +675,7 @@ country_event = {
 			random_list = {
 				8 = { }
 				2 = {
-					fromfrom = { nanite_assimilating_effect = yes }
+					fromfrom = { nanite_assimilating_effect = yes } # TODO "Malformed token"? - but it works
 				}
 			}
 		}
@@ -1056,7 +1056,7 @@ fleet_event = {
 								found_fleet = {
 									move_to = this
 									merge_fleet = {
-										target = event_target:assimilating_fleet
+										target = event_target:assimilating_fleet # TODO "Malformed token"? - but it works
 										allow_ftl = yes
 									}
 								}

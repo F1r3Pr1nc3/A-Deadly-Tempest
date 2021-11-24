@@ -164,7 +164,9 @@ building_nanite_plant_3 = {
 	allow = {
 		has_major_upgraded_capital = yes
 		buildings_upgrade_allow = yes
-		owner = { NOR = { has_origin = origin_machine_nanites has_civic = civic_machine_nanites_culture } }
+		owner = {
+			NOR = { has_origin = origin_machine_nanites has_civic = civic_machine_nanites_culture }
+		}
 	}
 
 	destroy_trigger = {
@@ -334,6 +336,7 @@ building_nanite_food_replicator = {
 	}
 }
 
+# Twinks Dessanu
 building_machinedlc_nanite_living_metal_forge = {
 	base_buildtime = 600
 	category = manufacturing
@@ -347,7 +350,7 @@ building_machinedlc_nanite_living_metal_forge = {
 			OR = {
 				has_civic = civic_machine_nanites_culture
 				has_ascension_perk = ap_machinedlc_micro_machine_project
-				check_variable = { which = nano_forge_build_count value >= 1 }
+				check_variable = { which = nano_forge_build_count value > 0 }
 				is_fallen_empire = yes
 			}
 		}

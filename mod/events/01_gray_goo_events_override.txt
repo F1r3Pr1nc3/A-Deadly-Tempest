@@ -280,12 +280,13 @@ country_event = {
 				}
 				# Reinforce at factory if someone else is in the cluster...
 				# AMOUNT integer 1 = 4 Ships per CM factor (so 3.0 = 12)
+				# TODO make values more dyn.
 				event_target:nanite_factory = {
-					if = { limit = { end_game_years_passed >= 80 }
+					if = { limit = { end_game_years_passed > 90 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 4 }
-					} else_if = { limit = { mid_game_years_passed >= 100 }
+					} else_if = { limit = { mid_game_years_passed > 110 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 3 }
-					} else_if = { limit = { mid_game_years_passed >= 40 }
+					} else_if = { limit = { mid_game_years_passed > 50 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 2 }
 					} else = {
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 1 }
