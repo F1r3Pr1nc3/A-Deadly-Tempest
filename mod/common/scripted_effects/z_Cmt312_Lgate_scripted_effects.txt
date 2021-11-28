@@ -214,7 +214,7 @@ CmtEffectDestroyGraygoo = {
 }
 
 ###############################
-###- Abosorbe Vanilla Script -###
+### Abosorbe Vanilla Script ###
 ###############################
 #
 # Roamer Script of Vanilla: for id in trigger being unique.

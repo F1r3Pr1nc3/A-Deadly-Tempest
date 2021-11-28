@@ -96,7 +96,12 @@ country_event = {
 					set_country_flag = synthetic_empire
 					## add technologies
 					country_event = { id = a_deadly_tempest.107 }
-					prev = { create_starbase = { size = "starbase_gatebuilders" owner = prev } }
+					prev = {
+						if = { limit = { exists = starbase }
+							destroy_fleet = starbase.fleet
+						}
+						create_starbase = { size = "starbase_gatebuilders" owner = prev }
+					}
 				}
 			}
 			event_target:main_star = { planet_event = { id = a_deadly_tempest.4 } }

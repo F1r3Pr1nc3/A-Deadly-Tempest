@@ -36,19 +36,20 @@ ROBOT = {
 		playable = { has_necroids = yes }
 		portraits = { "nec_machine" }
 	}
+	custom_portraits = {
+		randomized = { has_aquatics = yes }
+		playable = { has_aquatics = yes }
+		portraits = { "aqu_machine" }
+	}
 	custom_portraits = { # use custom_portraits instead of portraits so we can put them after the custom_portraits above
 		randomized = { always = yes }
 		playable = { always = yes }
-		portraits = {
-			"default_robot"
-		}
+		portraits = { "default_robot" }
 	}
 	custom_portraits = { # use custom_portraits instead of portraits so we can put them after the custom_portraits above
 		randomized = { always = no }
 		playable = { always = yes }
-		portraits = {
-			"esgoo"
-		}
+		portraits = { "esgoo" }
 	}
 	graphical_culture = ai_01
 	move_pop_sound_effect = "robot_pops_move"
@@ -96,15 +97,9 @@ MACHINE = {
 	}
 
 	custom_portraits = {
-		randomized = {
-			always = no
-		}
-		playable = {
-			has_synthethic_dawn = yes
-		}
-		portraits = {
-			"esgoo"
-		}
+		randomized = { always = no }
+		playable = { has_synthethic_dawn = yes }
+		portraits = { "esgoo" }
 	}
 
 	custom_portraits = {
@@ -140,8 +135,24 @@ MACHINE = {
 				has_necroids = yes
 			}
 		}
+		portraits = { "nec_machine" }
+	}
+
+	custom_portraits = {
+		randomized = {
+			AND = {
+				host_has_dlc = "Synthetic Dawn Story Pack"
+				has_aquatics = yes
+			}
+		}
+		playable = {
+			AND = {
+				host_has_dlc = "Synthetic Dawn Story Pack"
+				has_aquatics = yes
+			}
+		}
 		portraits = {
-			"nec_machine"
+			"aqu_machine"
 		}
 	}
 
