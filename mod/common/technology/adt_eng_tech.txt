@@ -63,8 +63,8 @@ tech_nanite_build_speed = {
 		}
 	}
 	modifier = {
-		starbase_shipyard_build_speed_mult = 0.2
-		starbase_shipyard_build_cost_mult = -0.1
+		starbase_shipyard_build_speed_mult = 0.1
+		starbase_shipyard_build_cost_mult = -0.05
 	}
 	weight_modifier = {
 		modifier = {
@@ -289,10 +289,10 @@ tech_nanite_modular_engineering = {
 		}
 	}
 	modifier = {
-		starbase_building_build_speed_mult = 0.25
-		starbase_module_build_speed_mult = 0.25
-		starbase_upgrade_cost_mult = -0.15
-		starbase_upgrade_speed_mult = 0.25
+		starbase_building_build_speed_mult = 0.2
+		starbase_module_build_speed_mult = 0.2
+		starbase_upgrade_cost_mult = -0.1
+		starbase_upgrade_speed_mult = 0.2
 	}
 	weight_modifier = {
 		modifier = {

@@ -22,7 +22,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		# possible flag fix (to be sure) - sometimes not removed
+		# Possible flag fix (to be sure) - sometimes not removed.
 		if = {
 			limit = {
 				host_has_dlc = "Apocalypse"
@@ -163,7 +163,7 @@ country_event = {
 		}
 		hidden_effect = {
 			if = {
-				limit = { # hidden fallback
+				limit = { # Hidden fallback
 					OR = {
 						has_global_flag = war_in_heaven_debug
 						count_country = {
@@ -198,16 +198,17 @@ country_event = {
 		allow = { host_has_dlc = "Apocalypse" }
 		trigger = {
 			has_global_flag = CmtFlagMidGameEdition
+			num_marauder_empires_to_spawn > 0
 			NOT = { has_global_flag = marauder_crisis_ongoing }
 			# CmtTriggerNowInKhanCrisis = no
 			OR = {
-				has_global_flag = marauder_crisis_started # possible fallback
+				has_global_flag = marauder_crisis_started # Possible fallback
 				any_country = { CmtTriggerHasPotentialKhanAwaking = yes }
 			}
 		}
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7138 } }
 	}
-	option = { # not possible (not ongoing)
+	option = { # Not possible (not ongoing)
 		name = CrisisManagerMenu.7000.7138.B.name
 		custom_tooltip = CrisisManagerMenu.7000.7138.B.tooltip
 		allow = { host_has_dlc = "Apocalypse" }
@@ -215,13 +216,13 @@ country_event = {
 			has_global_flag = CmtFlagMidGameEdition
 			NOR = {
 				has_global_flag = marauder_crisis_ongoing
-				has_global_flag = marauder_crisis_started # possible fallback
+				has_global_flag = marauder_crisis_started # Possible fallback
 				any_country = { CmtTriggerHasPotentialKhanAwaking = yes }
 			}
 		}
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
-	option = { # possible (but ongoing)
+	option = { # Possible (but ongoing)
 		name = CrisisManagerMenu.7000.7138.C.name
 		custom_tooltip = CrisisManagerMenu.7000.7138.C.tooltip
 		allow = { host_has_dlc = "Apocalypse" }
@@ -1316,7 +1317,7 @@ country_event = {
 					save_global_event_target_as = CmtTargetManualSleeperA
 				}
 			}
-			if = { # automatically last possible option
+			if = { # Automatically last possible option
 				limit = {
 					NOT = { exists = event_target:CmtTargetManualSleeperB }
 					count_country = {
@@ -2994,22 +2995,23 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		# Only to be sure
 		if = {
-			limit = { NOT = { exists = event_target:marauder_country_1 } }
+			limit = { num_marauder_empires_to_spawn > 0 NOT = { exists = event_target:marauder_country_1 } }
 			random_country = {
 				limit = { has_country_flag = marauder_1 }
 				save_global_event_target_as = marauder_country_1
 			}
 		}
 		if = {
-			limit = { NOT = { exists = event_target:marauder_country_2 } }
+			limit = { num_marauder_empires_to_spawn > 1 NOT = { exists = event_target:marauder_country_2 } }
 			random_country = {
 				limit = { has_country_flag = marauder_2 }
 				save_global_event_target_as = marauder_country_2
 			}
 		}
 		if = {
-			limit = { NOT = { exists = event_target:marauder_country_3 } }
+			limit = { num_marauder_empires_to_spawn > 2 NOT = { exists = event_target:marauder_country_3 } }
 			random_country = {
 				limit = { has_country_flag = marauder_3 }
 				save_global_event_target_as = marauder_country_3

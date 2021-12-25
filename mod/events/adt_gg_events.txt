@@ -1883,11 +1883,13 @@ country_event = {
 			event_target:graygoo_country = {
 				every_owned_fleet = {
 					limit = {
+						is_mobile = yes
 						# is_in_combat = yes
 						any_owned_ship = {
 							is_ship_class = shipclass_military
 							is_disabled = no
 						}
+						exists = solar_system
 						solar_system = {
 							NOT = { has_star_flag = lcluster }
 						}

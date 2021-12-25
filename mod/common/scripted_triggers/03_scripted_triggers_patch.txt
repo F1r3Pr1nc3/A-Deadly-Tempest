@@ -72,5 +72,6 @@ is_subject_of_khan = {
 		is_subject_type = satrapy
 		is_subject_type = fabricator_satrapy
 		is_subject_type = war_satrapy
+		#is_subject_type = nsc_freebooter_satrapy ### NSC SUPPORT has_global_flag = has_nsc_active
 	}
 }

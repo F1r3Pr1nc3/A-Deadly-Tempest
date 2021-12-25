@@ -20,7 +20,7 @@ portraits = {
 	}
 	# lithnanite
 	lithnanite = {
-		entity = "portrait_lithoid_nanite_entity"
+		entity = "portrait_lithoid_07_entity"
 		clothes_selector = "no_texture"
 		hair_selector = "no_texture"
 		greeting_sound = "robot_reptilian_greetings"
@@ -39,7 +39,7 @@ portraits = {
 	}
 	# Clone of lithnanite (for compat.)
 	# GrayTempest = {
-	# 	entity = "portrait_lithoid_nanite_entity"
+	# 	entity = "portrait_lithoid_07_entity"
 	# 	clothes_selector = "no_texture"
 	# 	hair_selector = "no_texture"
 	# 	greeting_sound = "robot_reptilian_greetings"

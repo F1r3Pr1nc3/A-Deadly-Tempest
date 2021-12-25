@@ -22,6 +22,13 @@ tech_nanite_mega_construction = {
 		has_resource = { type = nanites amount > 0 }
 	}
 
+	prereqfor_desc = {
+		custom = {
+			title = TECH_UNLOCK_L_GATE_TITLE
+			desc = TECH_UNLOCK_L_GATE_DESC
+		}
+	}
+
 	modifier = {
 		megastructure_build_speed_mult = 0.25
 		starbase_building_build_speed_mult = 0.1

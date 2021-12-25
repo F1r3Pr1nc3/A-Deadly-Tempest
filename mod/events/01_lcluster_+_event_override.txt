@@ -4,15 +4,7 @@
 country_event = {
 	id = distar.10905
 	title = "LCLUSTER_PROJECT" # "distar.10905.name" "lclusterplus.10905.name"
-	desc = {
-		text = "distar.10905.desc"
-		# trigger = {
-		# 	NOR = {
-		# 		has_origin = origin_lclusterplus_gatebuilders
-		# 		has_origin = origin_lclusterplus_gatebuilders_advanced
-		# 	}
-		# }
-	}
+	desc = "distar.10905.desc"
 	desc = {
 		text = "lclusterplus.10905.desc"
 		exclusive_trigger  = {
@@ -23,7 +15,12 @@ country_event = {
 			}
 		}
 	}
-	picture =  GFX_evt_l-gateway # GFX_evt_drifting_gateway
+	picture = GFX_evt_drifting_gateway
+	picture = {
+		picture = GFX_evt_l-gateway
+		exclusive_trigger = { has_global_flag = l_cluster_origin }
+	}
+
 	show_sound = event_mystic_reveal
 	location = event_target:candidate_gateway
 	is_triggered_only = yes
@@ -52,7 +49,8 @@ country_event = {
 		}
 	}
 }
-namespace = lclusterplus # not really needed but to omit error.log
+
+namespace = lclusterplus
 
 # Special project completed (overwrite)
 country_event = {

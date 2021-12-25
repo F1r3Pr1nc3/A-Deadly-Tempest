@@ -208,7 +208,10 @@ CmtTriggerIsMarauder = {
 # }
 
 CmtTriggerIsKhanCountry = {
-	is_country_type = awakened_marauders
+	OR = {
+		is_country_type = awakened_marauders
+		is_same_empire = event_target:raider_khanate
+	}
 	# CmtFlagKhanDeadCountry replaced with vanilla
 	NOT = { has_country_flag = khan_dead_event_fine }
 }

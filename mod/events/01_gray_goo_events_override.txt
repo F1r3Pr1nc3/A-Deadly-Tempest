@@ -2397,33 +2397,32 @@ country_event = {
 }
 
 ### Gray outsourced
+# # Entering "Empty" L-Cluster
+# ship_event = {
+# 	id = graygoo.550
+# 	title = "graygoo.550.name"
+# 	desc = "graygoo.550.desc"
+# 	picture = GFX_evt_ruined_system
+# 	show_sound = event_radio_chatter
+# 	trackable = yes
+# 	location = root.from # due on_action bug for fleets
+# 	is_triggered_only = yes
 
-# Entering "Empty" L-Cluster
-ship_event = {
-	id = graygoo.550
-	title = "graygoo.550.name"
-	desc = "graygoo.550.desc"
-	picture = GFX_evt_ruined_system
-	show_sound = event_radio_chatter
-	trackable = yes
-	location = root.from # due on_action bug for fleets
-	is_triggered_only = yes
+# 	trigger = {
+# 		NOR = {
+# 			has_global_flag = gray_goo_crisis_set
+# 			has_global_flag = dragon_season
+# 			has_global_flag = gray_goo_empire_set
+# 			has_global_flag = l_cluster_origin # L-Cluster Plus
+# 		}
+# 		exists = root.from
+# 		root.from = { has_star_flag = lcluster1 }
+# 	}
 
-	trigger = {
-		NOR = {
-			# has_global_flag = gray_goo_crisis_set
-			# has_global_flag = dragon_season
-			has_global_flag = gray_goo_empire_set
-			has_global_flag = l_cluster_origin # L-Cluster Plus
-		}
-		exists = root.from
-		root.from = { has_star_flag = lcluster1 }
-	}
-
-	option = {
-		name = graygoo.550.a
-	}
-}
+# 	option = {
+# 		name = graygoo.550.a
+# 	}
+# }
 
 # Planet Bombarded
 planet_event = {
@@ -2439,8 +2438,8 @@ planet_event = {
 		has_global_flag = gray_goo_crisis_active
 		exists = event_target:graygoo_country
 		has_modifier = tamed_nanite_swarm_modifier
-		exists = root.from # only due vanilla bug
-		root.from = { is_same_empire = event_target:graygoo_country } # is_country_type = gray_goo
+		exists = from
+		from = { is_same_empire = event_target:graygoo_country } # is_country_type = gray_goo
 	}
 
 	immediate = {

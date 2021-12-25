@@ -21,6 +21,9 @@
 ###- Khan -###
 ##############
 
+# This = fleet
+# prev = owner
+# prevprev = planet!?
 CmtFleetSetAuxParam_KhanCombat = {
 	set_location = {
 		target = prevprev
