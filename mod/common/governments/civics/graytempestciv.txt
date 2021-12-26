@@ -1,4 +1,5 @@
 civic_machine_nanites_culture = {
+	icon = "gfx/interface/icons/governments/civics/civic_machine_nanites.dds"
 	potential = {
 		authority = { value = auth_machine_intelligence }
 	}

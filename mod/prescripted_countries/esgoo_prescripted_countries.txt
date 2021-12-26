@@ -48,7 +48,7 @@
 	ignore_portrait_duplication = no
 	room = personality_nanite_room # "personality_erudite_explorers_room"
 	spawn_enabled = no
-	playable = no # has_synthethic_dawn
+	#playable = no # has_synthethic_dawn
 	ethic = "ethic_gestalt_consciousness"
 	civics = {
 		"civic_machine_replication"

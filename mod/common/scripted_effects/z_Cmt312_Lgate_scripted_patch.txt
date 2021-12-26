@@ -17,8 +17,10 @@ generate_lcluster_clue = {
 				has_event_chain = l_cluster_chain
 				NAND = { is_ai = yes has_global_flag = CmtFlagLgateReqPlayer }
 			}
+			# increment counter
 			custom_tooltip = add_lcluster_clue
 			add_event_chain_counter = { event_chain = l_cluster_chain counter = clues amount = 1 }
+			# increment variable
 			change_variable = { which = num_lcluster_clues value = 1 }
 			add_resource = { nanites = 25 }
 		}
@@ -35,7 +37,35 @@ CmtEffectLgateClueComplete = {
 	if = {
 		limit = { has_global_flag = CmtFlagLgateSkipTech }
 		give_technology = { tech = tech_lgate_activation message = no }
-	} else = { country_event = { id = distar.10904 } }
+	} else = {
+		# if = {
+		# 	limit = { has_lgate = yes }
+		# 	random_system_within_border = {
+		# 		limit = {
+		# 			has_star_flag = lgate
+		# 			any_megastructure = { CmtTriggerIsClosedLgate = yes }
+		# 		}
+		# 		weights = {
+		# 			base = 1
+		# 			modifier = { add = 1 NOT = { has_star_flag = hostile_system } }
+		# 		}
+		# 		random_megastructure = {
+		# 			limit = { CmtTriggerIsClosedLgate = yes }
+		# 			save_event_target_as = lgate_system_1
+		# 		}
+		# 		star = {
+		# 			create_point_of_interest = {
+		# 				id = lgate_poi.1
+		# 				name = "LGATE_GALACTIC"
+		# 				desc = "LGATE_GALACTIC_DESC"
+		# 				event_chain = l_cluster_chain
+		# 				location = event_target:lgate_system_1
+		# 			}
+		# 		}
+		# 	}
+		# }
+		country_event = { id = distar.10904 }
+	}
 }
 
 ## Scope: this = megastructure (L-Gate)

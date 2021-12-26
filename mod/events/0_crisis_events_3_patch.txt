@@ -4,7 +4,7 @@
 namespace = crisis
 
 ### Triggering Event
-# WARNING: May cause galactic mass extinction and/or loss of appetite
+# WARNING: May cause galactic mass extinction and/or loss of appetite.
 country_event = {
 	id = crisis.199
 	hide_window = yes
@@ -160,7 +160,7 @@ planet_event = {
 	}
 
 	immediate = {
-		save_event_target_as = liberated_planet # for notify
+		save_event_target_as = liberated_planet # For notify
 		if = {
 			limit = {
 				exists = space_owner
