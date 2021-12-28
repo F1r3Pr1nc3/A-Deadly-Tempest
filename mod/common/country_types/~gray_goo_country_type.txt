@@ -183,12 +183,13 @@ awakened_gate_builders = {
 	can_receive_envoys = no
 	uses_origins = yes
 
-	# targets = {
-	# 	awakened_fallen_empire
-	# 	# fallen_empire
-	# 	ai_empire
-	# 	default
-	# }
+	targets = {
+		awakened_fallen_empire
+		awakened_marauder
+		# fallen_empire
+		ai_empire
+		# default
+	}
 
 	ai = {
 		enabled = yes
@@ -442,11 +443,12 @@ gray_goo = {
 	can_use_invalid_technology = yes
 	uses_origins = no
 
-	# targets = {
-	# 	awakened_fallen_empire
-	# 	fallen_empire
-	# 	default
-	# }
+	targets = {
+		awakened_fallen_empire
+		awakened_marauders
+		# fallen_empire
+		# default
+	}
 
 	ai = {
 		enabled = yes
