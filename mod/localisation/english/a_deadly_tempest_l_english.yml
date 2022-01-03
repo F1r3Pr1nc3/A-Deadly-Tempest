@@ -382,13 +382,15 @@
  TECH_UNLOCK_VOIDSPAWN_CONSTRUCTION_DESC:0 "The $voidspawn$ is an unborn leviathan, hidden within an egg, which looks like a dry world, orbiting a Class G star without any other habitable planets."
 
  ### Armies
- nanite_giga_warform:0 "§M Nanite Warform§!"
+ nanite_giga_warform:0 "§MNanite Warform§!"
  nanite_giga_warform_desc:0 "An extremely-powerful gigantic nanite entity, with enough power to devastate cities."
  nanite_giga_warform_plural:0 "§M$nanite_giga_warform$s§!"
  nanite_giga_warform_passive:0 "Permits building §Y$nanite_giga_warform$§! armies at your capital."
  nanite_giga_guardian:0 "§M Nanite Defense Warform§!"
  nanite_giga_guardian_desc:0 "The $nanite_giga_guardian$ is an extremely-powerful defensive version of the $nanite_giga_warform$."
  nanite_giga_guardian_plural:0 "§M$nanite_giga_guardian$s§!"
+ TECH_UNLOCK_NANITE_ARMY_TITLE: "$TECH_UNLOCK_ARMY|§MNanite Warform§!$"
+ TECH_UNLOCK_NANITE_ARMY_DESC: "$nanite_giga_warform_desc$"
  gray_army_desc:0 "Gray Nanite $SWARM$"
  spectre_army:0 "Spectre Division"
  spectre_army_plural:0 "Spectre Divisions"

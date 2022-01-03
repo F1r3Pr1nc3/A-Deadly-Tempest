@@ -28,6 +28,11 @@ entity = {
 	scale = 0.5
 
 	locator = { name = "core" rotation = { 0 0 0 } }
+	locator = { name = "gun_1" rotation = { 0 6.65 3 } }
+	locator = { name = "gun_2" rotation = { 4 6.75 -6.15 } }
+	locator = { name = "gun_3" rotation = { -4 6.75 -6.15 } }
+	locator = { name = "gun_4" rotation = { 6.3 5.3 -10.9 } }
+	locator = { name = "gun_5" rotation = { -6.3 5.3 -10.9 } }
 
 	locator = { name = "behind" rotation = { -90 0 90 } }
 	attach = { "behind" =  "grey_tempesttw_thinktank_phase_03_entity" }

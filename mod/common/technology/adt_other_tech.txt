@@ -23,9 +23,13 @@ tech_nanite_mega_construction = {
 	}
 
 	prereqfor_desc = {
+		# custom = {
+		# 	title = TECH_UNLOCK_L_GATE_TITLE
+		# 	desc = TECH_UNLOCK_L_GATE_DESC
+		# }
 		custom = {
-			title = TECH_UNLOCK_L_GATE_TITLE
-			desc = TECH_UNLOCK_L_GATE_DESC
+			title = TECH_UNLOCK_NANITE_ARMY_TITLE
+			desc = TECH_UNLOCK_NANITE_ARMY_DESC
 		}
 	}
 

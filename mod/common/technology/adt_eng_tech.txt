@@ -145,6 +145,10 @@ tech_nanite_living_metal = {
 			title = "tech_nanite_mega_construction"
 			desc = "tech_nanite_mega_construction_desc"
 		}
+		custom = {
+			title = TECH_UNLOCK_L_GATE_TITLE
+			desc = TECH_UNLOCK_L_GATE_DESC
+		}
 		# custom = {
 		# 	title = "building_machinedlc_nanite_living_metal_forge"
 		# 	desc = "mod_country_resource_max_sr_living_metal_add"

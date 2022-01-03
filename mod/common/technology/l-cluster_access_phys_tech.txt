@@ -60,7 +60,7 @@ tech_lgate_construction = {
 	icon = "tech_lcluster_access"
 	prerequisites = {
 		"tech_gateway_construction"
-		"tech_nanite_mega_construction"
+		"tech_nanite_living_metal" # "tech_nanite_mega_construction" zoo high
 	}
 	# feature_flags = { lgate_construction }
 	prereqfor_desc = {
@@ -81,6 +81,8 @@ tech_lgate_construction = {
 		}
 		has_distar = yes
 	}
+	feature_flags = { gateway_construction }
+
 	weight_modifier = {
 		factor = 0.5
 		modifier = {

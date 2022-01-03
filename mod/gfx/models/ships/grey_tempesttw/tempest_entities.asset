@@ -14,14 +14,14 @@ entity = {
 	name = "greytempest_science_beam_entity"
 	state = { name = "idle" animation = "idle" animation_speed = 0.7 }
 	locator = { name = "root" position = { 0 -7 0 } rotation = { 0 180 0 } }
-	attach = { "root" = "mega_art_institution_01_core_effect_entity" }
+	attach = { "root" = "mega_art_instution_01_core_effect_entity" }
 	scale = 4.5
 }
 
 entity = {
 	name = "greytempest_mining_station"
 	locator = { name = "root" position = { 0 0 0 } rotation = { 90 90 30 } }
-	attach = { "behind" = "greytempest_mininge_station" }
+	attach = { "root" = "greytempest_mininge_station" }
 	scale = 1.0
 }
 
