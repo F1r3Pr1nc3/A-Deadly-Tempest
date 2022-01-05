@@ -25,7 +25,7 @@ nanite_worker = {
 	resources = {
 		category = planet_miners
 		produces = { minerals = 4 }
-		upkeep = { energy = 6 }
+		upkeep = { energy = 4 }
 	}
 	weight = {
 		weight = @worker_job_weight
@@ -72,7 +72,7 @@ nanite_worker = {
 	}
 }
 nanite_drone = {
-	category = worker
+	category = simple_drone
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_nanite_transmuter
 	clothes_texture_index = 2
@@ -94,10 +94,10 @@ nanite_drone = {
 	resources = {
 		category = planet_miners
 		produces = { minerals = 4 }
-		upkeep = { energy = 6 }
+		upkeep = { energy = 4 }
 	}
 	weight = {
-		weight = @worker_job_weight
+		weight = @simple_drone_job_weight
 		modifier = {
 			factor = 1.5
 			OR = {
@@ -128,7 +128,10 @@ nanite_drone = {
 		}
 		modifier = {
 			factor = 1.2
-			has_trait = trait_very_strong
+			OR = {
+				has_trait = trait_very_strong
+				has_job = nanite_drone
+			}
 		}
 		modifier = {
 			factor = 1.1
@@ -164,7 +167,7 @@ nanite_agri_worker = {
 	resources = {
 		category = planet_farmers
 		produces = { food = 6 }
-		upkeep = { energy = 8 }
+		upkeep = { energy = 6 }
 	}
 	weight = {
 		weight = @worker_job_weight
@@ -243,10 +246,10 @@ nanite_agri_drone = {
 	resources = {
 		category = planet_farmers
 		produces = { food = 6 }
-		upkeep = { energy = 8 }
+		upkeep = { energy = 6 }
 	}
 	weight = {
-		weight = @worker_job_weight
+		weight = @simple_drone_job_weight
 		modifier = {
 			factor = 1.5
 			OR = {
@@ -281,7 +284,10 @@ nanite_agri_drone = {
 		}
 		modifier = {
 			factor = 1.2
-			has_trait = trait_very_strong
+			OR = {
+				has_trait = trait_very_strong
+				has_job = agri_drone
+			}
 		}
 		modifier = {
 			factor = 1.1
@@ -289,7 +295,10 @@ nanite_agri_drone = {
 		}
 		modifier = {
 			factor = 0.9
-			has_trait = trait_weak
+			OR = {
+				has_trait = trait_weak
+				is_robot_empire = yes
+			}
 		}
 		modifier = {
 			factor = 0.5
@@ -298,7 +307,7 @@ nanite_agri_drone = {
 				is_lithoid_empire = yes
 				has_monthly_income = {
 					resource = food
-					value >= 0
+					value > 0
 				}
 			}
 		}

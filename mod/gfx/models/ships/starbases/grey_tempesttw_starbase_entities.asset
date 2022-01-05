@@ -169,6 +169,7 @@ entity = {
 entity = {
 	name = "grey_tempesttw_starbase_starfortress_section_entity"
 	pdxmesh = "grey_tempesttw_outpost_mesh"
+	# locator = { name = "slot1"	position = { 0 0 0 } }
 	locator = { name = "medium_gun_01"	position = { 0 0 0 } }
 	locator = { name = "medium_gun_02"	position = { 0 0 0 } }
 	locator = { name = "medium_gun_03"	position = { 0 0 0 } }
@@ -203,13 +204,6 @@ entity = {
 entity = {
 	name = "grey_tempesttw_starbase_citadel_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
-	scale = 1.2
-}
-
-entity = {
-	name = "grey_tempesttw_starbase_citadel_section_entity"
-	pdxmesh = "grey_tempesttw_citadel_mesh"
-	# TODO positions
 	locator = { name = "part1"	position = { 0 0 0 } }
 	locator = { name = "part2"	position = { 0 0 0 } }
 	locator = { name = "part3"	position = { 0 0 0 } }
@@ -217,19 +211,26 @@ entity = {
 	locator = { name = "part5"	position = { 0 0 0 } }
 	locator = { name = "part6"	position = { 0 0 0 } }
 	locator = { name = "part7"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_01"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_02"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_03"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_04"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_05"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_06"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_07"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_08"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_09"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_010"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_011"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_012"	position = { 0 0 0 } }
-	locator = { name = "medium_gun_013"	position = { 0 0 0 } }
+	scale = 1.2
+}
+
+entity = {
+	name = "grey_tempesttw_starbase_citadel_section_entity"
+	pdxmesh = "grey_tempesttw_citadel_mesh"
+	# locator = { name = "slot1"	position = { 0 0 0 } }
+	locator = { name = "medium_gun_01"	position = {	-8	14	-22	} }
+	locator = { name = "medium_gun_02"	position = {	-15	14	-18	} }
+	locator = { name = "medium_gun_03"	position = {	-23	14	-4	} }
+	locator = { name = "medium_gun_04"	position = {	-23	14	4	} }
+	locator = { name = "medium_gun_05"	position = {	-15	14	18	} }
+	locator = { name = "medium_gun_06"	position = {	-8	14	22	} }
+	locator = { name = "medium_gun_07"	position = {	8	14	22	} }
+	locator = { name = "medium_gun_08"	position = {	15	14	18	} }
+	locator = { name = "medium_gun_09"	position = {	23	14	4	} }
+	locator = { name = "medium_gun_010"	position = {	23	14	-4	} }
+	locator = { name = "medium_gun_011"	position = {	15	14	-18	} }
+	locator = { name = "medium_gun_012"	position = {	8	14	-22	} }
+	locator = { name = "medium_gun_013"	position = {	0	25	0	} }
 	default_state = "idle"
 	state = { name = "idle"		animation = "idle"
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }

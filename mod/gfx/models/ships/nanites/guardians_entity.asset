@@ -1,5 +1,5 @@
 
-#####     Scavenger Bot     #####
+#####	 Scavenger Bot	 #####
 entity = {
 	name = "scavenger_entity"
 	pdxmesh = "scavenger_mesh"
@@ -88,7 +88,7 @@ entity = {
 	state = { name = "death" animation = "idle" }
 }
 
-#####     Infinity Machine     #####
+#####	 Infinity Machine	 #####
 
 entity = {
 	name = "infinity_sphere_entity"
@@ -109,7 +109,7 @@ entity = {
 	}
 }
 
-#####     Automated Dreadnought     #####
+#####	 Automated Dreadnought	 #####
 ### FRAME
 entity = {
 	name = "dreadnought_entity"
@@ -226,7 +226,7 @@ entity = {
 	scale = 5.0
 }
 
-##################         	 NANITE DRAGON         	 ########################
+##################		 	 NANITE DRAGON		 	 ########################
 
 entity = {
 	name = "nanite_dragon_entity"

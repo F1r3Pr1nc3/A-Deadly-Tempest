@@ -27,20 +27,28 @@ entity = {
 
 	scale = 0.5
 
-	locator = { name = "core" rotation = { 0 0 0 } }
-	locator = { name = "gun_1" rotation = { 0 6.65 3 } }
-	locator = { name = "gun_2" rotation = { 4 6.75 -6.15 } }
-	locator = { name = "gun_3" rotation = { -4 6.75 -6.15 } }
-	locator = { name = "gun_4" rotation = { 6.3 5.3 -10.9 } }
-	locator = { name = "gun_5" rotation = { -6.3 5.3 -10.9 } }
+	locator = { name = "core"			position = { 0 0 0 } }
+	locator = { name = "gun_1"			position = { 0 6.65 3 } }
+	locator = { name = "gun_2"			position = { 4 6.75 -6.15 } }
+	locator = { name = "gun_3"			position = { -4 6.75 -6.15 } }
+	locator = { name = "gun_4"			position = { 6.3 5.3 -10.9 } }
+	locator = { name = "gun_5"			position = { -6.3 5.3 -10.9 } }
+
+	locator = { name = "xl_gun_01"					position = { 8 3 6 } }
+	locator = { name = "xl_gun_02"					position = { -8 3 6 } }
+	locator = { name = "strike_craft_locator_01"	position = { -25 -3 0 } }
+	locator = { name = "strike_craft_locator_02"	position = { 25 -3 0 } }
+	locator = { name = "strike_craft_locator_03"	position = { -36 -1 0 } }
+	locator = { name = "strike_craft_locator_04"	position = { 36 -1 0 } }
+	locator = { name = "strike_craft_locator_05"	position = { -52 -4 0 } }
+	locator = { name = "strike_craft_locator_06"	position = { 52 -4 0 } }
 
 	locator = { name = "behind" rotation = { -90 0 90 } }
 	attach = { "behind" =  "grey_tempesttw_thinktank_phase_03_entity" }
 
 	default_state = "combat_idle"
 
-	state = { name = "combat_idle"		animation = "opened" animation_blend_time = 0 looping = yes
-	}
+	state = { name = "combat_idle"		animation = "opened" animation_blend_time = 0 looping = yes }
 
 	state = { name = "death"		animation = "death" looping = no
 		event = { time = 0.0 node = "explosion_01" particle = "large_ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
