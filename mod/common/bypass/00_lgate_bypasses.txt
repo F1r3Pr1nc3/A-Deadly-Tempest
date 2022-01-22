@@ -1,0 +1,84 @@
+
+# Compat. with DSO - ADT - CM-MidGame
+lgate = {
+	name = LGATE_GALACTIC
+	is_pathfind = yes
+	uses_action = no
+	always_active = no
+	windup_time = 0
+	winddown_time = 0
+	ftl_multiplier = 0	# 0 means instant
+	icon_frame = 30
+	remember_instances = no	# whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
+	galactic_map_tooltip_header = LGATE_GALACTIC
+	galactic_map_tooltip_desc = LGATE_GALACTIC_DESC
+	connection_type = scripted_connection
+	animation_time = 1
+	ftl_ship_effect = "gateway_ftl_ship_effect_entity"
+	ftl_bypass_effect = "gateway_ftl_bypass_effect_entity"
+	# prerequisites = { tech_lgate_activation }
+	on_pre_explore = {
+		# Fallback for defect savegames.
+		if = {
+			limit = {
+				exists = owner
+				has_global_flag = lgates_activated_globally
+				owner = {
+					has_country_flag = lgates_activated
+					has_technology = tech_lgate_activation
+				}
+			}
+			fromfrom = {
+				if = {
+					limit = { CmtTriggerIsClosedLgate = yes }
+					# Enable L-Gates over time
+					prev.owner = { country_event = { id = distar.10960 } }
+				} else = {
+					CmtEffectOpenLgate = yes
+					# random_system_megastructure = {
+					# 	limit = { CmtTriggerIsOpenedLgate = yes }
+					# 	CmtEffectOpenLgate = yes
+					# }
+				}
+			}
+		}
+	}
+	country_can_use = {
+		custom_tooltip = {
+			fail_text = LGATE_COUNTRY_CANNOT_USE
+			# exists = this
+			# is_scope_type = country
+			OR = {
+				has_global_flag = lgates_activated_globally
+				root = { has_country_flag = lgates_activated }
+			}
+			# Invalid object???
+			root = {
+				NOR = {
+					is_country_type = amoeba
+					is_country_type = amoeba_borderless
+					is_country_type = caravaneer_fleet
+					is_country_type = crystal
+					is_country_type = feral_prethoryn
+					is_country_type = guardian
+					is_country_type = guardian_dragon
+					is_country_type = tiyanki
+					is_country_type = vluur
+				}
+			}
+		}
+	}
+	on_action = "on_entering_lgate" # for compatibility (key free to use)
+	scripted_connection = {
+		# defines endpoints that can only reach the "nexus"
+		node = {
+			# system scope
+			has_star_flag = lgate
+		}
+		# defines endpoint(s) that can reach all "nodes" (but not other nexuses)
+		nexus = {
+			# system scope
+			has_star_flag = lcluster1
+		}
+	}
+}

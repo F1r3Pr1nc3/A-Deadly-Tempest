@@ -49,5 +49,20 @@ ai_should_restrict_system = {
 				owner = { is_country_type = guardian_fortress }
 			}
 		}
+		AND = { # Comp. GIGA mod
+			has_global_flag = gigastructures_enabled
+			NOT = { has_global_flag = katzenartig_imperium_happened }
+			OR = {
+				has_global_flag = katzenartig_always
+				has_global_flag = katzenartig_deathwish
+				has_global_flag = katzenartig_stellarite
+				has_global_flag = katzenartig_improbable
+			}
+			has_star_flag = flusion_system
+			event_target:gigaflusion = {
+				exists = owner
+				owner = { is_country_type = primitive }
+			}
+		}
 	}
 }

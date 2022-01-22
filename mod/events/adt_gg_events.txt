@@ -609,6 +609,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_global_flag = lgates_activated_globally
+		is_scope_valid = yes
 		exists = from
 		exists = fromfrom
 		exists = fromfromfrom
@@ -664,11 +665,12 @@ country_event = {
 		else_if = {
 			limit = {
 				from = {
+					is_scope_type = country
 					exists = owner_species
 					OR = {
-						is_robot_empire = yes
 						is_species_class = ROBOT
 						has_technology = tech_nanite_ships
+						is_robot_empire = yes
 					}
 				}
 			}
@@ -933,6 +935,7 @@ fleet_event = {
 						is_disabled = no
 						fleet_power > 0 # This alone is not sure as some ships can be on escape!?
 						has_fleet_flag = commands_merge_fleet_flag_temp
+						exists = owner # idk why but it is needed
 						owner = {
 							OR = {
 								is_robot_empire = yes
@@ -1108,9 +1111,10 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_global_flag = lgates_activated_globally
+		is_scope_valid = yes
 		OR = {
-			is_robot_empire = yes
 			is_species_class = ROBOT # has_authority = auth_ancient_machine_intelligence
+			is_robot_empire = yes
 		}
 		exists = FromFromFrom
 		FromFrom = {
@@ -2233,6 +2237,8 @@ ship_event = {
 	immediate = {
 		if = {
 			limit = {
+				exists = from
+				exists = from.owner
 				from.owner = {
 					OR = {
 						is_robot_empire = yes
@@ -2262,6 +2268,7 @@ ship_event = {
 	immediate = {
 		if = {
 			limit = {
+				exists = owner
 				owner = {
 					OR = {
 						is_robot_empire = yes
@@ -2301,13 +2308,11 @@ ship_event = {
 	immediate = {
 		if = {
 			limit = {
-				OR = {
-					NOT = { exists = owner }
+				NAND = {
+					exists = owner
 					owner = {
-						NOR = {
-							is_robot_empire = yes
-							has_technology = tech_nanite_ships
-						}
+						is_robot_empire = yes
+						has_technology = tech_nanite_ships
 					}
 				}
 			}

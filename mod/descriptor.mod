@@ -1,5 +1,5 @@
-version="2.1.8"
-name="A Deadly Tempest [3.2.☠]"
+version="2.1.9"
+name="A Deadly Tempest [3.3.☠]"
 tags={
 	"Events"
 	"Gameplay"
@@ -17,5 +17,5 @@ dependencies={
 	"Guilli's Planet Modifiers and Features"
 }
 picture="thumbnail.png"
-supported_version="3.2.*"
+supported_version="3.3.*"
 remote_file_id="2028826064"
