@@ -87,7 +87,6 @@ building_nanite_plant_2 = {
 	}
 	allow = {
 		has_upgraded_capital = yes
-		buildings_upgrade_allow = yes
 		owner = { NOR = { has_origin = origin_machine_nanites has_civic = civic_machine_nanites_culture } }
 	}
 	destroy_trigger = {
@@ -163,7 +162,6 @@ building_nanite_plant_3 = {
 	}
 	allow = {
 		has_major_upgraded_capital = yes
-		buildings_upgrade_allow = yes
 		owner = {
 			NOR = { has_origin = origin_machine_nanites has_civic = civic_machine_nanites_culture }
 		}

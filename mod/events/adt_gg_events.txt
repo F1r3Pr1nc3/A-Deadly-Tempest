@@ -901,7 +901,7 @@ fleet_event = {
 					limit = {
 						OR = {
 							has_fleet_flag = assimilate_that_ship_flag_temp
-							any_owned_ship = { count < 1 }
+							NOT = { any_owned_ship = { always = yes } }
 						}
 					}
 					# log = "WARNING assimilate_that_ship NOT exists, delete temp fleet"
@@ -964,7 +964,7 @@ fleet_event = {
 				destroy_ship = this
 			}
 			if = {
-				limit = { any_owned_ship = { count < 1 } }
+				limit = { NOT = { any_owned_ship = { always = yes } } }
 				delete_fleet = {
 					target = this
 					kill_leader = no

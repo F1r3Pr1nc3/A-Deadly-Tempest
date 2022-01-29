@@ -185,7 +185,7 @@ awakened_gate_builders = {
 
 	targets = {
 		awakened_fallen_empire
-		awakened_marauder
+		awakened_marauders
 		# fallen_empire
 		ai_empire
 		# default
@@ -468,7 +468,7 @@ gray_goo = {
 	modules = {
 		exclusive_diplomacy_module = {
 			contact_rule = on_action_only # Nothing is allowed, but we need this for relationships.
-			# contact_rule = script_only
+			# contact_rule = on_action_only
 		}
 		tiered_technology_module = { tier = 3 rare = no }
 		standard_event_module = {}
