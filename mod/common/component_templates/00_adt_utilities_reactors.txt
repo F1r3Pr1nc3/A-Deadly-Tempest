@@ -1,3 +1,4 @@
+# NSC compat.
 # Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes.
 #############
 #	POWER	#
@@ -5,8 +6,8 @@
 
 @cruiser_power_5 = 800
 @cruiser_power_6 = 1030
-@battleship_power_5 = 1550
-@battleship_power_6 = 2000
+@battleship_power_5 = 3100
+@battleship_power_6 = 4000
 @titan_power_5 = 3200
 @titan_power_6 = 5200
 @colossus_power = 10000
@@ -210,7 +211,7 @@ utility_component_template = {
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
 	size_restriction = { cruiser crisis_cruiser graygoo_interdictor }
-	upgrades_to = CRUISER_GRAVITON_REACTOR
+	upgrades_to = "CRUISER_GRAVITON_REACTOR"
 
 	ai_weight = {
 		weight = 6
@@ -242,7 +243,7 @@ utility_component_template = {
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
 	size_restriction = { battleship graygoo_interdictor }
-	upgrades_to = BATTLESHIP_GRAVITON_REACTOR
+	upgrades_to = "BATTLESHIP_GRAVITON_REACTOR"
 
 	ai_weight = {
 		weight = 6
@@ -274,7 +275,7 @@ utility_component_template = {
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
 	size_restriction = { titan graygoo_mothership scavenger_bot dreadnought }
-	upgrades_to = TITAN_GRAVITON_REACTOR
+	upgrades_to = "TITAN_GRAVITON_REACTOR"
 
 	ai_weight = {
 		weight = 6

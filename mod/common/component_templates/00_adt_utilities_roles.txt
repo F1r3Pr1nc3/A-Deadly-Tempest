@@ -1,23 +1,50 @@
-## Combat Computers & Thrusters Patch for dreadnought & scavenger_bot
+## NSC Combat Computers & Thrusters Patch for dreadnought & scavenger_bot
 # Combat Computers
-@power3 = -25
-@cost3 = 20
-# DM Power:
-@titan_power_6 = 4200
-@colossus_power = 10000
-@platform_power_6 = 750
-@battleship_cost_6 = 296
-@titan_cost_6 = 592
-@platform_cost_6 = 74
-# DM Thrusters:
-@titan_power_5 = -480
-@titan_cost4 = 192
-@colossus_power_5 = -600
-@colossus_cost5 = 300
-@shipAuraRange = 40
+@cost0 = 0
+@cost1 = 5
+@cost2 = 10
+@cost3 = 15
+@cost4 = 20
 
+@power0 = -5
+@power1 = -10
+@power2 = -15
+@power3 = -20
+
+@evasion0 = 5
+@evasion1 = 10
+@evasion2 = 15
+@evasion3 = 25
+
+@fire_rate0 = 0.05
+@fire_rate1 = 0.10
+@fire_rate2 = 0.15
+@fire_rate3 = 0.20
+
+@tracking0 = 5
+@tracking1 = 10
+@tracking2 = 15
+@tracking3 = 20
+@tracking4 = 25
+@tracking5 = 30
+@tracking6 = 40
+
+@accuracy0 = 4
+@accuracy1 = 5
+@accuracy2 = 10
+@accuracy3 = 15
+@accuracy4 = 20
+
+@weapon_range0 = 0.05
+@weapon_range1 = 0.10
+@weapon_range2 = 0.15
+@weapon_range3 = 0.20
+
+@engagement_range0 = 0.25
+@engagement_range1 = 0.50
+@engagement_range2 = 0.75
+@engagement_range3 = 1.0
 # 'LINE' COMPUTERS
-
 # utility_component_template = {
 # 	key = "COMBAT_COMPUTER_LINE_SAPIENT"
 # 	size = small
@@ -27,7 +54,7 @@
 # 	resources = {
 # 		category = ship_components
 # 		cost = {
-# 			alloys = @cost3
+# 			alloys = @cost4
 # 		}
 # 	}
 # 	class_restriction = { shipclass_military }
@@ -35,12 +62,10 @@
 # 	component_set = "combat_computers"
 # 	ship_behavior = "line"
 # 	prerequisites = { "tech_combat_computers_3" }
-
 # 	ship_modifier = {
 # 		ship_fire_rate_mult = 0.20
 # 		ship_accuracy_add = 20
 # 	}
-
 # 	ai_weight = {
 # 		weight = 5
 # 		modifier = {
@@ -54,7 +79,6 @@
 # 		}
 # 	}
 # }
-
 utility_component_template = {
 	key = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
 	size = small
@@ -63,24 +87,32 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = {
-			alloys = @cost3
-		}
+		cost = { alloys = @cost4 }
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { destroyer cruiser battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
+	# size_restriction = { destroyer cruiser battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
+	size_restriction = {
+		corvette
+		destroyer
+		cruiser
+		crisis_destroyer
+		crisis_cruiser
+		StrikeCruiser
+		Battlecruiser
+		battleship
+		Carrier
+		Dreadnought
+		titan
+		Flagship
+		escortcarrier
+		explorationship
+		graygoo_interdictor
+	}
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_combat_computers_autonomous" }
-
-	ship_modifier = {
-		ship_fire_rate_mult = 0.20
-		ship_accuracy_add = 20
-	}
-
-	ai_weight = {
-		weight = 5
-	}
+	ship_modifier = { ship_fire_rate_mult = @fire_rate3 ship_accuracy_add = @accuracy4 }
+	ai_weight = { weight = 5 }
 }
 
 utility_component_template = {
@@ -91,26 +123,35 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = {
-			alloys = @cost3
-		}
+		cost = { alloys = @cost4 }
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { destroyer cruiser battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
+	# size_restriction = { destroyer cruiser battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
+	size_restriction = {
+		corvette
+		destroyer
+		cruiser
+		crisis_destroyer
+		crisis_cruiser
+		StrikeCruiser
+		Battlecruiser
+		battleship
+		Carrier
+		Dreadnought
+		titan
+		Flagship
+		escortcarrier
+		explorationship
+		graygoo_interdictor
+	}
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_precognition_interface" }
-
-	ship_modifier = {
-		ship_fire_rate_mult = 0.15
-		ship_accuracy_add = 15
-		ship_tracking_add = 10
-	}
-
+	ship_modifier = { ship_fire_rate_mult = @fire_rate2 ship_accuracy_add = @accuracy3 ship_tracking_add = @tracking1 }
 	ai_weight = {
 		weight = 4
 		modifier = {
-			factor = 0.0
+			factor = 0
 			is_country_type = default
 			NOT = { has_ascension_perk = ap_transcendence }
 		}
@@ -118,7 +159,6 @@ utility_component_template = {
 }
 
 # 'ARTILLERY' COMPUTERS
-
 # utility_component_template = {
 # 	key = "COMBAT_COMPUTER_ARTILLERY_SAPIENT"
 # 	size = small
@@ -128,7 +168,7 @@ utility_component_template = {
 # 	resources = {
 # 		category = ship_components
 # 		cost = {
-# 			alloys = @cost3
+# 			alloys = @cost4
 # 		}
 # 	}
 # 	class_restriction = { shipclass_military shipclass_starbase }
@@ -144,12 +184,10 @@ utility_component_template = {
 # 	component_set = "combat_computers"
 # 	ship_behavior = "artillery"
 # 	prerequisites = { "tech_combat_computers_3" }
-
 # 	ship_modifier = {
 # 		ship_fire_rate_mult = 0.20
 # 		ship_weapon_range_mult = 0.20
 # 	}
-
 # 	ai_weight = {
 # 		weight = 5
 # 		modifier = {
@@ -163,7 +201,6 @@ utility_component_template = {
 # 		}
 # 	}
 # }
-
 utility_component_template = {
 	key = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
 	size = small
@@ -172,33 +209,38 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = {
-			alloys = @cost3
-		}
+		cost = { alloys = @cost4 }
 	}
-	class_restriction = { shipclass_military shipclass_starbase shipclass_military_special }
+	class_restriction = {
+		shipclass_military
+		shipclass_starbase
+		shipclass_military_special
+	}
 	size_restriction = {
+		corvette
 		destroyer
 		cruiser
+		crisis_destroyer
+		crisis_cruiser
+		StrikeCruiser
+		Battlecruiser
 		battleship
+		Carrier
+		Dreadnought
 		titan
+		Flagship
+		escortcarrier
+		explorationship
 		juggernaut
-		crisis_destroyer crisis_cruiser star_eater
+		star_eater
 		dreadnought
 		scavenger_bot
 	}
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
-	prerequisites = {
-		"tech_combat_computers_autonomous"
-	}
-	ship_modifier = {
-		ship_fire_rate_mult = 0.2
-		ship_weapon_range_mult = 0.2
-	}
-	ai_weight = {
-		weight = 5
-	}
+	prerequisites = { "tech_combat_computers_autonomous" }
+	ship_modifier = { ship_fire_rate_mult = @fire_rate3 ship_weapon_range_mult = @weapon_range3 }
+	ai_weight = { weight = 5 }
 }
 
 utility_component_template = {
@@ -209,36 +251,41 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = {
-			alloys = @cost3
-		}
+		cost = { alloys = @cost4 }
 	}
-	class_restriction = { shipclass_military shipclass_starbase }
+	class_restriction = {
+		shipclass_military
+		shipclass_starbase
+		shipclass_military_special
+	}
 	size_restriction = {
+		corvette
 		destroyer
 		cruiser
-		battleship
-		titan
-		juggernaut
 		crisis_destroyer
 		crisis_cruiser
+		StrikeCruiser
+		Battlecruiser
+		battleship
+		Carrier
+		Dreadnought
+		titan
+		Flagship
+		escortcarrier
+		explorationship
+		juggernaut
+		star_eater
 		dreadnought
 		scavenger_bot
 	}
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_precognition_interface" }
-
-	ship_modifier = {
-		ship_fire_rate_mult = 0.15
-		ship_weapon_range_mult = 0.15
-		ship_tracking_add = 10
-	}
-
+	ship_modifier = { ship_fire_rate_mult = @fire_rate2 ship_weapon_range_mult = @weapon_range2 ship_tracking_add = @tracking1 }
 	ai_weight = {
 		weight = 4
 		modifier = {
-			factor = 0.0
+			factor = 0
 			is_country_type = default
 			NOT = { has_ascension_perk = ap_transcendence }
 		}
@@ -254,31 +301,31 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = {
-			alloys = @cost3
-		}
+		cost = { alloys = @cost4 }
 	}
-	class_restriction = { shipclass_military shipclass_starbase shipclass_military_special }
+	class_restriction = {
+		shipclass_military
+		shipclass_starbase
+		shipclass_military_special
+	}
 	size_restriction = {
 		cruiser
 		battleship
 		juggernaut
 		titan
+		Carrier
+		escortcarrier
+		Flagship
+		explorationship
 		star_eater
 		dreadnought
 		scavenger_bot
 	}
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
-	prerequisites = {
-		"tech_combat_computers_autonomous"
-	}
-	ship_modifier = {
-		ship_engagement_range_mult = 1
-	}
-	ai_weight = {
-		weight = 5
-	}
+	prerequisites = { "tech_combat_computers_autonomous" }
+	ship_modifier = { ship_engagement_range_mult = @engagement_range3 }
+	ai_weight = { weight = 5 }
 }
 
 utility_component_template = {
@@ -289,12 +336,13 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = {
-			alloys = @cost3
-		}
+		cost = { alloys = @cost4 }
 	}
-	class_restriction = { shipclass_military shipclass_starbase shipclass_military_special }
-
+	class_restriction = {
+		shipclass_military
+		shipclass_starbase
+		shipclass_military_special
+	}
 	size_restriction = {
 		cruiser
 		battleship
@@ -306,17 +354,12 @@ utility_component_template = {
 	}
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
-	prerequisites = {
-		"tech_precognition_interface"
-	}
-	ship_modifier = {
-		ship_engagement_range_mult = 0.75
-		ship_tracking_add = 10
-	}
+	prerequisites = { "tech_precognition_interface" }
+	ship_modifier = { ship_engagement_range_mult = @engagement_range2 ship_tracking_add = @tracking1 }
 	ai_weight = {
 		weight = 4
 		modifier = {
-			factor = 0.0
+			factor = 0
 			is_country_type = default
 			NOT = { has_ascension_perk = ap_transcendence }
 		}
