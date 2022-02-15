@@ -1411,11 +1411,11 @@ country_event = {
 									change_variable = { which = "fleetCounter" value = 1 }
 								}
 								queue_actions = {
-									move_to = event_target:main_star
 									effect = {
 										id = "graygoo_SetAuxParam_Roamer[graygoo_country.fleetCounter]"
 										CmtFleetSetAuxParam_Roamer = { NUM = "graygoo_country.fleetCounter" }
 									}
+									move_to = event_target:main_star
 								}
 							}
 						}

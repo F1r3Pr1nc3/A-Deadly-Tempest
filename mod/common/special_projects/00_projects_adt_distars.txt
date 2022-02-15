@@ -15,7 +15,10 @@ special_project = {
 		owner = {
 			country_event = { id = distar.13035 }
 		}
-		solar_system.star = { set_planet_flag = ldragon_recruited }
+		solar_system = {
+			star = { set_planet_flag = ldragon_recruited }
+			remove_star_flag = dragon_point # otherwise the project can start again (on tamed dragons!)
+		}
 	}
 	abort_trigger = {
 		# this = country
@@ -25,8 +28,14 @@ special_project = {
 			# is_scope_type = star
 			OR = {
 				has_planet_flag = ldragon_recruited # Should be indeed star_flag!?
-				AND = {
-					solar_system = {
+				solar_system = {
+					OR = {
+						NOT = {
+							any_fleet_in_system = {
+								exists = owner
+								owner = { is_country_type = ldragon_country }
+							}
+						}
 						any_fleet_in_system = {
 							exists = owner
 							owner = { is_country_type = ldragon_country }

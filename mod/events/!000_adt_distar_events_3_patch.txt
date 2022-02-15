@@ -875,7 +875,10 @@ fleet_event = {
 		from = {
 			has_star_flag = dragon_point
 			NOT = { has_star_flag = visited_dragon_point@root.owner }
-			any_fleet_in_system = { is_ship_size = nanite_space_dragon_baby }
+			any_fleet_in_system = {
+				is_ship_size = nanite_space_dragon_baby
+				owner = { is_country_type = ldragon_country }
+			}
 		}
 	}
 	immediate = {
