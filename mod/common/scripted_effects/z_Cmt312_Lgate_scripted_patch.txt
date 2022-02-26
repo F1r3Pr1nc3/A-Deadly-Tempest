@@ -17,10 +17,10 @@ generate_lcluster_clue = {
 				has_event_chain = l_cluster_chain
 				NAND = { is_ai = yes has_global_flag = CmtFlagLgateReqPlayer }
 			}
-			# increment counter
+			# Increment counter
 			custom_tooltip = add_lcluster_clue
 			add_event_chain_counter = { event_chain = l_cluster_chain counter = clues amount = 1 }
-			# increment variable
+			# Increment variable
 			change_variable = { which = num_lcluster_clues value = 1 }
 			add_resource = { nanites = 25 }
 		}
@@ -106,7 +106,7 @@ CmtEffectDestroyGraygoo = {
 		}
 		country_event = { id = graygoo.16 }
 
-		# remove surveyed (was bugged 3.0)
+		# Remove surveyed (was bugged 3.0)
 		every_system = {
 			limit = { has_star_flag = lcluster }
 			set_surveyed = { surveyed = no surveyor = prev }
@@ -138,7 +138,7 @@ CmtEffectDestroyGraygoo = {
 					limit = { has_star_flag = lcluster }
 					every_system_planet = {
 						limit = { is_planet_class = pc_gray_goo }
-						add_modifier = { modifier = CmtModifierAutoTerraform days = -1 }
+						add_modifier = { modifier = CmtModifierAutoTerraform }
 						planet_event = { id = CrisisManagerControl.6211 days = 90 random = 450 }	## Auto-Terraform
 					}
 				}
@@ -148,7 +148,7 @@ CmtEffectDestroyGraygoo = {
 					limit = { has_star_flag = lcluster }
 					every_system_planet = {
 						limit = { is_planet_class = pc_gray_goo }
-						add_modifier = { modifier = terraforming_candidate days = -1 }
+						add_modifier = { modifier = terraforming_candidate }
 					}
 				}
 			}

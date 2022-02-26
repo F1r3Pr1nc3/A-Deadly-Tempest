@@ -2,7 +2,7 @@
 utility_component_template = {
 	key = "AUTO_REPAIR_2"
 	size = aux
-	icon = "GFX_ship_part_nanite_auto_repair" # icon = "GFX_ship_part_auto_repair"
+	icon = "GFX_ship_part_nanite_auto_repair" # icon = "GFX_ship_part_ship_part_nanite_repair_system"
 	icon_frame = 1
 	power = 0
 	resources = {

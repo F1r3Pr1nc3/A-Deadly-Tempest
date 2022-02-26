@@ -15,10 +15,13 @@ country_event = {
 			}
 		}
 	}
-	picture = GFX_evt_drifting_gateway
+	picture = {
+		picture = GFX_evt_drifting_gateway
+		trigger = { has_global_flag = l_cluster_origin }
+	}
 	picture = {
 		picture = GFX_evt_l-gateway
-		exclusive_trigger = { has_global_flag = l_cluster_origin }
+		trigger = { NOT = { has_global_flag = l_cluster_origin } }
 	}
 
 	show_sound = event_mystic_reveal
