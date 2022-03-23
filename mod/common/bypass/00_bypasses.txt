@@ -130,12 +130,14 @@ wormhole = {
 				from = { is_at_war_with = root }
 				# System's owner is not a proper empire.
 				from = {
-					is_country_type_with_subjects = no
-					# is_fallen_empire = no
+					NOR = {
+						is_country_type_with_subjects = yes
+						is_country_type = fallen_empire
+					}
 				}
 				AND = {
 					# System's owner is GC member and you are custodian/emperor
-					# exists = from
+					exists = from
 					from = { is_galactic_community_member = yes }
 					root = {
 						OR = {

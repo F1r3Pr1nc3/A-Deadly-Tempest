@@ -54,8 +54,14 @@ ESGO = {
 	# 	}
 	# }
 	custom_portraits = {
-		randomized = { always = no  } # host_has_dlc = "Leviathans Story Pack"
-		playable = { local_has_dlc = "Leviathans Story Pack" }
+		randomized = {
+			local_has_dlc = "Leviathans Story Pack"
+			has_global_flag = game_started
+		}
+		playable = {
+			local_has_dlc = "Leviathans Story Pack"
+			has_global_flag = game_started
+		}
 		portraits = {
 			"rep16"
 		}

@@ -7,7 +7,7 @@ component_set = {
 
 component_set = {
 	key = "NHSC_NANO_ARMOR_1"
-	icon = "GFX_ship_part_armor_nhsc_nano_1"
+	icon = "GFX_ship_part_armor_esc_nano_1"
 	icon_frame = 1
 }
 

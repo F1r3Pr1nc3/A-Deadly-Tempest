@@ -1,0 +1,14 @@
+# Overrides HFE, ZoFE
+# Gets overridden by the merger of rules.
+is_regular_empire = {
+	OR = {
+		is_country_type = default
+		is_country_type = awakened_marauders
+		is_country_type = gate_builders
+		is_fallen_empire = yes
+		is_zofe_country = yes # ZoFE mod compat. hack
+		hfe_trigger_is_human_fallen = yes # HFE mod compat. hack
+		hfe_trigger_insane_admiral_trait = yes # HFE mod compat. hack
+	}
+	is_gestalt = no # NOT = { has_ethic = ethic_gestalt_consciousness }
+}

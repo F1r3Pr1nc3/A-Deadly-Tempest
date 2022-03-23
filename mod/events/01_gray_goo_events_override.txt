@@ -1833,7 +1833,7 @@ country_event = {
 				}
 				if = { limit = { exists = event_target:goo_slayer }
 					event_target:goo_slayer = {
-						country_event = { id = graygoo.100 }
+						country_event = { id = graygoo.100 days = 3 }
 						country_event = { id = a_deadly_tempest.162 days = 1800 random = 900 } # awaken
 					}
 				} else = {
@@ -2105,16 +2105,18 @@ country_event = {
 			event_target:goo_slayer = {
 				country_event = { id = graygoo.181 }
 			}
-		}
-		every_playable_country = {
-			limit = {
-				is_ai = no
-				NAND = {
-					exists = event_target:goo_slayer
-					is_same_empire = event_target:goo_slayer
+			every_playable_country = {
+				limit = {
+					is_ai = no
+					NOT = { is_same_empire = event_target:goo_slayer }
 				}
+				country_event = { id = graygoo.182 }
 			}
-			country_event = { id = graygoo.182 }
+		} else = {
+			every_playable_country = {
+				limit = { is_ai = no }
+				country_event = { id = graygoo.182 }
+			}
 		}
 
 		observer_event = { id = observer.67 }

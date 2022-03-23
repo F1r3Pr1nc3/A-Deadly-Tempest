@@ -1,7 +1,6 @@
 ## For Warship Girls R And MIST Species.
 leader_trait_admiral_gray = {
 	cost = 0
-	modification = no
 	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
 	# icon = "gfx/interface/icons/traits/leader_traits/wg_gray.dds"
 	modifier = {
@@ -21,7 +20,6 @@ leader_trait_admiral_gray = {
 
 leader_trait_general_gray = {
 	cost = 0
-	modification = no
 	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
 	# icon = "gfx/interface/icons/traits/leader_traits/wg_gray.dds"
 	modifier = {

@@ -133,7 +133,7 @@ tech_nano_scales = {
 }
 
 ## Nano-material Armor
-nhsc_tech_armor_nanite_1 = {
+esc_tech_armor_nanite_1 = {
 	area = society
 	category = { materials }
 	ai_update_type = all

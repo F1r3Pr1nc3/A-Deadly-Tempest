@@ -5,7 +5,7 @@
 utility_component_template = {
 	key = "SMALL_NHSC_NANO_ARMOR_1"
 	size = small
-	icon = "GFX_ship_part_armor_nhsc_nano_1"
+	icon = "GFX_ship_part_armor_esc_nano_1"
 	icon_frame = 1
 	power = -10
 
@@ -27,7 +27,7 @@ utility_component_template = {
 		ship_armor_regen_add_static = 0.4
 	}
 
-	prerequisites = { "nhsc_tech_armor_nanite_1" }
+	prerequisites = { "esc_tech_armor_nanite_1" }
 	component_set = "NHSC_NANO_ARMOR_1"
 	upgrades_to = "SMALL_NHSC_NANO_ARMOR_2"
 
@@ -46,7 +46,7 @@ utility_component_template = {
 utility_component_template = {
 	key = "MEDIUM_NHSC_NANO_ARMOR_1"
 	size = medium
-	icon = "GFX_ship_part_armor_nhsc_nano_1"
+	icon = "GFX_ship_part_armor_esc_nano_1"
 	icon_frame = 1
 	power = -20
 
@@ -68,7 +68,7 @@ utility_component_template = {
 		ship_armor_regen_add_static = 0.8
 	}
 
-	prerequisites = { "nhsc_tech_armor_nanite_1" }
+	prerequisites = { "esc_tech_armor_nanite_1" }
 	component_set = "NHSC_NANO_ARMOR_1"
 	upgrades_to = "MEDIUM_NHSC_NANO_ARMOR_2"
 
@@ -87,7 +87,7 @@ utility_component_template = {
 utility_component_template = {
 	key = "LARGE_NHSC_NANO_ARMOR_1"
 	size = large
-	icon = "GFX_ship_part_armor_nhsc_nano_1"
+	icon = "GFX_ship_part_armor_esc_nano_1"
 	icon_frame = 1
 	power = -40
 
@@ -109,7 +109,7 @@ utility_component_template = {
 		ship_armor_regen_add_static = 1.6
 	}
 
-	prerequisites = { "nhsc_tech_armor_nanite_1" }
+	prerequisites = { "esc_tech_armor_nanite_1" }
 	component_set = "NHSC_NANO_ARMOR_1"
 	upgrades_to = "LARGE_NHSC_NANO_ARMOR_2"
 

@@ -26,7 +26,7 @@ gate_builders = {
 	can_use_invalid_technology = yes
 	observable = yes
 	# can_receive_envoys = yes
-	uses_origins = yes # origin_fallen_empire
+	# uses_origins = yes # origin_fallen_empire
 
 	ai = {
 		enabled = yes
@@ -135,7 +135,7 @@ gate_builders = {
 			# sr_zro = 1
 			nanites = 30
 			influence = 2
-			unity = 1
+			unity = 4
 
 		}
 	}

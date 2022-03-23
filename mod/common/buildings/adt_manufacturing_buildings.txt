@@ -50,6 +50,7 @@ building_nanite_plant_1 = {
 		category = planet_buildings
 		cost = { minerals = 500 }
 		upkeep = { energy = 9 }
+		produces = { nanites = 1 }
 	}
 	prerequisites = { "tech_nanite_transmutation" "tech_basic_industry" }
 	triggered_desc = {
@@ -126,6 +127,7 @@ building_nanite_plant_2 = {
 			nanites = 50
 		}
 		upkeep = { energy = 12 }
+		produces = { nanites = 2 }
 	}
 	prerequisites = { "tech_nanite_transmutation" "tech_alloys_1" }
 	triggered_desc = {
@@ -144,7 +146,7 @@ building_nanite_plant_2 = {
 	}
 	ai_weight = { weight = 0.5 }
 	ai_resource_production = {
-		nanites = 1
+		nanites = 2
 		trigger = { always = yes }
 	}
 }
@@ -202,11 +204,12 @@ building_nanite_plant_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = 800
+			minerals = @b3_minerals # 800
 			nanites = 40
 			volatile_motes = 60
 		}
 		upkeep = { energy = 15 volatile_motes = 2 }
+		produces = { nanites = 3 }
 	}
 	prerequisites = { "tech_nanite_transmutation" "tech_alloys_2" }
 	triggered_desc = {
@@ -234,7 +237,7 @@ building_nanite_plant_3 = {
 		}
 	}
 	ai_resource_production = {
-		nanites = 1
+		nanites = 3
 		trigger = { always = yes }
 	}
 }
@@ -370,7 +373,7 @@ building_machinedlc_nanite_living_metal_forge = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = 800
+			minerals = @b3_minerals # 800
 			nanites = 100
 		}
 		produces = { sr_living_metal = 2 }

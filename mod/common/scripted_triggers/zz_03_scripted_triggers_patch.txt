@@ -76,13 +76,12 @@ is_subject_of_khan = {
 	# }
 }
 
-is_regular_empire = {
+# As is_pirate is bugged (still 3.3)
+is_pirate_country = {
 	OR = {
-		is_country_type = default
-		is_country_type = awakened_marauders
-		is_country_type = gate_builders
-		is_fallen_empire = yes
-		is_zofe_country = yes
+		is_country_type = pirate
+		is_country_type = pirate_waves_country
+		is_country_type = dormant_marauders
+		is_country_type = ruined_marauders
 	}
-	NOT = { has_ethic = ethic_gestalt_consciousness	}
 }

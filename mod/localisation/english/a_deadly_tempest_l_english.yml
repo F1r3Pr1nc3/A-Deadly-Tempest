@@ -99,12 +99,12 @@
  # Armor
  NHSC_TECH_NANO_ARMOR_1_TITLE: "$NHSC_NANO_ARMOR_1$"
  NHSC_TECH_NANO_ARMOR_1_DESC: "$NHSC_NANO_ARMOR_1_DESC$"
- nhsc_tech_armor_nanite_1: "$NHSC_TECH_NANO_ARMOR_1_TITLE$"
- nhsc_tech_armor_nanite_1_desc: "$NHSC_TECH_NANO_ARMOR_1_DESC$"
+ esc_tech_armor_nanite_1: "$NHSC_TECH_NANO_ARMOR_1_TITLE$"
+ esc_tech_armor_nanite_1_desc: "$NHSC_TECH_NANO_ARMOR_1_DESC$"
  NHSC_TECH_NANO_DRAGON_ARMOR_TITLE: "Nanite-infused Dragonscale Armor"
  NHSC_TECH_NANO_DRAGON_ARMOR_DESC: "Introduction of nanites into dragonscale armor can further improve its incredible toughness."
- nhsc_tech_armor_dragonscales_nanite: "$NHSC_TECH_NANO_DRAGON_ARMOR_TITLE$"
- nhsc_tech_armor_dragonscales_nanite_desc: "$NHSC_TECH_NANO_DRAGON_ARMOR_DESC$"
+ esc_tech_armor_dragonscales_nanite: "$NHSC_TECH_NANO_DRAGON_ARMOR_TITLE$"
+ esc_tech_armor_dragonscales_nanite_desc: "$NHSC_TECH_NANO_DRAGON_ARMOR_DESC$"
 
  NHSC_NANO_ARMOR_1: "Nanite-infused Armor"
  NHSC_NANO_ARMOR_1_DESC: "By adding nanites programmed to run repair jobs into the ship's hull, we're able to create an armor that not only protects from damage, but also repairs any damage it couldn't prevent."

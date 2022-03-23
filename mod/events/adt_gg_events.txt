@@ -53,10 +53,10 @@ event = {
 		}
 		# Support nhsc mod
 		event_target:CmtGlobalVar = {
-			set_variable = { which = random_nhsc_value value = @armor_s_t8_strength }
+			set_variable = { which = random_esc_value value = @armor_s_t8_strength }
 		}
 	}
-	# after = { log = "1 a_deadly_tempest_mod_active [CmtGlobalVar.random_nhsc_value]" }
+	# after = { log = "1 a_deadly_tempest_mod_active [CmtGlobalVar.random_esc_value]" }
 }
 
 event = {
@@ -78,11 +78,11 @@ event = {
 				has_global_flag = a_deadly_tempest_mod_active
 			}
 			AND = {
-				has_global_flag = nhsc_v30
+				has_global_flag = Extra_Ship_Components_NEXT # nhsc_v30
 				event_target:CmtGlobalVar = {
 					# check_variable = { which = current_adt_version value = @latest_adt_version }
 					NOT = {
-						check_variable = { which = random_nhsc_value value = @armor_s_t8_strength }
+						check_variable = { which = random_esc_value value = @armor_s_t8_strength }
 					}
 				}
 			}
@@ -127,15 +127,15 @@ event = {
 			# 	which = current_adt_version
 			# 	value = @latest_adt_version
 			# }
-			set_variable = { which = random_nhsc_value value = @armor_s_t8_strength }
+			set_variable = { which = random_esc_value value = @armor_s_t8_strength }
 			if = {
 				limit = {
-					has_global_flag = nhsc_v30
+					has_global_flag = Extra_Ship_Components_NEXT # nhsc_v30
 					NOT = {
-						check_variable = { which = random_nhsc_value value = 300 }
+						check_variable = { which = random_esc_value value = 300 }
 					}
 				}
-				remove_global_flag = nhsc_v30
+				remove_global_flag = Extra_Ship_Components_NEXT # nhsc_v30
 			}
 
 			change_country_flag = {
@@ -156,7 +156,7 @@ event = {
 			# }
 		}
 	}
-	# after = { log = "2 a_deadly_tempest_mod_active [CmtGlobalVar.random_nhsc_value]" }
+	# after = { log = "2 a_deadly_tempest_mod_active [CmtGlobalVar.random_esc_value]" }
 }
 
 ####################################
@@ -357,7 +357,7 @@ country_event = {
 			set_variable = { which = picked_tech value = 0 }
 			# event_target:CmtGlobalVar = {
 			# 	set_variable = {
-			# 		which = random_nhsc_value
+			# 		which = random_esc_value
 			# 		value = @armor_s_t8_strength
 			# 	}
 			# }
@@ -525,14 +525,14 @@ country_event = {
 				limit = {
 					has_nhsc = yes
 					NOR = {
-						has_technology = nhsc_tech_synthetic_lifeform_studies
-						has_tech_option = nhsc_tech_synthetic_lifeform_studies
-						is_researching_technology = nhsc_tech_synthetic_lifeform_studies
+						has_technology = esc_tech_synthetic_lifeform_studies
+						has_tech_option = esc_tech_synthetic_lifeform_studies
+						is_researching_technology = esc_tech_synthetic_lifeform_studies
 					}
 				}
-				give_technology = { tech = nhsc_tech_new_age_warfare message = no }
-				give_technology = { tech = nhsc_tech_advanced_materials message = no }
-				give_tech_option = { TECH = nhsc_tech_synthetic_lifeform_studies }
+				give_technology = { tech = esc_tech_new_age_warfare message = no }
+				give_technology = { tech = esc_tech_advanced_materials message = no }
+				give_tech_option = { TECH = esc_tech_synthetic_lifeform_studies }
 			}
 			# else = { # 	# give_tech_option = { TECH = tech_nanite_build_speed }
 			# 	# give_tech_option = { TECH = tech_nanite_modular_engineering }
@@ -1764,13 +1764,13 @@ country_event = {
 			}
 			set_faction_hostility = {
 				target = prev
-				# set_neutral = no
-				# set_friendly = no
 				set_hostile = yes
+				set_neutral = no
+				set_friendly = no
 			}
 			add_resource = {
-				minerals = 1000
-				energy = 10000
+				minerals = 2000
+				energy = 12000
 			}
 			capital_scope = {
 				create_army = {
@@ -1796,8 +1796,8 @@ country_event = {
 				immortal = yes
 				# event_leader = yes
 				gender = indeterminable
-				skill = 6
-				set_age = 1
+				skill = 7
+				set_age = 7
 				traits = {
 					trait = leader_trait_general_gray
 					trait = leader_trait_demoralizer
@@ -1889,8 +1889,8 @@ country_event = {
 					limit = {
 						is_mobile = yes
 						# is_in_combat = yes
+						is_ship_class = shipclass_military
 						any_owned_ship = {
-							is_ship_class = shipclass_military
 							is_disabled = no
 						}
 						exists = solar_system
@@ -2317,8 +2317,11 @@ ship_event = {
 				}
 			}
 			starbase = {
-				remove_starbase_building = { building = nanite_yards }
-				# remove_starbase_module = { module = }
+				if = {
+					limit = { has_starbase_building = nanite_yards }
+					remove_starbase_building = { building = nanite_yards }
+					# remove_starbase_module = { module = }
+				}
 			}
 			if = {
 				limit = {

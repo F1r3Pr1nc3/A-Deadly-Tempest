@@ -180,9 +180,7 @@ country_event = {
 country_event = {
 	id = crisis.2421
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
 		OR = {
 			has_global_flag = ai_invasion_ongoing
@@ -252,8 +250,6 @@ country_event = {
 country_event = {
 	# id = fallen_empires_awakening.3
 	id = crisis.2003 # adt only
-	title = OK
-	desc = OK
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -534,7 +530,7 @@ country_event = {
 				}
 			}
 		}
-		set_country_flag = declared_crisis
+		# set_country_flag = declared_crisis # now at crisis.4099
 		## colonize random planet
 		random_system = {
 			limit = {
@@ -653,6 +649,46 @@ country_event = {
 		every_owned_leader = {
 			limit = { leader_class = ruler }
 			change_leader_portrait = lithnanite
+		}
+		# Declare Crisis (declare_crisis_war_effect)
+		country_event = { id = crisis.4099 days = 12 }
+		# Declare War
+		country_event = { id = crisis.2004 days = 24 }
+	}
+}
+
+# GrayGoo Declare War (ADT)
+country_event = {
+	# id = fallen_empires_awakening.3
+	id = crisis.2004 # adt only
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = {
+				NOR = {
+					is_same_empire = root
+					is_at_war_with = root
+				}
+				OR = {
+					is_hostile = root
+					is_hostile_to = root
+					has_country_flag = gate_builders_hostility
+					has_country_flag = declared_crisis
+				}
+			}
+			root = {
+				if = {
+					limit = {
+						can_declare_war = { target = prev attacker_war_goal = wg_absorption }
+					}
+					declare_war = {
+						target = prev
+						# name = "NAME_Declared_Crisis_War"
+						attacker_war_goal = wg_absorption
+					}
+				}
+			}
 		}
 	}
 }
