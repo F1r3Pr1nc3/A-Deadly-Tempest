@@ -1,6 +1,6 @@
 ﻿l_spanish:
- CrisisManagerTemplateList.desc:0 "Todavía hay solo una plantilla personalizada para A Deadly Tempest.\n$CmtWarn0$: Puede crear más plantillas por su cuenta (y compartirlas)."
- CrisisManagerTemplate_T001.title:0 "A Deadly Tempest"
- CrisisManagerTemplate_T001.tooltip:0 "Greetings! There are only few fitting and increasing changes to the Default Template."
- CrisisManagerTemplate_T101.title:0 "Una plantilla de tempestad mortal"
- CrisisManagerTemplate_T101.tooltip:0 "¡Saludos! Hay solo unos pocos cambios de ajuste y aumento en la plantilla predeterminada."
+ CrisisManagerTemplateList.desc: "Todavía hay solo una plantilla personalizada para A Deadly Tempest.\n$CmtWarn0$: Puede crear más plantillas por su cuenta (y compartirlas)."
+ CrisisManagerTemplate_T001.title: "A Deadly Tempest"
+ CrisisManagerTemplate_T001.tooltip: "Greetings! There are only few fitting and increasing changes to the Default Template."
+ CrisisManagerTemplate_T101.title: "Una plantilla de tempestad mortal"
+ CrisisManagerTemplate_T101.tooltip: "¡Saludos! Hay solo unos pocos cambios de ajuste y aumento en la plantilla predeterminada."
