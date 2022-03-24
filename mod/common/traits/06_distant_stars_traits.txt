@@ -170,6 +170,12 @@ trait_brainslug = {
 	icon = "gfx/interface/icons/traits/leader_traits/trait_brainslugged.dds"
 	initial = no
 	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
 
 	allowed_archetypes = { BIOLOGICAL }
 
@@ -187,6 +193,15 @@ trait_nivlac = {
 	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_resilient.dds"
 	initial = no
 	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
 	potential_crossbreeding_chance = 1.0
 
 	allowed_archetypes = { BIOLOGICAL }
