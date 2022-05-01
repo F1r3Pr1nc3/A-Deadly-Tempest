@@ -9,7 +9,7 @@ special_project = {
 	requirements = {
 		shipclass_science_ship = 1
 		leader = scientist
-		skill = 3		# it should be really not that easy (so AI could have more problems with this)
+		skill = 3		# It should be really not that easy (so AI could have more problems with this)
 	}
 	on_success = {
 		owner = {
@@ -17,7 +17,7 @@ special_project = {
 		}
 		solar_system = {
 			star = { set_planet_flag = ldragon_recruited }
-			remove_star_flag = dragon_point # otherwise the project can start again (on tamed dragons!)
+			remove_star_flag = dragon_point # Otherwise the project can start again (on tamed dragons!)
 		}
 	}
 	abort_trigger = {
@@ -66,7 +66,7 @@ special_project = {
 	requirements = {
 		shipclass_science_ship = 1
 		leader = scientist
-		skill = 3		# should be really not that easy (so AI could have more problems with this)
+		skill = 3		# Should be really not that easy (so AI could have more problems with this)
 	}
 	AI_wait_days = {
 		weight = 180
@@ -112,7 +112,7 @@ special_project = {
 	on_start = {
 	}
 	abort_trigger = {
-		has_global_flag = l_cluster_opened		# someone else got to it first
+		has_global_flag = l_cluster_opened		# Someone else got to it first.
 	}
 }
 

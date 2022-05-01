@@ -18,8 +18,8 @@ strike_craft_component_template = {
 	count = 10
 	regeneration_per_day = @regen
 	launch_time = 1
-	# damage = { min = 19 max = 21 } cooldown = 8 # hits hard but slow (vanilla 2.6.2)
-	damage = { min = 10 max = 12 } # hits soft but fast (vanilla 2.6.3)
+	# damage = { min = 19 max = 21 } cooldown = 8 # Hits hard but slow (vanilla 2.6.2)
+	damage = { min = 10 max = 12 } # Hits soft but fast (vanilla 2.6.3)
 	cooldown = 4
 	range = 20
 	engagement_range = 140

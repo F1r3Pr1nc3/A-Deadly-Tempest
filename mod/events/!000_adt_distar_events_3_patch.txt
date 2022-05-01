@@ -33,7 +33,7 @@ namespace = distar
 # 	}
 # }
 
-# check for gateway within borders
+# Check for gateway within borders.
 country_event = {
 	id = distar.10900
 	hide_window = yes
@@ -52,22 +52,21 @@ country_event = {
 				limit = { CmtTriggerIsClosedLgate = yes }
 				save_event_target_as = candidate_gateway
 			}
-			# enable project
+			# Enable project
 			if = {
 				limit = {
 					NOT = { any_playable_country = { has_country_flag = lcluster_opener } }
 				}
 				country_event = { id = distar.10905 }
 			}
-		}
-		else = {
-			# looping check
+		} else = {
+			# Looping check
 			country_event = { id = distar.10901 }
 		}
 	}
 }
 
-# looping check for owning gateway, once every two months
+# Looping check for owning gateway, once every two months.
 country_event = {
 	id = distar.10902
 	hide_window = yes
@@ -90,10 +89,9 @@ country_event = {
 				limit = { CmtTriggerIsClosedLgate = yes }
 				save_event_target_as = candidate_gateway
 			}
-			# enable project
+			# Enable project
 			country_event = { id = distar.10905 }
-		}
-		else = {
+		} else = {
 			# *THIS* looping check
 			country_event = { id = distar.10902 days = 60 }
 		}
@@ -127,18 +125,15 @@ country_event = {
 					from = { is_scope_type = ship }
 				}
 				from.solar_system = { save_global_event_target_as = CmtTargetLgateOriginatingSystem }
-			}
-			else_if = {
+			} else_if = {
 				limit = { exists = event_target:candidate_gateway_system }
 				event_target:candidate_gateway_system = { save_global_event_target_as = CmtTargetLgateOriginatingSystem }
-			}
-			else_if = {
+			} else_if = {
 				limit = { exists = event_target:candidate_gateway }
 				event_target:candidate_gateway = {
 					solar_system = { save_global_event_target_as = CmtTargetLgateOriginatingSystem }
 				}
-			}
-			else = {
+			} else = {
 				# If no valid scope search generally.
 				every_system_within_border = {
 					limit = { has_star_flag = lgate }
@@ -157,7 +152,7 @@ country_event = {
 				}
 			}
 			if = {
-				# only last fallback
+				# Only last fallback
 				limit = {
 					NOT = { exists = event_target:CmtTargetLgateOriginatingSystem }
 				}
@@ -323,7 +318,7 @@ country_event = {
 				event_target:CmtTargetLgateOriginatingSystem = {
 					if = {
 						limit = { any_system_megastructure = { CmtTriggerIsClosedLgate = yes } }
-						save_global_event_target_as = candidate_gateway_system # for desc only
+						save_global_event_target_as = candidate_gateway_system # For desc only
 						random_system_megastructure = {
 							limit = { CmtTriggerIsClosedLgate = yes }
 							save_event_target_as = candidate_gateway
@@ -337,8 +332,8 @@ country_event = {
 		country_event = { id = CrisisManagerControl.6201 days = 1 }		## Open L-Gates Cycle
 		event_target:CmtTargetLgateOriginatingSystem = {
 			if = {
-				# flag prevents the Tempest from using this gate,
-				# do not set the flag if there's only one l-gate system
+				# Flag prevents the Tempest from using this gate,
+				# Do not set the flag if there's only one l-gate system
 				limit = {		## 2 or more l-gates exist in galaxy
 					any_system = {
 						has_star_flag = lgate
@@ -347,8 +342,7 @@ country_event = {
 					}
 				}
 				set_star_flag = lgate_originating_system		## For Graygoo (non-spawn from here)
-			}
-			else = {
+			} else = {
 				root = { set_country_flag = only_one_lgate }
 			}
 			# Try to refresh the posssible missing target (for unusual reason)
@@ -382,7 +376,7 @@ country_event = {
 			}
 			every_galaxy_planet = {
 				limit = { is_planet_class = pc_gray_goo }
-				add_modifier = { modifier = terraforming_candidate days = -1 }
+				add_modifier = { modifier = terraforming_candidate }
 			}
 		} # The L-Cluster gets on distar.11000
 
@@ -422,7 +416,7 @@ event = {
 				has_event_chain = l_cluster_chain
 				has_special_project = LCLUSTER_PROJECT
 			}
-			NOT = { has_country_flag = lgate_warned } # warn only once for all for each related (each 120 - 240 days)
+			NOT = { has_country_flag = lgate_warned } # Warn only once for all for each related (each 120 - 240 days)
 			OR = {
 				AND = { # dynamic
 					is_variable_set = CmtVarLgateReqClues
@@ -503,7 +497,7 @@ country_event = {
 #################
 ###- L-Drake -###
 #################
-# fired from opening event
+# Fired from opening event
 country_event = {
 	id = distar.13000
 	hide_window = yes
@@ -532,7 +526,7 @@ country_event = {
 				# random_system_megastructure = { limit = { CmtTriggerIsClosedLgate = yes }
 				CmtEffectOpenLgate = yes
 				solar_system = {
-					# set dragon spawning grounds
+					# Set dragon spawning grounds
 					closest_system = {
 						min_steps = 3
 						limit = {
@@ -584,8 +578,7 @@ country_event = {
 										limit = { NOT = { is_same_empire = root } }
 										set_country_flag = knows_ldragon
 										country_event = { id = distar.13010 }
-									}
-									else = {
+									} else = {
 										## Notification 1
 										root = {
 											country_event = { id = distar.13010 }
@@ -641,7 +634,7 @@ country_event = {
 									# set_aggro_range = 10
 									auto_move_to_planet = {
 										target = prev								# dragon_point star
-										clear_auto_move_on_arrival = yes			# hang around
+										clear_auto_move_on_arrival = yes			# Hang around
 									}
 								}
 							}
@@ -722,7 +715,7 @@ system_event = {
 		}
 	}
 	immediate = {
-		# create point of interest
+		# Create point of interest
 		if = {
 			limit = {
 				exists = space_owner
@@ -766,8 +759,7 @@ system_event = {
 					}
 				}
 			}
-		}
-		else = {
+		} else = {
 			every_playable_country = {
 				limit = {
 					is_ai = yes
@@ -883,7 +875,7 @@ fleet_event = {
 		from = { set_star_flag = visited_dragon_point@root.owner }
 	}
 	option = {
-		# enable special project
+		# Enable special project
 		name = distar.13030.a
 		trigger = {
 			owner = {
@@ -904,7 +896,7 @@ fleet_event = {
 	option = { name = distar.13030.b }
 }
 
-# special project complete
+# Special project complete
 country_event = {
 	id = distar.13035
 	title = distar.13035.name

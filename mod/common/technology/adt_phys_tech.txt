@@ -1,4 +1,4 @@
-# ## physics technologies
+# ## Physics technologies
 
 tech_nanoactuators = {
 	area = physics

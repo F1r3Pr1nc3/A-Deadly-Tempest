@@ -1,5 +1,5 @@
-# this file ( and all files in this folder ) is reloadable with console command "reload behavior"
-# filewatcher is enabled for all files in this folder
+# This file ( and all files in this folder ) is reloadable with console command "reload behavior"
+# Filewatcher is enabled for all files in this folder.
 # To debug ship behaviours in combat you can visualize most with console command 'debuglines'
 # ship_behavior = {
 #	name = "example							# Name

@@ -3,14 +3,14 @@
 esgoo_male_clothes_01 = {
 	default = "gfx/models/portraits/esgoo/esipt23.dds"
 
-	game_setup = {# will run with a limited country scope. species and government is set but the country does not actually exist
+	game_setup = {# Will run with a limited country scope. species and government is set but the country does not actually exist.
 		default = "gfx/models/portraits/esgoo/esipt23.dds"
 	}
 
 	###########
 	# SPECIES #
 	###########
-	species = { # generic portrait for a species
+	species = { # Generic portrait for a species.
 		default = "gfx/models/portraits/esgoo/esipt23.dds"
 
 			# EVERYONE #
@@ -33,7 +33,7 @@ esgoo_male_clothes_01 = {
 	#########
 	## POP ##
 	#########
-	pop = { # for a specific pop
+	pop = { # For a specific pop
 		default = "gfx/models/portraits/esgoo/esipt23.dds"
 		##########################################################
 		# NOTE: Used to line up clothing in the ruler design window!
@@ -73,7 +73,7 @@ esgoo_male_clothes_01 = {
 	############
 	## RULERS ##
 	############
-	ruler = { # for rulers
+	ruler = { # For rulers
 		default = "gfx/models/portraits/esgoo/esipt23.dds"
 
 		random = {

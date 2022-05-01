@@ -2,7 +2,7 @@ namespace = distar
 #################################
 #
 # Anomaly Events
-# by Dee Majek
+# By Dee Majek
 # Tweaked by FirePrince
 # For disabled L-Gates (less important)
 # distar.2050 - distar.8000
@@ -49,7 +49,7 @@ event = {
 		}
 	}
 	immediate = {
-		# spawn tube by random gateway
+		# Spawn tube by random gateway.
 		random_system = {
 			limit = {
 				any_system_megastructure = {
@@ -72,7 +72,7 @@ event = {
 #################################
 #
 # Distant Stars Events
-# by Miranda van den Brink
+# By Miranda van den Brink.
 #
 #################################
 ####### VOIDSPAWN/HATCHLING EVENTS #######
@@ -123,7 +123,7 @@ planet_event = {
 					limit = {
 						NOT = { has_modifier = hatchling_power }
 					}
-					add_modifier = { modifier = hatchling_power days = -1 }
+					add_modifier = { modifier = hatchling_power }
 				}
 				save_global_event_target_as = hatchling_country
 				set_country_flag = hatchling_country
@@ -184,7 +184,7 @@ planet_event = {
 							direction = in_system
 						}
 						set_fleet_stance = aggressive
-						set_aggro_range_measure_from = self # or return_point
+						set_aggro_range_measure_from = self # Or return_point
 						set_aggro_range = 300
 						auto_move_to_planet = {
 							target = event_target:new_location
@@ -237,7 +237,7 @@ country_event = {
 					clear_global_event_target = hatchling_country
 				}
 			}
-			remove_global_flag = hatchling_triggered # reenable hatch
+			remove_global_flag = hatchling_triggered # Reenable hatch
 		}
 	}
 }
@@ -282,8 +282,7 @@ event = {
 				owner = {
 					country_event = { id = distar.5015 }
 				}
-			}
-			else_if = {
+			} else_if = {
 				limit = { exists = space_owner }
 				space_owner = {
 					country_event = { id = distar.5015 }
@@ -444,8 +443,7 @@ country_event = {
 				}
 			}
 			create_enigmatic_cache_fleet = yes
-		}
-		else = {
+		} else = {
 			country_event = { id = distar.5055 days = 500 }
 		}
 	}
@@ -465,7 +463,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = { NOT = { exists = event_target:lcluster1 } }
-			country_event = { id = distar.11000 days = -1 }
+			country_event = { id = distar.11000 }
 		}
 		every_playable_country = {
 			limit = {
@@ -682,7 +680,7 @@ country_event = {
 						}
 						every_system_planet = {
 							limit = { is_planet_class = pc_gray_goo }
-							add_modifier = { modifier = terraforming_candidate days = -1 }
+							add_modifier = { modifier = terraforming_candidate }
 						}
 					}
 				}

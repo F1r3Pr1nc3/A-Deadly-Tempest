@@ -79,7 +79,7 @@ is_subject_of_khan = {
 # As is_pirate is bugged (still 3.3)
 is_pirate_country = {
 	OR = {
-		is_country_type = pirate
+		is_pirate = yes # is_country_type = pirate
 		is_country_type = pirate_waves_country
 		is_country_type = dormant_marauders
 		is_country_type = ruined_marauders

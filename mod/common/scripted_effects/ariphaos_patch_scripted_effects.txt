@@ -79,23 +79,19 @@ ariphaos_patch_leader_change_traits = {
 			limit = { leader_class = admiral }
 			add_trait = leader_trait_admiral_erudite
 			add_ruler_trait = leader_trait_ruler_erudite
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = general }
 			add_trait = leader_trait_general_erudite
 			add_ruler_trait = leader_trait_ruler_erudite
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = governor }
 			add_trait = leader_trait_governor_erudite
 			add_ruler_trait = leader_trait_ruler_erudite
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = scientist }
 			add_trait = leader_trait_scientist_erudite
 			add_ruler_trait = leader_trait_ruler_erudite
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = ruler }
 			add_trait = leader_trait_ruler_erudite
 			add_ruler_trait = leader_trait_ruler_erudite
@@ -168,23 +164,19 @@ ariphaos_patch_leader_change_traits = {
 			limit = { leader_class = admiral }
 			add_trait = leader_trait_admiral_cyborg
 			add_ruler_trait = leader_trait_ruler_cyborg
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = general }
 			add_trait = leader_trait_general_cyborg
 			add_ruler_trait = leader_trait_ruler_cyborg
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = governor }
 			add_trait = leader_trait_governor_cyborg
 			add_ruler_trait = leader_trait_ruler_cyborg
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = scientist }
 			add_trait = leader_trait_scientist_cyborg
 			add_ruler_trait = leader_trait_ruler_cyborg
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = ruler }
 			add_trait = leader_trait_ruler_cyborg
 			add_ruler_trait = leader_trait_ruler_cyborg
@@ -243,23 +235,19 @@ ariphaos_patch_leader_change_traits = {
 			limit = { leader_class = admiral }
 			add_trait = leader_trait_admiral_synthetic
 			add_ruler_trait = leader_trait_ruler_synthetic
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = general }
 			add_trait = leader_trait_general_synthetic
 			add_ruler_trait = leader_trait_ruler_synthetic
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = governor }
 			add_trait = leader_trait_governor_synthetic
 			add_ruler_trait = leader_trait_ruler_synthetic
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = scientist }
 			add_trait = leader_trait_scientist_synthetic
 			add_ruler_trait = leader_trait_ruler_synthetic
-		}
-		else_if = {
+		} else_if = {
 			limit = { leader_class = ruler }
 			add_trait = leader_trait_ruler_synthetic
 			add_ruler_trait = leader_trait_ruler_synthetic
@@ -287,32 +275,28 @@ ariphaos_patch_leader_change_traits = {
 			}
 			add_trait = leader_trait_admiral_psionic
 			add_ruler_trait = leader_trait_ruler_psionic
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				leader_class = general
 				NOT = { has_trait = leader_trait_general_chosen }
 			}
 			add_trait = leader_trait_general_psionic
 			add_ruler_trait = leader_trait_ruler_psionic
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				leader_class = governor
 				NOT = { has_trait = leader_trait_governor_chosen }
 			}
 			add_trait = leader_trait_governor_psionic
 			add_ruler_trait = leader_trait_ruler_psionic
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				leader_class = scientist
 				NOT = { has_trait = leader_trait_scientist_chosen }
 			}
 			add_trait = leader_trait_scientist_psionic
 			add_ruler_trait = leader_trait_ruler_psionic
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				leader_class = ruler
 				NOT = { has_ruler_trait = leader_trait_ruler_chosen }
@@ -374,8 +358,7 @@ liquidate_clues = {
 				energy = 3500
 			}
 			abort_special_project = { type = LCLUSTER_PROJECT }
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				check_variable = {
 					which = num_lcluster_clues
@@ -387,8 +370,7 @@ liquidate_clues = {
 				engineering_research = 3500
 				energy = 3500
 			}
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				check_variable = {
 					which = num_lcluster_clues
@@ -400,8 +382,7 @@ liquidate_clues = {
 				engineering_research = 3000
 				energy = 3000
 			}
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				check_variable = {
 					which = num_lcluster_clues
@@ -413,8 +394,7 @@ liquidate_clues = {
 				engineering_research = 2500
 				energy = 2500
 			}
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				check_variable = {
 					which = num_lcluster_clues
@@ -426,8 +406,7 @@ liquidate_clues = {
 				engineering_research = 2000
 				energy = 2000
 			}
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				check_variable = {
 					which = num_lcluster_clues
@@ -439,8 +418,7 @@ liquidate_clues = {
 				engineering_research = 1500
 				energy = 1500
 			}
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				check_variable = {
 					which = num_lcluster_clues
@@ -452,8 +430,7 @@ liquidate_clues = {
 				engineering_research = 1000
 				energy = 1000
 			}
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				check_variable = {
 					which = num_lcluster_clues
@@ -465,8 +442,7 @@ liquidate_clues = {
 				engineering_research = 500
 				energy = 500
 			}
-		}
-		else = {
+		} else = {
 			custom_tooltip = liquidated_0
 		}
 		if = {

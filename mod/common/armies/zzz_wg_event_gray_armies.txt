@@ -54,7 +54,7 @@ nanite_giga_guardian = {
 				has_active_building = building_stronghold
 				has_active_building = building_fortress
 			}
-			# only one, as counter is difficult to check
+			# Only one, as counter is difficult to check.
 			# count = trigger:num_buildings = {
 			# 	type = building_stronghold disabled = no in_construction = no
 			# }

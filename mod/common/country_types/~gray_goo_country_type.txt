@@ -113,7 +113,7 @@ gate_builders = {
 		all_technology_module = {}
 		standard_event_module = {}
 		standard_economy_module = {}
-		# standard_leader_module = {} # get  Savegame compatibility warning
+		# standard_leader_module = {} # Get  Savegame compatibility warning
 	}
 
 	resources = {
@@ -150,7 +150,7 @@ awakened_gate_builders = {
 	sub_title_desc = "COUNTRY_AWAKENED_FALLEN_EMPIRE_DESC"
 	# attack_unarmed_orbital_stations = yes
 	# destroys_starbases = yes
-	# can_own_empty_planets = yes # crisis faction
+	# can_own_empty_planets = yes # Crisis faction
 	show_in_contacts_list = yes
 	# minimalist_contacts_list_profile = yes
 
@@ -193,7 +193,7 @@ awakened_gate_builders = {
 
 	ai = {
 		enabled = yes
-		declare_war = yes # needed for army invasion?
+		declare_war = yes # Needed for army invasion?
 		min_navy_for_wars = 0.2
 		min_assault_armies_for_wars = @armies_for_declaring_war
 		colonizer = yes
@@ -421,7 +421,7 @@ gray_goo = {
 	attack_unarmed_orbital_stations = yes
 	has_difficulty_bonuses = yes
 	always_valid_target_aggressive = yes
-	scaled_difficulty_bonuses = 1.0 # even 1.2 seems to powerful
+	scaled_difficulty_bonuses = 1.0 # Even 1.2 seems to powerful.
 	counts_for_victory = no
 	destroys_starbases = yes
 	show_in_contacts_list = no

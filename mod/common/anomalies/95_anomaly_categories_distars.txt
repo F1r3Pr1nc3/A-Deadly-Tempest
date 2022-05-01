@@ -66,9 +66,9 @@ corrupt_data_cat = {
 			has_distar = yes
 			habitable_planet = yes
 			is_under_colonization = no
-			has_anomaly = no # vanilla fix
+			has_anomaly = no # Vanilla fix
 			NAND = {
-				exists = archaeological_site # vanilla fix
+				exists = archaeological_site # Vanilla fix
 				archaeological_site = { is_site_completed = no }
 			}
 			NOR = {

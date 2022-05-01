@@ -67,7 +67,7 @@ tech_nanite_strike_craft = {
 		}
 	}
 
-	## unlock Nanite strike craft
+	## Unlock Nanite strike craft
 }
 
 ##############

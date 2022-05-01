@@ -11,7 +11,7 @@ tech_nanite_ships = {
 	is_reverse_engineerable = yes
 	is_rare = yes
 	gateway = nanites # ship
-	## unlock nanite ships
+	## Unlock nanite ships
 	prereqfor_desc = {
 		ship = {
 			title = "TECH_UNLOCK_NANITE_SHIP_CONSTRUCTION_TITLE"
@@ -154,7 +154,7 @@ tech_nanite_living_metal = {
 		# 	desc = "mod_country_resource_max_sr_living_metal_add"
 		# }
 	}
-	# add Living Metal
+	# Add Living Metal
 	modifier = {
 		country_resource_max_sr_living_metal_add = 2000
 	}

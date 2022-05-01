@@ -31,7 +31,7 @@ shoal_guard_reinforce = {
 					}
 				}
 			}
-			is_ship_size = graygoo_mothership			# implicit any_owned_ship
+			is_ship_size = graygoo_mothership			# Implicit any_owned_ship
 			num_ships < $AMOUNT|11$
 		}
 		prev = {
@@ -60,7 +60,7 @@ shoal_global_reinforce = {
 	every_owned_fleet = {
 		limit = {
 			is_in_combat = no
-			is_ship_size = graygoo_mothership			# implicit any_owned_ship
+			is_ship_size = graygoo_mothership			# Implicit any_owned_ship
 			# OR = {
 			# 	has_fleet_flag = nanite_mother_ship
 			# 	has_fleet_flag = trait_biothrall_tolerance
@@ -88,10 +88,10 @@ shoal_global_reinforce = {
 	}
 }
 
-## make dynamic with Crisis Manager
-# Root = This = event_target:graygoo_country
+## Make dynamic with Crisis Manager.
+# Root = this = event_target:graygoo_country
 shoal_guard_dynamic_reinforce = {
-	# make dynamic with Crisis Manager
+	# Make dynamic with Crisis Manager.
 	# event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Graygoo } }
 	# CmtVarCapitalDefenceNumber 1-8 vanilla = 4
 	set_variable = { which = CapitalDefence_tmp value = CmtVarCapitalDefenceNumber }
@@ -105,9 +105,8 @@ shoal_guard_dynamic_reinforce = {
 			"AMOUNT" = prev.CapitalDefence_tmp
 			"SHIPS" = 3
 		}
-	}
-	else_if = {
-		limit = { mid_game_years_passed > 50 }		# todo $MidYear|
+	} else_if = {
+		limit = { mid_game_years_passed > 50 }		# Todo $MidYear|
 		multiply_variable = { which = CapitalDefence_tmp value = 5 }
 		change_variable = { which = CapitalDefence_tmp value = 1 }
 		$KIND$ = {
@@ -115,8 +114,7 @@ shoal_guard_dynamic_reinforce = {
 			"AMOUNT" = prev.CapitalDefence_tmp
 			"SHIPS" = 2
 		}
-	}
-	else_if = {
+	} else_if = {
 		limit = { mid_game_years_passed > 5 }
 		multiply_variable = { which = CapitalDefence_tmp value = 2.5 }
 		change_variable = { which = CapitalDefence_tmp value = 1 }
@@ -125,8 +123,7 @@ shoal_guard_dynamic_reinforce = {
 			"AMOUNT" = prev.CapitalDefence_tmp
 			"SHIPS" = 1
 		}
-	}
-	else = {
+	} else = {
 		multiply_variable = { which = CapitalDefence_tmp value = 1.5 }
 		$KIND$ = {
 			# "AMOUNT" = @\[ $STRENGTH|4$ * 1.5 ] # 6
@@ -211,8 +208,7 @@ shoal_factory_guard_queue = {
 						from = {
 							queue_actions = { orbit_planet = prev }
 						}
-					}
-					else = {
+					} else = {
 						random_list = {
 							1 = {
 								from = {
@@ -466,8 +462,7 @@ generate_new_deposits_and_blockers = {
 			}
 			add_deposit = d_tomb_world_ruins
 			add_deposit = d_tomb_world_wasteland
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				owner = {
 					has_civic = civic_machine_terminator
@@ -476,15 +471,13 @@ generate_new_deposits_and_blockers = {
 			}
 			add_deposit = d_exterminators_ruins
 			add_deposit = d_former_battlefield
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				owner = { has_civic = civic_machine_servitor }
 			}
 			add_deposit = d_strip_mine
 			add_deposit = d_unsupervised_settlement
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				owner = {
 					has_civic = civic_machine_assimilator
@@ -493,8 +486,7 @@ generate_new_deposits_and_blockers = {
 			}
 			add_deposit = d_strip_mine
 			add_deposit = d_assimilators_ruins
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				owner = {
 					has_authority = auth_machine_intelligence
@@ -503,16 +495,14 @@ generate_new_deposits_and_blockers = {
 			}
 			add_deposit = d_strip_mine
 			add_deposit = d_machine_empire_ruins
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				owner = { has_authority = auth_hive_mind }
 			}
 			add_deposit = d_collapsed_burrows
 			add_deposit = d_failing_infrastructure
 			add_deposit = d_failing_infrastructure
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				owner = {
 					NOT = { has_origin = origin_machine }
@@ -577,8 +567,7 @@ give_tech_option = {
 				tech = $TECH$
 				progress = 0.25
 			}
-		}
-		else = {
+		} else = {
 			add_tech_progress = {
 				tech = $TECH$
 				progress = 0.1
@@ -588,29 +577,29 @@ give_tech_option = {
 	}
 }
 
-# From = Root country (combatant)
+# From = root country (combatant)
 # ship_event = { id = a_deadly_tempest.37
-# This = ship 1 (combatant) = root.FromFrom
+# This = ship 1 (combatant) = root.fromfrom
 nanite_assimilating_effect = {
-	# log = "nanite_assimilating_effect root.From [ROOT.From.GetName]" # victim country
-	# log = "nanite_assimilating_effect From [From.GetName]" # victim ship
+	# log = "nanite_assimilating_effect root.from [ROOT.from.GetName]" # Victim country
+	# log = "nanite_assimilating_effect From [From.GetName]" # Victim ship
 	if = {
 		limit = {
 			NOR = {
-				exists = root.FromFromFrom
-				root.FromFromFrom = { is_scope_type = ship }
+				exists = root.fromfromfrom
+				root.fromfromfrom = { is_scope_type = ship }
 			}
 		}
-		# log = "WARNING root.FromFromFrom NOT exists " # [ROOT.FromFromFrom.GetName]
+		# log = "WARNING root.fromfromfrom NOT exists " # [ROOT.fromfromfrom.GetName]
 		break=yes
 	}
 	# else_if = {
 	# 	limit = { NOT = { exists = event_target:assimilate_that_ship } }
-	# 	root.FromFromFrom = { save_event_target_as = assimilate_that_ship }
+	# 	root.fromfromfrom = { save_event_target_as = assimilate_that_ship }
 	# 	log = "create assimilate_that_ship event_target " # [assimilate_that_ship.GetName]
 	# }
 	else = {
-		root.FromFromFrom = { save_event_target_as = assimilate_that_ship }
+		root.fromfromfrom = { save_event_target_as = assimilate_that_ship }
 	}
 
 	fleet = {
@@ -732,13 +721,12 @@ giveShipDesign = {
 			# set_timed_country_flag = { flag = nanite_design_temp days = 20 }
 		}
 		set_assimilating_fleet_scope = { "DESIGN" = $DESIGN$ "DENAME" = $DENAME|0$ }
-	}
-	else_if = {
+	} else_if = {
 		limit = {
 			is_scope_type = ship
 			exists = owner
 		}
-		# log = "Create NOT new DESIGN - DENAME "			# [This.GetName] - [FromFromFrom.GetName]
+		# log = "Create NOT new DESIGN - DENAME "			# [This.GetName] - [fromfromfrom.GetName]
 		owner = {
 			set_assimilating_fleet_scope = { "DESIGN" = $DESIGN$ "DENAME" = $DENAME|0$ }
 			# [[DENAME] giveShipDesign = { "DESIGN" = $DESIGN$ "DENAME" = $DENAME|0$ }]
@@ -765,12 +753,12 @@ giveShipDesign = {
 set_assimilating_fleet_scope = {
 	# Only 1 works without special chars?
 	# log = "design r [Root.GetName]" country
-	# log = "design rff [Root.FromFrom.GetName]" ship combatant
-	# log = "design rf [Root.From.GetName]" # country destroyed Freed Dragons
-	# log = "design rp [Root.Prev.Owner.GetName] " failed country
+	# log = "design rff [Root.fromfrom.GetName]" ship combatant
+	# log = "design rf [Root.from.GetName]" # Country destroyed Freed Dragons
+	# log = "design rp [Root.prev.Owner.GetName] " failed country
 	# log = "design f [From.GetName]"
-	# log = "design ff [From.From.GetName]"
-	# log = "design pp [Prev.Prev.GetName]"
+	# log = "design ff [from.from.GetName]"
+	# log = "design pp [prev.prev.GetName]"
 
 	if = {
 		limit = { is_scope_type = country has_existing_ship_design = $DESIGN$ }
@@ -780,14 +768,13 @@ set_assimilating_fleet_scope = {
 	# TODO corr SCOPE select
 	else_if = {
 		limit = {
-			Root.From = { is_scope_type = country has_existing_ship_design = $DESIGN$ }
+			Root.from = { is_scope_type = country has_existing_ship_design = $DESIGN$ }
 		}
-		Root.From = {
+		Root.from = {
 			nanite_ship_assimilating_effect = { "DESIGN" = $DESIGN$ "DENAME" = $DENAME|0$ }
-			# log = "Root.From has design"
+			# log = "Root.from has design"
 		}
-	}
-	else = {
+	} else = {
 		# TODO # limit = { event_target:global_event_country = { has_existing_ship_design = $DESIGN$ } } log = "global_event_country has design"
 		# log = "design NOT exists"		# [This.GetName]
 		event_target:global_event_country = {
@@ -797,11 +784,11 @@ set_assimilating_fleet_scope = {
 }
 
 # Final assimilating_effect
-# This = From = victim/dummy country
+# This = from = victim/dummy country
 # Root =  Combatant country
-# Root.From = From = victim country
-# FromFrom = ship 1 (combatant)
-# FromFromFrom = ship 2 (destroyed)
+# Root.from = from = victim country
+# fromfrom = ship 1 (combatant)
+# fromfromfrom = ship 2 (destroyed)
 nanite_ship_assimilating_effect = {
 
 	if = {
@@ -812,7 +799,7 @@ nanite_ship_assimilating_effect = {
 		}
 	}
 
-	## search already existing victim fleet
+	## Search already existing victim fleet.
 	if = {
 		limit = {
 			exists = event_target:assimilating_fleet
@@ -828,7 +815,7 @@ nanite_ship_assimilating_effect = {
 					fleet_power < 1
 					has_fleet_flag = assimilate_that_ship_flag_temp
 					NOT = { is_same_value = event_target:assimilating_fleet }
-					is_owned_by = root.from # each faction one fleet
+					is_owned_by = root.from # Each faction one fleet
 					# owner = {
 					# 	OR = {
 					# 		is_same_empire = from
@@ -848,11 +835,11 @@ nanite_ship_assimilating_effect = {
 				save_event_target_as = assimilate_that_fleet
 			}
 		}
-	} # else = { log = "WARNING root.FromFrom.fleet NOT exists [ROOT.FromFrom.fleet.GetFleetName]" }
+	} # else = { log = "WARNING root.fromfrom.fleet NOT exists [ROOT.fromfrom.fleet.GetFleetName]" }
 
 	if = {
 		limit = {
-			NOT = { exists = event_target:assimilate_that_fleet } # use only one fleet per faction
+			NOT = { exists = event_target:assimilate_that_fleet } # Use only one fleet per faction.
 		}
 		create_fleet = {
 			settings = {
@@ -865,7 +852,7 @@ nanite_ship_assimilating_effect = {
 				set_fleet_stance = passive
 				set_aggro_range_measure_from = self
 				set_aggro_range = 0
-				set_location = event_target:assimilate_that_ship # root.FromFrom
+				set_location = event_target:assimilate_that_ship # root.fromfrom
 				save_event_target_as = assimilate_that_fleet
 				set_owner = prev # root.from
 				set_event_locked = yes
@@ -876,9 +863,9 @@ nanite_ship_assimilating_effect = {
 	event_target:assimilate_that_fleet = {
 		set_timed_fleet_flag = { flag = assimilate_that_ship_flag_temp days = 72 }
 		remove_fleet_flag = commands_merge_fleet_flag_temp
-		set_owner = prev # needed for design
+		set_owner = prev # Needed for design
 		# log = "assimilate_that_fleet Prev country [Prev.GetName]"
-		# set_location = event_target:assimilate_that_ship # this moves the whole fleet, set_location is not working for single ships
+		# set_location = event_target:assimilate_that_ship # This moves the whole fleet, set_location is not working for single ships.
 		# remove_auto_move_target = yes
 		# clear_orders = yes
 		# clear_fleet_actions = this
@@ -904,7 +891,7 @@ nanite_ship_assimilating_effect = {
 			}
 
 		} else = {
-			# the same but with design option
+			# The same but with design option.
 			# log = "WARNING assimilated ship is not designable"
 			create_ship = {
 				name = event_target:assimilate_that_ship # random # $DENAME$

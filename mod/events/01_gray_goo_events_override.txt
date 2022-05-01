@@ -25,7 +25,7 @@ country_event = {
 		set_global_flag = gray_goo_crisis_active
 		# The guardians only awaken if there is a set_global_flag = galactic_crisis_happened
 		if = { limit = { end_game_years_passed >= 3 }
-			# set_global_flag = galactic_crisis_happened # this prevents other crisis
+			# set_global_flag = galactic_crisis_happened # This prevents other crisis
 			awaken_guardians_of_the_galaxy = yes
 		}
 		# Do open all same time!?
@@ -94,7 +94,7 @@ country_event = {
 				effect = {
 					save_global_event_target_as = graygoo_country
 					set_country_flag = synthetic_empire
-					## add technologies
+					## Add technologies
 					country_event = { id = a_deadly_tempest.107 }
 					prev = {
 						if = { limit = { exists = starbase }
@@ -160,7 +160,7 @@ country_event = {
 		country_event = { id = a_deadly_tempest.13006 }
 	}
 }
-# On_action: Colony Bombarded (FromFrom = ship, - Damage is applied daily)
+# On_action: Colony Bombarded (fromfrom = ship, - Damage is applied daily)
 planet_event = {
 	id = graygoo.2
 	hide_window = yes
@@ -181,7 +181,7 @@ planet_event = {
 	}
 	immediate = {
 		change_variable = { which = nanite_bomb_counter value = 1 }
-		if = { # only if certain amount of days
+		if = { # Only if certain amount of days.
 			limit = {
 				check_variable = { which = nanite_bomb_counter value > 15 }
 			}
@@ -625,9 +625,9 @@ country_event = {
 					set_leader = last_created_leader
 					assign_leader = last_created_leader
 
-					## friendly diplomacy
+					## Friendly diplomacy
 					country_event = { id = a_deadly_tempest.13006 }
-					## add technologies
+					## Add technologies
 					country_event = { id = a_deadly_tempest.107 }
 				}
 			}
@@ -662,7 +662,7 @@ country_event = {
 					save_global_event_target_as = graygoo_country
 				}
 			}
-			# for alternative creation
+			# For alternative creation
 			if = {
 				limit = {
 					exists = event_target:main_star
@@ -674,7 +674,7 @@ country_event = {
 		}
 
 		every_country = { establish_communications_no_message = event_target:gate_builders }
-		# only initial
+		# Only initial
 		### Create Fleets/Starbases
 		if = { limit = { exists = event_target:nanite_factory } # has_global_flag = gray_goo_empire_set
 			event_target:nanite_factory = {
@@ -710,8 +710,8 @@ country_event = {
 				}
 				create_research_station = { owner = event_target:gate_builders }
 			}
-			# switch = { trigger = has_star_flag # not needed as every system is saved global
-			# if for second call
+			# switch = { trigger = has_star_flag # Not needed as every system is saved global.
+			# If for second call
 			if = {
 				limit = {
 					NOT = { has_star_flag = lcluster_lgate }
@@ -770,8 +770,7 @@ country_event = {
 						add_district_and_planet_size_if_needed_effect = {
 							district = district_generator
 						}
-					}
-					else = {
+					} else = {
 						while = {
 							count = 3
 							add_district_and_planet_size_if_needed_effect = {
@@ -999,12 +998,12 @@ country_event = {
 					}
 				}
 			}
-			# only on initial
+			# Only on initial
 			country_event = { id = graygoo.110 }
 			# Done later at graygoo.180
 			# event_target:lcluster5b = { # Ringworld shattered_ring_start
 		}
-		# for alternative creation
+		# For alternative creation
 		else = {
 			# limit = {
 			# 	# NOT = { has_global_flag = gray_goo_empire_set }
@@ -1255,7 +1254,7 @@ country_event = {
 	is_triggered_only = yes
 	# This = country, leader attacker
 	# From = country, planet owner
-	# FromFrom = planet
+	# fromfrom = planet
 	trigger = {
 		is_nanite_country = no
 		from = { is_nanite_country = yes }
@@ -1269,13 +1268,11 @@ country_event = {
 				limit = { is_ringworld = yes }
 				change_pc = pc_ringworld_habitable_damaged
 				spawn_ringworld_nanobot_effect = yes
-			}
-			else_if = {
+			} else_if = {
 				limit = { is_planet_class = pc_habitat }
 				ariphaos_patch_remove_habitat = yes
 				spawn_habitat_nanobot_effect = yes
-			}
-			else_if = {
+			} else_if = {
 				limit = {
 					NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 5 } } }
 					is_planet_class = pc_gaia # habitable_planet = yes
@@ -1292,7 +1289,7 @@ country_event = {
 							}
 						}
 					}
-					add_modifier = { modifier = terraforming_candidate days = -1 }
+					add_modifier = { modifier = terraforming_candidate }
 				}
 			}
 			# Remove any Dessanu Megas.
@@ -1441,7 +1438,7 @@ country_event = {
 	}
 
 	immediate = {
-		set_country_flag = gk_first_entry # for fallback goo_slayer
+		set_country_flag = gk_first_entry # For fallback goo_slayer
 	}
 	option = {
 		name = leviathans.2105.a # leviathans.2101.b
@@ -1510,7 +1507,7 @@ ship_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	# From = System
-	# FromFrom = Country
+	# fromfrom = Country
 	trigger = {
 		from = {
 			has_star_flag = graygoo_factory_system
@@ -1591,7 +1588,7 @@ country_event = {
 
 # On Entered Forbidden/Base System (Second Time)
 # From = System
-# FromFrom = Country
+# fromfrom = Country
 fleet_event = {
 	id = graygoo.162
 	hide_window = yes
@@ -1650,12 +1647,12 @@ fleet_event = {
 				fleet_event = { id = graygoo.163 }
 			} else_if = { limit = { fleet_power > 21000 }
 				event_target:graygoo_country = {
-					country_event = { id = a_deadly_tempest.96 } # run patrol
+					country_event = { id = a_deadly_tempest.96 } # Run patrol
 				}
 			}
 		} else_if = { limit = { fleet_power > 21000 }
 			event_target:graygoo_country = {
-				country_event = { id = a_deadly_tempest.96 } # run patrol
+				country_event = { id = a_deadly_tempest.96 } # Run patrol
 			}
 		}
 	}
@@ -1722,8 +1719,8 @@ fleet_event = {
 # Factory Destroyed (Dessanu/Graygoo)
 # This = owner of ship 1 (destroyed)
 # From = owner of ship 2 (combatant)
-# FromFrom = ship 1
-# FromFromFrom = ship 2
+# fromfrom = ship 1
+# fromfromfrom = ship 2
 country_event = {
 	id = graygoo.180
 	hide_window = yes
@@ -1796,11 +1793,11 @@ country_event = {
 			event_target:lcluster_factory_system = {
 				remove_star_flag = graygoo_factory_system
 			}
-			CmtEffectDestroyGraygoo = yes # call graygoo.15
+			CmtEffectDestroyGraygoo = yes # Call graygoo.15
 			# break = yes # TODO
 			random = {
 				chance = 50
-				## colonize random planet
+				## Colonize random planet
 				random_system = {
 					limit = {
 						has_star_flag = lcluster
@@ -1973,8 +1970,7 @@ country_event = {
 								add_hyperlane = { from = this to = prev }
 								remove_star_flag = graygoo_factory_system
 							}
-						}
-						else_if = {
+						} else_if = {
 							limit = {
 								exists = event_target:lcluster4b
 								NOT = { is_same_value = event_target:lcluster4b }
@@ -2140,7 +2136,7 @@ country_event = {
 				limit = { has_star_flag = lcluster }
 				every_system_planet = {
 					limit = { is_planet_class = pc_gray_goo has_planet_flag = hidden_nanite_world }
-					add_modifier = { modifier = terraforming_candidate days = -1 }
+					add_modifier = { modifier = terraforming_candidate }
 					remove_planet_flag = hidden_nanite_world
 				}
 			}
@@ -2178,7 +2174,7 @@ country_event = {
 				reroll_planet = yes
 				generate_new_deposits_and_blockers = yes
 				destroy_colony = yes
-				add_modifier = { modifier = terraforming_candidate days = -1 }
+				add_modifier = { modifier = terraforming_candidate }
 				remove_planet_flag = hidden_nanite_world
 				# FIXME set_surveyed is bugged 3.0.3!
 				# every_playable_country = {
@@ -2196,7 +2192,7 @@ country_event = {
 			}
 			destroy_fleet = this
 		}
-		# pop is not removed automatically
+		# Pop is not removed automatically.
 		every_owned_pop = {
 			kill_pop = yes
 		}
@@ -2407,7 +2403,7 @@ country_event = {
 # 	picture = GFX_evt_ruined_system
 # 	show_sound = event_radio_chatter
 # 	trackable = yes
-# 	location = root.from # due on_action bug for fleets
+# 	location = root.from # Due on_action bug for fleets.
 # 	is_triggered_only = yes
 
 # 	trigger = {
@@ -2449,7 +2445,7 @@ planet_event = {
 		if = { limit = { NOT = { is_planet_class = pc_gray_goo } }
 			change_pc = pc_gray_goo
 		}
-		remove_modifier = tamed_nanite_swarm_modifier # only to be sure
+		remove_modifier = tamed_nanite_swarm_modifier # Only to be sure
 		reset_planet = yes
 	}
 

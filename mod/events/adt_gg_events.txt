@@ -33,8 +33,7 @@ event = {
 			if = {
 				limit = { exists = event_target:global_event_country }
 				event_target:global_event_country = { save_global_event_target_as = CmtGlobalVar }
-			}
-			else_if = {
+			} else_if = {
 				limit = {
 					NAND = {
 						exists = this
@@ -45,8 +44,7 @@ event = {
 					limit = { is_country_type = global_event }
 					save_global_event_target_as = CmtGlobalVar
 				}
-			}
-			else_if = {
+			} else_if = {
 				limit = { is_scope_type = country }
 				save_global_event_target_as = CmtGlobalVar
 			}
@@ -97,8 +95,7 @@ event = {
 			if = {
 				limit = { exists = event_target:global_event_country }
 				event_target:global_event_country = { save_global_event_target_as = CmtGlobalVar }
-			}
-			else_if = { limit = { exists = this is_scope_type = country is_country_type = global_event }
+			} else_if = { limit = { exists = this is_scope_type = country is_country_type = global_event }
 				save_global_event_target_as = CmtGlobalVar
 			} else = {
 				random_country = {
@@ -173,7 +170,7 @@ event = {
 		event_target:nanite_factory = { is_ship_size = graygoo_factory }
 	}
 	immediate = {
-		# incrase fleet power over time
+		# Incrase fleet power over time.
 		event_target:CmtGlobalVar = {
 			change_variable = { which = CmtVarFleetPower_Graygoo value = 0.5 }
 		}
@@ -229,7 +226,7 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_gray_goo_ships
 	show_sound = event_celebration	# event_ship_explosion
-	location = FromFromFrom
+	location = fromfromfrom
 	trigger = {
 		has_global_flag = l_cluster_opened
 		exists = this
@@ -600,8 +597,8 @@ country_event = {
 # on_ship_destroyed_perp
 # This = owner of ship 1 (combatant)
 # From = owner of ship 2 (destroyed)
-# FromFrom = ship 1
-# FromFromFrom = ship 2
+# fromfrom = ship 1
+# fromfromfrom = ship 2
 # nanite_assimilating_effect
 country_event = {
 	id = a_deadly_tempest.36
@@ -661,8 +658,7 @@ country_event = {
 					fromfrom = { nanite_assimilating_effect = yes } # TODO "Malformed token"? - but it works
 				}
 			}
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				from = {
 					is_scope_type = country
@@ -744,7 +740,7 @@ ship_event = {
 				solar_system = {
 					random_fleet_in_system = {
 						limit = {
-							exists = owner # idk why but it is needed
+							exists = owner # Idk why but it is needed.
 							any_owned_ship = { is_ship_class = shipclass_military }
 							NOR = {
 								is_same_value = from.fleet
@@ -803,8 +799,7 @@ ship_event = {
 							} else = {
 								fleet_event = { id = a_deadly_tempest.39 days = 7 }
 							}
-						}
-						else = {
+						} else = {
 							prev = { ship_event = { id = a_deadly_tempest.38 days = 8 } }
 						}
 					} else_if = {
@@ -870,7 +865,7 @@ fleet_event = {
 		# exists = owner
 	}
 	immediate = {
-		# log = " merge [This.GetName] " # to [ROOT.FromFrom.fleet.GetName]
+		# log = " merge [This.GetName] " # To [ROOT.fromfrom.fleet.GetName]
 		remove_fleet_flag = commands_merge_fleet_flag_temp
 		if = {
 			limit = {
@@ -916,7 +911,7 @@ fleet_event = {
 
 		if = {
 			limit = {
-				exists = this # could be destroyd
+				exists = this # Could be destroyd
 				NAND = {
 					exists = event_target:assimilating_fleet
 					exists = event_target:assimilating_fleet.owner
@@ -935,7 +930,7 @@ fleet_event = {
 						is_disabled = no
 						fleet_power > 0 # This alone is not sure as some ships can be on escape!?
 						has_fleet_flag = commands_merge_fleet_flag_temp
-						exists = owner # idk why but it is needed
+						exists = owner # Idk why but it is needed.
 						owner = {
 							OR = {
 								is_robot_empire = yes
@@ -951,7 +946,7 @@ fleet_event = {
 
 		if = {
 			limit = {
-				exists = this # could be destroyd
+				exists = this # Could be destroyd
 				NAND = {
 					exists = event_target:assimilate_that_ship
 					exists = event_target:assimilate_that_ship.owner
@@ -982,8 +977,7 @@ fleet_event = {
 				any_owned_ship = { is_disabled = yes }
 			}
 			save_event_target_as = assimilate_that_fleet
-		}
-		else_if = {
+		} else_if = {
 			limit = { exists = event_target:assimilate_that_ship }
 			event_target:assimilate_that_ship.fleet = { save_event_target_as = assimilate_that_fleet }
 		} else = { break = yes }
@@ -1022,8 +1016,7 @@ fleet_event = {
 					# no_scope = { save_global_event_target_as = assimilating_fleet clear_global_event_target = assimilating_fleet }
 					break = yes
 				}
-			}
-			else_if = {
+			} else_if = {
 				# We could also merge in combat, but this would be too strong!?
 				limit = { exists = event_target:assimilating_fleet }
 				if = {
@@ -1053,7 +1046,7 @@ fleet_event = {
 						set_event_locked = no
 						# set_location = { target = event_target:assimilating_fleet }
 						queue_actions = {
-							# move_to = root.FromFrom.fleet # Disabled as it will order move fleet to the point in space, not follow the target fleet.
+							# move_to = root.fromfrom.fleet # Disabled as it will order move fleet to the point in space, not follow the target fleet.
 							move_to = event_target:assimilating_fleet
 							find_closest_fleet = {
 								found_fleet = {
@@ -1086,8 +1079,7 @@ fleet_event = {
 							}
 						}
 					}
-				}
-				else = {
+				} else = {
 					fleet_event = { id = a_deadly_tempest.39 days = 7 }
 					# no_scope = { save_event_target_as = assimilate_that_ship }
 				}
@@ -1103,8 +1095,8 @@ fleet_event = {
 # on_space_battle_won
 # This = owner of fleet 1 (winner)
 # From = owner of fleet 2 (loser)
-# FromFrom = fleet 1
-# FromFromFrom = fleet 2
+# fromfrom = fleet 1
+# fromfromfrom = fleet 2
 country_event = {
 	id = a_deadly_tempest.40
 	hide_window = yes
@@ -1116,15 +1108,15 @@ country_event = {
 			is_species_class = ROBOT # has_authority = auth_ancient_machine_intelligence
 			is_robot_empire = yes
 		}
-		exists = FromFromFrom
-		FromFrom = {
+		exists = fromfromfrom
+		fromfrom = {
 			any_owned_ship = { is_disabled = yes }
 		}
 	}
 	immediate = {
 		if = {
-			limit = { FromFromFrom = { is_scope_type = fleet } }
-			FromFromFrom = {
+			limit = { fromfromfrom = { is_scope_type = fleet } }
+			fromfromfrom = {
 				if = {
 					limit = { is_disabled = yes }
 					fleet_event = { id = a_deadly_tempest.39 }
@@ -1159,8 +1151,7 @@ country_event = {
 				if = {
 					limit = { prev = { is_country_type = gate_builders } }
 					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu }
-				}
-				else = {
+				} else = {
 					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo }
 				}
 			}
@@ -1259,8 +1250,7 @@ country_event = {
 				if = {
 					limit = { prev = { is_country_type = gate_builders } }
 					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu }
-				}
-				else = {
+				} else = {
 					set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo }
 				}
 			}
@@ -1347,8 +1337,7 @@ country_event = {
 							}
 						}
 					}
-				}
-				else = {
+				} else = {
 					event_target:lcluster_factory_system = {
 						random_system_planet = {
 							limit = { has_planet_flag = main_star }
@@ -1396,8 +1385,7 @@ country_event = {
 									clear_auto_move_on_arrival = no
 									# arrival_effect =
 								}
-							}
-							else_if = {
+							} else_if = {
 								limit = {
 									OR = {
 										has_auto_move_target = yes
@@ -1554,8 +1542,7 @@ country_event = {
 			if = {
 				limit = { prev = { is_country_type = gate_builders } }
 				set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu }
-			}
-			else = {
+			} else = {
 				set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo }
 			}
 		}
@@ -1750,8 +1737,7 @@ country_event = {
 				save_global_event_target_as = gate_builders
 				save_event_target_as = graygoo_country
 			}
-		}
-		else_if = {
+		} else_if = {
 			limit = { NOT = { exists = event_target:graygoo_country } }
 			event_target:gate_builders = { save_event_target_as = graygoo_country }
 		}
@@ -2202,7 +2188,7 @@ country_event = {
 }
 
 ## Limit Bulwarks, add restore feature.
-# on build defense bulwark station
+# On build defense bulwark station.
 ship_event = {
 	id = a_deadly_tempest.221
 	hide_window = yes
@@ -2220,7 +2206,7 @@ ship_event = {
 	immediate = { set_disable_at_health = 0.001 }
 }
 
-# on Bulwark Disabled/Conquered
+# On Bulwark Disabled/Conquered
 # This = Ship
 # From = Disabler Ship
 ship_event = {
@@ -2254,7 +2240,7 @@ ship_event = {
 		}
 	}
 }
-# restore defense station
+# Restore defense station
 ship_event = {
 	id = a_deadly_tempest.223
 	hide_window = yes
@@ -2337,8 +2323,7 @@ ship_event = {
 					}
 				}
 			}
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				exists = fleet
 				fleet = { any_owned_ship = { is_ship_size = military_station_nanite_bulwark } }

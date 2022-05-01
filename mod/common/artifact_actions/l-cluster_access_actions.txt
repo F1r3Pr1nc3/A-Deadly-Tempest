@@ -1,74 +1,63 @@
 decision_open_lcluster = {
 	resources = {
 		category = artifact_actions
-		cost = {
-			minor_artifacts = 1
-		}
+		cost = { minor_artifacts = 1 }
 	}
-
 	potential = {
 		NOT = { has_global_flag = lgates_activated_globally }
 		can_set_lcluster_policiy = yes
 	}
-
 	allow = {
 		custom_tooltip = {
 			fail_text = "lcluster_policy_cannot_set_name"
-			NOR = {
-				owner = {
+			owner = {
+				exists = capital_scope
+				NOT = {
 					capital_scope = { has_modifier = "artifact_lgate_insight_cooldown" }
 				}
 			}
 			controls_lcluster = yes
 		}
 	}
-
 	effect = {
 		custom_tooltip = decision_open_lcluster_effects
-		hidden_effect = {
-			open_terminal_egress = yes
-		}
+		hidden_effect = { open_terminal_egress = yes }
 	}
-	ai_weight = {
-		weight = 0
-	}
+	ai_weight = { weight = 0 }
 }
 
 decision_close_lcluster = {
 	resources = {
 		category = artifact_actions
-		cost = {
-			minor_artifacts = 2
-		}
+		cost = { minor_artifacts = 2 }
 	}
-
 	potential = {
 		has_global_flag = lgates_activated_globally
 		can_set_lcluster_policiy = yes
 	}
-
 	allow = {
 		custom_tooltip = {
 			fail_text = "lcluster_policy_cannot_set_name"
-			NOT = { owner = {
+			owner = {
+				exists = capital_scope
+				NOT = {
 					capital_scope = { has_modifier = "artifact_lgate_insight_cooldown" }
 				}
 			}
 			controls_lcluster = yes
 		}
 	}
-
 	effect = {
 		custom_tooltip = decision_close_lcluster_effects
 		hidden_effect = {
 			remove_global_flag = lgates_activated_globally
 			owner = {
-				capital_scope = { add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 } }
+				capital_scope = {
+					add_modifier = { modifier = "artifact_lgate_insight_cooldown" months = 1 }
+				}
 				remove_notification_modifier = lgate_access
 			}
-			every_playable_country = {
-				remove_country_flag = lgates_activated
-			}
+			every_playable_country = { remove_country_flag = lgates_activated }
 			owner = { set_country_flag = lcluster_closer }
 			# Workaround Fix AI bypassing
 			event_target:lcluster1 = {
@@ -88,19 +77,14 @@ decision_close_lcluster = {
 			}
 		}
 	}
-	ai_weight = {
-		weight = 0
-	}
+	ai_weight = { weight = 0 }
 }
 
 artifact_lgate_clue = {
 	resources = {
 		category = artifact_actions
-		cost = {
-			minor_artifacts = 50
-		}
+		cost = { minor_artifacts = 50 }
 	}
-
 	potential = {
 		has_country_flag = encountered_first_lgate
 		NOR = {
@@ -108,23 +92,19 @@ artifact_lgate_clue = {
 			has_global_flag = l_cluster_opened
 		}
 		has_distar = yes
-		mid_game_years_passed > 0
 	}
-
 	allow = {
 		NOT = { has_modifier = artifact_lgate_insight_cooldown }
 	}
-
 	effect = {
 		custom_tooltip = artifact_lgate_clue_effect
-
 		hidden_effect = {
 			generate_lcluster_clue = yes
-
-			add_modifier = {
-				modifier = "artifact_lgate_insight_cooldown"
-				days = 3600
-			}
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" years = 10 }
 		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = { factor = 0 mid_game_years_passed < 0 }
 	}
 }

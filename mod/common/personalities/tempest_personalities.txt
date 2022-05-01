@@ -37,12 +37,12 @@ gate_builders_machine = {
 		propagator = no
 		multispecies = no
 		crisis_fighter = yes
-		# crisis_leader = yes 	# special for awakened fallen empires
-		# custodian = yes	# special for awakened machine fallen empires, prevents colonization & locks attitude
+		# crisis_leader = yes 	# Special for awakened fallen empires.
+		# custodian = yes	# Special for awakened machine fallen empires, prevents colonization & locks attitude
 		attack_neutrals = yes
 		berserker = yes
-		enigmatic = yes # special for machine fallen
-		limited = yes # prevents certain AI behaviours
+		enigmatic = yes # Special for machine fallen
+		limited = yes # Prevents certain AI behaviours
 	}
 
 	allow = {

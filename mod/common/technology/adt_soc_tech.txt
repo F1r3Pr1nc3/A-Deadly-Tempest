@@ -10,7 +10,7 @@ tech_nanite_terraforming = {
 	weight = @tier4weight1
 	is_rare = yes
 	prerequisites = { "tech_climate_restoration" }
-	# unlocks additional terraforming-options
+	# Unlocks additional terraforming-options
 	prereqfor_desc = {
 		diplo_action = {
 			title = "TECH_UNLOCK_NANITE_TERRAFORMING_TITLE"
@@ -74,7 +74,7 @@ tech_nano_dust = {
 	tier = 4
 	category = { biology }
 	weight = @tier5weight1
-	# add Nanodust
+	# Add Nanodust
 	modifier = {
 		terraform_speed_mult = 0.3
 		terraforming_cost_mult = -0.2
@@ -109,7 +109,7 @@ tech_nano_scales = {
 	category = { biology }
 	weight = @tier5weight1
 	gateway = biological
-	# add NanoScales
+	# Add NanoScales
 	modifier = { country_food_produces_mult = 0.2 }
 	potential = {
 		has_global_flag = l_cluster_opened

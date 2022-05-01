@@ -1,4 +1,4 @@
-# see README.txt for example
+# See README.txt for example
 # Active L-Gate
 lgate_base = {
 	entity = "gatebuilder_01_gateway_entity"
@@ -36,7 +36,7 @@ lgate_base = {
 		}
 	}
 	placement_rules = {
-		# those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
+		# Those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
 	}
 }
 

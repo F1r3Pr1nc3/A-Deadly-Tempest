@@ -1,12 +1,12 @@
-# see README.txt for example
+# See README.txt for example
 
 gateway_0 = {
 	entity = "deactivated_gateway_entity"
 	construction_entity = "deactivated_gateway_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	build_outside_gravity_well = yes 	# indicates this will use "free" placement between the system's inner and outer ring
-										# if this option is active, the placement_rules will be completely ignored
+	build_outside_gravity_well = yes 	# Indicates this will use "free" placement between the system's inner and outer ring
+										# If this option is active, the placement_rules will be completely ignored.
 	show_galactic_map_icon = no
 	build_time = 1080
 	resources = {
@@ -62,7 +62,7 @@ gateway_0 = {
 	}
 
 	placement_rules = {
-		# those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
+		# Those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
 	}
 
 	# root = system
@@ -210,7 +210,7 @@ gateway_restored = {
 			}
 		}
 		if = {
-			limit = { exists = from } # does not always exist when upgraded from script via "finish_upgrade = yes"
+			limit = { exists = from } # Does not always exist when upgraded from script via "finish_upgrade = yes"
 			from = {
 				country_event = { id = origin.1050 }
 				country_event = { id = apoc.12 }

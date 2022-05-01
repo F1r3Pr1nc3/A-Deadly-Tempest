@@ -477,7 +477,7 @@ distantstars_init_05b = {
 	usage_odds = 0
 	flags = {
 		hostile_system
-		# lcluster add later due hidden
+		# Lcluster add later due hidden.
 		lcluster5b
 		ring_world_built
 		graygoo_factory_system

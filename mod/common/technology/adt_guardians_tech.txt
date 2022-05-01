@@ -12,7 +12,7 @@ tech_nanite_guardians = {
 	}
 	weight = @tier5weight1
 	is_rare = yes
-	gateway = guardians # there are 5 techs behind
+	gateway = guardians # There are 5 techs behind.
 	potential = {
 		has_global_flag = l_cluster_opened
 		NAND = {
@@ -38,7 +38,7 @@ tech_nanite_guardians = {
 		}
 	}
 	weight_modifier = {
-		factor = 0.01 # if 0 only per event
+		factor = 0.01 # If 0 only per event.
 		modifier = {
 			factor = 5
 			has_country_flag = pantagruel

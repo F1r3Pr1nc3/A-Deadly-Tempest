@@ -296,7 +296,7 @@ terraform_link = {
 ## Gaia World ##
 ################
 
-#These are always a good idea if the AI has taken the perk. So the AI will always want it, to a degree.
+# These are always a good idea if the AI has taken the perk. So the AI will always want it, to a degree.
 
 terraform_link = {
 	to = "pc_gaia"
@@ -502,7 +502,7 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 1
-		modifier = { #Ocean Worlds are Aquatic species' paradises
+		modifier = { # Ocean Worlds are Aquatic species' paradises
 			factor = 0
 			from = {
 				is_colony = yes
@@ -614,7 +614,7 @@ terraform_link = {
 ## Barren World ##
 ##################
 
-# The AI is rigged to always pick the one with the highest habitability. So nothing complicated needed for weights here either
+# The AI is rigged to always pick the one with the highest habitability. So nothing complicated needed for weights here either.
 
 terraform_link = {
 	from = "pc_barren"
@@ -800,7 +800,6 @@ terraform_link = {
 	}
 }
 
-
 terraform_link = {
 	from = "pc_barren"
 	to = "pc_arctic"
@@ -1075,7 +1074,7 @@ terraform_link = {
 	}
 }
 
-terraform_link = { #only countries with Hydrocentric can find this. Probably no reasonable way of making only them able to terraform it, though
+terraform_link = { # only countries with Hydrocentric can find this. Probably no reasonable way of making only them able to terraform it, though
 	from = "pc_frozen"
 	to = "pc_ocean"
 
@@ -1224,7 +1223,7 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 20
-		#It's a barren world!
+		# It's a barren world!
 	}
 }
 
@@ -1249,7 +1248,7 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 20
-		#It's a barren world!
+		# It's a barren world!
 	}
 }
 

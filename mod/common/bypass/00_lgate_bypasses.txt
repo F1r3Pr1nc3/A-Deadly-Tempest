@@ -9,7 +9,7 @@ lgate = {
 	winddown_time = 0
 	ftl_multiplier = 0	# 0 means instant
 	icon_frame = 30
-	remember_instances = no	# whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
+	remember_instances = no	# Whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general.
 	galactic_map_tooltip_header = LGATE_GALACTIC
 	galactic_map_tooltip_desc = LGATE_GALACTIC_DESC
 	connection_type = scripted_connection
@@ -68,16 +68,16 @@ lgate = {
 			}
 		}
 	}
-	on_action = "on_entering_lgate" # for compatibility (key free to use)
+	on_action = "on_entering_lgate" # For compatibility (key free to use)
 	scripted_connection = {
-		# defines endpoints that can only reach the "nexus"
+		# Defines endpoints that can only reach the "nexus"
 		node = {
-			# system scope
+			# System scope
 			has_star_flag = lgate
 		}
-		# defines endpoint(s) that can reach all "nodes" (but not other nexuses)
+		# Defines endpoint(s) that can reach all "nodes" (but not other nexuses)
 		nexus = {
-			# system scope
+			# System scope
 			has_star_flag = lcluster1
 		}
 	}

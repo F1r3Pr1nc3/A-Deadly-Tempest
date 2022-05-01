@@ -2,15 +2,15 @@
 
 esgoo_male_hair_01 = {
 	default = "gfx/models/portraits/esgoo/esiot21.dds"
-	game_setup = {# will run with a limited country scope. species and government is set but the country does not actually exist
+	game_setup = {# Will run with a limited country scope. species and government is set but the country does not actually exist.
 		default = "gfx/models/portraits/esgoo/esiot21.dds"
 	}
-	# species scope
-	species = { # generic portrait for a species
+	# Species scope
+	species = { # Generic portrait for a species.
 		default = "gfx/models/portraits/esgoo/esiot21.dds"
 	}
-	# pop scope
-	pop = { # for a specific pop
+	# Pop scope
+	pop = { # For a specific pop
 		default = "gfx/models/portraits/esgoo/esiot21.dds"
 
 		random = {
@@ -39,7 +39,7 @@ esgoo_male_hair_01 = {
 			}
 		}
 	}
-	# leader scope
+	# Leader scope
 	leader = { # scientists, generals, admirals, governor
 		random = {
 			trigger = { leader_class = general }
@@ -148,8 +148,8 @@ esgoo_male_hair_01 = {
 		}
 	}
 
-	# leader scope
-	ruler = { # for rulers
+	# Leader scope
+	ruler = { # For rulers
 		random = {
 			list = {
 				# type2 crystals

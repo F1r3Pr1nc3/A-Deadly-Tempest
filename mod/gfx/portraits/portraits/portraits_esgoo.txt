@@ -8,7 +8,7 @@
 ###	Default position orientation is lower left.
 ##############################################################
 portraits = {
-	# esgoo male
+	# Esgoo male
 	esgoo_male_01 = {
 		entity = "portrait_esgoo_male_01_entity"
 		clothes_selector = "esgoo_male_clothes_01"
@@ -63,7 +63,7 @@ portrait_groups = {
 	esgoo = {
 		default = esgoo_male_01
 		game_setup = {
-			# will run with a limited country scope. species and government is set but the country does not actually exist
+			# Will run with a limited country scope. species and government is set but the country does not actually exist.
 			add = {
 				trigger = {
 					ruler = {
@@ -75,25 +75,25 @@ portrait_groups = {
 				}
 			}
 		}
-		# species scope
+		# Species scope
 		species = {
-			# generic portrait for a species
+			# Generic portrait for a species.
 			add = {
 				portraits = {
 					esgoo_male_01
 				}
 			}
 		}
-		# pop scope
+		# Pop scope
 		pop = {
-			# for a specific pop
+			# For a specific pop
 			add = {
 				portraits = {
 					esgoo_male_01
 				}
 			}
 		}
-		# leader scope
+		# Leader scope
 		leader = {
 			# scientists, generals, admirals, governor
 			add = {
@@ -105,7 +105,7 @@ portrait_groups = {
 				}
 			}
 		}
-		# leader scope
+		# Leader scope
 		ruler = {
 			add = {
 				trigger = {
