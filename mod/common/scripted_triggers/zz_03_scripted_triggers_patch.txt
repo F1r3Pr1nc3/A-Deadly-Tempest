@@ -38,7 +38,7 @@ has_total_war_cb = {
 		}
 		# End threat checks
 		AND = {
-			CmtTriggerIsPlayableEmpire = yes
+			merg_is_default_empire = yes
 			NOR = {
 				# is_country_type = awakened_fallen_empire meaningless
 				has_valid_civic = civic_fanatic_purifiers

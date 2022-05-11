@@ -235,7 +235,7 @@ planet_event = {
 						check_variable = { which = CmtVarLgateTerraformNanite value = 4 }
 					}
 				}
-				add_modifier = { modifier = terraforming_candidate days = 30 }
+				add_modifier = { modifier = terraforming_candidate months = 1  }
 			}
 			random_list = {
 				4 = {}

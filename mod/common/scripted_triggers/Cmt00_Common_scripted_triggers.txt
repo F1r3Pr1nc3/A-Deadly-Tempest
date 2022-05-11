@@ -68,7 +68,7 @@ CmtTriggerIsPlayableEmpire = {
 
 CmtTriggerIsEmpire = {		## Written in also Cmt50
 	OR = {
-		# CmtTriggerIsPlayableEmpire = yes
+		# merg_is_default_empire = yes
 		# CmtTriggerIsFallenEmpire = yes
 		# is_country_type = default
 		# is_zofe_country = yes # is_zofe_compatible

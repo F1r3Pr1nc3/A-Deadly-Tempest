@@ -1,0 +1,567 @@
+### Override dummy
+namespace = tutorial
+ship_event = {
+	id = tutorial.299
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.299
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.501
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.500
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.300
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.7
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.700
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.8
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.9
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.1000
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.10
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.11
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.1200
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.12
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.13
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+planet_event = {
+	id = tutorial.140
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+planet_event = {
+	id = tutorial.14
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.15
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+planet_event = {
+	id = tutorial.160
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+planet_event = {
+	id = tutorial.16
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.17
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.170
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.18
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.19
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.20
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.200
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.21
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.22
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.23
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.24
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.240
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.25
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.26
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.260
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+planet_event = {
+	id = tutorial.27
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = { has_owner = yes }
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.33
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.330
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.34
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.35
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.36
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.37
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.38
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.39
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.40
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.41
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.42
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.43
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+planet_event = {
+	id = tutorial.9000
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.44
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.45
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.46
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.47
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.48
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.480
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.49
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.50
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.51
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.52
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.53
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.54
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.55
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.555
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.56
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.560
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.561
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.57
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.58
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.59
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.61
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.63
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.64
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.65
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.71
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.73
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.74
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.75
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.750
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.76
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.100
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.101
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.102
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.103
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.104
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.1337
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+first_contact_event = {
+	id = tutorial.2000
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+first_contact_event = {
+	id = tutorial.2004
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.2005
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.2006
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.2007
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.2010
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}

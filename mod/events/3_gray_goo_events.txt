@@ -811,7 +811,7 @@ event = {
 			remove_country_flag = gray_warship_active
 			remove_country_flag = gray_army_active
 			set_country_flag = gray_reforming
-			add_modifier = { modifier = "gray_scattered" days = 3600 }
+			add_modifier = { modifier = "gray_scattered" years = 10 }
 			country_event = { id = graygoo.511 }
 			country_event = { id = graygoo.512 days = 3600 }
 		}

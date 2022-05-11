@@ -92,7 +92,7 @@ decision_close_lcluster = {
 			every_playable_country = {
 				remove_country_flag = lgates_activated
 			}
-			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 30 }
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" months = 1  }
 			owner = { set_country_flag = lcluster_closer }
 			# Workaround Fix AI bypassing
 			event_target:lcluster1 = {
@@ -105,7 +105,7 @@ decision_close_lcluster = {
 					is_ai = yes
 					OR = {
 						is_crisis_faction = yes
-						CmtTriggerIsPlayableEmpire = yes
+						merg_is_default_empire = yes
 					}
 				}
 				run_ai_strategic_war_data = yes

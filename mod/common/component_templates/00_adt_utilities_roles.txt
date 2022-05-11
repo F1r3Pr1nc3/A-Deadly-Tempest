@@ -152,7 +152,7 @@ utility_component_template = {
 		weight = 4
 		modifier = {
 			factor = 0
-			is_country_type = default
+			merg_is_default_empire = yes
 			NOT = { has_ascension_perk = ap_transcendence }
 		}
 	}
@@ -286,7 +286,7 @@ utility_component_template = {
 		weight = 4
 		modifier = {
 			factor = 0
-			is_country_type = default
+			merg_is_default_empire = yes
 			NOT = { has_ascension_perk = ap_transcendence }
 		}
 	}
@@ -360,7 +360,7 @@ utility_component_template = {
 		weight = 4
 		modifier = {
 			factor = 0
-			is_country_type = default
+			merg_is_default_empire = yes
 			NOT = { has_ascension_perk = ap_transcendence }
 		}
 	}

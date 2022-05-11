@@ -453,7 +453,7 @@ event = {
 				has_lgate = yes
 			}
 			save_event_target_as = lgate_warning_country
-			set_timed_country_flag = { flag = lgate_warned days = 240 }
+			set_timed_country_flag = { flag = lgate_warned months = 8 }
 			every_relation = {
 				limit = {
 					has_communications = prev
@@ -587,7 +587,7 @@ country_event = {
 									if = {
 										limit = {
 											is_ai = yes
-											CmtTriggerIsPlayableEmpire = yes
+											merg_is_default_empire = yes
 										}
 										event_target:dragons_target = {
 											system_event = { id = distar.13012 days = 160 random = 40 }
@@ -600,7 +600,7 @@ country_event = {
 								exists = space_owner
 								space_owner = {
 									is_ai = yes
-									CmtTriggerIsPlayableEmpire = yes
+									merg_is_default_empire = yes
 								}
 							}
 							system_event = { id = distar.13012 days = 240 random = 60 }
@@ -721,7 +721,7 @@ system_event = {
 				exists = space_owner
 				space_owner = {
 					is_ai = yes
-					CmtTriggerIsPlayableEmpire = yes
+					merg_is_default_empire = yes
 					# has_country_flag = knows_ldragon
 					NOR = {
 						is_homicidal = yes
@@ -742,7 +742,7 @@ system_event = {
 					every_federation_ally = {
 						limit = {
 							is_ai = yes
-							CmtTriggerIsPlayableEmpire = yes
+							merg_is_default_empire = yes
 							NOR = {
 								is_homicidal = yes
 								has_ethic = ethic_fanatic_xenophobe
@@ -763,7 +763,7 @@ system_event = {
 			every_playable_country = {
 				limit = {
 					is_ai = yes
-					CmtTriggerIsPlayableEmpire = yes
+					merg_is_default_empire = yes
 					# has_country_flag = knows_ldragon
 					NOR = {
 						is_homicidal = yes

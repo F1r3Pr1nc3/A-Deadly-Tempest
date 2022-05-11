@@ -1481,7 +1481,7 @@ country_event = {
 	option = {
 		name = graygoo.160.a
 		hidden_effect = {
-			set_timed_country_flag = { flag = gk_told_to_leave days = 60 }
+			set_timed_country_flag = { flag = gk_told_to_leave months = 2 }
 			set_country_flag = gk_first_entry
 			country_event = { id = graygoo.161 days = 60 }
 		}
@@ -1701,7 +1701,7 @@ fleet_event = {
 		name = graygoo.162.a
 		hidden_effect = {
 			owner = {
-				set_timed_country_flag = { flag = gk_told_to_leave days = 60 }
+				set_timed_country_flag = { flag = gk_told_to_leave months = 2 }
 				country_event = { id = graygoo.161 days = 60 }
 			}
 		}

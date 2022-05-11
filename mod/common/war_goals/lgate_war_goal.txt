@@ -55,7 +55,7 @@ wg_access_lcluster = {
 	on_status_quo = {
 		from = {
 			random_owned_planet = { open_terminal_egress = yes }
-			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 180 }
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" months = 6  }
 		}
 		set_global_flag = lgates_activated_globally
 		set_country_flag = lgates_activated
@@ -82,7 +82,7 @@ wg_access_lcluster = {
 				end_rivalry = root
 				add_opinion_modifier = { modifier = "opinion_wg_access_lcluster_long" who = root }
 				random_owned_planet = { open_terminal_egress = yes }
-				add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 180 }
+				add_modifier = { modifier = "artifact_lgate_insight_cooldown" months = 6  }
 			}
 			set_global_flag = lgates_activated_globally
 			set_country_flag = lgates_activated
@@ -148,7 +148,7 @@ wg_access_lcluster_long = {
 		set_global_flag = lgates_activated_globally
 		from = {
 			random_owned_planet = { open_terminal_egress = yes }
-			add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 180 }
+			add_modifier = { modifier = "artifact_lgate_insight_cooldown" months = 6  }
 		}
 		set_country_flag = lgates_activated
 	}
@@ -177,7 +177,7 @@ wg_access_lcluster_long = {
 				end_rivalry = root
 				add_opinion_modifier = { modifier = "opinion_wg_access_lcluster_long" who = root }
 				random_owned_planet = { open_terminal_egress = yes }
-				add_modifier = { modifier = "artifact_lgate_insight_cooldown" days = 300 }
+				add_modifier = { modifier = "artifact_lgate_insight_cooldown" months = 10  }
 			}
 			set_global_flag = lgates_activated_globally
 			root = { set_country_flag = lgates_activated }

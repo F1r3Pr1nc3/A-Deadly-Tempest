@@ -1201,7 +1201,7 @@ country_event = {
 		# awaken_guardians_of_the_galaxy
 		if = {
 			limit = { NOT = { has_global_flag = guardians_of_the_galaxy_happened } }
-			set_timed_global_flag = { flag = galactic_crisis_happened days = 1800 }
+			set_timed_global_flag = { flag = galactic_crisis_happened years = 5 }
 			random_country = {
 				limit = {
 					is_country_type = fallen_empire
@@ -1212,7 +1212,7 @@ country_event = {
 					fleet_power > 60000
 				}
 				set_country_flag = guardians_of_the_galaxy
-				set_timed_country_flag = { flag = timed_guardians_of_the_galaxy_2 days = 1800 }
+				set_timed_country_flag = { flag = timed_guardians_of_the_galaxy_2 years = 5 }
 			}
 		}
 	}
@@ -1353,7 +1353,7 @@ country_event = {
 				set_variable = { which = "fleetCounter" value = 8 }
 				# log = "set fleetCounter [graygoo_country.fleetCounter]"
 			}
-			set_timed_country_flag = { flag = gk_told_to_leave days = 60 }
+			set_timed_country_flag = { flag = gk_told_to_leave months = 2 }
 			every_owned_fleet = {
 				limit = {
 					exists = solar_system
@@ -1708,7 +1708,7 @@ country_event = {
 				}
 			}
 			remove_auto_move_target = yes			# Works although has_auto_move_target says no!?
-			# set_timed_fleet_flag = { flag = guard_returning days = 61 }
+			# set_timed_fleet_flag = { flag = guard_returning months = 2 }
 		}
 		country_event = { id = a_deadly_tempest.97 days = 18 }
 	}
@@ -2396,7 +2396,7 @@ planet_event = {
 				set_planet_flag = fired_nanobots
 				from.owner = { set_country_flag = fired_nanobots@root }
 				# set_planet_flag = space_owner_triggered
-				set_timed_planet_flag = { flag = space_owner_triggered days = 900 }
+				set_timed_planet_flag = { flag = space_owner_triggered months = 30 }
 			}
 			# FIXME set_surveyed is bugged 3.0.3!
 			# every_playable_country = {
