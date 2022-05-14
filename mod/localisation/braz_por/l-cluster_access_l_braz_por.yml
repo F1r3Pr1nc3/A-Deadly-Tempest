@@ -1,5 +1,4 @@
 ﻿l_braz_por:
- NAME_Final_Egress: "Salida de terminal"
  TECH_UNLOCK_L_GATE_ACCESS_DESC: "Desbloquea la Política que habilita la capacidad de cerrar o abrir el §EL-Cluster§!. Debe controlar §H$NAME_Final_Egress$§! para dictar la política."
  TECH_UNLOCK_L_GATE_ACCESS_TITLE: "§HDesbloquea la función:§! $tech_lcluster_access$"
  TECH_UNLOCK_L_GATE_TACTICAL_USE_DESC: "Desbloquea la capacidad de utilizar nuestro §E$lgates$§! mientras que la §EL-Cluster§! está cerrado."

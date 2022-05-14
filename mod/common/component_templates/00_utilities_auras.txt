@@ -618,3 +618,153 @@ utility_component_template = {
 		}
 	}
 }
+
++###################
+# Offspring Auras #
+###################
+
+utility_component_template = {
+	key = "SHIP_AURA_OFFSPRING"
+	size = medium
+	icon = "GFX_offspring_aura"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { offspring_corvette offspring_destroyer offspring_cruiser offspring_battleship }
+	component_set = "ship_aura_components"
+
+	friendly_aura = {
+		name = "OFFSPRING_AURA"
+		system_wide = yes
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = offspring_aura
+			priority = 1
+		}
+		limit = {
+			exists = owner
+			owner = { has_origin = origin_progenitor_hive }
+		}
+		modifier = {
+			ship_speed_mult = 0.55
+			ship_evasion_mult = 0.55
+			ship_fire_rate_mult = 0.55
+			ship_accuracy_mult = 0.55
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2
+			is_ai = yes
+			is_preferred_weapons = weapon_type_energy
+		}
+	}
+}
+
+utility_component_template = {
+	key = "SHIP_AURA_BATTLEFIELD_REPAIRS"
+	size = medium
+	icon = "GFX_ship_part_aura_battlefield_repairs"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { constructor }
+	component_set = "ship_aura_components"
+
+	friendly_aura = {
+		name = "aura_battlefield_repairs"
+		system_wide = yes
+		apply_on = ships
+
+		stack_info = {
+			id = friendly_battlefield_repairs
+			priority = 20
+		}
+
+		modifier = {
+			ship_hull_regen_add_static = 2
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+utility_component_template = {
+	key = "SHIP_AURA_ELECTROMAGNETIC_DISRUPTOR"
+	size = medium
+	icon = "GFX_ship_part_aura_snare"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { science }
+	component_set = "ship_aura_components"
+
+	hostile_aura = {
+		name = "aura_electromagnetic_disruptor"
+		system_wide = yes
+		apply_on = ships
+
+		stack_info = {
+			id = hostile_electromagnetic_disruptor
+			priority = 20
+		}
+
+		limit = {
+			OR = {
+				AND = {
+					exists = owner
+					owner = { is_machine_empire = yes }
+				}
+				has_sapient_combat_computer = yes
+				has_autonomous_combat_computer = yes
+			}
+		}
+
+		modifier = {
+			ship_accuracy_mult = -0.25
+			ship_fire_rate_mult = -0.25
+			ship_speed_reduction = 0.25
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}

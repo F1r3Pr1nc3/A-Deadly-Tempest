@@ -1,5 +1,4 @@
 ﻿l_simp_chinese:
- NAME_Final_Egress: "终端出口"
  TECH_UNLOCK_L_GATE_ACCESS_DESC: "解锁能封闭或开放§EL星团§!的政策。必须控制§H$NAME_Final_Egress$§!才能执行。"
  TECH_UNLOCK_L_GATE_ACCESS_TITLE: "§H解锁：§! $tech_lcluster_access$"
  TECH_UNLOCK_L_GATE_TACTICAL_USE_DESC: "解锁§EL星团§!关闭时使用我方§E$lgates$§!的能力。"

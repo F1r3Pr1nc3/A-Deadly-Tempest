@@ -1,5 +1,4 @@
 ﻿l_korean:
- NAME_Final_Egress: "Terminal Egress"
  TECH_UNLOCK_L_GATE_ACCESS_DESC: "Unlocks the Policy that enables the ability to close or open the §EL-Cluster§!. Must control §H$NAME_Final_Egress$§! to dictate policy."
  TECH_UNLOCK_L_GATE_ACCESS_TITLE: "§HUnlocks Feature:§! $tech_lcluster_access$"
  TECH_UNLOCK_L_GATE_TACTICAL_USE_DESC: "Unlocks the ability to use our §E$lgates$§! while the §EL-Cluster§! is closed."
