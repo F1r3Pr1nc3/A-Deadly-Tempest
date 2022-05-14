@@ -565,3 +565,253 @@ country_event = {
 	is_triggered_only = yes
 	trigger = { always = no }
 }
+
+
+###########################################
+# "OVERLORD" TUTORIALS & ADVISOR TIPS
+###########################################
+
+# Tutorial: Enclave Diplomacy (not Mercs) | from = contacted country
+country_event = {
+	id = tutorial.2100
+	title = tutorial.2100.name
+	desc = {
+		trigger = { is_tutorial_level = 1 }
+		text = tutorial.2100.abbr.desc
+	}
+	desc = {
+		trigger = { is_tutorial_level = 2 }
+		text = tutorial.2100.full.desc
+	}
+	is_advisor_event = yes
+	is_triggered_only = yes
+	show_sound = tut_msg_first_contact_enclave
+
+	trigger = {
+		is_tutorial_level > 0 #Tips & full tutorial
+		from = {
+			OR = {
+				has_country_flag = artist_enclave_country
+				has_country_flag = curator_enclave_country
+				has_country_flag = salvager_enclave_country
+				has_country_flag = shroudwalker_enclave_country
+				has_country_flag = trader_enclave_country
+			}
+		}
+		NOT = { has_country_flag = tutorial_met_enclave }
+	}
+
+	immediate = { set_country_flag = tutorial_met_enclave }
+
+	option = { name = OK }
+}
+
+# Tutorial: Enclave Diplomacy (Mercs) | from = contacted country
+country_event = {
+	id = tutorial.2105
+	title = tutorial.2105.name
+	desc = {
+		trigger = { is_tutorial_level = 1 }
+		text = tutorial.2105.abbr.desc
+	}
+	desc = {
+		trigger = { is_tutorial_level = 2 }
+		text = tutorial.2105.full.desc
+	}
+	is_advisor_event = yes
+	is_triggered_only = yes
+	show_sound = tut_msg_encounter_mercenary_enclave_info
+
+	trigger = {
+		has_overlord_dlc = yes
+		is_tutorial_level > 0 #Tips & full tutorial
+		from = { has_country_flag = mercenary_enclave_country }
+		NOT = { has_country_flag = tutorial_met_mercenary_enclave }
+	}
+
+	immediate = { set_country_flag = tutorial_met_mercenary_enclave }
+
+	option = { name = OK }
+}
+
+# Tutorial: Creating a Mercenary Enclave | via on_monthly_pulse_country | from = contacted country
+country_event = {
+	id = tutorial.2110
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_overlord_dlc = yes
+		is_gestalt = no
+		is_tutorial_level > 0 #Tips & full tutorial
+		any_owned_fleet = { fleet_size > 45 }
+	}
+
+	immediate = {
+		random_owned_fleet = {
+			limit = { fleet_size > 45 }
+			save_event_target_as = tutorial_mercenary_fleet
+		}
+		country_event = { id = tutorial.2111 }
+	}
+}
+country_event = {
+	id = tutorial.2111
+	title = tutorial.2111.name
+	desc = {
+		trigger = { is_tutorial_level = 1 }
+		text = tutorial.2111.abbr.desc
+	}
+	desc = {
+		trigger = { is_tutorial_level = 2 }
+		text = tutorial.2111.full.desc
+	}
+	is_advisor_event = yes
+	is_triggered_only = yes
+	show_sound = tut_msg_fleet_conversion
+
+	fire_only_once = yes
+
+	immediate = { set_country_flag = tutorial_met_mercenary_enclave }
+
+	option = { name = OK }
+}
+
+# Tutorial: Megastructures | via on_tech_increased
+country_event = {
+	id = tutorial.2115
+	title = tutorial.2115.name
+	desc = tutorial.2115.desc
+	is_advisor_event = yes
+	is_triggered_only = yes
+	show_sound = tut_msg_megastructures_info
+
+	trigger = {
+		is_tutorial_level > 0 #Tips & full tutorial
+		has_technology = tech_mega_engineering
+	}
+
+	immediate = {
+		random_owned_fleet = {
+			limit = { fleet_size > 45 }
+			save_event_target_as = tutorial_mercenary_fleet
+		}
+		country_event = { id = tutorial.2111 }
+	}
+
+	option = { name = OK }
+}
+
+# Orbital Ring (technology) | via on_tech_increased
+country_event = {
+	id = tutorial.2120
+	title = tutorial.2120.name
+	desc = tutorial.2120.desc
+	is_advisor_event = yes
+	is_triggered_only = yes
+	#Non-voiced
+
+	trigger = {
+		is_tutorial_level > 0 #Tips & full tutorial
+		has_technology = tech_orbital_ring_tier_1
+		NOT = { has_country_flag = tutorial_orbital_ring_tech }
+	}
+
+	immediate = { set_country_flag = tutorial_orbital_ring_tech }
+
+	option = { name = EXCELLENT }
+}
+# Orbital Ring | via Restored Orbital Ring on_build_complete
+country_event = {
+	id = tutorial.2121
+	title = TUTORIAL_ORBITAL_RING_TITLE
+	desc = TUTORIAL_ORBITAL_RING_DESC
+	is_advisor_event = yes
+	is_triggered_only = yes
+	show_sound = tut_msg_ORBITAL_RING
+
+	trigger = {
+		is_tutorial_level > 0 #Tips & full tutorial
+		NOT = { has_country_flag = tutorial_built_orbital_ring }
+	}
+
+	immediate = { set_country_flag = tutorial_built_orbital_ring }
+
+	option = { name = OK }
+}
+
+# Quantum Catapult (technology) | via on_tech_increased
+country_event = {
+	id = tutorial.2125
+	title = tutorial.2125.name
+	desc = tutorial.2125.desc
+	is_advisor_event = yes
+	is_triggered_only = yes
+	#Non-voiced
+
+	trigger = {
+		is_tutorial_level > 0 #Tips & full tutorial
+		has_technology = tech_quantum_catapult
+		NOT = { has_country_flag = tutorial_quantum_catapult_tech }
+	}
+
+	immediate = { set_country_flag = tutorial_quantum_catapult_tech }
+
+	option = { name = EXCELLENT }
+}
+# Quantum Catapult | via Restored/"Slingshot" Restored/Quantum Catapult on_build_complete
+country_event = {
+	id = tutorial.2126
+	title = tutorial.2126.name
+	desc = tutorial.2126.desc
+	is_advisor_event = yes
+	is_triggered_only = yes
+	show_sound = tut_msg_quantum_catapults
+
+	trigger = {
+		is_tutorial_level > 0 #Tips & full tutorial
+		NOT = { has_country_flag = tutorial_built_quantum_catapult }
+	}
+
+	immediate = { set_country_flag = tutorial_built_quantum_catapult }
+
+	option = { name = OK }
+}
+
+# Hyper Relay (technology) | via on_tech_increased
+country_event = {
+	id = tutorial.2130
+	title = tutorial.2130.name
+	desc = tutorial.2130.desc
+	is_advisor_event = yes
+	is_triggered_only = yes
+	#Non-voiced
+
+	trigger = {
+		is_tutorial_level > 0 #Tips & full tutorial
+		has_technology = tech_quantum_catapult
+		NOT = { has_country_flag = tutorial_hyper_relay_tech }
+	}
+
+	immediate = { set_country_flag = tutorial_hyper_relay_tech }
+
+	option = { name = EXCELLENT }
+}
+# Hyper Relay | via Restored/Hyper Relay on_build_complete
+country_event = {
+	id = tutorial.2131
+	title = tutorial.2131.name
+	desc = tutorial.2131.desc
+	is_advisor_event = yes
+	is_triggered_only = yes
+	show_sound = tut_msg_hyper_relays
+
+	trigger = {
+		is_tutorial_level > 0 #Tips & full tutorial
+		NOT = { has_country_flag = tutorial_built_hyper_relay }
+	}
+
+	immediate = { set_country_flag = tutorial_built_hyper_relay }
+
+	option = { name = OK }
+}

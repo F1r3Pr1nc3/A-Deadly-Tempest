@@ -68,11 +68,11 @@ is_subject_of_khan = {
 	# overlord = { is_same_empire = prevprev }
 	overlord = { is_same_empire = event_target:raider_khanate }
 	# OR = { # Only to be sure
-	# 	is_subject_type = machinesmith
-	# 	is_subject_type = satrapy
-	# 	is_subject_type = fabricator_satrapy
-	# 	is_subject_type = war_satrapy
-	# 	# is_subject_type = nsc_freebooter_satrapy ### NSC SUPPORT has_global_flag = has_nsc_active
+	# 	any_agreement = { agreement_preset = preset_machinesmith }
+	# 	any_agreement = { agreement_preset = preset_satrapy }
+	# 	any_agreement = { agreement_preset = preset_fabricator_satrapy }
+	# 	any_agreement = { agreement_preset = preset_war_satrapy }
+	# 	# any_agreement = { agreement_preset = preset_nsc_freebooter_satrapy } ### NSC SUPPORT has_global_flag = has_nsc_active
 	# }
 }
 

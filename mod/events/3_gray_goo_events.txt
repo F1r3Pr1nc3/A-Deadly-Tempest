@@ -483,14 +483,14 @@ country_event = {
 		if = {
 			limit = {
 				any_owned_planet = {
-					exists = leader
-					leader = { is_same_value = event_target:gray_governor }
+					exists = sector.leader
+					sector.leader = { is_same_value = event_target:gray_governor }
 				}
 			}
 			random_owned_planet = {
 				limit = {
-					exists = leader
-					leader = { is_same_value = event_target:gray_governor }
+					exists = sector.leader
+					sector.leader = { is_same_value = event_target:gray_governor }
 				}
 				save_event_target_as = gray_governor_planet
 			}
