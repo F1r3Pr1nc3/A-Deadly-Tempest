@@ -158,7 +158,7 @@ gateway_ruined = {
 	bypass_type = gateway
 	show_galactic_map_icon = no
 	construction_blocks_and_blocked_by = self_type
-	potential = { always = no }
+	potential_country = { always = no }
 }
 
 # Restored Gateway

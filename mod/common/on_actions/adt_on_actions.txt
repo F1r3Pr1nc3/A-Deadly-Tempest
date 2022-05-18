@@ -201,7 +201,7 @@ on_starbase_transfer = {
 }
 
 # This = destroyed country
-# From = optional, destroyer (country)
+# From = optional, destroyer offspring_destroyer (country)
 on_country_destroyed = {
 	events = {
 		a_deadly_tempest.2404 # Open lcluster

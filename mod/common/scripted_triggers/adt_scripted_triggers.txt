@@ -31,16 +31,16 @@ check_fleet_count_in_system = {
 ########################
 
 ### Standard
-CmtTriggerIsPlayableEmpire = {
-	OR = {		## Written in Cmt00 Cmt40 and Cmt50.
-		is_country_type = default
-		is_zofe_country = yes # is_zofe_compatible
-	}
-}
+# CmtTriggerIsPlayableEmpire = {
+# 	OR = {		## Written in Cmt00 Cmt40 and Cmt50.
+# 		is_country_type = default
+# 		is_zofe_country = yes # is_zofe_compatible
+# 	}
+# }
 
-is_zofe_country = {
-	always = no
-}
+# is_zofe_country = {
+# 	always = no
+# }
 
 has_nhsc = {
 	has_global_flag = Extra_Ship_Components_NEXT # nhsc_v30

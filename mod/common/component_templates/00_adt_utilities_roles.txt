@@ -58,7 +58,7 @@
 # 		}
 # 	}
 # 	class_restriction = { shipclass_military }
-# 	size_restriction = { destroyer cruiser battleship graygoo_interdictor }
+# 	size_restriction = { destroyer offspring_destroyer cruiser offspring_cruiser battleship offspring_battleship graygoo_interdictor }
 # 	component_set = "combat_computers"
 # 	ship_behavior = "line"
 # 	prerequisites = { "tech_combat_computers_3" }
@@ -90,16 +90,16 @@ utility_component_template = {
 		cost = { alloys = @cost4 }
 	}
 	class_restriction = { shipclass_military }
-	# size_restriction = { destroyer cruiser battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
+	# size_restriction = { destroyer offspring_destroyer cruiser offspring_cruiser battleship offspring_battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
 	size_restriction = {
-		corvette
-		destroyer
-		cruiser
+		corvette offspring_corvette
+		destroyer offspring_destroyer
+		cruiser offspring_cruiser
 		crisis_destroyer
 		crisis_cruiser
 		StrikeCruiser
 		Battlecruiser
-		battleship
+		battleship offspring_battleship
 		Carrier
 		Dreadnought
 		titan
@@ -126,16 +126,16 @@ utility_component_template = {
 		cost = { alloys = @cost4 }
 	}
 	class_restriction = { shipclass_military }
-	# size_restriction = { destroyer cruiser battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
+	# size_restriction = { destroyer offspring_destroyer cruiser offspring_cruiser battleship offspring_battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
 	size_restriction = {
-		corvette
-		destroyer
-		cruiser
+		corvette offspring_corvette
+		destroyer offspring_destroyer
+		cruiser offspring_cruiser
 		crisis_destroyer
 		crisis_cruiser
 		StrikeCruiser
 		Battlecruiser
-		battleship
+		battleship offspring_battleship
 		Carrier
 		Dreadnought
 		titan
@@ -173,9 +173,9 @@ utility_component_template = {
 # 	}
 # 	class_restriction = { shipclass_military shipclass_starbase }
 # 	size_restriction = {
-# 		destroyer
-# 		cruiser
-# 		battleship
+# 		destroyer offspring_destroyer
+# 		cruiser offspring_cruiser
+# 		battleship offspring_battleship
 # 		titan
 # 		juggernaut
 # 		dreadnought
@@ -217,14 +217,14 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		corvette
-		destroyer
-		cruiser
+		corvette offspring_corvette
+		destroyer offspring_destroyer
+		cruiser offspring_cruiser
 		crisis_destroyer
 		crisis_cruiser
 		StrikeCruiser
 		Battlecruiser
-		battleship
+		battleship offspring_battleship
 		Carrier
 		Dreadnought
 		titan
@@ -259,14 +259,14 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		corvette
-		destroyer
-		cruiser
+		corvette offspring_corvette
+		destroyer offspring_destroyer
+		cruiser offspring_cruiser
 		crisis_destroyer
 		crisis_cruiser
 		StrikeCruiser
 		Battlecruiser
-		battleship
+		battleship offspring_battleship
 		Carrier
 		Dreadnought
 		titan
@@ -309,8 +309,8 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		cruiser
-		battleship
+		cruiser offspring_cruiser
+		battleship offspring_battleship
 		juggernaut
 		titan
 		Carrier
@@ -344,8 +344,8 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		cruiser
-		battleship
+		cruiser offspring_cruiser
+		battleship offspring_battleship
 		juggernaut
 		titan
 		star_eater

@@ -335,9 +335,9 @@ utility_component_template = {
 	}
 }
 
-# #################
+##################
 # Hostile Auras
-# #################
+##################
 
 utility_component_template = {
 	key = "STATION_MEDIUM_AURA_SHIELD_DAMPENER"
@@ -619,7 +619,7 @@ utility_component_template = {
 	}
 }
 
-+###################
+###################
 # Offspring Auras #
 ###################
 
@@ -636,8 +636,7 @@ utility_component_template = {
 	friendly_aura = {
 		name = "OFFSPRING_AURA"
 		system_wide = yes
-
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = offspring_aura
 			priority = 1
 		}

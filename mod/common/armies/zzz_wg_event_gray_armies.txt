@@ -13,7 +13,7 @@ gray_army = {
 	}
 	has_species = no
 	icon = GFX_army_type_nanite
-	potential = { always = no }
+	potential_country = { always = no }
 }
 
 ### Nanite Empire Armies

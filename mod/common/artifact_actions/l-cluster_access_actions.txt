@@ -70,7 +70,8 @@ decision_close_lcluster = {
 					is_ai = yes
 					OR = {
 						is_crisis_faction = yes
-						CmtTriggerIsPlayableEmpire = yes
+						merg_is_default_empire = yes
+						# CmtTriggerIsPlayableEmpire = yes
 					}
 				}
 				run_ai_strategic_war_data = yes

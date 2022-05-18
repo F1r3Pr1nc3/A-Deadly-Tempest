@@ -54,7 +54,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser crisis_cruiser graygoo_interdictor }
+	size_restriction = { cruiser offspring_cruiser crisis_cruiser graygoo_interdictor }
 	upgrades_to = "CRUISER_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -146,6 +146,9 @@ utility_component_template = {
 		juggernaut
 		starbase_gatebuilders
 		graygoo_factory
+		orbital_ring_tier_1
+		orbital_ring_tier_2
+		orbital_ring_tier_3
 	}
 	upgrades_to = "STARBASE_DARK_MATTER_REACTOR"
 
@@ -210,7 +213,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { cruiser crisis_cruiser graygoo_interdictor }
+	size_restriction = { cruiser offspring_cruiser crisis_cruiser graygoo_interdictor }
 	upgrades_to = "CRUISER_GRAVITON_REACTOR"
 
 	ai_weight = {
@@ -242,7 +245,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { battleship graygoo_interdictor }
+	size_restriction = { battleship offspring_battleship graygoo_interdictor }
 	upgrades_to = "BATTLESHIP_GRAVITON_REACTOR"
 
 	ai_weight = {
@@ -343,7 +346,7 @@ utility_component_template = {
 		military_station_medium
 		military_station_large
 	}
-
+	upgrades_to = "PLATFORM_DARK_MATTER_REACTOR_AE" # ACOT
 	ai_weight = {
 		weight = 6
 		modifier = {
@@ -400,8 +403,11 @@ utility_component_template = {
 		starbase_gatebuilders
 		juggernaut
 		graygoo_factory
+		orbital_ring_tier_1
+		orbital_ring_tier_2
+		orbital_ring_tier_3
 	}
-
+	upgrades_to = "STARBASE_DARK_MATTER_REACTOR_AE" # ACOT
 	ai_weight = {
 		weight = 6
 		modifier = {
