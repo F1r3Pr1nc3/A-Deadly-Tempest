@@ -641,8 +641,8 @@ utility_component_template = {
 			priority = 1
 		}
 		limit = {
-			exists = owner
-			owner = { has_origin = origin_progenitor_hive }
+			exists = controller
+			controller = { has_origin = origin_progenitor_hive }
 		}
 		modifier = {
 			ship_speed_mult = 0.55

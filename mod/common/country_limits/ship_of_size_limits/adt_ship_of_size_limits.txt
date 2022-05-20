@@ -1,0 +1,15 @@
+graygoo_mothership_ships_limit = {
+	ship_types = {
+		graygoo_mothership
+	}
+
+	base = 3
+	max = 90
+	naval_cap_fraction = 0.08
+
+	show = {
+		is_scope_valid = yes
+		has_technology = tech_titans
+		has_technology = tech_nanite_ships
+	}
+}

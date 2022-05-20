@@ -223,11 +223,12 @@ spectre_army = {
 		upkeep = { energy = 2 }
 	}
 
+	potential_country = {
+		has_authority = auth_machine_intelligence
+	}
 	potential = {
-		owner = { has_authority = auth_machine_intelligence }
 		from = { has_trait = "trait_machine_unit" }
 	}
-
 	show_tech_unlock_if = { has_authority = auth_machine_intelligence }
 
 	prerequisites = { "tech_assault_armies" }

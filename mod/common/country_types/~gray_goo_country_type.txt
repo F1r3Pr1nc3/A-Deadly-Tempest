@@ -47,44 +47,45 @@ gate_builders = {
 			# foreign_minister_module
 			interior_minister_module
 		}
-		army_data = {
-			xenomorph_army = {
-				fraction = {
-					factor = 75
-					modifier = {
-						factor = 0
-						NOT = { has_ethic = ethic_fanatic_xenophobe }
-					}
-				}
-			}
-			robotic_army = {
-				fraction = {
-					factor = 75
-					modifier = {
-						factor = 0
-						NOT = { has_ethic = ethic_fanatic_materialist }
-					}
-				}
-			}
-			nanite_giga_guardian = {
-				fraction = {
-					factor = 35
-					# modifier = {
-					# 	factor = 0
-					# 	NOT = { has_authority = auth_machine_intelligence }
-					# }
-				}
-			}
-			nanite_giga_warform = {
-				fraction = {
-					factor = 45
-					# modifier = {
-					# 	factor = 0
-					# 	NOT = { has_authority = auth_machine_intelligence }
-					# }
-				}
-			}
-		}
+		# TODO for 3.4
+		# army_data = {
+		# 	xenomorph_army = {
+		# 		fraction = {
+		# 			factor = 75
+		# 			modifier = {
+		# 				factor = 0
+		# 				NOT = { has_ethic = ethic_fanatic_xenophobe }
+		# 			}
+		# 		}
+		# 	}
+		# 	robotic_army = {
+		# 		fraction = {
+		# 			factor = 75
+		# 			modifier = {
+		# 				factor = 0
+		# 				NOT = { has_ethic = ethic_fanatic_materialist }
+		# 			}
+		# 		}
+		# 	}
+		# 	nanite_giga_guardian = {
+		# 		fraction = {
+		# 			factor = 35
+		# 			# modifier = {
+		# 			# 	factor = 0
+		# 			# 	NOT = { has_authority = auth_machine_intelligence }
+		# 			# }
+		# 		}
+		# 	}
+		# 	nanite_giga_warform = {
+		# 		fraction = {
+		# 			factor = 45
+		# 			# modifier = {
+		# 			# 	factor = 0
+		# 			# 	NOT = { has_authority = auth_machine_intelligence }
+		# 			# }
+		# 		}
+		# 	}
+		# }
 	}
 	faction = {
 		hostile = no
@@ -220,111 +221,111 @@ awakened_gate_builders = {
 			# interior_minister_module
 			foreign_minister_module
 		}
+		# TODO for 3.4
+		# army_data = {
+		# 	# gene_warrior_army = {
+		# 	# 	fraction = {
+		# 	# 		factor = 75
+		# 	# 		modifier = {
+		# 	# 			factor = 0
+		# 	# 			NOT = { has_ethic = ethic_fanatic_xenophile }
+		# 	# 		}
+		# 	# 	}
+		# 	# }
+		# 	# psionic_army = {
+		# 	# 	fraction = {
+		# 	# 		factor = 75
+		# 	# 		modifier = {
+		# 	# 			factor = 0
+		# 	# 			NOT = { has_ethic = ethic_fanatic_spiritualist }
+		# 	# 		}
+		# 	# 	}
+		# 	# }
 
-		army_data = {
-			# gene_warrior_army = {
-			# 	fraction = {
-			# 		factor = 75
-			# 		modifier = {
-			# 			factor = 0
-			# 			NOT = { has_ethic = ethic_fanatic_xenophile }
-			# 		}
-			# 	}
-			# }
-			# psionic_army = {
-			# 	fraction = {
-			# 		factor = 75
-			# 		modifier = {
-			# 			factor = 0
-			# 			NOT = { has_ethic = ethic_fanatic_spiritualist }
-			# 		}
-			# 	}
-			# }
+		# 	xenomorph_army = {
+		# 		fraction = {
+		# 			factor = 75
+		# 			modifier = {
+		# 				factor = 0
+		# 				NOT = { has_ethic = ethic_fanatic_xenophobe }
+		# 			}
+		# 		}
+		# 	}
+		# 	robotic_army = {
+		# 		fraction = {
+		# 			factor = 75
+		# 			modifier = {
+		# 				factor = 0
+		# 				NOT = { has_ethic = ethic_fanatic_materialist }
+		# 			}
+		# 		}
+		# 	}
+		# 	nanite_giga_guardian = {
+		# 		fraction = {
+		# 			factor = 35
+		# 			# modifier = {
+		# 			# 	factor = 0
+		# 			# 	NOT = { has_authority = auth_machine_intelligence }
+		# 			# }
+		# 		}
+		# 	}
+		# 	nanite_giga_warform = {
+		# 		fraction = {
+		# 			factor = 45
+		# 			# modifier = {
+		# 			# 	factor = 0
+		# 			# 	NOT = { has_authority = auth_machine_intelligence }
+		# 			# }
+		# 		}
+		# 	}
+		# }
+		# TODO for 3.4
+		# ship_data = {
+		# 	constructor = {
+		# 		min = 1
+		# 		max = 3
+		# 		system_mult = 0.25
+		# 	}
 
-			xenomorph_army = {
-				fraction = {
-					factor = 75
-					modifier = {
-						factor = 0
-						NOT = { has_ethic = ethic_fanatic_xenophobe }
-					}
-				}
-			}
-			robotic_army = {
-				fraction = {
-					factor = 75
-					modifier = {
-						factor = 0
-						NOT = { has_ethic = ethic_fanatic_materialist }
-					}
-				}
-			}
-			nanite_giga_guardian = {
-				fraction = {
-					factor = 35
-					# modifier = {
-					# 	factor = 0
-					# 	NOT = { has_authority = auth_machine_intelligence }
-					# }
-				}
-			}
-			nanite_giga_warform = {
-				fraction = {
-					factor = 45
-					# modifier = {
-					# 	factor = 0
-					# 	NOT = { has_authority = auth_machine_intelligence }
-					# }
-				}
-			}
-		}
+		# 	colonizer = {
+		# 		min = 1
+		# 		max = 1
+		# 	}
 
-		ship_data = {
-			constructor = {
-				min = 1
-				max = 3
-				system_mult = 0.25
-			}
+		# 	colossus = {
+		# 		min = 1
+		# 		max = 1
+		# 	}
 
-			colonizer = {
-				min = 1
-				max = 1
-			}
+		# 	massive_ship_fallen_empire = {
+		# 		# min = 1
+		# 		max = 2
+		# 		planet_mult = 0.05
+		# 	}
 
-			colossus = {
-				min = 1
-				max = 1
-			}
-
-			massive_ship_fallen_empire = {
-				# min = 1
-				max = 2
-				planet_mult = 0.05
-			}
-
-			large_ship_fallen_empire = {
-				fraction = {
-					base = 25
-				}
-			}
-			small_ship_fallen_empire = {
-				fraction = {
-					base = 75
-				}
-			}
-			graygoo_mothership = {
-				min = 4
-				fraction = {
-					base = 40
-				}
-			}
-			graygoo_interdictor = {
-				min = 20
-				fraction = {
-					base = 75
-				}
-			}
-		}
+		# 	large_ship_fallen_empire = {
+		# 		fraction = {
+		# 			base = 25
+		# 		}
+		# 	}
+		# 	small_ship_fallen_empire = {
+		# 		fraction = {
+		# 			base = 75
+		# 		}
+		# 	}
+		# 	graygoo_mothership = {
+		# 		min = 4
+		# 		fraction = {
+		# 			base = 40
+		# 		}
+		# 	}
+		# 	graygoo_interdictor = {
+		# 		min = 20
+		# 		fraction = {
+		# 			base = 75
+		# 		}
+		# 	}
+		# }
 	}
 
 	faction = {

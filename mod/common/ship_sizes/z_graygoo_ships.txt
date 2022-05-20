@@ -192,15 +192,9 @@ graygoo_mothership = {
 	required_component_set = "sensor_components"
 	required_component_set = "special_ship_slot"			# built-in support for New Ship Classes and More
 
-	empire_limit = {
-		base = 3
+	ai_ship_data = {
+		min = 3
 		max = 90
-		naval_cap_div = 120
-		show = {
-			is_scope_valid = yes
-			has_technology = tech_titans
-			has_technology = tech_nanite_ships
-		}
 	}
 
 	min_upgrade_cost = {
@@ -526,7 +520,6 @@ scavenger_bot = {
 		}
 	}
 
-	# empire_limit = { base = 1 } # Is shown globally?!?
 	num_target_locators = 0
 	is_space_station = no
 	takes_name_from_ship_design = yes
