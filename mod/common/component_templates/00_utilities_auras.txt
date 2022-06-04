@@ -314,8 +314,10 @@ utility_component_template = {
 		}
 
 		modifier = {
-			ship_hull_regen_add_static = 1
-			ship_armor_regen_add_static = 3
+			# ship_hull_regen_add_static = 1
+			# ship_armor_regen_add_static = 3
+			ship_hull_regen_add_perc = 0.5
+			ship_armor_regen_add_perc = 1.5
 		}
 
 		graphics = {

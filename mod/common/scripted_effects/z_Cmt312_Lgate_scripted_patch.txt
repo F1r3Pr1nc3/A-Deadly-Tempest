@@ -9,6 +9,7 @@
 #####################################################
 
 generate_lcluster_clue = {
+	optimize_memory
 	hidden_effect = {
 		if = {
 			limit = {
@@ -169,7 +170,9 @@ CmtEffectDestroyGraygoo = {
 		}
 		destroy_country = yes
 	}
-	clear_global_event_target = graygoo_country
+	if = { limit = { exists = event_target:graygoo_country }
+		clear_global_event_target = graygoo_country
+	}
 	clear_global_event_target = nanite_factory
 	clear_global_event_target = lcluster_factory_system
 	# Cybrex
