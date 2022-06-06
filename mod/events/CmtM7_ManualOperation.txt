@@ -1668,13 +1668,11 @@ country_event = {
 						}
 					}
 					random_system_planet = {
-						limit = { is_a_planet = yes }
+						limit = { is_star = no }
 						weights = {
 							base = 1
-							modifier = {
-								add = 3
-								has_planet_flag = marauder_rally_point
-							}
+							modifier = { add = 3 has_planet_flag = marauder_rally_point }
+							modifier = { add = 2 is_a_planet = yes } # possible inconsisent due other mods
 						}
 						save_event_target_as = former_marauder_capital
 						# log="Manual marauder strong fallback \\[This.GetName]"
@@ -1685,7 +1683,6 @@ country_event = {
 	}
 
 	after = {
-
 		if = {
 			limit = { exists = event_target:marauder_country_1 NOT = { event_target:marauder_country_1 = { CmtTriggerHasPotentialKhanAwaking = yes } } }
 			clear_global_event_target = marauder_country_1
