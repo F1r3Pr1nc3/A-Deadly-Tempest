@@ -34,6 +34,7 @@ namespace = distar
 # }
 
 # Check for gateway within borders.
+# From distar.10903 (Researched L-Gate tech)
 country_event = {
 	id = distar.10900
 	hide_window = yes
@@ -489,6 +490,306 @@ country_event = {
 			CmtEffectOpenLgate = yes
 			prev = {
 				country_event = { id = distar.10960 days = 200 random = 500 }
+			}
+		}
+	}
+}
+
+# Spawn L-Cluster (bit optimized by FirePrince pre 3.0.3)
+# With support Guilli's Planet Modifiers and Features
+country_event = {
+	id = distar.11000
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_spawn_system_batch = begin
+		# Batch-processes the spawn_system effects between "begin" and "end"
+		# So caches are recalculated only once rather than for every system spawned.
+		# Can also be used when removing and adding hyperlanes.
+		no_scope = {
+			# Makes system positions originate from galactic core.
+			spawn_system = {
+				min_distance >= 550
+				max_distance <= 560
+				min_orientation_angle = 44
+				max_orientation_angle = 46
+				initializer = distantstars_init_01
+				hyperlane = no
+				effect = { save_global_event_target_as = lcluster1 }
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster1 } }
+				random_system = {
+					limit = { has_star_flag = lcluster1 }
+					save_global_event_target_as = lcluster1
+				}
+			}
+			event_target:lcluster1 = {
+				spawn_system = {
+					min_distance >= 24 # 29
+					max_distance <= 40 # 31
+					min_orientation_angle = 16 # 24
+					max_orientation_angle = 82 # 66
+					initializer = distantstars_init_02
+					hyperlane = no
+					effect = { save_global_event_target_as = lcluster2 }
+				}
+				spawn_system = {
+					min_distance >= 24 # 29
+					max_distance <= 40 # 31
+					min_orientation_angle = 100 # 114
+					max_orientation_angle = 180 # 156
+					initializer = distantstars_init_03
+					hyperlane = no
+					effect = { save_global_event_target_as = lcluster3 }
+				}
+				spawn_system = {
+					min_distance >= 26 # 30
+					max_distance <= 70 # 60
+					min_orientation_angle = 310 # 340
+					max_orientation_angle = 50 # 20
+					initializer = distantstars_init_01b
+					hyperlane = no
+					effect = { save_global_event_target_as = lcluster1b }
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster2 } }
+				random_system = {
+					limit = { has_star_flag = lcluster2 }
+					save_global_event_target_as = lcluster2
+				}
+			}
+			event_target:lcluster2 = {
+				spawn_system = {
+					min_distance >= 26 # 30
+					max_distance <= 70 # 60
+					min_orientation_angle = 0
+					max_orientation_angle = 320 # 40
+					initializer = distantstars_init_02b
+					hyperlane = no
+					effect = { save_global_event_target_as = lcluster2b }
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster3 } }
+				random_system = {
+					limit = { has_star_flag = lcluster3 }
+					save_global_event_target_as = lcluster3
+				}
+			}
+			event_target:lcluster3 = {
+				spawn_system = {
+					min_distance >= 20
+					max_distance <= 40 # 30
+					min_orientation_angle = 20 # 24
+					max_orientation_angle = 70 # 66
+					initializer = distantstars_init_04
+					hyperlane = no
+					effect = { save_global_event_target_as = lcluster4 }
+				}
+				spawn_system = {
+					min_distance >= 12 # 10
+					max_distance <= 70 # 50
+					min_orientation_angle = 220 # 250
+					max_orientation_angle = 320 # 290
+					initializer = distantstars_init_03b
+					hyperlane = no
+					effect = { save_global_event_target_as = lcluster3b }
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster4 } }
+				random_system = {
+					limit = { has_star_flag = lcluster4 }
+					save_global_event_target_as = lcluster4
+				}
+			}
+			event_target:lcluster4 = {
+				spawn_system = {
+					min_distance >= 8 # 5
+					max_distance <= 40 # 20
+					min_orientation_angle = 210 # 240
+					max_orientation_angle = 330 # 300
+					initializer = distantstars_init_05
+					hyperlane = no
+					effect = {
+						save_global_event_target_as = lcluster5
+						save_global_event_target_as = graygoo_factory_system
+					}
+				}
+				spawn_system = {
+					min_distance >= 28 # 30
+					max_distance <= 70 # 60
+					min_orientation_angle = 20
+					max_orientation_angle = 220 # 160
+					initializer = distantstars_init_04b
+					hyperlane = no
+					effect = { save_global_event_target_as = lcluster4b }
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster5 } }
+				random_system = {
+					limit = { has_star_flag = lcluster5 }
+					save_global_event_target_as = lcluster5
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster1b } }
+				random_system = {
+					limit = { has_star_flag = lcluster1b }
+					save_global_event_target_as = lcluster1b
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster2b } }
+				random_system = {
+					limit = { has_star_flag = lcluster2b }
+					save_global_event_target_as = lcluster2b
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster3b } }
+				random_system = {
+					limit = { has_star_flag = lcluster3b }
+					save_global_event_target_as = lcluster3b
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:lcluster4b } }
+				random_system = {
+					limit = { has_star_flag = lcluster4b }
+					save_global_event_target_as = lcluster4b
+				}
+			}
+
+			# Mod GUILLI / Crisis Manager support.
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = has_guillis_planet_modifiers_mod
+						AND = {
+							exists = event_target:CmtGlobalVar
+							event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 6 } }
+							NOR = {
+								has_global_flag = gray_goo_crisis_set
+								has_global_flag = gray_goo_empire_set
+							}
+						}
+					}
+				}
+				every_system = {
+					limit = { has_star_flag = lcluster }
+					if = { limit = { has_global_flag = has_guillis_planet_modifiers_mod }
+						every_system_planet = {
+							planet_event = { id = gpm_engine.1 }
+						}
+					}
+					### Terraformablity
+					if = {
+						limit = {
+							exists = event_target:CmtGlobalVar
+							event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 6 } }
+							NOR = {
+								has_global_flag = gray_goo_crisis_set
+								has_global_flag = gray_goo_empire_set
+							}
+						}
+						every_system_planet = {
+							limit = { is_planet_class = pc_gray_goo }
+							add_modifier = { modifier = terraforming_candidate }
+						}
+					}
+				}
+			} # GUILLI END
+
+			# Add hyperlanes (extended randomization)
+			event_target:lcluster5 = {
+				add_hyperlane = { from = this to = event_target:lcluster4 }
+				# For backward compat.
+				if = { limit = { exists = event_target:lcluster5b }
+					add_hyperlane = { from = this to = event_target:lcluster5b }
+				}
+			}
+			random_list = {
+				10 = { # Vanilla
+					event_target:lcluster4 = {
+						add_hyperlane = { from = this to = event_target:lcluster3 }
+						add_hyperlane = { from = this to = event_target:lcluster2 }
+						add_hyperlane = { from = this to = event_target:lcluster4b }
+					}
+					event_target:lcluster3 = {
+						add_hyperlane = { from = this to = event_target:lcluster1 }
+						add_hyperlane = { from = this to = event_target:lcluster3b }
+					}
+					event_target:lcluster2 = {
+						add_hyperlane = { from = this to = event_target:lcluster1 }
+						add_hyperlane = { from = this to = event_target:lcluster3 }
+						add_hyperlane = { from = this to = event_target:lcluster2b }
+					}
+					event_target:lcluster1b = {
+						add_hyperlane = { from = this to = event_target:lcluster2b }
+					}
+				}
+				10 = {
+					event_target:lcluster4 = {
+						add_hyperlane = { from = this to = event_target:lcluster3 }
+						add_hyperlane = { from = this to = event_target:lcluster4b }
+					}
+					event_target:lcluster3 = {
+						add_hyperlane = { from = this to = event_target:lcluster2 }
+						add_hyperlane = { from = this to = event_target:lcluster3b }
+					}
+					event_target:lcluster2 = {
+						add_hyperlane = { from = this to = event_target:lcluster3 }
+						add_hyperlane = { from = this to = event_target:lcluster2b }
+					}
+					event_target:lcluster1b = {
+						add_hyperlane = { from = this to = event_target:lcluster2b }
+					}
+					event_target:lcluster3b = {
+						add_hyperlane = { from = this to = event_target:lcluster1 }
+					}
+				}
+				10 = {
+					event_target:lcluster4 = {
+						add_hyperlane = { from = this to = event_target:lcluster2 }
+						add_hyperlane = { from = this to = event_target:lcluster4b }
+					}
+					event_target:lcluster3 = {
+						add_hyperlane = { from = this to = event_target:lcluster1 }
+						add_hyperlane = { from = this to = event_target:lcluster3b }
+					}
+					event_target:lcluster2 = {
+						add_hyperlane = { from = this to = event_target:lcluster1 }
+						add_hyperlane = { from = this to = event_target:lcluster2b }
+					}
+					event_target:lcluster1b = {
+						add_hyperlane = { from = this to = event_target:lcluster2 }
+					}
+					event_target:lcluster4b = {
+						add_hyperlane = { from = this to = event_target:lcluster2b }
+					}
+				}
+			}
+
+			event_target:lcluster1 = {
+				add_hyperlane = { from = this to = event_target:lcluster1b }
+				random_system_megastructure = { # Activate Terminal Egress L-Gate
+					limit = { is_megastructure_type = lgate_base }
+					activate_gateway = this
+					set_megastructure_flag = lgate_activated
+				}
+				set_star_flag = swarm_invasion_warning
+			}
+		}
+		set_spawn_system_batch = end
+		set_country_flag = lgates_activated
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = dragon_season
+					has_global_flag = gray_goo_crisis_set
+					# has_global_flag = gray_goo_empire_set
+				}
+			}
+			# Do open all same time!?
+			every_megastructure = {
+				limit = { CmtTriggerIsClosedLgate = yes }
+				CmtEffectOpenLgate = yes
 			}
 		}
 	}

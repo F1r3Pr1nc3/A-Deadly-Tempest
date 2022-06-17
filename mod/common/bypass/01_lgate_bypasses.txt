@@ -43,6 +43,7 @@ lgate = {
 			}
 		}
 	}
+	# From = system owner
 	country_can_use = {
 		custom_tooltip = {
 			fail_text = LGATE_COUNTRY_CANNOT_USE
@@ -50,21 +51,19 @@ lgate = {
 			# is_scope_type = country
 			OR = {
 				has_global_flag = lgates_activated_globally
-				root = { has_country_flag = lgates_activated }
+				has_country_flag = lgates_activated
 			}
 			# Invalid object???
-			root = {
-				NOR = {
-					is_country_type = amoeba
-					is_country_type = amoeba_borderless
-					is_country_type = caravaneer_fleet
-					is_country_type = crystal
-					is_country_type = feral_prethoryn
-					is_country_type = guardian
-					is_country_type = guardian_dragon
-					is_country_type = tiyanki
-					is_country_type = vluur
-				}
+			NOR = {
+				is_country_type = amoeba
+				is_country_type = amoeba_borderless
+				is_country_type = caravaneer_fleet
+				is_country_type = crystal
+				is_country_type = feral_prethoryn
+				is_country_type = guardian
+				is_country_type = guardian_dragon
+				is_country_type = tiyanki
+				is_country_type = vluur
 			}
 		}
 	}

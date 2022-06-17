@@ -12,6 +12,15 @@
 ###- Initial Events -###
 ########################
 
+CmtEffectLgateClueComplete = {
+	custom_tooltip = l_cluster_openable
+	set_country_flag = completed_lcluster_chain
+	if = {
+		limit = { has_global_flag = CmtFlagLgateSkipTech }
+		give_technology = { tech = tech_lgate_activation message = no }
+	} else = { country_event = { id = distar.10904 } }
+}
+
 start_lcluster_chain = {
 	hidden_effect = {
 		set_global_flag = CmtFlagLgatePreludeTriggered
@@ -64,6 +73,7 @@ start_lcluster_chain = {
 }
 
 generate_lcluster_clue = {
+	optimize_memory
 	hidden_effect = {
 		if = {
 			limit = {
@@ -81,15 +91,6 @@ generate_lcluster_clue = {
 			CmtEffectLgateClueComplete = yes
 		}
 	}
-}
-
-CmtEffectLgateClueComplete = {
-	custom_tooltip = l_cluster_openable
-	set_country_flag = completed_lcluster_chain
-	if = {
-		limit = { has_global_flag = CmtFlagLgateSkipTech }
-		give_technology = { tech = tech_lgate_activation message = no }
-	} else = { country_event = { id = distar.10904 } }
 }
 
 CmtEffectOpenLgate = {		## Scope: this = megastructure (L-Gate)

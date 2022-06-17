@@ -3,234 +3,273 @@ namespace = tutorial
 ship_event = {
 	id = tutorial.299
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.1
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.299
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.2
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.501
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.500
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.3
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.300
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.6
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.7
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.700
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.8
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.9
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.1000
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.10
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.11
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.1200
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.12
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.13
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 planet_event = {
 	id = tutorial.140
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 planet_event = {
 	id = tutorial.14
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.15
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 planet_event = {
 	id = tutorial.160
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 planet_event = {
 	id = tutorial.16
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.17
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.170
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.18
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.19
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.20
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.200
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.21
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.22
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.23
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.24
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.240
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.25
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.26
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.260
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 planet_event = {
 	id = tutorial.27
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	pre_triggers = { has_owner = yes }
 	trigger = { always = no }
@@ -238,580 +277,470 @@ planet_event = {
 country_event = {
 	id = tutorial.33
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.330
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.34
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.35
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.36
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.37
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.38
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.39
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.40
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.41
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.42
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.43
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 planet_event = {
 	id = tutorial.9000
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.44
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.45
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.46
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.47
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.48
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.480
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.49
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.50
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.51
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.52
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.53
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.54
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.55
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.555
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.56
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.560
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.561
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.57
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.58
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.59
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.61
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.63
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.64
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.65
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.71
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.73
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.74
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.75
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.750
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 ship_event = {
 	id = tutorial.76
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.100
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.101
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.102
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.103
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.104
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.1337
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 first_contact_event = {
 	id = tutorial.2000
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 first_contact_event = {
 	id = tutorial.2004
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.2005
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.2006
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.2007
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.2010
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 }
 
-
-###########################################
-# "OVERLORD" TUTORIALS & ADVISOR TIPS
-###########################################
-
-# Tutorial: Enclave Diplomacy (not Mercs) | from = contacted country
 country_event = {
 	id = tutorial.2100
-	title = tutorial.2100.name
-	desc = {
-		trigger = { is_tutorial_level = 1 }
-		text = tutorial.2100.abbr.desc
-	}
-	desc = {
-		trigger = { is_tutorial_level = 2 }
-		text = tutorial.2100.full.desc
-	}
-	is_advisor_event = yes
+	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
-	show_sound = tut_msg_first_contact_enclave
-
-	trigger = {
-		is_tutorial_level > 0 #Tips & full tutorial
-		from = {
-			OR = {
-				has_country_flag = artist_enclave_country
-				has_country_flag = curator_enclave_country
-				has_country_flag = salvager_enclave_country
-				has_country_flag = shroudwalker_enclave_country
-				has_country_flag = trader_enclave_country
-			}
-		}
-		NOT = { has_country_flag = tutorial_met_enclave }
-	}
-
-	immediate = { set_country_flag = tutorial_met_enclave }
-
-	option = { name = OK }
+	trigger = { always = no }
 }
 
-# Tutorial: Enclave Diplomacy (Mercs) | from = contacted country
 country_event = {
 	id = tutorial.2105
-	title = tutorial.2105.name
-	desc = {
-		trigger = { is_tutorial_level = 1 }
-		text = tutorial.2105.abbr.desc
-	}
-	desc = {
-		trigger = { is_tutorial_level = 2 }
-		text = tutorial.2105.full.desc
-	}
-	is_advisor_event = yes
+	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
-	show_sound = tut_msg_encounter_mercenary_enclave_info
-
-	trigger = {
-		has_overlord_dlc = yes
-		is_tutorial_level > 0 #Tips & full tutorial
-		from = { has_country_flag = mercenary_enclave_country }
-		NOT = { has_country_flag = tutorial_met_mercenary_enclave }
-	}
-
-	immediate = { set_country_flag = tutorial_met_mercenary_enclave }
-
-	option = { name = OK }
+	trigger = { always = no }
 }
 
-# Tutorial: Creating a Mercenary Enclave | via on_monthly_pulse_country | from = contacted country
 country_event = {
 	id = tutorial.2110
 	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
-
-	trigger = {
-		has_overlord_dlc = yes
-		is_gestalt = no
-		is_tutorial_level > 0 #Tips & full tutorial
-		any_owned_fleet = { fleet_size > 45 }
-	}
-
-	immediate = {
-		random_owned_fleet = {
-			limit = { fleet_size > 45 }
-			save_event_target_as = tutorial_mercenary_fleet
-		}
-		country_event = { id = tutorial.2111 }
-	}
+	trigger = { always = no }
 }
 country_event = {
 	id = tutorial.2111
-	title = tutorial.2111.name
-	desc = {
-		trigger = { is_tutorial_level = 1 }
-		text = tutorial.2111.abbr.desc
-	}
-	desc = {
-		trigger = { is_tutorial_level = 2 }
-		text = tutorial.2111.full.desc
-	}
-	is_advisor_event = yes
-	is_triggered_only = yes
-	show_sound = tut_msg_fleet_conversion
-
+	hide_window = yes
 	fire_only_once = yes
-
-	immediate = { set_country_flag = tutorial_met_mercenary_enclave }
-
-	option = { name = OK }
+	is_triggered_only = yes
+	trigger = { always = no }
 }
 
-# Tutorial: Megastructures | via on_tech_increased
 country_event = {
 	id = tutorial.2115
-	title = tutorial.2115.name
-	desc = tutorial.2115.desc
-	is_advisor_event = yes
+	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
-	show_sound = tut_msg_megastructures_info
-
-	trigger = {
-		is_tutorial_level > 0 #Tips & full tutorial
-		has_technology = tech_mega_engineering
-	}
-
-	immediate = {
-		random_owned_fleet = {
-			limit = { fleet_size > 45 }
-			save_event_target_as = tutorial_mercenary_fleet
-		}
-		country_event = { id = tutorial.2111 }
-	}
-
-	option = { name = OK }
+	trigger = { always = no }
 }
 
-# Orbital Ring (technology) | via on_tech_increased
 country_event = {
 	id = tutorial.2120
-	title = tutorial.2120.name
-	desc = tutorial.2120.desc
-	is_advisor_event = yes
+	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
-	#Non-voiced
-
-	trigger = {
-		is_tutorial_level > 0 #Tips & full tutorial
-		has_technology = tech_orbital_ring_tier_1
-		NOT = { has_country_flag = tutorial_orbital_ring_tech }
-	}
-
-	immediate = { set_country_flag = tutorial_orbital_ring_tech }
-
-	option = { name = EXCELLENT }
+	trigger = { always = no }
 }
-# Orbital Ring | via Restored Orbital Ring on_build_complete
+
 country_event = {
 	id = tutorial.2121
-	title = TUTORIAL_ORBITAL_RING_TITLE
-	desc = TUTORIAL_ORBITAL_RING_DESC
-	is_advisor_event = yes
+	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
-	show_sound = tut_msg_ORBITAL_RING
-
-	trigger = {
-		is_tutorial_level > 0 #Tips & full tutorial
-		NOT = { has_country_flag = tutorial_built_orbital_ring }
-	}
-
-	immediate = { set_country_flag = tutorial_built_orbital_ring }
-
-	option = { name = OK }
+	trigger = { always = no }
 }
 
-# Quantum Catapult (technology) | via on_tech_increased
 country_event = {
 	id = tutorial.2125
-	title = tutorial.2125.name
-	desc = tutorial.2125.desc
-	is_advisor_event = yes
+	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
-	#Non-voiced
-
-	trigger = {
-		is_tutorial_level > 0 #Tips & full tutorial
-		has_technology = tech_quantum_catapult
-		NOT = { has_country_flag = tutorial_quantum_catapult_tech }
-	}
-
-	immediate = { set_country_flag = tutorial_quantum_catapult_tech }
-
-	option = { name = EXCELLENT }
+	trigger = { always = no }
 }
-# Quantum Catapult | via Restored/"Slingshot" Restored/Quantum Catapult on_build_complete
 country_event = {
 	id = tutorial.2126
-	title = tutorial.2126.name
-	desc = tutorial.2126.desc
-	is_advisor_event = yes
+	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
-	show_sound = tut_msg_quantum_catapults
-
-	trigger = {
-		is_tutorial_level > 0 #Tips & full tutorial
-		NOT = { has_country_flag = tutorial_built_quantum_catapult }
-	}
-
-	immediate = { set_country_flag = tutorial_built_quantum_catapult }
-
-	option = { name = OK }
+	trigger = { always = no }
 }
 
-# Hyper Relay (technology) | via on_tech_increased
 country_event = {
 	id = tutorial.2130
-	title = tutorial.2130.name
-	desc = tutorial.2130.desc
-	is_advisor_event = yes
+	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
-	#Non-voiced
-
-	trigger = {
-		is_tutorial_level > 0 #Tips & full tutorial
-		has_technology = tech_quantum_catapult
-		NOT = { has_country_flag = tutorial_hyper_relay_tech }
-	}
-
-	immediate = { set_country_flag = tutorial_hyper_relay_tech }
-
-	option = { name = EXCELLENT }
+	trigger = { always = no }
 }
-# Hyper Relay | via Restored/Hyper Relay on_build_complete
 country_event = {
 	id = tutorial.2131
-	title = tutorial.2131.name
-	desc = tutorial.2131.desc
-	is_advisor_event = yes
+	hide_window = yes
+	fire_only_once = yes
 	is_triggered_only = yes
-	show_sound = tut_msg_hyper_relays
-
-	trigger = {
-		is_tutorial_level > 0 #Tips & full tutorial
-		NOT = { has_country_flag = tutorial_built_hyper_relay }
-	}
-
-	immediate = { set_country_flag = tutorial_built_hyper_relay }
-
-	option = { name = OK }
+	trigger = { always = no }
 }

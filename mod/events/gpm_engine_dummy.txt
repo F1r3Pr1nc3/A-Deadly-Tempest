@@ -1,0 +1,9 @@
+# Guilli's Planet Dummy
+# MASTER EVENT
+# used in !000_adt_distar_events_3_patch.txt
+planet_event = {
+	id = gpm_engine.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+}

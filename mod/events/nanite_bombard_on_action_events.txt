@@ -24,7 +24,7 @@ planet_event = {
 				is_country_type_with_subjects = yes
 				is_nanite_country = yes
 				is_country_type = cybrex_empire
-				is_country_type = fallen_empire
+				merg_is_fallen_empire = yes
 				# is_country_type = swarm
 				is_country_type = vol
 			}
@@ -33,7 +33,7 @@ planet_event = {
 		# OR = {
 		# 	habitable_planet = yes
 		# 	is_planet_class = pc_ringworld_habitable
-		# 	is_planet_class = pc_habitat
+		# 	merg_is_habitat = yes
 		# }
 	}
 
@@ -202,7 +202,7 @@ planet_event = {
 			spawn_ringworld_nanobot_effect = yes
 		}
 		else_if = {
-			limit = { is_planet_class = pc_habitat }
+			limit = { merg_is_habitat = yes }
 			ariphaos_patch_remove_habitat = yes
 			spawn_habitat_nanobot_effect = yes
 		}

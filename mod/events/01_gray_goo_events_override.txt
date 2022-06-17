@@ -357,6 +357,7 @@ country_event = {
 }
 
 # Claimed vanilla event is now graygoo.180
+# Conflicts with 'Expanded Events' mod
 # Dreadnought Disabled/Destroyed (HIDDEN)
 country_event = {
 	id = graygoo.6
@@ -1269,7 +1270,7 @@ country_event = {
 				change_pc = pc_ringworld_habitable_damaged
 				spawn_ringworld_nanobot_effect = yes
 			} else_if = {
-				limit = { is_planet_class = pc_habitat }
+				limit = { merg_is_habitat = yes }
 				ariphaos_patch_remove_habitat = yes
 				spawn_habitat_nanobot_effect = yes
 			} else_if = {
@@ -2225,7 +2226,7 @@ country_event = {
 							AND = {
 								has_planet_flag = hidden_nanite_world # TODO pc_ringworld!?
 								OR = {
-									is_planet_class = pc_habitat
+									merg_is_habitat = yes
 									is_planet_class = pc_shattered
 									is_planet_class = pc_shattered_2
 								}

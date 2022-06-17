@@ -8,30 +8,6 @@
 #####################################################
 #####################################################
 
-generate_lcluster_clue = {
-	optimize_memory
-	hidden_effect = {
-		if = {
-			limit = {
-				has_distar = yes
-				NOT = { has_global_flag = l_cluster_opened }
-				has_event_chain = l_cluster_chain
-				NAND = { is_ai = yes has_global_flag = CmtFlagLgateReqPlayer }
-			}
-			# Increment counter
-			custom_tooltip = add_lcluster_clue
-			add_event_chain_counter = { event_chain = l_cluster_chain counter = clues amount = 1 }
-			# Increment variable
-			change_variable = { which = num_lcluster_clues value = 1 }
-			add_resource = { nanites = 25 }
-		}
-		if = {
-			limit = { has_completed_event_chain_counter = { event_chain = l_cluster_chain counter = clues } }
-			CmtEffectLgateClueComplete = yes
-		}
-	}
-}
-
 CmtEffectLgateClueComplete = {
 	custom_tooltip = l_cluster_openable
 	set_country_flag = completed_lcluster_chain
@@ -66,6 +42,30 @@ CmtEffectLgateClueComplete = {
 		# 	}
 		# }
 		country_event = { id = distar.10904 }
+	}
+}
+
+generate_lcluster_clue = {
+	optimize_memory
+	hidden_effect = {
+		if = {
+			limit = {
+				has_distar = yes
+				NOT = { has_global_flag = l_cluster_opened }
+				has_event_chain = l_cluster_chain
+				NAND = { is_ai = yes has_global_flag = CmtFlagLgateReqPlayer }
+			}
+			# Increment counter
+			custom_tooltip = add_lcluster_clue
+			add_event_chain_counter = { event_chain = l_cluster_chain counter = clues amount = 1 }
+			# Increment variable
+			change_variable = { which = num_lcluster_clues value = 1 }
+			add_resource = { nanites = 25 }
+		}
+		if = {
+			limit = { has_completed_event_chain_counter = { event_chain = l_cluster_chain counter = clues } }
+			CmtEffectLgateClueComplete = yes
+		}
 	}
 }
 

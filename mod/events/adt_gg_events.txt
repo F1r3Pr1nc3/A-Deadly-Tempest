@@ -1204,7 +1204,7 @@ country_event = {
 			set_timed_global_flag = { flag = galactic_crisis_happened years = 5 }
 			random_country = {
 				limit = {
-					is_country_type = fallen_empire
+					merg_is_fallen_empire = yes
 					OR = {
 						has_ethic = ethic_fanatic_materialist
 						has_ethic = ethic_fanatic_xenophile

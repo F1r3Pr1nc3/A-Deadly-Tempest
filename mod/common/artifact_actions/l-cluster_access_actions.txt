@@ -84,7 +84,7 @@ decision_close_lcluster = {
 artifact_lgate_clue = {
 	resources = {
 		category = artifact_actions
-		cost = { minor_artifacts = 50 }
+		cost = { minor_artifacts = 40 } # 50
 	}
 	potential = {
 		has_country_flag = encountered_first_lgate
@@ -106,6 +106,12 @@ artifact_lgate_clue = {
 	}
 	ai_weight = {
 		weight = 1
-		modifier = { factor = 0 mid_game_years_passed < 0 }
+		modifier = {
+			factor = 0
+			OR = {
+				mid_game_years_passed < 0
+				has_resource = { type = minor_artifacts amount < 45 }
+			}
+		}
 	}
 }
