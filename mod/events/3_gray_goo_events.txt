@@ -857,3 +857,36 @@ country_event = {
 		name = graygoo.512.a
 	}
 }
+
+# vanilla fix on_planet_surveyed/on_planet_transfer
+# From = Country
+# FromFrom = Fleet of the science ship that surveyed it, if any
+planet_event = {
+	id = graygoo.557
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_planet_flag = colony_event
+		has_modifier = nanite_swarm_modifier
+		is_preventing_anomaly = yes
+		# has_anomaly = no # NANO_SWARM_CAT
+		OR = {
+			NOT = { exists = event_target:nanite_swarm_planet }
+			is_planet = event_target:nanite_swarm_planet
+		}
+		exists = from
+		from = {
+			merg_is_default_empire = yes
+			NOT = { has_special_project = STUDY_NANITE_SWARM }
+		}
+	}
+	immediate = {
+		# if = { limit = {  }
+		add_anomaly = { category = NANO_SWARM_CAT } # ship_event = { id = anomaly.6700 }
+		# }
+		random_playable_country = {
+			limit = { has_special_project = STUDY_NANITE_SWARM }
+			abort_special_project = { type = STUDY_NANITE_SWARM location = root }
+		}
+	}
+}

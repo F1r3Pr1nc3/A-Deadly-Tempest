@@ -1684,15 +1684,15 @@ country_event = {
 
 	after = {
 		if = {
-			limit = { exists = event_target:marauder_country_1 NOT = { event_target:marauder_country_1 = { CmtTriggerHasPotentialKhanAwaking = yes } } }
+			limit = { exists = event_target:marauder_country_1 event_target:marauder_country_1 = { CmtTriggerHasPotentialKhanAwaking = no } }
 			clear_global_event_target = marauder_country_1
 		}
 		if = {
-			limit = { exists = event_target:marauder_country_2 NOT = { event_target:marauder_country_2 = { CmtTriggerHasPotentialKhanAwaking = yes } } }
+			limit = { exists = event_target:marauder_country_2 event_target:marauder_country_2 = { CmtTriggerHasPotentialKhanAwaking = no } }
 			clear_global_event_target = marauder_country_2
 		}
 		if = {
-			limit = { exists = event_target:marauder_country_3 NOT = { event_target:marauder_country_3 = { CmtTriggerHasPotentialKhanAwaking = yes } } }
+			limit = { exists = event_target:marauder_country_3 event_target:marauder_country_3 = { CmtTriggerHasPotentialKhanAwaking = no } }
 			clear_global_event_target = marauder_country_3
 		}
 

@@ -16,19 +16,14 @@ has_total_war_cb = {
 	OR = {
 		# Attacker checks
 		AND = {
+			merg_is_standard_empire = yes
 			OR = {
-				is_country_type_with_subjects = yes
-				is_fallen_empire = yes
-			}
-			OR = {
-				is_country_type = awakened_fallen_empire
+				merg_is_awakened_fe = yes
 				has_valid_civic = civic_hive_devouring_swarm
 				has_valid_civic = civic_machine_assimilator
 				AND = {
 					has_valid_civic = civic_machine_terminator
-					from = {
-						is_synthetic_empire = no
-					}
+					from = { is_synthetic_empire = no }
 				}
 				AND = {
 					has_valid_civic = civic_fanatic_purifiers
@@ -40,7 +35,7 @@ has_total_war_cb = {
 		AND = {
 			merg_is_default_empire = yes
 			NOR = {
-				# is_country_type = awakened_fallen_empire meaningless
+				# merg_is_awakened_fe = yes meaningless
 				has_valid_civic = civic_fanatic_purifiers
 				has_valid_civic = civic_hive_devouring_swarm
 				has_valid_civic = civic_machine_assimilator
@@ -48,7 +43,7 @@ has_total_war_cb = {
 			}
 			from = {
 				OR = {
-					is_country_type = awakened_fallen_empire
+					merg_is_awakened_fe = yes
 					has_valid_civic = civic_fanatic_purifiers
 					has_valid_civic = civic_hive_devouring_swarm
 					has_valid_civic = civic_machine_assimilator
@@ -80,7 +75,7 @@ is_subject_of_khan = {
 is_pirate_country = {
 	OR = {
 		is_pirate = yes # is_country_type = pirate
-		is_country_type = pirate_waves_country
+		is_country_type = pirate_waves_country # Mod Realistic Pirates
 		is_country_type = dormant_marauders
 		is_country_type = ruined_marauders
 	}
