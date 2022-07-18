@@ -58,11 +58,11 @@ country_event = {
 	location = from
 	# This = Victim
 	# From = Planet
-	# FromFromFrom = Bombarder
+	# fromfromfrom = Bombarder
 	is_triggered_only = yes
 
 	immediate = {
-		# log="[From.From.GetName] 82ff" # Victim
+		# log="[from.from.GetName] 82ff" # Victim
 		add_opinion_modifier = {
 			modifier = opinion_converted_my_world
 			who = fromfromfrom
@@ -132,9 +132,9 @@ planet_event = {
 	# show_sound = event_ghost_town
 	location = this
 	is_triggered_only = yes
-	# From = This
-	# FromFrom = Bombarder
-	# FromFromFrom = Ship
+	# From = this
+	# fromfrom = Bombarder
+	# fromfromfrom = Ship
 	immediate = {
 		if = {
 			limit = {
@@ -200,13 +200,11 @@ planet_event = {
 			limit = { is_ringworld = yes }
 			change_pc = pc_ringworld_habitable_damaged
 			spawn_ringworld_nanobot_effect = yes
-		}
-		else_if = {
+		} else_if = {
 			limit = { merg_is_habitat = yes }
 			ariphaos_patch_remove_habitat = yes
 			spawn_habitat_nanobot_effect = yes
-		}
-		else_if = {
+		} else_if = {
 			limit = {
 				is_artificial = no
 				habitable_planet = yes

@@ -198,7 +198,10 @@ country_event = {
 		allow = { host_has_dlc = "Apocalypse" }
 		trigger = {
 			has_global_flag = CmtFlagMidGameEdition
-			num_marauder_empires_to_spawn > 0
+			OR = {
+				num_marauder_empires_to_spawn > 0
+				event_target:global_event_country = { has_country_flag = outer_bulwark_inactive }
+			}
 			NOT = { has_global_flag = marauder_crisis_ongoing }
 			# CmtTriggerNowInKhanCrisis = no
 			OR = {

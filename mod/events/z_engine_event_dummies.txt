@@ -1,3 +1,4 @@
+namespace = gpm_engine
 # Guilli's Planet Dummy
 # MASTER EVENT
 # used in !000_adt_distar_events_3_patch.txt

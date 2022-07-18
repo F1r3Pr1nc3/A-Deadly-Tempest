@@ -622,8 +622,7 @@ country_event = {
 					add_district_and_planet_size_if_needed_effect = {
 						district = district_generator
 					}
-				}
-				else = {
+				} else = {
 					while = {
 						count = 3
 						add_district_and_planet_size_if_needed_effect = {

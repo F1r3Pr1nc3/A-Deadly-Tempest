@@ -734,7 +734,7 @@ country_event = {
 						add_hyperlane = { from = this to = event_target:lcluster3b }
 					}
 					event_target:lcluster2 = {
-						add_hyperlane = { from = this to = event_target:lcluster3 }
+						add_hyperlane = { from = this to = event_target:lcluster4b }
 						add_hyperlane = { from = this to = event_target:lcluster2b }
 					}
 					event_target:lcluster1b = {

@@ -429,7 +429,6 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_update_modifiers_batch = begin
 		# Do open all same time!?
 		every_megastructure = {
 			limit = { CmtTriggerIsClosedLgate = yes }
@@ -443,6 +442,7 @@ country_event = {
 				save_global_event_target_as = lcluster_factory_system
 			}
 		}
+		set_update_modifiers_batch = begin
 		event_target:lcluster_factory_system = {
 			random_system_planet = {
 				limit = { has_planet_flag = main_star }
@@ -463,12 +463,12 @@ country_event = {
 			## Compat. hack built-in-support for Twinks Dessanu ##
 			if = {
 				limit = { NOT = { any_playable_country = { has_origin = origin_machine_nanites } } }
-				event_target:CmtGlobalVar = {
-					give_technology = { tech = tech_graygoo_nanite_jump_drive message = no }
+				event_target:global_event_country = {
+					give_technology = { tech = tech_graygoo_nanite_reactor message = no } # Maybe cause CTD?
 				}
 			}
 			if = {
-				limit = { event_target:CmtGlobalVar = { has_technology = tech_graygoo_nanite_jump_drive } }
+				limit = { event_target:global_event_country = { has_technology = tech_graygoo_nanite_reactor } }
 				create_species = {
 					class = "Tempest"
 					portrait = "humang"
@@ -672,9 +672,10 @@ country_event = {
 				### Create Factory/Fleets/Starbases
 				event_target:main_star = { planet_event = { id = a_deadly_tempest.4 } }
 			}
+
+			# every_country = { establish_communications_no_message = prev } already done later?!?
 		}
 
-		every_country = { establish_communications_no_message = event_target:gate_builders }
 		# Only initial
 		### Create Fleets/Starbases
 		if = { limit = { exists = event_target:nanite_factory } # has_global_flag = gray_goo_empire_set
@@ -796,6 +797,7 @@ country_event = {
 				}
 			}
 		}
+		set_update_modifiers_batch = end
 
 		if = { limit = { has_global_flag = gray_goo_empire_set }
 			if = { limit = { exists = event_target:lcluster1 }
@@ -1013,7 +1015,6 @@ country_event = {
 			# }
 			country_event = { id = graygoo.116 days = 5 }
 		}
-		set_update_modifiers_batch = end
 		observer_event = { id = observer.66 }
 	}
 }
@@ -1027,23 +1028,23 @@ country_event = {
 	show_sound = event_radio_chatter
 	location = event_target:candidate_gateway_system
 	is_triggered_only = yes
-
 	after = {
 		hidden_effect = {
-			every_playable_country = {
-				limit = { NOR = { is_same_empire = root has_country_flag = lcluster_opener } }
-				if = {
-					limit = { has_country_flag = CmtFlagLgateOpenFinalPhase }
-					liquidate_clues = yes
-					country_event = { id = graygoo.111 }
-				} else = { country_event = { id = graygoo.112 } }
-			}
+			# every_playable_country = {
+			# 	limit = { NOR = { is_same_empire = root has_country_flag = lcluster_opener } }
+			# 	if = {
+			# 		limit = { has_country_flag = CmtFlagLgateOpenFinalPhase }
+			# 		liquidate_clues = yes
+			# 		country_event = { id = graygoo.111 }
+			# 	} else = { country_event = { id = graygoo.112 } }
+			# }
 			clear_global_event_target = candidate_gateway_system
 		}
 	}
 
 	option = {
 		name = graygoo.10.a
+		allow = { exists = event_target:graygoo_country }
 		hidden_effect = {
 			country_event = { id = graygoo.115 }
 		}
@@ -1055,20 +1056,17 @@ country_event = {
 	id = graygoo.115
 	title = "TRANSMISSION"
 	desc = "graygoo.115.desc"
-
 	diplomatic = yes
-
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:graygoo_country # event_target:gray_species
 		planet_background = event_target:graygoo_country
 		graphical_culture = event_target:graygoo_country
 		city_level = event_target:graygoo_country
-		# room = event_target:graygoo_country.ruler
-		room = "personality_nanite_room"
+		room = event_target:graygoo_country.ruler
+		# room = "personality_nanite_room"
 	}
-
 	is_triggered_only = yes
-
+	# immediate = {}
 	option = {
 		name = graygoo.115.a
 		response_text = graygoo.115.a.response
@@ -1087,7 +1085,7 @@ country_event = {
 	option = {
 		name = graygoo.115.d
 		response_text = graygoo.115.d.response
-		default_hide_option = yes
+		ai_chance = { weight = 1 } # default_hide_option = yes
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateDessanuGift value = 2 } } }
 			CmtEffectAddDessanuGift2 = yes

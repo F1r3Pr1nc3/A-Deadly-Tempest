@@ -494,8 +494,7 @@ country_event = {
 				}
 				save_event_target_as = gray_governor_planet
 			}
-		}
-		else = {
+		} else = {
 			capital_scope = { save_event_target_as = gray_governor_planet }
 		}
 	}
@@ -861,7 +860,7 @@ country_event = {
 # Vanilla fix (on_planet_surveyed, on_planet_transfer)
 # Special Project Study Nanite Swarm
 # From = Country
-# FromFrom = Fleet of the science ship that surveyed it, if any
+# fromfrom = Fleet of the science ship that surveyed it, if any
 planet_event = {
 	id = graygoo.5570
 	title = "COLONIZABLE_ANOMALY"
