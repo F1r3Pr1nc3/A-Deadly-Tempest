@@ -128,7 +128,7 @@ distantstars_init_01 = {
 		type = rocky_asteroid_belt
 		radius = @object_distance_210
 	}
-	flags = { hostile_system lcluster lcluster1 lcluster_lgate }
+	flags = { hostile_system lcluster lcluster1 lcluster_lgate suppress_archaeological_sites }
 	planet = {
 		name = "NAME_Final_Egress"
 		class = "pc_black_hole"		# "pc_g_star"

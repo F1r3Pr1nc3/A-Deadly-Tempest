@@ -105,11 +105,9 @@ country_event = {
 	id = distar.10950
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
 		NOT = { has_global_flag = CmtFlagLgateOpenedNow }
 	}
-
 	immediate = {
 		set_timed_global_flag = { flag = CmtFlagLgateOpenedNow days = 5 }
 		set_country_flag = lcluster_opener
@@ -262,7 +260,7 @@ country_event = {
 				}
 			}
 			# Theoretically must be called immediately (because graygoo.100 and candidate_gateway)
-			country_event = { id = distar.13000 }
+			country_event = { id = distar.13000 } # Needs to be called before distar.11000
 		}
 
 		if = {
@@ -277,30 +275,16 @@ country_event = {
 			country_event = { id = a_deadly_tempest.137 days = 24 }
 		}
 		# Abandoned (and cancel projects for all other)
-		if = {
+		else_if = {
 			limit = {
 				NOR = {
 					has_global_flag = gray_goo_crisis_set
 					has_global_flag = gray_goo_empire_set
 				}
 			}
+			# Calls already distar.11000
 			country_event = { id = distar.10951 }
 		}
-		# Enable other L-Gates over time (anyway)
-		event_target:global_event_country = {
-			country_event = { id = distar.10960 days = 200 random = 500 }
-		}
-		# # Flip L-Gates
-		# # Activate Terminal Egress L-Gate (moved to direct to cluster init)
-		# if = {
-		# 	limit = { exists = event_target:lcluster1 }
-		# 	event_target:lcluster1 = {
-		# 		random_system_megastructure = {
-		# 			limit = { CmtTriggerIsClosedLgate = yes }
-		# 			CmtEffectOpenLgate = yes
-		# 		}
-		# 	}
-		# }
 		# Try to refresh posssible missing target.
 		if = {
 			limit = { NOT = { exists = event_target:candidate_gateway } }
@@ -330,7 +314,7 @@ country_event = {
 		}
 
 		### Activate L-Gate
-		country_event = { id = CrisisManagerControl.6201 days = 1 }		## Open L-Gates Cycle
+		country_event = { id = CrisisManagerControl.6201 days = 1 }		## Open L-Gates Cycle (only if CM)
 		event_target:CmtTargetLgateOriginatingSystem = {
 			if = {
 				# Flag prevents the Tempest from using this gate,
@@ -353,9 +337,26 @@ country_event = {
 				save_event_target_as = candidate_gateway
 			}
 		}
+		# To be sure, make sure it doesn't spawn twice as is also called via .10951. (also by L-Cluster Plus)
 		if = { limit = { NOT = { has_global_flag = l_cluster_opened } }
-			country_event = { id = distar.11000 }	# Spawn L-Cluster
+			country_event = { id = distar.11000 days = 1 }	# Spawn L-Cluster
 		}
+		# Enable other L-Gates over time (anyway)
+		event_target:global_event_country = {
+			country_event = { id = distar.10960 days = 200 random = 500 }
+		}
+		## Flip L-Gates (to be sure)
+		## Activate Terminal Egress L-Gate (double call: also direct on cluster init)
+		if = {
+			limit = { exists = event_target:lcluster1 }
+			event_target:lcluster1 = {
+				random_system_megastructure = {
+					limit = { CmtTriggerIsClosedLgate = yes }
+					CmtEffectOpenLgate = yes
+				}
+			}
+		}
+
 		# Activate originating L-Gate: Put AFTER distar.13000 (if not already opened by other outcome)
 		if = {
 			limit = {
@@ -365,7 +366,7 @@ country_event = {
 			event_target:candidate_gateway = { CmtEffectOpenLgate = yes } # (L-Cluster must exists)
 		}
 
-		### Terraformability
+		### Terraformability (only if CM)
 		if = {
 			limit = {
 				exists = event_target:CmtGlobalVar
@@ -765,26 +766,28 @@ country_event = {
 					}
 				}
 			}
-
-			event_target:lcluster1 = {
-				add_hyperlane = { from = this to = event_target:lcluster1b }
-				random_system_megastructure = { # Activate Terminal Egress L-Gate
-					limit = { is_megastructure_type = lgate_base }
-					activate_gateway = this
-					set_megastructure_flag = lgate_activated
-				}
-				set_star_flag = swarm_invasion_warning
-			}
 		}
-		set_spawn_system_batch = end
+		event_target:lcluster1 = {
+			add_hyperlane = { from = this to = event_target:lcluster1b }
+		}
 		set_country_flag = lgates_activated
+		set_spawn_system_batch = end
+		set_update_modifiers_batch = begin
+		# Activate Terminal Egress L-Gate
+		event_target:lcluster1 = {
+			random_system_megastructure = {
+				limit = { is_megastructure_type = lgate_base }
+				activate_gateway = this
+				set_megastructure_flag = lgate_activated
+			}
+			set_star_flag = swarm_invasion_warning
+		}
 		if = {
 			limit = {
-				OR = {
-					has_global_flag = dragon_season
-					has_global_flag = gray_goo_crisis_set
-					# has_global_flag = gray_goo_empire_set
-				}
+				has_global_flag = gray_goo_crisis_set
+				# OR = {
+				# 	has_global_flag = gray_goo_empire_set
+				# }
 			}
 			# Do open all same time!?
 			every_megastructure = {
@@ -792,6 +795,7 @@ country_event = {
 				CmtEffectOpenLgate = yes
 			}
 		}
+		set_update_modifiers_batch = end
 	}
 }
 

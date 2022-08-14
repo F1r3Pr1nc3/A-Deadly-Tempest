@@ -8,16 +8,13 @@ tech_ult_nano_drone_enhance = {
 	category = { biology }
 	is_rare = yes
 	potential = {
-		NOR = {
-			has_authority = auth_machine_intelligence
-			is_country_type = gate_builders
-			is_country_type = awakened_gate_builders
-		}
+		NOT = { has_authority = auth_machine_intelligence }
+		is_nanite_country = no
 	}
 	prerequisites = { "tech_ult_nano_drone_colony" }
 	weight = 20
 	modifier = {
-		BIOLOGICAL_species_trait_points_add = 4
+		# BIOLOGICAL_species_trait_points_add = 4
 		pop_growth_speed = 0.1
 		leader_age = 50
 	}

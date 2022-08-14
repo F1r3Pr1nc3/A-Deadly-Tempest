@@ -8,3 +8,14 @@ planet_event = {
 	is_triggered_only = yes
 	trigger = { always = no }
 }
+
+namespace = lclusterplus # not really needed but to omit error.log
+# dummy
+country_event = {
+	id = lclusterplus.10
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		country_event = { id = distar.10950 }
+	}
+}
