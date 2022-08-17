@@ -3,9 +3,7 @@ controls_lcluster = {
 		has_star_flag = lcluster1
 	}
 	has_technology = tech_lcluster_access
-	NOT = {
-		has_global_flag = active_gray_goo
-	}
+	NOT = { has_global_flag = active_gray_goo }
 }
 
 #country

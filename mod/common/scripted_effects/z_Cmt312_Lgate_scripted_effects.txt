@@ -33,7 +33,6 @@ start_lcluster_chain = {
 				}
 				NAND = { is_ai = yes has_global_flag = CmtFlagLgateReqPlayer }
 			}
-			set_variable = { which = num_lcluster_clues value = 0 }
 			if = { ## Skip correct clues
 				limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateReqClues value < -0.5 } } }
 				CmtEffectLgateClueComplete = yes
@@ -44,21 +43,34 @@ start_lcluster_chain = {
 					target = this
 				}
 				event_target:CmtGlobalVar = {
+					if = { limit = { has_global_flag = expanded_events_active }
+						set_variable = { which = defaultMaxLgateClues value = 8 }  # Mod "Expanded Events" has max = 8
+					} else = {
+						set_variable = { which = defaultMaxLgateClues value = 7 } # default vanilla
+					}
 					if = { # Zero can't be set, so take default
 						limit = { check_variable = { which = CmtVarLgateReqClues value < 0.5 } }
-						set_variable = { which = CmtVarTemp value = 7 } # default
+						set_variable = { which = CmtVarTemp value = defaultMaxLgateClues }
 					} else = {
 						set_variable = { which = CmtVarTemp value = CmtVarLgateReqClues }
 					}
 				}
 				set_variable = { which = CmtVarLgateReqClues value = event_target:CmtGlobalVar.CmtVarTemp } # Switch scope for warning
 				# Hack due we can't change the default chain max!? # 7 default, so result = 0
-				event_target:CmtGlobalVar = { subtract_variable = { which = CmtVarTemp value = 7 } }
+				event_target:CmtGlobalVar = {
+					subtract_variable = { which = CmtVarTemp value = defaultMaxLgateClues }
+					multiply_variable = { which = CmtVarTemp value = -1 }
+				}
 				add_event_chain_counter = { event_chain = l_cluster_chain counter = clues amount = event_target:CmtGlobalVar.CmtVarTemp }
-				# set_variable = { which = num_lcluster_clues value = event_target:CmtGlobalVar.CmtVarTemp } # TODO test without
-				change_variable = { which = CmtVarLgateReqClues value = -2 } # Use for later Warning
-				set_variable = { which = num_lcluster_clues value = 0 }		## For Liquidation? TODO test with
-				event_target:CmtGlobalVar = { clear_variable = CmtVarTemp }
+				set_variable = { which = num_lcluster_clues value = event_target:CmtGlobalVar.CmtVarTemp }
+				if = { limit = { check_variable = { which = CmtVarLgateReqClues value > 2 } }
+					change_variable = { which = CmtVarLgateReqClues value = -2 } # Use for later Warning
+				}
+				# set_variable = { which = num_lcluster_clues value = 0 }		## For Liquidation?
+				event_target:CmtGlobalVar = {
+					clear_variable = CmtVarTemp
+					clear_variable = defaultMaxLgateClues
+				}
 				# log="TEST start needed clues: \\[This.CmtVarLgateReqClues]"
 			}
 		}

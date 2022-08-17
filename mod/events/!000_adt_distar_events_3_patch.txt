@@ -20,6 +20,7 @@ namespace = distar
 # 	immediate = {
 # 		random_list = {
 # 			8 = {
+# 				modifier = { factor = 0 lgate_enabled = no }
 # 				set_global_flag = gray_goo_crisis_set
 # 				set_global_flag = active_gray_goo
 # 				set_global_flag = dragon_season
@@ -218,21 +219,8 @@ country_event = {
 					}
 					set_global_flag = dragon_season
 				}
-				30 = {
-					modifier = {
-						factor = 0
-						has_global_flag = CmtFlagLgateForbidDessanu
-					}
-					set_global_flag = gray_goo_empire_set
-				}
-				50 = {
-					modifier = {
-						factor = 0
-						has_global_flag = CmtFlagLgateForbidGraygoo
-					}
-					set_global_flag = gray_goo_crisis_set
-					set_global_flag = active_gray_goo
-				}
+				30 = { modifier = { factor = 0 has_global_flag = CmtFlagLgateForbidDessanu } set_global_flag = gray_goo_empire_set }
+				50 = { modifier = { factor = 0 has_global_flag = CmtFlagLgateForbidGraygoo } set_global_flag = gray_goo_crisis_set set_global_flag = active_gray_goo }
 			}
 			## ADT: Always L-Drake TODO CM ready.
 			if = {
@@ -282,8 +270,7 @@ country_event = {
 					has_global_flag = gray_goo_empire_set
 				}
 			}
-			# Calls already distar.11000
-			country_event = { id = distar.10951 }
+			country_event = { id = distar.10951 } # Already calls .11000 (modded also by other mods like L-Cluster Plus).
 		}
 		# Try to refresh posssible missing target.
 		if = {
@@ -337,7 +324,7 @@ country_event = {
 				save_event_target_as = candidate_gateway
 			}
 		}
-		# To be sure, make sure it doesn't spawn twice as is also called via .10951. (also by L-Cluster Plus)
+		# To be sure: do not spawn twice as it is also called via .10951 (also by L-Cluster Plus).
 		if = { limit = { NOT = { has_global_flag = l_cluster_opened } }
 			country_event = { id = distar.11000 days = 1 }	# Spawn L-Cluster
 		}

@@ -23,6 +23,7 @@ event = {
 			}
 			3 = { set_global_flag = dragon_season }
 			7 = {
+				modifier = { factor = 0 lgate_enabled = no }
 				set_global_flag = gray_goo_crisis_set
 				set_global_flag = active_gray_goo
 				set_global_flag = dragon_season
