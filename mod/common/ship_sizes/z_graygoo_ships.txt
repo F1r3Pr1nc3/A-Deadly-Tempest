@@ -588,7 +588,7 @@ voidspawn = {
 	default_behavior = artillery
 	is_designable = no ## TODO?
 
-	prerequisites = { "tech_voidspawn" }
+	prerequisites = { "tech_nanite_voidspawn" }
 
 	combat_disengage_chance = 1.25
 

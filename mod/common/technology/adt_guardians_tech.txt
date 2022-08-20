@@ -388,7 +388,7 @@ tech_nanite_dragon = {
 	}
 }
 
-tech_voidspawn = {
+tech_nanite_voidspawn = {
 	cost = @tier5cost1
 	area = engineering
 	tier = 5
@@ -423,7 +423,7 @@ tech_voidspawn = {
 		OR = {
 			has_country_flag = killed_hatchling
 			any_neighbor_country = {
-				has_technology = tech_voidspawn
+				has_technology = tech_nanite_voidspawn
 			}
 			AND = {
 				exists = event_target:gray_owner
@@ -482,7 +482,7 @@ tech_voidspawn = {
 		modifier = {
 			factor = 3
 			any_neighbor_country = {
-				has_technology = tech_voidspawn
+				has_technology = tech_nanite_voidspawn
 			}
 		}
 	}
@@ -517,7 +517,7 @@ tech_voidspawn = {
 		modifier = {
 			factor = 3
 			any_neighbor_country = {
-				has_technology = tech_voidspawn
+				has_technology = tech_nanite_voidspawn
 			}
 		}
 	}

@@ -2383,7 +2383,7 @@ planet_event = {
 		has_global_flag = l_cluster_opened
 		NOT = { has_global_flag = voidspawn_disabled }
 		exists = from.owner
-		from.owner = { has_technology = tech_voidspawn }
+		from.owner = { has_technology = tech_nanite_voidspawn }
 	}
 	immediate = {
 		random = {
