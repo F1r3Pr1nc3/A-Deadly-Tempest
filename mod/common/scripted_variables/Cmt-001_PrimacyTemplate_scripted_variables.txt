@@ -328,7 +328,7 @@
 		### 999 means Template Unique Value (Beta Feature), set in ''common\scripted_variables\Cmt-xxx_Unique_scripted_variables.txt''.
 
 ### Awakenable Sleepers
-	@CmtT001_ConstSleeperForbidMaterialist		= no		## Keepers of Knowledge
+	@CmtT001_ConstSleeperForbidMaterialist	= no		## Keepers of Knowledge
 	@CmtT001_ConstSleeperForbidSpiritualist = no		## Holy Guardians
 	@CmtT001_ConstSleeperForbidXenophile	= no		## Enigmatic Observers
 	@CmtT001_ConstSleeperForbidXenophobe	= no		## Militant Isolationists
@@ -362,12 +362,12 @@
 		### yes: Set Independently from Standard Awakening (Activate Following 4 Options)
 		### no:		Confilm to Standard Awakening (Ignore Following 4 Options, Default)
 
-	@CmtT001_ConstHeavenForbidMaterialist		= no		### Keepers of Knowledge
-	@CmtT001_ConstHeavenForbidSpiritualist		= no		### Holy Guardians
+	@CmtT001_ConstHeavenForbidMaterialist	= no		### Keepers of Knowledge
+	@CmtT001_ConstHeavenForbidSpiritualist	= no		### Holy Guardians
 	@CmtT001_ConstHeavenForbidXenophile		= no		### Enigmatic Observers
 	@CmtT001_ConstHeavenForbidXenophobe		= no		### Militant Isolationists
 		### yes: Forbid to Awaken as Ancient Rival
-		### no:		Allow to Awaken as Ancient Rival (Default)
+		### no:  Allow to Awaken as Ancient Rival (Default)
 
 ### Indomitable Rival
 	@CmtT001_ConstHeavenIndomitableRival = 1
@@ -439,13 +439,13 @@
 		### N/A = 4, Great Great Khan = 5 (Beta)
 
 ### Interval of Khan Reigning
-	@CmtT001_ConstKhanInterval = 10
+	@CmtT001_ConstKhanInterval = 7
 		### Set in years
 		### It must be 0, 2-7, 10, 25, 50, 75, 100 or 999 (Default = 0).
 		### 999 means Template Unique Value (Beta Feature), set in ''common\scripted_variables\Cmt-xxx_Unique_scripted_variables.txt''.
 
 ### Khan to Reign at Earliest.
-	@CmtT001_ConstKhanEarliestMgpy = 10
+	@CmtT001_ConstKhanEarliestMgpy = 0
 		### Set x of ''Mid-Game Start Year + x years''.
 		### x must be -999, -100, -75, -50, -25, 0, 10, 25, 50, 75 or 999. (Default = 10)
 		### Exception: -999 means 'at anytime'
@@ -460,12 +460,12 @@
 		### Caution: 999 and -999 are inverse of other similar configurations.
 
 ### MTTH for Khan Reigning
-	@CmtT001_ConstKhanTriggerProbability = 3
+	@CmtT001_ConstKhanTriggerProbability = 4
 		### Very Long = 1, Long = 2 (Default), Middle = 3
 		### Short = 4, Impatient Khan = 5
 
 ### Probability of Khan to Rise Up for Vengeance.
-	@CmtT001_ConstKhanVengeance = 3
+	@CmtT001_ConstKhanVengeance = 4
 		### Never = 1, Low = 2 (Default), Middle = 3
 		### High = 4, Do Vengeance at Any Cost = 5
 
@@ -483,7 +483,7 @@
 		### Enduring = 4, Venerable = 5, Immortality = 6
 
 ### Latent Strength of Horde in Adversity (SEEMS a bit BETA).
-	@CmtT001_ConstReinforceCycle_Khan = 1
+	@CmtT001_ConstReinforceCycle_Khan = 2
 		### Disable = 1 (Default), Weak = 2, Middle = 3, Strong = 4
 
 ### Future of Horde
@@ -603,7 +603,7 @@
 	@CmtT001_ConstFleetPower_Contingency		= 1.0
 	@CmtT001_ConstFleetPower_Cybrex				= 1.0
 	@CmtT001_ConstFleetPower_ForcedEoc			= 1.0	## Forced End of the Cycle.
-	@CmtT001_ConstFleetPower_Khan				= 1.25
+	@CmtT001_ConstFleetPower_Khan				= 1.5
 	@CmtT001_ConstFleetPower_Graygoo			= 1.0	## Gray Tempest
 	@CmtT001_ConstFleetPower_Dessanu			= 1.0
 
@@ -611,7 +611,7 @@
 	@CmtT001_ConstArmyPower_Common				= 1.25	## This value must be set to zero(0) if you set the value individually for each crisis.
 	@CmtT001_ConstArmyPower_Prethoryn			= 1.25
 	@CmtT001_ConstArmyPower_Contingency			= 1.25
-	@CmtT001_ConstArmyPower_Khan				= 1.25
+	@CmtT001_ConstArmyPower_Khan				= 1.5
 
 ### Number of Combat Fleets
 	@CmtT001_ConstCombatFleetNumber_Common		= 0		## This value must be set to zero(0) if you set the value individually for each crisis.
@@ -622,7 +622,7 @@
 	@CmtT001_ConstCombatFleetNumber_Vehement	= 1.0
 	@CmtT001_ConstCombatFleetNumber_Contingency = 1.0
 	@CmtT001_ConstCombatFleetNumber_Cybrex		= 1.25
-	@CmtT001_ConstCombatFleetNumber_Khan		= 1.25
+	@CmtT001_ConstCombatFleetNumber_Khan		= 1.5
 	@CmtT001_ConstCombatFleetNumber_Graygoo		= 1.0	## Gray Tempest
 	@CmtT001_ConstCombatFleetNumber_Dessanu		= 1.25
 
@@ -630,7 +630,7 @@
 	@CmtT001_ConstArmyNumber_Common				= 1.0	## This value must be set to zero(0) if you set the value individually for each crisis.
 	@CmtT001_ConstArmyNumber_Prethoryn			= 1.0
 	@CmtT001_ConstArmyNumber_Contingency		= 1.0
-	@CmtT001_ConstArmyNumber_Khan				= 1.0
+	@CmtT001_ConstArmyNumber_Khan				= 1.5
 
 ### Number of Auxiliary Ships/Fleets (Constructor, Colonizer)
 	@CmtT001_ConstConstructorNumber_Common		= 0		## This value must be set to zero(0) if you set the value individually for each crisis.

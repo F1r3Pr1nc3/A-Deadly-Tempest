@@ -20,3 +20,76 @@ tech_ult_nano_drone_enhance = {
 	}
 	feature_flags = { modify_traits }
 }
+
+#Gene Tailoring
+tech_gene_tailoring = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { biology }
+	prerequisites = { "tech_genome_mapping" }
+	weight = @tier3weight1
+
+	gateway = biological
+
+	modifier = {
+		description = tech_gene_tailoring_modifier_desc
+		description_parameters = {
+			POINTS = 1
+		}
+		BIOLOGICAL_species_trait_points_add = 1
+	}
+
+	feature_flags = {
+		modify_traits
+		pop_self_modification
+	}
+
+	potential = {
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
+			has_civic = civic_machine_assimilator
+			has_civic = civic_machine_servitor
+		}
+		is_nanite_country = no
+	}
+
+	weight_modifier = {
+		factor = 2.0 	# genetech needs to be a bit more common
+		modifier = {
+			factor = 1.25
+			has_authority = auth_hive_mind
+		}
+		modifier = {
+			factor = 1.25
+			is_xenophile = yes
+		}
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
+	}
+}

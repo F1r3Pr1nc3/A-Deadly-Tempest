@@ -61,7 +61,11 @@ is_subject_of_khan = {
 	exists = overlord
 	exists = event_target:raider_khanate
 	# overlord = { is_same_empire = prevprev }
-	overlord = { is_same_empire = event_target:raider_khanate }
+	overlord = {
+		is_same_empire = event_target:raider_khanate
+		# is_country_type = awakened_marauders
+	}
+	# has_modifier = "satrapy_of_horde"
 	# OR = { # Only to be sure
 	# 	any_agreement = { agreement_preset = preset_machinesmith_satrapy }
 	# 	any_agreement = { agreement_preset = preset_satrapy }
@@ -78,5 +82,23 @@ is_pirate_country = {
 		is_country_type = pirate_waves_country # Mod Realistic Pirates
 		is_country_type = dormant_marauders
 		is_country_type = ruined_marauders
+	}
+}
+
+# this: system
+# root: great khan's horde (country)
+# Changed vanilla only for strange bug player lost systems to diadochi
+is_potential_diadochi_system = {
+	has_owner = yes
+	exists = space_owner
+	space_owner = { is_same_empire = root }
+	exists = starbase
+	exists = starbase.owner
+	starbase.owner = { is_same_empire = root }
+	NOR = {
+		has_star_flag = first_diadochi_system
+		has_star_flag = second_diadochi_system
+		has_star_flag = third_diadochi_system
+		has_star_flag = fourth_diadochi_system
 	}
 }

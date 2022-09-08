@@ -1,4 +1,4 @@
-version="2.3.9"
+version="2.4.0"
 name="A Deadly Tempest [3.4.☠]"
 tags={
 	"Events"
@@ -7,10 +7,8 @@ tags={
 	"Crisis"
 	"Spaceships"
 	"Gray Tempest"
-	"Gray Goo"
 	"L-Cluster"
 	"L-Gates"
-	"Gatebuilders"
 	"Nanites"
 }
 dependencies={

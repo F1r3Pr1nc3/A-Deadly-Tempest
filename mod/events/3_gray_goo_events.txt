@@ -288,10 +288,8 @@ country_event = {
 			}
 			effect = {
 				save_global_event_target_as = graygoo_country
-				set_graphical_culture = machine_01 # root
+				set_graphical_culture = "machine_01" # root
 				set_city_graphical_culture = root
-				## add technologies
-				country_event = { id = a_deadly_tempest.107 }
 				create_leader = {
 					class = ruler
 					species = last_created_species
@@ -347,7 +345,7 @@ country_event = {
 						tech_akx_worm_3
 					}
 				}
-				country_event = { id = a_deadly_tempest.107 } # give tech
+				country_event = { id = a_deadly_tempest.107 }	## add technologies
 			}
 		}
 		last_created_country = {

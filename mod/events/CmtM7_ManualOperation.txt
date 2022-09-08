@@ -1712,13 +1712,13 @@ country_event = {
 		# 	limit = { exists = event_target:CmtTargetManualMarauder3 }
 		# 	clear_global_event_target = CmtTargetManualMarauder3
 		# }
-
-		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
+		# hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
 
 	option = {
 		name = CrisisManagerMenu.71xxa.name
 		custom_tooltip = CrisisManagerMenu.71xxa.tooltip
+		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
 	option = {
 		name = CrisisManagerMenu.7138b.name
@@ -2714,8 +2714,8 @@ country_event = {
 		trigger = {
 			has_global_flag = CmtFlagMidGameEdition
 			has_global_flag = marauder_crisis_ongoing
-			any_country = { CmtTriggerIsKhanCountry = yes }
 		}
+		allow = { any_country = { CmtTriggerIsKhanCountry = yes } }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7208 } }
 	}
 

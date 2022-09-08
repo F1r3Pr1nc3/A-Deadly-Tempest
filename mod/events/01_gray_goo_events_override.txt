@@ -94,8 +94,7 @@ country_event = {
 				effect = {
 					save_global_event_target_as = graygoo_country
 					set_country_flag = synthetic_empire
-					## Add technologies
-					country_event = { id = a_deadly_tempest.107 }
+					country_event = { id = a_deadly_tempest.107 }	## add technologies
 					prev = {
 						if = { limit = { exists = starbase }
 							destroy_fleet = starbase.fleet
@@ -460,15 +459,14 @@ country_event = {
 				}
 			}
 
-			## Compat. hack built-in-support for Twinks Dessanu ##
-			if = {
+			if = { ## Compat. hack built-in-support for Twinks Dessanu ##
 				limit = { NOT = { any_playable_country = { has_origin = origin_machine_nanites } } }
-				event_target:global_event_country = {
+				event_target:CmtGlobalVar = {
 					give_technology = { tech = tech_graygoo_nanite_reactor message = no } # Maybe cause CTD?
 				}
 			}
 			if = {
-				limit = { event_target:global_event_country = { has_technology = tech_graygoo_nanite_reactor } }
+				limit = { event_target:CmtGlobalVar = { has_technology = tech_graygoo_nanite_reactor } }
 				create_species = {
 					class = "Tempest"
 					portrait = "humang"
@@ -566,8 +564,6 @@ country_event = {
 					# change_country_flag =
 					save_global_event_target_as = gate_builders
 					set_graphical_culture = "machine_01"
-					set_country_flag = synthetic_empire
-					set_country_flag = fallen_empire_machine
 
 					add_resource = {
 						minerals = 5000
@@ -590,8 +586,8 @@ country_event = {
 						# add_trait = trait_machine_unit
 						# add_trait = trait_mechanical
 						add_traits_at_start_of_list = yes
-						# ideal_planet_class = pc_gray_goo # Valid target?
-						ideal_planet_class = pc_gaia
+						ideal_planet_class = pc_gray_goo # Valid target?
+						# ideal_planet_class = pc_gaia
 						effect = {
 							if = { limit = { exists = event_target:start_5 }
 								set_species_homeworld = event_target:start_5
@@ -625,20 +621,17 @@ country_event = {
 					}
 					set_leader = last_created_leader
 					assign_leader = last_created_leader
-
-					## Friendly diplomacy
-					country_event = { id = a_deadly_tempest.13006 }
-					## Add technologies
-					country_event = { id = a_deadly_tempest.107 }
 				}
 			}
 
 			last_created_country = {
+				set_country_flag = synthetic_empire
+				set_country_flag = fallen_empire_machine
 				## built-in-support for Twinks Dessanu
 				if = {
 					limit = {
 						# has_origin = origin_machine_nanites
-						last_created_species = { species_portrait = "humang" }
+						species = { species_portrait = "humang" }
 					}
 					set_graphical_culture = "grey_tempesttw"
 					set_city_graphical_culture = "grey_tempesttw"
@@ -662,6 +655,10 @@ country_event = {
 					limit = { NOT = { exists = event_target:graygoo_country } }
 					save_global_event_target_as = graygoo_country
 				}
+
+				country_event = { id = a_deadly_tempest.13006 }	## Friendly diplomacy
+				country_event = { id = a_deadly_tempest.107 }	## Add technologies
+
 			}
 			# For alternative creation
 			if = {
