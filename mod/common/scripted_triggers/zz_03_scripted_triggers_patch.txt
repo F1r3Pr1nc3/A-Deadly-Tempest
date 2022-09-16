@@ -75,15 +75,16 @@ is_subject_of_khan = {
 	# }
 }
 
+# DEPRECATED since 3.4
 # As is_pirate is bugged (still 3.3)
-is_pirate_country = {
-	OR = {
-		is_pirate = yes # is_country_type = pirate
-		is_country_type = pirate_waves_country # Mod Realistic Pirates
-		is_country_type = dormant_marauders
-		is_country_type = ruined_marauders
-	}
-}
+# is_pirate_country = {
+# 	OR = {
+# 		is_pirate = yes # is_country_type = pirate
+# 		is_country_type = pirate_waves_country # Mod Realistic Pirates
+# 		is_country_type = dormant_marauders
+# 		is_country_type = ruined_marauders
+# 	}
+# }
 
 # this: system
 # root: great khan's horde (country)

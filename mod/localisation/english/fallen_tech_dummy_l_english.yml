@@ -14,8 +14,3 @@
  TITAN_LANCE_01: "$TITAN_LASER$"
  TITAN_LANCE_01_DESC: "An elegant weapon of pure energy, used in a more civilized age by civilized empires."
  TITAN_LASER_DESC: "An elegant weapon of pure energy, used in a more civilized age by civilized empires."
-
- # #-----DNA Recombination-----#  "Ascension - Biological Module"
- # tech_yanz_rs_genemod_second:0 "Deoxyribonucleic Acid Recombination"
- # tech_yanz_rs_genemod_second_desc:0 "§WDNA of organics can be heavily optimized. There are thousands of shorter, easier and more stable genome combinations that can achieve the same results. It won't affect biological processes of their bodies, minds or appearence. Their genome will be just overall more efficient.§!"
- # tech_yanz_rs_genemod_second_info:0 "§WGene Modification Points §G+5§! §!"

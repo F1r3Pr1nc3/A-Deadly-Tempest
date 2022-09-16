@@ -55,7 +55,7 @@ nanite_worker = {
 		}
 		modifier = {
 			factor = 2
-			species = { has_species_flag = racket_species_flag }
+			species = { exists = event_target:racket_species is_same_species = event_target:racket_species }
 		}
 		modifier = {
 			factor = 1.2
@@ -124,7 +124,7 @@ nanite_drone = {
 		}
 		modifier = {
 			factor = 2
-			species = { has_species_flag = racket_species_flag }
+			species = { exists = event_target:racket_species is_same_species = event_target:racket_species }
 		}
 		modifier = {
 			factor = 1.2
@@ -435,7 +435,7 @@ nanite_forger = {
 		}
 		modifier = {
 			factor = 2
-			species = { has_species_flag = racket_species_flag }
+			species = { exists = event_target:racket_species is_same_species = event_target:racket_species }
 		}
 		modifier = {
 			factor = 1.5
@@ -486,7 +486,7 @@ nanite_forger_drone = {
 		# modifier = {
 		# 	factor = 2
 		# 	species = {
-		# 		has_species_flag = racket_species_flag
+		# 		is_same_species = event_target:racket_species
 		# 	}
 		# }
 		modifier = {

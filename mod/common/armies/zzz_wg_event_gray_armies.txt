@@ -72,29 +72,19 @@ nanite_giga_guardian = {
 				has_country_flag = goo_slayer
 				has_country_flag = lcluster_opener
 				AND = { exists = event_target:graygoo_country is_same_empire = event_target:graygoo_country }
-
-				OR = { # is_robot_empire = yes scripted triggers not allowed
-					owner_species = { has_trait = trait_mechanical }
-					has_country_flag = synthetic_empire
-					has_authority = auth_machine_intelligence
-				}
+				is_robot_empire = yes
 				# has_civic = civic_machine_assimilator # Hack for non machine?
-				NOR = { # is_valid_pop_for_PLANET_KILLER_NANOBOTS = no
-					has_trait = trait_hive_mind
-					has_trait = trait_mechanical
-					has_trait = trait_machine_unit
-				}
-				owner_species = { has_trait = trait_cybernetic } # is_cyborg_empire = yes
+				is_valid_pop_for_PLANET_KILLER_NANOBOTS = no
+				is_cyborg_empire = yes
 			}
 		}
 	}
 	allow = {
 		owner = {
-			OR = { # is_mechanical_empire = no
-				owner_species = { has_trait = trait_mechanical }
-				has_country_flag = synthetic_empire
+			OR = {
+				is_mechanical_empire = yes
+				NOT = { has_policy_flag = robots_outlawed }
 			}
-			NOT = { has_policy_flag = robots_outlawed }
 		}
 	}
 }
@@ -190,13 +180,11 @@ nanite_giga_warform = {
 			}
 		}
 		owner = {
-			# has_country_flag =
 			check_variable = { which = "nanite_warform_count" value < 4 }
-			OR = { # is_mechanical_empire = no
-				owner_species = { has_trait = trait_mechanical }
-				has_country_flag = synthetic_empire
+			OR = {
+				is_mechanical_empire = yes
+				NOT = { has_policy_flag = robots_outlawed }
 			}
-			NOT = { has_policy_flag = robots_outlawed }
 		}
 	}
 

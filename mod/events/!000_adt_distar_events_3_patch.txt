@@ -387,6 +387,9 @@ country_event = {
 		}
 		set_global_flag = l_cluster_opened
 		set_global_flag = lgates_activated_globally
+		if = { limit = { has_global_flag = CmtFlagLgatePreludeTriggered }
+			remove_global_flag = CmtFlagLgatePreludeTriggered
+		}
 
 		## Make dragons friendly (sometimes not working so call it twice)
 		country_event = { id = a_deadly_tempest.13006 days = 3 }

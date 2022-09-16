@@ -274,10 +274,10 @@
 		### Prefer to Empire Owing Larger Territory = 3 (Default)
 		### Prefer to Empire with Many POPs = 4
 
-### Term of Convenant End of Cycle.
+### Term of Covenant End of Cycle.
 	@CmtT001_ConstForcedEocCrisisTerm = no
-		### yes: Term of the convenant conforms to ''Progress Speed of Opening Event Chain''
-		### no:		Term of the convenant is 50 years (Default)
+		### yes: Term of the covenant conforms to ''Progress Speed of Opening Event Chain''
+		### no:		Term of the covenant is 50 years (Default)
 
 ### * Don't forget ''Guardians of Galaxy'' and/or ''Crisis Power''
 
@@ -414,7 +414,7 @@
 	@CmtT001_ConstDoubleGurdian = 1
 		### Forbidden = 1 (Default), Low Probability = 2, High Probability = 3, Forced = 4
 		### Only Materialist Can Awaken = 1.1, Only Xenophile Can Awaken = 1.1
-		### * Fallen Machine Empire Igore This Configuration
+		### * Fallen Machine Empire ignore this Configuration
 
 ### Worn-Out Guardians
 	@CmtT001_ConstGuardianWornOut = 1
