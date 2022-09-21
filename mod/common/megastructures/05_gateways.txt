@@ -211,3 +211,25 @@ gateway_restored = {
 		}
 	}
 }
+
+# Derelict Gateway - Imperial Fiefdom Unique
+gateway_derelict = {
+	entity = "gateway_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes
+	show_galactic_map_icon = no
+
+	bypass_type = gateway
+
+	potential = {
+		always = no
+	}
+
+	construction_blocks_and_blocked_by = self_type
+
+	on_build_complete = {
+		activate_gateway = fromfrom
+	}
+}
