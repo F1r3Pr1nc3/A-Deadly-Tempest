@@ -243,7 +243,7 @@ country_event = {
 			event_target:CmtTargetLgateOriginatingSystem = {
 				closest_system = {
 					min_steps = 3
-					limit = { NOT = { any_system_planet = { is_colony = yes } } }
+					limit = { NOT = { any_system_colony = {  } } }
 					set_star_flag = dragon_point
 				}
 			}
@@ -827,7 +827,7 @@ country_event = {
 						limit = {
 							NOR = {
 								has_star_flag = dragon_point
-								any_system_planet = { is_colony = yes }
+								any_system_colony = {  }
 							}
 						}
 						set_star_flag = dragon_point

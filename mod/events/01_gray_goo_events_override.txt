@@ -1260,13 +1260,16 @@ country_event = {
 		fromfrom = {
 			remove_all_buildings = yes
 			destroy_colony = yes
-			if = {
-				limit = { is_ringworld = yes }
+			if = { limit = { is_ringworld = yes }
 				change_pc = pc_ringworld_habitable_damaged
 				spawn_ringworld_nanobot_effect = yes
-			} else_if = {
-				limit = { merg_is_habitat = yes }
-				ariphaos_patch_remove_habitat = yes
+			} else_if = { limit = { merg_is_habitat = yes }
+				if = { limit = { exists = planet planet = { has_planet_flag = has_megastructure } }
+					planet = { remove_planet_flag = has_megastructure }
+				} else_if = { limit = { exists = orbit orbit = { has_planet_flag = has_megastructure } }
+					orbit = { remove_planet_flag = has_megastructure }
+				}
+				remove_planet = yes # ariphaos_patch_remove_habitat = yes
 				spawn_habitat_nanobot_effect = yes
 			} else_if = {
 				limit = {
@@ -2061,7 +2064,7 @@ country_event = {
 								modifier = {
 									add = 3
 									solar_system = {
-										any_system_planet = { is_colony = yes }
+										any_system_colony = {  }
 									}
 								}
 							}
