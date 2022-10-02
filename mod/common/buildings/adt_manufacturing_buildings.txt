@@ -181,7 +181,7 @@ building_nanite_plant_3 = {
 					has_monthly_income = { resource = nanites value > 40 }
 				}
 			}
-			buildings_no_motes = yes
+			# buildings_no_motes = yes
 		}
 	}
 

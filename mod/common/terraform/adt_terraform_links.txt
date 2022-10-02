@@ -26,7 +26,7 @@ terraform_link = {
 			OR = {
 				is_mechanical_empire = yes
 				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 			}
 		}
 	}

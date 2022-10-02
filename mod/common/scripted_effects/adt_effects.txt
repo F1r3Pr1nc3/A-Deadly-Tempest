@@ -489,7 +489,7 @@ generate_new_deposits_and_blockers = {
 		} else_if = {
 			limit = {
 				owner = {
-					has_authority = auth_machine_intelligence
+					is_machine_empire = yes
 					NOT = { has_origin = origin_machine }
 				}
 			}
@@ -497,7 +497,7 @@ generate_new_deposits_and_blockers = {
 			add_deposit = d_machine_empire_ruins
 		} else_if = {
 			limit = {
-				owner = { has_authority = auth_hive_mind }
+				owner = { is_hive_empire = yes }
 			}
 			add_deposit = d_collapsed_burrows
 			add_deposit = d_failing_infrastructure

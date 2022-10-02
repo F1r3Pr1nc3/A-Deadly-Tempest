@@ -116,7 +116,7 @@ nanite_giga_warform = {
 	show_tech_unlock_if = {
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 			has_civic = civic_machine_assimilator
 			# has_trait = "trait_machine_unit"
 			has_country_flag = synthetic_empire
@@ -161,7 +161,7 @@ nanite_giga_warform = {
 		# 		has_country_flag = goo_slayer
 		# 		has_country_flag = lcluster_opener
 		# 		AND = { exists = event_target:graygoo_country is_same_empire = event_target:graygoo_country }
-		# 		is_robot_empire = yes # has_authority = auth_machine_intelligence # has_country_flag = synthetic_empire
+		# 		is_robot_empire = yes # is_machine_empire = yes # has_country_flag = synthetic_empire
 		# 		# has_civic = civic_machine_assimilator # Hack for non machine?
 		# 		is_valid_pop_for_PLANET_KILLER_NANOBOTS = no # has_trait = "trait_machine_unit"
 		# 		is_cyborg_empire = yes
@@ -223,12 +223,12 @@ spectre_army = {
 	}
 
 	potential_country = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	potential = {
 		from = { has_trait = "trait_machine_unit" }
 	}
-	show_tech_unlock_if = { has_authority = auth_machine_intelligence }
+	show_tech_unlock_if = { is_machine_empire = yes }
 
 	prerequisites = { "tech_assault_armies" }
 }

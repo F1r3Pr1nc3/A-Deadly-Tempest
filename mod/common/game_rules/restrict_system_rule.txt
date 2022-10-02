@@ -14,19 +14,19 @@ ai_should_restrict_system = {
 			has_star_flag = pike_star_flag_banned_system
 		}
 		AND = {
-			root = { is_country_type = fallen_empire }
+			root = { merg_is_fallen_empire = yes }
 			exists = owner
 			owner = { is_country_type = awakened_marauders }
 		}
 		AND = {
 			root = { is_country_type = awakened_marauders }
 			exists = owner
-			owner = { is_country_type = fallen_empire }
+			owner = { merg_is_fallen_empire = yes }
 		}
 		AND = {
 			root = {
 				OR = {
-					is_country_type = fallen_empire
+					merg_is_fallen_empire = yes
 					is_country_type = awakened_marauders
 				}
 			}
@@ -40,7 +40,7 @@ ai_should_restrict_system = {
 			root = {
 				OR = {
 					is_crisis_faction = yes
-					is_country_type = awakened_fallen_empire
+					merg_is_awakened_fe = yes
 				}
 			}
 			has_star_flag = guardian

@@ -47,7 +47,7 @@ gate_builders_machine = {
 
 	allow = {
 		is_country_type = awakened_gate_builders
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 
 	weight_modifier = {

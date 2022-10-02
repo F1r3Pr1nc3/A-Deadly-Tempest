@@ -417,7 +417,7 @@ tech_nanite_voidspawn = {
 		}
 		OR = {
 			has_global_flag = distar_overhaul_mod_active
-			has_ethic = ethic_gestalt_consciousness
+			is_gestalt = yes
 			has_technology = tech_pk_nanobots
 		}
 		OR = {

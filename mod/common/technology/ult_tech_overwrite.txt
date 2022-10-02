@@ -8,7 +8,7 @@ tech_ult_nano_drone_enhance = {
 	category = { biology }
 	is_rare = yes
 	potential = {
-		NOT = { has_authority = auth_machine_intelligence }
+		is_machine_empire = no
 		is_nanite_country = no
 	}
 	prerequisites = { "tech_ult_nano_drone_colony" }
@@ -47,7 +47,7 @@ tech_gene_tailoring = {
 
 	potential = {
 		OR = {
-			NOT = { has_authority = auth_machine_intelligence }
+			is_machine_empire = no
 			has_civic = civic_machine_assimilator
 			has_civic = civic_machine_servitor
 		}
@@ -58,7 +58,7 @@ tech_gene_tailoring = {
 		factor = 2.0 	# genetech needs to be a bit more common
 		modifier = {
 			factor = 1.25
-			has_authority = auth_hive_mind
+			is_hive_empire = yes
 		}
 		modifier = {
 			factor = 1.25

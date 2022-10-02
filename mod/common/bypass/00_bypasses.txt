@@ -134,7 +134,7 @@ wormhole = {
 				from = {
 					NOR = {
 						is_country_type_with_subjects = yes
-						is_country_type = fallen_empire
+						merg_is_fallen_empire = yes
 					}
 				}
 				AND = {
