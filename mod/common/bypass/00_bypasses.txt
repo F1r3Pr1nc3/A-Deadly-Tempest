@@ -8,8 +8,8 @@
 #	requires_exploration = no	# whether this bypass type needs to be 'seen' before it can be used
 #	uses_action = no			# whether this type needs an action or can be used automagically
 #	always_active = no			# whether bypasses of these types are automatically active on creation, or if they need to be researched/upgraded to be activated
-#	windup_time = 0.0			# days preparing before travel, translated into ticks on load.
-#	winddown_time = 0.0			# days preparing after travel, translated into ticks on load.
+#	windup_time = 0.0			# Days preparing before travel, translated into ticks on load.
+#	winddown_time = 0.0			# Days preparing after travel, translated into ticks on load.
 #	ftl_multiplier = 0			# 0 is supposed to mean instant, WARNING: not implemented correctly.
 #	extends_sensors = yes		# whether you can "see through" the bypass and extends your sensor range to the other side
 #	icon_frame = 25
@@ -32,7 +32,7 @@
 #	on_action = "on_entering_bypass"	# The name of the on-action event that will be fired upon entering FTL (if set)
 #										# THIS = Fleet
 #										# FROM = System jumping to
-#										# FROMFROM = System jumped from
+#										# fromfrom = System jumped from
 # }
 gateway = {
 	name = GATEWAY_GALACTIC
@@ -213,11 +213,11 @@ shroud_tunnel = {
 	name = SHROUD_TUNNEL_GALACTIC
 	is_pathfind = yes
 	requires_exploration = no
-	uses_action = yes #opt-in to risky Shroud transit
+	uses_action = yes # opt-in to risky Shroud transit
 	always_active = yes
 	windup_time = 40
 	winddown_time = 20
-	ftl_multiplier = 0 #instant
+	ftl_multiplier = 0 # instant
 	extends_sensors = no
 	icon_frame = 25
 	remember_instances = no
@@ -226,12 +226,12 @@ shroud_tunnel = {
 	connection_type = scripted_connection
 
 	scripted_connection = {
-		node = { #system scope
+		node = { # system scope
 			starbase = {
 				has_starbase_building = shroud_beacon
 			}
 		}
-		nexus = { #system scope
+		nexus = { # system scope
 			has_star_flag = shroud_tunnel_nexus
 		}
 	}

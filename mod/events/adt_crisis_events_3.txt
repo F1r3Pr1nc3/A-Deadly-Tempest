@@ -283,23 +283,26 @@ country_event = {
 			}
 		}
 		set_government_cooldown = no
+		every_owned_pop = {
+			pop_force_add_ethic = ethic_gestalt_consciousness
+		}
 		shift_ethic = ethic_gestalt_consciousness
 
 		if = { limit = { NOT = { has_ethic = "ethic_gestalt_consciousness" } }
 			country_add_ethic = "ethic_gestalt_consciousness"
 		}
 
-		change_government = {
-			authority = auth_machine_intelligence
-			# authority = auth_ancient_machine_intelligence
-			cooldown = no
-			# civics = {
-			# 	# civic = civic_final_defense_protocols
-			# 	# civic = civic_awakened_machine
-			# 	civic = civic_machine_nanites_culture
-			# }
-			remove_invalid_civics = yes
-		}
+		# change_government = {
+		# 	authority = auth_machine_intelligence gives error anyway
+		# 	# authority = auth_ancient_machine_intelligence
+		# 	cooldown = no
+		# 	# civics = {
+		# 	# 	# civic = civic_final_defense_protocols
+		# 	# 	# civic = civic_awakened_machine
+		# 	# 	civic = civic_machine_nanites_culture
+		# 	# }
+		# 	remove_invalid_civics = yes
+		# }
 
 		create_species = {
 			name = "ESGO"
@@ -544,7 +547,12 @@ country_event = {
 					# is_same_value = event_target:lcluster_factory_system
 					any_fleet_in_system = { is_in_combat = yes }
 				}
-				any_system_planet = { is_planet_class = pc_gray_goo }
+				any_system_planet = {
+					OR = {
+						is_planet_class = pc_gray_goo
+						is_planet_class = pc_gaia
+					}
+				}
 				OR = {
 					NOT = { exists = event_target:goo_slayer }
 					event_target:goo_slayer = {
@@ -572,7 +580,13 @@ country_event = {
 				}
 			}
 			random_system_planet = {
-				limit = { is_planet_class = pc_gray_goo has_owner = no }
+				limit = {
+					OR = {
+						is_planet_class = pc_gray_goo
+						is_planet_class = pc_gaia
+					}
+					has_owner = no
+				}
 				remove_modifier = terraforming_candidate
 				## part.copy of graygoo.100
 				root = { CmtEffectCreateAdmiralty_GraygooGarryson = yes }

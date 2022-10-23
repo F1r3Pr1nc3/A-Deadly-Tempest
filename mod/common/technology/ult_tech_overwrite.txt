@@ -21,7 +21,7 @@ tech_ult_nano_drone_enhance = {
 	feature_flags = { modify_traits }
 }
 
-#Gene Tailoring
+# Gene Tailoring
 tech_gene_tailoring = {
 	cost = @tier3cost1
 	area = society

@@ -9,6 +9,7 @@ country_event = {
 	id = crisis.199
 	hide_window = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 	immediate = {
 		set_global_flag = prethoryn_invasion_happened
@@ -303,7 +304,7 @@ country_event = {
 				}
 			}
 		}
-		#if = {
+		# if = {
 		#	limit = { NOT = { any_country = { is_country_type = extradimensional has_country_flag = unbidden } } }
 		random_country = {
 			limit = { is_country_type = extradimensional }

@@ -5,6 +5,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -12,6 +13,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -19,6 +21,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -26,6 +29,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -33,6 +37,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -40,6 +45,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -47,6 +53,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -54,6 +61,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -61,6 +69,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -68,6 +77,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -75,6 +85,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -82,6 +93,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -89,6 +101,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -96,6 +109,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -103,6 +117,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -110,6 +125,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -117,6 +133,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -124,6 +141,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -131,6 +149,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 planet_event = {
@@ -138,6 +157,7 @@ planet_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 planet_event = {
@@ -145,6 +165,7 @@ planet_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -152,6 +173,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 planet_event = {
@@ -159,6 +181,7 @@ planet_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 planet_event = {
@@ -166,6 +189,7 @@ planet_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -173,6 +197,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -180,6 +205,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -187,6 +213,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -194,6 +221,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -201,6 +229,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -208,6 +237,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -215,6 +245,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -222,6 +253,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -229,6 +261,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -236,6 +269,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -243,6 +277,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -250,6 +285,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -257,6 +293,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -264,6 +301,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 planet_event = {
@@ -279,6 +317,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -286,6 +325,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -293,6 +333,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -300,6 +341,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -307,6 +349,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -314,6 +357,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -321,6 +365,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -328,6 +373,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -335,6 +381,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -342,6 +389,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -349,6 +397,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -356,6 +405,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 planet_event = {
@@ -363,6 +413,7 @@ planet_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -370,6 +421,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -377,6 +429,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -384,6 +437,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -391,6 +445,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -398,6 +453,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -405,6 +461,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -412,6 +469,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -419,6 +477,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -426,6 +485,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -433,6 +493,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -440,6 +501,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -447,6 +509,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -454,6 +517,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -461,6 +525,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -468,6 +533,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -475,6 +541,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -482,6 +549,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -489,6 +557,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -496,6 +565,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -503,6 +573,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -510,6 +581,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -517,6 +589,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -524,6 +597,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -531,6 +605,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -538,6 +613,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -545,6 +621,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -552,6 +629,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -559,6 +637,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -566,6 +645,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 ship_event = {
@@ -573,6 +653,7 @@ ship_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -580,6 +661,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -587,6 +669,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -594,6 +677,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -601,6 +685,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -608,6 +693,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -615,6 +701,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 first_contact_event = {
@@ -622,6 +709,7 @@ first_contact_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 first_contact_event = {
@@ -629,6 +717,7 @@ first_contact_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -636,6 +725,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -643,6 +733,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -650,6 +741,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -657,6 +749,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 
@@ -665,6 +758,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 
@@ -673,6 +767,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 
@@ -681,6 +776,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -688,6 +784,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 
@@ -696,6 +793,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 
@@ -704,6 +802,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 
@@ -712,6 +811,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 
@@ -720,6 +820,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -727,6 +828,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 
@@ -735,6 +837,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 country_event = {
@@ -742,5 +845,6 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }

@@ -13,6 +13,7 @@
 ### L-Cluster
 d_nanites_deposit = {
 	resources = {
+		category = orbital_mining_deposits
 		produces = {
 			nanites = 1
 		}

@@ -1,6 +1,6 @@
 ESGO = {
 	archetype = MACHINE
-	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+	playable = { has_synthethic_dawn = yes }
 	randomized = no
 	# randomized = {
 	# 	# has_synthethic_dawn = yes

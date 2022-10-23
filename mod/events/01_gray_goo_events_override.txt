@@ -717,7 +717,10 @@ country_event = {
 				}
 				every_system_planet = {
 					limit = {
-						is_planet_class = pc_gray_goo
+						OR = {
+							is_planet_class = pc_gray_goo
+							is_planet_class = pc_gaia
+						}
 						has_owner = no
 						# NOT = { has_planet_modifier = terraforming_candidate }
 						# NOT = { has_planet_modifier = CmtModifierAutoTerraform }
@@ -859,10 +862,20 @@ country_event = {
 									random_system_planet = {
 										limit = {
 											has_moon = yes
-											any_moon = { is_planet_class = pc_gray_goo }
+											any_moon = {
+												OR = {
+													is_planet_class = pc_gray_goo
+													is_planet_class = pc_gaia
+												}
+											}
 										}
 										random_moon = {
-											limit = { is_planet_class = pc_gray_goo }
+											limit = {
+												OR = {
+													is_planet_class = pc_gray_goo
+													is_planet_class = pc_gaia
+												}
+											}
 											solar_system = {
 												spawn_megastructure = {
 													# type = "spy_orb_ruined"
@@ -884,10 +897,20 @@ country_event = {
 						random_system_planet = {
 							limit = {
 								has_moon = yes
-								any_moon = { is_planet_class = pc_gray_goo }
+								any_moon = {
+									OR = {
+										is_planet_class = pc_gray_goo
+										is_planet_class = pc_gaia
+									}
+								}
 							}
 							random_moon = {
-								limit = { is_planet_class = pc_gray_goo }
+								limit = {
+									OR = {
+										is_planet_class = pc_gray_goo
+										is_planet_class = pc_gaia
+									}
+								}
 								solar_system = {
 									spawn_megastructure = {
 										# type = "spy_orb_ruined"
@@ -955,7 +978,12 @@ country_event = {
 						} else = {
 							prev = {
 								random_system_planet = {
-									limit = { is_planet_class = pc_gray_goo }
+									limit = {
+										OR = {
+											is_planet_class = pc_gray_goo
+											is_planet_class = pc_gaia
+										}
+									}
 									last_created_species = {
 										set_species_homeworld = prev
 									}
@@ -974,7 +1002,7 @@ country_event = {
 			if = { limit = { exists = event_target:lcluster_factory_system exists = event_target:main_star }
 				event_target:lcluster_factory_system = {
 					if = {
-						limit = { host_has_dlc = "Federations" }
+						limit = { has_federations_dlc = yes }
 						spawn_megastructure = {
 							# type = "mega_shipyard_ruined"
 							type = mega_shipyard_1
@@ -1808,7 +1836,12 @@ country_event = {
 							is_same_value = event_target:lcluster_factory_system
 							any_fleet_in_system = { is_in_combat = yes }
 						}
-						any_system_planet = { is_planet_class = pc_gray_goo }
+						any_system_planet = {
+							OR = {
+								is_planet_class = pc_gray_goo
+								is_planet_class = pc_gaia
+							}
+						}
 						if = { limit = { exists = event_target:goo_slayer }
 							event_target:goo_slayer = {
 								OR = {
@@ -1822,7 +1855,13 @@ country_event = {
 						}
 					}
 					every_system_planet = {
-						limit = { is_planet_class = pc_gray_goo has_owner = no }
+						limit = {
+							OR = {
+								is_planet_class = pc_gray_goo
+								is_planet_class = pc_gaia
+							}
+							has_owner = no
+						}
 						remove_modifier = terraforming_candidate
 					}
 					save_global_event_target_as = lcluster_factory_system
@@ -1937,7 +1976,7 @@ country_event = {
 							}
 						}
 
-						if = { limit = { host_has_dlc = "Federations" }
+						if = { limit = { has_federations_dlc = yes }
 							spawn_megastructure = {
 								# type = "mega_shipyard_ruined"
 								type = mega_shipyard_1

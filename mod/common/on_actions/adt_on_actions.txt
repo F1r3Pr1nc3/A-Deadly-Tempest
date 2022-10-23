@@ -217,8 +217,8 @@ on_destroy_planet_with_PLANET_KILLER_NANOBOTS = {
 	}
 }
 
-#This = ship (starbase)
-#From = owner country
+# This = ship (starbase)
+# From = owner country
 on_building_starbase_outpost = {
 	events = {
 		graygoo.5571 # Vanilla fix Special Project Study Nanite Swarm
@@ -237,17 +237,17 @@ on_starbase_transfer = {
 # A country has gained a surveyed status on a planet. Happens after "on_survey" if a science ship surveyed a planet.
 # Root = Planet
 # From = Country
-# FromFrom = Fleet of the science ship that surveyed it, if any
+# fromfrom = Fleet of the science ship that surveyed it, if any
 on_planet_surveyed = {
 	events = {
 		graygoo.5570 # Vanilla fix Special Project Study Nanite Swarm
 	}
 }
 
-#Fired whenever a new owner is set for a planet,
-#be it after a war or through a trade
-#From = Country scope (new owner)
-#This = Planet scope
+# Fired whenever a new owner is set for a planet,
+# be it after a war or through a trade
+# From = Country scope (new owner)
+# This = Planet scope
 # on_planet_transfer = {
 # 	events = {
 # 		graygoo.5570 # Vanilla fix Special Project Study Nanite Swarm

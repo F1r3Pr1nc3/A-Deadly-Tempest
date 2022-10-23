@@ -2960,7 +2960,7 @@ terraform_link = {
 		has_country_flag = relentless_industrialists_study_completed
 	}
 
-	ai_weight = { #If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
+	ai_weight = { # If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
 		weight = 0
 	}
 }
@@ -2986,7 +2986,7 @@ terraform_link = {
 		has_country_flag = relentless_industrialists_study_completed
 	}
 
-	ai_weight = { #If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
+	ai_weight = { # If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
 		weight = 0
 	}
 }
@@ -3012,7 +3012,7 @@ terraform_link = {
 		has_country_flag = relentless_industrialists_study_completed
 	}
 
-	ai_weight = { #If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
+	ai_weight = { # If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
 		weight = 0
 	}
 }
@@ -3038,7 +3038,7 @@ terraform_link = {
 		has_country_flag = relentless_industrialists_study_completed
 	}
 
-	ai_weight = { #If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
+	ai_weight = { # If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
 		weight = 0
 	}
 }
@@ -3064,7 +3064,7 @@ terraform_link = {
 		has_country_flag = relentless_industrialists_study_completed
 	}
 
-	ai_weight = { #If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
+	ai_weight = { # If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
 		weight = 0
 	}
 }
@@ -3090,7 +3090,7 @@ terraform_link = {
 		has_country_flag = relentless_industrialists_study_completed
 	}
 
-	ai_weight = { #If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
+	ai_weight = { # If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
 		weight = 0
 	}
 }
@@ -3116,7 +3116,7 @@ terraform_link = {
 		has_country_flag = relentless_industrialists_study_completed
 	}
 
-	ai_weight = { #If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
+	ai_weight = { # If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
 		weight = 0
 	}
 }
@@ -3142,7 +3142,7 @@ terraform_link = {
 		has_country_flag = relentless_industrialists_study_completed
 	}
 
-	ai_weight = { #If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
+	ai_weight = { # If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
 		weight = 0
 	}
 }
@@ -3168,7 +3168,7 @@ terraform_link = {
 		has_country_flag = relentless_industrialists_study_completed
 	}
 
-	ai_weight = { #If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
+	ai_weight = { # If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
 		weight = 0
 	}
 }
@@ -3180,7 +3180,7 @@ terraform_link = {
 	resources = {
 		category = terraforming
 
-		cost = { #It takes real effort to destroy something so perfect
+		cost = { # It takes real effort to destroy something so perfect
 			energy = 2500
 			exotic_gases = 200
 			volatile_motes = 200
@@ -3198,7 +3198,7 @@ terraform_link = {
 		has_technology = tech_climate_restoration
 	}
 
-	ai_weight = { #If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
+	ai_weight = { # If we ever enable this: make sure the AI doesn't loop (terraform to tomb world and then back). And also check ai_budgets
 		weight = 0
 	}
 }

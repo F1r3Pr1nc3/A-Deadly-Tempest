@@ -104,7 +104,6 @@ utility_component_template = {
 		Dreadnought
 		titan
 		Flagship
-		escortcarrier
 		explorationship
 		graygoo_interdictor
 	}
@@ -140,7 +139,6 @@ utility_component_template = {
 		Dreadnought
 		titan
 		Flagship
-		escortcarrier
 		explorationship
 		graygoo_interdictor
 	}
@@ -229,7 +227,6 @@ utility_component_template = {
 		Dreadnought
 		titan
 		Flagship
-		escortcarrier
 		explorationship
 		juggernaut
 		star_eater
@@ -271,7 +268,6 @@ utility_component_template = {
 		Dreadnought
 		titan
 		Flagship
-		escortcarrier
 		explorationship
 		juggernaut
 		star_eater
@@ -314,7 +310,6 @@ utility_component_template = {
 		juggernaut
 		titan
 		Carrier
-		escortcarrier
 		Flagship
 		explorationship
 		star_eater

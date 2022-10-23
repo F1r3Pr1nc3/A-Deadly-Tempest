@@ -597,6 +597,7 @@ event = {
 	id = crisis.9999
 	hide_window = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 	immediate = {
 		if = { limit = { has_global_flag = CmtFlagDebugMode }

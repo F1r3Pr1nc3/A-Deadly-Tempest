@@ -9,8 +9,8 @@ ROBOT = {
 	leader_age_min = 2
 	leader_age_max = 10
 	custom_portraits = {
-		randomized = { host_has_dlc = "Synthetic Dawn Story Pack" }
-		playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+		randomized = { has_synthethic_dawn = yes }
+		playable = { has_synthethic_dawn = yes }
 		portraits = {
 			"sd_hum_robot"
 			"sd_mam_robot"
@@ -71,9 +71,9 @@ ROBOT = {
 MACHINE = {
 	archetype = MACHINE
 
-	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+	playable = { has_synthethic_dawn = yes }
 	randomized = {
-		host_has_dlc = "Synthetic Dawn Story Pack"
+		has_synthethic_dawn = yes
 		# The create_species effect can't properly take the possible trigger below into account.
 		# Work around this by disabling this class for species randomization after game start.
 		NOT = { has_global_flag = game_started }
@@ -89,12 +89,12 @@ MACHINE = {
 
 	custom_portraits = {
 		randomized = {
-			host_has_dlc = "Synthetic Dawn Story Pack"
+			has_synthethic_dawn = yes
 			# The create_species effect can't properly take the possible trigger below into account.
 			# Work around this by disabling this class for species randomization after game start.
 			NOT = { has_global_flag = game_started }
 		}
-		playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+		playable = { has_synthethic_dawn = yes }
 		portraits = {
 			"sd_hum_robot"
 			"sd_mam_robot"
@@ -109,20 +109,20 @@ MACHINE = {
 
 	custom_portraits = {
 		randomized = { always = no }
-		playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+		playable = { has_synthethic_dawn = yes }
 		portraits = { "esgoo" }
 	}
 
 	custom_portraits = {
 		randomized = {
 			AND = {
-				host_has_dlc = "Synthetic Dawn Story Pack"
+				has_synthethic_dawn = yes
 				has_lithoids = yes
 			}
 		}
 		playable = {
 			AND = {
-				host_has_dlc = "Synthetic Dawn Story Pack"
+				has_synthethic_dawn = yes
 				has_lithoids = yes
 			}
 		}
@@ -136,13 +136,13 @@ MACHINE = {
 	custom_portraits = {
 		randomized = {
 			AND = {
-				host_has_dlc = "Synthetic Dawn Story Pack"
+				has_synthethic_dawn = yes
 				has_necroids = yes
 			}
 		}
 		playable = {
 			AND = {
-				host_has_dlc = "Synthetic Dawn Story Pack"
+				has_synthethic_dawn = yes
 				has_necroids = yes
 			}
 		}
@@ -154,13 +154,13 @@ MACHINE = {
 	custom_portraits = {
 		randomized = {
 			AND = {
-				host_has_dlc = "Synthetic Dawn Story Pack"
+				has_synthethic_dawn = yes
 				has_aquatics = yes
 			}
 		}
 		playable = {
 			AND = {
-				host_has_dlc = "Synthetic Dawn Story Pack"
+				has_synthethic_dawn = yes
 				has_aquatics = yes
 			}
 		}
@@ -172,13 +172,13 @@ MACHINE = {
 	custom_portraits = {
 		randomized = {
 			AND = {
-				host_has_dlc = "Synthetic Dawn Story Pack"
+				has_synthethic_dawn = yes
 				has_toxoids = yes
 			}
 		}
 		playable = {
 			AND = {
-				host_has_dlc = "Synthetic Dawn Story Pack"
+				has_synthethic_dawn = yes
 				has_toxoids = yes
 			}
 		}
@@ -188,8 +188,8 @@ MACHINE = {
 	}
 
 	custom_portraits = { # Use custom_portraits instead of portraits so we can put them after the custom_portraits above.
-		randomized = { host_has_dlc = "Synthetic Dawn Story Pack" }
-		playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+		randomized = { has_synthethic_dawn = yes }
+		playable = { has_synthethic_dawn = yes }
 		portraits = { "default_robot" }
 	}
 	graphical_culture = mammalian_01

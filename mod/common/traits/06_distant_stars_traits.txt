@@ -97,9 +97,9 @@ leader_trait_governor_brainslug = {
 	icon = "gfx/interface/icons/traits/leader_traits/trait_brainslugged.dds"
 	modifier = {
 		planet_building_build_speed_mult = 0.10
-		planet_jobs_engineering_research_produces_mult = 0.15
 		planet_jobs_physics_research_produces_mult = 0.15
 		planet_jobs_society_research_produces_mult = 0.15
+		planet_jobs_engineering_research_produces_mult = 0.15
 	}
 	initial = no
 	randomized = no
@@ -118,10 +118,10 @@ leader_trait_governor_gray = {
 	immortal_leaders = yes
 	modifier = {
 		planet_buildings_cost_mult = -0.4
+		planet_building_build_speed_mult = 0.4
 		planet_jobs_energy_produces_mult = 1
 		planet_jobs_minerals_produces_mult = 1
 		planet_jobs_produces_mult = 0.2
-		planet_building_build_speed_mult = 0.4
 		planet_clear_blocker_time_mult = -0.5
 		planet_stability_add = 5
 		deposit_blockers_cost_mult = -0.5
@@ -179,9 +179,9 @@ trait_brainslug = {
 	allowed_archetypes = { BIOLOGICAL }
 
 	modifier = {
-		planet_jobs_engineering_research_produces_mult = 0.10
 		planet_jobs_physics_research_produces_mult = 0.10
 		planet_jobs_society_research_produces_mult = 0.10
+		planet_jobs_engineering_research_produces_mult = 0.10
 		planet_jobs_unity_produces_mult = 0.10
 		pop_growth_speed = -0.25
 	}
@@ -211,5 +211,54 @@ trait_nivlac = {
 	}
 	slave_cost = {
 		energy = 100
+	}
+}
+
+trait_robot_notofthisworld = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_notofthisworld.dds"
+	initial = no
+	randomized = no
+	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	allowed_archetypes = { ROBOT MACHINE }
+
+	modifier = {
+		planet_pops_robotics_upkeep_mult = 0.10
+		planet_jobs_physics_research_produces_mult = 0.05
+	}
+}
+
+trait_notofthisworld = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_notofthisworld.dds"
+	initial = no
+	randomized = no
+
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	modifier = { 
+		leader_age = -10
+		planet_pops_upkeep_mult = 0.10
+		planet_jobs_physics_research_produces_mult = 0.05
 	}
 }

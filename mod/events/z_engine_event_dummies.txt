@@ -6,6 +6,7 @@ planet_event = {
 	id = gpm_engine.1
 	hide_window = yes
 	is_triggered_only = yes
+	is_test_event = yes
 	trigger = { always = no }
 }
 

@@ -6,7 +6,7 @@ controls_lcluster = {
 	NOT = { has_global_flag = active_gray_goo }
 }
 
-#country
+# country
 has_lgate = {
 	any_owned_megastructure = {
 		OR = {
