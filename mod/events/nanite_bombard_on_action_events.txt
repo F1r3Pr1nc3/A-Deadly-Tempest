@@ -1,12 +1,12 @@
 namespace = a_deadly_tempest
 
 ### On Colony Bombarded (on_planet_zero_pops): Planet is turned into nanite world by special bombing stance
+# From = Bombarder
 planet_event = {
 	id = a_deadly_tempest.81
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		# From = Bombarder
 		# planet_devastation > 99
 		OR = {
 			has_orbital_bombardment_stance = nanitebombard
@@ -39,16 +39,17 @@ planet_event = {
 
 	immediate = {
 		change_variable = { which = nanite_bomb_counter value = 1 }
-		if = { # only if certain amount of days
-			limit = {
-				check_variable = { which = nanite_bomb_counter value > 15 }
-			}
+		# only if certain amount of days
+		if = { limit = { check_variable = { which = nanite_bomb_counter value > 15 } }
 			planet_event = { id = a_deadly_tempest.84 }
 		}
 	}
 }
 
 # Planet is turned into Nanite World by Nanite Bombing stance (former owner)
+# This = Victim
+# From = Planet
+# fromfromfrom = Bombarder
 country_event = {
 	id = a_deadly_tempest.82
 	title = "a_deadly_tempest.82.name"
@@ -56,11 +57,7 @@ country_event = {
 	desc = a_deadly_tempest.82.desc
 	show_sound = event_ghost_town
 	location = from
-	# This = Victim
-	# From = Planet
-	# fromfromfrom = Bombarder
 	is_triggered_only = yes
-
 	immediate = {
 		# log="[from.from.GetName] 82ff" # Victim
 		add_opinion_modifier = { modifier = opinion_converted_my_world who = fromfromfrom }
@@ -73,6 +70,8 @@ country_event = {
 }
 
 # Planet is turned into Nanite World by Nanite Bombing stance (bombarder)
+# This = Bombarder
+# From = Planet
 country_event = {
 	id = a_deadly_tempest.83
 	title = "a_deadly_tempest.82.name"
@@ -80,10 +79,7 @@ country_event = {
 	desc = a_deadly_tempest.83.desc
 	show_sound = event_super_explosion
 	location = from
-
 	is_triggered_only = yes
-	# This = Bombarder
-	# From = Planet
 	immediate = {
 		every_country = {
 			limit = {
@@ -117,6 +113,9 @@ country_event = {
 }
 
 # Colony Bombarded
+# From = this
+# fromfrom = Bombarder
+# fromfromfrom = Ship
 planet_event = {
 	id = a_deadly_tempest.84
 	hide_window = yes
@@ -126,10 +125,8 @@ planet_event = {
 	# show_sound = event_ghost_town
 	location = this
 	is_triggered_only = yes
-	# From = this
-	# fromfrom = Bombarder
-	# fromfromfrom = Ship
 	immediate = {
+		log="Nanite bombardment finished"
 		if = {
 			limit = {
 				check_variable = { which = nanite_bomb_counter value > 120 }
@@ -145,7 +142,10 @@ planet_event = {
 			}
 		} else_if = {
 			limit = {
-				check_variable = { which = nanite_bomb_counter value > 30 }
+				OR = {
+					merg_is_habitat = yes
+					check_variable = { which = nanite_bomb_counter value > 30 }
+				}
 				fromfrom = { is_same_empire = event_target:graygoo_country }
 			}
 			# small reinforce nanite bombarder
@@ -183,13 +183,14 @@ planet_event = {
 		}
 		every_owned_pop = { kill_pop = yes }
 		set_planet_flag = nuked_planet_anomalies_disabled
+		destroy_colony = yes
 		remove_all_buildings = yes
 		reset_planet = yes
 		reroll_deposits = yes
 		clear_blockers = yes
 		set_planet_flag = armageddon_nuked
 		if = {
-			limit = { is_ringworld = yes }
+			limit = { has_ringworld_output_boost = yes }
 			change_pc = pc_ringworld_habitable_damaged
 			spawn_ringworld_nanobot_effect = yes
 		} else_if = {
@@ -199,8 +200,9 @@ planet_event = {
 			} else_if = { limit = { exists = orbit orbit = { has_planet_flag = has_megastructure } }
 				orbit = { remove_planet_flag = has_megastructure }
 			}
-			remove_planet = yes # ariphaos_patch_remove_habitat = yes
 			spawn_habitat_nanobot_effect = yes
+			remove_planet = yes # ariphaos_patch_remove_habitat = yes
+			break = yes
 		} else_if = {
 			limit = {
 				is_artificial = no
@@ -224,12 +226,7 @@ planet_event = {
 			remove_modifier = "atmospheric_hallucinogen"
 			remove_modifier = "lush_planet"
 			remove_modifier = "dangerous_wildlife"
-			if = {
-				limit = {
-					event_target:CmtGlobalVar = {
-						check_variable = { which = CmtVarLgateTerraformNanite value = 4 }
-					}
-				}
+			if = { limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 4 } } }
 				add_modifier = { modifier = terraforming_candidate months = 1 }
 			}
 			random_list = {
@@ -242,13 +239,10 @@ planet_event = {
 				16 = { modifier = { NOT = { exists = owner } factor = 0 } generate_new_deposits_and_blockers = yes }
 			}
 		}
-		destroy_colony = yes
-
 		# Sets a short timed flag if bombardment is going on, so the planet can be appropriately nuked.
 		set_timed_planet_flag = { flag = flag_nanite_bombardment days = 7 }
 		clear_variable = nanite_bomb_counter
 	}
-
 }
 
 planet_event = {

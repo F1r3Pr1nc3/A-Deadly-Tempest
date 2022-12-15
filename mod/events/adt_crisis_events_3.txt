@@ -22,14 +22,14 @@ country_event = {
 				has_global_flag = ai_invasion_ongoing
 				CmtTriggerIsContingency = yes
 				OR = {
-					galaxy_percentage > 0.45
+					galaxy_percentage > 0.4
 					AND = {
 						NOT = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 2 } } }
-						galaxy_percentage > 0.20
+						endgame_crisis_large_size_trigger = yes # galaxy_percentage > 0.2
 					}
 					AND = {
 						event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } }
-						galaxy_percentage > 0.05
+						galaxy_percentage > 0.07
 					}
 					event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 5 } }
 				}
@@ -432,7 +432,6 @@ country_event = {
 			set_country_flag = pk_nanobots
 			set_country_flag = colossus_project
 			set_country_flag = killed_hatchling
-
 			give_tech_no_error_effect = { TECH = tech_gargantuan_evolution MESSAGE = no }
 			give_tech_no_error_effect = { TECH = tech_colossus MESSAGE = no }
 			give_tech_no_error_effect = { TECH = tech_pk_nanobots MESSAGE = no }
@@ -476,9 +475,10 @@ country_event = {
 				cooldown = no
 			}
 		}
-		event_target:nanite_factory = {
-			root = { CmtEffectCreateAdmiralty_GraygooRoamer = yes } # Roamers
-		}
+		# TODO: too much?
+		# event_target:nanite_factory = {
+		# 	root = { CmtEffectCreateAdmiralty_GraygooRoamer = yes } # Roamers
+		# }
 		# set_graphical_culture = "fallen_machine_empire_01" # temporary
 		# add_global_ship_design = "NAME_Omega"
 		# add_global_ship_design = "NAME_Alpha"
@@ -508,12 +508,13 @@ country_event = {
 		# event_target:nanite_factory = {
 		# 	create_fallen_empire_starting_navy = yes # galactic object
 		# }
-		capital_scope.solar_system = {
-			every_system_planet = {
-				limit = { can_colonize = { who = root status = yes } }
-				root = { CmtEffectCreateAdmiralty_GraygooGarryson = yes }
-			}
-		}
+		# TODO: too much?
+		# capital_scope.solar_system = {
+		# 	every_system_planet = {
+		# 		limit = { can_colonize = { who = root status = yes } }
+		# 		root = { CmtEffectCreateAdmiralty_GraygooGarryson = yes }
+		# 	}
+		# }
 
 		if = { limit = { has_origin = origin_machine_nanites }
 			set_graphical_culture = "grey_tempesttw"
@@ -527,7 +528,6 @@ country_event = {
 					graphical_culture = owner
 				}
 				set_location = {
-					# target = prev.capital_scope
 					target = event_target:nanite_factory
 					distance = 30
 					angle = random
@@ -665,24 +665,61 @@ country_event = {
 			change_leader_portrait = lithnanite
 		}
 		# Declare Crisis (declare_crisis_war_effect)
-		country_event = { id = crisis.4099 days = 12 }
+		country_event = { id = crisis.4099 days = 360 }
 		# Declare War
-		country_event = { id = crisis.2004 days = 24 }
+		country_event = { id = crisis.2004 days = 400 }
 	}
 }
 
 # GrayGoo Declare War (ADT)
+# Root = event_target:new_crisis
 country_event = {
 	# id = fallen_empires_awakening.3
 	id = crisis.2004 # adt only
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		# Taken from unusing country_event = { id = crisis.4116 }
+		if = {
+			limit = {
+				any_playable_country = {
+					is_galactic_community_member = yes
+					any_war = {
+						using_war_goal = { type = wg_declared_crisis owner = prev }
+					}
+				}
+			}
+			random_playable_country = {
+				limit = {
+					is_galactic_community_member = yes
+					any_war = {
+						using_war_goal = { type = wg_declared_crisis owner = prev }
+					}
+				}
+				random_war = {
+					limit = { using_war_goal = { type = wg_declared_crisis owner = prev } }
+					save_event_target_as = crisis_war
+				}
+			}
+		} else = {
+			random_war = {
+				limit = {
+					is_total_war = yes
+					using_war_goal = { type = "wg_declared_crisis" owner = root }
+					OR = {
+						any_defender = { is_same_empire = root }
+						any_war_participant = { is_same_empire = root }
+					}
+				}
+				save_event_target_as = crisis_war
+			}
+		}
 		every_country = {
 			limit = {
 				NOR = {
 					is_same_empire = root
 					is_at_war_with = root
+					is_in_federation_with = root
 				}
 				OR = {
 					is_hostile = root
@@ -691,15 +728,31 @@ country_event = {
 					has_country_flag = declared_crisis
 				}
 			}
-			root = {
-				if = {
-					limit = {
-						can_declare_war = { target = prev attacker_war_goal = wg_absorption }
-					}
-					declare_war = {
-						target = prev
-						# name = "NAME_Declared_Crisis_War"
-						attacker_war_goal = wg_absorption
+			if = {
+				limit = {
+					is_country_type_with_subjects = yes
+					exists = event_target:crisis_war
+				}
+				# Joins Community - Joins Crisis Wars
+				join_war_on_side = { war = event_target:crisis_war side = attackers }
+			} else_if = {
+				limit = {
+					is_country_type_with_subjects = yes
+					can_declare_war = { target = prev attacker_war_goal = "wg_declared_crisis" }
+				}
+				declare_war = {
+					target = root
+					name = { key = "NAME_Declared_Crisis_War" variable_string = "This.MainDefender.GetAdj" }
+					attacker_war_goal = "wg_declared_crisis"
+					effect = { save_event_target_as = crisis_war }
+				}
+			} else = {
+				root = {
+					if = { limit = { can_declare_war = { target = prev attacker_war_goal = wg_absorption } }
+						declare_war = {
+							target = prev
+							attacker_war_goal = wg_absorption
+						}
 					}
 				}
 			}

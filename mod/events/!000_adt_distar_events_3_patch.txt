@@ -407,6 +407,7 @@ event = {
 			OR = {
 				has_event_chain = l_cluster_chain
 				has_special_project = LCLUSTER_PROJECT
+				has_special_project = LCLUSTER_PROJECT_OVERWRITE # L-Cluster +
 			}
 			NOT = { has_country_flag = lgate_warned } # Warn only once for all for each related (each 120 - 240 days)
 			OR = {
@@ -429,6 +430,7 @@ event = {
 				OR = {
 					has_event_chain = l_cluster_chain
 					has_special_project = LCLUSTER_PROJECT
+					has_special_project = LCLUSTER_PROJECT_OVERWRITE # L-Cluster +
 				}
 				NOT = { has_country_flag = lgate_warned }
 				OR = {

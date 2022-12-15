@@ -516,10 +516,10 @@
 		### no : All playable empires can access (Default)
 
 ### What Lurks Beyond L-Gates
-	@CmtT001_ConstLgateForbidSilence = yes		## Eerie Silence
+	@CmtT001_ConstLgateForbidSilence	= yes		## Eerie Silence
 	@CmtT001_ConstLgateForbidLdrake		= no		## L-Drake
-	@CmtT001_ConstLgateForbidDessanu = no		## Dessanu
-	@CmtT001_ConstLgateForbidGraygoo = no		## Gray Tempest
+	@CmtT001_ConstLgateForbidDessanu	= no		## Dessanu
+	@CmtT001_ConstLgateForbidGraygoo	= no		## Gray Tempest
 		### yes: Forbid to happen
 		### no:		Allow to happen (Default)
 
@@ -529,10 +529,10 @@
 	### Immediately All = 4, Set Individually = -1 (NOT 5)
 
 ### Algorithm to Activate L-Gate (Individually Settings)
-	@CmtT001_ConstLgateCycleSilence = 4		## Eerie Silence
+	@CmtT001_ConstLgateCycleSilence		= 4		## Eerie Silence
 	@CmtT001_ConstLgateCycleLdrake		= 5		## L-Drake
-	@CmtT001_ConstLgateCycleDessanu = 5		## Dessanu
-	@CmtT001_ConstLgateCycleGraygoo = 5		## Gray Tempest
+	@CmtT001_ConstLgateCycleDessanu		= 5		## Dessanu
+	@CmtT001_ConstLgateCycleGraygoo		= 5		## Gray Tempest
 		### Only One = 1, After Crisis = 2 (For Only Gray Tempest)
 		### One by One Slowly = 3, One by One Quickly = 4, Immediately All = 5
 		### Caution
@@ -624,7 +624,7 @@
 	@CmtT001_ConstCombatFleetNumber_Cybrex		= 1.25
 	@CmtT001_ConstCombatFleetNumber_Khan		= 1.5
 	@CmtT001_ConstCombatFleetNumber_Graygoo		= 1.0	## Gray Tempest
-	@CmtT001_ConstCombatFleetNumber_Dessanu		= 1.25
+	@CmtT001_ConstCombatFleetNumber_Dessanu		= 1.0
 
 ### Number of Army Fleets
 	@CmtT001_ConstArmyNumber_Common				= 1.0	## This value must be set to zero(0) if you set the value individually for each crisis.

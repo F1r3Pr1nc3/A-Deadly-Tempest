@@ -232,8 +232,9 @@ trait_robot_notofthisworld = {
 
 	allowed_archetypes = { ROBOT MACHINE }
 
+	custom_tooltip_with_modifiers = TRAIT_NOTOFTHISWORLD_EFFECT
 	modifier = {
-		planet_pops_robotics_upkeep_mult = 0.10
+		planet_pops_robotics_upkeep_mult = 0.1
 		planet_jobs_physics_research_produces_mult = 0.05
 	}
 }
@@ -256,6 +257,7 @@ trait_notofthisworld = {
 
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 
+	custom_tooltip_with_modifiers = TRAIT_NOTOFTHISWORLD_EFFECT
 	modifier = { 
 		leader_age = -10
 		planet_pops_upkeep_mult = 0.10

@@ -5,22 +5,18 @@
 @cost2 = 10
 @cost3 = 15
 @cost4 = 20
-
 @power0 = -5
 @power1 = -10
 @power2 = -15
 @power3 = -20
-
 @evasion0 = 5
 @evasion1 = 10
 @evasion2 = 15
 @evasion3 = 25
-
 @fire_rate0 = 0.05
-@fire_rate1 = 0.10
+@fire_rate1 = 0.1
 @fire_rate2 = 0.15
-@fire_rate3 = 0.20
-
+@fire_rate3 = 0.2
 @tracking0 = 5
 @tracking1 = 10
 @tracking2 = 15
@@ -28,22 +24,20 @@
 @tracking4 = 25
 @tracking5 = 30
 @tracking6 = 40
-
 @accuracy0 = 4
 @accuracy1 = 5
 @accuracy2 = 10
 @accuracy3 = 15
 @accuracy4 = 20
-
 @weapon_range0 = 0.05
-@weapon_range1 = 0.10
+@weapon_range1 = 0.1
 @weapon_range2 = 0.15
-@weapon_range3 = 0.20
-
+@weapon_range3 = 0.2
 @engagement_range0 = 0.25
-@engagement_range1 = 0.50
+@engagement_range1 = 0.5
 @engagement_range2 = 0.75
-@engagement_range3 = 1.0
+@engagement_range3 = 1
+
 # 'LINE' COMPUTERS
 # utility_component_template = {
 # 	key = "COMBAT_COMPUTER_LINE_SAPIENT"
@@ -53,17 +47,31 @@
 # 	power = @power3
 # 	resources = {
 # 		category = ship_components
-# 		cost = {
-# 			alloys = @cost4
-# 		}
+# 		cost = { alloys = @cost4 }
 # 	}
-# 	class_restriction = { shipclass_military }
-# 	size_restriction = { destroyer offspring_destroyer cruiser offspring_cruiser battleship offspring_battleship graygoo_interdictor }
+# 	class_restriction = {
+# 		shipclass_military
+# 		shipclass_military_special
+# 	}
+# 	size_restriction = {
+# 		destroyer
+# 		cruiser
+# 		battleship
+# 		crisis_destroyer
+# 		crisis_cruiser
+# 		star_eater
+# 		offspring_destroyer
+# 		offspring_cruiser
+# 		offspring_battleship
+# 		graygoo_interdictor
+# 	}
 # 	component_set = "combat_computers"
 # 	ship_behavior = "line"
 # 	prerequisites = { "tech_combat_computers_3" }
+# 	ai_tags = { gunship }
+# 	ai_tag_weight = 0
 # 	ship_modifier = {
-# 		ship_fire_rate_mult = 0.20
+# 		ship_fire_rate_mult = 0.2
 # 		ship_accuracy_add = 20
 # 	}
 # 	ai_weight = {
@@ -79,6 +87,7 @@
 # 		}
 # 	}
 # }
+
 utility_component_template = {
 	key = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
 	size = small
@@ -90,19 +99,27 @@ utility_component_template = {
 		cost = { alloys = @cost4 }
 	}
 	class_restriction = { shipclass_military }
-	# size_restriction = { destroyer offspring_destroyer cruiser offspring_cruiser battleship offspring_battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
 	size_restriction = {
-		corvette offspring_corvette
-		destroyer offspring_destroyer
-		cruiser offspring_cruiser
+		corvette
+		destroyer
+		cruiser
+		battleship
+		titan
 		crisis_destroyer
 		crisis_cruiser
+		offspring_corvette
+		offspring_destroyer
+		offspring_cruiser
+		offspring_battleship
+		galleon
+		pirate_cruiser
+		pirate_destroyer
+		marauder_destroyer
+		marauder_galleon
 		StrikeCruiser
 		Battlecruiser
-		battleship offspring_battleship
 		Carrier
 		Dreadnought
-		titan
 		Flagship
 		explorationship
 		graygoo_interdictor
@@ -110,7 +127,12 @@ utility_component_template = {
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_combat_computers_autonomous" }
-	ship_modifier = { ship_fire_rate_mult = @fire_rate3 ship_accuracy_add = @accuracy4 }
+	ai_tags = { gunship }
+	ai_tag_weight = 0
+	ship_modifier = {
+		ship_fire_rate_mult = @fire_rate3
+		ship_accuracy_add = @accuracy4
+	}
 	ai_weight = { weight = 5 }
 }
 
@@ -125,19 +147,28 @@ utility_component_template = {
 		cost = { alloys = @cost4 }
 	}
 	class_restriction = { shipclass_military }
-	# size_restriction = { destroyer offspring_destroyer cruiser offspring_cruiser battleship offspring_battleship crisis_destroyer crisis_cruiser graygoo_interdictor }
 	size_restriction = {
-		corvette offspring_corvette
-		destroyer offspring_destroyer
-		cruiser offspring_cruiser
+		corvette
+		destroyer
+		cruiser
+		battleship
+		titan
 		crisis_destroyer
 		crisis_cruiser
+		offspring_corvette
+		offspring_destroyer
+		offspring_cruiser
+		offspring_battleship
+		galleon
+		pirate_destroyer
+		pirate_cruiser
+		marauder_destroyer
+		marauder_cruiser
+		marauder_galleon
 		StrikeCruiser
 		Battlecruiser
-		battleship offspring_battleship
 		Carrier
 		Dreadnought
-		titan
 		Flagship
 		explorationship
 		graygoo_interdictor
@@ -145,60 +176,87 @@ utility_component_template = {
 	component_set = "combat_computers"
 	ship_behavior = "line"
 	prerequisites = { "tech_precognition_interface" }
-	ship_modifier = { ship_fire_rate_mult = @fire_rate2 ship_accuracy_add = @accuracy3 ship_tracking_add = @tracking1 }
+	ai_tags = { gunship }
+	ai_tag_weight = 0
+	ship_modifier = {
+		ship_fire_rate_mult = @fire_rate2
+		ship_accuracy_add = @accuracy3
+		ship_tracking_add = @tracking1
+	}
 	ai_weight = {
 		weight = 4
 		modifier = {
 			factor = 0
 			merg_is_default_empire = yes
-			NOT = { has_ascension_perk = ap_transcendence }
+			NOT = { has_tradition = tr_psionics_psionic_assimilation }
 		}
 	}
 }
 
 # 'ARTILLERY' COMPUTERS
-# utility_component_template = {
-# 	key = "COMBAT_COMPUTER_ARTILLERY_SAPIENT"
-# 	size = small
-# 	icon = "GFX_ship_part_computer_artillery_sapient"
-# 	icon_frame = 1
-# 	power = @power3
-# 	resources = {
-# 		category = ship_components
-# 		cost = {
-# 			alloys = @cost4
-# 		}
-# 	}
-# 	class_restriction = { shipclass_military shipclass_starbase }
-# 	size_restriction = {
-# 		destroyer offspring_destroyer
-# 		cruiser offspring_cruiser
-# 		battleship offspring_battleship
-# 		titan
-# 		juggernaut
-# 		dreadnought
-# 		scavenger_bot
-# 	}
-# 	component_set = "combat_computers"
-# 	ship_behavior = "artillery"
-# 	prerequisites = { "tech_combat_computers_3" }
-# 	ship_modifier = {
-# 		ship_fire_rate_mult = 0.20
-# 		ship_weapon_range_mult = 0.20
-# 	}
-# 	ai_weight = {
-# 		weight = 5
-# 		modifier = {
-# 			factor = 0
-# 			OR = {
-# 				has_global_flag = ghost_signal_5_flag
-# 				has_global_flag = ghost_signal_4_flag
-# 				has_global_flag = ghost_signal_3_flag
-# 				has_global_flag = ghost_signal_2_flag
-# 			}
-# 		}
-# 	}
-# }
+utility_component_template = {
+	key = "COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost4 }
+	}
+	class_restriction = {
+		shipclass_military
+		shipclass_starbase
+		shipclass_military_special
+	}
+	size_restriction = {
+		frigate
+		destroyer
+		cruiser
+		battleship
+		titan
+		juggernaut
+		galleon
+		crisis_destroyer
+		crisis_cruiser
+		star_eater
+		offspring_destroyer
+		offspring_cruiser
+		offspring_battleship
+		dreadnought
+		scavenger_bot
+		pirate_destroyer
+		pirate_cruiser
+		marauder_destroyer
+		marauder_cruiser
+		marauder_galleon
+	}
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	prerequisites = { "tech_combat_computers_3" }
+	ai_tags = {
+		artillery
+		energy_torpedoes
+	}
+	ai_tag_weight = 0
+	ship_modifier = {
+		ship_fire_rate_mult = 0.2
+		ship_weapon_range_mult = 0.2
+	}
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = ghost_signal_5_flag
+				has_global_flag = ghost_signal_4_flag
+				has_global_flag = ghost_signal_3_flag
+				has_global_flag = ghost_signal_2_flag
+			}
+		}
+	}
+}
+
 utility_component_template = {
 	key = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
 	size = small
@@ -215,28 +273,47 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		corvette offspring_corvette
-		destroyer offspring_destroyer
-		cruiser offspring_cruiser
+		frigate
+		corvette
+		destroyer
+		cruiser
+		battleship
+		juggernaut
+		titan
+		galleon
 		crisis_destroyer
 		crisis_cruiser
-		StrikeCruiser
-		Battlecruiser
-		battleship offspring_battleship
-		Carrier
-		Dreadnought
-		titan
-		Flagship
-		explorationship
-		juggernaut
 		star_eater
+		offspring_corvette
+		offspring_destroyer
+		offspring_cruiser
+		offspring_battleship
 		dreadnought
 		scavenger_bot
+		pirate_destroyer
+		pirate_cruiser
+		marauder_cruiser
+		marauder_destroyer
+		marauder_galleon
+		StrikeCruiser
+		Battlecruiser
+		Carrier
+		Dreadnought
+		Flagship
+		explorationship
 	}
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_combat_computers_autonomous" }
-	ship_modifier = { ship_fire_rate_mult = @fire_rate3 ship_weapon_range_mult = @weapon_range3 }
+	ai_tags = {
+		artillery
+		energy_torpedoes
+	}
+	ai_tag_weight = 0
+	ship_modifier = {
+		ship_fire_rate_mult = @fire_rate3
+		ship_weapon_range_mult = @weapon_range3
+	}
 	ai_weight = { weight = 5 }
 }
 
@@ -256,34 +333,54 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		corvette offspring_corvette
-		destroyer offspring_destroyer
-		cruiser offspring_cruiser
+		frigate
+		corvette
+		destroyer
+		cruiser
+		battleship
+		juggernaut
+		titan
+		galleon
 		crisis_destroyer
 		crisis_cruiser
-		StrikeCruiser
-		Battlecruiser
-		battleship offspring_battleship
-		Carrier
-		Dreadnought
-		titan
-		Flagship
-		explorationship
-		juggernaut
 		star_eater
+		offspring_corvette
+		offspring_destroyer
+		offspring_cruiser
+		offspring_battleship
 		dreadnought
 		scavenger_bot
+		pirate_destroyer
+		pirate_cruiser
+		marauder_destroyer
+		marauder_cruiser
+		marauder_galleon
+		StrikeCruiser
+		Battlecruiser
+		Carrier
+		Dreadnought
+		Flagship
+		explorationship
 	}
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_precognition_interface" }
-	ship_modifier = { ship_fire_rate_mult = @fire_rate2 ship_weapon_range_mult = @weapon_range2 ship_tracking_add = @tracking1 }
+	ai_tags = {
+		artillery
+		energy_torpedoes
+	}
+	ai_tag_weight = 0
+	ship_modifier = {
+		ship_fire_rate_mult = @fire_rate2
+		ship_weapon_range_mult = @weapon_range2
+		ship_tracking_add = @tracking1
+	}
 	ai_weight = {
 		weight = 4
 		modifier = {
 			factor = 0
 			merg_is_default_empire = yes
-			NOT = { has_ascension_perk = ap_transcendence }
+			NOT = { has_tradition = tr_psionics_psionic_assimilation }
 		}
 	}
 }
@@ -305,20 +402,29 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		cruiser offspring_cruiser
-		battleship offspring_battleship
+		cruiser
+		battleship
 		juggernaut
 		titan
+		galleon
+		crisis_cruiser
+		star_eater
+		offspring_cruiser
+		offspring_battleship
+		dreadnought
+		scavenger_bot
+		pirate_cruiser
+		marauder_cruiser
+		marauder_galleon
 		Carrier
 		Flagship
 		explorationship
-		star_eater
-		dreadnought
-		scavenger_bot
 	}
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_autonomous" }
+	ai_tags = { carrier }
+	ai_tag_weight = 0
 	ship_modifier = { ship_engagement_range_mult = @engagement_range3 }
 	ai_weight = { weight = 5 }
 }
@@ -339,24 +445,35 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		cruiser offspring_cruiser
-		battleship offspring_battleship
+		cruiser
+		battleship
 		juggernaut
 		titan
 		star_eater
+		offspring_cruiser
+		offspring_battleship
 		dreadnought
 		scavenger_bot
+		pirate_cruiser
+		marauder_cruiser
+		galleon
+		marauder_galleon
 	}
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_precognition_interface" }
-	ship_modifier = { ship_engagement_range_mult = @engagement_range2 ship_tracking_add = @tracking1 }
+	ai_tags = { carrier }
+	ai_tag_weight = 0
+	ship_modifier = {
+		ship_engagement_range_mult = @engagement_range2
+		ship_tracking_add = @tracking1
+	}
 	ai_weight = {
 		weight = 4
 		modifier = {
 			factor = 0
 			merg_is_default_empire = yes
-			NOT = { has_ascension_perk = ap_transcendence }
+			NOT = { has_tradition = tr_psionics_psionic_assimilation }
 		}
 	}
 }

@@ -94,7 +94,7 @@ country_event = {
 	## Go Back to Main Menu.
 	option = {
 		name = CmtTextGoBack.name
-		country_event = { id = CrisisManagerMenu.0100 }
+		country_event = { id = CrisisManagerMenu.100 }
 	}
 
 }
@@ -228,7 +228,7 @@ country_event = {
 		name = CrisisManagerMenu.9310a.name
 		while = {
 			count = 10000
-			country_event = { id = CrisisManagerControl.0012 }
+			country_event = { id = CrisisManagerControl.12 }
 		}
 	}
 

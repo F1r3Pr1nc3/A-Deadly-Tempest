@@ -61,8 +61,8 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	# fire_only_once = yes
-	# title = CrisisManagerMenu.0011.name
-	# desc = CrisisManagerMenu.0011.desc
+	# title = CrisisManagerMenu.11.name
+	# desc = CrisisManagerMenu.11.desc
 	# picture = GFX_evt_CmtMenuA
 	# option = {
 	# 	name = CmtTextOK.name
@@ -1813,11 +1813,11 @@ country_event = {
 			last_created_army = { assign_leader = last_created_leader }
 			# Mothership creates ships
 			country_event = { id = a_deadly_tempest.105 days = 1800 }
+			set_country_flag = adtFlagActiveMothershipRebuild
 			# Run Patrol
 			country_event = { id = a_deadly_tempest.96 }
-			set_country_flag = adtFlagActiveMothershipRebuild
 			# fallen_empires_awakening.3
-			country_event = { id = crisis.2003 days = 540 random = 500 }
+			country_event = { id = crisis.2003 days = 720 random = 540 }
 		}
 	}
 }

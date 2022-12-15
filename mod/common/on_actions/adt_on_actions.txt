@@ -107,11 +107,11 @@ on_planet_zero_pops = {
 # Planet has taken damage from orbital bombardment - Damage is applied daily.
 # This = Planet
 # From = Bombarder
-on_planet_bombarded = {
-	events = {
-		crisis.2477
-	}
-}
+# on_planet_bombarded = {
+# 	events = {
+# 		crisis.2477
+# 	}
+# }
 
 # This = Federation leader
 # From = Joining member

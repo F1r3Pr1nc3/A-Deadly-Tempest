@@ -17,7 +17,7 @@ gate_builders_machine = {
 	migration_pact_acceptance = -1
 	advanced_start_chance = 100
 
-	threat_modifier = 0
+	threat_modifier = 0.5
 	threat_others_modifier = 1
 	friction_modifier = 2
 	claims_modifier = 10

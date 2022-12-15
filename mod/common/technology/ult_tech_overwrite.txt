@@ -1,5 +1,5 @@
 
-# Fix CTD with DEssanu
+# Fix CTD with Dessanu
 ## Nano Drone Enhance
 tech_ult_nano_drone_enhance = {
 	area = society
@@ -75,6 +75,10 @@ tech_gene_tailoring = {
 			factor = 1.25
 			has_origin = origin_necrophage
 			has_trait = trait_necrophage
+		}
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
 		}
 	}
 

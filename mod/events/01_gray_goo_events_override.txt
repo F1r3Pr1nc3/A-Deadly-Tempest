@@ -132,7 +132,7 @@ country_event = {
 		event_target:graygoo_country = {
 			country_event = { id = graygoo.3 days = 3600 }
 			country_event = { id = a_deadly_tempest.105 days = 1800 } # Mothership creates ships
-			set_country_flag = adtFlagActiveMothershipRebuild
+			set_country_flag = adtFlagActiveMothershipRebuild # Savegame compat.
 		}
 
 		### Notifications
@@ -159,7 +159,10 @@ country_event = {
 		country_event = { id = a_deadly_tempest.13006 }
 	}
 }
-# On_action: Colony Bombarded (fromfrom = ship, - Damage is applied daily)
+
+# On_action: on_planet_bombarded
+# From = Bombarder
+# (fromfrom = ship, - Damage is applied daily)
 planet_event = {
 	id = graygoo.2
 	hide_window = yes
@@ -175,15 +178,14 @@ planet_event = {
 		count_planet_army = { count < 2 }
 		OR = {
 			has_orbital_bombardment_stance = nanitebombard
-			root.from = { is_nanite_country = yes }
+			from = { is_nanite_country = yes }
 		}
 	}
 	immediate = {
 		change_variable = { which = nanite_bomb_counter value = 1 }
-		if = { # Only if certain amount of days.
-			limit = {
-				check_variable = { which = nanite_bomb_counter value > 15 }
-			}
+		log="Nanite bombardment counter [This.nanite_bomb_counter]"
+		# Only if certain amount of days.
+		if = { limit = { check_variable = { which = nanite_bomb_counter value > 14 } }
 			planet_event = { id = a_deadly_tempest.84 }
 		}
 	}
@@ -219,10 +221,8 @@ country_event = {
 	}
 
 	immediate = {
-
 		# Fallback for whatever reason
-		if = {
-			limit = { NOT = { exists = event_target:graygoo_country } }
+		if = { limit = { NOT = { exists = event_target:graygoo_country } }
 			if = {
 				limit = { CmtTriggerIsGraygoo = yes }
 				save_global_event_target_as = graygoo_country
@@ -233,25 +233,34 @@ country_event = {
 				}
 			}
 		}
-		if = {
-			limit = { NOT = { exists = event_target:graygoo_country } }
-			break = yes # Game Over
+		if = { limit = { NOT = { exists = event_target:graygoo_country } }
+			break = yes # Crisis Over
+		}
+		event_target:CmtGlobalVar = { # Somehow superfluous
+			if = { limit = { NOT = { is_variable_set = CmtVarReinforceCycle_Graygoo } }
+				set_variable = { which = CmtVarReinforceCycle_Graygoo value = 3 }
+			}
 		}
 
 		### Time Control
 		if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 2 } } }
-			country_event = { id = graygoo.3 days = 7200 }		## 20 yr
+			country_event = { id = graygoo.3 days = 5400 }		## 15 yr
 		} else_if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 4 } } }
 			country_event = { id = graygoo.3 days = 1800 }		## 5 yr
 		} else_if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 5 } } }
-			country_event = { id = graygoo.3 days = 720 }		## 2 yr
+			country_event = { id = graygoo.3 days = 1080 }		## 3 yr
 		} else_if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 6 } } }
-			country_event = { id = graygoo.3 days = 360 }		## 1 yr
-		} else = { country_event = { id = graygoo.3 days = 3600 } }		## 10 yr vanilla
+			country_event = { id = graygoo.3 days = 720 }		## 2 yr
+		} else_if = {
+			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 9 } } }
+			country_event = { id = graygoo.3 days = 30 }		## debug only
+		} else = { # value = 3
+			country_event = { id = graygoo.3 days = 3600 }		## 10 yr vanilla
+		}
 
 		# Fallback (savegame comp.) re-save event_targets
 		if = {
@@ -286,11 +295,11 @@ country_event = {
 				# AMOUNT integer 1 = 4 Ships per CM factor (so 3.0 = 12)
 				# TODO make values more dyn.
 				event_target:nanite_factory = {
-					if = { limit = { end_game_years_passed > 90 }
+					if = { limit = { end_game_years_passed > 95 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 4 }
-					} else_if = { limit = { mid_game_years_passed > 110 }
+					} else_if = { limit = { mid_game_years_passed > 115 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 3 }
-					} else_if = { limit = { mid_game_years_passed > 50 }
+					} else_if = { limit = { mid_game_years_passed > 55 }
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 2 }
 					} else = {
 						CmtEffectCreateAdmiralty_GraygooAttackerB = { AMOUNT = 1 }
@@ -312,13 +321,14 @@ country_event = {
 							use_3d_location = yes
 							duration = 10
 						}
-						if = { limit = { end_game_years_passed >= 30 }
+						# TODO make values more dyn.
+						if = { limit = { end_game_years_passed > 80 }
 							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 4 }
 							awaken_guardians_of_the_galaxy = yes
 							awaken_fallen_machine_empire = yes
-						} else_if = { limit = { mid_game_years_passed >= 40 }
+						} else_if = { limit = { mid_game_years_passed > 80 }
 							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 3 }
-						} else_if = { limit = { mid_game_years_passed >= 10 }
+						} else_if = { limit = { mid_game_years_passed > 40 }
 							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 2 }
 						} else = {
 							CmtEffectCreateAdmiralty_GraygooAttackerA = { AMOUNT = 1 }
@@ -326,10 +336,9 @@ country_event = {
 					}
 				}
 			}
-			# Savegame compat.
 			if = { limit = { NOT = { has_country_flag = adtFlagActiveMothershipRebuild } }
-				country_event = { id = a_deadly_tempest.105 days = 180 } # Mothership creates ships
-				set_country_flag = adtFlagActiveMothershipRebuild
+				country_event = { id = a_deadly_tempest.105 days = 360 } # Mothership creates ships
+				set_country_flag = adtFlagActiveMothershipRebuild # Savegame compat.
 			}
 		}
 	}
@@ -1288,7 +1297,7 @@ country_event = {
 		fromfrom = {
 			remove_all_buildings = yes
 			destroy_colony = yes
-			if = { limit = { is_ringworld = yes }
+			if = { limit = { has_ringworld_output_boost = yes }
 				change_pc = pc_ringworld_habitable_damaged
 				spawn_ringworld_nanobot_effect = yes
 			} else_if = { limit = { merg_is_habitat = yes }
@@ -2268,7 +2277,7 @@ country_event = {
 									is_planet_class = pc_shattered_2
 								}
 							}
-							is_ringworld = yes
+							has_ringworld_output_boost = yes
 							# is_planet_class = pc_ringworld_habitable
 							# is_planet_class = pc_ringworld_habitable_damaged
 							# is_planet_class = pc_ringworld_tech
@@ -2295,7 +2304,7 @@ country_event = {
 						scale = 10
 					}
 				}
-				# Remove megastructures
+				# Remove megastructures (ADT)
 				every_system_megastructure = {
 					limit = {
 						has_megastructure_flag = gatebuilders_origin
