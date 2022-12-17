@@ -209,7 +209,7 @@ utility_component_template = {
 utility_component_template = {
 	key = "SHIP_AURA_INSPIRING_PRESENCE"
 	size = medium
-	icon = "GFX_ship_part_aura_nanobot"
+	icon = "GFX_ship_part_aura_inspiring_presence"
 	icon_frame = 1
 	power = 0
 
@@ -250,7 +250,7 @@ utility_component_template = {
 utility_component_template = {
 	key = "SHIP_AURA_TARGETING_GRID"
 	size = medium
-	icon = "GFX_ship_part_aura_nanobot"
+	icon = "GFX_ship_part_aura_targeting_grid"
 	icon_frame = 1
 	power = 0
 
@@ -696,8 +696,8 @@ utility_component_template = {
 		}
 
 		modifier = {
-			# ship_hull_regen_add_perc = 0.05
-			ship_hull_regen_add_static = 2
+			ship_hull_regen_add_perc = 0.05
+			# ship_hull_regen_add_static = 2
 		}
 
 		graphics = {

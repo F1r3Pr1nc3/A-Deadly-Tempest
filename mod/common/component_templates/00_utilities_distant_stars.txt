@@ -6,6 +6,10 @@
 # @armor_3M = 215
 # @armor_3L = 510
 
+@armor_5S = 145
+@armor_5M = 365
+@armor_5L = 870
+
 # @armor_6S = 185
 # @armor_6M = 465
 # @armor_6L = 1110

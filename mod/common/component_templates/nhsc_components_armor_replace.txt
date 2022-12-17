@@ -22,7 +22,7 @@ utility_component_template = {
 	}
 
 	modifier = {
-		ship_armor_add = @armor_5S # 365
+		ship_armor_add = 365
 		ship_hull_regen_add_static = 0.25
 		ship_armor_regen_add_static = 0.4
 	}
@@ -63,7 +63,7 @@ utility_component_template = {
 	}
 
 	modifier = {
-		ship_armor_add = @armor_5M # 365
+		ship_armor_add = 365
 		ship_hull_regen_add_static = 0.5
 		ship_armor_regen_add_static = 0.8
 	}
@@ -104,7 +104,7 @@ utility_component_template = {
 	}
 
 	modifier = {
-		ship_armor_add = @armor_5L # 870
+		ship_armor_add = 870
 		ship_hull_regen_add_static = 1
 		ship_armor_regen_add_static = 1.6
 	}
