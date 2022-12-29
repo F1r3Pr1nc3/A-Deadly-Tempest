@@ -14,7 +14,7 @@ tech_nanoactuators = {
 
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_country_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain
@@ -37,7 +37,7 @@ tech_nanite_shield_rechargers = {
 
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }

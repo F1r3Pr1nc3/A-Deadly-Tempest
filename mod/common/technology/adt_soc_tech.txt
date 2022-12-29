@@ -22,10 +22,7 @@ tech_nanite_terraforming = {
 			has_distar = yes
 			has_global_flag = l_cluster_opened
 		}
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_country_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain
@@ -39,10 +36,7 @@ tech_nanite_terraforming = {
 			has_monthly_income = { resource = nanites value < 1 }
 			resource_stockpile_compare = { resource = nanites value < 300 }
 		}
-		modifier = {
-			factor = @ap_technological_ascendancy_rare_tech
-			has_ascension_perk = ap_technological_ascendancy
-		}
+		modifier = { factor = @ap_technological_ascendancy_rare_tech has_ascension_perk = ap_technological_ascendancy }
 		modifier = {
 			factor = 1.25
 			research_leader = {
@@ -81,10 +75,7 @@ tech_nano_dust = {
 	}
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_country_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain
@@ -113,10 +104,7 @@ tech_nano_scales = {
 	modifier = { country_food_produces_mult = 0.2 }
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_country_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain
@@ -143,10 +131,7 @@ esc_tech_armor_nanite_1 = {
 	prerequisites = { "tech_nanite_hull" }
 	potential = {
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_country_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_country_flag = completed_nanite_technology_mastery_chain

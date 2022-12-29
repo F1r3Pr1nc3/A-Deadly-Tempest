@@ -110,7 +110,7 @@ artifact_lgate_clue = {
 			factor = 0
 			OR = {
 				mid_game_years_passed < 0
-				has_resource = { type = minor_artifacts amount < 45 }
+				has_country_resource = { type = minor_artifacts amount < 45 }
 			}
 		}
 	}

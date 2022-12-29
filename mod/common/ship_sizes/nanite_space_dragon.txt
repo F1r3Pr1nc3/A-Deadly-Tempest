@@ -1,7 +1,7 @@
 # Baby Drake
 nanite_space_dragon_baby = {
 	is_space_object = yes
-	#graphical_culture = { "guardian_01" }
+	# graphical_culture = { "guardian_01" }
 	graphical_culture = no
 	can_be_inspected = no
 	max_speed = @aj_speed_very_fast_npc

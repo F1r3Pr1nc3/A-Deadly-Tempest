@@ -15,7 +15,7 @@ tech_adt_energymissiles = {
 
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
@@ -59,7 +59,7 @@ tech_nanite_strike_craft = {
 
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
@@ -87,7 +87,7 @@ tech_adt_gg_beam = {
 
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
@@ -136,7 +136,7 @@ tech_nanite_torpedo = {
 
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }

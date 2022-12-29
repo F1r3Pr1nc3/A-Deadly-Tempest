@@ -21,10 +21,7 @@ tech_nanite_ships = {
 	potential = {
 		has_distar = yes
 		has_global_flag = l_cluster_opened
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
@@ -53,10 +50,7 @@ tech_nanite_build_speed = {
 	is_rare = yes
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_country_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_technology = tech_nanite_clouds
@@ -88,10 +82,7 @@ tech_nanite_hull = {
 	is_rare = yes
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
@@ -126,10 +117,7 @@ tech_nanite_living_metal = {
 	# Unlocks nanite_living_metal_forge
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_country_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_technology = tech_nanite_clouds
@@ -155,9 +143,7 @@ tech_nanite_living_metal = {
 		# }
 	}
 	# Add Living Metal
-	modifier = {
-		country_resource_max_sr_living_metal_add = 2000
-	}
+	modifier = { country_resource_max_sr_living_metal_add = 2000 }
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -177,20 +163,13 @@ tech_nanocrystals = {
 	is_rare = yes
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = {
-			type = nanites
-			amount > 0
-		}
+		has_country_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_technology = tech_nanite_clouds
 		}
 	}
-	modifier = {
-		weapon_type_explosive_weapon_damage_mult = 0.2
-		weapon_type_kinetic_weapon_damage_mult = 0.2
-		weapon_type_energy_weapon_damage_mult = 0.2
-	}
+	modifier = { weapon_type_explosive_weapon_damage_mult = 0.2 weapon_type_kinetic_weapon_damage_mult = 0.2 weapon_type_energy_weapon_damage_mult = 0.2 }
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -222,16 +201,14 @@ tech_nanite_bulwark = {
 
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 30 }
+		has_country_resource = { type = nanites amount > 30 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_technology = tech_nanite_clouds
 		}
 		exists = event_target:goo_slayer
 	}
-	modifier = {
-		starbase_defense_platform_capacity_add = 12
-	}
+	modifier = { starbase_defense_platform_capacity_add = 12 }
 
 	prereqfor_desc = {
 		ship = {
@@ -286,7 +263,7 @@ tech_nanite_modular_engineering = {
 	weight = @tier5weight2
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_country_resource = { type = nanites amount > 0 }
 		OR = {
 			NOT = { has_global_flag = distar_overhaul_mod_active }
 			has_technology = tech_nanite_clouds
@@ -317,9 +294,7 @@ tech_nanite_armor = {
 	is_rare = yes
 	prerequisites = { "tech_ship_armor_5" }
 
-	potential = {
-		has_distar = yes
-	}
+	potential = { has_distar = yes }
 
 	weight_modifier = {
 		factor = 0.50
@@ -329,10 +304,7 @@ tech_nanite_armor = {
 			has_monthly_income = { resource = nanites value < 1 }
 			resource_stockpile_compare = { resource = nanites value < 300 }
 		}
-		modifier = {
-			factor = @ap_technological_ascendancy_rare_tech
-			has_ascension_perk = ap_technological_ascendancy
-		}
+		modifier = { factor = @ap_technological_ascendancy_rare_tech has_ascension_perk = ap_technological_ascendancy }
 		modifier = {
 			factor = 1.25
 			research_leader = {

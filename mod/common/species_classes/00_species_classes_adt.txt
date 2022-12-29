@@ -168,7 +168,7 @@ MACHINE = {
 			"aqu_machine"
 		}
 	}
-	
+
 	custom_portraits = {
 		randomized = {
 			AND = {

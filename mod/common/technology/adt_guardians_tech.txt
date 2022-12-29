@@ -195,7 +195,7 @@ tech_scavenger_bot = {
 				exists = event_target:scavenger_bot_fleet
 			}
 		}
-		has_resource = { type = sr_living_metal amount > 0 }
+		has_country_resource = { type = sr_living_metal amount > 0 }
 	}
 	prereqfor_desc = {
 		ship = {

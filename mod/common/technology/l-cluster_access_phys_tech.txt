@@ -23,7 +23,7 @@ tech_lcluster_access = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		NOT = { has_global_flag = active_gray_goo }
-		has_resource = { type = nanites amount > 0 }
+		has_country_resource = { type = nanites amount > 0 }
 		OR = {
 			NOR = {
 				has_global_flag = distar_overhaul_mod_active
@@ -71,7 +71,7 @@ tech_lgate_construction = {
 	}
 	potential = {
 		has_global_flag = l_cluster_opened
-		has_resource = { type = nanites amount > 0 }
+		has_country_resource = { type = nanites amount > 0 }
 		OR = {
 			NOR = {
 				has_global_flag = distar_overhaul_mod_active
