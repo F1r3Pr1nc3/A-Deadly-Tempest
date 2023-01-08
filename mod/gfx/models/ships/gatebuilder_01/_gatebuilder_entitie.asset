@@ -196,7 +196,10 @@ entity = {
 entity = {
 	name = "gatebuilder_01_core_ship_entity"
 	default_state = "idle"
-	state = { name = "idle" animation = "idle" }
+	state = {
+		name = "idle"
+		# animation = "idle" FIXME
+	}
 
 	locator = { name = "boop"		position = { 0 -10 0 } rotation = { 0 0 0 } }
 	locator = { name = "boopu"		position = { 10 0 0 } rotation = { 0 0 90 } }

@@ -33,14 +33,14 @@ entity = {
 	locator = { name = "small_gun_04"	position = { 0 0 0 } }
 	scale = 0.6
 	default_state = "idle"
-	state = { name = "idle" animation = "idle"
+	state = { name = "idle"
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "top" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "bottom" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
 	}
-	state = { name = "death" animation = "death" looping = no
+	state = { name = "death" looping = no
 		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
 		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
 		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
@@ -83,14 +83,14 @@ entity = {
 	locator = { name = "small_gun_04"	position = { 0 0 0 } }
 	scale = 0.7
 	default_state = "idle"
-	state = { name = "idle" animation = "idle"
+	state = { name = "idle"
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "top" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "bottom" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
 	}
-	state = { name = "death" animation = "death" looping = no
+	state = { name = "death" looping = no
 		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
 		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
 		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
@@ -133,14 +133,14 @@ entity = {
 	locator = { name = "small_gun_04"	position = { 0 0 0 } }
 	scale = 0.8
 	default_state = "idle"
-	state = { name = "idle" animation = "idle"
+	state = { name = "idle"
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "top" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "bottom" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
 	}
-	state = { name = "death" animation = "death" looping = no
+	state = { name = "death" looping = no
 		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
 		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
 		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
@@ -184,14 +184,14 @@ entity = {
 	locator = { name = "small_gun_04"	position = { 0 0 0 } }
 	scale = 1
 	default_state = "idle"
-	state = { name = "idle" animation = "idle"
+	state = { name = "idle"
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "top" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "bottom" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
 	}
-	state = { name = "death" animation = "death" looping = no
+	state = { name = "death" looping = no
 		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
 		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
 		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
@@ -232,7 +232,7 @@ entity = {
 	locator = { name = "medium_gun_012"	position = {	8	14	-22	} }
 	locator = { name = "medium_gun_013"	position = {	0	25	0	} }
 	default_state = "idle"
-	state = { name = "idle"		animation = "idle"
+	state = { name = "idle"
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }

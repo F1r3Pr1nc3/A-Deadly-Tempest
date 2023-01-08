@@ -89,7 +89,7 @@ entity = {
 	get_state_from_parent = no
 
 	default_state = "idle"
-	state = { name = "idle" animation = "idle" }
+	state = { name = "idle" }
 
 	locator = { name = "root"				position = { 0		0  0 } rotation = { 0 0 90 } }
 	locator = { name = "slot1"				position = { 0		5  0 } rotation = { 0 0 90 } }
@@ -304,6 +304,3 @@ entity = {
 
 	cull_radius = 500
 }
-
-
-

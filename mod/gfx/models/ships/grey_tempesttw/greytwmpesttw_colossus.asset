@@ -24,7 +24,7 @@ entity = {
 
 	default_state = "idle"
 	# Actual idle state when being in idle/moving.
-	state = { name = "idle" animation = "idle" looping = no next_state = "idle" animation_blend_time = 5 }
+	state = { name = "idle" looping = no next_state = "idle" animation_blend_time = 5 }
 	# TODO check
 	locator = { name = "planet_killer_gun_01"	position = { 0 0 0 } rotation = { 0 0 0 } }
 
@@ -35,7 +35,7 @@ entity = {
 	name = "grey_tempesttw_colossusee_ship_entity"
 
 	default_state = "idle"
-	state = { name = "idle" animation = "idle" }
+	state = { name = "idle" }
 
 	locator = { name = "boop"	position = { 0 0 0 } rotation = { 0 0 0 } }
 	locator = { name = "boopa"	position = { 0 0 0 } rotation = { 0 0 45 }}
