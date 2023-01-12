@@ -1,6 +1,6 @@
 machine_01 = {
-	randomized = { has_synthethic_dawn = yes }
-	fallback = esgoo_01
+	randomized = { host_has_dlc = "Synthetic Dawn Story Pack" }
+	fallback = grey_tempesttw
 	ship_color = yes
 	ship_lighting = {
 		cam_light_1_dir = { 1.0 0.0 0.5 }

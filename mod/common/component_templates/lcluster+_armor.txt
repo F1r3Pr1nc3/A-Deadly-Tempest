@@ -1,20 +1,20 @@
-# Small
-@armor_nanite_8S = 220
-@s_t8_nanite_cost = 30
-@s_t8_nanite_upkeep_energy = 0.30
-@s_t8_nanite_upkeep_alloys = 0.054
+# # Small
+# @armor_nanite_8S = 220
+# @s_t8_nanite_cost = 30
+# @s_t8_nanite_upkeep_energy = 0.30
+# @s_t8_nanite_upkeep_alloys = 0.054
 
-# Medium
-@armor_nanite_8M = 565
-@m_t8_nanite_cost = 54
-@m_t8_nanite_upkeep_energy = 0.54
-@m_t8_nanite_upkeep_alloys = 0.1
+# # Medium
+# @armor_nanite_8M = 565
+# @m_t8_nanite_cost = 54
+# @m_t8_nanite_upkeep_energy = 0.54
+# @m_t8_nanite_upkeep_alloys = 0.1
 
-# Large
-@armor_nanite_8L = 1310
-@l_t8_nanite_cost = 110
-@l_t8_nanite_upkeep_energy = 1.10
-@l_t8_nanite_upkeep_alloys = 0.220
+# # Large
+# @armor_nanite_8L = 1310
+# @l_t8_nanite_cost = 110
+# @l_t8_nanite_upkeep_energy = 1.10
+# @l_t8_nanite_upkeep_alloys = 0.220
 
 # Nanite Armor
 utility_component_template = {

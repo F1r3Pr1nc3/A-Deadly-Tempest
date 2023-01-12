@@ -67,6 +67,6 @@ ESGO = {
 		}
 	}
 
-	graphical_culture = grey_tempesttw # esgoo_01
+	graphical_culture = grey_tempesttw
 	move_pop_sound_effect = "reptilian_pops_move" # "robot_pops_move" moving_pop_confirmation
 }

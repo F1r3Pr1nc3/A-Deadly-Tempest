@@ -1,0 +1,17 @@
+# Small
+@armor_nanite_8S = 330		# 220 v3.5
+@s_t8_nanite_cost = 30
+@s_t8_nanite_upkeep_energy = 0.30
+@s_t8_nanite_upkeep_alloys = 0.054
+
+# Medium
+@armor_nanite_8M = 840		# 565 v3.5
+@m_t8_nanite_cost = 54
+@m_t8_nanite_upkeep_energy = 0.54
+@m_t8_nanite_upkeep_alloys = 0.1
+
+# Large
+@armor_nanite_8L = 2000		# 1310 v3.5
+@l_t8_nanite_cost = 110
+@l_t8_nanite_upkeep_energy = 1.10
+@l_t8_nanite_upkeep_alloys = 0.220

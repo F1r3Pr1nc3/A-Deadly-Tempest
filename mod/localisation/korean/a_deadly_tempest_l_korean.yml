@@ -76,7 +76,7 @@
  NAME_Nanobot_colossus: "Nanite Colossus"
  NAME_shoal_Fleet: "Nanite Shoal"
  NANITE_ARMOR: "Nanite Armor"
- NANITE_ARMOR_DESC: "This armor made of nanites offers durability that outmatches any other armor."
+ NANITE_ARMOR_DESC: "This highly advanced armor made of nanites offers the capability of redirecting energy to minimize entropy and maximize stability and durability that surpasses most other armor."
  NANITE_BASE_BEAM: "Stationary $NANITE_BEAM$"
  NANITE_BASE_BEAM_DESC: "$NANITE_BEAM_DESC$"
  NANITE_BEAM: "Nanite Beam"

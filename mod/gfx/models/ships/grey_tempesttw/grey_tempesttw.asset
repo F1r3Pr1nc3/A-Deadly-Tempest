@@ -7,46 +7,57 @@ entity = {
 	name = "grey_tempesttw_turret_energy_torpedo_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_turret_torpedo_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_turret_missile_large_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_turret_missile_medium_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_turret_missile_small_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_large_kinetic_gun_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_medium_kinetic_gun_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_small_kinetic_gun_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_turret_point_defence_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_large_laser_gun_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_medium_laser_gun_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_small_laser_gun_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
@@ -100,6 +111,7 @@ entity = {
 	# 	event = { time = 4.1	node = "ship_main" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	# }
 }
+
 entity = {
 	name = "grey_tempesttw_corvette_M1S1_entity"
 	pdxmesh = "gatebuilder_01_strikecraft_mesh"
@@ -121,6 +133,7 @@ entity = {
 	}
 	state = { name = "death" chance = 1 looping = no state_time = 10 }
 }
+
 entity = {
 	name = "grey_tempesttw_corvette_S3_entity"
 	pdxmesh = "gatebuilder_01_strikecraft_mesh"
@@ -148,9 +161,9 @@ entity = {
 entity = {
 	name = "grey_tempesttw_destroyer_entity"
 	pdxmesh = "gatebuilder_01_ship_frame_mesh"
-	locator = { name = "part1" position = { 0 0 0 } rotation = { 0 0 90 } }
-	locator = { name = "part2" position = { 0 0 0 } rotation = { 0 0 90 } }
-	locator = { name = "part3" position = { 0 0 0 } rotation = { 0 0 90 } }
+	locator = { name = "part1" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "part2" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "part3" position = { 0 0 0 } rotation = { 0 0 0 } }
 	scale = 0.4
 	default_state = "idle"
 	state = { name = "idle"	 animation = "idle" animation_blend_time = 4
@@ -227,6 +240,7 @@ entity = {
 	}
 	state = { name = "death" chance = 1 looping = no state_time = 10 }
 }
+
 entity = {
 	name = "grey_tempesttw_destroyer_bow_M1S2_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -273,6 +287,7 @@ entity = {
 	}
 	state = { name = "death" chance = 1 looping = no state_time = 10 }
 }
+
 entity = {
 	name = "grey_tempesttw_destroyer_bow_S3_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -329,6 +344,7 @@ entity = {
 	locator = { name = "small_gun_03" position = { 0 7.416 -2.52 } rotation = { 0 0 0 } }
 	locator = { name = "small_gun_04" position = { 0 7.416 -2.52 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_destroyer_stern_M1_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -340,9 +356,13 @@ entity = {
 	name = "grey_tempesttw_cruiser_entity"
 	pdxmesh = "gatebuilder_01_ship_frame_mesh"
 	scale = 0.65
-	locator = { name = "part1" position = { 0 0 0 } rotation = { 0 0 180 } }
-	locator = { name = "part2" position = { 0 0 0 } rotation = { 0 0 180 } }
-	locator = { name = "part3" position = { 0 0 0 } rotation = { 0 0 180 } }
+	locator = { name = "part1" position = { 1.05 0 0 } rotation = { 0 0 30 } }
+	locator = { name = "part2" position = { 1.05 0 0 } rotation = { 0 0 30 } }
+	locator = { name = "part3" position = { 1.05 0 0 } rotation = { 0 0 30 } }
+	locator = { name = "root" position = { -1.05 0 0 } rotation = { 0 0 -30 } }
+	# attach = { "root" =  "gatebuilder_01_cruiser_section_entity" }
+	attach = { "root" =  "grey_tempesttw_corvette_SE_entity" }
+
 	locator = { name = "large_gun_02" position = { 0 0 0 } }
 	default_state = "idle"
 	state = { name = "idle"	 animation = "idle" animation_blend_time = 4
@@ -362,6 +382,7 @@ entity = {
 		event = { time = 4.1	node = "ship_main" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_cruiser_bow_L1_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -396,6 +417,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_cruiser_bow_M1S2_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -432,6 +454,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_cruiser_bow_M2_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -475,12 +498,14 @@ entity = {
 	locator = { name = "small_gun_02" position = { 0 -7.416 -1.62 } rotation = { 0 0 0 } }
 	locator = { name = "strike_craft_locator_01" position = { 0 0 0 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_cruiser_mid_L1M1_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
 	locator = { name = "large_gun_01" position = { 0 0 -1.62 } rotation = { 0 0 0 } }
 	locator = { name = "medium_gun_01" position = { 0 -4 -1.62 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_cruiser_mid_M3_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -488,6 +513,7 @@ entity = {
 	locator = { name = "medium_gun_02" position = { 0 -8.6 -1.52 } rotation = { 0 0 0 } }
 	locator = { name = "medium_gun_03" position = { 0 7.416 -1.52 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_cruiser_mid_M2S2_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -502,6 +528,7 @@ entity = {
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
 	locator = { name = "medium_gun_01" position = { 0 7.416 4.5 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_cruiser_stern_S2_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -571,6 +598,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_bow_L1S4_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -613,6 +641,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_bow_L2_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -655,6 +684,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_bow_M1S2SHB_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -698,6 +728,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_bow_M2S4_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -740,6 +771,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_bow_M3S2_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -782,6 +814,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_bow_XL1_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -859,6 +892,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_mid_L1M4_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -901,6 +935,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_mid_L2M2_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -943,6 +978,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_mid_L3_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -985,6 +1021,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_mid_M4SHB_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -1032,6 +1069,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_mid_S4LHB_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -1090,6 +1128,7 @@ locator = { name = "large_gun_01" position = { 0 -9.76 5.55 } rotation = { 0 0 0
 	locator = { name = "small_gun_03" position = { 0 10.24 -3.17 } rotation = { 0 0 0 } }
 	locator = { name = "small_gun_04" position = { 0 -10.24 -3.17 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_stern_M1S2_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -1103,6 +1142,7 @@ entity = {
 	locator = { name = "small_gun_03" position = { 0 10.24 -3.17 } rotation = { 0 0 0 } }
 	locator = { name = "small_gun_04" position = { 0 -10.24 -3.17 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_stern_M2_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -1116,6 +1156,7 @@ entity = {
 	locator = { name = "small_gun_03" position = { 0 10.24 -3.17 } rotation = { 0 0 0 } }
 	locator = { name = "small_gun_04" position = { 0 -10.24 -3.17 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_battleship_stern_S4_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -1133,12 +1174,18 @@ entity = {
 ##################			TITAN			########################
 entity = {
 	name = "grey_tempesttw_titan_entity"
-	pdxmesh = "gatebuilder_01_mothership_mesh"
-	# TODO positions
-	locator = { name = "part1"	position = { 0 0 0 } }
-	locator = { name = "part2"	position = { 0 0 0 } }
-	locator = { name = "part3"	position = { 0 0 0 } }
-	scale = 0.9
+	# pdxmesh = "gatebuilder_01_mothership_mesh"
+	pdxmesh = "gatebuilder_01_ship_frame_mesh"
+	# TODO positions?
+	locator = { name = "part1" position = { 0 0 0 } rotation = { 0 0 180 } }
+	locator = { name = "part2" position = { 0 0 0 } rotation = { 0 0 180 } }
+	locator = { name = "part3" position = { 0 0 0 } rotation = { 0 0 180 } }
+	locator = { name = "behindu" position = { 8.5 -9 0 } rotation = { 0 0 72 } scale = 0.8 }
+	locator = { name = "behinda" position = { -8.5 -9 0 } rotation = { 0 0 -72 } scale = 0.8 }
+	attach = { "behindu" =  "gatebuilder_01_mothership_section_entity" }
+	attach = { "behinda" =  "gatebuilder_01_mothership_section_entity" }
+
+	scale = 1
 	default_state = "idle"
 	state = { name = "idle"
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_titan_ship_hum_01" } }
@@ -1157,6 +1204,7 @@ entity = {
 		event = { time = 12.5	node = "ship_main" particle = "dreadnought_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "amb_titan_ship_death" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_titan_bow_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -1201,6 +1249,7 @@ entity = {
 		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_titan_mid_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -1238,6 +1287,7 @@ entity = {
 		event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_titan_death" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_titan_stern_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -1320,6 +1370,7 @@ entity = {
 		event = { time = 4.1	node = "ship_main" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_fe_escort_bow_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -1367,6 +1418,7 @@ entity = {
 	}
 	state = { name = "death" chance = 1 looping = no state_time = 10 }
 }
+
 entity = {
 	name = "grey_tempesttw_fe_escort_stern_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -1401,6 +1453,7 @@ entity = {
 		event = { time = 4.1	node = "ship_main" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_fe_battlecruiser_mid_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -1453,6 +1506,7 @@ entity = {
 		event = { time = 4.1	node = "explosion_locator6" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_fe_battlecruiser_bow_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -1467,6 +1521,7 @@ entity = {
 	locator = { name = "strike_craft_locator_01" rotation = { -90 0 0 } }
 	locator = { name = "strike_craft_locator_02" rotation = { 90 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_fe_battlecruiser_stern_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
@@ -1499,6 +1554,7 @@ entity = {
 	locator = { name = "part1" }
 	locator = { name = "explosion"	position = { 0 -15 -25 } }
 }
+
 entity = {
 	name = "grey_tempesttw_fe_titan_bow_entity"
 	pdxmesh = "gatebuilder_01_mothership_mesh"
@@ -1532,6 +1588,7 @@ entity = {
 		event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_titan_death" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_fe_titan_mid_entity"
 	pdxmesh = "locator_mesh"
@@ -1544,6 +1601,7 @@ entity = {
 	locator = { name = "strike_craft_locator_01" rotation = { -90 0 0 } }
 	locator = { name = "strike_craft_locator_02" rotation = { 90 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_fe_titan_hangar_entity"
 	pdxmesh = "locator_mesh"
@@ -1556,6 +1614,7 @@ entity = {
 	locator = { name = "strike_craft_locator_01" rotation = { -90 0 0 } }
 	locator = { name = "strike_craft_locator_02" rotation = { 90 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_fe_titan_stern_entity"
 	pdxmesh = "locator_mesh"
@@ -1643,6 +1702,7 @@ entity = {
 		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_fe_small_station_heavy_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -1653,6 +1713,7 @@ entity = {
 	locator = { name = "medium_gun_03" position = { 0 0 10.24 } rotation = { 0 0 0 } }
 	locator = { name = "medium_gun_04" position = { 0 0 -10.24 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_fe_small_station_medium_entity"
 	pdxmesh = "locator_mesh"
@@ -1663,6 +1724,7 @@ entity = {
 	locator = { name = "medium_gun_03" position = { 0 0 10.24 } rotation = { 0 0 0 } }
 	locator = { name = "medium_gun_04" position = { 0 0 -10.24 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_fe_large_station_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -1689,6 +1751,7 @@ entity = {
 		event = { time = 4.9 particle = "large_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_fe_large_station_xl_entity"
 	pdxmesh = "locator_mesh"
@@ -1704,6 +1767,7 @@ entity = {
 	locator = { name = "small_gun_03" position = { 0 1 15 } rotation = { 0 0 0 } }
 	locator = { name = "small_gun_04" position = { 0 1 -15 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_fe_large_station_heavy_entity"
 	pdxmesh = "locator_mesh"
@@ -1720,6 +1784,7 @@ entity = {
 	locator = { name = "small_gun_03" position = { 0 1 15 } rotation = { 0 0 0 } }
 	locator = { name = "small_gun_04" position = { 0 1 -15 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_fe_large_station_medium_entity"
 	pdxmesh = "locator_mesh"
@@ -1736,6 +1801,7 @@ entity = {
 	locator = { name = "small_gun_03" position = { 0 1 15 } rotation = { 0 0 0 } }
 	locator = { name = "small_gun_04" position = { 0 1 -15 } rotation = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_fe_large_station_pd_entity"
 	pdxmesh = "locator_mesh"
@@ -1762,11 +1828,13 @@ entity = {
 	pdxmesh = "gatebuilder_01_strikecraft_mesh"
 	scale = 0.8
 }
+
 entity = {
 	name = "grey_tempesttw_droppod_entity"
 	pdxmesh = "gatebuilder_01_strikecraft_mesh"
 	scale = 0.8
 }
+
 entity = {
 	name = "grey_tempesttw_fighter_entity"
 	pdxmesh = "gatebuilder_01_strikecraft_mesh"
@@ -1800,9 +1868,14 @@ entity = {
 		event = { time = 4.1	node = "ship_main" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_construction_ship_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "behindu"				position = { 0 0.25 1.5 } rotation = { 0 0 0 } scale = 12 }
+	attach = { "behindu" =  "gatebuilder_01_strikecraft_entity" }
+
 	scale = 0.3
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
@@ -1843,6 +1916,7 @@ entity = {
 		event = { time = 4.1	node = "cons_explosion_locator6" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_colonizer_entity"
 	pdxmesh = "gatebuilder_01_ship_frame_mesh"
@@ -1865,14 +1939,16 @@ entity = {
 		event = { time = 4.1	node = "ship_main" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_colony_ship_entity"
 	pdxmesh = "gatebuilder_01_cruiser_mesh"
+	# pdxmesh = "gatebuilder_01_ship_frame_mesh"
 	scale = 1.5
-	locator = { name = "behindu"				position = { 0	0  0 } rotation = { 0 0 90 } }
+	locator = { name = "behindu"				position = { 1.7	1 0 } rotation = { 0 0 60 } }
+	locator = { name = "behinda"				position = { -1.7	1  0 } rotation = { 0 0 -60 } }
 	attach = { "behindu" =  "grey_tempesttw_corvette_SE_entity" }
-	locator = { name = "behinda"				position = { 0	0  0 } rotation = { 0 0 90 } }
-	attach = { "behindu" =  "grey_tempesttw_corvette_SE_entity" }
+	attach = { "behinda" =  "grey_tempesttw_corvette_SE_entity" }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		event = { time = 0	node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
@@ -1912,10 +1988,11 @@ entity = {
 		event = { time = 4.1	node = "cons_explosion_locator6" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_science_entity"
 	pdxmesh = "gatebuilder_01_ship_frame_mesh"
-	locator = { name = "part1"	position = { 0 0 0 } rotation = { 0 0 90 }}
+	locator = { name = "part1"	position = { 0 0 0 } rotation = { 0 0 0 } }
 	default_state = "idle"
 	state = { name = "idle"	 animation = "idle" animation_blend_time = 4
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_corvette_hum" } }
@@ -1948,11 +2025,15 @@ entity = {
 	# 	event = { time = 4.1	node = "ship_main" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	# }
 }
+
 entity = {
 	name = "grey_tempesttw_science_ship_entity"
 	pdxmesh = "gatebuilder_01_strikecraft_mesh"
+	locator = { name = "behindu"				position = { 0 0 -0.01 } rotation = { 0 0 -45 } }
+	attach = { "behindu" =  "gatebuilder_01_strikecraft_entity" }
 	scale = 5.8
 }
+
 entity = {
 	name = "grey_tempesttw_transport_entity"
 	pdxmesh = "gatebuilder_01_ship_frame_mesh"
@@ -2077,6 +2158,7 @@ entity = {
 		event = { time = 4.9 particle = "large_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_orbital_station_core_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2109,25 +2191,30 @@ entity = {
 			event = { time = 0.0	node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_orbital_station_assemblyyard_section_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 	locator = { name = "strike_craft_locator_01"	position = { 0 0 0 } }
 	locator = { name = "root" position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_orbital_station_hangarbay_section_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 	locator = { name = "strike_craft_locator_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_orbital_station_refinery_section_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_orbital_station_science_section_entity"
 	locator = { name = "turret_muzzle_01"	position = { 0 0 0 } }
 }
+
 entity = {
 	name = "grey_tempesttw_military_station_small_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2198,6 +2285,7 @@ entity = {
 		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_military_station_section_heavy_entity"
 	pdxmesh = "locator_mesh"
@@ -2208,6 +2296,7 @@ entity = {
 		name = "root"
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_military_station_section_medium_entity"
 	pdxmesh = "locator_mesh"
@@ -2220,6 +2309,7 @@ entity = {
 		name = "root"
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_military_station_section_light_entity"
 	pdxmesh = "locator_mesh"
@@ -2232,6 +2322,7 @@ entity = {
 		name = "root"
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_mining_station_entity"
 	#pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2304,6 +2395,7 @@ entity = {
 		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_research_station_entity"
 	#pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2376,6 +2468,7 @@ entity = {
 		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_observation_station_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2444,6 +2537,7 @@ entity = {
 		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_terraform_station_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2512,6 +2606,7 @@ entity = {
 		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_wormhole_station_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2580,10 +2675,12 @@ entity = {
 		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
 	}
 }
+
 entity = {
 	name = "grey_tempesttw_orbital_station_habitat_section_entity"
 	pdxmesh = "fallen_empire_citadel_frame_mesh"
 }
+
 entity = {
 	name = "grey_tempesttw_orbital_habitat_entity"
 	pdxmesh = "locator_mesh"
@@ -2591,9 +2688,9 @@ entity = {
 	attach = { "slot1" = "greytempest_habitate_entity" }
 	attach = { "slot2" = "greytempest_habitate_entity" }
 	attach = { "root" = "grey_tempesttw_starbase_citadel_section_entity" }
-	locator = { name = "slot1"				position = { 0		0  0 } rotation = { 0 180 0 } }
-	locator = { name = "slot2"				position = { 0		20  0 } }
-	locator = { name = "root"				position = { 0		0  0 } }
+	locator = { name = "slot1"		position = { 0	0	0 } rotation = { 0 180 0 } }
+	locator = { name = "slot2"		position = { 0	20  0 } }
+	locator = { name = "root"		position = { 0	0	0 } }
 	default_state = "habitat_idle"
 	state = { name = "habitat_idle" looping = yes }
 	state = { name = "construction" looping = yes }
@@ -2612,16 +2709,19 @@ entity = {
 			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
 		}
 }
+
 entity = {
 	name = "grey_tempesttw_military_station_medium_construction_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
 	scale = 0.2
 }
+
 entity = {
 	name = "grey_tempesttw_military_station_small_construction_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
 	scale = 0.2
 }
+
 entity = {
 	name = "grey_tempesttw_orbital_station_construction_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2630,6 +2730,7 @@ entity = {
 			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
 		}
 }
+
 entity = {
 	name = "grey_tempesttw_mining_station_construction_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2639,6 +2740,7 @@ entity = {
 		}
 	scale = 1.0
 }
+
 entity = {
 	name = "grey_tempesttw_research_station_construction_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2648,6 +2750,7 @@ entity = {
 		}
 	scale = 1.0
 }
+
 entity = {
 	name = "grey_tempesttw_wormhole_station_construction_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2657,6 +2760,7 @@ entity = {
 		}
 	scale = 0.2
 }
+
 entity = {
 	name = "grey_tempesttw_terraform_station_construction_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
@@ -2666,6 +2770,7 @@ entity = {
 		}
 	scale = 1.0
 }
+
 entity = {
 	name = "grey_tempesttw_observation_station_construction_entity"
 	pdxmesh = "gatebuilder_01_space_station_mesh"
