@@ -1055,11 +1055,11 @@ ship_design = {
 		}
 		component = {
 			slot = "LARGE_UTILITY_13"
-			template = "LARGE_ESC_NANO_ARMOR_1"
+			template = "LARGE_NHSC_NANO_ARMOR_1"
 		}
 		component = {
 			slot = "LARGE_UTILITY_14"
-			template = "LARGE_ESC_NANO_ARMOR_1"
+			template = "LARGE_NHSC_NANO_ARMOR_1"
 		}
 		component = {
 			slot = "LARGE_UTILITY_15"

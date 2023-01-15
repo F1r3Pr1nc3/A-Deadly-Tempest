@@ -548,7 +548,7 @@ country_event = {
 
 	trigger = {
 		from = { is_country_type = gray }
-		is_same_value = event_target:gray_owner
+		is_same_empire = event_target:gray_owner
 		has_country_flag = gray_warship_active
 		NOR = {
 			has_country_flag = gray_reforming
@@ -556,7 +556,7 @@ country_event = {
 			has_country_flag = ban_commu_with_gray
 		}
 		exists = event_target:gray_warship
-		any_owned_fleet = { is_same_value = event_target:gray_warship }
+		any_controlled_fleet = { is_same_value = event_target:gray_warship }
 		event_target:gray_warship = { num_ships > 0 }
 	}
 
@@ -770,7 +770,7 @@ country_event = {
 	}
 }
 
-# Gray destroyed or disbanded
+# Gray destroyed or disbanded (on_monthly_pulse)
 event = {
 	id = graygoo.510
 	hide_window = yes

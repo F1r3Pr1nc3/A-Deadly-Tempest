@@ -6,7 +6,7 @@ create_gray_governor = {
 		remove_country_flag = gray_warship_active
 		# event_target:huifeng_leader_admiral = { kill_leader = { show_notification = no } }
 		event_target:huifeng_leader_admiral = { exile_leader_as = gray_admiral }
-		event_target:gray_warship_ship = { unassign_leader = leader delete_fleet = fleet }
+		event_target:gray_warship = { unassign_leader = leader delete_fleet = this }
 	}
 	if = {
 		limit = { has_country_flag = gray_army_active }
@@ -82,7 +82,7 @@ create_gray_warship = {
 	event_target:graygoo_country = {
 		if = {
 			limit = {
-				NOR  = {
+				NAND  = {
 					exists = event_target:huifeng_leader_admiral
 					any_owned_leader = { leader_class = admiral has_leader_flag = gray_admiral }
 				}
@@ -125,9 +125,7 @@ create_gray_warship = {
 					design = "NAME_Gray_Warship"
 					prefix = no
 					upgradable = yes
-					effect = {
-						save_global_event_target_as = gray_warship_ship
-					}
+					# effect = { save_global_event_target_as = gray_warship_ship }
 				}
 				set_fleet_flag = gray_fleet
 				save_global_event_target_as = gray_warship
@@ -241,7 +239,7 @@ create_gray_army = {
 		remove_country_flag = gray_warship_active
 		# event_target:huifeng_leader_admiral = { kill_leader = { show_notification = no } }
 		event_target:huifeng_leader_admiral = { exile_leader_as = gray_admiral }
-		event_target:gray_warship_ship = { unassign_leader = leader delete_fleet = fleet }
+		event_target:gray_warship = { unassign_leader = leader delete_fleet = this }
 	}
 
 }
