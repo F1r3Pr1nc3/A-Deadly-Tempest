@@ -22,15 +22,15 @@ tech_lcluster_access = {
 	}
 	potential = {
 		has_global_flag = l_cluster_opened
-		NOT = { has_global_flag = active_gray_goo }
+		NOT = { has_global_flag = gray_goo_crisis_active }
 		has_country_resource = { type = nanites amount > 0 }
-		OR = {
-			NOR = {
-				has_global_flag = distar_overhaul_mod_active
-				has_country_flag = distar_overhaul_insight_started_flag
-			}
-			has_country_flag = completed_nanite_technology_mastery_chain
-		}
+		# OR = {
+		# 	NOR = {
+		# 		has_global_flag = distar_overhaul_mod_active
+		# 		has_country_flag = distar_overhaul_insight_started_flag
+		# 	}
+		# 	has_country_flag = completed_nanite_technology_mastery_chain
+		# }
 		has_distar = yes
 	}
 	weight_modifier = {

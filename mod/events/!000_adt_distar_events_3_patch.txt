@@ -1248,7 +1248,7 @@ country_event = {
 		is_country_type_with_subjects = yes
 		NOR = {
 			has_country_flag = encountered_first_lgate
-			has_event_chain = "l_cluster_chain"
+			has_event_chain = l_cluster_chain
 		}
 		from = {
 			has_star_flag = lgate
@@ -1261,6 +1261,14 @@ country_event = {
 	}
 	option = {
 		name = INTRIGUING
-		start_lcluster_chain = yes
+		if = {
+			limit = {
+				NOR = {
+					has_event_chain = l_cluster_chain
+					has_completed_event_chain_counter = { event_chain = l_cluster_chain counter = clues }
+				}
+			}
+			start_lcluster_chain = yes
+		}
 	}
 }
