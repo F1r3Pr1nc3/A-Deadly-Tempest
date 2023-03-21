@@ -29,12 +29,7 @@ event = {
 				any_system_colony = {
 					exists = owner
 					has_ground_combat = no
-					owner = {
-						OR = {
-							is_country_type = default
-							is_fallen_empire = yes
-						}
-					}
+					owner = { merg_is_standard_empire = yes }
 					solar_system = {
 						NOR = {
 							any_fleet_in_system = {
@@ -62,10 +57,7 @@ event = {
 								NOT = { is_planet = prevprev }
 								owner = {
 									NOT = { is_same_empire = prevprevprev.owner }
-									OR = {
-										is_country_type = default
-										is_fallen_empire = yes
-									}
+									merg_is_standard_empire = yes
 									OR = {
 										is_hostile = prevprevprev.owner
 										is_at_war_with = prevprevprev.owner
@@ -101,10 +93,7 @@ event = {
 											is_same_empire = prevprevprev.owner
 											has_country_flag = former_owner@prev
 										}
-										OR = {
-											is_country_type = default
-											is_fallen_empire = yes
-										}
+										merg_is_standard_empire = yes
 									}
 									NAND = {
 										exists = controller
@@ -120,12 +109,7 @@ event = {
 				limit = {
 					exists = owner
 					has_ground_combat = no
-					owner = {
-						OR = {
-							is_country_type = default
-							is_fallen_empire = yes
-						}
-					}
+					owner = { merg_is_standard_empire = yes }
 					solar_system = {
 						NOR = {
 							any_fleet_in_system = {
@@ -153,10 +137,7 @@ event = {
 								NOT = { is_planet = prevprev }
 								owner = {
 									NOT = { is_same_empire = prevprevprev.owner }
-									OR = {
-										is_country_type = default
-										is_fallen_empire = yes
-									}
+									merg_is_standard_empire = yes
 									OR = {
 										is_hostile = prevprevprev.owner
 										is_at_war_with = prevprevprev.owner
@@ -192,10 +173,7 @@ event = {
 											is_same_empire = prevprevprev.owner
 											has_country_flag = former_owner@prev
 										}
-										OR = {
-											is_country_type = default
-											is_fallen_empire = yes
-										}
+										merg_is_standard_empire = yes
 									}
 									NAND = {
 										exists = controller

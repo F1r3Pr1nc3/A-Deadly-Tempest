@@ -21,7 +21,7 @@ building_nanite_plant_1 = {
 			NOT = { exists = owner }
 			owner = { has_civic = civic_machine_nanites_culture } # Twinks comp.
 			AND = {
-				is_planet_class = pc_city
+				merg_is_arcology = yes
 				owner = {
 					# Need to check nanites income to make sure that the AI has built a couple of plants on the new city world.
 					is_ai = yes
@@ -95,7 +95,7 @@ building_nanite_plant_2 = {
 			NOT = { exists = owner }
 			owner = { has_civic = civic_machine_nanites_culture } # Twinks comp.
 			AND = {
-				is_planet_class = pc_city
+				merg_is_arcology = yes
 				owner = {
 					# Need to check nanites income to make sure that the AI has built a couple of plants on the new city world.
 					is_ai = yes
@@ -174,7 +174,7 @@ building_nanite_plant_3 = {
 			NOT = { exists = owner }
 			owner = { has_civic = civic_machine_nanites_culture } # Twinks comp.
 			AND = {
-				is_planet_class = pc_city
+				merg_is_arcology = yes
 				owner = {
 					# Need to check nanites income to make sure that the AI has built a couple of plants on the new city world.
 					is_ai = yes

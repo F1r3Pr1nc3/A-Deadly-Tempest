@@ -7,8 +7,8 @@
    id="svg1847"
    sodipodi:docname="ADT logo.svg"
    enable-background="new"
-   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
-   inkscape:export-filename="..\..\..\ADT.mod\workshop\ADT_thumb\ADT logo3.6.0.png"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:export-filename="..\..\..\ADT.mod\workshop\ADT_thumb\ADT logo3.7.1.png"
    inkscape:export-xdpi="25.6"
    inkscape:export-ydpi="25.6"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -44,7 +44,7 @@
      id="namedview1849"
      showgrid="false"
      inkscape:zoom="0.16542435"
-     inkscape:cx="217.62213"
+     inkscape:cx="223.66719"
      inkscape:cy="1592.8731"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
@@ -87,10 +87,10 @@
     </filter>
     <filter
        id="e"
-       x="-0.010205666"
-       y="-0.01026379"
-       width="1.0201207"
-       height="1.0202125"
+       x="-0.010461338"
+       y="-0.01052242"
+       width="1.0206248"
+       height="1.0207218"
        color-interpolation-filters="sRGB">
       <feGaussianBlur
          stdDeviation="0.16120536"
@@ -299,7 +299,7 @@
            y="-19"
            font-size="29.36px"
            font-weight="bold"><tspan
-             id="tspan1768">3.6.⠀</tspan></text>
+             id="tspan1768">3.7.⠀</tspan></text>
       </g>
     </g>
     <use

@@ -205,8 +205,9 @@ entity = {
 		event = { time = 1.4 node = "bombardment_location_11" particle = "katzen_bombardment_effect" keep_particle = yes sound = { soundeffect = "bombardment_explosion" } }
 		event = { time = 1.5 node = "bombardment_location_15" particle = "katzen_bombardment_effect" keep_particle = yes sound = { soundeffect = "bombardment_explosion" } }
 	}
-	# ACOT
+
 	############# ENIG PUNISHMENT #############
+	# ACOT
 	state = { name = "bombard_punishment" state_time = 2.5 looping = no next_state = "bombard_punishment" chance = 1
 		event = { time = 0 node = "bombardment_location_1" particle = "acot_planetary_bombardment_dm_effect" keep_particle = yes sound = { soundeffect = "bombardment_ae" } }
 		event = { time = 0.33 node = "bombardment_location_2" particle = "acot_planetary_bombardment_dm_effect" keep_particle = yes sound = { soundeffect = "bombardment_ae" } }

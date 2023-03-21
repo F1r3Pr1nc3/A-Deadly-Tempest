@@ -1,7 +1,7 @@
 decision_open_lcluster = {
 	resources = {
 		category = artifact_actions
-		cost = { minor_artifacts = 1 }
+		cost = { minor_artifacts = 10 }
 	}
 	potential = {
 		NOT = { has_global_flag = lgates_activated_globally }
@@ -29,7 +29,7 @@ decision_open_lcluster = {
 decision_close_lcluster = {
 	resources = {
 		category = artifact_actions
-		cost = { minor_artifacts = 2 }
+		cost = { minor_artifacts = 20 }
 	}
 	potential = {
 		has_global_flag = lgates_activated_globally
@@ -84,7 +84,7 @@ decision_close_lcluster = {
 artifact_lgate_clue = {
 	resources = {
 		category = artifact_actions
-		cost = { minor_artifacts = 40 } # 50
+		cost = { minor_artifacts = 400 }
 	}
 	potential = {
 		has_country_flag = encountered_first_lgate
@@ -110,7 +110,7 @@ artifact_lgate_clue = {
 			factor = 0
 			OR = {
 				mid_game_years_passed < 0
-				has_country_resource = { type = minor_artifacts amount < 45 }
+				has_country_resource = { type = minor_artifacts amount < 450 }
 			}
 		}
 	}

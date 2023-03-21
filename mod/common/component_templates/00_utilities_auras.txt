@@ -337,6 +337,56 @@ utility_component_template = {
 	}
 }
 
+utility_component_template = { #Archaeo Detection Scrambler
+	key = "SHIP_AURA_DETECTION_SCRAMBLER"
+	size = medium
+	icon = "GFX_ship_part_aura_detection_scrambler"
+	icon_frame = 1
+	power = 0
+
+	resources = {
+		category = ship_components
+		cost = {
+			minor_artifacts = @minor_artifacts_cost_xl
+		}
+	}
+
+	size_restriction = { titan }
+	component_set = "ship_aura_components"
+
+	friendly_aura = {
+		name = "aura_detection_scrambler"
+		radius = @shipAuraRange
+		apply_on = ships
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = friendly_detection_scrambler
+			priority = 20
+		}
+
+		modifier = { #This Archaeo component doesn't get bonus effect from the AP
+			ship_evasion_add = 5
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	prerequisites = { "tech_archaeo_detection_scrambler" }
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
 ##################
 # Hostile Auras
 ##################

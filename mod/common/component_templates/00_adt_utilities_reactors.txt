@@ -81,7 +81,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { titan graygoo_mothership scavenger_bot dreadnought }
+	size_restriction = { titan payback_warship graygoo_mothership scavenger_bot dreadnought }
 	upgrades_to = "TITAN_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -277,7 +277,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { titan graygoo_mothership scavenger_bot dreadnought }
+	size_restriction = { titan payback_warship graygoo_mothership scavenger_bot dreadnought }
 	upgrades_to = "TITAN_GRAVITON_REACTOR"
 
 	ai_weight = {

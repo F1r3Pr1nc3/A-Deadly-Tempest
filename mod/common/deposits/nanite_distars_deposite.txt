@@ -17,6 +17,10 @@ d_nanites_deposit = {
 		produces = {
 			nanites = 1
 		}
+		upkeep = {
+			energy = 4
+			alloys = 2
+		}
 	}
 
 	planet_modifier = {
@@ -37,7 +41,7 @@ d_nanites_deposit = {
 	drop_weight = {
 		weight = 2
 		modifier = {
-			weight = 5
+			add = 3
 			solar_system = { has_star_flag = lcluster }
 			is_star = no
 			is_colonizable = no

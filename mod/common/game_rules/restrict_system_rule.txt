@@ -7,33 +7,58 @@ ai_should_restrict_system = {
 		AND = {
 			root = {
 				OR = {
-					is_crisis_faction = yes
-					has_country_flag = pike_assisted_ai
+					merg_is_fallen_empire = yes
+					is_country_type = caravaneer_fleet
+					is_country_type = eternal_empire # Twinks Eternal Empire
 				}
 			}
-			has_star_flag = pike_star_flag_banned_system
-		}
-		AND = {
-			root = { merg_is_fallen_empire = yes }
 			exists = owner
-			owner = { is_country_type = awakened_marauders }
+			owner = {
+				OR = {
+					is_country_type = awakened_marauders
+					is_country_type = dormant_marauders # Ariphaos Patch
+					# is_country_type = awakened_marauders_ev # The Empty Vagrant
+				}
+			}
 		}
 		AND = {
-			root = { is_country_type = awakened_marauders }
+			root = {
+				OR = {
+					is_country_type = caravaneer_fleet
+					is_country_type = awakened_marauders
+					is_country_type = marauder_raiders # Ariphaos Patch
+					# is_country_type = awakened_marauders_ev # The Empty Vagrant
+				}
+			}
 			exists = owner
 			owner = { merg_is_fallen_empire = yes }
 		}
+		# Spaceborne Civs Expanded
 		AND = {
 			root = {
 				OR = {
 					merg_is_fallen_empire = yes
 					is_country_type = awakened_marauders
+					is_country_type = marauder_raiders
+					is_country_type = caravaneer_fleet
+					# is_country_type = awakened_marauders_ev # The Empty Vagrant
 				}
 			}
-			has_star_flag = guardian
+			OR = {
+				has_star_flag = guardian
+				has_star_flag = crystal_home_system
+				has_star_flag = amoeba_home_system
+				has_star_flag = drone_home_system
+			}
 			any_fleet_in_system = {
 				exists = owner
-				owner = { is_guardian_country = yes }
+				owner = {
+					is_guardian_country = yes
+					is_country_type = crystal
+					is_country_type = amoeba
+					is_country_type = amoeba_garrison
+					is_country_type = drone
+				}
 			}
 		}
 		AND = {
@@ -49,7 +74,34 @@ ai_should_restrict_system = {
 				owner = { is_country_type = guardian_fortress }
 			}
 		}
-		AND = { # Comp. GIGA mod
+		# SirBlackAxe's Unofficial Bug Patch
+		AND = {
+			root = {
+				OR = {
+					merg_is_fallen_empire = yes
+					is_country_type = marauder_raiders
+					is_country_type = caravaneer_fleet
+				}
+			}
+			OR = {
+				has_star_flag = lgate
+				has_star_flag = lcluster
+			}
+			has_global_flag = gray_goo_crisis_active
+		}
+		AND = {
+			root = {
+				merg_is_default_empire = yes
+				fleet_power < 30000
+			}
+			OR = {
+				has_star_flag = lgate
+				has_star_flag = lcluster
+			}
+			has_global_flag = gray_goo_crisis_active
+		}
+		# Gigastructural Engineering & More
+		AND = {
 			has_global_flag = gigastructures_enabled
 			NOT = { has_global_flag = katzenartig_imperium_happened }
 			OR = {
@@ -59,10 +111,28 @@ ai_should_restrict_system = {
 				has_global_flag = katzenartig_improbable
 			}
 			has_star_flag = flusion_system
+			exists = event_target:gigaflusion
 			event_target:gigaflusion = {
 				exists = owner
 				owner = { is_country_type = primitive }
 			}
+		}
+		# ACOT
+		AND = {
+			has_global_flag = acot_activated
+			root = { merg_is_default_empire = yes }
+			exists = owner
+			owner = { is_progenitor_empires = yes }
+		}
+		# General restriction flag (introduced by OldEnt, used by A Deadly Tempest)
+		AND = {
+			root = {
+				OR = {
+					is_crisis_faction = yes
+					has_country_flag = pike_assisted_ai
+				}
+			}
+			has_star_flag = pike_star_flag_banned_system
 		}
 	}
 }

@@ -472,22 +472,22 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
-ship_event = {
-	id = tutorial.50
-	hide_window = yes
-	fire_only_once = yes
-	is_triggered_only = yes
-	is_test_event = yes
-	trigger = { always = no }
-}
-country_event = {
-	id = tutorial.51
-	hide_window = yes
-	fire_only_once = yes
-	is_triggered_only = yes
-	is_test_event = yes
-	trigger = { always = no }
-}
+# ship_event = {
+# 	id = tutorial.50
+# 	hide_window = yes
+# 	fire_only_once = yes
+# 	is_triggered_only = yes
+# 	is_test_event = yes
+# 	trigger = { always = no }
+# }
+# country_event = {
+# 	id = tutorial.51
+# 	hide_window = yes
+# 	fire_only_once = yes
+# 	is_triggered_only = yes
+# 	is_test_event = yes
+# 	trigger = { always = no }
+# }
 ship_event = {
 	id = tutorial.52
 	hide_window = yes
@@ -752,7 +752,6 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
-
 country_event = {
 	id = tutorial.2100
 	hide_window = yes
@@ -761,7 +760,6 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
-
 country_event = {
 	id = tutorial.2105
 	hide_window = yes
@@ -770,7 +768,6 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
-
 country_event = {
 	id = tutorial.2110
 	hide_window = yes
@@ -787,7 +784,6 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
-
 country_event = {
 	id = tutorial.2115
 	hide_window = yes
@@ -796,7 +792,6 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
-
 country_event = {
 	id = tutorial.2120
 	hide_window = yes
@@ -805,7 +800,6 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
-
 country_event = {
 	id = tutorial.2121
 	hide_window = yes
@@ -814,7 +808,6 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
-
 country_event = {
 	id = tutorial.2125
 	hide_window = yes
@@ -831,7 +824,6 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
-
 country_event = {
 	id = tutorial.2130
 	hide_window = yes
@@ -842,6 +834,49 @@ country_event = {
 }
 country_event = {
 	id = tutorial.2131
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+}
+############################################
+# "First Contact" TUTORIALS & ADVISOR TIPS #
+############################################
+ship_event = {
+	id = tutorial.2140
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+}
+ship_event = {
+	id = tutorial.2145
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.2150
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.2500
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.2550
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes

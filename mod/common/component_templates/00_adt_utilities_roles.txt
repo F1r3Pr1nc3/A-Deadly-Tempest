@@ -3,8 +3,7 @@
 @cost0 = 0
 @cost1 = 5
 @cost2 = 10
-@cost3 = 15
-@cost4 = 20
+@cost3 = 20
 @power0 = -5
 @power1 = -10
 @power2 = -15
@@ -47,7 +46,7 @@
 # 	power = @power3
 # 	resources = {
 # 		category = ship_components
-# 		cost = { alloys = @cost4 }
+# 		cost = { alloys = @cost3 }
 # 	}
 # 	class_restriction = {
 # 		shipclass_military
@@ -96,33 +95,33 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost4 }
+		cost = { alloys = @cost3 }
 	}
 	class_restriction = { shipclass_military }
 	size_restriction = {
-		corvette
-		destroyer
-		cruiser
-		battleship
-		titan
-		crisis_destroyer
-		crisis_cruiser
-		offspring_corvette
-		offspring_destroyer
-		offspring_cruiser
-		offspring_battleship
-		galleon
-		pirate_cruiser
-		pirate_destroyer
-		marauder_destroyer
-		marauder_galleon
-		StrikeCruiser
-		Battlecruiser
-		Carrier
-		Dreadnought
-		Flagship
-		explorationship
-		graygoo_interdictor
+		# corvette
+		# destroyer
+		# cruiser
+		# battleship
+		# titan
+		# crisis_destroyer
+		# crisis_cruiser
+		# offspring_corvette
+		# offspring_destroyer
+		# offspring_cruiser
+		# offspring_battleship
+		# galleon
+		# pirate_cruiser
+		# pirate_destroyer
+		# marauder_destroyer
+		# marauder_galleon
+		# StrikeCruiser
+		# Battlecruiser
+		# Carrier
+		# Dreadnought
+		# Flagship
+		# explorationship
+		# graygoo_interdictor
 	}
 	component_set = "combat_computers"
 	ship_behavior = "line"
@@ -144,34 +143,34 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost4 }
+		cost = { alloys = @cost3 }
 	}
 	class_restriction = { shipclass_military }
 	size_restriction = {
-		corvette
-		destroyer
-		cruiser
-		battleship
-		titan
-		crisis_destroyer
-		crisis_cruiser
-		offspring_corvette
-		offspring_destroyer
-		offspring_cruiser
-		offspring_battleship
-		galleon
-		pirate_destroyer
-		pirate_cruiser
-		marauder_destroyer
-		marauder_cruiser
-		marauder_galleon
-		StrikeCruiser
-		Battlecruiser
-		Carrier
-		Dreadnought
-		Flagship
-		explorationship
-		graygoo_interdictor
+		# corvette
+		# destroyer
+		# cruiser
+		# battleship
+		# titan
+		# crisis_destroyer
+		# crisis_cruiser
+		# offspring_corvette
+		# offspring_destroyer
+		# offspring_cruiser
+		# offspring_battleship
+		# galleon
+		# pirate_destroyer
+		# pirate_cruiser
+		# marauder_destroyer
+		# marauder_cruiser
+		# marauder_galleon
+		# StrikeCruiser
+		# Battlecruiser
+		# Carrier
+		# Dreadnought
+		# Flagship
+		# explorationship
+		# graygoo_interdictor
 	}
 	component_set = "combat_computers"
 	ship_behavior = "line"
@@ -202,7 +201,7 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost4 }
+		cost = { alloys = @cost3 }
 	}
 	class_restriction = {
 		shipclass_military
@@ -210,34 +209,31 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		frigate
-		destroyer
-		cruiser
-		battleship
-		titan
-		juggernaut
-		galleon
-		crisis_destroyer
-		crisis_cruiser
-		star_eater
-		offspring_destroyer
-		offspring_cruiser
-		offspring_battleship
-		dreadnought
-		scavenger_bot
-		pirate_destroyer
-		pirate_cruiser
-		marauder_destroyer
-		marauder_cruiser
-		marauder_galleon
+		# frigate
+		# destroyer
+		# cruiser
+		# battleship
+		# titan
+		# juggernaut
+		# galleon
+		# crisis_destroyer
+		# crisis_cruiser
+		# star_eater
+		# offspring_destroyer
+		# offspring_cruiser
+		# offspring_battleship
+		# dreadnought
+		# scavenger_bot
+		# pirate_destroyer
+		# pirate_cruiser
+		# marauder_destroyer
+		# marauder_cruiser
+		# marauder_galleon
 	}
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_combat_computers_3" }
-	ai_tags = {
-		artillery
-		energy_torpedoes
-	}
+	ai_tags = { artillery artillery_stealth energy_torpedoes energy_torpedoes_stealth }
 	ai_tag_weight = 0
 	ship_modifier = {
 		ship_fire_rate_mult = 0.2
@@ -265,7 +261,7 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost4 }
+		cost = { alloys = @cost3 }
 	}
 	class_restriction = {
 		shipclass_military
@@ -273,42 +269,39 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		frigate
-		corvette
-		destroyer
-		cruiser
-		battleship
-		juggernaut
-		titan
-		galleon
-		crisis_destroyer
-		crisis_cruiser
-		star_eater
-		offspring_corvette
-		offspring_destroyer
-		offspring_cruiser
-		offspring_battleship
-		dreadnought
-		scavenger_bot
-		pirate_destroyer
-		pirate_cruiser
-		marauder_cruiser
-		marauder_destroyer
-		marauder_galleon
-		StrikeCruiser
-		Battlecruiser
-		Carrier
-		Dreadnought
-		Flagship
-		explorationship
+		# frigate
+		# corvette
+		# destroyer
+		# cruiser
+		# battleship
+		# juggernaut
+		# titan
+		# galleon
+		# crisis_destroyer
+		# crisis_cruiser
+		# star_eater
+		# offspring_corvette
+		# offspring_destroyer
+		# offspring_cruiser
+		# offspring_battleship
+		# dreadnought
+		# scavenger_bot
+		# pirate_destroyer
+		# pirate_cruiser
+		# marauder_cruiser
+		# marauder_destroyer
+		# marauder_galleon
+		# StrikeCruiser
+		# Battlecruiser
+		# Carrier
+		# Dreadnought
+		# Flagship
+		# explorationship
 	}
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_combat_computers_autonomous" }
-	ai_tags = {
-		artillery
-		energy_torpedoes
-	}
+	ai_tags = { artillery artillery_stealth energy_torpedoes energy_torpedoes_stealth }
 	ai_tag_weight = 0
 	ship_modifier = {
 		ship_fire_rate_mult = @fire_rate3
@@ -325,7 +318,7 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost4 }
+		cost = { alloys = @cost3 }
 	}
 	class_restriction = {
 		shipclass_military
@@ -333,34 +326,34 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		frigate
-		corvette
-		destroyer
-		cruiser
-		battleship
-		juggernaut
-		titan
-		galleon
-		crisis_destroyer
-		crisis_cruiser
-		star_eater
-		offspring_corvette
-		offspring_destroyer
-		offspring_cruiser
-		offspring_battleship
-		dreadnought
-		scavenger_bot
-		pirate_destroyer
-		pirate_cruiser
-		marauder_destroyer
-		marauder_cruiser
-		marauder_galleon
-		StrikeCruiser
-		Battlecruiser
-		Carrier
-		Dreadnought
-		Flagship
-		explorationship
+		# frigate
+		# corvette
+		# destroyer
+		# cruiser
+		# battleship
+		# juggernaut
+		# titan
+		# galleon
+		# crisis_destroyer
+		# crisis_cruiser
+		# star_eater
+		# offspring_corvette
+		# offspring_destroyer
+		# offspring_cruiser
+		# offspring_battleship
+		# dreadnought
+		# scavenger_bot
+		# pirate_destroyer
+		# pirate_cruiser
+		# marauder_destroyer
+		# marauder_cruiser
+		# marauder_galleon
+		# StrikeCruiser
+		# Battlecruiser
+		# Carrier
+		# Dreadnought
+		# Flagship
+		# explorationship
 	}
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
@@ -394,7 +387,7 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost4 }
+		cost = { alloys = @cost3 }
 	}
 	class_restriction = {
 		shipclass_military
@@ -402,23 +395,23 @@ utility_component_template = {
 		shipclass_military_special
 	}
 	size_restriction = {
-		cruiser
-		battleship
-		juggernaut
-		titan
-		galleon
-		crisis_cruiser
-		star_eater
-		offspring_cruiser
-		offspring_battleship
-		dreadnought
-		scavenger_bot
-		pirate_cruiser
-		marauder_cruiser
-		marauder_galleon
-		Carrier
-		Flagship
-		explorationship
+		# cruiser
+		# battleship
+		# juggernaut
+		# titan
+		# galleon
+		# crisis_cruiser
+		# star_eater
+		# offspring_cruiser
+		# offspring_battleship
+		# dreadnought
+		# scavenger_bot
+		# pirate_cruiser
+		# marauder_cruiser
+		# marauder_galleon
+		# Carrier
+		# Flagship
+		# explorationship
 	}
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
@@ -437,7 +430,7 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost4 }
+		cost = { alloys = @cost3 }
 	}
 	class_restriction = {
 		shipclass_military

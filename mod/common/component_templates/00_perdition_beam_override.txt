@@ -13,7 +13,7 @@ weapon_component_template = {
 	icon_frame = 1
 
 	firing_arc = 10.0
-	min_range = 30.0
+	min_range = 20.0
 	use_ship_kill_target = no
 
 	tags = { weapon_type_energy }
@@ -23,6 +23,7 @@ weapon_component_template = {
 	projectile_gfx = "perdition_beam"
 	size_restriction = {
 		titan
+		ion_cannon
 		colossus
 		graygoo_mothership
 		scavenger_bot
@@ -40,7 +41,16 @@ weapon_component_template = {
 		}
 	}
 
+	target_weights = {
+		titan = 3
+		battleship = 2
+	}
+
 	ai_weight = {
 		weight = 1
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = rare_crystals }
+		}
 	}
 }

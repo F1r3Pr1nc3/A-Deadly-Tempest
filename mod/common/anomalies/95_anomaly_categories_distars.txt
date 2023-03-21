@@ -6,7 +6,7 @@
 # 	max_once = yes
 # 	spawn_chance = {
 # 		modifier = {
-# 			add = 6
+# 			add = 8
 # 			is_planet_class = pc_gray_goo
 # 			solar_system = { has_star_flag = lcluster }
 # 		}
@@ -19,6 +19,12 @@
 # 		# 	}
 # 		# }
 # 	}
+#	on_spawn = {
+#		if = {
+#			limit = { exists = from exists = from.owner }
+#			from.owner = { set_country_flag = disco_gray }
+#		}
+#	}
 # 	on_success = graygoo.400
 # }
 transmitter_cat = {
@@ -65,17 +71,21 @@ corrupt_data_cat = {
 			add = 3
 			has_distar = yes
 			habitable_planet = yes
-			is_under_colonization = no
-			has_anomaly = no # Vanilla fix
-			NAND = {
-				exists = archaeological_site # Vanilla fix
-				archaeological_site = { is_site_completed = no }
-			}
-			NOR = {
+			has_anomaly = no # Vanilla improvement?
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_moon = yes
+				is_under_colonization = yes
 				solar_system = { has_star_flag = empire_cluster }
 				is_planet_class = pc_gaia
 				has_deposit = d_betharian_deposit
 				has_deposit = d_alien_pets_deposit
+				AND = {
+					exists = archaeological_site
+					archaeological_site = { is_site_completed = no } # Vanilla improvement
+				}
 			}
 		}
 	}
