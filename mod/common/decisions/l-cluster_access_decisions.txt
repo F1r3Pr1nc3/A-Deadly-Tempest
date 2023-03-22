@@ -74,7 +74,7 @@ decision_close_lcluster = {
 		custom_tooltip = {
 			fail_text = "lcluster_policy_cannot_set_name"
 			# has_global_flag = lgates_activated_globally
-			NOR = {
+			NOT = {
 				has_modifier = "artifact_lgate_insight_cooldown"
 			}
 			owner = { controls_lcluster = yes }

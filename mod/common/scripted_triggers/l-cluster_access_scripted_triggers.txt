@@ -20,5 +20,14 @@ controls_lcluster = {
 		has_star_flag = lcluster1
 	}
 	has_technology = tech_lcluster_access
-	NOT = { has_global_flag = active_gray_goo }
+	OR = {
+		NOT = { has_global_flag = active_gray_goo }
+		AND = { # L-Cluster PLus
+			has_global_flag = l_cluster_origin
+			OR = {
+				has_origin = origin_lclusterplus_gatebuilders
+				has_origin = origin_lclusterplus_gatebuilders_advanced
+			}
+		}
+	}
 }

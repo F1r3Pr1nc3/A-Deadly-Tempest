@@ -1,0 +1,130 @@
+
+entity = {
+	name = "greytempest_mining_beam_entity"
+	locator = { name = "root" position = { 0 -20 0 } }
+	default_state = "idle"
+	state = { name = "idle"
+		# animation = "idle" animation_speed = 0.7 FIXME
+	start_event = { node = "root" particle = "mega_art_core_effect" keep_particle = yes trigger_once = yes }
+	#start_event = { node = "effect_1" particle = "interstellar_assembly_effect" keep_particle = yes trigger_once = yes }
+	}
+	scale = 4.5
+}
+
+entity = {
+	name = "greytempest_science_beam_entity"
+	state = { name = "idle"
+		# animation = "idle" animation_speed = 0.7  FIXME
+	}
+	locator = { name = "root" position = { 0 -7 0 } rotation = { 0 180 0 } }
+	attach = { "root" = "mega_art_instution_01_core_effect_entity" }
+	scale = 4.5
+}
+
+entity = {
+	name = "greytempest_mining_station"
+	locator = { name = "root" position = { 0 0 0 } rotation = { 90 90 30 } }
+	attach = { "root" = "greytempest_mininge_station" }
+	scale = 1.0
+}
+
+entity = {
+	name = "greytempest_mininge_station"
+	locator = { name = "behind"		position = { 0	0 0 } rotation = { 0 0 0 } }
+	locator = { name = "behindu"	position = { 0	0 0 } rotation = { 0 0 90 } }
+	locator = { name = "behinda"	position = { 0	0 0 } rotation = { 0 0 -90 } }
+	locator = { name = "behindb"	position = { 0	0 0 } rotation = { 0 0 180 } }
+	attach = { "behind" = "grey_tempesttw_corvette_SE_entity" }
+	attach = { "behindu" = "grey_tempesttw_corvette_SE_entity" }
+	attach = { "behinda" = "grey_tempesttw_corvette_SE_entity" }
+	attach = { "behindb" = "grey_tempesttw_corvette_SE_entity" }
+	scale = 1.0
+}
+
+entity = {
+	name = "greytempest_ion_cannon_station"
+	locator = { name = "behind"		position = { 0	0 0 } rotation = { 0 0 0 } }
+	locator = { name = "behinda"	position = { 0	0 0 } rotation = { 0 90 0 } }
+	locator = { name = "behindb"	position = { 0	0 0 } rotation = { 0 -90 0 } }
+	locator = { name = "behindc"	position = { 0	0 0 } rotation = { 0 180 0 } }
+	locator = { name = "behindd"	position = { 0	0 0 } rotation = { 0 90 90 } }
+	attach = { "behind" = "grey_tempesttw_corvette_SE_entity" }
+	attach = { "behinda" = "grey_tempesttw_corvette_SE_entity" }
+	attach = { "behindb" = "grey_tempesttw_corvette_SE_entity" }
+	attach = { "behindc" = "grey_tempesttw_corvette_SE_entity" }
+	attach = { "behindd" = "grey_tempesttw_corvette_SE_entity" }
+	scale = 1.0
+}
+
+entity = {
+	name = "greytempest_decomp_station_entity"
+	locator = { name = "behind"		position = { 0	0 0 } rotation = { 0 0 0 } }
+	locator = { name = "behindu"	position = { 0	0 0 } rotation = { 0 0 90 } }
+	locator = { name = "behinda"	position = { 0	0 0 } rotation = { 0 0 -90 } }
+	locator = { name = "behindb"	position = { 0	0 0 } rotation = { 0 0 180 } }
+	attach = { "behind" = "grey_tempesttw_corvette_VE_entity" }
+	attach = { "behindu" = "grey_tempesttw_corvette_VE_entity" }
+	attach = { "behinda" = "grey_tempesttw_corvette_VE_entity" }
+	attach = { "behindb" = "grey_tempesttw_corvette_VE_entity" }
+	scale = 1.0
+}
+
+entity = {
+	name = "greytempest_habitate_entity"
+	locator = { name = "behind"		position = { 0	0 0 } rotation = { 0 90 0 } }
+	locator = { name = "behindu"	position = { 0	0 0 } rotation = { 0 90 90 } }
+	locator = { name = "behinda"	position = { 0	0 0 } rotation = { 0 90 -90 } }
+	locator = { name = "behindb"	position = { 0	0 0 } rotation = { 0 90 180 } }
+	attach = { "behind" = "grey_tempesttw_corvette_VE_entity" }
+	attach = { "behindu" = "grey_tempesttw_corvette_VE_entity" }
+	attach = { "behinda" = "grey_tempesttw_corvette_VE_entity" }
+	attach = { "behindb" = "grey_tempesttw_corvette_VE_entity" }
+	scale = 1.0
+}
+
+entity = {
+	name = "grey_tempesttw_corvette_SE_entity"
+	pdxmesh = "gatebuilder_01_cruiser_mesh"
+	scale = 1
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0	node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 1	node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 2	node = "light_locator_03" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3	node = "light_locator_04" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		start_event = {	node = "engine_large_01" particle = "mammalian_01_8_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		start_event = {	node = "engine_large_02" particle = "mammalian_01_8_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		start_event = {	node = "engine_medium_01" particle = "mammalian_01_5_0_exhaust_oblong_idle_particle" trigger_once = yes keep_particle = yes }
+		start_event = {	node = "engine_medium_02" particle = "mammalian_01_5_0_exhaust_oblong_idle_particle" trigger_once = yes keep_particle = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_gatebuilder_01_mothership" } }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0	node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 1	node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 2	node = "light_locator_03" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 3	node = "light_locator_04" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		start_event = {	node = "engine_large_01" particle = "mammalian_01_8_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		start_event = {	node = "engine_large_02" particle = "mammalian_01_8_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		start_event = {	node = "engine_medium_01" particle = "mammalian_01_5_0_ship_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		start_event = {	node = "engine_medium_02" particle = "mammalian_01_5_0_ship_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" state_time = 12.3 looping = no
+		event = { time = 0	node = "explosion_locator_01" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 1	node = "explosion_locator_02" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 2	node = "explosion_locator_03" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 3	node = "explosion_locator_04" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 4	node = "explosion_locator_05" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+	}
+}
+
+entity = {
+	name = "grey_tempesttw_corvette_CE_entity"
+	pdxmesh = "gatebuilder_01_mothership_mesh"
+	scale = 3
+}
+
+entity = {
+	name = "grey_tempesttw_corvette_VE_entity"
+	pdxmesh = "gatebuilder_01_mothership_mesh"
+	scale = 1
+}

@@ -1,10 +1,10 @@
-controls_lcluster = {
-	any_system_within_border = {
-		has_star_flag = lcluster1
-	}
-	has_technology = tech_lcluster_access
-	NOT = { has_global_flag = active_gray_goo }
-}
+# controls_lcluster = {
+# 	any_system_within_border = {
+# 		has_star_flag = lcluster1
+# 	}
+# 	has_technology = tech_lcluster_access
+# 	NOT = { has_global_flag = active_gray_goo }
+# }
 
 # country
 has_lgate = {

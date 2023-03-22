@@ -1,0 +1,120 @@
+@dyson_scale = 32
+@spyorb_scale =  3
+@spyorb_side_pos = 0
+@spyorb_height_pos = 0
+
+#####################################################
+#####											#####
+#####				Arthropoid					#####
+#####											#####
+#####################################################
+
+entity = {
+	name = "grey_tempesttw_dyson_sphere_ring_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 9
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_hole_sphere_ring_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 1.25
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_hole_sphere_ring_a_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 1.0
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_hole_sphere_ring_b_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 0.75
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_hole_sphere_ring_c_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 0.5
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_hole_sphere_ring_d_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+	scale = 0.25
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_spy_orb_top"
+
+	scale = 1
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" }
+
+	locator = { name = "root"				position = { 0		0  0 } rotation = { 0 0 90 } }
+	locator = { name = "slot1"				position = { 0		5  0 } rotation = { 0 0 90 } }
+	locator = { name = "slot2"				position = { 0		10  0 } rotation = { 0 0 90 } }
+	locator = { name = "slot3"				position = { 0		15  0 } rotation = { 0 0 90 } }
+	locator = { name = "slot4"				position = { 0		20  0 } rotation = { 0 0 90 } }
+
+	attach = { "slot1" = "grey_tempesttw_hole_sphere_ring_d_entity" }
+	attach = { "slot2" = "grey_tempesttw_hole_sphere_ring_c_entity" }
+	attach = { "slot3" = "grey_tempesttw_hole_sphere_ring_b_entity" }
+	attach = { "slot4" = "grey_tempesttw_hole_sphere_ring_a_entity" }
+	attach = { "root" = "grey_tempesttw_hole_sphere_ring_entity" }
+
+}
+
+entity = {
+	name = "grey_tempesttw_spyorb_phase_04_entity"
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+
+	locator = { name = "roota"				position = { 0		10  0 } rotation = { 0 0 0 } }
+	attach = { "roota" = "grey_tempesttw_spy_orb_top" }
+	attach = { "root" = "grey_tempesttw_spyorb_part_1_entity" }
+	attach = { "root" = "grey_tempesttw_spyorb_part_2_entity" }
+	attach = { "root" = "grey_tempesttw_spyorb_part_3_entity" }
+	attach = { "root" = "grey_tempesttw_spyorb_part_4_entity" }
+	scale = 2
+	cull_radius = 500
+}
