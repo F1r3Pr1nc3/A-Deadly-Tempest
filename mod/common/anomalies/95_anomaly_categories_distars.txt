@@ -27,6 +27,7 @@
 #	}
 # 	on_success = graygoo.400
 # }
+
 transmitter_cat = {
 	picture = "GFX_evt_ship_in_orbit_2"
 	level = 2

@@ -472,22 +472,24 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
-# ship_event = {
-# 	id = tutorial.50
-# 	hide_window = yes
-# 	fire_only_once = yes
-# 	is_triggered_only = yes
-# 	is_test_event = yes
-# 	trigger = { always = no }
-# }
-# country_event = {
-# 	id = tutorial.51
-# 	hide_window = yes
-# 	fire_only_once = yes
-# 	is_triggered_only = yes
-# 	is_test_event = yes
-# 	trigger = { always = no }
-# }
+# TODO remove in 3.8 -vanilla removed in 3.7
+ship_event = {
+	id = tutorial.50
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+}
+# TODO remove in 3.8 - vanilla removed in 3.7
+country_event = {
+	id = tutorial.51
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+}
 ship_event = {
 	id = tutorial.52
 	hide_window = yes

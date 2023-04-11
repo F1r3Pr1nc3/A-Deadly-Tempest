@@ -1,3 +1,7 @@
 ###- ESC : scripted variables dummy patch -###
 ### Tier 8
-@armor_s_t8_strength = 298 # orginal = 300
+@ESC_TECH_weight_core_tech = 298 # orginal = 300
+# @NSC_active_flag 								= "has_nsc_active"
+# @ESC_active_flag 								= "Extra_Ship_Components_NEXT"
+# @ACOT_active_flag								= "acot_activated"
+# @ESC_AURA_NSC_TitanAuraComponent				= "nsc_titan_aura"

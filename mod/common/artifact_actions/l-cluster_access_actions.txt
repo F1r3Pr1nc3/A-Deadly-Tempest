@@ -84,7 +84,7 @@ decision_close_lcluster = {
 artifact_lgate_clue = {
 	resources = {
 		category = artifact_actions
-		cost = { minor_artifacts = 400 }
+		cost = { minor_artifacts = 800 } # 1000
 	}
 	potential = {
 		has_country_flag = encountered_first_lgate

@@ -63,6 +63,8 @@ gateway = {
 			}
 		}
 	}
+	respect_closed_borders = yes
+	block_access_if_hostile = yes
 	# country_can_use = {
 	# 	custom_tooltip = {
 	# 		fail_text = GATEWAY_COUNTRY_CANNOT_USE
@@ -94,8 +96,6 @@ gateway = {
 	# 		}
 	# 	}
 	# }
-	respect_closed_borders = yes
-	block_access_if_hostile = yes
 	on_action = "on_entering_gateway"
 }
 
@@ -127,19 +127,16 @@ wormhole = {
 				# System has no owner
 				NOT = { exists = from }
 				# System's owner has not closed borders to you.
-				from = { NOT = { has_closed_borders = root } }
+				NOT = { from = { has_closed_borders = root } }
 				# System's owner is at war with you.
 				from = { is_at_war_with = root }
 				# System's owner is not a proper empire.
 				from = {
-					NOR = {
-						is_country_type_with_subjects = yes
-						merg_is_fallen_empire = yes
-					}
+					is_country_type_with_subjects = no
+					merg_is_fallen_empire = no
 				}
 				AND = {
 					# System's owner is GC member and you are custodian/emperor
-					exists = from
 					from = { is_galactic_community_member = yes }
 					root = {
 						OR = {
@@ -172,6 +169,20 @@ relay_bypass = {
 	ftl_bypass_effect = "gateway_ftl_bypass_effect_entity"
 	respect_closed_borders = yes
 	block_access_if_hostile = yes
+	# country_can_use = {
+	# 	custom_tooltip = {
+	# 		fail_text = HYPER_RELAY_COUNTRY_CANNOT_USE
+	# 		NAND = {
+	# 			exists = from
+	# 			from = {
+	# 				OR = {
+	# 					has_closed_borders = root
+	# 					is_hostile = root
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# }
 }
 
 quantum_catapult = {

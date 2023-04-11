@@ -50,12 +50,12 @@ event = {
 		}
 		# Support nhsc mod
 		event_target:CmtGlobalVar = {
-			set_variable = { which = random_esc_value value = @armor_s_t8_strength }
+			set_variable = { which = random_esc_value value = @ESC_TECH_weight_core_tech }
 		}
 	}
 	# after = { log = "1 a_deadly_tempest_mod_active [CmtGlobalVar.random_esc_value]" }
 }
-
+# on_single_player_save_game_load
 event = {
 	id = a_deadly_tempest.2
 	hide_window = yes
@@ -78,9 +78,7 @@ event = {
 				has_global_flag = Extra_Ship_Components_NEXT # nhsc_v30
 				event_target:CmtGlobalVar = {
 					# check_variable = { which = current_adt_version value = @latest_adt_version }
-					NOT = {
-						check_variable = { which = random_esc_value value = @armor_s_t8_strength }
-					}
+					check_variable = { which = random_esc_value value != @ESC_TECH_weight_core_tech }
 				}
 			}
 		}
@@ -118,17 +116,12 @@ event = {
 
 		# ESC/nhsc mod savegame support
 		event_target:CmtGlobalVar = {
-			# set_variable = {
-			# 	which = current_adt_version
-			# 	value = @latest_adt_version
-			# }
-			set_variable = { which = random_esc_value value = @armor_s_t8_strength }
+			# set_variable = { which = current_adt_version value = @latest_adt_version }
+			set_variable = { which = random_esc_value value = @ESC_TECH_weight_core_tech }
 			if = {
 				limit = {
 					has_global_flag = Extra_Ship_Components_NEXT # nhsc_v30
-					NOT = {
-						check_variable = { which = random_esc_value value = 300 }
-					}
+					check_variable = { which = random_esc_value value != 300 }
 				}
 				remove_global_flag = Extra_Ship_Components_NEXT # nhsc_v30
 			}
@@ -369,7 +362,7 @@ country_event = {
 			# event_target:CmtGlobalVar = {
 			# 	set_variable = {
 			# 		which = random_esc_value
-			# 		value = @armor_s_t8_strength
+			# 		value = @ESC_TECH_weight_core_tech
 			# 	}
 			# }
 			while = {

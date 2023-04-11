@@ -15,11 +15,48 @@
 # @armor_6L = 1110
 
 utility_component_template = {
+	key = "SMALL_NANITE_HULL_2"
+	size = small
+	icon = "GFX_ship_part_nanite_hull"
+	icon_frame = 1
+	power = -2
+	modifier = {
+		ship_hull_add = @armor_5S
+		# ship_armor_add = @armor_1S
+		ship_hull_regen_add_static = 0.3
+		ship_armor_regen_add_static = 0.2
+	}
+
+	prerequisites = { "tech_nanocrystals" "tech_nanite_living_metal" "tech_nanite_hull" }
+	component_set = "NANITE_HULL_2"
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t6_cost
+			nanites = @m_t5_rare # 1.3
+		}
+		upkeep = {
+			energy = @s_t6_upkeep_energy
+			alloys = @s_t6_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+	}
+}
+
+utility_component_template = {
 	key = "MEDIUM_NANITE_HULL_2"
 	size = medium
 	icon = "GFX_ship_part_nanite_hull"
 	icon_frame = 1
-	power = -10
+	power = -6 # -10
 	modifier = {
 		ship_hull_add = @armor_5M
 		# ship_armor_add = @armor_1M
@@ -56,7 +93,7 @@ utility_component_template = {
 	size = large
 	icon = "GFX_ship_part_nanite_hull"
 	icon_frame = 1
-	power = 0 # -20 TEST
+	power = -9
 	modifier = {
 		ship_hull_add = @armor_5L
 		# ship_armor_add = @armor_1L

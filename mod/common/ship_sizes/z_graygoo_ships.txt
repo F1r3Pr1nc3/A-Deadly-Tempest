@@ -1,6 +1,4 @@
 
-# @NSC_TitanAuraComponent	= "nsc_titan_aura"
-
 # Gray Goo Interdictor
 graygoo_interdictor = {
 	graphical_culture = no
@@ -304,7 +302,6 @@ dreadnought = {
 	required_component_set = "combat_computers"
 	required_component_set = "special_ship_slot"			# built-in support for New Ship Classes and More
 	required_component_set = "nsc_titan_aura"				# built-in support for New Ship Classes and More
-	required_component_set = "c_ship_crew"					# built-in support for Guilli's Ship Components
 
 	resources = {
 		category = ships

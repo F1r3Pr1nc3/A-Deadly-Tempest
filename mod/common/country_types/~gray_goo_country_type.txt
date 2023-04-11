@@ -332,7 +332,7 @@ awakened_gate_builders = {
 		hostile = yes
 		auto_delete = yes
 		needs_border_access = no
-		needs_colony = no
+		needs_colony = yes
 		generate_borders = yes
 		# hostile_when_attacked = yes
 	}

@@ -1,0 +1,180 @@
+##				 ESC : Armor Components				 ##
+
+#- Nanity-Infused Armor				S/M/L
+
+utility_component_template = {
+	key = SMALL_ESC_NANO_ARMOR_1
+	size = small
+	icon = GFX_ship_part_armor_esc_nano_1
+	icon_frame = 1
+	power = -10
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t6_cost		# 29
+			nanites = @s_t5_rare	# ESC 0.333
+		}
+		upkeep = {
+			energy = @s_t6_upkeep_energy # 0.29
+			alloys = @s_t6_upkeep_alloys # 0.058
+		}
+	}
+
+	modifier = {
+		ship_armor_add = @armor_S5 # ESC 280
+		ship_hull_regen_add_static = @regen_S5 # 1.45
+		ship_armor_regen_add_static = @regen_S3 # 0.85
+	}
+
+	prerequisites = { "esc_tech_armor_nanite_1" }
+	component_set = ESC_NANO_ARMOR_1
+	upgrades_to = SMALL_ESC_NANO_ARMOR_2
+
+	# only regular empires and machine FE may use this component
+	valid_for_country = {
+		OR = {
+			is_fallen_empire = no
+			is_fallen_empire_machine = yes
+		}
+	}
+
+	ai_weight = {
+		weight = @T6_weight
+		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+		inline_script = {
+			script = ship_components/weights/roles_stealth
+			MULT = 2
+		}
+	}
+}
+
+utility_component_template = {
+	key = MEDIUM_ESC_NANO_ARMOR_1
+	size = medium
+	icon = GFX_ship_part_armor_esc_nano_1
+	icon_frame = 1
+	power = -20
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t6_cost
+			nanites = @m_t5_rare # ESC 0.666
+		}
+		upkeep = {
+			energy = @m_t6_upkeep_energy
+			alloys = @m_t6_upkeep_alloys
+		}
+	}
+
+	modifier = {
+		ship_armor_add = @armor_M5 # ESC 740
+		ship_hull_regen_add_static = @regen_M5 # 3.65
+		ship_armor_regen_add_static = @regen_M3 # 2.15
+	}
+
+	prerequisites = { "esc_tech_armor_nanite_1" }
+	component_set = ESC_NANO_ARMOR_1
+	upgrades_to = MEDIUM_ESC_NANO_ARMOR_2
+
+	valid_for_country = {
+		OR = {
+			is_fallen_empire = no
+			is_fallen_empire_machine = yes
+		}
+	}
+
+	ai_weight = {
+		weight = @T6_weight
+		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+		inline_script = {
+			script = ship_components/weights/roles_stealth
+			MULT = 2
+		}
+	}
+}
+
+utility_component_template = {
+	key = LARGE_ESC_NANO_ARMOR_1
+	size = large
+	icon = GFX_ship_part_armor_esc_nano_1
+	icon_frame = 1
+	power = -40
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t6_cost # 114
+			nanites = @l_t5_rare # ESC 1.333
+		}
+		upkeep = {
+			energy = @l_t6_upkeep_energy
+			alloys = @l_t6_upkeep_alloys
+		}
+	}
+
+	modifier = {
+		ship_armor_add = @armor_L5 # ESC 1740
+		ship_hull_regen_add_static = @regen_L5 # 8.70
+		ship_armor_regen_add_static = @regen_L3 # 5.10 # ESC 5.25
+	}
+
+	prerequisites = { "esc_tech_armor_nanite_1" }
+	component_set = ESC_NANO_ARMOR_1
+	upgrades_to = LARGE_ESC_NANO_ARMOR_2
+
+	valid_for_country = {
+		OR = {
+			is_fallen_empire = no
+			is_fallen_empire_machine = yes
+		}
+	}
+
+	ai_weight = {
+		weight = @T6_weight
+		### AI shouldn't use this component if it can't afford at least some upgrades right away
+		modifier = {
+			factor = 0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+		inline_script = {
+			script = ship_components/weights/roles_stealth
+			MULT = 2
+		}
+	}
+}
+
+### SPECIAL SLOT COMPONENTS ###
+utility_component_template = {
+	key = "SPECIAL_SLOT_EMPTY"
+	size = medium
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1
+	power = 0
+
+	class_restriction = { shipclass_military shipclass_constructor }
+	component_set = "special_ship_slot"
+
+	ai_weight = { weight = 1 }
+}
+
+### TITAN AURA COMPONENTS ###
+utility_component_template = {
+	key = "NSC_TITAN_AURA_EMPTY"
+	size = medium
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1
+	power = 0
+	component_set = "nsc_titan_aura"
+
+	ai_weight = { weight = 1 }
+}
