@@ -6,7 +6,7 @@
 #########################################
 namespace = action
 
-# Fix (Vanilla) splitted system can lead to unserveyable: https://forum.paradoxplaza.com/forum/threads/stellaris-system-with-dual-planets-ownership-and-no-starbases-are-stuck.1508942/#post-28052496
+# Fix (Vanilla) splitted system can lead to unserveyable: https://forum.paradoxplaza.com/forum/threads/stellaris-system-with-dual-planets-ownership-and-no-starbases-are-stuck.1508942/# post-28052496
 # on_monthly_pulse
 # Compare action.85		# Flip planets to starbase owner
 # Compare marauder.515	# Marauder planet liberated
@@ -29,7 +29,7 @@ event = {
 				any_system_colony = {
 					exists = owner
 					has_ground_combat = no
-					owner = { merg_is_standard_empire = yes }
+					owner = { is_default_or_fallen = yes }
 					solar_system = {
 						NOR = {
 							any_fleet_in_system = {
@@ -57,7 +57,7 @@ event = {
 								NOT = { is_planet = prevprev }
 								owner = {
 									NOT = { is_same_empire = prevprevprev.owner }
-									merg_is_standard_empire = yes
+									is_default_or_fallen = yes
 									OR = {
 										is_hostile = prevprevprev.owner
 										is_at_war_with = prevprevprev.owner
@@ -93,7 +93,7 @@ event = {
 											is_same_empire = prevprevprev.owner
 											has_country_flag = former_owner@prev
 										}
-										merg_is_standard_empire = yes
+										is_default_or_fallen = yes
 									}
 									NAND = {
 										exists = controller
@@ -109,7 +109,7 @@ event = {
 				limit = {
 					exists = owner
 					has_ground_combat = no
-					owner = { merg_is_standard_empire = yes }
+					owner = { is_default_or_fallen = yes }
 					solar_system = {
 						NOR = {
 							any_fleet_in_system = {
@@ -137,7 +137,7 @@ event = {
 								NOT = { is_planet = prevprev }
 								owner = {
 									NOT = { is_same_empire = prevprevprev.owner }
-									merg_is_standard_empire = yes
+									is_default_or_fallen = yes
 									OR = {
 										is_hostile = prevprevprev.owner
 										is_at_war_with = prevprevprev.owner
@@ -173,7 +173,7 @@ event = {
 											is_same_empire = prevprevprev.owner
 											has_country_flag = former_owner@prev
 										}
-										merg_is_standard_empire = yes
+										is_default_or_fallen = yes
 									}
 									NAND = {
 										exists = controller

@@ -11,7 +11,6 @@ ship_event = {
 	desc = {
 		trigger = {
 			owner = {
-				# is_machine_empire = no
 				is_synthetic_empire = no
 			}
 		}
@@ -19,7 +18,6 @@ ship_event = {
 	}
 	desc = {
 		trigger = { owner = {
-			# is_machine_empire = yes
 			is_synthetic_empire = yes
 		} }
 		text = "graygoo.400.b.desc"
@@ -291,21 +289,29 @@ country_event = {
 				set_graphical_culture = "machine_01" # root
 				set_city_graphical_culture = root
 				create_leader = {
-					class = ruler
+					class = governor # random_ruler
 					species = last_created_species
 					name = "NAME_Gray"
 					event_leader = yes
-					gender = indeterminable
-					# class = ruler
 					skill = 10
 					set_age = 0
 					immortal = yes
+					randomize_traits = no
+					skip_background_generation = yes
+					custom_catch_phrase = gray_catch_phrase
+					custom_description = gray_backstory
+					background_ethic = ethic_gestalt_consciousness
+					gender = indeterminable
+					hide_age = yes
 					traits = {
-						trait = leader_trait_unyielding
-						trait = trait_ruler_logistic_understanding
-						trait = leader_trait_fleet_organizer
+						trait = leader_trait_governor_gray
+						trait = subclass_governor_economist
+						trait = leader_trait_urbanist_3
+						trait = leader_trait_scrapper_2
+						0 = leader_trait_unyielding
+						2 = trait_ruler_logistic_understanding
+						0 = leader_trait_fleet_organizer
 					}
-					effect = { prev = { assign_leader = prev } }
 				}
 				copy_techs_from = {
 					target = root
@@ -351,7 +357,7 @@ country_event = {
 		last_created_country = {
 			establish_communications_no_message = root
 			owner_species = { save_global_event_target_as = gray_species }
-			assign_leader = last_created_leader
+			set_leader = last_created_leader # assign_leader
 		}
 		save_global_event_target_as = gray_owner
 		# set_country_flag = gray_owner
@@ -380,14 +386,26 @@ country_event = {
 	desc = "graygoo.500.d.desc"
 
 	diplomatic = yes
-
+	picture = GFX_evt_mysterious_signal
 	picture_event_data = {
-		portrait = root.species
+		portrait = from.ruler
 		planet_background = root.capital_scope
 		room = "personality_nanite_room"
 	}
 
 	is_triggered_only = yes
+
+	trigger = {
+		is_same_empire = event_target:gray_owner
+		from = { is_country_type = gray }
+		NOR = {
+			has_country_flag = gray_diplomacy_engaged
+			has_country_flag = gray_governor_active
+			has_country_flag = gray_warship_active
+			has_country_flag = gray_army_active
+			has_country_flag = gray_reforming
+		}
+	}
 
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
@@ -395,18 +413,6 @@ country_event = {
 
 	after = {
 		hidden_effect = { remove_country_flag = gray_diplomacy_engaged }
-	}
-
-	trigger = {
-		NOT = { has_country_flag = gray_diplomacy_engaged }
-		from = { is_country_type = gray }
-		is_same_value = event_target:gray_owner
-		NOR = {
-			has_country_flag = gray_governor_active
-			has_country_flag = gray_warship_active
-			has_country_flag = gray_army_active
-			has_country_flag = gray_reforming
-		}
 	}
 
 	option = { # Governor
@@ -456,6 +462,7 @@ country_event = {
 
 	diplomatic = yes
 
+	picture = GFX_evt_busy_spaceport
 	picture_event_data = {
 		portrait = event_target:gray_governor
 		planet_background = event_target:gray_governor_planet
@@ -466,14 +473,14 @@ country_event = {
 
 	trigger = {
 		from = { is_country_type = gray }
-		is_same_value = event_target:gray_owner
+		is_same_empire = event_target:gray_owner
 		has_country_flag = gray_governor_active
+		exists = event_target:gray_governor
 		NOR = {
 			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
 			has_country_flag = ban_commu_with_gray
 		}
-		exists = event_target:gray_governor
 	}
 
 	immediate = {
@@ -481,19 +488,30 @@ country_event = {
 		if = {
 			limit = {
 				any_owned_planet = {
-					exists = sector.leader
-					sector.leader = { is_same_value = event_target:gray_governor }
+					exists = leader
+					leader = { is_same_value = event_target:gray_governor }
 				}
 			}
 			random_owned_planet = {
 				limit = {
-					exists = sector.leader
-					sector.leader = { is_same_value = event_target:gray_governor }
+					exists = leader
+					leader = { is_same_value = event_target:gray_governor }
 				}
 				save_event_target_as = gray_governor_planet
 			}
-		} else = {
+		} else_if = {
+			limit = { exists = capital_scope }
 			capital_scope = { save_event_target_as = gray_governor_planet }
+		} else_if = {
+			limit = { num_sectors > 0 }
+			ordered_owned_sector = {
+				position = 0
+				order_by = trigger:num_owned_planets
+				random_owned_planet = {
+					limit = { is_sector_capital = yes }
+					save_event_target_as = gray_governor_planet
+				}
+			}
 		}
 	}
 
@@ -623,6 +641,7 @@ country_event = {
 	desc = "graygoo.503.c.desc"
 	desc = "graygoo.503.d.desc"
 	diplomatic = yes
+	picture = GFX_evt_fleet_neutral
 	picture_event_data = {
 		portrait = event_target:gray_leader_general
 		planet_background = root.capital_scope
@@ -634,13 +653,13 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		from = { is_country_type = gray }
+		is_same_empire = event_target:gray_owner
 		has_country_flag = gray_army_active
 		NOR = {
 			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
 			has_country_flag = ban_commu_with_gray
 		}
-		is_same_empire = event_target:gray_owner
 		any_owned_army = {
 			army_type = gray_army
 			OR = {
@@ -656,17 +675,13 @@ country_event = {
 		set_country_flag = gray_diplomacy_engaged
 	}
 	after = {
-		hidden_effect = {
-			remove_country_flag = gray_diplomacy_engaged
-		}
+		hidden_effect = { remove_country_flag = gray_diplomacy_engaged }
 	}
-	option = {
-		# Governor
+	option = { # Governor
 		name = graygoo.500.a
 		response_text = graygoo.503.a.response
 		allow = {
-			hidden_trigger = {
-				# To prevent exploit
+			hidden_trigger = { # To prevent exploit
 				any_owned_army = {
 					army_type = gray_army
 					OR = {
@@ -699,13 +714,11 @@ country_event = {
 			create_gray_governor = yes
 		}
 	}
-	option = {
-		# Warship
+	option = { # Warship
 		name = graygoo.500.b
 		response_text = graygoo.503.b.response
 		allow = {
-			hidden_trigger = {
-				# To prevent exploit
+			hidden_trigger = { # To prevent exploit
 				any_owned_army = {
 					army_type = gray_army
 					OR = {
@@ -760,7 +773,7 @@ country_event = {
 
 	trigger = {
 		from = { is_country_type = gray }
-		is_same_value = event_target:gray_owner
+		is_same_empire = event_target:gray_owner
 		has_country_flag = gray_reforming
 		NOT = { has_country_flag = ban_commu_with_gray }
 	}
@@ -836,11 +849,11 @@ country_event = {
 	desc = "graygoo.512.b.desc"
 	desc = "graygoo.512.c.desc"
 
-	diplomatic = yes
-
+	event_window_type = leader_story # diplomatic = yes
+	picture = GFX_evt_gray_gooed_planet
 	picture_event_data = {
-		portrait = root.species
-		planet_background = root.capital_scope
+		portrait = event_target:gray_country.ruler
+		planet_background = capital_scope
 		room = "personality_nanite_room"
 	}
 

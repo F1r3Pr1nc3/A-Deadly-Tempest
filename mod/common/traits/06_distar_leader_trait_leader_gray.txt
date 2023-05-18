@@ -1,8 +1,16 @@
 ## For Warship Girls R And MIST Species.
 leader_trait_admiral_gray = {
 	cost = 0
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_leader.dds"
 	# icon = "gfx/interface/icons/traits/leader_traits/wg_gray.dds"
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = admiral
+		ICON = "GFX_leader_trait_psionic_chosen_one"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
 	modifier = {
 		ship_weapon_damage = 0.4
 		ship_fire_rate_mult = 0.4
@@ -20,8 +28,16 @@ leader_trait_admiral_gray = {
 
 leader_trait_general_gray = {
 	cost = 0
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_leader.dds"
 	# icon = "gfx/interface/icons/traits/leader_traits/wg_gray.dds"
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = general
+		ICON = "GFX_leader_trait_psionic_chosen_one"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
 	modifier = {
 		army_collateral_damage_mult = 0.1
 		army_disengage_chance_mult = 0.4

@@ -1,43 +1,63 @@
-## Modified leader_trait_governor_gray
+## Modified leader_trait_governor_gray (only due entire file overwrite!?)
 
 ####################
-# Scientist Traits #
+# Brainslug Trait #
 ####################
 
-leader_trait_scientist_brainslug = {
-	cost = 0
-	icon = "gfx/interface/icons/traits/leader_traits/trait_brainslugged.dds"
-	modifier = {
-		all_technology_research_speed = 0.10
-		science_ship_survey_speed = 0.15
-		ship_anomaly_research_speed_mult = 0.15
+leader_trait_brainslug = {
+	is_councilor_trait_for_ruler = yes
+	inline_script = {
+		script = trait/icon
+		ICON = "GFX_leader_trait_brainslug"
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
 	}
-	initial = no
-	randomized = no
-
-	leader_trait = { scientist }
-	leader_class = { scientist }
-
-	ai_weight = {
-		weight = 0
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = admiral
+		}
+		ship_fire_rate_mult = 0.05
+		ship_evasion_mult = 0.05
 	}
-}
-
-##################
-# General Traits #
-##################
-
-leader_trait_general_brainslug = {
-	cost = 1
-	icon = "gfx/interface/icons/traits/leader_traits/trait_brainslugged.dds"
-	modifier = {
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		science_ship_survey_speed = 0.10
+		ship_anomaly_research_speed_mult = 0.10
+	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = general
+		}
 		armies_upkeep_mult = -0.15
 	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = governor
+		}
+		planet_building_build_speed_mult = 0.10
+	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		council_agenda_progress_speed = 0.10
+		councilor_exp_gain = 0.15
+	}
+	self_modifier = {
+		councilor_exp_gain = 0.15
+		leader_trait_selection_options_add = 1
+	}
 	initial = no
 	randomized = no
 
-	leader_trait = { general }
-	leader_class = { general }
+	leader_class = { admiral governor scientist general }
 
 	ai_weight = {
 		weight = 0
@@ -48,28 +68,16 @@ leader_trait_general_brainslug = {
 # Admiral Traits	#
 #####################
 
-leader_trait_admiral_brainslug = {
-	cost = 0
-	icon = "gfx/interface/icons/traits/leader_traits/trait_brainslugged.dds"
-	modifier = {
-		ship_fire_rate_mult = 0.05
-		ship_evasion_mult = 0.05
-		ships_upkeep_mult = -0.1
-	}
-	initial = no
-	randomized = no
-
-	leader_trait = { admiral }
-	leader_class = { admiral }
-
-	ai_weight = {
-		weight = 0
-	}
-}
-
 leader_trait_admiral_hells_heart = {
 	cost = 0
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_hells_heart.dds"
+	inline_script = {
+		script = trait/icon
+		CLASS = admiral
+		ICON = "GFX_leader_trait_hells_heart"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
 	modifier = {
 		ship_fire_rate_mult = 0.10
 		ship_weapon_damage = 0.10
@@ -77,10 +85,66 @@ leader_trait_admiral_hells_heart = {
 		ship_evasion_mult = -0.05
 		ship_disengage_chance_mult = -0.33
 	}
+	custom_tooltip_with_modifiers = hells_heart_effect
 	initial = no
 	randomized = no
 
-	leader_trait = { admiral }
+	leader_class = { admiral }
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+leader_trait_admiral_warform = {
+	cost = 0
+	councilor_trait = yes
+	inline_script = {
+		script = trait/icon
+		CLASS = admiral
+		ICON =  "GFX_leader_trait_warform"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	modifier = {
+		ship_armor_regen_add_perc = 0.05
+		ship_armor_hardening_add = 0.15
+		ship_sensor_range_add = 1
+  		ship_hyperlane_range_add = 2
+	}
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+
+	leader_class = { admiral }
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+leader_trait_admiral_warform_node = {
+	cost = 0
+	councilor_trait = yes
+	inline_script = {
+		script = trait/icon
+		CLASS = admiral
+		ICON =  "GFX_leader_trait_warform"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	modifier = {
+		ship_armor_regen_add_perc = 0.05
+		ship_armor_hardening_add = 0.15
+		ship_sensor_range_add = 1
+  		ship_hyperlane_range_add = 2
+	}
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+
 	leader_class = { admiral }
 
 	ai_weight = {
@@ -92,19 +156,64 @@ leader_trait_admiral_hells_heart = {
 # Governor Traits #
 ###################
 
-leader_trait_governor_brainslug = {
-	cost = 1
-	icon = "gfx/interface/icons/traits/leader_traits/trait_brainslugged.dds"
+leader_trait_governor_gray = {
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = governor
+		ICON = "GFX_leader_trait_psionic_chosen_one"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	immortal_leaders = yes
 	modifier = {
-		planet_building_build_speed_mult = 0.10
-		planet_jobs_physics_research_produces_mult = 0.15
-		planet_jobs_society_research_produces_mult = 0.15
-		planet_jobs_engineering_research_produces_mult = 0.15
+		planet_buildings_cost_mult = -0.5			# -0.4
+		planet_building_build_speed_mult = 0.5		# 0.4
+		planet_jobs_energy_produces_mult = 0.5		# 0.15
+		planet_jobs_minerals_produces_mult = 0.5	# 0.15
+		planet_jobs_produces_mult = 0.1
+		planet_clear_blocker_time_mult = -0.5
+		planet_stability_add = 5
+		deposit_blockers_cost_mult = -0.5
+		planet_jobs_engineering_research_produces_mult = 0.5
+		planet_jobs_physics_research_produces_mult = 0.25
+		planet_jobs_society_research_produces_mult = 0.5
+		planet_jobs_alloys_produces_mult = 0.5
+	}
+
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_trait_govenor_caretaker = {
+	cost = 0
+	councilor_trait = yes
+	inline_script = {
+		script = trait/icon
+		CLASS = governor
+		ICON =  "GFX_leader_trait_caretaker"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+
+	modifier = {
+		pop_growth_speed = 0.05
+	}
+	triggered_modifier = {
+		potential = { trait_is_gestalt_check = no }
+		planet_jobs_consumer_goods_upkeep_mult = -0.10
+	}
+	triggered_modifier = {
+		potential = { trait_is_gestalt_check = yes }
+		pop_amenities_usage_no_happiness_mult = -0.10
 	}
 	initial = no
 	randomized = no
+	immortal_leaders = yes
 
-	leader_trait = { governor }
 	leader_class = { governor }
 
 	ai_weight = {
@@ -112,48 +221,27 @@ leader_trait_governor_brainslug = {
 	}
 }
 
-leader_trait_governor_gray = {
+leader_trait_govenor_caretaker_node = {
 	cost = 0
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
+	councilor_trait = yes
+	inline_script = {
+		script = trait/icon
+		CLASS = governor
+		ICON =  "GFX_leader_trait_caretaker"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+
+	modifier = {
+		pop_growth_speed = 0.05
+		pop_amenities_usage_no_happiness_mult = -0.10
+	}
+	initial = no
+	randomized = no
 	immortal_leaders = yes
-	modifier = {
-		planet_buildings_cost_mult = -0.4
-		planet_building_build_speed_mult = 0.4
-		planet_jobs_energy_produces_mult = 1
-		planet_jobs_minerals_produces_mult = 1
-		planet_jobs_produces_mult = 0.2
-		planet_clear_blocker_time_mult = -0.5
-		planet_stability_add = 5
-		deposit_blockers_cost_mult = -0.5
-		planet_jobs_engineering_research_produces_mult = 1
-		planet_jobs_physics_research_produces_mult = 1
-		planet_jobs_society_research_produces_mult = 1
-		planet_jobs_alloys_produces_mult = 1
-	}
-	leader_trait = { governor }
+
 	leader_class = { governor }
-	initial = no
-	randomized = no
-}
-
-#################
-# Ruler Traits #
-#################
-
-leader_trait_ruler_brainslug = {
-	cost = 0
-	icon = "gfx/interface/icons/traits/leader_traits/trait_brainslugged.dds"
-	modifier = {
-		country_naval_cap_mult = 0.10
-		country_physics_research_produces_mult = 0.10
-		country_society_research_produces_mult = 0.10
-		country_engineering_research_produces_mult = 0.10
-	}
-	initial = no
-	randomized = no
-
-	leader_trait = { ruler }
-	leader_class = { ruler }
 
 	ai_weight = {
 		weight = 0
@@ -166,7 +254,13 @@ leader_trait_ruler_brainslug = {
 
 trait_brainslug = {
 	cost = 0
-	icon = "gfx/interface/icons/traits/leader_traits/trait_brainslugged.dds"
+	inline_script = {
+		script = trait/icon
+		icon = "gfx/interface/icons/traits/trait_brainslugged.dds"
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
 	initial = no
 	randomized = no
 	species_potential_add = {
@@ -189,7 +283,13 @@ trait_brainslug = {
 
 trait_nivlac = {
 	cost = 2
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_resilient.dds"
+	inline_script = {
+		script = trait/icon
+		ICON = "GFX_leader_trait_resilient"
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
 	initial = no
 	randomized = no
 	species_potential_add = {
@@ -219,7 +319,7 @@ trait_robot_notofthisworld = {
 	icon = "gfx/interface/icons/traits/trait_notofthisworld.dds"
 	initial = no
 	randomized = no
-	
+
 	species_potential_add = {
 		always = no
 	}
@@ -234,8 +334,7 @@ trait_robot_notofthisworld = {
 
 	custom_tooltip_with_modifiers = TRAIT_NOTOFTHISWORLD_EFFECT
 	modifier = {
-		planet_pops_robotics_upkeep_mult = 0.1
-		planet_jobs_physics_research_produces_mult = 0.05
+		planet_pops_upkeep_mult = 0.10
 	}
 }
 
@@ -258,9 +357,8 @@ trait_notofthisworld = {
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 
 	custom_tooltip_with_modifiers = TRAIT_NOTOFTHISWORLD_EFFECT
-	modifier = { 
+	modifier = {
 		leader_age = -10
 		planet_pops_upkeep_mult = 0.10
-		planet_jobs_physics_research_produces_mult = 0.05
 	}
 }

@@ -1,5 +1,5 @@
-version="2.5.5"
-name="A Deadly Tempest [3.7.☠]"
+version="2.5.6"
+name="A Deadly Tempest [3.8.☠]"
 tags={
 	"Events"
 	"Gameplay"
@@ -16,5 +16,5 @@ dependencies={
 	"Gray Tempest Shipset"
 }
 picture="thumbnail.png"
-supported_version="3.7.*"
+supported_version="3.8.*"
 remote_file_id="2028826064"

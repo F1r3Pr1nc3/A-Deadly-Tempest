@@ -1794,10 +1794,10 @@ country_event = {
 				skill = 7
 				set_age = 7
 				traits = {
-					trait = leader_trait_general_gray
-					trait = leader_trait_demoralizer
-					# trait = leader_trait_general_synthetic
-					# trait = leader_trait_general_erudite
+					0 = leader_trait_general_gray
+					0 = leader_trait_demoralizer
+					# 0 = leader_trait_general_synthetic
+					# 0 = leader_trait_general_erudite
 				}
 				effect = {
 					change_leader_portrait = lithnanite

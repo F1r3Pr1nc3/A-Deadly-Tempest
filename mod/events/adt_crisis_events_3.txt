@@ -203,7 +203,7 @@ country_event = {
 			skill = 5
 			set_age = 0
 			traits = {
-				trait = leader_trait_cybrex
+				0 = leader_trait_cybrex
 			}
 		}
 		# last_created_leader = { set_age = 0 }
@@ -661,7 +661,7 @@ country_event = {
 			}
 		}
 		every_owned_leader = {
-			limit = { leader_class = ruler }
+			limit = { is_ruler = yes }
 			change_leader_portrait = lithnanite
 		}
 		# Declare Crisis (declare_crisis_war_effect)

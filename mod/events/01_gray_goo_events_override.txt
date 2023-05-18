@@ -611,11 +611,10 @@ country_event = {
 						}
 					}
 					create_leader = {
-						class = ruler
+						class = random_ruler
 						species = last_created_species
 						name = random
 						gender = indeterminable
-						# class = ruler
 						skill = 10
 						# set_age = 100
 						leader_age_min = 44

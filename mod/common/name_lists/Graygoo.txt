@@ -14,8 +14,8 @@ graygoo = {
 		generic = {
 			sik'Ib'Al sik'Ra'Tu sik'Va'Ba sik'Nu'Ku sik'Sa'Sa sik'Ve'To sik'Re'Ra sik'Vi'Va sik'Qa'Re sik'El'Re sik'To'Ba sik'Er'Ko mok'Ta'Vi mok'Zu'Ra mok'Ze'Va mok'Ve'Ta mok'Ib'Ga mok'Ba'Ri mok'Or'Pi mok'Ra'Ta mok'Sa'La mok'Ym'Ve bak'Ta'Ta bak'Ni'Va bak'Ir'Za bak'Ur'Ma bak'Av'Ta bak'Ir'Ba bak'Ma'Na bak'Ta'Zi bak'Ri'Ve bak'Yr'Ye iba'Sa'Ni iba'Ka'To iba'Ke'Zu iba'In'Ve iba'Se'Ta iba'Qu'Tu iba'Ge'Va iba'No'Ka iba'Na'Be iba'Po'Zo iba'Yr'Ti kor'Ne'Bi kor'Sa'Zi kor'Ti'Ba kor'Nu'Vi kor'Di'Za kor'Be'Ze kor'Ni'Or kor'Pa'Li kor'Se'Ta kor'Ur'Da kor'Ti'Ya kor'Be'Ke kor'Di'Pi kor'Te'Ko kor'Le'Ta puk'Na'Sa puk'Vy'Va puk'Bo'Li puk'Ze'Na puk'Mi'Pi puk'Bi'Na puk'Ir'Ul puk'Te'Mi puk'Si'Ta puk'Qo'Ri puk'Qo'Qa puk'Bi'Vi puk'Er'Ir puk'An'Ta puk'Ve'Za
 		}
-		graygoo_mothership = { "Great Confluence" }
-		graygoo_interdictor = { "Reconstitutor" }
+		graygoo_mothership = { GRAYGOO_SHIP_GreatConfluence }
+		graygoo_interdictor = { GRAYGOO_SHIP_Reconstitutor }
 	}
 	fleet_names = {
 		sequential_name = "Swarm %R%"
