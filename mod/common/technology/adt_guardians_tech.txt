@@ -62,10 +62,7 @@ tech_nanite_guardians = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 		# modifier = {
 		# 	factor = 0.01
@@ -85,10 +82,7 @@ tech_nanite_guardians = {
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 	}
 }
@@ -138,10 +132,7 @@ tech_dreadnought = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 		modifier = {
 			factor = 0.25
@@ -165,10 +156,7 @@ tech_dreadnought = {
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 	}
 }
@@ -220,10 +208,7 @@ tech_scavenger_bot = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 		modifier = {
 			factor = 0.25
@@ -333,10 +318,7 @@ tech_nanite_dragon = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 		modifier = {
 			factor = 0.25
@@ -380,10 +362,7 @@ tech_nanite_dragon = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 	}
 }
@@ -461,10 +440,7 @@ tech_nanite_voidspawn = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 		# modifier = {
 		# 	factor = 0.25
@@ -509,10 +485,7 @@ tech_nanite_voidspawn = {
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 		modifier = {
 			factor = 3

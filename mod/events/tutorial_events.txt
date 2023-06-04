@@ -1,13 +1,6 @@
 ### Override dummy
 namespace = tutorial
-ship_event = {
-	id = tutorial.299
-	hide_window = yes
-	fire_only_once = yes
-	is_triggered_only = yes
-	is_test_event = yes
-	trigger = { always = no }
-}
+
 country_event = {
 	id = tutorial.1
 	hide_window = yes

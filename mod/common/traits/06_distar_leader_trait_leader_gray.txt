@@ -20,7 +20,6 @@ leader_trait_admiral_gray = {
 		ship_hull_regen_add_static = 8
 		ship_armor_regen_add_static = 8
 	}
-	leader_trait = { admiral }
 	leader_class = { admiral }
 	initial = no
 	randomized = no
@@ -43,7 +42,6 @@ leader_trait_general_gray = {
 		army_disengage_chance_mult = 0.4
 		army_health = 0.1
 	}
-	leader_trait = { general }
 	leader_class = { general }
 	initial = no
 	randomized = no

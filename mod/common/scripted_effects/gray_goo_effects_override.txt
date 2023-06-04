@@ -37,7 +37,7 @@ create_gray_governor = {
 			trait = subclass_governor_economist
 			trait = leader_trait_urbanist_3
 			trait = leader_trait_scrapper_2
-			trait = leader_trait_ai_aided_design
+			trait = leader_trait_retired_fleet_officer
 		}
 		effect = {
 			save_global_event_target_as = gray_governor
@@ -215,8 +215,8 @@ create_gray_army = {
 				hide_age = yes
 				traits = {
 					0 = leader_trait_general_gray
-					0 = leader_trait_demoralizer
-					# 0 = leader_trait_general_synthetic
+					0 = leader_trait_dreaded
+					# 0 = leader_trait_synthetic
 				}
 				effect = {
 					save_global_event_target_as = gray_leader_general

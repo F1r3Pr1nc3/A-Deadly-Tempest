@@ -34,10 +34,7 @@ tech_adt_energymissiles = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_particles"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_particles }
 		}
 	}
 }
@@ -106,10 +103,7 @@ tech_adt_gg_beam = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_particles"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_particles }
 		}
 	}
 }
@@ -155,10 +149,7 @@ tech_nanite_torpedo = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_materials }
 		}
 	}
 
@@ -174,10 +165,7 @@ tech_nanite_torpedo = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_materials }
 		}
 	}
 }

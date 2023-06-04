@@ -111,7 +111,7 @@ country_event = {
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4000 } }
 	}
 
-	### Forced End of the Cycle.
+	### Forced End of the Cycle
 	option = {
 		name = CrisisManagerMenu.4000.4400.name
 		custom_tooltip = CrisisManagerMenu.4000.4400.tooltip
@@ -279,7 +279,7 @@ country_event = {
 	option = {
 		name = CmtTextExit.name
 		custom_tooltip = CmtTextExit.tooltip
-		hidden_effect = { CmtEffectExitMenu = yes }
+		CmtEffectExitMenu = yes
 	}
 	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
 	abort_effect = { CmtEffectExitMenu = yes }

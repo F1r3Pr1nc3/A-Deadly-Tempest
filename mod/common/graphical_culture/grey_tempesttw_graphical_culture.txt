@@ -1,6 +1,6 @@
 # Twinks Dessanu
 grey_tempesttw = {
-	randomized = { host_has_dlc = "Distant Stars Story Pack" }
+	randomized = { has_distar = yes }
 	selectable = { local_has_dlc = "Distant Stars Story Pack" }
 	fallback = reptilian_01 # machine_01
 	ship_color = yes

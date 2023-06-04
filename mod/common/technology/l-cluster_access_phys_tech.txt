@@ -94,22 +94,10 @@ tech_lgate_construction = {
 		modifier = {
 			factor = 0.1
 			NOR = {
-				research_leader = {
-					area = physics
-					has_trait = "leader_trait_expertise_particles"
-				}
-				research_leader = {
-					area = physics
-					has_trait = "leader_trait_curator"
-				}
-				research_leader = {
-					area = physics
-					has_trait = "leader_trait_spark_of_genius"
-				}
-				research_leader = {
-					area = physics
-					has_trait = "leader_trait_maniacal"
-				}
+				has_trait_in_council = { TRAIT = leader_trait_expertise_particles }
+				has_trait_in_council = { TRAIT = leader_trait_curator }
+				has_trait_in_council = { TRAIT = leader_trait_spark_of_genius }
+				has_trait_in_council = { TRAIT = leader_trait_maniacal }
 			}
 		}
 		modifier = {
@@ -118,10 +106,7 @@ tech_lgate_construction = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_particles"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_particles }
 		}
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech
@@ -136,10 +121,7 @@ tech_lgate_construction = {
 		factor = 2
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_particles"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_particles }
 		}
 	}
 }

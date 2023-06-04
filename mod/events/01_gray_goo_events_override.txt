@@ -533,15 +533,6 @@ country_event = {
 							traits = { trait = random_traits }
 						}
 					}
-					# 5 = {
-					# 	create_species = {
-					# 		name = "NAME_Dessanu"
-					# 		class = "ESGO"
-					# 		portrait = random
-					# 		namelist = "graygoo"
-					# 		traits = { trait = random_traits }
-					# 	}
-					# }
 				}
 			}
 			create_country = {
@@ -620,7 +611,9 @@ country_event = {
 						leader_age_min = 44
 						leader_age_max = 66
 						immortal = yes
+						hide_age = yes
 						traits = {
+							trait = leader_trait_governor_gray
 							trait = leader_trait_unyielding
 							trait = trait_ruler_logistic_understanding
 							trait = leader_trait_fleet_organizer

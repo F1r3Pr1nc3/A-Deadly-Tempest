@@ -2,7 +2,6 @@
 ### REQUIRED SETS ###
 #####################
 
-
 ### SPECIAL SLOT ###
 component_set = {
 	key = "special_ship_slot"

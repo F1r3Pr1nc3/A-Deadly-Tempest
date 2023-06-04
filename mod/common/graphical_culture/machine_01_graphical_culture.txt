@@ -1,5 +1,5 @@
 machine_01 = {
-	randomized = { host_has_dlc = "Synthetic Dawn Story Pack" }
+	randomized = { has_synthethic_dawn = yes }
 	fallback = grey_tempesttw
 	ship_color = yes
 	ship_lighting = {

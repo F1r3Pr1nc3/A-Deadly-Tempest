@@ -396,8 +396,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_same_empire = event_target:gray_owner
+		exists = from
 		from = { is_country_type = gray }
+		exists = event_target:gray_owner
+		is_same_empire = event_target:gray_owner
 		NOR = {
 			has_country_flag = gray_diplomacy_engaged
 			has_country_flag = gray_governor_active

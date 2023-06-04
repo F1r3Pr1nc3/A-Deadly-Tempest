@@ -16,7 +16,7 @@ weapon_component_template = {
 	min_range = 20.0
 	use_ship_kill_target = no
 
-	tags = { weapon_type_energy }
+	tags = { weapon_type_energy weapon_role_artillery t_slot }
 
 	prerequisites = { "tech_titans" }
 	component_set = "PERDITION_BEAM"

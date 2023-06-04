@@ -337,7 +337,7 @@ utility_component_template = {
 	}
 }
 
-utility_component_template = { #Archaeo Detection Scrambler
+utility_component_template = { # Archaeo Detection Scrambler
 	key = "SHIP_AURA_DETECTION_SCRAMBLER"
 	size = medium
 	icon = "GFX_ship_part_aura_detection_scrambler"
@@ -359,12 +359,12 @@ utility_component_template = { #Archaeo Detection Scrambler
 		radius = @shipAuraRange
 		apply_on = ships
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {			# A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
 			id = friendly_detection_scrambler
 			priority = 20
 		}
 
-		modifier = { #This Archaeo component doesn't get bonus effect from the AP
+		modifier = { # This Archaeo component doesn't get bonus effect from the AP
 			ship_evasion_add = 5
 		}
 

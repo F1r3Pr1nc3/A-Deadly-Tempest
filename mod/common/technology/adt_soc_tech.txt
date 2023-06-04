@@ -39,20 +39,14 @@ tech_nanite_terraforming = {
 		modifier = { factor = @ap_technological_ascendancy_rare_tech has_ascension_perk = ap_technological_ascendancy }
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_new_worlds"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_new_worlds }
 		}
 	}
 	ai_weight = {
 		factor = 5
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_new_worlds"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_new_worlds }
 		}
 	}
 	modifier = { terraform_speed_mult = 0.3 }
@@ -144,10 +138,7 @@ esc_tech_armor_nanite_1 = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_materials"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_materials }
 		}
 	}
 	ai_weight = {
@@ -158,10 +149,7 @@ esc_tech_armor_nanite_1 = {
 		}
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_materials"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_materials }
 		}
 	}
 }

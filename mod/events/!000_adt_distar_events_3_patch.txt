@@ -208,10 +208,8 @@ country_event = {
 				30 = {
 					modifier = {
 						factor = 0
-						# OR = {
 						has_global_flag = CmtFlagLgateForbidLdrake
-						# Remove outcome anyway?
-						has_global_flag = CmtFlagLgateForbidSilence
+						has_global_flag = CmtFlagLgateForbidSilence # Remove outcome anyway?
 						NAND = {
 							has_global_flag = CmtFlagLgateForbidDessanu
 							has_global_flag = CmtFlagLgateForbidGraygoo
