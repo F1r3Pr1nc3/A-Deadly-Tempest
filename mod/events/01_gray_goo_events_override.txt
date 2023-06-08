@@ -2270,7 +2270,7 @@ country_event = {
 								}
 							}
 							has_ringworld_output_boost = yes
-							# is_planet_class = pc_ringworld_habitable
+							# merg_is_hab_ringworld = yes
 							# is_planet_class = pc_ringworld_habitable_damaged
 							# is_planet_class = pc_ringworld_tech
 							# is_planet_class = pc_ringworld_tech_damaged

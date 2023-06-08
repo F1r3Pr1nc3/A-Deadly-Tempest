@@ -32,7 +32,7 @@ planet_event = {
 		is_a_habitable_planet_megastructure = yes
 		# OR = {
 		# 	habitable_planet = yes
-		# 	is_planet_class = pc_ringworld_habitable
+		# 	merg_is_hab_ringworld = yes
 		# 	merg_is_habitat = yes
 		# }
 	}

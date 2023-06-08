@@ -392,6 +392,29 @@ country_event = {
 		## Make dragons friendly (sometimes not working so call it twice)
 		country_event = { id = a_deadly_tempest.13006 days = 3 }
 	}
+	after = {
+		# Only cleanup old flags
+		every_playable_country = {
+			limit = {
+				is_ai = no
+				any_relation = {
+					is_country_type = default
+					has_country_flag = lgate_warned
+				}
+			}
+			every_relation = {
+				limit = {
+					is_country_type = default
+					has_country_flag = lgate_warned
+				}
+				prev = { remove_country_flag = lgate_warned@prev }
+			}
+		}
+		every_playable_country = {
+			limit = { has_country_flag = lgate_warned }
+			remove_country_flag = lgate_warned
+		}
+	}
 }
 
 # Informed about AI being close to opening L-Gate (HIDDEN - on_monthly_pulse)
@@ -412,11 +435,11 @@ event = {
 				AND = { # dynamic
 					is_variable_set = CmtVarLgateReqClues
 					check_variable = { which = CmtVarLgateReqClues value > 0 }
-					check_variable = { which = num_lcluster_clues value > CmtVarLgateReqClues }
+					check_variable = { which = num_lcluster_clues value > CmtVarLgateReqClues } # 1 before
 				}
 				AND = { # vanilla
 					NOT = { is_variable_set = CmtVarLgateReqClues }
-					check_variable = { which = num_lcluster_clues value > 5 }
+					check_variable = { which = num_lcluster_clues value > 5 } # 1 before
 				}
 			}
 			has_lgate = yes
@@ -445,9 +468,9 @@ event = {
 				has_lgate = yes
 			}
 			save_event_target_as = lgate_warning_country
-			set_timed_country_flag = { flag = lgate_warned months = 8 }
 			every_relation = {
 				limit = {
+					is_ai = no
 					has_communications = prev
 					OR = {
 						has_event_chain = l_cluster_chain
@@ -455,12 +478,20 @@ event = {
 					}
 					NOT = { has_country_flag = lgate_warned@prev }
 				}
-				set_timed_country_flag = { flag = lgate_warned@prev days = 360 }
-				if = { limit = { is_ai = no }
-					country_event = { id = distar.10956 } # Notify
-				}
+				set_country_flag = lgate_warned@prev
+				country_event = { id = distar.10956 } # Notify
 				# TODO
 				# add_casus_belli = { type = cb_lgate_danger who = prev days = 90 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_playable_country = {
+							NOR = { is_ai = yes has_country_flag = lgate_warned@prev }
+						}
+					}
+				}
+				set_country_flag = lgate_warned
 			}
 		}
 	}
