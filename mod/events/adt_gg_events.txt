@@ -1213,12 +1213,16 @@ country_event = {
 			set_timed_global_flag = { flag = galactic_crisis_happened years = 5 }
 			random_country = {
 				limit = {
-					merg_is_fallen_empire = yes
+					is_fallen_empire = yes
 					OR = {
 						has_ethic = ethic_fanatic_materialist
 						has_ethic = ethic_fanatic_xenophile
 					}
 					fleet_power > 60000
+					NAND = {
+						has_country_flag = guardians_of_the_galaxy
+						has_country_flag = timed_guardians_of_the_galaxy_2
+					}
 				}
 				set_country_flag = guardians_of_the_galaxy
 				set_timed_country_flag = { flag = timed_guardians_of_the_galaxy_2 years = 5 }
@@ -1773,6 +1777,7 @@ country_event = {
 					owner = prev
 					species = event_target:gray_species
 					type = "nanite_giga_warform"
+					land_army = yes
 				}
 				while = {
 					count = 8
@@ -1781,6 +1786,7 @@ country_event = {
 						owner = prev
 						species = event_target:gray_species
 						type = "robotic_army"
+						land_army = yes
 					}
 				}
 			}

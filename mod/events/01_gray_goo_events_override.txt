@@ -793,6 +793,7 @@ country_event = {
 						owner = event_target:gate_builders
 						species = last_created_species
 						type = "nanite_giga_guardian"
+						land_army = yes
 					}
 					CmtEffectCreateAdmiralty_DessanuGarryson = yes
 				}

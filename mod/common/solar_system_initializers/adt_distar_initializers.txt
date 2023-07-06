@@ -543,6 +543,7 @@ distantstars_init_05b = {
 					owner = event_target:gate_builders
 					species = owner_species
 					type = "machine_assault_2"
+					land_army = yes
 				}
 			}
 		}

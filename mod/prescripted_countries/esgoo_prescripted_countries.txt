@@ -50,7 +50,7 @@
 		texture=0
 		attachment=0
 		clothes=0
-		leader_class="ruler"
+		leader_class="general"
 	}
 	spawn_as_fallen=no
 	ignore_portrait_duplication=no

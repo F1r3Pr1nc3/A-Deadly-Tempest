@@ -1,4 +1,4 @@
-version="2.5.8"
+version="2.5.9"
 name="A Deadly Tempest [3.8.☠]"
 tags={
 	"Events"

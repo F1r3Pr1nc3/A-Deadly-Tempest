@@ -657,6 +657,7 @@ country_event = {
 					owner = root
 					species = owner_species
 					type = "nanite_giga_guardian"
+					land_army = yes
 				}
 			}
 		}

@@ -69,33 +69,38 @@ special_project = {
 		skill = 3		# Should be really not that easy (so AI could have more problems with this)
 	}
 	AI_wait_days = {
-		weight = 180
+		# weight = 180
+		base = 0
 		modifier = {
-			factor = 10
+			mid_game_years_passed < 0
+			subtract = trigger:mid_game_years_passed
+		}
+		mult = 360
+		modifier = {
+			mult = 10
 			has_global_flag = gray_goo_crisis_set
 			mid_game_years_passed < 0
 		}
 		modifier = {
-			factor = 10
+			mult = 10
 			has_global_flag = gray_goo_crisis_set
 			fleet_power < 26000
-
 		}
 		modifier = {
-			factor = 10
+			mult = 10
 			has_global_flag = gray_goo_crisis_set
 			fleet_power < 40000
 		}
 		modifier = {
-			factor = 2
+			mult = 2
 			has_global_flag = gray_goo_crisis_set
 			fleet_power < 52000
 		}
-		modifier = {
-			weight = 2
-			has_global_flag = gray_goo_crisis_set
-			end_game_years_passed > -10
-		}
+		# modifier = {
+		# 	weight = 2
+		# 	has_global_flag = gray_goo_crisis_set
+		# 	end_game_years_passed > -10
+		# }
 	}
 	on_success = {
 		owner = {
