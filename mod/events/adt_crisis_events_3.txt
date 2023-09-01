@@ -254,10 +254,10 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		if = {
-			limit = { NOT = { exists = event_target:gray_species } }
-			species = { save_event_target_as = gray_species }
-		}
+		# if = {
+		# 	limit = { NOT = { exists = event_target:gray_species } }
+		# 	species = { save_event_target_as = gray_species }
+		# }
 		clear_ethos = yes
 		if = {
 			limit = {
@@ -345,7 +345,7 @@ country_event = {
 				can_be_modified = yes
 				# pops_auto_growth = <1, speed at which the pops from that species grow automatically
 				# pop_maintenance = <1, amount of energy each pop of that species consume monthly
-				portrait = event_target:gray_species
+				# portrait = root.ruler # event_target:gray_species
 			}
 			remove_self_modified = yes
 
@@ -657,7 +657,6 @@ country_event = {
 					owner = root
 					species = owner_species
 					type = "nanite_giga_guardian"
-					land_army = yes
 				}
 			}
 		}

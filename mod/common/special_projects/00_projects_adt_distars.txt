@@ -77,22 +77,22 @@ special_project = {
 		}
 		mult = 360
 		modifier = {
-			mult = 10
+			factor = 10
 			has_global_flag = gray_goo_crisis_set
 			mid_game_years_passed < 0
 		}
 		modifier = {
-			mult = 10
+			factor = 10
 			has_global_flag = gray_goo_crisis_set
 			fleet_power < 26000
 		}
 		modifier = {
-			mult = 10
+			factor = 10
 			has_global_flag = gray_goo_crisis_set
 			fleet_power < 40000
 		}
 		modifier = {
-			mult = 2
+			factor = 2
 			has_global_flag = gray_goo_crisis_set
 			fleet_power < 52000
 		}

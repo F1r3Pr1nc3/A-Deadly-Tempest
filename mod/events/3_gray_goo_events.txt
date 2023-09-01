@@ -55,45 +55,37 @@ country_event = {
 		trigger = { is_machine_empire = yes }
 		text = "graygoo.401.b.desc"
 	}
-
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = root.species
 		planet_background = event_target:gray_homeworld
 		room = ship_room
 	}
-
 	is_triggered_only = yes
 
-	option = {
-		name = graygoo.401.a
-		trigger = {
-			NOR = {
-				is_machine_empire = yes
-				is_hive_empire = yes
-			}
-		}
+	after = {
 		hidden_effect = {
 			country_event = { id = graygoo.402 }
 		}
 	}
 	option = {
-		name = graygoo.401.b
+		name = graygoo.401.a
 		trigger = {
-			is_machine_empire = yes
+			is_machine_empire = no
+			is_hive_empire = no
 		}
-		hidden_effect = {
-			country_event = { id = graygoo.402 }
+
+	}
+	option = {
+		name = graygoo.401.b
+		exclusive_trigger = {
+			is_machine_empire = yes
 		}
 	}
 	option = {
 		name = graygoo.401.c
-		trigger = {
+		exclusive_trigger = {
 			is_hive_empire = yes
-		}
-		hidden_effect = {
-			country_event = { id = graygoo.402 }
 		}
 	}
 }
@@ -118,7 +110,6 @@ country_event = {
 		planet_background = event_target:gray_homeworld
 		room = ship_room
 	}
-
 	is_triggered_only = yes
 
 	option = {
@@ -271,7 +262,6 @@ country_event = {
 			}
 			homeworld = event_target:gray_homeworld
 			immortal = yes
-			# effect = { save_global_event_target_as = gray_species }
 		}
 
 		create_country = {
@@ -356,7 +346,8 @@ country_event = {
 		}
 		last_created_country = {
 			establish_communications_no_message = root
-			owner_species = { save_global_event_target_as = gray_species }
+			save_global_event_target_as = gray_country
+			# owner_species = { save_global_event_target_as = gray_species }  Since vanilla 3.8 replaced with gray_country
 			set_leader = last_created_leader # assign_leader
 		}
 		save_global_event_target_as = gray_owner
@@ -850,18 +841,27 @@ country_event = {
 	desc = "graygoo.512.a.desc"
 	desc = "graygoo.512.b.desc"
 	desc = "graygoo.512.c.desc"
-
 	event_window_type = leader_story # diplomatic = yes
 	picture = GFX_evt_gray_gooed_planet
 	picture_event_data = {
-		portrait = event_target:gray_country.ruler
+		portrait = event_target:gray_country.ruler # event_target:gray_species
 		planet_background = capital_scope
 		room = "personality_nanite_room"
 	}
-
 	is_triggered_only = yes
-
+	trigger = {
+		has_country_flag = gray_reforming
+	}
 	immediate = {
+		if = {
+			limit = {
+				NOT = { exists = event_target:gray_country }
+			}
+			random_country = {
+				limit = { is_country_type = gray }
+				save_global_event_target_as = gray_country
+			}
+		}
 		remove_country_flag = gray_reforming
 	}
 

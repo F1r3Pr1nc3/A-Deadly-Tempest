@@ -46,6 +46,7 @@ create_gray_governor = {
 			set_leader_flag = gray_governor
 			set_leader_flag = legendary_leader
 			set_leader_flag = immune_to_negative_traits
+			set_leader_flag = gray_leader
 			# set_leader_flag = "灰风领袖"
 		}
 	}
@@ -100,7 +101,7 @@ create_gray_warship = {
 			}
 			create_leader = {
 				class = admiral
-				species = event_target:gray_species
+				species = ruler # event_target:gray_species
 				name = "NAME_Gray"
 				event_leader = yes
 				skill = 10
@@ -200,7 +201,7 @@ create_gray_army = {
 			}
 			create_leader = {
 				class = general
-				species = event_target:gray_species
+				species = ruler # event_target:gray_species
 				name = "NAME_Gray"
 				event_leader = yes
 				skill = 10

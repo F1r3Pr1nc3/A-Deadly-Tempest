@@ -1,4 +1,5 @@
 namespace = distar
+
 #############################################
 #############################################
 #####									#####
@@ -61,7 +62,8 @@ country_event = {
 				}
 				country_event = { id = distar.10905 }
 			}
-		} else = {
+		}
+		else = {
 			# Looping check
 			country_event = { id = distar.10901 }
 		}
@@ -93,7 +95,8 @@ country_event = {
 			}
 			# Enable project
 			country_event = { id = distar.10905 }
-		} else = {
+		}
+		else = {
 			# *THIS* looping check
 			country_event = { id = distar.10902 days = 60 }
 		}
@@ -125,15 +128,18 @@ country_event = {
 					from = { is_scope_type = ship }
 				}
 				from.solar_system = { save_global_event_target_as = CmtTargetLgateOriginatingSystem }
-			} else_if = {
+			}
+			else_if = {
 				limit = { exists = event_target:candidate_gateway_system }
 				event_target:candidate_gateway_system = { save_global_event_target_as = CmtTargetLgateOriginatingSystem }
-			} else_if = {
+			}
+			else_if = {
 				limit = { exists = event_target:candidate_gateway }
 				event_target:candidate_gateway = {
 					solar_system = { save_global_event_target_as = CmtTargetLgateOriginatingSystem }
 				}
-			} else = {
+			}
+			else = {
 				# If no valid scope search generally.
 				every_system_within_border = {
 					limit = { has_star_flag = lgate }
@@ -241,7 +247,7 @@ country_event = {
 			event_target:CmtTargetLgateOriginatingSystem = {
 				closest_system = {
 					min_steps = 3
-					limit = { NOT = { any_system_colony = {  } } }
+					limit = { NOT = { any_system_colony = { } } }
 					set_star_flag = dragon_point
 				}
 			}
@@ -284,7 +290,8 @@ country_event = {
 						save_event_target_as = candidate_gateway
 					}
 				}
-			} else = {
+			}
+			else = {
 				event_target:CmtTargetLgateOriginatingSystem = {
 					if = {
 						limit = { any_system_megastructure = { CmtTriggerIsClosedLgate = yes } }
@@ -312,7 +319,8 @@ country_event = {
 					}
 				}
 				set_star_flag = lgate_originating_system		## For Graygoo (non-spawn from here)
-			} else = {
+			}
+			else = {
 				root = { set_country_flag = only_one_lgate }
 			}
 			# Try to refresh the posssible missing target (for unusual reason)
@@ -323,7 +331,8 @@ country_event = {
 			}
 		}
 		# To be sure: do not spawn twice as it is also called via .10951 (also by L-Cluster Plus).
-		if = { limit = { NOT = { has_global_flag = l_cluster_opened } }
+		if = {
+			limit = { NOT = { has_global_flag = l_cluster_opened } }
 			country_event = { id = distar.11000 days = 1 }	# Spawn L-Cluster
 		}
 		# Enable other L-Gates over time (anyway)
@@ -385,7 +394,8 @@ country_event = {
 		}
 		set_global_flag = l_cluster_opened
 		set_global_flag = lgates_activated_globally
-		if = { limit = { has_global_flag = CmtFlagLgatePreludeTriggered }
+		if = {
+			limit = { has_global_flag = CmtFlagLgatePreludeTriggered }
 			remove_global_flag = CmtFlagLgatePreludeTriggered
 		}
 
@@ -540,7 +550,8 @@ country_event = {
 				hyperlane = no
 				effect = { save_global_event_target_as = lcluster1 }
 			}
-			if = { limit = { NOT = { exists = event_target:lcluster1 } }
+			if = {
+				limit = { NOT = { exists = event_target:lcluster1 } }
 				random_system = {
 					limit = { has_star_flag = lcluster1 }
 					save_global_event_target_as = lcluster1
@@ -575,7 +586,8 @@ country_event = {
 					effect = { save_global_event_target_as = lcluster1b }
 				}
 			}
-			if = { limit = { NOT = { exists = event_target:lcluster2 } }
+			if = {
+				limit = { NOT = { exists = event_target:lcluster2 } }
 				random_system = {
 					limit = { has_star_flag = lcluster2 }
 					save_global_event_target_as = lcluster2
@@ -592,18 +604,19 @@ country_event = {
 					effect = { save_global_event_target_as = lcluster2b }
 				}
 			}
-			if = { limit = { NOT = { exists = event_target:lcluster3 } }
+			if = {
+				limit = { NOT = { exists = event_target:lcluster3 } }
 				random_system = {
 					limit = { has_star_flag = lcluster3 }
 					save_global_event_target_as = lcluster3
 				}
 			}
 			event_target:lcluster3 = {
-				spawn_system = {
+				spawn_system = {  # Changed values only moderate due crossing hyperlanes
 					min_distance >= 20
-					max_distance <= 40 # 30
-					min_orientation_angle = 20 # 24
-					max_orientation_angle = 70 # 66
+					max_distance <= 36 # 30
+					min_orientation_angle = 22 # 24
+					max_orientation_angle = 68 # 66
 					initializer = distantstars_init_04
 					hyperlane = no
 					effect = { save_global_event_target_as = lcluster4 }
@@ -618,7 +631,8 @@ country_event = {
 					effect = { save_global_event_target_as = lcluster3b }
 				}
 			}
-			if = { limit = { NOT = { exists = event_target:lcluster4 } }
+			if = {
+				limit = { NOT = { exists = event_target:lcluster4 } }
 				random_system = {
 					limit = { has_star_flag = lcluster4 }
 					save_global_event_target_as = lcluster4
@@ -627,9 +641,9 @@ country_event = {
 			event_target:lcluster4 = {
 				spawn_system = {
 					min_distance >= 8 # 5
-					max_distance <= 40 # 20
-					min_orientation_angle = 210 # 240
-					max_orientation_angle = 330 # 300
+					max_distance <= 20 # 10
+					min_orientation_angle = 210 # 250
+					max_orientation_angle = 330 # 290
 					initializer = distantstars_init_05
 					hyperlane = no
 					effect = {
@@ -647,31 +661,36 @@ country_event = {
 					effect = { save_global_event_target_as = lcluster4b }
 				}
 			}
-			if = { limit = { NOT = { exists = event_target:lcluster5 } }
+			if = {
+				limit = { NOT = { exists = event_target:lcluster5 } }
 				random_system = {
 					limit = { has_star_flag = lcluster5 }
 					save_global_event_target_as = lcluster5
 				}
 			}
-			if = { limit = { NOT = { exists = event_target:lcluster1b } }
+			if = {
+				limit = { NOT = { exists = event_target:lcluster1b } }
 				random_system = {
 					limit = { has_star_flag = lcluster1b }
 					save_global_event_target_as = lcluster1b
 				}
 			}
-			if = { limit = { NOT = { exists = event_target:lcluster2b } }
+			if = {
+				limit = { NOT = { exists = event_target:lcluster2b } }
 				random_system = {
 					limit = { has_star_flag = lcluster2b }
 					save_global_event_target_as = lcluster2b
 				}
 			}
-			if = { limit = { NOT = { exists = event_target:lcluster3b } }
+			if = {
+				limit = { NOT = { exists = event_target:lcluster3b } }
 				random_system = {
 					limit = { has_star_flag = lcluster3b }
 					save_global_event_target_as = lcluster3b
 				}
 			}
-			if = { limit = { NOT = { exists = event_target:lcluster4b } }
+			if = {
+				limit = { NOT = { exists = event_target:lcluster4b } }
 				random_system = {
 					limit = { has_star_flag = lcluster4b }
 					save_global_event_target_as = lcluster4b
@@ -695,7 +714,8 @@ country_event = {
 				}
 				every_system = {
 					limit = { has_star_flag = lcluster }
-					if = { limit = { has_global_flag = has_guillis_planet_modifiers_mod }
+					if = {
+						limit = { has_global_flag = has_guillis_planet_modifiers_mod }
 						every_system_planet = {
 							planet_event = { id = gpm_engine.1 }
 						}
@@ -722,12 +742,14 @@ country_event = {
 			event_target:lcluster5 = {
 				add_hyperlane = { from = this to = event_target:lcluster4 }
 				# For backward compat.
-				if = { limit = { exists = event_target:lcluster5b }
+				if = {
+					limit = { exists = event_target:lcluster5b }
 					add_hyperlane = { from = this to = event_target:lcluster5b }
 				}
 			}
+
 			random_list = {
-				10 = { # Vanilla
+				25 = { # Vanilla
 					event_target:lcluster4 = {
 						add_hyperlane = { from = this to = event_target:lcluster3 }
 						add_hyperlane = { from = this to = event_target:lcluster2 }
@@ -746,14 +768,91 @@ country_event = {
 						add_hyperlane = { from = this to = event_target:lcluster2b }
 					}
 				}
-				10 = {
+				15 = {
 					event_target:lcluster4 = {
-						add_hyperlane = { from = this to = event_target:lcluster3 }
+						# Compare distance
+						export_trigger_value_to_variable = {
+							trigger = distance
+							parameters = {
+								source = event_target:lcluster2
+								max_distance <= 300
+								type = euclidean
+							}
+							variable = system_distance_2
+						}
+						export_trigger_value_to_variable = {
+							trigger = distance
+							parameters = {
+								source = event_target:lcluster3b
+								max_distance <= 300
+								type = euclidean
+							}
+							variable = system_distance_3b
+						}
+						export_trigger_value_to_variable = {
+							trigger = distance
+							parameters = {
+								source = event_target:lcluster3
+								max_distance <= 300
+								type = euclidean
+							}
+							variable = system_distance_3
+						}
 						add_hyperlane = { from = this to = event_target:lcluster4b }
+						if = {
+							limit = {
+								check_variable = { which = system_distance_2 value > system_distance_3b }
+								check_variable = { which = system_distance_3 value > system_distance_3b }
+							}
+							add_hyperlane = { from = this to = event_target:lcluster3b }
+						}
+						else_if = {
+							limit = {
+								check_variable = { which = system_distance_2 value > system_distance_3 }
+								check_variable = { which = system_distance_3b value > system_distance_3 }
+							}
+							add_hyperlane = { from = this to = event_target:lcluster3 }
+						}
+						else_if = {
+							limit = {
+								check_variable = { which = system_distance_3 value > system_distance_2 }
+								check_variable = { which = system_distance_3b value > system_distance_2 }
+							}
+							add_hyperlane = { from = this to = event_target:lcluster2 }
+						}
 					}
 					event_target:lcluster3 = {
-						add_hyperlane = { from = this to = event_target:lcluster2 }
-						add_hyperlane = { from = this to = event_target:lcluster3b }
+						export_trigger_value_to_variable = {
+							trigger = distance
+							parameters = {
+								source = event_target:lcluster2
+								max_distance <= 300
+								type = euclidean
+							}
+							variable = system_distance_2
+						}
+						if = {
+							limit = {
+								NOT = { has_hyperlane_to = event_target:lcluster4 }
+								check_variable = { which = system_distance_2 value > event_target:lcluster4.system_distance_3 }
+								event_target:lcluster4 = { check_variable = { which = system_distance_3b value > system_distance_3 } }
+							}
+							add_hyperlane = { from = this to = event_target:lcluster4 }
+						}
+						else_if = {
+							limit = {
+								NOR = {
+									has_hyperlane_to = event_target:lcluster4
+									has_hyperlane_to = event_target:lcluster2
+									check_variable = { which = system_distance_2 value > event_target:lcluster4.system_distance_3 }
+									event_target:lcluster4 = { check_variable = { which = system_distance_2 value > system_distance_3 } }
+								}
+							}
+							add_hyperlane = { from = this to = event_target:lcluster2 }
+						}
+						else = {
+							add_hyperlane = { from = event_target:lcluster3b to = event_target:lcluster4b }
+						}
 					}
 					event_target:lcluster2 = {
 						add_hyperlane = { from = this to = event_target:lcluster4b }
@@ -761,9 +860,18 @@ country_event = {
 					}
 					event_target:lcluster1b = {
 						add_hyperlane = { from = this to = event_target:lcluster2b }
+						add_hyperlane = { from = this to = event_target:lcluster1 }
 					}
 					event_target:lcluster3b = {
 						add_hyperlane = { from = this to = event_target:lcluster1 }
+						add_hyperlane = { from = this to = event_target:lcluster3 }
+					}
+
+					event_target:lcluster3 = { clear_variable = system_distance_2 }
+					event_target:lcluster4 = {
+						clear_variable = system_distance_2
+						clear_variable = system_distance_3
+						clear_variable = system_distance_3b
 					}
 				}
 				10 = {
@@ -784,6 +892,7 @@ country_event = {
 					}
 					event_target:lcluster4b = {
 						add_hyperlane = { from = this to = event_target:lcluster2b }
+						add_hyperlane = { from = this to = event_target:lcluster3b }
 					}
 				}
 			}
@@ -858,7 +967,7 @@ country_event = {
 						limit = {
 							NOR = {
 								has_star_flag = dragon_point
-								any_system_colony = {  }
+								any_system_colony = { }
 							}
 						}
 						set_star_flag = dragon_point
@@ -904,7 +1013,8 @@ country_event = {
 										limit = { NOT = { is_same_empire = root } }
 										set_country_flag = knows_ldragon
 										country_event = { id = distar.13010 }
-									} else = {
+									}
+									else = {
 										## Notification 1
 										root = {
 											country_event = { id = distar.13010 }
@@ -921,7 +1031,8 @@ country_event = {
 									}
 								}
 							}
-						} else_if = {
+						}
+						else_if = {
 							limit = {
 								exists = space_owner
 								space_owner = {
@@ -930,7 +1041,8 @@ country_event = {
 								}
 							}
 							system_event = { id = distar.13012 days = 240 random = 60 }
-						} else = {
+						}
+						else = {
 							system_event = { id = distar.13012 days = 480 random = 120 }
 						}
 						system_event = { id = distar.13012 days = 800 random = 200 }
@@ -1085,7 +1197,8 @@ system_event = {
 					}
 				}
 			}
-		} else = {
+		}
+		else = {
 			every_playable_country = {
 				limit = {
 					is_ai = yes
@@ -1249,6 +1362,11 @@ country_event = {
 			if = {
 				limit = { has_global_flag = a_deadly_tempest_mod_active }
 				give_technology = { tech = tech_nanite_guardians message = no }
+			}
+			random_playable_country = {
+				limit = { is_ai = no }
+				weights = { base = 1 modifier = { add = 24 NOT = { is_same_empire = root } } }
+				country_event = { id = a_deadly_tempest.1000 days = 16 random = 8 } # Chance Spawn Gray
 			}
 		}
 	}

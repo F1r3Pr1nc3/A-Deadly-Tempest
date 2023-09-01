@@ -12,7 +12,7 @@ portraits = {
 	esgoo_male_01 = {
 		entity = "portrait_esgoo_male_01_entity"
 		clothes_selector = "esgoo_male_clothes_01"
-		hair_selector = "esgoo_male_hair_01"
+		attachment_selector = "esgoo_male_hair_01"
 		greeting_sound = "robot_molluscoid_greetings"
 		character_textures = {
 			"gfx/models/portraits/esgoo/esbt119.dds"
@@ -22,7 +22,7 @@ portraits = {
 	lithnanite = {
 		entity = "portrait_lithoid_07_entity"
 		clothes_selector = "no_texture"
-		hair_selector = "no_texture"
+		attachment_selector = "no_texture"
 		greeting_sound = "robot_reptilian_greetings"
 		character_textures = {
 			"gfx/models/portraits/lithoid/lithoid_07_portrait_ai.dds"
@@ -31,7 +31,7 @@ portraits = {
 	lithnanite_02 = {
 		entity = "portrait_lithoid_02_entity"
 		clothes_selector = "no_texture"
-		hair_selector = "no_texture"
+		attachment_selector = "no_texture"
 		greeting_sound = "robot_molluscoid_greetings"
 		character_textures = {
 			"gfx/models/portraits/lithoid/lithoid_02_portrait_gray_cyber.dds"
@@ -41,7 +41,7 @@ portraits = {
 	# GrayTempest = {
 	# 	entity = "portrait_lithoid_07_entity"
 	# 	clothes_selector = "no_texture"
-	# 	hair_selector = "no_texture"
+	# 	attachment_selector = "no_texture"
 	# 	greeting_sound = "robot_reptilian_greetings"
 	# 	character_textures = {
 	# 		"gfx/models/portraits/lithoid/lithoid_07_portrait_ai.dds"
@@ -51,7 +51,7 @@ portraits = {
 	creature = {
 		entity = "portrait_fungoid_11_entity"
 		clothes_selector = "no_texture"
-		hair_selector = "no_texture"
+		attachment_selector = "no_texture"
 		greeting_sound = "reptilian_01_greetings"
 		character_textures = {
 			"gfx/models/portraits/creature/creature.dds"

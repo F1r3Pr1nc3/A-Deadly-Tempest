@@ -191,25 +191,3 @@ entity = {
 	# attach = { west 	= "gatebuilder_01_bulwark_section_entity" }
 	# attach = { south	= "gatebuilder_01_bulwark_section_entity" }
 }
-
-# DSO extension
-entity = {
-	name = "gatebuilder_01_core_ship_entity"
-	default_state = "idle"
-	state = {
-		name = "idle"
-		# animation = "idle" FIXME
-	}
-
-	locator = { name = "boop"		position = { 0 -10 0 } rotation = { 0 0 0 } }
-	locator = { name = "boopu"		position = { 10 0 0 } rotation = { 0 0 90 } }
-	locator = { name = "boopa"		position = { -10 0 0 } rotation = { 0 0 -90 } }
-	locator = { name = "boopb"		position = { 0 10 0 } rotation = { 0 0 180 } }
-
-	attach = { "boop"	= "grey_tempesttw_corvette_VE_entity" }
-	attach = { "boopu"	= "grey_tempesttw_corvette_VE_entity" }
-	attach = { "boopa"	= "grey_tempesttw_corvette_VE_entity" }
-	attach = { "boopb"	= "grey_tempesttw_corvette_VE_entity" }
-
-	scale = 1.0
-}

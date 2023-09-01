@@ -592,7 +592,7 @@ country_event = {
 							if = { limit = { exists = event_target:start_5 }
 								set_species_homeworld = event_target:start_5
 							}
-							save_global_event_target_as = gray_species
+							# save_global_event_target_as = gray_species
 							change_species_characteristics = { immortal = yes }
 							prev = {
 								change_dominant_species = { species = prev change_all = yes }
@@ -793,7 +793,6 @@ country_event = {
 						owner = event_target:gate_builders
 						species = last_created_species
 						type = "nanite_giga_guardian"
-						land_army = yes
 					}
 					CmtEffectCreateAdmiralty_DessanuGarryson = yes
 				}
@@ -1085,7 +1084,7 @@ country_event = {
 	desc = "graygoo.115.desc"
 	diplomatic = yes
 	picture_event_data = {
-		portrait = event_target:graygoo_country # event_target:gray_species
+		portrait = event_target:graygoo_country.ruler # event_target:gray_species
 		planet_background = event_target:graygoo_country
 		graphical_culture = event_target:graygoo_country
 		city_level = event_target:graygoo_country
@@ -1131,7 +1130,7 @@ country_event = {
 	desc = "graygoo.116.desc"
 	diplomatic = yes
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:graygoo_country.ruler # event_target:gray_species
 		planet_background = event_target:graygoo_country
 		graphical_culture = event_target:graygoo_country
 		city_level = event_target:graygoo_country
@@ -1228,7 +1227,7 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:graygoo_country.ruler # event_target:gray_species
 		planet_background = event_target:graygoo_country
 		graphical_culture = event_target:graygoo_country
 		city_level = event_target:graygoo_country
@@ -2271,7 +2270,7 @@ country_event = {
 								}
 							}
 							has_ringworld_output_boost = yes
-							# merg_is_hab_ringworld = yes
+							# has_ringworld_output_boost = yes
 							# is_planet_class = pc_ringworld_habitable_damaged
 							# is_planet_class = pc_ringworld_tech
 							# is_planet_class = pc_ringworld_tech_damaged
