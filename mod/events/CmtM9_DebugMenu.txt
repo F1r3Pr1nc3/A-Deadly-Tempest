@@ -223,7 +223,7 @@ country_event = {
 	desc = CrisisManagerMenu.9310.desc
 	picture = GFX_evt_CmtMenuA
 	is_triggered_only = yes
-
+	is_test_event = yes
 	option = {
 		name = CrisisManagerMenu.9310a.name
 		while = {
@@ -280,7 +280,7 @@ country_event = {
 	desc = CrisisManagerMenu.9320.desc
 	picture = GFX_evt_CmtMenuA
 	is_triggered_only = yes
-
+	is_test_event = yes
 	option = {
 		name = CrisisManagerMenu.9320a1.name
 		every_country = {
@@ -348,7 +348,7 @@ country_event = {
 	desc = CrisisManagerMenu.9330.desc
 	picture = GFX_evt_CmtMenuA
 	is_triggered_only = yes
-
+	is_test_event = yes
 	option = {
 		name = CrisisManagerMenu.9330a.name
 		random_country = {

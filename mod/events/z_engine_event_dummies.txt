@@ -1,4 +1,6 @@
+# Placeholder since 3.9.1 (parser crashes if missing)
 namespace = gpm_engine
+namespace = lclusterplus # not really needed but to omit error.log
 # Guilli's Planet Dummy
 # MASTER EVENT
 # used in !000_adt_distar_events_3_patch.txt
@@ -8,10 +10,17 @@ planet_event = {
 	is_triggered_only = yes
 	is_test_event = yes
 	trigger = { always = no }
+	immediate = {  }
 }
 
-namespace = lclusterplus # not really needed but to omit error.log
-# dummy
+country_event = {
+	id = lclusterplus.2
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
 country_event = {
 	id = lclusterplus.10
 	hide_window = yes

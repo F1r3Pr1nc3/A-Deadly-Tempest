@@ -50,6 +50,7 @@ has_total_war_cb = {
 	}
 }
 
+# Sync with Merger
 planet_is_hostile_or_crisis = {
 	exists = owner
 	owner = {
@@ -63,11 +64,11 @@ planet_is_hostile_or_crisis = {
 					is_crisis_faction = yes					# Narrow down to just crises as to not alter more than needed.
 				}
 			}
-			# Safety Off (used in ACE)
-			AND = {
-				has_global_flag = has_pk_safety_off # has_safety_off = yes
-				is_same_empire = from.owner
-			}
+			## Safety Off for Planet Killer Weapons (used in ACE) but here on the wrong place as it breaks megastructure built like in Giga mod
+			# AND = {
+			# 	has_global_flag = has_pk_safety_off # has_safety_off = yes
+			# 	is_same_empire = from.owner
+			# }
 		}
 	}
 }

@@ -1,0 +1,214 @@
+# Placeholder since 3.9.1 (parser crashes if missing)
+namespace = CrisisManagerMenu
+namespace = CrisisManagerControl # not really needed but to omit error.log
+
+country_event = {
+	id = CrisisManagerMenu.2101
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2102
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2103
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2104
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2105
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2106
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2107
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2108
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2109
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2110
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2111
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2112
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2113
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2114
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2115
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerMenu.2116
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+
+country_event = {
+	id = CrisisManagerControl.12
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerControl.4101
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerControl.4102
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerControl.4000
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerControl.3000
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerControl.2000
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerControl.1000
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerControl.5021
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+country_event = {
+	id = CrisisManagerControl.7205
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
+namespace = extra_sleeper_deus
+country_event = {
+	id = extra_sleeper_deus.1
+	hide_window = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+	immediate = {  }
+}
