@@ -4,7 +4,7 @@
 ### Which portraits are used is set in.
 ### common\species_classes\00_species_classes.txt
 ###
-###	This file configures how portraits and planet backgrounds are built.
+### This file configures how portraits and planet backgrounds are built.
 ###	Default position orientation is lower left.
 ##############################################################
 portraits = {
@@ -63,7 +63,7 @@ portrait_groups = {
 	esgoo = {
 		default = esgoo_male_01
 		game_setup = {
-			# Will run with a limited country scope. species and government is set but the country does not actually exist.
+			# Will run with a limited country scope. Species and government is set but the country does not actually exist.
 			add = {
 				trigger = {
 					ruler = {

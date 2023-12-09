@@ -25,7 +25,7 @@ check_fleet_count_in_system = {
 }
 
 ########################
-## For Mod Compatibility
+##	For Mod Compatibility
 ########################
 
 has_nhsc = {

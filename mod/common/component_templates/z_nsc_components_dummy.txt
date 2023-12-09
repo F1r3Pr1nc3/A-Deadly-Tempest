@@ -31,7 +31,7 @@ utility_component_template = {
 	component_set = ESC_NANO_ARMOR_1
 	upgrades_to = SMALL_ESC_NANO_ARMOR_2
 
-	# only regular empires and machine FE may use this component
+	# Only regular empires and machine FE may use this component
 	valid_for_country = {
 		OR = {
 			is_fallen_empire = no

@@ -1729,7 +1729,7 @@ country_event = {
 						weights = {
 							base = 1
 							modifier = { add = 3 has_planet_flag = marauder_rally_point }
-							modifier = { add = 2 is_a_planet = yes } # possible inconsisent due other mods
+							modifier = { add = 2 is_a_planet = yes } # Possible inconsisent due other mods
 						}
 						save_event_target_as = former_marauder_capital
 						log="Manual marauder strong fallback \\[This.GetName]"

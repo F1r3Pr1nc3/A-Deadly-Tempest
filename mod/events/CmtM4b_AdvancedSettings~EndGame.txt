@@ -6,7 +6,7 @@ namespace = CrisisManagerMenu
 #####	Crisis Manager				#####
 #####								#####
 #####	Advanced Congigurations		#####
-#####	for End-Game Crisis			#####
+#####	For End-Game Crisis			#####
 #####								#####
 #########################################
 #########################################

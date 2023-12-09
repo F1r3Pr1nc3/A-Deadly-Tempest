@@ -1,4 +1,4 @@
-# (Compat. will be overwritten by Warship Girls R And MIST Species)
+# (Compat. Will be overwritten by Warship Girls R And MIST Species)
 # Root = gray_owner
 create_gray_governor = {
 	if = {
@@ -18,7 +18,7 @@ create_gray_governor = {
 	}
 	set_country_flag = gray_governor_active
 	create_leader = {
-		class = governor
+		class = official
 		species = root
 		name = "NAME_Gray"
 		event_leader = yes
@@ -34,9 +34,9 @@ create_gray_governor = {
 		hide_age = yes
 		traits = {
 			trait = leader_trait_governor_gray
-			trait = subclass_governor_economist
-			trait = leader_trait_urbanist_3
-			trait = leader_trait_scrapper_2
+			trait = subclass_official_governor
+			trait = trait_ruler_architectural_sense_3
+			trait = leader_trait_distribution_lines_2
 			trait = leader_trait_retired_fleet_officer
 		}
 		effect = {
@@ -96,11 +96,11 @@ create_gray_warship = {
 			limit = {
 				NAND  = {
 					exists = event_target:huifeng_leader_admiral
-					any_owned_leader = { leader_class = admiral has_leader_flag = gray_admiral }
+					any_owned_leader = { leader_class = commander has_leader_flag = gray_admiral }
 				}
 			}
 			create_leader = {
-				class = admiral
+				class = commander
 				species = ruler # event_target:gray_species
 				name = "NAME_Gray"
 				event_leader = yes
@@ -196,11 +196,11 @@ create_gray_army = {
 			limit = {
 				NOR  = {
 					exists = event_target:gray_leader_general
-					any_owned_leader = { leader_class = general has_leader_flag = gray_general }
+					any_owned_leader = { leader_class = commander has_leader_flag = gray_general }
 				}
 			}
 			create_leader = {
-				class = general
+				class = commander
 				species = ruler # event_target:gray_species
 				name = "NAME_Gray"
 				event_leader = yes

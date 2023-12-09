@@ -360,7 +360,7 @@ ship_section_template = {
 		template = "invisible_titanic_fixed"
 		locatorname = "xl_gun_01"
 	}
-	# component_slot = { # needs added in design too
+	# component_slot = { # Needs added in design too
 	# 	name = "TITAN_02"
 	# 	template = "invisible_titanic_fixed"
 	# 	locatorname = "xl_gun_01"

@@ -8,7 +8,7 @@
 
 CmtEffectCreateAdmiral_OwnerStandard = {
 	create_leader = {
-		class = admiral
+		class = commander
 		species = owner_species
 		name = random
 		skill = 3

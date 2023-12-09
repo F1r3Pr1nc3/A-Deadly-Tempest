@@ -1,6 +1,6 @@
 # Placeholder since 3.9.1 (parser crashes if missing)
 namespace = CrisisManagerMenu
-namespace = CrisisManagerControl # not really needed but to omit error.log
+namespace = CrisisManagerControl # Not really needed but to omit error.log
 
 country_event = {
 	id = CrisisManagerMenu.2101

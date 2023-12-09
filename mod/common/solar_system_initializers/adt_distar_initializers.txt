@@ -1,4 +1,4 @@
-### L-Cluster init (bit opt. by FirePrince)
+### L-Cluster init (bit opt. By FirePrince)
 
 # L-Gate System
 distantstars_init_00 = {
@@ -118,7 +118,7 @@ distantstars_init_06 = {
 	}
 }
 
-# L-Cluster Entrance (changed to black_hole and switched with init_03. added mostly only init_effect)
+# L-Cluster Entrance (changed to black_hole and switched with init_03. Added mostly only init_effect)
 distantstars_init_01 = {
 	class = "sc_black_hole"
 	name = "NAME_Final_Egress"

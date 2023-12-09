@@ -933,7 +933,7 @@ terraform_link = {
 	}
 }
 
-terraform_link = { # only countries with Hydrocentric can find this. Probably no reasonable way of making only them able to terraform it, though
+terraform_link = { # Only countries with Hydrocentric can find this. Probably no reasonable way of making only them able to terraform it, though
 	from = "pc_frozen"
 	to = "pc_ocean"
 	resources = {
@@ -1859,7 +1859,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_pop = {
-					NOT = { has_trait = trait_hive_mind }
+					is_hive_species = no
 				}
 			}
 		}

@@ -279,7 +279,7 @@ country_event = {
 				set_graphical_culture = "machine_01" # root
 				set_city_graphical_culture = root
 				create_leader = {
-					class = governor # random_ruler
+					class = official # random_ruler
 					species = last_created_species
 					name = "NAME_Gray"
 					event_leader = yes
@@ -295,9 +295,9 @@ country_event = {
 					hide_age = yes
 					traits = {
 						trait = leader_trait_governor_gray
-						trait = subclass_governor_economist
-						trait = leader_trait_urbanist_3
-						trait = leader_trait_scrapper_2
+						trait = subclass_official_governor
+						trait = trait_ruler_architectural_sense_3
+						trait = leader_trait_distribution_lines_2
 						0 = leader_trait_unyielding
 						2 = trait_ruler_logistic_understanding
 						0 = leader_trait_fleet_organizer
@@ -341,7 +341,7 @@ country_event = {
 						tech_akx_worm_3
 					}
 				}
-				country_event = { id = a_deadly_tempest.107 }	## add technologies
+				country_event = { id = a_deadly_tempest.107 }	## Add technologies
 			}
 		}
 		last_created_country = {
@@ -356,7 +356,7 @@ country_event = {
 		# set_variable = { which = gray_affection_level value = 1 }
 		every_playable_country = {
 			limit = {
-				# is_ai = no # not sure as this can change
+				# is_ai = no # Not sure as this can change
 				# is_country_type_with_subjects = yes
 				has_country_flag = disco_gray
 				# NOT = { is_same_empire = event_target:gray_owner }

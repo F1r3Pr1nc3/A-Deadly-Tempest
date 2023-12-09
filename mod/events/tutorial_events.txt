@@ -58,6 +58,22 @@ country_event = {
 	trigger = { always = no }
 }
 country_event = {
+	id = tutorial.4
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+}
+country_event = {
+	id = tutorial.5
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+}
+country_event = {
 	id = tutorial.6
 	hide_window = yes
 	fire_only_once = yes
@@ -699,6 +715,17 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
+country_event = {
+	id = tutorial.1340
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	is_test_event = yes
+	trigger = { always = no }
+}
+###########################################
+# "NEMESIS" / 2.9 TUTORIALS & ADVISOR TIPS
+###########################################
 first_contact_event = {
 	id = tutorial.2000
 	hide_window = yes

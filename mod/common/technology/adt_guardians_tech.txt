@@ -281,7 +281,7 @@ tech_nanite_dragon = {
 			has_global_flag = dragon_season
 		}
 		# modifier = {
-		#	switch not woring in modifier!?
+		# Switch not woring in modifier!?
 		# 	switch = {
 		# 		trigger = years_passed
 		# 		50 > { factor = 0.1 }

@@ -1174,6 +1174,11 @@ country_event = {
 	hide_window = yes
 	mean_time_to_happen = { months = 2 }
 	trigger = {
+		has_global_flag = l_cluster_opened
+		OR = {
+			has_global_flag = gray_goo_crisis_active
+			exists = event_target:nanite_factory
+		}
 		exists = event_target:graygoo_country
 		is_same_empire = event_target:graygoo_country
 	}
@@ -1181,7 +1186,10 @@ country_event = {
 		# Check Init
 		if = {
 			limit = {
-				check_variable = { which = CmtVarCapitalDefenceNumber value < 1 }
+				NAND = {
+					is_variable_set = CmtVarCapitalDefenceNumber
+					check_variable = { which = CmtVarCapitalDefenceNumber value > 0 }
+				}
 			}
 			event_target:CmtGlobalVar = {
 				if = {
@@ -1194,11 +1202,7 @@ country_event = {
 			}
 			CmtEffectInitFleetUpperLimit = yes
 		}
-		if = {
-			limit = {
-				is_variable_set = CmtVarCapitalDefenceNumber
-				check_variable = { which = CmtVarCapitalDefenceNumber value > 0 }
-			}
+		else = {
 			shoal_guard_dynamic_reinforce = {
 				"KIND" = shoal_guard_reinforce
 				# STRENGTH = CmtVarCapitalDefenceNumber
@@ -1705,7 +1709,7 @@ country_event = {
 				}
 			}
 			create_leader = {
-				class = general
+				class = commander
 				species = prev.ruler # event_target:gray_species
 				name = "bốn"
 				immortal = yes
@@ -2383,7 +2387,7 @@ country_event = {
 				has_star_flag = lcluster
 				NAND = {
 					exists = owner
-					is_owned_by = ROOT
+					is_owned_by = root
 				}
 				any_system_planet = {
 					# OR = {
@@ -2430,7 +2434,7 @@ country_event = {
 						set_planet_flag = hatchling_will_trigger
 					}
 				}
-				set_surveyed = { surveyed = no surveyor = prevprev } # was bugged in 3.0
+				set_surveyed = { surveyed = no surveyor = prevprev } # Was bugged in 3.0
 				add_anomaly = { category = disco_gray_cat target = prevprev }
 				prevprev = { set_country_flag = disco_gray }
 			}

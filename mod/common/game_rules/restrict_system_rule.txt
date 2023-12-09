@@ -114,7 +114,7 @@ ai_should_restrict_system = {
 			exists = event_target:gigaflusion
 			event_target:gigaflusion = {
 				exists = owner
-				owner = { is_country_type = primitive }
+				owner = { is_primitive = yes }
 			}
 		}
 		# ACOT

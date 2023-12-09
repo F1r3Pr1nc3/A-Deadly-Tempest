@@ -1,4 +1,4 @@
-## For Warship Girls R And MIST Species.
+##	For Warship Girls R And MIST Species.
 leader_trait_admiral_gray = {
 	cost = 0
 	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_leader.dds"
@@ -20,7 +20,7 @@ leader_trait_admiral_gray = {
 		ship_hull_regen_add_static = 8
 		ship_armor_regen_add_static = 8
 	}
-	leader_class = { admiral }
+	leader_class = { commander }
 	initial = no
 	randomized = no
 }
@@ -42,7 +42,7 @@ leader_trait_general_gray = {
 		army_disengage_chance_mult = 0.4
 		army_health = 0.1
 	}
-	leader_class = { general }
+	leader_class = { commander }
 	initial = no
 	randomized = no
 }

@@ -1,6 +1,6 @@
 ## Possible Deposit Variables ##
 # resources, resource and amount
-# potential trigger (planet scope)
+# Potential trigger (planet scope)
 # blocked_modifier - applied to planet only when deposit blocker has been cleared
 # constant_modifier - applied to planet always
 # blocker = <key/any/none> - default any

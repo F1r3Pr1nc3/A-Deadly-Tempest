@@ -36,7 +36,7 @@ gateway_0 = {
 			}
 		}
 		custom_tooltip = {
-			fail_text = "requires_surveyed_system"			# or is in my subject's territory
+			fail_text = "requires_surveyed_system"			# Or is in my subject's territory
 			OR = {
 				NOT = {
 					any_system_planet = {
@@ -210,7 +210,7 @@ gateway_restored = {
 			from = {
 				country_event = { id = origin.1050 }
 				random_list = {
-					20 = { # spawn chance
+					20 = { # Spawn chance
 						set_country_flag = sharpbeak_known
 						prev = { set_star_flag = sharpbeak_starsystem }
 						fromfrom = {
@@ -233,7 +233,7 @@ gateway_restored = {
 							}
 						}
 					}
-					80 = {} # no luck
+					80 = {} # No luck
 				}
 				country_event = { id = apoc.12 }
 				country_event = { id = apoc.10 }

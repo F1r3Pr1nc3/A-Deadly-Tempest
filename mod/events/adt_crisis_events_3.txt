@@ -42,7 +42,7 @@ country_event = {
 						is_variable_set = CmtVarGrayGooCybrexLimit
 						check_variable = { which = CmtVarGrayGooCybrexLimit value < prev.trigger:num_fleets }
 					}
-					AND = {	# pre v.3.1
+					AND = {	# Pre v.3.1
 						NOT = { event_target:CmtGlobalVar = { is_variable_set = CmtVarGrayGooCybrexLimit } }
 						OR = {
 							num_fleets > 110
@@ -52,7 +52,7 @@ country_event = {
 							}
 							AND = {
 								event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 4 } }
-								num_fleets > 36 # initial ca. 27
+								num_fleets > 36 # Initial ca. 27
 							}
 						}
 					}
@@ -197,7 +197,7 @@ country_event = {
 		}
 
 		create_leader = {
-			class = admiral
+			class = commander
 			species = owner_species
 			name = random
 			skill = 5
@@ -249,7 +249,7 @@ country_event = {
 # (ADT)
 country_event = {
 	# id = fallen_empires_awakening.3
-	id = crisis.2003 # adt only
+	id = crisis.2003 # Adt only
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -324,7 +324,7 @@ country_event = {
 			immortal = yes
 			# effect = {}
 		}
-		change_dominant_species = { species = last_created_species change_all = yes } # it's still broken do NOT use this # it will make the species right of the species to unchangeable # stellaris v3.0.1
+		change_dominant_species = { species = last_created_species change_all = yes } # it's still broken do NOT use this # It will make the species right of the species to unchangeable # Stellaris v3.0.1
 
 		# civic = civic_revanchist_fervor
 		# civic = civic_ancient_caches_of_technology
@@ -350,7 +350,7 @@ country_event = {
 			remove_self_modified = yes
 
 			modify_species = {
-				# species = this # if pop
+				# species = this # If pop
 				remove_trait = "trait_nomadic"
 				add_trait = "trait_pc_relic_preference"
 				add_trait = "trait_machine_unit"
@@ -363,7 +363,7 @@ country_event = {
 				add_trait = "trait_robot_mass_produced"
 				add_trait = "trait_robot_streamlined_protocols"
 				add_traits_at_start_of_list = yes
-				# change_scoped_species = yes # if pop
+				# change_scoped_species = yes # If pop
 				# effect = {
 				# 	set_species_identity = last_created_species
 				# }
@@ -506,7 +506,7 @@ country_event = {
 		# add_ship_design = last_created_design
 		# add_awakened_fallen_empire_fleet = yes
 		# event_target:nanite_factory = {
-		# 	create_fallen_empire_starting_navy = yes # galactic object
+		# 	create_fallen_empire_starting_navy = yes # Galactic object
 		# }
 		# TODO: too much?
 		# capital_scope.solar_system = {
@@ -534,8 +534,8 @@ country_event = {
 				}
 			}
 		}
-		# set_country_flag = declared_crisis # now at crisis.4099
-		## colonize random planet
+		# set_country_flag = declared_crisis # Now at crisis.4099
+		## Colonize random planet
 		random_system = {
 			limit = {
 				has_star_flag = lcluster
@@ -675,7 +675,7 @@ country_event = {
 # Root = event_target:new_crisis
 country_event = {
 	# id = fallen_empires_awakening.3
-	id = crisis.2004 # adt only
+	id = crisis.2004 # Adt only
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {

@@ -8,7 +8,7 @@
 ##################################
 ##################################
 #
-#	This template can be applied automatially on game start.
+# This template can be applied automatially on game start.
 #	You can omit set configurations on game start if you activate this template and set value.
 #	How to use: See ''ReadMe_for_making_template.txt''
 
@@ -17,11 +17,11 @@
 ################################
 
 ### Activate Template
-	@CmtT001_ConstActivatedEventEndgame = yes		## For events of End-Game Crisis, Guardians of Galaxy.
-	@CmtT001_ConstActivatedEventMidgame = no		## For events of Mid-Game Crisis (Khan, L-Gate)
-	@CmtT001_ConstActivatedEventSleeper = no		## For events of Fallen Empire Awaking except Guarians of Galaxy.
-	@CmtT001_ConstActivatedPowerEndgame = yes		## For military power of End-Game Crisis
-	@CmtT001_ConstActivatedPowerMidgame = no		## For military power of Khan and Gray Tempest.
+	@CmtT001_ConstActivatedEventEndgame = yes		##	For events of End-Game Crisis, Guardians of Galaxy.
+	@CmtT001_ConstActivatedEventMidgame = no		##	For events of Mid-Game Crisis (Khan, L-Gate)
+	@CmtT001_ConstActivatedEventSleeper = no		##	For events of Fallen Empire Awaking except Guarians of Galaxy.
+	@CmtT001_ConstActivatedPowerEndgame = yes		##	For military power of End-Game Crisis
+	@CmtT001_ConstActivatedPowerMidgame = no		##	For military power of Khan and Gray Tempest.
 		### yes: this template is activated for specified parameters.
 		### no : this template is ignored for specified parameters.
 		### * No configurations exist for military power of Fallen/Awakened Empires.
@@ -34,7 +34,7 @@
 ### The version of Crisis Manager. This template corresponds to:
 	@CmtT001_ConstVersionInfo = 1.11
 		### Never change this value.
-		### For example, ''1.03'' means ''ver.1.3'' but not ''ver.1.0.3''
+		###	For example, ''1.03'' means ''ver.1.3'' but not ''ver.1.0.3''
 
 ##############################################
 ###  Event Conditions for End-Game Crises  ###
@@ -191,7 +191,7 @@
 	@CmtT001_ConstExdsChaserAnywhere = no
 		### yes: Spawn anywhere in the galaxy
 		### no : Spawn only inside border of Unbidden (Default)
-		### Caution: this option must be set ''yes'' if ''@CmtT001_ConstExdsChaserCondition = 6'' (Avenger) is selected.
+		### Caution: This option must be set ''yes'' if ''@CmtT001_ConstExdsChaserCondition = 6'' (Avenger) is selected.
 
 ### Less Reinforcement on Starbases Built.
 	@CmtT001_ConstReinforceCycle_OnExdAnchorBuilt = 1
@@ -314,7 +314,7 @@
 		### Short = 4, As Soon as Condition Satisfied = 5
 
 ### Fleet Power of Young for Awakening.
-	@CmtT001_ConstSleeperFleetPowerYoung = 70
+	@CmtT001_ConstSleeperFleetPowerYoung = 90
 		### Set Fleet Power in ** k. For example, ''10'' means 10 k
 		### It must be -1, 15, 25, 35, 50, 70, 90, 140, 210, 350 or 999 (Default = 70).
 		### Exception: -1 means ''Unlimited''
@@ -414,7 +414,7 @@
 	@CmtT001_ConstDoubleGurdian = 1
 		### Forbidden = 1 (Default), Low Probability = 2, High Probability = 3, Forced = 4
 		### Only Materialist Can Awaken = 1.1, Only Xenophile Can Awaken = 1.1
-		### * Fallen Machine Empire Igore this Configuration
+		### * Fallen Machine Empire ignore this Configuration
 
 ### Worn-Out Guardians
 	@CmtT001_ConstGuardianWornOut = 1
@@ -434,7 +434,7 @@
 #
 
 ### Multiple Great Khans
-	@CmtT001_ConstKhanMultiple = 5
+	@CmtT001_ConstKhanMultiple = 3
 		### No Khan = 1, Single Khan = 2 (Default), Multiple Khans = 3
 		### N/A = 4, Great Great Khan = 5 (Beta)
 
@@ -482,7 +482,7 @@
 		### Critical = 1, Fleeting = 2, Standard Lifespan = 3 (Default)
 		### Enduring = 4, Venerable = 5, Immortality = 6
 
-### Latent Strength of Horde in Adversity.
+### Latent Strength of Horde in Adversity (SEEMS a bit BETA).
 	@CmtT001_ConstReinforceCycle_Khan = 1
 		### Disable = 1 (Default), Weak = 2, Middle = 3, Strong = 4
 
@@ -562,7 +562,7 @@
 		### Can Terraformed for Any L-Cluster = 6
 
 ######################
-###  Crisis Power  ###
+###- Crisis Power -###
 ######################
 #
 #	Required for activating: Crisis Manager - End-Game Edition and/or Mid-Game Edition
@@ -570,9 +570,8 @@
 #
 
 ### Template of Crisis Power
-### Template of Crisis Power
-	@CmtT001_ConstCrisisStrengthEnd = 2		## For End-Game Crisis
-	@CmtT001_ConstCrisisStrengthMid = 2		## For Mid-Game Crisis (Khan & Gray Tempest)
+	@CmtT001_ConstCrisisStrengthEnd = 2		##	For End-Game Crisis
+	@CmtT001_ConstCrisisStrengthMid = 2		##	For Mid-Game Crisis (Khan & Gray Tempest)
 		### Set configurations individually = 0
 		### Easy = 1, Normal = 2 (Default), Hard = 3, Doomsday = 4
 

@@ -39,7 +39,7 @@ planet_event = {
 
 	immediate = {
 		change_variable = { which = nanite_bomb_counter value = 1 }
-		# only if certain amount of days
+		# Only if certain amount of days
 		if = { limit = { check_variable = { which = nanite_bomb_counter value > 15 } }
 			planet_event = { id = a_deadly_tempest.84 }
 		}
@@ -148,7 +148,7 @@ planet_event = {
 				}
 				fromfrom = { is_same_empire = event_target:graygoo_country }
 			}
-			# small reinforce nanite bombarder
+			# Small reinforce nanite bombarder
 			random_fleet_in_orbit = {
 				limit = {
 					exists = owner
@@ -166,7 +166,7 @@ planet_event = {
 			}
 			owner = {
 				set_country_flag = nanite_bomb_affected # Workaround for Galactic Resolution (ADT 3.0.3)
-				country_event = { id = a_deadly_tempest.82 } # turn into nanite world
+				country_event = { id = a_deadly_tempest.82 } # Turn into nanite world
 				if = {
 					limit = { is_at_war_with = fromfrom }
 					# isn't the case when the crisis bombards planets, for instance

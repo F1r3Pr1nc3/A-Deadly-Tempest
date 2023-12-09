@@ -16,7 +16,7 @@ leader_trait_brainslug = {
 	triggered_modifier = {
 		potential = {
 			is_ruler = no
-			leader_class = admiral
+			leader_class = commander
 		}
 		ship_fire_rate_mult = 0.05
 		ship_evasion_mult = 0.05
@@ -32,14 +32,14 @@ leader_trait_brainslug = {
 	triggered_modifier = {
 		potential = {
 			is_ruler = no
-			leader_class = general
+			leader_class = commander
 		}
 		armies_upkeep_mult = -0.15
 	}
 	triggered_modifier = {
 		potential = {
 			is_ruler = no
-			leader_class = governor
+			leader_class = official
 		}
 		planet_building_build_speed_mult = 0.10
 	}
@@ -57,7 +57,7 @@ leader_trait_brainslug = {
 	initial = no
 	randomized = no
 
-	leader_class = { admiral governor scientist general }
+	leader_class = { commander official scientist commander }
 
 	ai_weight = {
 		weight = 0
@@ -89,7 +89,7 @@ leader_trait_admiral_hells_heart = {
 	initial = no
 	randomized = no
 
-	leader_class = { admiral }
+	leader_class = { commander }
 
 	ai_weight = {
 		weight = 0
@@ -117,7 +117,7 @@ leader_trait_admiral_warform = {
 	randomized = no
 	immortal_leaders = yes
 
-	leader_class = { admiral }
+	leader_class = { commander }
 
 	ai_weight = {
 		weight = 0
@@ -145,7 +145,7 @@ leader_trait_admiral_warform_node = {
 	randomized = no
 	immortal_leaders = yes
 
-	leader_class = { admiral }
+	leader_class = { commander }
 
 	ai_weight = {
 		weight = 0
@@ -182,7 +182,7 @@ leader_trait_governor_gray = {
 		planet_jobs_alloys_produces_mult = 0.5
 	}
 
-	leader_class = { governor }
+	leader_class = { official }
 	initial = no
 	randomized = no
 }
@@ -214,7 +214,7 @@ leader_trait_govenor_caretaker = {
 	randomized = no
 	immortal_leaders = yes
 
-	leader_class = { governor }
+	leader_class = { official }
 
 	ai_weight = {
 		weight = 0
@@ -241,7 +241,7 @@ leader_trait_govenor_caretaker_node = {
 	randomized = no
 	immortal_leaders = yes
 
-	leader_class = { governor }
+	leader_class = { official }
 
 	ai_weight = {
 		weight = 0
@@ -358,7 +358,7 @@ trait_notofthisworld = {
 
 	custom_tooltip_with_modifiers = TRAIT_NOTOFTHISWORLD_EFFECT
 	modifier = {
-		leader_age = -10
+		leader_lifespan_add = -10
 		planet_pops_upkeep_mult = 0.10
 	}
 }

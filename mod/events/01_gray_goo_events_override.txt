@@ -94,7 +94,7 @@ country_event = {
 				effect = {
 					save_global_event_target_as = graygoo_country
 					set_country_flag = synthetic_empire
-					country_event = { id = a_deadly_tempest.107 }	## add technologies
+					country_event = { id = a_deadly_tempest.107 }	## Add technologies
 					prev = {
 						if = { limit = { exists = starbase }
 							destroy_fleet = starbase.fleet
@@ -257,7 +257,7 @@ country_event = {
 			country_event = { id = graygoo.3 days = 720 }		## 2 yr
 		} else_if = {
 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_Graygoo value = 9 } } }
-			country_event = { id = graygoo.3 days = 30 }		## debug only
+			country_event = { id = graygoo.3 days = 30 }		## Debug only
 		} else = { # value = 3
 			country_event = { id = graygoo.3 days = 3600 }		## 10 yr vanilla
 		}
@@ -468,7 +468,7 @@ country_event = {
 				}
 			}
 
-			if = { ## Compat. hack built-in-support for Twinks Dessanu ##
+			if = { ## Compat. Hack built-in-support for Twinks Dessanu ##
 				limit = { NOT = { any_playable_country = { has_origin = origin_machine_nanites } } }
 				event_target:CmtGlobalVar = {
 					give_technology = { tech = tech_graygoo_nanite_reactor message = no } # Maybe cause CTD?
@@ -700,13 +700,17 @@ country_event = {
 
 			every_system_planet = {
 				limit = {
+					has_owner = no
 					has_deposit_for = shipclass_mining_station
+					has_mining_station = no
 				}
 				create_mining_station = { owner = event_target:gate_builders }
 			}
 			every_system_planet = {
 				limit = {
+					has_owner = no
 					has_deposit_for = shipclass_research_station
+					has_research_station = no
 				}
 				create_research_station = { owner = event_target:gate_builders }
 			}
@@ -953,7 +957,7 @@ country_event = {
 				event_target:lcluster4b = {
 					# capital
 					if = {
-						limit = { host_has_dlc = "Megacorp" }
+						limit = { has_megacorp = yes }
 						spawn_megastructure = {
 							# type = "strategic_coordination_center_ruined"
 							type = "strategic_coordination_center_1"
@@ -1967,7 +1971,7 @@ country_event = {
 								set_megastructure_flag = gatebuilders_origin
 							}
 						}
-						if = { limit = { host_has_dlc = "Megacorp" }
+						if = { limit = { has_megacorp = yes }
 							spawn_megastructure = {
 								type = "mega_art_installation_ruined"
 								# type = "interstellar_assembly_ruined"

@@ -318,7 +318,7 @@ country_event = {
 						any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
 					}
 				}
-				set_star_flag = lgate_originating_system		## For Graygoo (non-spawn from here)
+				set_star_flag = lgate_originating_system		##	For Graygoo (non-spawn from here)
 			}
 			else = {
 				root = { set_country_flag = only_one_lgate }
@@ -408,13 +408,13 @@ country_event = {
 			limit = {
 				is_ai = no
 				any_relation = {
-					is_country_type = default
+					merg_is_default_empire = yes
 					has_country_flag = lgate_warned
 				}
 			}
 			every_relation = {
 				limit = {
-					is_country_type = default
+					merg_is_default_empire = yes
 					has_country_flag = lgate_warned
 				}
 				prev = { remove_country_flag = lgate_warned@prev }
