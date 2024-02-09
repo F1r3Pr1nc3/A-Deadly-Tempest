@@ -136,7 +136,7 @@ tech_dreadnought = {
 		}
 		modifier = {
 			factor = 0.25
-			has_ethic = "ethic_gestalt_consciousness"
+			is_gestalt = yes
 		}
 	}
 	ai_weight = {

@@ -6,9 +6,9 @@ graygoo = {
 	should_name_home_system_planets = no
 
 	army_names = {
-		robotic_army = { sequential_name = "%O% Preservation Force" }
-		robotic_defense_army = { sequential_name = "%O% Bulwark Force" }
-		spectre_army = { sequential_name = "%O% Spectres" }
+		robotic_army = { sequential_name = GRAYGOO_Preservation }
+		robotic_defense_army = { sequential_name = GRAYGOO_Bulwark }
+		spectre_army = { sequential_name = GRAYGOO_Spectres }
 	}
 	ship_names = {
 		generic = {
@@ -18,7 +18,7 @@ graygoo = {
 		graygoo_interdictor = { GRAYGOO_SHIP_Reconstitutor }
 	}
 	fleet_names = {
-		sequential_name = "Swarm %R%"
+		sequential_name = GRAYGOO_SWARM
 	}
 	planet_names = {
 		generic = {
@@ -52,6 +52,6 @@ graygoo = {
 
 MACHINE3 = {
 	army_names = {
-		spectre_army = { sequential_name = "%O% Spectres" }
+		spectre_army = { sequential_name = GRAYGOO_Spectres }
 	}
 }

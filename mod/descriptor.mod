@@ -1,5 +1,5 @@
-version="3.10.3.0"
-name="A Deadly Tempest [3.9.☠]"
+version="3.11.0.0"
+name="A Deadly Tempest [3.11.☠]"
 tags={
 	"Events"
 	"Gameplay"

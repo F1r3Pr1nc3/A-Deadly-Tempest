@@ -1,6 +1,6 @@
 # (Compat. Will be overwritten by Warship Girls R And MIST Species)
 # Root = gray_owner
-create_gray_governor = {
+create_gray_official = {
 	if = {
 		limit = { has_country_flag = gray_warship_active }
 		remove_country_flag = gray_warship_active
@@ -215,8 +215,8 @@ create_gray_army = {
 				gender = indeterminable
 				hide_age = yes
 				traits = {
-					0 = leader_trait_general_gray
-					0 = leader_trait_dreaded
+					trait = leader_trait_governor_gray # leader_trait_general_gray
+					trait = leader_trait_dreaded
 					# 0 = leader_trait_synthetic
 				}
 				effect = {

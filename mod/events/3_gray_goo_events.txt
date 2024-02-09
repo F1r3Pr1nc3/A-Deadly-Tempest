@@ -415,7 +415,7 @@ country_event = {
 			NOT = { has_country_flag = gray_governor_active }
 		}
 		hidden_effect = {
-			create_gray_governor = yes
+			create_gray_official = yes
 		}
 	}
 	option = { # Warship
@@ -596,7 +596,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			create_gray_governor = yes
+			create_gray_official = yes
 		}
 	}
 	option = { # Army
@@ -704,7 +704,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			create_gray_governor = yes
+			create_gray_official = yes
 		}
 	}
 	option = { # Warship

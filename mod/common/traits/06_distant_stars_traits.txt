@@ -1,11 +1,10 @@
-## Modified leader_trait_governor_gray (only due entire file overwrite!?)
+## Modified leader_trait_governor_gray (only due entire file overwrite!?) v.3.11
 
 ####################
 # Brainslug Trait #
 ####################
 
 leader_trait_brainslug = {
-	is_councilor_trait_for_ruler = yes
 	inline_script = {
 		script = trait/icon
 		ICON = "GFX_leader_trait_brainslug"
@@ -13,7 +12,7 @@ leader_trait_brainslug = {
 		COUNCIL = triggered
 		TIER = none
 	}
-	triggered_modifier = {
+	triggered_fleet_modifier = {
 		potential = {
 			is_ruler = no
 			leader_class = commander
@@ -29,21 +28,28 @@ leader_trait_brainslug = {
 		science_ship_survey_speed = 0.10
 		ship_anomaly_research_speed_mult = 0.10
 	}
-	triggered_modifier = {
+	triggered_army_modifier = {
 		potential = {
 			is_ruler = no
 			leader_class = commander
 		}
 		armies_upkeep_mult = -0.15
 	}
-	triggered_modifier = {
+	triggered_planet_modifier = {
 		potential = {
 			is_ruler = no
 			leader_class = official
 		}
 		planet_building_build_speed_mult = 0.10
 	}
-	triggered_modifier = {
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+		}
+		planet_building_build_speed_mult = 0.05
+	}
+	triggered_councilor_modifier = {
 		potential = {
 			is_ruler = yes
 		}
@@ -57,7 +63,7 @@ leader_trait_brainslug = {
 	initial = no
 	randomized = no
 
-	leader_class = { commander official scientist commander }
+	leader_class = { commander official scientist }
 
 	ai_weight = {
 		weight = 0
@@ -65,20 +71,20 @@ leader_trait_brainslug = {
 }
 
 #####################
-# Admiral Traits	#
+# Commander Traits	#
 #####################
 
 leader_trait_admiral_hells_heart = {
 	cost = 0
 	inline_script = {
 		script = trait/icon
-		CLASS = admiral
+		CLASS = commander
 		ICON = "GFX_leader_trait_hells_heart"
 		RARITY = paragon
 		COUNCIL = no
 		TIER = none
 	}
-	modifier = {
+	fleet_modifier = {
 		ship_fire_rate_mult = 0.10
 		ship_weapon_damage = 0.10
 		ship_speed_mult = 0.10
@@ -98,16 +104,15 @@ leader_trait_admiral_hells_heart = {
 
 leader_trait_admiral_warform = {
 	cost = 0
-	councilor_trait = yes
 	inline_script = {
 		script = trait/icon
-		CLASS = admiral
+		CLASS = commander
 		ICON =  "GFX_leader_trait_warform"
 		RARITY = paragon
 		COUNCIL = yes
 		TIER = none
 	}
-	modifier = {
+	councilor_modifier = {
 		ship_armor_regen_add_perc = 0.05
 		ship_armor_hardening_add = 0.15
 		ship_sensor_range_add = 1
@@ -126,16 +131,15 @@ leader_trait_admiral_warform = {
 
 leader_trait_admiral_warform_node = {
 	cost = 0
-	councilor_trait = yes
 	inline_script = {
 		script = trait/icon
-		CLASS = admiral
+		CLASS = commander
 		ICON =  "GFX_leader_trait_warform"
 		RARITY = paragon
 		COUNCIL = yes
 		TIER = none
 	}
-	modifier = {
+	councilor_modifier = {
 		ship_armor_regen_add_perc = 0.05
 		ship_armor_hardening_add = 0.15
 		ship_sensor_range_add = 1
@@ -153,62 +157,92 @@ leader_trait_admiral_warform_node = {
 }
 
 ###################
-# Governor Traits #
+# Official Traits #
 ###################
 
 leader_trait_governor_gray = {
 	cost = 0
 	inline_script = {
 		script = trait/icon_psionic
-		CLASS = governor
+		CLASS = official
 		ICON = "GFX_leader_trait_psionic_chosen_one"
 		RARITY = paragon
 		COUNCIL = no
 		TIER = none
 	}
 	immortal_leaders = yes
-	modifier = {
+	triggered_fleet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		ship_weapon_damage = 0.4
+		ship_fire_rate_mult = 0.4
+		ship_speed_mult = 0.2
+		ship_shield_mult = 0.4
+		ship_hull_mult = 1
+		ship_hull_regen_add_static = 8
+		ship_armor_regen_add_static = 8
+	}
+	triggered_army_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		army_collateral_damage_mult = 0.1
+		army_disengage_chance_mult = 0.4
+		army_health = 0.1
+	}
+	planet_modifier = {
 		planet_buildings_cost_mult = -0.5			# -0.4
 		planet_building_build_speed_mult = 0.5		# 0.4
-		planet_jobs_energy_produces_mult = 0.5		# 0.15
-		planet_jobs_minerals_produces_mult = 0.5	# 0.15
-		planet_jobs_produces_mult = 0.1
-		planet_clear_blocker_time_mult = -0.5
-		planet_stability_add = 5
-		deposit_blockers_cost_mult = -0.5
-		planet_jobs_engineering_research_produces_mult = 0.5
-		planet_jobs_physics_research_produces_mult = 0.25
-		planet_jobs_society_research_produces_mult = 0.5
-		planet_jobs_alloys_produces_mult = 0.5
+		planet_jobs_energy_produces_mult = 0.3		# 0.15
+		planet_jobs_minerals_produces_mult = 0.3	# 0.15
+		deposit_blockers_cost_mult = -0.4
+		planet_clear_blocker_speed_mult = 0.4
 	}
-
-	leader_class = { official }
+	sector_modifier = {
+		planet_buildings_cost_mult = -0.2
+		planet_building_build_speed_mult = 0.2
+		planet_jobs_energy_produces_mult = 0.075
+		planet_jobs_minerals_produces_mult = 0.075
+		deposit_blockers_cost_mult = -0.2
+		planet_clear_blocker_speed_mult = 0.2
+	}
+	leader_class = { official commander }
 	initial = no
 	randomized = no
 }
 
 leader_trait_govenor_caretaker = {
 	cost = 0
-	councilor_trait = yes
 	inline_script = {
 		script = trait/icon
-		CLASS = governor
+		CLASS = official
 		ICON =  "GFX_leader_trait_caretaker"
 		RARITY = paragon
 		COUNCIL = yes
 		TIER = none
 	}
 
-	modifier = {
+	councilor_modifier = {
 		pop_growth_speed = 0.05
 	}
-	triggered_modifier = {
+	triggered_planet_modifier = {
 		potential = { trait_is_gestalt_check = no }
 		planet_jobs_consumer_goods_upkeep_mult = -0.10
 	}
-	triggered_modifier = {
+	triggered_planet_modifier = {
 		potential = { trait_is_gestalt_check = yes }
 		pop_amenities_usage_no_happiness_mult = -0.10
+	}
+	triggered_sector_modifier = {
+		potential = { trait_is_gestalt_check = no }
+		planet_jobs_consumer_goods_upkeep_mult = -0.05
+	}
+	triggered_sector_modifier = {
+		potential = { trait_is_gestalt_check = yes }
+		pop_amenities_usage_no_happiness_mult = -0.05
 	}
 	initial = no
 	randomized = no
@@ -223,17 +257,16 @@ leader_trait_govenor_caretaker = {
 
 leader_trait_govenor_caretaker_node = {
 	cost = 0
-	councilor_trait = yes
 	inline_script = {
 		script = trait/icon
-		CLASS = governor
+		CLASS = official
 		ICON =  "GFX_leader_trait_caretaker"
 		RARITY = paragon
 		COUNCIL = yes
 		TIER = none
 	}
 
-	modifier = {
+	councilor_modifier = {
 		pop_growth_speed = 0.05
 		pop_amenities_usage_no_happiness_mult = -0.10
 	}
@@ -254,13 +287,7 @@ leader_trait_govenor_caretaker_node = {
 
 trait_brainslug = {
 	cost = 0
-	inline_script = {
-		script = trait/icon
-		icon = "gfx/interface/icons/traits/trait_brainslugged.dds"
-		RARITY = common
-		COUNCIL = no
-		TIER = none
-	}
+	icon = "gfx/interface/icons/traits/trait_brainslugged.dds"
 	initial = no
 	randomized = no
 	species_potential_add = {

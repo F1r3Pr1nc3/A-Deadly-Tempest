@@ -11,7 +11,7 @@ gateway_0 = {
 	overlord_can_upgrade = yes
 	build_time = 1080
 	resources = {
-		category = megastructures
+		category = megastructures_gateways
 		cost = {
 			alloys = 2500
 			influence = 75
@@ -83,9 +83,7 @@ gateway_0 = {
 		factor = 5
 		modifier = {
 			factor = 0
-			starbase = {
-				NOT = { has_starbase_size >= starbase_starfortress }
-			}
+			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
 		}
 		modifier = {
 			factor = 0
@@ -126,7 +124,7 @@ gateway_final = {
 	upgrade_from = { gateway_0 }
 	build_time = 1800
 	resources = {
-		category = megastructures
+		category = megastructures_gateways
 		cost = {
 			alloys = 2500
 			energy = 6000
@@ -140,6 +138,10 @@ gateway_final = {
 			limit = { num_active_gateways = 1 }
 			random_megastructure = {
 				limit = { is_megastructure_type = gateway_ruined }
+				if = {
+					limit = { exists = solar_system.starbase }
+					solar_system.starbase.owner = { set_country_flag = did_not_repair_gateway }
+				}
 				upgrade_megastructure_to = gateway_restored
 				finish_upgrade = yes
 			}
@@ -183,7 +185,7 @@ gateway_restored = {
 	upgrade_from = { gateway_ruined }
 	build_time = 720
 	resources = {
-		category = megastructures
+		category = megastructures_gateways
 		cost = {
 			alloys = 2500
 			energy = 6000
@@ -230,6 +232,21 @@ gateway_restored = {
 									has_country_flag = gateway_reactivated
 									has_country_flag = gateway_built
 								}
+							}
+						}
+						modifier = {
+							factor = 60
+							has_paragon_dlc = yes
+							is_ai = no
+							OR = {
+								AND = {
+									has_country_flag = gateway_reactivated
+									has_country_flag = gateway_built
+								}
+								has_country_flag = found_skravird
+							}
+							NOT = {
+								has_global_flag = gateway_dude_found
 							}
 						}
 					}

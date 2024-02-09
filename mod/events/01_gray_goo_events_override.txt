@@ -593,7 +593,7 @@ country_event = {
 								set_species_homeworld = event_target:start_5
 							}
 							# save_global_event_target_as = gray_species
-							change_species_characteristics = { immortal = yes }
+							change_species_characteristics = { immortal = yes can_change_leader = yes }
 							prev = {
 								change_dominant_species = { species = prev change_all = yes }
 								set_built_species = prev
@@ -650,7 +650,7 @@ country_event = {
 						}
 						remove_invalid_civics = yes
 					}
-					country_add_ethic = "ethic_gestalt_consciousness"
+					country_add_ethic = ethic_gestalt_consciousness
 				}
 				if = {
 					limit = { NOT = { exists = event_target:graygoo_country } }
@@ -2039,7 +2039,7 @@ country_event = {
 							while = {
 								count = 2
 								create_ship = {
-									name = "NAME_Warden"
+									name = "leader_trait_warden"
 									design = "NAME_Ancient_Warden"
 									graphical_culture = "ancient"
 								}

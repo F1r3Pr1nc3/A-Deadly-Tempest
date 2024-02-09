@@ -540,7 +540,7 @@
 		###	 Other cases, they are ignored.
 
 ### Quiet Stroller
-	@CmtT001_ConstLgateAloneGrayCondition = 2
+	@CmtT001_ConstLgateAloneGrayCondition = 4
 		### Never Found = 1, In Silent L-Cluster = 2 (Default)
 		### In Silent/L-Drake L-Cluster = 3, In Any L-Cluster = 4
 

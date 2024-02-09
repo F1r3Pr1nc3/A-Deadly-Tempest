@@ -981,7 +981,7 @@ fleet_event = {
 								found_fleet = {
 									move_to = this
 									merge_fleet = {
-										target = event_target:assimilating_fleet # TODO "Malformed token"? - but it works
+										target = prev # event_target:assimilating_fleet # TODO "Malformed token"? - but it works
 										allow_ftl = yes
 									}
 								}
@@ -1718,8 +1718,8 @@ country_event = {
 				skill = 7
 				set_age = 7
 				traits = {
-					0 = leader_trait_general_gray
-					0 = leader_trait_dreaded
+					trait = leader_trait_governor_gray # leader_trait_general_gray
+					trait = leader_trait_dreaded
 					# 0 = leader_trait_synthetic
 					# 0 = leader_trait_erudite
 				}

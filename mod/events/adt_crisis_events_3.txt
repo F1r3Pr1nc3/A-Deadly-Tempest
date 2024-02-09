@@ -68,10 +68,7 @@ country_event = {
 			factor = 5
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarCybrexResurfacing value = 2 } }
 		}
-		modifier = {
-			factor = 0.1
-			has_global_flag = CmtFlagDebugMode
-		}
+		modifier = { factor = 0.1 has_global_flag = CmtFlagDebugMode }
 	}
 
 	immediate = {
@@ -86,7 +83,8 @@ country_event = {
 				initializer = "cybrex_beta"
 			}
 		}
-		if = { limit = { NOT = { exists = event_target:cybrex } }
+		if = {
+			limit = { NOT = { exists = event_target:cybrex } }
 			random_country = {
 				limit = { is_country_type = cybrex_empire }
 				save_global_event_target_as = cybrex
@@ -156,16 +154,11 @@ country_event = {
 
 	diplomatic = yes
 
-	picture_event_data = {
-		portrait = ai_crisis_2
-		room = ship_room
-	}
+	picture_event_data = { portrait = ai_crisis_2 room = ship_room }
 
 	is_triggered_only = yes
 
-	option = {
-		name = crisis.2408.a
-	}
+	option = { name = crisis.2408.a }
 	after = {
 		hidden_effect = {
 			clear_global_event_target = cybrex
@@ -182,14 +175,12 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			has_global_flag = ai_invasion_ongoing
-			has_global_flag = gray_goo_crisis_active
-		}
+		OR = { has_global_flag = ai_invasion_ongoing has_global_flag = gray_goo_crisis_active }
 	}
 
 	immediate = {
-		if = { limit = { NOT = { exists = event_target:contingency } }
+		if = {
+			limit = { NOT = { exists = event_target:contingency } }
 			random_country = {
 				limit = { CmtTriggerIsContingency = yes }
 				save_event_target_as = contingency
@@ -202,9 +193,7 @@ country_event = {
 			name = random
 			skill = 5
 			set_age = 0
-			traits = {
-				0 = leader_trait_cybrex
-			}
+			traits = { 0 = leader_trait_cybrex }
 		}
 		# last_created_leader = { set_age = 0 }
 		capital_scope = {
@@ -212,8 +201,7 @@ country_event = {
 			create_fleet = {
 				effect = {
 					set_owner = prevprev
-					while = {
-						count = 10
+					while = { count = 10
 						create_ship = {
 							name = random
 							design = "NAME_Taciturn"
@@ -221,8 +209,7 @@ country_event = {
 						}
 					}
 					assign_leader = last_created_leader
-					while = {
-						count = 20
+					while = { count = 20
 						create_ship = {
 							name = random
 							design = "NAME_Reticent"
@@ -246,51 +233,19 @@ country_event = {
 	}
 }
 
-# (ADT)
+# (ADT) Fixed CDT v.3.11
 country_event = {
 	# id = fallen_empires_awakening.3
-	id = crisis.2003 # Adt only
+	id = crisis.2003 # ADT only
 	hide_window = yes
 	is_triggered_only = yes
 
 	immediate = {
+		set_update_modifiers_batch = begin
 		# if = {
 		# 	limit = { NOT = { exists = event_target:gray_species } }
 		# 	species = { save_event_target_as = gray_species }
 		# }
-		clear_ethos = yes
-		if = {
-			limit = {
-				has_policy_flag = robots_outlawed
-			}
-			set_policy = {
-				policy = robot_pop_policy
-				option = robot_pops_allowed
-				cooldown = no
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					has_policy_flag = ai_servitude
-					has_policy_flag = ai_outlawed
-				}
-			}
-			set_policy = {
-				policy = artificial_intelligence_policy
-				option = ai_full_rights
-				cooldown = no
-			}
-		}
-		set_government_cooldown = no
-		every_owned_pop = {
-			pop_force_add_ethic = ethic_gestalt_consciousness
-		}
-		shift_ethic = ethic_gestalt_consciousness
-
-		if = { limit = { NOT = { has_ethic = "ethic_gestalt_consciousness" } }
-			country_add_ethic = "ethic_gestalt_consciousness"
-		}
 
 		# change_government = {
 		# 	authority = auth_machine_intelligence gives error anyway
@@ -307,10 +262,11 @@ country_event = {
 		create_species = {
 			name = "ESGO"
 			class = "ESGO" # MACHINE
-			portrait = lithnanite # event_target:gray_species
+			portrait = event_target:gray_species
 			traits = {
 				trait = "trait_pc_machine_preference"
-				trait = "trait_machine_unit"
+				trait = "trait_machine_unit" # MACHINE
+				# trait = "trait_mechanical" # ROBOT
 				# trait = "trait_robot_enhanced_memory"
 				# trait = "trait_robot_loyalty_circuits"
 				trait = "trait_robot_superconductive"
@@ -322,9 +278,23 @@ country_event = {
 				trait = "trait_robot_uncanny"
 			}
 			immortal = yes
-			# effect = {}
+			effect = {
+				if = {
+					limit = { has_lithoids = yes }
+					change_species_characteristics = { portrait = lithnanite can_change_leader = yes }
+				}
+				save_event_target_as = gray_species
+			}
 		}
-		change_dominant_species = { species = last_created_species change_all = yes } # it's still broken do NOT use this # It will make the species right of the species to unchangeable # Stellaris v3.0.1
+		change_dominant_species = { species = last_created_species change_all = yes } # it's still broken do NOT use this # It will make the species right of the species to unchangeable # Stellaris v.3.0.1
+
+		set_government_cooldown = no
+		clear_ethos = yes
+		shift_ethic = ethic_gestalt_consciousness
+		if = {
+			limit = { is_gestalt = no }
+			country_add_ethic = ethic_gestalt_consciousness
+		}
 
 		# civic = civic_revanchist_fervor
 		# civic = civic_ancient_caches_of_technology
@@ -336,13 +306,11 @@ country_event = {
 		force_add_civic = civic_awakened_machine
 		# set_name = "NAME_Graygoo_Consonance"
 		species = {
-			rename_species = {
-				name = "NAME_Dessanu"
-				name_list = "graygoo"
-			}
+			rename_species = { name = "NAME_Dessanu" name_list = "graygoo" }
 			change_species_characteristics = {
 				immortal = yes
 				can_be_modified = yes
+				can_change_leader = yes
 				# pops_auto_growth = <1, speed at which the pops from that species grow automatically
 				# pop_maintenance = <1, amount of energy each pop of that species consume monthly
 				# portrait = root.ruler # event_target:gray_species
@@ -351,6 +319,7 @@ country_event = {
 
 			modify_species = {
 				# species = this # If pop
+				base = this
 				remove_trait = "trait_nomadic"
 				add_trait = "trait_pc_relic_preference"
 				add_trait = "trait_machine_unit"
@@ -364,11 +333,11 @@ country_event = {
 				add_trait = "trait_robot_streamlined_protocols"
 				add_traits_at_start_of_list = yes
 				# change_scoped_species = yes # If pop
-				# effect = {
-				# 	set_species_identity = last_created_species
-				# }
+				effect = { set_species_identity = event_target:gray_species }
 			}
 		}
+
+		every_owned_pop = { change_species = event_target:gray_species pop_force_add_ethic = ethic_gestalt_consciousness }
 
 		add_awakened_fallen_empire_resources = yes
 		capital_scope = {
@@ -377,9 +346,8 @@ country_event = {
 		}
 
 		# create_half_species = { species_one = last_created_species species_two = event_target:gray_species }
-		# change_dominant_species = { species = last_created_species change_all = yes }
 		# change_dominant_species = { species = event_target:gray_species change_all = yes }
-		last_created_species = {
+		event_target:gray_species = {
 			set_citizenship_type = { country = root type = citizenship_full cooldown = yes }
 			# set_species_identity = event_target:gray_species
 		}
@@ -396,17 +364,15 @@ country_event = {
 
 		## WORKAROUND
 		create_country = {
-			name = random
+			# name = random
 			type = awakened_fallen_empire
 			species = last_created_species
 			ignore_initial_colony_error = yes
 			day_zero_contact = no
 			ethos = { ethic = ethic_gestalt_consciousness }
 			authority = auth_machine_intelligence
-			civics = {
-				civic = civic_awakened_machine
-			}
-			flag = random
+			civics = { civic = civic_awakened_machine }
+			# flag = random
 			effect = {
 				force_add_civic = civic_machine_terminator
 				force_add_civic = civic_machine_assimilator
@@ -428,7 +394,8 @@ country_event = {
 			country_event = { id = action.1 }
 		}
 		root = { save_event_target_as = awakened_machine_empire }
-		if = { limit = { host_has_dlc = "Apocalypse" }
+		if = {
+			limit = { host_has_dlc = "Apocalypse" }
 			set_country_flag = pk_nanobots
 			set_country_flag = colossus_project
 			set_country_flag = killed_hatchling
@@ -450,31 +417,34 @@ country_event = {
 		if = {
 			limit = {
 				NOT = { has_policy_flag = orbital_bombardment_armageddon }
-				can_set_policy = {
-					policy = orbital_bombardment
-					option = orbital_bombardment_armageddon
-				}
+				can_set_policy = { policy = orbital_bombardment option = orbital_bombardment_armageddon }
 				# has_policy_flag = orbital_bombardment_selective
 			}
-			set_policy = {
-				policy = orbital_bombardment
-				option = orbital_bombardment_armageddon
-				cooldown = no
-			}
-		} else_if = {
+			set_policy = { policy = orbital_bombardment option = orbital_bombardment_armageddon cooldown = no }
+		}
+		else_if = {
 			limit = {
 				NOT = { has_policy_flag = orbital_bombardment_indiscriminate }
-				can_set_policy = {
-					policy = orbital_bombardment
-					option = orbital_bombardment_indiscriminate
-				}
+				can_set_policy = { policy = orbital_bombardment option = orbital_bombardment_indiscriminate }
 			}
-			set_policy = {
-				policy = orbital_bombardment
-				option = orbital_bombardment_indiscriminate
-				cooldown = no
-			}
+			set_policy = { policy = orbital_bombardment option = orbital_bombardment_indiscriminate cooldown = no }
 		}
+
+		if = {
+			limit = {
+				has_policy_flag = robots_outlawed
+				can_set_policy = { policy = robot_pop_policy option = robot_pops_allowed }
+			}
+			set_policy = { policy = robot_pop_policy option = robot_pops_allowed cooldown = no }
+		}
+		if = {
+			limit = {
+				OR = { has_policy_flag = ai_servitude has_policy_flag = ai_outlawed }
+				can_set_policy = { policy = artificial_intelligence_policy option = ai_full_rights }
+			}
+			set_policy = { policy = artificial_intelligence_policy option = ai_full_rights cooldown = no }
+		}
+
 		# TODO: too much?
 		# event_target:nanite_factory = {
 		# 	root = { CmtEffectCreateAdmiralty_GraygooRoamer = yes } # Roamers
@@ -516,9 +486,11 @@ country_event = {
 		# 	}
 		# }
 
-		if = { limit = { has_origin = origin_machine_nanites }
+		if = {
+			limit = { has_origin = origin_machine_nanites }
 			set_graphical_culture = "grey_tempesttw"
-		} else = { set_graphical_culture = "machine_01" }
+		}
+		else = { set_graphical_culture = "machine_01" }
 		create_fleet = {
 			effect = {
 				set_owner = root
@@ -548,20 +520,14 @@ country_event = {
 					any_fleet_in_system = { is_in_combat = yes }
 				}
 				any_system_planet = {
-					OR = {
-						is_planet_class = pc_gray_goo
-						is_planet_class = pc_gaia
-					}
+					OR = { is_planet_class = pc_gray_goo is_planet_class = pc_gaia }
 				}
 				OR = {
 					NOT = { exists = event_target:goo_slayer }
 					event_target:goo_slayer = {
 						OR = {
 							is_ai = yes
-							is_surveyed = {
-								who = event_target:goo_slayer
-								status = no
-							}
+							is_surveyed = { who = event_target:goo_slayer status = no }
 						}
 					}
 				}
@@ -581,10 +547,7 @@ country_event = {
 			}
 			random_system_planet = {
 				limit = {
-					OR = {
-						is_planet_class = pc_gray_goo
-						is_planet_class = pc_gaia
-					}
+					OR = { is_planet_class = pc_gray_goo is_planet_class = pc_gaia }
 					has_owner = no
 				}
 				remove_modifier = terraforming_candidate
@@ -600,49 +563,28 @@ country_event = {
 				add_deposit = d_natural_farmland
 				add_deposit = d_minerals_2
 
-				while = {
-					count = 16
+				while = { count = 16
 					create_pop = { species = owner_species }
 				}
-				while = {
-					count = 2
-					add_district_and_planet_size_if_needed_effect = {
-						district = district_city
-					}
+				while = { count = 2
+					add_district_and_planet_size_if_needed_effect = { district = district_city }
 				}
-				while = {
-					count = 3
-					add_district_and_planet_size_if_needed_effect = {
-						district = district_mining
-					}
+				while = { count = 3
+					add_district_and_planet_size_if_needed_effect = { district = district_mining }
 				}
-				while = {
-					count = 4
-					add_district_and_planet_size_if_needed_effect = {
-						district = district_generator
-					}
+				while = { count = 4
+					add_district_and_planet_size_if_needed_effect = { district = district_generator }
 				}
 				if = {
-					limit = {
-						event_target:gate_builders.species = {
-							is_lithoid = yes
-						}
+					limit = { event_target:gate_builders.species = { is_lithoid = yes } }
+					while = { count = 2
+						add_district_and_planet_size_if_needed_effect = { district = district_mining }
 					}
-					while = {
-						count = 2
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_mining
-						}
-					}
-					add_district_and_planet_size_if_needed_effect = {
-						district = district_generator
-					}
-				} else = {
-					while = {
-						count = 3
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
+					add_district_and_planet_size_if_needed_effect = { district = district_generator }
+				}
+				else = {
+					while = { count = 3
+						add_district_and_planet_size_if_needed_effect = { district = district_farming }
 					}
 				}
 				add_building = building_capital
@@ -660,10 +602,8 @@ country_event = {
 				}
 			}
 		}
-		every_owned_leader = {
-			limit = { is_ruler = yes }
-			change_leader_portrait = lithnanite
-		}
+		ruler = { change_leader_portrait = lithnanite }
+		set_update_modifiers_batch = end
 		# Declare Crisis (declare_crisis_war_effect)
 		country_event = { id = crisis.4099 days = 360 }
 		# Declare War
@@ -701,7 +641,8 @@ country_event = {
 					save_event_target_as = crisis_war
 				}
 			}
-		} else = {
+		}
+		else = {
 			random_war = {
 				limit = {
 					is_total_war = yes
@@ -729,13 +670,11 @@ country_event = {
 				}
 			}
 			if = {
-				limit = {
-					is_country_type_with_subjects = yes
-					exists = event_target:crisis_war
-				}
+				limit = { is_country_type_with_subjects = yes exists = event_target:crisis_war }
 				# Joins Community - Joins Crisis Wars
 				join_war_on_side = { war = event_target:crisis_war side = attackers }
-			} else_if = {
+			}
+			else_if = {
 				limit = {
 					is_country_type_with_subjects = yes
 					can_declare_war = { target = prev attacker_war_goal = "wg_declared_crisis" }
@@ -746,13 +685,12 @@ country_event = {
 					attacker_war_goal = "wg_declared_crisis"
 					effect = { save_event_target_as = crisis_war }
 				}
-			} else = {
+			}
+			else = {
 				root = {
-					if = { limit = { can_declare_war = { target = prev attacker_war_goal = wg_absorption } }
-						declare_war = {
-							target = prev
-							attacker_war_goal = wg_absorption
-						}
+					if = {
+						limit = { can_declare_war = { target = prev attacker_war_goal = wg_absorption } }
+						declare_war = { target = prev attacker_war_goal = wg_absorption }
 					}
 				}
 			}
