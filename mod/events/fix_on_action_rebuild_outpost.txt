@@ -16,6 +16,9 @@ event = {
 	is_triggered_only = yes
 	trigger = {
 		any_playable_country = {
+			# any_system_within_border = {
+			# 	NOT = { exists = starbase }
+			# }
 			any_owned_planet = {
 				is_controlled_by = prev
 				solar_system = { NOT = { exists = starbase } }

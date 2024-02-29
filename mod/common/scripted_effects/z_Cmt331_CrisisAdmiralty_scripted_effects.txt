@@ -52,37 +52,37 @@
 # 	}
 # }
 
-# TODO DEPRECATE
-CmtEffectCreateAdmiralty_Khan2ndFleetSet = {		### Exception: Leader = exiled_khan
-	optimize_memory
-	event_target:raider_khanate = {
-		CmtEffectCreateFleet_Khan2ndFleet = yes
-		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Khan } }
-		while = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.875 } } }
-			event_target:CmtGlobalVar = { change_variable = { which = CmtVarWhileControlFleet value = -1 } }
-			CmtEffectCreateFleet_KhanStandard = yes
-			CmtEffectCreateFleet_KhanArmy = yes
-			CmtEffectCreateFleet_KhanArmy = yes
-		}
-		while = {
-			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.125 } } }
-			event_target:CmtGlobalVar = { change_variable = { which = CmtVarWhileControlFleet value = -0.25 } }
-			random_list = {
-				125 = {
-					event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = 0 } }
-					CmtEffectCreateFleet_KhanStandard = yes
-					CmtEffectCreateFleet_KhanArmy = yes
-				}
-				75 = {
-					event_target:CmtGlobalVar = { change_variable = { which = CmtVarWhileControlFleet value = -0.25 } }
-					CmtEffectCreateFleet_KhanArmy = yes
-				}
-				200 = { }
-			}
-		}
-	}
-}
+# DEPRECATED
+# CmtEffectCreateAdmiralty_Khan2ndFleetSet = {		### Exception: Leader = exiled_khan
+# 	optimize_memory
+# 	event_target:raider_khanate = {
+# 		CmtEffectCreateFleet_Khan2ndFleet = yes
+# 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Khan } }
+# 		while = {
+# 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.875 } } }
+# 			event_target:CmtGlobalVar = { change_variable = { which = CmtVarWhileControlFleet value = -1 } }
+# 			CmtEffectCreateFleet_KhanStandard = yes
+# 			CmtEffectCreateFleet_KhanArmy = yes
+# 			CmtEffectCreateFleet_KhanArmy = yes
+# 		}
+# 		while = {
+# 			limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarWhileControlFleet value > 0.125 } } }
+# 			event_target:CmtGlobalVar = { change_variable = { which = CmtVarWhileControlFleet value = -0.25 } }
+# 			random_list = {
+# 				125 = {
+# 					event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = 0 } }
+# 					CmtEffectCreateFleet_KhanStandard = yes
+# 					CmtEffectCreateFleet_KhanArmy = yes
+# 				}
+# 				75 = {
+# 					event_target:CmtGlobalVar = { change_variable = { which = CmtVarWhileControlFleet value = -0.25 } }
+# 					CmtEffectCreateFleet_KhanArmy = yes
+# 				}
+# 				200 = { }
+# 			}
+# 		}
+# 	}
+# }
 
 ### Consorts of Khan
 # This = planet

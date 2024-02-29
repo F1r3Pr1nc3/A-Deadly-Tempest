@@ -8,9 +8,9 @@
    sodipodi:docname="ADT logo.svg"
    enable-background="new"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   inkscape:export-filename="..\..\..\ADT.mod\workshop\ADT_thumb\ADT logo3.10.0.png"
-   inkscape:export-xdpi="25.6"
-   inkscape:export-ydpi="25.6"
+   inkscape:export-filename="..\..\..\ADT.mod\workshop\ADT_thumb\ADT logo3.11.0.png"
+   inkscape:export-xdpi="30"
+   inkscape:export-ydpi="30"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -43,13 +43,13 @@
      inkscape:window-height="1017"
      id="namedview1849"
      showgrid="false"
-     inkscape:zoom="0.16542435"
-     inkscape:cx="-749.58735"
-     inkscape:cy="1592.8731"
+     inkscape:zoom="0.6616974"
+     inkscape:cx="1483.3064"
+     inkscape:cy="-12.845751"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1847"
+     inkscape:current-layer="g1837"
      inkscape:pagecheckerboard="1"
      inkscape:showpageshadow="0"
      inkscape:deskcolor="#ff88ff" />
@@ -87,10 +87,10 @@
     </filter>
     <filter
        id="e"
-       x="-0.010208602"
-       y="-0.01026676"
-       width="1.0201265"
-       height="1.0202183"
+       x="-0.010335204"
+       y="-0.010546327"
+       width="1.020384"
+       height="1.0207775"
        color-interpolation-filters="sRGB">
       <feGaussianBlur
          stdDeviation="0.16120536"
@@ -285,7 +285,8 @@
        transform="translate(1.5875,1.5875)"
        style="fill:#eeeeee;stroke:#000000;stroke-width:3">
       <g
-         id="v">
+         id="v"
+         transform="matrix(0.95038414,0,0,0.95038414,3.9141692,1.8187153)">
         <path
            transform="matrix(0.66505443,0.66505443,-0.66505443,0.66505443,-114,-8)"
            id="use1047"
@@ -294,12 +295,13 @@
         <text
            id="text4499"
            transform="rotate(45)"
-           style="font-weight:bold;font-size:29.36px;font-family:Orbitron;letter-spacing:1.6px;text-anchor:middle"
-           x="2"
+           style="font-weight:bold;font-size:27.2828px;font-family:Orbitron;letter-spacing:2.783962px;text-anchor:middle"
+           x="-2.72454"
            y="-19"
            font-size="29.36px"
            font-weight="bold"><tspan
-             id="tspan1768">3.10.⠀</tspan></text>
+             id="tspan1768"
+             style="font-size:27.2828px">3.11.⠀</tspan></text>
       </g>
     </g>
     <use
@@ -310,7 +312,7 @@
        xlink:href="#v"
        id="use1773"
        transform="translate(1.5875,1.5875)"
-       style="fill:#ffffff;stroke:#11ff8c;stroke-width:0.69999999;filter:url(#e)" />
+       style="fill:#ffffff;stroke:#11ff8c;stroke-width:0.7;filter:url(#e)" />
     <rect
        x="45.38"
        y="434.6"

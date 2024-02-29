@@ -85,7 +85,7 @@ is_fallen_empire = {
 }
 
 is_regular_empire = {
-	is_gestalt = no # NOT = { has_ethic = ethic_gestalt_consciousness }
+	is_gestalt = no
 	OR = {
 		is_default_or_fallen = yes
 	# 	is_country_type = default
@@ -116,5 +116,30 @@ is_pirate_system = {
 		}
 		exists = owner
 		owner = { is_pirate_country = yes }
+	}
+}
+
+# This: System
+# Root: Great Khan's Horde (Country)
+# Note: system_within_border caching is quite funky at a time like this when many borders are changing hands. The starbase ownership is checked to be extra sure, since it is not cached (unlike system ownership - though that probably would have worked too)
+is_potential_diadochi_system = {
+	has_owner = yes
+	OR = {
+		NOT = { exists = starbase }
+		starbase = {
+			OR = {
+				has_owner = no
+				is_owned_by = root
+			}
+		}
+	}
+	exists = space_owner
+	space_owner = { is_same_empire = root }
+	NOR = {
+		is_capital_system = yes
+		has_star_flag = first_diadochi_system
+		has_star_flag = second_diadochi_system
+		has_star_flag = third_diadochi_system
+		has_star_flag = fourth_diadochi_system
 	}
 }

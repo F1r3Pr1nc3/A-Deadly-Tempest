@@ -316,18 +316,11 @@ strange_wormhole = {
 				# System has no owner
 				NOT = { exists = from }
 				# System's owner has not closed borders to you
-				from = {
-					NOT = { has_closed_borders = root }
-				}
+				from = { NOT = { has_closed_borders = root } }
 				# System's owner is at war with you
 				from = { is_at_war_with = root }
 				# System's owner is not a proper empire
-				from = {
-					NOR = {
-						merg_is_default_empire = yes
-						is_fallen_empire = yes
-					}
-				}
+				from = { is_default_or_fallen = no }
 			}
 		}
 	}

@@ -1302,7 +1302,7 @@ country_event = {
 				} else_if = { limit = { exists = orbit orbit = { has_planet_flag = has_megastructure } }
 					orbit = { remove_planet_flag = has_megastructure }
 				}
-				remove_planet = yes # ariphaos_patch_remove_habitat = yes
+				spawn_habitat_cracker_effect = yes # remove_planet = yes
 				spawn_habitat_nanobot_effect = yes
 			} else_if = {
 				limit = {

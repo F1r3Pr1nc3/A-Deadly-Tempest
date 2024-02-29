@@ -11,7 +11,7 @@ lgate_base = {
 	bypass_type = lgate
 	build_time = 500
 	resources = {
-		category = megastructures
+		category = megastructures_gateways
 		cost = { nanites = 100 }
 		upkeep = { }
 		produces = { }
@@ -53,7 +53,7 @@ lgate_disabled = {
 	bypass_type = lgate
 	build_time = 1500
 	resources = {
-		category = megastructures
+		category = megastructures_gateways
 		cost = {
 			alloys = 2000
 			nanites = 300

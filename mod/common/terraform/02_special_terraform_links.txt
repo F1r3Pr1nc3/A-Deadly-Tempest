@@ -1081,6 +1081,14 @@ terraform_link = {
 		has_ascension_perk = ap_machine_worlds
 		from = { has_modifier = terraforming_candidate }
 	}
+
+	effect = {
+		from = {
+			reroll_deposits = yes
+			clear_blockers = yes
+		}
+	}
+
 	ai_weight = {
 		weight = 20
 		# It's a barren world!
@@ -1102,6 +1110,14 @@ terraform_link = {
 		has_ascension_perk = ap_machine_worlds
 		from = { has_modifier = terraforming_candidate }
 	}
+
+	effect = {
+		from = {
+			reroll_deposits = yes
+			clear_blockers = yes
+		}
+	}
+
 	ai_weight = {
 		weight = 20
 		# It's a barren world!
@@ -1770,6 +1786,14 @@ terraform_link = {
 		has_ascension_perk = ap_hive_worlds
 		from = { has_modifier = terraforming_candidate }
 	}
+
+	effect = {
+		from = {
+			reroll_deposits = yes
+			clear_blockers = yes
+		}
+	}
+
 	ai_weight = {
 		weight = 20
 	}
@@ -1789,6 +1813,12 @@ terraform_link = {
 		exists = owner
 		has_ascension_perk = ap_hive_worlds
 		from = { has_modifier = terraforming_candidate }
+	}
+	effect = {
+		from = {
+			reroll_deposits = yes
+			clear_blockers = yes
+		}
 	}
 	ai_weight = {
 		weight = 20

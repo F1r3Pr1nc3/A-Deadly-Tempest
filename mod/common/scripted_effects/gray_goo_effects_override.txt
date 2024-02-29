@@ -56,7 +56,7 @@ create_gray_official = {
 	# 		limit = { owner = { has_country_flag = gray_encountered_the_loop }}
 	# 		add_trait = leader_trait_governor_wg_the_loop
 	# 	}
-	# 	add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
+	# 	add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = official MARRIED_FLAG = married_gray }
 	# }
 }
 
@@ -174,7 +174,7 @@ create_gray_warship = {
 	# 		limit = { owner = { has_country_flag = gray_encountered_the_loop }}
 	# 		add_trait = leader_trait_admiral_wg_the_loop
 	# 	}
-	# 	add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
+	# 	add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = commander MARRIED_FLAG = married_gray }
 	# }
 }
 

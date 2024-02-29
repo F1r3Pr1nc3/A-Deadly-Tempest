@@ -30,7 +30,7 @@ gateway_0 = {
 					exists = owner
 					owner = {
 						is_subject = yes
-						overlord = { is_same_value = from }
+						overlord = { is_same_empire = from }
 					}
 				}
 			}
@@ -50,7 +50,7 @@ gateway_0 = {
 					exists = owner
 					owner = {
 						is_subject = yes
-						overlord = { is_same_value = from }
+						overlord = { is_same_empire = from }
 					}
 				}
 			}
@@ -208,7 +208,16 @@ gateway_restored = {
 			}
 		}
 		if = {
-			limit = { exists = from }			# Does not always exist when upgraded from script via "finish_upgrade = yes"
+			limit = {
+				has_paragon_dlc = yes
+				exists = from  # Does not always exist when upgraded from script via "finish_upgrade = yes"
+				from = {
+					is_ai = no
+				}
+				NOT = {
+					has_global_flag = gateway_dude_found
+				}
+			}
 			from = {
 				country_event = { id = origin.1050 }
 				random_list = {
@@ -219,35 +228,30 @@ gateway_restored = {
 							save_global_event_target_as = paragon_gateway_dude_homegate
 							set_megastructure_flag = paragon_gateway_dude_homegate_flag
 						}
-						country_event = { id = paragon.3000 }
+						country_event = {
+							id = paragon.3000
+							days = 5
+						}
 						set_global_flag = gateway_dude_found
 						set_global_flag = sharpbeak_recruit_phase
 						modifier = {
-							factor = 0
+							factor = 4
 							OR = {
-								has_paragon_dlc = no
-								is_ai = yes
-								has_global_flag = gateway_dude_found
-								NOR = {
-									has_country_flag = gateway_reactivated
-									has_country_flag = gateway_built
-								}
+
+								has_country_flag = gateway_reactivated
+								has_country_flag = gateway_built
+
+
+
+
+
+
+								has_country_flag = found_skravird
 							}
 						}
 						modifier = {
-							factor = 60
-							has_paragon_dlc = yes
-							is_ai = no
-							OR = {
-								AND = {
-									has_country_flag = gateway_reactivated
-									has_country_flag = gateway_built
-								}
-								has_country_flag = found_skravird
-							}
-							NOT = {
-								has_global_flag = gateway_dude_found
-							}
+							factor = 10
+							has_origin = origin_galactic_doorstep
 						}
 					}
 					80 = {} # No luck

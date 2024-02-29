@@ -295,7 +295,7 @@ country_event = {
 			limit = { is_gestalt = no }
 			country_add_ethic = ethic_gestalt_consciousness
 		}
-
+		change_government = random
 		# civic = civic_revanchist_fervor
 		# civic = civic_ancient_caches_of_technology
 		force_remove_civic = civic_meritocracy
@@ -356,11 +356,18 @@ country_event = {
 		set_government_cooldown = no
 		## Start Workaround to change gov completely (as change_government is not working)
 		## FIXEM: does not work: Required authority [auth_machine_intelligence] is excluded by other restrictions. Result authority [auth_machine_intelligence] is not valid
-		# change_government = {
-		# 	authority = auth_machine_intelligence
-		# 	cooldown = no
-		# 	remove_invalid_civics = yes
-		# }
+		change_government = {
+			authority = auth_machine_intelligence
+			cooldown = no
+			civics = {
+				civic = civic_awakened_machine
+				civic = civic_machine_terminator
+				civic = civic_machine_assimilator
+				civic = civic_fanatic_purifiers
+				civic = random
+			}
+			remove_invalid_civics = yes
+		}
 
 		## WORKAROUND
 		create_country = {
