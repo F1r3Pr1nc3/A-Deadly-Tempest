@@ -57,7 +57,7 @@ event = {
 		every_country = {
 			limit = { CmtTriggerHasPotentialKhanAwaking = yes }
 			random_list = {
-				4 = {		## MTTH = 100 yr
+				3 = {		## MTTH = 100 yr
 					modifier = {		## >= Earliest Year + 50 yr
 						factor = 2
 						has_global_flag = CmtFlagKhanProbabilityIncrease
@@ -91,7 +91,7 @@ event = {
 					set_timed_global_flag = { flag = CmtFlagKillDoubleBookingKhan days = 5 }
 					country_event = { id = marauder.500 days = 2 random = 358 }
 				}
-				96 = {
+				97 = {
 					modifier = {
 						factor = 3
 						event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanTriggerProbability value = 1 } }

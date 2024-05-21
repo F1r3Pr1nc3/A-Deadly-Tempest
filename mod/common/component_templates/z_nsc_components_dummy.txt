@@ -35,7 +35,7 @@ utility_component_template = {
 	valid_for_country = {
 		OR = {
 			is_fallen_empire = no
-			is_fallen_machine_empire = yes
+			is_fallen_empire_machine = yes
 		}
 	}
 
@@ -85,7 +85,7 @@ utility_component_template = {
 	valid_for_country = {
 		OR = {
 			is_fallen_empire = no
-			is_fallen_machine_empire = yes
+			is_fallen_empire_machine = yes
 		}
 	}
 
@@ -135,7 +135,7 @@ utility_component_template = {
 	valid_for_country = {
 		OR = {
 			is_fallen_empire = no
-			is_fallen_machine_empire = yes
+			is_fallen_empire_machine = yes
 		}
 	}
 

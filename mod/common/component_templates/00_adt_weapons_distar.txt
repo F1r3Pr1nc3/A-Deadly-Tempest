@@ -330,7 +330,6 @@ weapon_component_template = {
 	# component_set = "SCRAP_WEAPON"
 	tags = { weapon_type_explosive }
 	projectile_gfx = "scavenger_bot_secondary_weapon"
-	hidden = yes
 }
 
 weapon_component_template = {
@@ -338,6 +337,7 @@ weapon_component_template = {
 	size = titanic
 	type = instant
 	prio_projectile = yes
+	hidden = yes
 	icon = "GFX_ship_part_aura_minefield"
 	icon_frame = 1
 	prerequisites = { "tech_scavenger_bot" }
@@ -346,5 +346,4 @@ weapon_component_template = {
 	min_range = 30
 	tags = { weapon_type_kinetic }
 	projectile_gfx = "scavenger_bot_main_weapon"
-	hidden = yes
 }

@@ -25,7 +25,7 @@ merg_is_default_empire = {
 		# Ethics & Civics Infinity
 		# is_country_type = uo_une_member_active
 		# Scripted Triggers Undercoat
-		has_country_flag = is_playable
+		# has_country_flag = is_playable
 		# The Empty Vagrant
 		# is_country_type = default_ev
 		# ZOFE
@@ -47,7 +47,7 @@ is_default_or_fallen = {
 		# # is_country_type = fallen_empire
 		# # Scripted Triggers Undercoat
 		# has_country_flag = is_playable
-		has_country_flag = is_empire
+		# has_country_flag = is_empire # Underscore
 		# # ZOFE
 		# is_zofe_country = yes
 		# # The Empty Vagrant
@@ -82,6 +82,7 @@ merg_is_fallen_empire = {
 		# is_country_type = kuat_fallen_empire
 		# The Empty Vagrant
 		# is_country_type = fallen_empire_ev
+		is_country_type = the_sleeper_fallen # The Sleeper
 	}
 }
 
@@ -94,6 +95,7 @@ merg_is_awakened_fe = {
 		# is_country_type = awakened_return_kuat_empire
 		# A Deadly Tempest
 		is_country_type = awakened_gate_builders
+		is_country_type = awakened_sleeper # The Sleeper
 		# ZOFE With its last submod, ZOFE's fallen and awakened empires work differently and should not be here.
 		# is_country_type = ascended_empire
 		# The Empty Vagrant

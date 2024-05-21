@@ -1,5 +1,5 @@
 
-# Compat. With DSO - ADT - CM-MidGame
+# Compat with DSO - ADT - CM-MidGame
 lgate = {
 	name = LGATE_GALACTIC
 	is_pathfind = yes

@@ -260,8 +260,8 @@ country_event = {
 		# }
 
 		create_species = {
-			name = "ESGO"
-			class = "ESGO" # MACHINE
+			name = "DISTAR_NANO_CAT"	# "ESGO"
+			class = ROBOT # MACHINE		# "ESGO"
 			portrait = event_target:gray_species
 			traits = {
 				trait = "trait_pc_machine_preference"
@@ -306,7 +306,7 @@ country_event = {
 		force_add_civic = civic_awakened_machine
 		# set_name = "NAME_Graygoo_Consonance"
 		species = {
-			rename_species = { name = "NAME_Dessanu" name_list = "graygoo" }
+			rename_species = { name = "NAME_Dessanu" name_list = "LITHOID3" } # "graygoo"
 			change_species_characteristics = {
 				immortal = yes
 				can_be_modified = yes
@@ -352,7 +352,6 @@ country_event = {
 			# set_species_identity = event_target:gray_species
 		}
 		set_built_species = last_created_species
-		set_origin = origin_machine_nanites
 		set_government_cooldown = no
 		## Start Workaround to change gov completely (as change_government is not working)
 		## FIXEM: does not work: Required authority [auth_machine_intelligence] is excluded by other restrictions. Result authority [auth_machine_intelligence] is not valid
@@ -368,6 +367,7 @@ country_event = {
 			}
 			remove_invalid_civics = yes
 		}
+		set_origin = origin_machine_nanites
 
 		## WORKAROUND
 		create_country = {

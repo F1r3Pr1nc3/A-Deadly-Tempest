@@ -4,8 +4,8 @@ create_gray_official = {
 	if = {
 		limit = { has_country_flag = gray_warship_active }
 		remove_country_flag = gray_warship_active
-		# event_target:huifeng_leader_admiral = { kill_leader = { show_notification = no } }
-		event_target:huifeng_leader_admiral = { exile_leader_as = gray_admiral }
+		# event_target:gray_leader_admiral = { kill_leader = { show_notification = no } }
+		event_target:gray_leader_admiral = { exile_leader_as = gray_admiral }
 		event_target:gray_warship = { unassign_leader = leader delete_fleet = this }
 	}
 	if = {
@@ -95,7 +95,7 @@ create_gray_warship = {
 		if = {
 			limit = {
 				NAND  = {
-					exists = event_target:huifeng_leader_admiral
+					exists = event_target:gray_leader_admiral
 					any_owned_leader = { leader_class = commander has_leader_flag = gray_admiral }
 				}
 			}
@@ -114,14 +114,21 @@ create_gray_warship = {
 				background_ethic = ethic_gestalt_consciousness
 				gender = indeterminable
 				hide_age = yes
+				hide_leader = yes
 				traits = {
-					0 = leader_trait_admiral_gray
-					0 = leader_trait_trickster
+					trait = leader_trait_admiral_warform # leader_trait_admiral_gray
+					trait = leader_trait_trickster
 				}
 				effect = {
-					save_global_event_target_as = huifeng_leader_admiral
+					save_global_event_target_as = gray_leader_admiral
+					set_leader_flag = not_has_wg_affection_normal
+					set_leader_flag = immune_to_negative_traits
+					save_global_event_target_as = gray_leader_admiral
+					set_leader_flag = legendary_leader
+					set_leader_flag = immune_to_negative_traits
 					set_leader_flag = gray_admiral
-					# set_leader_flag = "灰风领袖"
+					# set_leader_flag = has_gained_level_trait
+					set_leader_flag = "gray_leader"
 					change_leader_portrait = lithnanite
 				}
 			}
@@ -149,7 +156,7 @@ create_gray_warship = {
 				save_global_event_target_as = gray_warship
 				set_location = event_target:gray_warship_location
 				set_leader = gray_admiral
-				assign_leader = event_target:huifeng_leader_admiral
+				assign_leader = event_target:gray_leader_admiral
 				add_modifier = { modifier = "gray_warship" }
 			}
 		}
@@ -261,8 +268,8 @@ create_gray_army = {
 	if = {
 		limit = { has_country_flag = gray_warship_active }
 		remove_country_flag = gray_warship_active
-		# event_target:huifeng_leader_admiral = { kill_leader = { show_notification = no } }
-		event_target:huifeng_leader_admiral = { exile_leader_as = gray_admiral }
+		# event_target:gray_leader_admiral = { kill_leader = { show_notification = no } }
+		event_target:gray_leader_admiral = { exile_leader_as = gray_admiral }
 		event_target:gray_warship = { unassign_leader = leader delete_fleet = this }
 	}
 

@@ -23,6 +23,7 @@ weapon_component_template = {
 	projectile_gfx = "perdition_beam"
 	size_restriction = {
 		titan
+		cosmo_crisis_titan
 		ion_cannon
 		colossus
 		graygoo_mothership

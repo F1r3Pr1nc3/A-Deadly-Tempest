@@ -82,6 +82,7 @@
 # 				has_global_flag = ghost_signal_4_flag
 # 				has_global_flag = ghost_signal_3_flag
 # 				has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag # has_notification_modifier = ghost_signal_1
 # 			}
 # 		}
 # 	}
@@ -95,7 +96,9 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost3 }
+		cost = {
+			alloys = @cost3
+		}
 	}
 	class_restriction = { shipclass_military }
 	size_restriction = {
@@ -143,7 +146,9 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost3 }
+		cost = {
+			alloys = @cost3
+		}
 	}
 	class_restriction = { shipclass_military }
 	size_restriction = {
@@ -201,7 +206,9 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost3 }
+		cost = {
+			alloys = @cost3
+		}
 	}
 	class_restriction = {
 		shipclass_military
@@ -248,6 +255,8 @@ utility_component_template = {
 				has_global_flag = ghost_signal_4_flag
 				has_global_flag = ghost_signal_3_flag
 				has_global_flag = ghost_signal_2_flag
+				# has_global_flag = ghost_signal_1_flag # has_notification_modifier = ghost_signal_1
+				has_policy_flag = ai_outlawed
 			}
 		}
 	}
@@ -261,7 +270,9 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost3 }
+		cost = {
+			alloys = @cost3
+		}
 	}
 	class_restriction = {
 		shipclass_military
@@ -318,7 +329,9 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost3 }
+		cost = {
+			alloys = @cost3
+		}
 	}
 	class_restriction = {
 		shipclass_military
@@ -360,7 +373,9 @@ utility_component_template = {
 	prerequisites = { "tech_precognition_interface" }
 	ai_tags = {
 		artillery
+		artillery_stealth
 		energy_torpedoes
+		energy_torpedoes_stealth
 	}
 	ai_tag_weight = 0
 	ship_modifier = {
@@ -387,7 +402,9 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost3 }
+		cost = {
+			alloys = @cost3
+		}
 	}
 	class_restriction = {
 		shipclass_military
@@ -419,7 +436,13 @@ utility_component_template = {
 	ai_tags = { carrier }
 	ai_tag_weight = 0
 	ship_modifier = { ship_engagement_range_mult = @engagement_range3 }
-	ai_weight = { weight = 5 }
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 5
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+	}
 }
 
 utility_component_template = {
@@ -430,7 +453,9 @@ utility_component_template = {
 	power = @power3
 	resources = {
 		category = ship_components
-		cost = { alloys = @cost3 }
+		cost = {
+			alloys = @cost3
+		}
 	}
 	class_restriction = {
 		shipclass_military
@@ -442,9 +467,12 @@ utility_component_template = {
 		battleship
 		juggernaut
 		titan
+		cosmo_crisis_titan
 		star_eater
 		offspring_cruiser
 		offspring_battleship
+		cosmo_crisis_battlecruiser
+		nanite_swarmer
 		dreadnought
 		scavenger_bot
 		pirate_cruiser
@@ -467,6 +495,10 @@ utility_component_template = {
 			factor = 0
 			merg_is_default_empire = yes
 			NOT = { has_tradition = tr_psionics_psionic_assimilation }
+		}
+		modifier = {
+			factor = 5
+			is_preferred_weapons = weapon_type_strike_craft
 		}
 	}
 }

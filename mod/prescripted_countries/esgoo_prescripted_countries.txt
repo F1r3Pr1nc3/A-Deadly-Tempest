@@ -3,7 +3,7 @@
 	key="Gray Goo Erasers"
 	ship_prefix="GRAY"
 	species={
-		class="ESGO"
+		class=MACHINE # "ESGO"
 		portrait="lithnanite_02"
 		name="Gray Goo"
 		plural="Gray Goos"

@@ -535,7 +535,7 @@ country_event = {
 			# CmtTriggerIsGraygoo = yes
 			# is_country_type = gate_builders
 			# is_country_type = cybrex_empire
-			# is_fallen_machine_empire = yes
+			# is_fallen_empire_machine = yes
 			# is_country_type = ai_empire
 			# is_country_type = global_event
 		}

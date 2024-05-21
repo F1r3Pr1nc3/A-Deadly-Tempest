@@ -83,7 +83,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought }
+	size_restriction = { titan cosmo_crisis_titan scavenger_bot graygoo_mothership dreadnought }
 	component_set = "ship_aura_components"
 
 	hostile_aura = {
@@ -129,7 +129,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought }
+	size_restriction = { titan cosmo_crisis_titan scavenger_bot graygoo_mothership dreadnought }
 	component_set = "ship_aura_components"
 
 	hostile_aura = {
@@ -170,7 +170,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought }
+	size_restriction = { titan cosmo_crisis_titan scavenger_bot graygoo_mothership dreadnought }
 	component_set = "ship_aura_components"
 
 	hostile_aura = {
@@ -213,7 +213,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought }
+	size_restriction = { titan cosmo_crisis_titan scavenger_bot graygoo_mothership dreadnought }
 	component_set = "ship_aura_components"
 
 	friendly_aura = {
@@ -254,7 +254,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought nanite_dragon }
+	size_restriction = { titan cosmo_crisis_titan scavenger_bot graygoo_mothership dreadnought nanite_dragon }
 	component_set = "ship_aura_components"
 
 	friendly_aura = {
@@ -300,7 +300,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { titan scavenger_bot graygoo_mothership dreadnought nanite_dragon }
+	size_restriction = { titan cosmo_crisis_titan scavenger_bot graygoo_mothership dreadnought nanite_dragon }
 	component_set = "ship_aura_components"
 
 	friendly_aura = {
@@ -351,7 +351,7 @@ utility_component_template = { # Archaeo Detection Scrambler
 		}
 	}
 
-	size_restriction = { titan }
+	size_restriction = { titan cosmo_crisis_titan }
 	component_set = "ship_aura_components"
 
 	friendly_aura = {
@@ -682,7 +682,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { offspring_corvette offspring_destroyer offspring_cruiser offspring_battleship }
+	size_restriction = { offspring_corvette offspring_destroyer offspring_cruiser offspring_battleship cosmo_crisis_battlecruiser }
 	component_set = "ship_aura_components"
 
 	friendly_aura = {

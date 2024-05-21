@@ -371,7 +371,7 @@ country_event = {
 	#	name = CrisisManagerMenu.7000.7146.A.name
 	#	custom_tooltip = CrisisManagerMenu.7000.7146.A.tooltip
 	#	trigger = {
-	#		has_synthethic_dawn = yes
+	#		host_has_dlc = "Synthetic Dawn Story Pack"
 	#		has_global_flag = CmtFlagUprisingEdition
 	#		any_country = { CmtTriggerUprisingPotentialManually = yes }
 	#	}
@@ -381,7 +381,7 @@ country_event = {
 	#	name = CrisisManagerMenu.7000.7146.B.name
 	#	custom_tooltip = CrisisManagerMenu.7000.7146.B.tooltip
 	#	trigger = {
-	#		has_synthethic_dawn = yes
+	#		host_has_dlc = "Synthetic Dawn Story Pack"
 	#		has_global_flag = CmtFlagUprisingEdition
 	#		NOT = { any_country = { CmtTriggerUprisingPotentialManually = yes } }
 	#	}
@@ -1271,6 +1271,7 @@ country_event = {
 			}
 		}
 	}
+	# "Some Events of Outside Cluster" =1562501671 # has_global_flag = nep_SEoOC_active
 	option = { # Create New Deus Ex Machina FE (Sleeper Edition)
 		name = CrisisManagerMenu.7135c7.name # CREATE_NEW_EMPIRE
 		custom_tooltip = CrisisManagerMenu.7135c.tooltip

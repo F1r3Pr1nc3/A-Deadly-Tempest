@@ -153,3 +153,9 @@ gpm_is_planet_class_city = {
 		# is_planet_class = pc_hollow ### (Mod) Additional Mega Planets merged into Forgotten Queens - compatibility
 	}
 }
+
+merg_is_molten = { is_planet_class = pc_molten }
+merg_is_toxic = { is_planet_class = pc_toxic }
+merg_is_frozen = { is_planet_class = pc_frozen }
+merg_is_barren = { is_planet_class = pc_barren }
+merg_is_barren_cold = { is_planet_class = pc_barren_cold }

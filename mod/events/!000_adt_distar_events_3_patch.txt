@@ -318,7 +318,7 @@ country_event = {
 						any_system_megastructure = { CmtTriggerIsOpenedLgate = yes }
 					}
 				}
-				set_star_flag = lgate_originating_system		##	For Graygoo (non-spawn from here)
+				set_star_flag = lgate_originating_system		## For Graygoo (non-spawn from here)
 			}
 			else = {
 				root = { set_country_flag = only_one_lgate }

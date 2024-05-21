@@ -124,17 +124,17 @@ is_pirate_system = {
 # Note: system_within_border caching is quite funky at a time like this when many borders are changing hands. The starbase ownership is checked to be extra sure, since it is not cached (unlike system ownership - though that probably would have worked too)
 is_potential_diadochi_system = {
 	has_owner = yes
+	exists = space_owner
+	space_owner = { is_same_empire = root }
 	OR = {
 		NOT = { exists = starbase }
 		starbase = {
 			OR = {
-				has_owner = no
+				NOT = { exists = owner }
 				is_owned_by = root
 			}
 		}
 	}
-	exists = space_owner
-	space_owner = { is_same_empire = root }
 	NOR = {
 		is_capital_system = yes
 		has_star_flag = first_diadochi_system

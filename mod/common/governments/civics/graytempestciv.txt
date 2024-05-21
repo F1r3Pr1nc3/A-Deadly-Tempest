@@ -3,7 +3,11 @@ civic_machine_nanites_culture = {
 	potential = {
 		authority = { value = auth_machine_intelligence }
 	}
+	potential = {
+		species_archetype = { NOT = { value = MACHINE } }
+	}
 	modification = no
+	blocks_random_machine_empire_generation	= yes
 	random_weight = {
 		base = 0
 	}
@@ -20,15 +24,22 @@ origin_machine_nanites = {
 	}
 	icon = "gfx/interface/icons/origins/unused/origins_third_time_charm.dds"
 	is_origin = yes
+	max_once_global = yes
 	description = nanite_origin
 	playable = {
-		always = no
-		has_distar = yes
+		always = no # Non-player origin
+		# has_distar = yes
 	}
+	potential = {
+		species_archetype = { NOT = { value = MACHINE } }
+	}
+	advanced_start = yes
+	blocks_random_machine_empire_generation	= yes
 	random_weight = {
 		base = 0
 	}
 	modifier = {
-		planet_pops_nanites_upkeep_add = 1
+		# planet_pops_nanites_upkeep_add = 1 # TODO
+		# planet_pops_nanites_upkeep_mult =
 	}
 }

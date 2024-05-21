@@ -34,6 +34,7 @@
 #										# FROM = System jumping to
 #										# fromfrom = System jumped from
 # }
+
 gateway = {
 	name = GATEWAY_GALACTIC
 	is_pathfind = yes
@@ -63,8 +64,10 @@ gateway = {
 			}
 		}
 	}
+
 	respect_closed_borders = yes
 	block_access_if_hostile = yes
+	
 	# country_can_use = {
 	# 	custom_tooltip = {
 	# 		fail_text = GATEWAY_COUNTRY_CANNOT_USE
@@ -165,11 +168,15 @@ relay_bypass = {
 	galactic_map_tooltip_desc = HYPER_RELAY_GALACTIC_DESC
 	connection_type = hyper_relay
 	animation_time = 1
-	ftl_multiplier = 0
+	# ftl_multiplier = 0 why?
 	ftl_ship_effect = "gateway_ftl_ship_effect_entity"
 	ftl_bypass_effect = "gateway_ftl_bypass_effect_entity"
-	respect_closed_borders = yes
-	block_access_if_hostile = yes
+
+	country_can_use = {
+		NOT = {
+			is_country_type = synth_queen_convoys
+		}
+	}
 	# country_can_use = {
 	# 	custom_tooltip = {
 	# 		fail_text = HYPER_RELAY_COUNTRY_CANNOT_USE
@@ -184,6 +191,9 @@ relay_bypass = {
 	# 		}
 	# 	}
 	# }
+
+	respect_closed_borders = yes
+	block_access_if_hostile = yes
 }
 
 quantum_catapult = {
@@ -238,6 +248,7 @@ shroud_tunnel = {
 	system_view_tooltip_header = BYPASS_NAME_SHROUD_TUNNEL
 	connection_type = scripted_connection
 	can_bypass_be_locked = yes # v.3.10
+	
 	scripted_connection = {
 		node = { # System scope
 			starbase = {

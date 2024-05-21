@@ -19,9 +19,13 @@ gateway_0 = {
 	}
 	construction_blocks_and_blocked_by = self_type
 	bypass_type = gateway
-	potential = { has_technology = tech_gateway_construction }
+	potential = {
+		has_technology = tech_gateway_construction
+	}
 	possible = {
-		exists = starbase
+		hidden_trigger = {
+			exists = starbase
+		}
 		custom_tooltip = {
 			fail_text = "requires_inside_border_or_subject"
 			OR = {
@@ -219,7 +223,6 @@ gateway_restored = {
 				}
 			}
 			from = {
-				country_event = { id = origin.1050 }
 				random_list = {
 					20 = { # Spawn chance
 						set_country_flag = sharpbeak_known
@@ -241,21 +244,17 @@ gateway_restored = {
 								has_country_flag = gateway_reactivated
 								has_country_flag = gateway_built
 
-
-
-
-
-
 								has_country_flag = found_skravird
 							}
 						}
 						modifier = {
-							factor = 10
+							factor = 2
 							has_origin = origin_galactic_doorstep
 						}
 					}
 					80 = {} # No luck
 				}
+				country_event = { id = origin.1050 }
 				country_event = { id = apoc.12 }
 				country_event = { id = apoc.10 }
 			}

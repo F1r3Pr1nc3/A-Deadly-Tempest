@@ -379,7 +379,7 @@ generate_new_deposits_and_blockers = {
 		limit = { exists = owner }
 		# blockers
 		if = {
-			limit = { owner = { has_origin = origin_post_apocalyptic } }
+			limit = { owner = { is_apocalyptic_empire = yes } }
 			# blockers
 			add_deposit = d_tomb_world_ruins
 			add_deposit = d_tomb_world_wasteland
