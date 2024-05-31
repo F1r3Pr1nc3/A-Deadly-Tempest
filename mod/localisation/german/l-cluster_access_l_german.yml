@@ -35,6 +35,6 @@
  war_goal_wg_access_lcluster: "$decision_open_lcluster$"
  war_goal_wg_access_lcluster_desc: "Die Abriegelung des gesamten §EL-Clusters§! stellt eine Bedrohung und starke Verschiebung des galaktischen Gleichgewichts dar."
  war_goal_wg_access_lcluster_long: "$decision_open_lcluster$ and L-Gates"
- war_goal_wg_access_lcluster_long_desc: "Start a war to open the §EL-Gates§! and the border of hostile civilizations, gain 50 years of right of way and end the competition.\nThe closure of the entire §EL-Clusters§! poses a threat and a major shift for the galactic balance."
+ war_goal_wg_access_lcluster_long_desc: "Beginne einen Krieg, um die §EL-Tore§! und die Grenze feindlicher Zivilisationen zu öffnen. Gewinne 50 Jahre Wegerecht und beende den Wettstreit.\nDie Schließung des gesamten §EL-Clusters§! stellt eine Bedrohung und eine große Veränderung für das galaktische Gleichgewicht dar."
  war_goal_wg_access_lcluster_long_tooltip: "§Y[From.GetName]§! has been completely defeated, they had to put down their arrogance and agreed to open the border and §EL-Gates§! to us within §Y50§!. At the same time, we also ended the state of rivals with them, but obviously they did not agree with this result and would strike back one day in the future.\n§Y[Root.GetName]§! has gained §G+150§! £influence£\n"
  war_goal_wg_access_lcluster_tooltip: "§Y[From.GetName]§! has been defeated, they put down their arrogance and agreed to open the L-Gates and the border to us within §Y20§! years.\n§Y[Root.GetName]§! has gained §G+100§! £influence£\n"

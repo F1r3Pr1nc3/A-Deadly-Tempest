@@ -5,7 +5,7 @@ gateway_0 = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = yes	# Indicates this will use "free" placement between the system's inner and outer ring
-	# If this option is active, the placement_rules will be completely ignored.
+															# If this option is active, the placement_rules will be completely ignored.
 	show_galactic_map_icon = no
 	show_in_outliner = yes
 	overlord_can_upgrade = yes
@@ -18,10 +18,40 @@ gateway_0 = {
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
-	bypass_type = gateway
+	# bypass_type = gateway
+
+	dismantle_cost = {
+		category = megastructures_hyper_relay
+		cost = {
+			energy = 2500
+		}
+	}
+
+	dismantle_time = 360
+
+	dismantle_potential = {
+		always = yes
+	}
+
+	dismantle_possible = {
+		can_dismantle_megastructure = {
+			TECH = tech_gateway_construction
+		}
+	}
+
+	on_dismantle_complete = {
+		from = {
+			add_resource = {
+				alloys = 2500
+				mult = modifier:megastructure_dismantle_refund_mult
+			}
+		}
+	}
+
 	potential = {
 		has_technology = tech_gateway_construction
 	}
+
 	possible = {
 		hidden_trigger = {
 			exists = starbase
@@ -104,9 +134,7 @@ gateway_0 = {
 	on_build_start = {  }
 	on_build_cancel = {  }
 	on_build_complete = {
-		from = {
-			country_event = { id = apoc.14 }
-		}
+		from = { country_event = { id = apoc.14 } }
 	}
 }
 
@@ -118,14 +146,18 @@ gateway_final = {
 	# build_outside_gravity_well = yes
 	show_galactic_map_icon = no
 	show_in_outliner = no
-	potential = { has_technology = tech_gateway_activation }
+	potential = {
+		has_technology = tech_gateway_activation
+	}
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_gateway_construction"
 			from = { has_technology = tech_gateway_construction }
 		}
 	}
-	upgrade_from = { gateway_0 }
+	upgrade_from = {
+		gateway_0
+	}
 	build_time = 1800
 	resources = {
 		category = megastructures_gateways
@@ -135,6 +167,35 @@ gateway_final = {
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
+
+	dismantle_cost = {
+		category = megastructures_hyper_relay
+		cost = {
+			energy = 2500
+		}
+	}
+
+	dismantle_time = 360
+
+	dismantle_potential = {
+		always = yes
+	}
+
+	dismantle_possible = {
+		can_dismantle_megastructure = {
+			TECH = tech_gateway_construction
+		}
+	}
+
+	on_dismantle_complete = {
+		from = {
+			add_resource = {
+				alloys = 2500
+				mult = modifier:megastructure_dismantle_refund_mult
+			}
+		}
+	}
+
 	bypass_type = gateway
 	on_build_complete = {
 		activate_gateway = fromfrom
@@ -166,8 +227,12 @@ gateway_ruined = {
 	bypass_type = gateway
 	show_galactic_map_icon = no
 	show_in_outliner = yes
+
 	construction_blocks_and_blocked_by = self_type
-	potential = { always = no }
+
+	potential = {
+		always = no
+	}
 }
 
 # Restored Gateway
@@ -179,14 +244,20 @@ gateway_restored = {
 	# build_outside_gravity_well = yes
 	show_galactic_map_icon = no
 	show_in_outliner = no
-	potential = { has_technology = tech_gateway_activation }
+
+	potential = {
+		has_technology = tech_gateway_activation
+	}
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_gateway_activation"
 			from = { has_technology = tech_gateway_activation }
 		}
 	}
-	upgrade_from = { gateway_ruined }
+	upgrade_from = {
+		gateway_ruined
+	}
 	build_time = 720
 	resources = {
 		category = megastructures_gateways
@@ -196,6 +267,34 @@ gateway_restored = {
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
+
+	dismantle_cost = {
+		category = megastructures_hyper_relay
+		cost = {
+			energy = 2500
+		}
+	}
+
+	dismantle_time = 360
+
+	dismantle_potential = {
+		always = yes
+	}
+
+	dismantle_possible = {
+		can_dismantle_megastructure = {
+			TECH = tech_gateway_construction
+		}
+	}
+
+	on_dismantle_complete = {
+		from = {
+			add_resource = {
+				alloys = 2500
+				mult = modifier:megastructure_dismantle_refund_mult
+			}
+		}
+}
 	bypass_type = gateway
 	on_build_complete = {
 		activate_gateway = fromfrom

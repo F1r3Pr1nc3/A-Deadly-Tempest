@@ -1839,7 +1839,7 @@ country_event = {
 					blocked_archetypes = { MACHINE ROBOT LITHOID }
 					portrait = random
 					traits = {
-						trait = "trait_pc_habitat_preference"
+						ideal_planet_class = "pc_habitat" # add_trait = "trait_pc_habitat_preference"
 						trait = "trait_extremely_adaptive"
 						trait = "trait_rapid_breeders"
 						trait = "trait_nomadic"

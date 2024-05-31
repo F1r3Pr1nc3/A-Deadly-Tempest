@@ -1,0 +1,53 @@
+@primary = 0.80
+@secondary = 0.60
+# @tertiary = 0.20
+
+trait_pc_gray_goo_preference = {
+	# icon = "gfx/interface/icons/traits/trait_pc_relic_preference.dds"
+	icon = "gfx/interface/icons/traits/trait_pc_machine_preference.dds"
+	bound_to_planet_classes = {
+		pc_gray_goo
+		pc_nanotech
+		pc_relic
+		pc_city
+	}
+	initial = no
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID ROBOT MACHINE }
+	sorting_priority = 30
+	modifier = {
+		pc_gray_goo_habitability = 1.0
+		pc_nanotech_habitability = 1.0
+		pc_relic_habitability = 1.0
+		pc_gaia_habitability = 1.0
+		pc_city_habitability = 1.0
+		pc_ai_habitability = @primary
+		pc_machine_habitability = @primary
+		pc_ringworld_habitable_habitability = @primary
+		pc_habitat_habitability = @primary
+		pc_nuked_habitability = @primary
+		pc_desert_habitability = @secondary
+		pc_tropical_habitability = @secondary
+		pc_continental_habitability = @secondary
+		pc_ocean_habitability = @secondary
+		pc_arctic_habitability = @secondary
+		pc_tundra_habitability = @secondary
+		pc_arid_habitability = @secondary
+		pc_savannah_habitability = @secondary
+		pc_alpine_habitability = @secondary
+
+		pc_hive_habitability = 0.2
+	}
+	ai_weight = {
+		weight = 0
+	}
+}

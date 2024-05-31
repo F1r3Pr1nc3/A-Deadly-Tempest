@@ -47,7 +47,7 @@ nanite_giga_guardian = {
 				is_capital = yes
 				is_planet_class = pc_gray_goo
 				has_deposit = d_nanites_deposit
-				has_deposit = d_hab_nanites_1
+				has_deposit = d_hab_nanites_3
 				solar_system = { has_star_flag = lcluster }
 			}
 			OR = {
@@ -146,7 +146,7 @@ nanite_giga_warform = {
 		# 		is_capital = yes
 		# 		is_planet_class = pc_gray_goo
 		# 		has_deposit = d_nanites_deposit
-		# 		has_deposit = d_hab_nanites_1
+		# 		has_deposit = d_hab_nanites_3
 		# 		solar_system = { has_star_flag = lcluster }
 		# 	}
 		# 	OR = {

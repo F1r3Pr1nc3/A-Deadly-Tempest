@@ -313,3 +313,6 @@
  voidspawn: "$leviathan_01_voidspawn$"
  voidspawn_plural: "$leviathan_01_voidspawn_plural$"
  voidspawn_section: ""
+ mod_pc_gray_goo_habitability: "$pc_gray_goo$ Habitability Preference"
+ col_gray_goo_world: "$col_nanotech_world$"
+ col_gray_goo_world_desc: "$col_nanotech_world_desc$"

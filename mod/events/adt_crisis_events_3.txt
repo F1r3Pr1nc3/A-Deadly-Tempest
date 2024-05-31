@@ -264,7 +264,8 @@ country_event = {
 			class = ROBOT # MACHINE		# "ESGO"
 			portrait = event_target:gray_species
 			traits = {
-				trait = "trait_pc_machine_preference"
+				ideal_planet_class = "pc_gray_goo" # add_trait = "trait_pc_gray_goo_preference"
+				# ideal_planet_class = pc_machine # trait = "trait_pc_machine_preference"
 				trait = "trait_machine_unit" # MACHINE
 				# trait = "trait_mechanical" # ROBOT
 				# trait = "trait_robot_enhanced_memory"
@@ -321,7 +322,8 @@ country_event = {
 				# species = this # If pop
 				base = this
 				remove_trait = "trait_nomadic"
-				add_trait = "trait_pc_relic_preference"
+				ideal_planet_class = "pc_gray_goo" # add_trait = "trait_pc_gray_goo_preference"
+				# ideal_planet_class = "pc_relic" # add_trait = "trait_pc_relic_preference"
 				add_trait = "trait_machine_unit"
 				# add_trait = "trait_pc_gray_goo_preference" TODO
 				# add_trait = "trait_pc_ai_preference"
