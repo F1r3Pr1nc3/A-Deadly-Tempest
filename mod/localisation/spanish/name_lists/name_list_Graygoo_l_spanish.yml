@@ -1,7 +1,7 @@
-﻿l_english:
+﻿l_spanish:
+ GRAYGOO_Bulwark: "%O% Bulwark Force"
+ GRAYGOO_Preservation: "%O% Preservation Force"
  GRAYGOO_SHIP_GreatConfluence: "Gran confluencia"
  GRAYGOO_SHIP_Reconstitutor: "Reconstitutor"
- GRAYGOO_SWARM:0 "Swarm %R%"
- GRAYGOO_Preservation: "%O% Preservation Force"
- GRAYGOO_Bulwark: "%O% Bulwark Force"
+ GRAYGOO_SWARM: "Swarm %R%"
  GRAYGOO_Spectres: "%O% Spectres"

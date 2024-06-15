@@ -249,18 +249,18 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_starbase_citadel_phase_02_entity"
-	locator = { name = "slot1"	position = { 0	0  0 } }
+	locator = { name = "slot1"	position = { 0	0 0 } }
 	attach = { "slot1" = "grey_tempesttw_starbase_citadel_entity" }
 	cull_radius = 500
 }
 
 entity = {
 	name = "grey_tempesttw_starbases_entity"
-	locator = { name = "slot1"	position = { 0		0  0 } }
-	locator = { name = "slot2"	position = { 50		0  0 } }
-	locator = { name = "slot3"	position = { 100	0  0 } }
-	locator = { name = "slot4"	position = { 150	0  0 } }
-	locator = { name = "slot5"	position = { 250	0  0 } }
+	locator = { name = "slot1"	position = { 0		0 0 } }
+	locator = { name = "slot2"	position = { 50		0 0 } }
+	locator = { name = "slot3"	position = { 100	0 0 } }
+	locator = { name = "slot4"	position = { 150	0 0 } }
+	locator = { name = "slot5"	position = { 250	0 0 } }
 	attach = { "slot5" = "grey_tempesttw_starbase_citadel_phase_02_entity" }
 	cull_radius = 500
 }
@@ -280,7 +280,7 @@ entity = {
 entity = {
 	name = "grey_tempesttw_ion_cannon_section_entity"
 	scale = 0.5
-	locator = { name = "slota"	position = { 0	0  0 }  rotation = { 0 0 0 } }
+	locator = { name = "slota"	position = { 0 0 0 }  rotation = { 0 0 0 } }
 	attach = { "slota" = "greytempest_mining_station" }
 	locator = { name = "xl_gun_01"	position = { 0 0 0 } }
 	default_state = "idle"

@@ -36,44 +36,35 @@ resolution_galactic_focus_crisis_nanites = {
 	active = {
 		# Resolution only in effect while this trigger is met.
 		has_global_flag = gray_goo_crisis_active
+		exists = event_target:graygoo_country
 	}
 	ai_weight = {
 		base = @resolution_weight_normal
-		modifier = {
-			factor = 2
-			# any_neighbor_country = { is_same_empire = event_target:graygoo_country }
+		modifier = { factor = 2
 			OR = {
 				has_country_flag = nanite_bomb_affected
-				event_target:graygoo_country = {
-					num_killed_ships = {
-						target = prev
-						value > 15
-					}
-				}
+				# any_neighbor_country = { is_same_empire = event_target:graygoo_country }
+				event_target:graygoo_country = { num_killed_ships = { target = prev value > 15 } }
 				event_target:graygoo_country = {
 					any_owned_fleet = {
 						exists = solar_system
 						solar_system = {
 							NOT = { has_star_flag = lcluster }
-							any_neighbor_system = {
-								has_owner = yes
-								is_owned_by = prevprevprevprev
-							}
+							any_neighbor_system = { has_owner = yes is_owned_by = prevprevprevprev }
 						}
 					}
 				}
 			}
+			desc = gal_com_neighboring_gray_goo
 		}
-		modifier = {
-			factor = 0.75
+		modifier = { factor = 0.75
 			event_target:graygoo_country = {
 				# galaxy_percentage < 0.1
 				fleet_power <= 300000
 			}
 			desc = gal_com_gray_goo_size_smallest
 		}
-		modifier = {
-			factor = 1.1
+		modifier = { factor = 1.1
 			event_target:graygoo_country = {
 				fleet_power > 300000
 				# fleet_power <= 500000 # Not needed as the next modifier triggers anyway (simple math op. Should be cheaper than EUD conditional statements)
@@ -82,8 +73,7 @@ resolution_galactic_focus_crisis_nanites = {
 			}
 			desc = gal_com_gray_goo_size_small
 		}
-		modifier = {
-			factor = 1.37			# 1.5
+		modifier = { factor = 1.37			# 1.5
 			event_target:graygoo_country = {
 				fleet_power > 500000
 				# fleet_power <= 750000
@@ -92,8 +82,7 @@ resolution_galactic_focus_crisis_nanites = {
 			}
 			desc = gal_com_gray_goo_size_medium
 		}
-		modifier = {
-			factor = 1.33			# 2
+		modifier = { factor = 1.33			# 2
 			event_target:graygoo_country = {
 				fleet_power > 750000
 				# fleet_power <= 1100000
@@ -102,8 +91,7 @@ resolution_galactic_focus_crisis_nanites = {
 			}
 			desc = gal_com_gray_goo_size_large
 		}
-		modifier = {
-			factor = 1.5			# 3
+		modifier = { factor = 1.5			# 3
 			event_target:graygoo_country = {
 				fleet_power > 1100000
 				# fleet_power <= 1600000
@@ -112,8 +100,7 @@ resolution_galactic_focus_crisis_nanites = {
 			}
 			desc = gal_com_gray_goo_size_very_large
 		}
-		modifier = {
-			factor = 3.33			# 10
+		modifier = { factor = 3.33			# 10
 			event_target:graygoo_country = {
 				fleet_power > 1600000
 				# galaxy_percentage > 0.5
@@ -123,27 +110,20 @@ resolution_galactic_focus_crisis_nanites = {
 		modifier = { factor = 10 has_ascension_perk = ap_defender_of_the_galaxy desc = ap_defender_of_the_galaxy }
 		modifier = { factor = 1.2 is_militarist = yes desc = ethic_militarist }
 		modifier = { factor = 1.2 is_materialist = yes desc = ethic_materialist }
-		modifier = {
-			factor = 0.5
+		modifier = { factor = 0.5
 			is_xenophobe = yes
 			NOR = {
 				# any_neighbor_country = { is_same_empire = event_target:graygoo_country }
 				has_country_flag = nanite_bomb_affected
 				event_target:graygoo_country = {
-					num_killed_ships = {
-						target = prev
-						value > 15
-					}
+					num_killed_ships = { target = prev value > 15 }
 				}
 				event_target:graygoo_country = {
 					any_owned_fleet = {
 						exists = solar_system
 						solar_system = {
 							NOT = { has_star_flag = lcluster }
-							any_neighbor_system = {
-								has_owner = yes
-								is_owned_by = prevprevprevprev
-							}
+							any_neighbor_system = { has_owner = yes is_owned_by = prevprevprevprev }
 						}
 					}
 				}

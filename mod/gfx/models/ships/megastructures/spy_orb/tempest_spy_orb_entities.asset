@@ -105,7 +105,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_spyorb_phase_01_construction_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	default_state = "idle"
 	state = { name = "idle"
@@ -119,7 +119,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_spyorb_phase_02_construction_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	default_state = "idle"
 	state = { name = "idle"
@@ -133,7 +133,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_spyorb_phase_03_construction_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	default_state = "idle"
 	state = { name = "idle"
@@ -147,7 +147,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_spyorb_phase_04_construction_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	default_state = "idle"
 	state = { name = "idle"
@@ -161,7 +161,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_spyorb_phase_01_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	attach = { "root" = "grey_tempesttw_spyorb_part_1_entity" }
 
@@ -170,7 +170,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_spyorb_phase_02_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	attach = { "root" = "grey_tempesttw_spyorb_part_1_entity" }
 	attach = { "root" = "grey_tempesttw_spyorb_part_2_entity" }
@@ -180,7 +180,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_spyorb_phase_03_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	attach = { "root" = "grey_tempesttw_spyorb_part_1_entity" }
 	attach = { "root" = "grey_tempesttw_spyorb_part_2_entity" }
@@ -191,7 +191,7 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_spyorb_phase_04_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	attach = { "root" = "grey_tempesttw_spyorb_part_1_entity" }
 	attach = { "root" = "grey_tempesttw_spyorb_part_2_entity" }
@@ -204,7 +204,7 @@ entity = {
 
 entity = {
 	name = "adari_spyorb_phase_01_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	attach = { "root" = "adari_sanctum_test_entity" }
 
@@ -214,7 +214,7 @@ entity = {
 
 entity = {
 	name = "adari_spyorb_phase_02_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	attach = { "root" = "adari_sanctum_test_entity" }
 
@@ -224,7 +224,7 @@ entity = {
 
 entity = {
 	name = "adari_spyorb_phase_03_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	attach = { "root" = "adari_sanctum_test_entity" }
 
@@ -235,7 +235,7 @@ entity = {
 
 entity = {
 	name = "adari_spyorb_phase_04_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
 	attach = { "root" = "adari_sanctum_test_entity" }
 

@@ -91,11 +91,11 @@ entity = {
 	default_state = "idle"
 	state = { name = "idle" }
 
-	locator = { name = "root"				position = { 0		0  0 } rotation = { 0 0 90 } }
-	locator = { name = "slot1"				position = { 0		5  0 } rotation = { 0 0 90 } }
-	locator = { name = "slot2"				position = { 0		10  0 } rotation = { 0 0 90 } }
-	locator = { name = "slot3"				position = { 0		15  0 } rotation = { 0 0 90 } }
-	locator = { name = "slot4"				position = { 0		20  0 } rotation = { 0 0 90 } }
+	locator = { name = "root"				position = { 0		0 0 } rotation = { 0 0 90 } }
+	locator = { name = "slot1"				position = { 0		5 0 } rotation = { 0 0 90 } }
+	locator = { name = "slot2"				position = { 0		10 0 } rotation = { 0 0 90 } }
+	locator = { name = "slot3"				position = { 0		15 0 } rotation = { 0 0 90 } }
+	locator = { name = "slot4"				position = { 0		20 0 } rotation = { 0 0 90 } }
 
 	attach = { "slot1" = "grey_tempesttw_hole_sphere_ring_d_entity" }
 	attach = { "slot2" = "grey_tempesttw_hole_sphere_ring_c_entity" }
@@ -107,9 +107,9 @@ entity = {
 
 entity = {
 	name = "grey_tempesttw_spyorb_phase_04_entity"
-	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos  0 } }
+	locator = { name = "root"	position = { @spyorb_side_pos 	@spyorb_height_pos 0 } }
 
-	locator = { name = "roota"				position = { 0		10  0 } rotation = { 0 0 0 } }
+	locator = { name = "roota"				position = { 0		10 0 } rotation = { 0 0 0 } }
 	attach = { "roota" = "grey_tempesttw_spy_orb_top" }
 	attach = { "root" = "grey_tempesttw_spyorb_part_1_entity" }
 	attach = { "root" = "grey_tempesttw_spyorb_part_2_entity" }

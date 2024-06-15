@@ -16,9 +16,11 @@ MACHINE = { # ESGO
 		plural = "Gray Goos"
 		name_list = "graygoo"
 	}
-	graygoo_3 = {
-		name = "Gray Dessanu"
-		plural = "Gray Dessanu"
+	dessanu = {
+		name = "NAME_Dessanu"
+		plural = "NAME_Dessanu"
+		home_planet = "NAME_Dessanu"
+		home_system = "NAME_Dessanu"
 		name_list = "graygoo"
 	}
 }

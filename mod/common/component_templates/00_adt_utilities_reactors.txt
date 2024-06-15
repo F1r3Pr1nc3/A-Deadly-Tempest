@@ -81,7 +81,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { titan cosmo_crisis_titan payback_warship graygoo_mothership scavenger_bot dreadnought }
+	size_restriction = { titan cosmo_crisis_titan payback_warship cosmo_crisis_battlecruiser graygoo_mothership scavenger_bot dreadnought }
 	upgrades_to = "TITAN_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -213,7 +213,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { cruiser offspring_cruiser crisis_cruiser cosmo_crisis_destroyer graygoo_interdictor }
+	size_restriction = { cruiser crisis_cruiser cosmo_crisis_destroyer offspring_cruiser graygoo_interdictor }
 	upgrades_to = "CRUISER_GRAVITON_REACTOR"
 
 	ai_weight = {
@@ -221,6 +221,10 @@ utility_component_template = {
 		modifier = {
 			factor = 0
 			no_resource_for_component = { RESOURCE = sr_dark_matter }
+		}
+		modifier = {
+			factor = 0.5
+			is_ai = yes
 		}
 	}
 }
@@ -254,6 +258,10 @@ utility_component_template = {
 			factor = 0
 			no_resource_for_component = { RESOURCE = sr_dark_matter }
 		}
+		modifier = {
+			factor = 0.5
+			is_ai = yes
+		}
 	}
 }
 
@@ -277,7 +285,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { titan cosmo_crisis_titan payback_warship graygoo_mothership scavenger_bot dreadnought }
+	size_restriction = { titan cosmo_crisis_titan payback_warship cosmo_crisis_battlecruiser graygoo_mothership scavenger_bot dreadnought }
 	upgrades_to = "TITAN_GRAVITON_REACTOR"
 
 	ai_weight = {

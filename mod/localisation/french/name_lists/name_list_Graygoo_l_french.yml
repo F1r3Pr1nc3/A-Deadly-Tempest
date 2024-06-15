@@ -1,7 +1,7 @@
 ﻿l_french:
- GRAYGOO_SHIP_GreatConfluence: "Confluence Majeure"
- GRAYGOO_SHIP_Reconstitutor: "Reconstitueur"
- GRAYGOO_SWARM:0 "Swarm %R%"
- GRAYGOO_Preservation: "%O% Preservation Force"
  GRAYGOO_Bulwark: "%O% Bulwark Force"
+ GRAYGOO_Preservation: "%O% Preservation Force"
+ GRAYGOO_SHIP_GreatConfluence: "Great Confluence"
+ GRAYGOO_SHIP_Reconstitutor: "Reconstitutor"
+ GRAYGOO_SWARM: "Swarm %R%"
  GRAYGOO_Spectres: "%O% Spectres"

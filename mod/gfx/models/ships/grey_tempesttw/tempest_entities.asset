@@ -14,7 +14,7 @@ entity = {
 entity = {
 	name = "greytempest_science_beam_entity"
 	state = { name = "idle"
-		# animation = "idle" animation_speed = 0.7  FIXME
+		# animation = "idle" animation_speed = 0.7 FIXME
 	}
 	locator = { name = "root" position = { 0 -7 0 } rotation = { 0 180 0 } }
 	attach = { "root" = "mega_art_instution_01_core_effect_entity" }

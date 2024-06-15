@@ -3048,7 +3048,7 @@
 
  ### Exhaustion from War of Uprising
 #  CrisisManagerMenu.5152.title: "Exhaustion from War of Uprising"
-#  CrisisManagerMenu.5152.desc: "A configuration for a coefficient of war exhaustion in machine uprising.\nFor all options except ''$CrisisManagerMenu.5152e.title$'', the war exhaustion of both sides will be increased to 100%, even if other empires joining to the war is still alive. At this time, War View shows that some of planets are destructed, though they were NOT destructed  actually.\nFor ''$CrisisManagerMenu.5152e.title$'', the war will continue until §Rall empires§! in one side are destroyed."
+#  CrisisManagerMenu.5152.desc: "A configuration for a coefficient of war exhaustion in machine uprising.\nFor all options except ''$CrisisManagerMenu.5152e.title$'', the war exhaustion of both sides will be increased to 100%, even if other empires joining to the war is still alive. At this time, War View shows that some of planets are destructed, though they were NOT destructed actually.\nFor ''$CrisisManagerMenu.5152e.title$'', the war will continue until §Rall empires§! in one side are destroyed."
 #  CrisisManagerMenu.5152a.title: "§BSpineless§! Uprising War"
 #  CrisisManagerMenu.5152b.title: "§GFickle§! Uprising War"
 #  CrisisManagerMenu.5152c.title: "§YTough§! Uprising War"

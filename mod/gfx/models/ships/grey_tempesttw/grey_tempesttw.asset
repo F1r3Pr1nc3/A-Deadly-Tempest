@@ -2660,7 +2660,7 @@ entity = {
 	attach = { "slot2" = "greytempest_habitate_entity" }
 	attach = { "root" = "grey_tempesttw_starbase_citadel_section_entity" }
 	locator = { name = "slot1"		position = { 0	0	0 } rotation = { 0 180 0 } }
-	locator = { name = "slot2"		position = { 0	20  0 } }
+	locator = { name = "slot2"		position = { 0	20	0 } }
 	locator = { name = "root"		position = { 0	0	0 } }
 	default_state = "habitat_idle"
 	state = { name = "habitat_idle" looping = yes }

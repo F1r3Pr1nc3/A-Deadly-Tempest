@@ -307,7 +307,6 @@ country_event = {
 		force_add_civic = civic_awakened_machine
 		# set_name = "NAME_Graygoo_Consonance"
 		species = {
-			rename_species = { name = "NAME_Dessanu" name_list = "LITHOID3" } # "graygoo"
 			change_species_characteristics = {
 				immortal = yes
 				can_be_modified = yes
@@ -335,7 +334,10 @@ country_event = {
 				add_trait = "trait_robot_streamlined_protocols"
 				add_traits_at_start_of_list = yes
 				# change_scoped_species = yes # If pop
-				effect = { set_species_identity = event_target:gray_species }
+				effect = {
+					set_species_identity = event_target:gray_species
+					rename_species = { name = dessanu } # "NAME_Dessanu" name_list = "LITHOID3" "graygoo" ?
+				}
 			}
 		}
 
@@ -359,7 +361,7 @@ country_event = {
 		## FIXEM: does not work: Required authority [auth_machine_intelligence] is excluded by other restrictions. Result authority [auth_machine_intelligence] is not valid
 		change_government = {
 			authority = auth_machine_intelligence
-			cooldown = no
+			# cooldown = no
 			civics = {
 				civic = civic_awakened_machine
 				civic = civic_machine_terminator

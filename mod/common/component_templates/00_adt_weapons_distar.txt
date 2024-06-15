@@ -135,6 +135,8 @@ weapon_component_template = {
 	component_set = "NANITE_BEAM"
 	size_restriction = {
 		titan
+		cosmo_crisis_titan
+		cosmo_crisis_battlecruiser
 		colossus
 		graygoo_mothership
 		dreadnought
@@ -237,7 +239,7 @@ weapon_component_template = {
 	prerequisites = { "tech_adt_gg_beam" }
 	component_set = "NANITE_BEAM"
 	# class_restriction = { shipclass_military_station shipclass_starbase }
-	size_restriction = { ion_cannon }
+	size_restriction = { ion_cannon cosmo_crisis_titan }
 	tags = { weapon_type_energy }
 	projectile_gfx = "gatebuilder_titan_weapon"
 	ai_tags = { weapon_role_artillery }
@@ -251,7 +253,7 @@ weapon_component_template = {
 	}
 }
 
-# ## Energy Torpedo Launchers
+## Energy Torpedo Launchers
 weapon_component_template = {
 	key = "NANITE_ENERGY_TORPEDO"
 	size = torpedo
@@ -276,6 +278,8 @@ weapon_component_template = {
 	component_set = "NANITE_ENERGY_TORPEDO"
 	size_restriction = {
 		titan
+		cosmo_crisis_titan
+		cosmo_crisis_battlecruiser
 		graygoo_mothership
 		colossus
 		juggernaut

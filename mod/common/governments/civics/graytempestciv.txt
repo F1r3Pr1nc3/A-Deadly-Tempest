@@ -3,9 +3,6 @@ civic_machine_nanites_culture = {
 	potential = {
 		authority = { value = auth_machine_intelligence }
 	}
-	potential = {
-		species_archetype = { NOT = { value = MACHINE } }
-	}
 	modification = no
 	blocks_random_machine_empire_generation	= yes
 	random_weight = {
@@ -30,9 +27,9 @@ origin_machine_nanites = {
 		always = no # Non-player origin
 		# has_distar = yes
 	}
-	potential = {
-		species_archetype = { NOT = { value = MACHINE } }
-	}
+	# potential = {
+	# 	species_archetype = { NOT = { value = MACHINE } }
+	# }
 	advanced_start = yes
 	blocks_random_machine_empire_generation	= yes
 	random_weight = {
