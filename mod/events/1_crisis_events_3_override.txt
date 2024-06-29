@@ -359,7 +359,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { NOT = { any_country = { is_country_type = extradimensional has_country_flag = unbidden } } }
+			limit = { count_country = { limit = { is_country_type = extradimensional has_country_flag = unbidden } count = 0 } }
 			random_country = {
 				limit = { is_country_type = extradimensional }
 				set_country_flag = unbidden

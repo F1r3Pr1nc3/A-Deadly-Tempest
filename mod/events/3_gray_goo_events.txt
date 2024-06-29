@@ -794,7 +794,7 @@ event = {
 			OR = {
 				AND = {
 					has_country_flag = gray_army_active
-					NOT = { any_owned_army = { army_type = gray_army } }
+					count_owned_army = { limit = { army_type = gray_army } count = 0 }
 				}
 				AND = {
 					has_country_flag = gray_warship_active

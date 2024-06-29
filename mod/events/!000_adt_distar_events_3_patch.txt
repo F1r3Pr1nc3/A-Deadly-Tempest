@@ -58,7 +58,7 @@ country_event = {
 			# Enable project
 			if = {
 				limit = {
-					NOT = { any_playable_country = { has_country_flag = lcluster_opener } }
+					count_playable_country = { limit = { has_country_flag = lcluster_opener } count = 0 }
 				}
 				country_event = { id = distar.10905 }
 			}
@@ -104,8 +104,8 @@ country_event = {
 }
 
 ### Open L-Gate
+# Changed by FirePrince: Possibility of all random events at the same time (+ Crisis Manager patch)
 country_event = {
-	# Changed by FirePrince: Possibility of all random events at the same time (+ Crisis Manager patch)
 	id = distar.10950
 	hide_window = yes
 	is_triggered_only = yes
@@ -247,7 +247,7 @@ country_event = {
 			event_target:CmtTargetLgateOriginatingSystem = {
 				closest_system = {
 					min_steps = 3
-					limit = { NOT = { any_system_colony = { } } }
+					limit = { count_system_colony = { limit = { } count = 0 } }
 					set_star_flag = dragon_point
 				}
 			}
@@ -1088,7 +1088,7 @@ country_event = {
 
 		### Notify 2 those without l-gate systems
 		every_playable_country = {
-			limit = { NOT = { any_system_within_border = { has_star_flag = lgate } } }
+			limit = { count_system_within_border = { limit = { has_star_flag = lgate } count = 0 } }
 			country_event = { id = distar.13011 }
 		}
 		country_event = { id = a_deadly_tempest.13006 days = 3 }

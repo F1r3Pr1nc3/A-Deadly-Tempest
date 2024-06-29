@@ -41,8 +41,9 @@ event = {
 	hide_window = yes
 	trigger = {
 		has_distar = yes
-		NOT = {
-			any_system = { has_star_flag = enigmatic_cache_system }
+		count_system = {
+			limit = { has_star_flag = enigmatic_cache_system }
+			count = 0
 		}
 		any_playable_country = {
 			is_ai = no
@@ -335,8 +336,9 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		# Shouldn't trigger if the enigmatic cache country already has an enigmatic cache in rotation.
-		NOT = {
-			any_owned_ship = { has_ship_flag = enigmatic_cache_ship }
+		count_owned_ship = {
+			limit = { has_ship_flag = enigmatic_cache_ship }
+			count = 0
 		}
 	}
 	immediate = {

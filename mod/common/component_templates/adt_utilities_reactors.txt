@@ -17,17 +17,17 @@
 # @battleship_power_5 = 1550
 # @battleship_power_6 = 2000
 
-@titan_power_1 = 1100
-@titan_power_2 = 1450
-@titan_power_3 = 1900
-@titan_power_4 = 2500
-@titan_power_5 = 3200
-@titan_power_6 = 4200
+@titan_power_1 = 2000 # 1100
+@titan_power_2 = 2500 # 1450
+@titan_power_3 = 3500 # 1900
+@titan_power_4 = 5000 # 2500
+@titan_power_5 = 6200 # 3200
+@titan_power_6 = 8400 # 4200
 
 @colossus_power = 10000
 
-@platform_power_5 = 575
-@platform_power_6 = 750
+@platform_power_5 = 1890 # 575
+@platform_power_6 = 2415 # 750
 
 #############
 #	COST	#

@@ -139,7 +139,7 @@ shoal_factory_guard_move = {
 					from = { exists = orbit }
 					any_fleet_in_orbit = { is_same_value = from }
 				}
-				NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+				count_fleet_in_orbit = { limit = { exists = owner has_fleet_flag = nanite_mother_ship } count = 0 }
 			}
 			from = {
 				auto_move_to_planet = {
@@ -163,7 +163,7 @@ shoal_factory_guard_queue = {
 					prev = { exists = orbit }
 					any_fleet_in_orbit = { is_same_value = prevprev }
 				}
-				NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+				count_fleet_in_orbit = { limit = { exists = owner has_fleet_flag = nanite_mother_ship } count = 0 }
 			}
 			found_planet = {
 				# orbit_planet = this
@@ -171,7 +171,7 @@ shoal_factory_guard_queue = {
 					id = graygoo_guard$NUM$.effect.2
 					if = {
 						limit = {
-							NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+							count_fleet_in_orbit = { limit = { exists = owner has_fleet_flag = nanite_mother_ship } count = 0 }
 						}
 						from = {
 							queue_actions = { orbit_planet = prev }
@@ -218,7 +218,7 @@ shoal_factory_guard_queue = {
 								random_system_planet = {
 									limit = {
 										OR = { is_planet_class = pc_gray_goo is_planet_class = pc_gaia }
-										NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+										count_fleet_in_orbit = { limit = { exists = owner has_fleet_flag = nanite_mother_ship } count = 0 }
 									}
 									from = {
 										queue_actions = { orbit_planet = prev }
@@ -299,7 +299,7 @@ shoal_continue_cluster_defense = {
 				NOT = { has_star_flag = graygoo_factory_system }
 				any_system_planet = {
 					OR = { is_planet_class = pc_gray_goo is_planet_class = pc_gaia }
-					NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+					count_fleet_in_orbit = { limit = { exists = owner has_fleet_flag = nanite_mother_ship } count = 0 }
 				}
 			}
 			found_system = {
@@ -310,7 +310,7 @@ shoal_continue_cluster_defense = {
 						# is_star = yes
 						# exists = starbase
 						OR = { is_planet_class = pc_gray_goo is_planet_class = pc_gaia }
-						NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+						count_fleet_in_orbit = { limit = { exists = owner has_fleet_flag = nanite_mother_ship } count = 0 }
 					}
 					found_planet = {
 						move_to = this
@@ -348,7 +348,7 @@ shoal_continue_cluster_defense = {
 		# 			is_planet_class = pc_gray_goo
 		# 			is_planet_class = pc_gaia
 		# 		}
-		# 		NOT = { any_fleet_in_orbit = { exists = owner has_fleet_flag = nanite_mother_ship } }
+		# 		count_fleet_in_orbit = { limit = { exists = owner has_fleet_flag = nanite_mother_ship } count = 0 }
 		# 	}
 		# 	found_planet = {
 		# 		orbit_planet = this

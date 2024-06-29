@@ -820,7 +820,7 @@ fleet_event = {
 					limit = {
 						OR = {
 							has_fleet_flag = assimilate_that_ship_flag_temp
-							NOT = { any_owned_ship = { always = yes } }
+							count_owned_ship = { limit = { always = yes } count = 0 }
 						}
 					}
 					# log = "WARNING assimilate_that_ship NOT exists, delete temp fleet"
@@ -883,7 +883,7 @@ fleet_event = {
 				destroy_ship = this
 			}
 			if = {
-				limit = { NOT = { any_owned_ship = { always = yes } } }
+				limit = { count_owned_ship = { limit = { always = yes } count = 0 } }
 				delete_fleet = {
 					target = this
 					kill_leader = no
@@ -1394,11 +1394,12 @@ country_event = {
 						is_planet_class = pc_gray_goo
 						is_planet_class = pc_gaia
 					}
-					NOT = {
-						any_fleet_in_orbit = {
+					count_fleet_in_orbit = {
+						limit = {
 							exists = owner
 							has_fleet_flag = nanite_mother_ship
 						}
+						count = 0
 					}
 				}
 				prev = {
@@ -1433,11 +1434,12 @@ country_event = {
 												is_planet_class = pc_gray_goo
 												is_planet_class = pc_gaia
 											}
-											NOT = {
-												any_fleet_in_orbit = {
+											count_fleet_in_orbit = {
+												limit = {
 													exists = owner
 													has_fleet_flag = nanite_mother_ship
 												}
+												count = 0
 											}
 										}
 										prevprev = {
@@ -1577,11 +1579,12 @@ fleet_event = {
 						is_planet_class = pc_gray_goo
 						is_planet_class = pc_gaia
 					}
-					NOT = {
-						any_fleet_in_orbit = {
+					count_fleet_in_orbit = {
+						limit = {
 							exists = owner
 							has_fleet_flag = nanite_mother_ship
 						}
+						count = 0
 					}
 				}
 			}
@@ -1591,11 +1594,12 @@ fleet_event = {
 						is_planet_class = pc_gray_goo
 						is_planet_class = pc_gaia
 					}
-					NOT = {
-						any_fleet_in_orbit = {
+					count_fleet_in_orbit = {
+						limit = {
 							exists = owner
 							has_fleet_flag = nanite_mother_ship
 						}
+						count = 0
 					}
 				}
 				from = {

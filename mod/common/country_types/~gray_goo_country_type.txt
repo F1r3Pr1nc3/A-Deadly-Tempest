@@ -1,6 +1,6 @@
 gate_builders = {
 	# has_difficulty_bonuses = yes
-	scaled_difficulty_bonuses = 2.5 # scales to setting 3.0 has become other advantages
+	scaled_difficulty_bonuses = 2.5 # Scales to setting 3.0 has become other advantages
 	# counts_for_victory = no
 	# sub_title = "COUNTRY_FALLEN_EMPIRE"
 	# sub_title_desc = "COUNTRY_FALLEN_EMPIRE_DESC"
@@ -422,7 +422,7 @@ gray_goo = {
 	attack_unarmed_orbital_stations = yes
 	has_difficulty_bonuses = yes
 	always_valid_target_aggressive = yes
-	scaled_difficulty_bonuses = 2.0 # scales to setting # Since v.3.12 3.0, before 1.0
+	scaled_difficulty_bonuses = 2.0 # Scales to setting # Since v.3.12 3.0, before 1.0
 	counts_for_victory = no
 	destroys_starbases = yes
 	show_in_contacts_list = no

@@ -5,9 +5,9 @@
 @power3 = -25
 @cost3 = 20
 # DM Power:
-@titan_power_6 = 4200
+@titan_power_6 = 9500 # 4200
 @colossus_power = 10000
-@platform_power_6 = 750
+@platform_power_6 = 2415 # 750
 
 @battleship_cost_6 = 296
 @titan_cost_6 = 592

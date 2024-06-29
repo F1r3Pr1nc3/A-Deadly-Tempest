@@ -48,7 +48,7 @@ CmtTriggerHasPotentialKhanAwaking = {
 				has_country_flag = diadochi
 			}
 			# NOT = { has_country_flag = restored_marauders_flag }
-			NOT = { any_country = { is_country_type = dormant_marauders } }
+			count_country = { limit = { is_country_type = dormant_marauders } count = 0 }
 		}
 	}
 	# OR = {
@@ -56,7 +56,7 @@ CmtTriggerHasPotentialKhanAwaking = {
 	# 	AND = { # Fallback
 	# 		is_country_type = dormant_marauders
 	# 		has_country_flag = restored_marauders_flag
-	# 		NOT = { any_country = { CmtTriggerIsSleepingMarauder = yes } }
+	# 		count_country = { limit = { CmtTriggerIsSleepingMarauder = yes } count = 0 }
 	# 	}
 	# }
 	OR = {

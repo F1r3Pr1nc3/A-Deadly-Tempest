@@ -58,11 +58,12 @@ nanite_giga_guardian = {
 			# count = trigger:num_buildings = {
 			# 	type = building_stronghold disabled = no in_construction = no
 			# }
-			NOT = {
-				any_planet_army = {
+			count_planet_army = {
+				limit = {
 					is_defensive_army = yes
 					army_type = nanite_giga_guardian
 				}
+				count = 0
 			}
 		}
 		owner = {

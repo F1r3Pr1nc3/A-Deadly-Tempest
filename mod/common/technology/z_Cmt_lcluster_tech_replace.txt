@@ -66,8 +66,9 @@ tech_repeatable_lcluster_clue = {
 		}
 		modifier = {
 			factor = 0.2
-			NOT = {
-				any_system_within_border = { has_star_flag = lgate }
+			count_system_within_border = {
+				limit = { has_star_flag = lgate }
+				count = 0
 			}
 		}
 		modifier = { # Mod lclusterplus

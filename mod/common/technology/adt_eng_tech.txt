@@ -31,7 +31,7 @@ tech_nanite_ships = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
+			# count_planet_within_border = { limit = { has_resource = { type = nanites amount > 0 } count = 0 } }
 			has_monthly_income = { resource = nanites value < 1 }
 			resource_stockpile_compare = { resource = nanites value < 300 }
 		}
@@ -63,7 +63,7 @@ tech_nanite_build_speed = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
+			# count_planet_within_border = { limit = { has_resource = { type = nanites amount > 0 } count = 0 } }
 			has_monthly_income = { resource = nanites value < 1 }
 			resource_stockpile_compare = { resource = nanites value < 300 }
 		}
@@ -98,7 +98,7 @@ tech_nanite_hull = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
+			# count_planet_within_border = { limit = { has_resource = { type = nanites amount > 0 } count = 0 } }
 			has_monthly_income = { resource = nanites value < 1 }
 			resource_stockpile_compare = { resource = nanites value < 300 }
 		}
@@ -147,7 +147,7 @@ tech_nanite_living_metal = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
+			# count_planet_within_border = { limit = { has_resource = { type = nanites amount > 0 } count = 0 } }
 			has_monthly_income = { resource = nanites value < 1 }
 			resource_stockpile_compare = { resource = nanites value < 300 }
 		}
@@ -173,7 +173,7 @@ tech_nanocrystals = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
+			# count_planet_within_border = { limit = { has_resource = { type = nanites amount > 0 } count = 0 } }
 			has_monthly_income = { resource = nanites value < 1 }
 			resource_stockpile_compare = { resource = nanites value < 300 }
 		}
@@ -272,7 +272,7 @@ tech_nanite_modular_engineering = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
+			# count_planet_within_border = { limit = { has_resource = { type = nanites amount > 0 } count = 0 } }
 			has_monthly_income = { resource = nanites value < 1 }
 			resource_stockpile_compare = { resource = nanites value < 300 }
 		}
@@ -294,7 +294,7 @@ tech_nanite_armor = {
 		factor = 0.50
 		modifier = {
 			factor = 0
-			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
+			# count_planet_within_border = { limit = { has_resource = { type = nanites amount > 0 } count = 0 } }
 			has_monthly_income = { resource = nanites value < 1 }
 			resource_stockpile_compare = { resource = nanites value < 300 }
 		}

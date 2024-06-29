@@ -7,7 +7,7 @@
 @power0 = -5
 @power1 = -10
 @power2 = -15
-@power3 = -20
+@power3 = -25 # -20
 @evasion0 = 5
 @evasion1 = 10
 @evasion2 = 15
@@ -473,6 +473,7 @@ utility_component_template = {
 		offspring_battleship
 		cosmo_crisis_battlecruiser
 		nanite_swarmer
+		nanite_interdictor
 		dreadnought
 		scavenger_bot
 		pirate_cruiser
