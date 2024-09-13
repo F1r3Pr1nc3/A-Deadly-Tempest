@@ -2,7 +2,7 @@
 # Overrides HFE, ZoFE
 # Gets overridden by the merger of rules.
 ## Shared with: The Great Khan Expanded, A Deadly Tempest, Unique Ascension Perks, Crisis Managers
-# from  = target country
+# from = target country
 has_total_war_cb = {
 	exists = from
 	OR = {

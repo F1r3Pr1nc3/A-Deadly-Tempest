@@ -1,0 +1,44 @@
+r_gray_tempest_core = {
+	activation_duration = 3600 # @triumph_duration
+	portrait = "GFX_gray_tempest_core"
+	sound = "relic_activation_isolated_contingency_core"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = 3000 # @activation_cost
+		}
+		produces = { nanites = 50 engineering_research = 50 }
+	}
+
+	ai_weight = { weight = 100 }
+
+	triggered_country_modifier = {
+		potential = { always = yes }
+		shipsize_nanite_swarmer_build_speed_mult = 0.5
+		shipsize_nanite_interdictor_build_speed_mult = 0.5
+	}
+	triggered_country_modifier = {
+		potential = { always = yes }
+		weapon_nanite_weapon_fire_rate_mult = 0.05
+		mult = gray_goo_usage
+	}
+
+	score = 5000
+
+	active_effect = {
+		custom_tooltip = relic_nanite_forge_summon
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = { modifier = "relic_activation_cooldown" years = 10 }
+			country_event = { id = a_deadly_tempest.1015 }
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		exists = capital_scope
+		inline_script = { script = relics/activation_checks RELIC = r_gray_tempest_core }
+	}
+}

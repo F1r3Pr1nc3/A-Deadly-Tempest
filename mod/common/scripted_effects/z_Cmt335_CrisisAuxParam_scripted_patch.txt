@@ -59,7 +59,7 @@ CmtFleetSetAuxParam_GraygooAttacker = {
 	set_aggro_range = 10
 	set_location = {
 		target = prevprev
-		distance = 0
+		distance = 45
 		angle = random
 	}
 	set_fleet_flag = trait_biothrall_tolerance

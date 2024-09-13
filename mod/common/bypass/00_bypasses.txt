@@ -67,7 +67,7 @@ gateway = {
 
 	respect_closed_borders = yes
 	block_access_if_hostile = yes
-	
+
 	# country_can_use = {
 	# 	custom_tooltip = {
 	# 		fail_text = GATEWAY_COUNTRY_CANNOT_USE
@@ -123,35 +123,35 @@ wormhole = {
 	can_bypass_be_locked = yes # v.3.10
 	prerequisites = { tech_wormhole_stabilization }
 	potential = { always = yes }
-	country_can_use = {
-		custom_tooltip = {
-			fail_text = NATURAL_WORMHOLE_COUNTRY_CANNOT_USE
-			# Wormhole can be used if...
-			OR = {
-				# System has no owner
-				NOT = { exists = from }
-				# System's owner has not closed borders to you.
-				NOT = { from = { has_closed_borders = root } }
-				# System's owner is at war with you.
-				from = { is_at_war_with = root }
-				# System's owner is not a proper empire.
-				from = {
-					is_country_type_with_subjects = no
-					merg_is_fallen_empire = no
-				}
-				AND = {
-					# System's owner is GC member and you are custodian/emperor
-					from = { is_galactic_community_member = yes }
-					root = {
-						OR = {
-							is_galactic_custodian = yes
-							is_galactic_emperor = yes
-						}
-					}
-				}
-			}
-		}
-	}
+	# country_can_use = { removed in v3.13
+	# 	custom_tooltip = {
+	# 		fail_text = NATURAL_WORMHOLE_COUNTRY_CANNOT_USE
+	# 		# Wormhole can be used if...
+	# 		OR = {
+	# 			# System has no owner
+	# 			NOT = { exists = from }
+	# 			# System's owner has not closed borders to you.
+	# 			NOT = { from = { has_closed_borders = root } }
+	# 			# System's owner is at war with you.
+	# 			from = { is_at_war_with = root }
+	# 			# System's owner is not a proper empire.
+	# 			from = {
+	# 				is_country_type_with_subjects = no
+	# 				merg_is_fallen_empire = no
+	# 			}
+	# 			AND = {
+	# 				# System's owner is GC member and you are custodian/emperor
+	# 				from = { is_galactic_community_member = yes }
+	# 				root = {
+	# 					OR = {
+	# 						is_galactic_custodian = yes
+	# 						is_galactic_emperor = yes
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# }
 	on_action = "on_entering_wormhole"
 }
 
@@ -248,7 +248,7 @@ shroud_tunnel = {
 	system_view_tooltip_header = BYPASS_NAME_SHROUD_TUNNEL
 	connection_type = scripted_connection
 	can_bypass_be_locked = yes # v.3.10
-	
+
 	scripted_connection = {
 		node = { # System scope
 			starbase = {
@@ -319,21 +319,21 @@ strange_wormhole = {
 		}
 	}
 
-	country_can_use = {
-		custom_tooltip = {
-			fail_text = NATURAL_WORMHOLE_COUNTRY_CANNOT_USE
-			# Wormhole can be used if...
-			OR = {
-				# System has no owner
-				NOT = { exists = from }
-				# System's owner has not closed borders to you
-				from = { NOT = { has_closed_borders = root } }
-				# System's owner is at war with you
-				from = { is_at_war_with = root }
-				# System's owner is not a proper empire
-				from = { is_default_or_fallen = no }
-			}
-		}
-	}
+	# country_can_use = { removed in v3.13
+	# 	custom_tooltip = {
+	# 		fail_text = NATURAL_WORMHOLE_COUNTRY_CANNOT_USE
+	# 		# Wormhole can be used if...
+	# 		OR = {
+	# 			# System has no owner
+	# 			NOT = { exists = from }
+	# 			# System's owner has not closed borders to you
+	# 			from = { NOT = { has_closed_borders = root } }
+	# 			# System's owner is at war with you
+	# 			from = { is_at_war_with = root }
+	# 			# System's owner is not a proper empire
+	# 			from = { is_default_or_fallen = no }
+	# 		}
+	# 	}
+	# }
 	on_action = "on_entering_strange_wormhole"
 }

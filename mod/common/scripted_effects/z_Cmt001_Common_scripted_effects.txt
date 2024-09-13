@@ -224,7 +224,7 @@ CmtEffectChangeAwakenerCivic = {
 CmtEffectFiosLiosTest = {
 	optimize_memory
 	event_target:CmtGlobalVar = {
-		# log="Debug \\[This.CmtVarFiosLios]"
+		# log="Debug [This.CmtVarFiosLios]"
 		change_variable = { which = CmtVarFiosLios value = 1 }
 	}
 }

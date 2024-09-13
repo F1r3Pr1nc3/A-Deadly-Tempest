@@ -355,7 +355,7 @@ country_event = {
 			}
 			closest_system = {
 				limit = {
-					exists = owner
+					has_owner = yes
 					owner = {
 						is_ai = no
 						is_at_war = no

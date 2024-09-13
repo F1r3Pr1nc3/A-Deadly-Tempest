@@ -85,7 +85,7 @@ event = {
 				country_event = { id = CrisisManagerMenu.11 }		## Activating Notification
 			}
 		}
-		# log="Cmt Save loaded 2" # \\[This.GetName]
+		# log="Cmt Save loaded 2" # [This.GetName]
 	}
 }
 

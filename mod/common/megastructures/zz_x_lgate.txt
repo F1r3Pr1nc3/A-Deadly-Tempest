@@ -76,13 +76,14 @@ lgate_disabled = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_surveyed_system"
-			NOT = {
-				any_system_planet = {
+			count_system_planet = {
+				limit = {
 					is_surveyed = {
 						who = prev.from
 						status = no
 					}
 				}
+				count = 0
 			}
 		}
 		custom_tooltip = {
@@ -151,7 +152,7 @@ lgate_disabled = {
 		modifier = {
 			factor = 0.1
 			any_neighbor_system = {
-				exists = owner
+				has_owner = yes
 				owner = {
 					NOT = { is_same_value = from }
 				}

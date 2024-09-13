@@ -864,6 +864,11 @@ CmtEffectCreateFleet_GraygooAttacker = {
 			CmtEffectCreateElement_GraygooStandard = { AMOUNT = $AMOUNT|1$ }
 			CmtFleetSetAuxParam_GraygooAttacker = yes
 		}
-		settings = { spawn_debris = no }
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes
+			uses_naval_capacity = no
+			can_disband = yes
+		}
 	}
 }

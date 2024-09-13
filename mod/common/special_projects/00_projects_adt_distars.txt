@@ -30,11 +30,12 @@ special_project = {
 				has_planet_flag = ldragon_recruited # Should be indeed star_flag!?
 				solar_system = {
 					OR = {
-						NOT = {
-							any_fleet_in_system = {
+						count_fleet_in_system = {
+							limit = {
 								exists = owner
 								owner = { is_country_type = ldragon_country }
 							}
+							count = 0
 						}
 						any_fleet_in_system = {
 							exists = owner

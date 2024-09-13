@@ -40,7 +40,7 @@ CmtTriggerHasPotentialKhanAwaking = {
 			is_pirate_country = yes
 			has_country_flag = restored_marauders_flag
 		}
-		AND = { # Fallback
+		AND = {
 			has_origin = "origin_khan_successor"
 			is_at_war = no
 			OR = {
@@ -51,18 +51,11 @@ CmtTriggerHasPotentialKhanAwaking = {
 			count_country = { limit = { is_country_type = dormant_marauders } count = 0 }
 		}
 	}
-	# OR = {
-	# 	CmtTriggerIsSleepingMarauder = yes
-	# 	AND = { # Fallback
-	# 		is_country_type = dormant_marauders
-	# 		has_country_flag = restored_marauders_flag
-	# 		count_country = { limit = { CmtTriggerIsSleepingMarauder = yes } count = 0 }
-	# 	}
-	# }
 	OR = {
+		# Human player hack
 		AND = {
 			is_ai = no
-			has_country_flag = new_khanate_flag # Human player hack
+			has_country_flag = new_khanate_flag
 		}
 		AND = {
 			has_country_flag = marauder_1
@@ -104,6 +97,14 @@ CmtTriggerHasPotentialKhanAwaking = {
 			}
 		}
 	}
+	# OR = {
+	# 	CmtTriggerIsSleepingMarauder = yes
+	# 	AND = { # Fallback
+	# 		is_country_type = dormant_marauders
+	# 		has_country_flag = restored_marauders_flag
+	# 		count_country = { limit = { CmtTriggerIsSleepingMarauder = yes } count = 0 }
+	# 	}
+	# }
 }
 
 CmtTriggerMarauderCapitalSystem = {

@@ -495,10 +495,11 @@ event = {
 			}
 			if = {
 				limit = {
-					NOT = {
-						any_playable_country = {
+					count_playable_country = {
+						limit = {
 							NOR = { is_ai = yes has_country_flag = lgate_warned@prev }
 						}
+						count = 0
 					}
 				}
 				set_country_flag = lgate_warned

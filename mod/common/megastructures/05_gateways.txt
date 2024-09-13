@@ -18,6 +18,8 @@ gateway_0 = {
 		}
 	}
 	construction_blocks_and_blocked_by = self_type
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_OUTSIDE_GRAVITY_WELL"
+
 	# bypass_type = gateway
 
 	dismantle_cost = {
@@ -72,13 +74,14 @@ gateway_0 = {
 		custom_tooltip = {
 			fail_text = "requires_surveyed_system"			# Or is in my subject's territory
 			OR = {
-				NOT = {
-					any_system_planet = {
+				count_system_planet = {
+					limit = {
 						is_surveyed = {
 							who = prev.from
 							status = no
 						}
 					}
+					count = 0
 				}
 				AND = {
 					exists = owner

@@ -55,7 +55,7 @@ country_event = {
 			}
 		} else = {
 			random_galaxy_planet = {
-				limit = { is_planet_class = pc_barren }
+				limit = { merg_is_barren = yes }
 				planet_event = { id = crisis.2025 days = 20 random = 10 }
 			}
 		}
@@ -70,7 +70,7 @@ country_event = {
 			}
 		} else = {
 			random_galaxy_planet = {
-				limit = { is_planet_class = pc_molten }
+				limit = { merg_is_molten = yes }
 				planet_event = { id = crisis.2026 days = 40 random = 10 }
 			}
 		}
@@ -100,7 +100,7 @@ country_event = {
 			}
 		} else = {
 			random_galaxy_planet = {
-				limit = { is_planet_class = pc_toxic }
+				limit = { merg_is_toxic = yes }
 				planet_event = { id = crisis.2028 days = 80 random = 10 }
 			}
 		}

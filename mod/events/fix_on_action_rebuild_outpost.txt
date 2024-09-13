@@ -109,7 +109,7 @@ event = {
 			}
 			random_system_colony = {
 				limit = {
-					exists = owner
+					has_owner = yes
 					has_ground_combat = no
 					owner = { is_default_or_fallen = yes }
 					solar_system = {

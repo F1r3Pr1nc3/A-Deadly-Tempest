@@ -46,7 +46,7 @@ strike_craft_component_template = {
 	component_set = "NANITE_STRIKE_CRAFT"
 	icon = "GFX_ship_part_nanite_strikecraft"
 	icon_frame = 1
-	tags = { weapon_type_strike_craft }
+	tags = { weapon_type_strike_craft weapon_nanite }
 	ai_tags = { weapon_type_strike_craft }
 	ai_weight = {
 		weight = 1
@@ -89,7 +89,7 @@ weapon_component_template = {
 	}
 	prerequisites = { "tech_adt_energymissiles" }
 	component_set = "NANITE_ENERGY_MISSILE"
-	tags = { weapon_type_energy }
+	tags = { weapon_type_energy weapon_nanite }
 	projectile_gfx = "gatebuilder_torpedo"
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 1
@@ -144,7 +144,7 @@ weapon_component_template = {
 		nanite_dragon
 		fe_titan
 	}
-	tags = { weapon_type_energy }
+	tags = { weapon_type_energy weapon_nanite }
 	projectile_gfx = "gatebuilder_titan_weapon"
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 1
@@ -195,7 +195,7 @@ weapon_component_template = {
 	# juggernaut
 	# scavenger_bot
 	# }
-	tags = { weapon_type_energy }
+	tags = { weapon_type_energy weapon_nanite }
 	projectile_gfx = "gatebuilder_titan_weapon"
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 2
@@ -240,7 +240,7 @@ weapon_component_template = {
 	component_set = "NANITE_BEAM"
 	# class_restriction = { shipclass_military_station shipclass_starbase }
 	size_restriction = { ion_cannon cosmo_crisis_titan }
-	tags = { weapon_type_energy }
+	tags = { weapon_type_energy weapon_nanite }
 	projectile_gfx = "gatebuilder_titan_weapon"
 	ai_tags = { weapon_role_artillery }
 	ai_tag_weight = 1
@@ -287,7 +287,7 @@ weapon_component_template = {
 		dreadnought
 		nanite_dragon
 	}
-	tags = { weapon_type_energy }
+	tags = { weapon_type_energy weapon_nanite }
 	projectile_gfx = "gatebuilder_torpedoes"
 	ai_tags = {
 		weapon_role_artillery
