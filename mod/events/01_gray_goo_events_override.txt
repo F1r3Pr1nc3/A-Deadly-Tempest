@@ -561,7 +561,6 @@ country_event = {
 					colors = { "teal" "dark_grey" "null" "null" }
 				}
 				origin = "origin_fallen_empire"
-				# origin = "origin_life_seeded"
 				effect = {
 					# change_country_flag =
 					save_global_event_target_as = gate_builders

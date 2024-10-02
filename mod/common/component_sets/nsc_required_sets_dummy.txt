@@ -1,8 +1,9 @@
 #####################
 ### REQUIRED SETS ###
 #####################
-
-### SPECIAL SLOT ###
+# Doesn't work for built-in compatibility yet, as ships with half valid components disappear... somehow
+# Error: None of the components  in the component set special_ship_slot had a positive AI weight for country ... and ship design Temp Battleship
+# ### SPECIAL SLOT ###
 component_set = {
 	key = "special_ship_slot"
 	icon = "GFX_ship_part_sensor"
@@ -10,7 +11,7 @@ component_set = {
 	required_component_set = yes
 }
 
-### AURAS ###
+# ### AURAS ###
 component_set = {
 	key = "nsc_titan_aura"
 	icon = "GFX_ship_part_sensor"

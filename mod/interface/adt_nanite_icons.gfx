@@ -117,4 +117,28 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
+	# NSC
+	# spriteType = {
+	# 	name = "GFX_special_slot_multiphasic_sensors"
+	# 	# textureFile = "gfx/interface/icons/ship_parts/special_damage_control.dds"
+	# 	textureFile = "gfx/interface/icons/modules/sb_hyperlane_detailer.dds"
+	# 	noOfFrames = 1
+	# }
+	# spriteType = {
+	# 	name = "GFX_special_slot_damage_control"
+	# 	# textureFile = "gfx/interface/icons/ship_parts/special_damage_control.dds"
+	# 	textureFile = "gfx/interface/icons/modules/sb_salvager_workshop.dds"
+	# 	noOfFrames = 1
+	# }
+	# spriteType = {
+	# 	name = "GFX_special_slot_ready_room"
+	# 	# textureFile = "gfx/interface/icons/ship_parts/special_ready_room.dds"
+	# 	noOfFrames = 1
+	# }
+	# spriteType = {
+	# 	name = "GFX_special_slot_crew_lounge"
+	# 	# textureFile = "gfx/interface/icons/ship_parts/special_crew_lounge.dds"
+	# 	noOfFrames = 1
+	# }
 }

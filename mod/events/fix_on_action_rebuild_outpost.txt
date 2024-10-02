@@ -30,6 +30,7 @@ event = {
 			limit = {
 				NOT = { exists = starbase }
 				any_system_colony = {
+					has_owner = yes
 					has_ground_combat = no
 					owner = { is_default_or_fallen = yes }
 					solar_system = {
@@ -57,6 +58,7 @@ event = {
 								is_cloaked = no
 							}
 							any_system_colony = {
+								has_owner = yes
 								NOT = { is_planet = prevprev }
 								owner = {
 									NOT = { is_same_empire = prevprevprev.owner }
@@ -85,6 +87,7 @@ event = {
 							NOR = {
 								prev = { is_occupied_flag = yes }
 								any_system_colony = {
+									has_owner = yes
 									NOT = { is_planet = prevprev }
 									OR = {
 										merg_is_habitat = no
@@ -137,6 +140,7 @@ event = {
 								is_cloaked = no
 							}
 							any_system_colony = {
+								has_owner = yes
 								NOT = { is_planet = prevprev }
 								owner = {
 									NOT = { is_same_empire = prevprevprev.owner }
@@ -165,6 +169,7 @@ event = {
 							NOR = {
 								prev = { is_occupied_flag = yes }
 								any_system_colony = {
+									has_owner = yes
 									NOT = { is_planet = prevprev }
 									OR = {
 										merg_is_habitat = no

@@ -45,10 +45,10 @@ country_event = {
 		if = {
 			limit = {
 				has_lgate = yes
-				OR = {
-					is_ai = no
-					NOT = { has_global_flag = gray_goo_crisis_set }
-					fleet_power > 40000
+				NAND = {
+					is_ai = yes
+					has_global_flag = gray_goo_crisis_set
+					fleet_power < 40000
 				}
 			}
 			random_owned_megastructure = {
@@ -83,10 +83,10 @@ country_event = {
 			limit = {
 				has_lgate = yes
 				has_technology = tech_lgate_activation
-				OR = {
-					is_ai = no
-					NOT = { has_global_flag = gray_goo_crisis_set }
-					fleet_power > 30000
+				NAND = {
+					is_ai = yes
+					has_global_flag = gray_goo_crisis_set
+					fleet_power < 30000
 				}
 			}
 			random_owned_megastructure = {

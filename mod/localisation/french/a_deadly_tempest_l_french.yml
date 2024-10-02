@@ -177,6 +177,8 @@
  gateway_nanites: "§HNanites Path§!\n§ECette technologie mènera à de nouvelles avancées dans le domaine des nanites.§!"
  gray_army_desc: "$SWARM$ grise Nanite"
  gray_warship_key: "$gray_warship$"
+ graygoo.502.b: "Gray, le pouvoir que tu possèdes... pourrait façonner à nouveau le destin lui-même. Pourrais-tu, peut-être, t'élever encore davantage-devenir la Reine Titan de Cetana, un colosse vivant de nanites qui soumet tout sur son passage ?"
+ graygoo.502.b.response: "En effet, une telle transcendance est à ma portée. Je deviendrai une force inégalée dans le cosmos-une Reine Titan, incomparable et absolue."
  job_nanite_agri_drone: "Agri-Drone Nanite"
  job_nanite_agri_drone_desc: "La production alimentaire nécessite une variété de travailleurs, depuis les opérateurs de machines de plantation et de récolte jusqu'aux gestionnaires de systèmes d'irrigation, d'engrais et de pesticides, en passant par les manutentionnaires de bétail."
  job_nanite_agri_drone_effect_desc: "$job_agri_drone_plural$ produiront £food£ de §Y$nourriture$§!"
@@ -322,3 +324,4 @@
  voidspawn: "$leviathan_01_voidspawn$"
  voidspawn_plural: "$leviathan_01_voidspawn_plural$"
  voidspawn_section: ""
+ weapon_nanite: "Nanite"

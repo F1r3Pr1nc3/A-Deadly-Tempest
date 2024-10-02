@@ -177,6 +177,8 @@
  gateway_nanites: "§H纳米之路§!\n§E这项技术将推动纳米技术领域的进一步发展。§!"
  gray_army_desc: "Gray Nanite Swarm"
  gray_warship_key: "$gray_warship$"
+ graygoo.502.b: "格雷，你掌握的力量……它可能会重塑命运本身。或许，你可以进一步升华--成为塞塔纳的女王泰坦，成为一个生物纳米巨像，统治一切？"
+ graygoo.502.b.response: "确实，这种超越在我的能力范围内。我将成为宇宙中前所未有的力量--无与伦比、至高无上的女王泰坦。"
  job_nanite_agri_drone: "纳米农业子个体"
  job_nanite_agri_drone_desc: "粮食生产需要各种各样的工人，从播种、收割机械的操作人员，到浇水、施肥、农药系统的管理人员，再到牲畜饲养员。"
  job_nanite_agri_drone_effect_desc: "$job_agri_drone_plural$产出£food£ §Y$food$§!"
@@ -322,3 +324,4 @@
  voidspawn: "$leviathan_01_voidspawn$"
  voidspawn_plural: "$leviathan_01_voidspawn_plural$"
  voidspawn_section: ""
+ weapon_nanite: "Nanite"

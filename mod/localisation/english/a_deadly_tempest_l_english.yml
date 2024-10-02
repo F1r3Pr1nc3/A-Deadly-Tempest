@@ -323,3 +323,6 @@
  relic_nanite_forge_summon: "Unleash a Nanite fleet, crafted from the very heart of the Forge Core."
  a_deadly_tempest.1015.name: "Nanite Fleet Assembly"
  a_deadly_tempest.1015.desc: "After feeding our directives into the enigmatic Gray Core, a storm of nanites swarms to life. Piece by piece, they form an armada reminiscent of the devastating force once commanded by the Gray Goo. Bound by our will, this fleet now answers to us, ready to reshape the stars in our image."
+ graygoo.502.b: "Gray, the power you wield... it could reshape destiny itself. Could you, perhaps, ascend further—to become the Cetana's Queen Titan, a living nanite colossus that bends all before it?"
+ graygoo.502.b.response: "Indeed, such transcendence is within my reach. I will become a force unseen in the cosmos—a Queen Titan, unmatched and absolute."
+ weapon_nanite: "Nanite"

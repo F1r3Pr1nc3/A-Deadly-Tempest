@@ -599,6 +599,48 @@ country_event = {
 			create_gray_official = yes
 		}
 	}
+	option = {	# Queen's Titan
+		name = graygoo.502.b
+		response_text = graygoo.502.b.response
+		trigger = {
+			exists = event_target:gray_warship
+			has_global_flag = synth_queen_defeated
+			NOT = { has_country_flag = gray_queen_titan_active }
+		}
+		allow = {
+			hidden_trigger = {
+				event_target:gray_warship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:gray_warship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:gray_warship = { has_hp_percentage = 1 }
+			}
+			# custom_tooltip = {
+			# 	fail_text = graygoo.500.allow.q
+			# 	has_global_flag = synth_queen_defeated
+			# }
+		}
+		hidden_effect = {
+			# CREATE_GRAY_QUEEN_TITAN
+			set_country_flag = gray_queen_titan_active
+			event_target:gray_warship = {
+				create_ship = {
+					name = "NAME_Gray"
+					design = "NAME_Synth_Queen_Titan"
+					prefix = no
+					upgradable = no
+				}
+				random_owned_ship = {
+					limit = { is_ship_size = graygoo_mothership }
+					delete_ship = this
+				}
+			}
+		}
+	}
 	option = { # Army
 		name = graygoo.500.c
 		response_text = graygoo.502.c.response
@@ -612,7 +654,7 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = { NOT = { has_hp_percentage < 1.0 } }
+				event_target:gray_warship = { NOT = { has_hp_percentage = 1 } }
 			}
 		}
 		hidden_effect = {

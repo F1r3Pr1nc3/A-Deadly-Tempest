@@ -177,6 +177,8 @@
  gateway_nanites: "§HNanites Path§!\n§EThis technology will lead to further advancements in the field of nanites.§!"
  gray_army_desc: "Gray Nanite $SWARM$"
  gray_warship_key: "$gray_warship$"
+ graygoo.502.b: "グレイ、その力... それは運命そのものを再形成するかもしれない。おそらく、さらに昇華し、セタナの女王タイタンとなり、生けるナノ粒子の巨人として全てを従わせることができるのか？"
+ graygoo.502.b.response: "確かに、そのような超越は私の手の届くところにある。私は宇宙に見たことのない力、無比で絶対的な女王タイタンとなる。"
  job_nanite_agri_drone: "Nanite Agri-Drone"
  job_nanite_agri_drone_desc: "Food production requires a variety of workers, from operators of planting and harvesting machinery, to watering, fertilizer and pesticide systems managers, to livestock handlers."
  job_nanite_agri_drone_effect_desc: "$job_agri_drone_plural$ produce £food£ §Y$food$§!"
@@ -322,3 +324,4 @@
  voidspawn: "$leviathan_01_voidspawn$"
  voidspawn_plural: "$leviathan_01_voidspawn_plural$"
  voidspawn_section: ""
+ weapon_nanite: "Nanite"

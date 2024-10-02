@@ -375,7 +375,7 @@ country_event = {
 
 		## WORKAROUND
 		create_country = {
-			# name = random
+			name = random
 			type = awakened_fallen_empire
 			species = last_created_species
 			ignore_initial_colony_error = yes
@@ -383,15 +383,15 @@ country_event = {
 			ethos = { ethic = ethic_gestalt_consciousness }
 			authority = auth_machine_intelligence
 			civics = { civic = civic_awakened_machine }
-			# flag = random
+			flag = random
 			effect = {
 				force_add_civic = civic_machine_terminator
 				force_add_civic = civic_machine_assimilator
 				force_add_civic = civic_fanatic_purifiers
-				root = { copy_ethos_and_authority = prev }
+				save_event_target_as = dummy_dessanu
 			}
 		}
-		last_created_country = { destroy_country = yes }
+		copy_ethos_and_authority = event_target:dummy_dessanu
 		## WORKAROUND END
 
 		# Establish communications
@@ -619,6 +619,9 @@ country_event = {
 		country_event = { id = crisis.4099 days = 360 }
 		# Declare War
 		country_event = { id = crisis.2004 days = 400 }
+	}
+	after = {
+		event_target:dummy_dessanu = { destroy_country = yes }
 	}
 }
 

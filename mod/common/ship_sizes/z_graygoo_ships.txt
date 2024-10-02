@@ -3,17 +3,19 @@
 graygoo_interdictor = {
 	graphical_culture = no
 	entity = gatebuilder_01_cruiser_entity
-	# formation_priority = @battleship_formation_priority
+	formation_priority = @battleship_formation_priority
 	max_speed = @aj_speed_fast
 	acceleration = 0.25
 	rotation_speed = 0.175
 	collision_radius = 4
 	modifier = {
-		ship_shield_add = 1000
-		ship_armor_add = 1000
+		ship_shield_add = @fe_destroyer_hp # 1000
 		ship_evasion_add = 20
+		ship_hull_regen_add_static = @battleship_evasion # 5 # 15
+		ship_armor_add = @fe_destroyer_hp # 1000 # 1500
+		ship_armor_regen_add_static = @battleship_evasion # 5 # 15
 		# ships_upkeep_mult = -1
-		ship_weapon_damage = 1
+		# ship_weapon_damage = 1
 		ship_piracy_suppression_add = 4
 	}
 	ship_modifier = {
@@ -21,30 +23,39 @@ graygoo_interdictor = {
 		ship_tracking_add = 25
 		ship_accuracy_add = 25
 	}
-	max_hitpoints = 4000
+	max_hitpoints = @battleship_hp # 3000
 	size_multiplier = 4
-	fleet_slot_size = 4
+	fleet_slot_size = 4 # 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
 	# icon_frame = 4
-	icon = ship_size_military_4
-	class = shipclass_military
+	icon = ship_size_military_4 # ship_size_military_8
 	enable_default_design = no # If yes, countries will have an auto-generated design at start.
+	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+
 	prerequisites = { "tech_nanite_ships" }
 	is_designable = yes
 
 	base_buildtime = 200
+	default_behavior = carrier  # line
+	ship_roles = { explosive carrier energy_torpedoes }
 
+	# potential_country = {
+	# 	has_tradition = tr_nanotech_5
+	# }
+
+	use_shipnames_from = cruiser
+
+	# combat_disengage_chance = 1.25
+
+	class = shipclass_military
 	construction_type = starbase_shipyard
-
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "combat_computers"
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
-
-	default_behavior = line
 
 	potential_construction = {
 		OR = {
@@ -81,20 +92,51 @@ graygoo_interdictor = {
 			}
 		}
 	}
+	components_add_to_cost = no
 
 	resources = {
 		category = ships
 		cost = {
-			nanites = 10
+			nanites = 800
 		}
-		upkeep = {
-			nanites = 1
-		}
+		upkeep = { nanites = 1 }
 	}
 
 	min_upgrade_cost = {
-		alloys = 6
-		nanites = 3
+		alloys = 4
+		nanites = 2
+	}
+
+	ai_ship_data = {
+		fraction = {
+			base = 0
+			modifier = {
+				add = 50
+				uses_standard_ship_sizes = yes
+			}
+			modifier = {
+				factor = 1.5
+				is_preferred_weapons = weapon_type_strike_craft
+			}
+			modifier = {
+				factor = 1.5
+				has_valid_civic = civic_hive_devouring_swarm
+			}
+			modifier = {
+				factor = 1.5
+				is_machine_empire = yes
+			}
+			modifier = {
+				factor = 1.5
+				has_valid_ai_personality = yes
+				OR = {
+					has_ai_personality = honorbound_warriors
+					has_ai_personality = hegemonic_imperialists
+					has_ai_personality = democratic_crusaders
+					has_ai_personality = became_the_crisis
+				}
+			}
+		}
 	}
 }
 
@@ -119,7 +161,7 @@ graygoo_mothership = {
 		ship_tracking_add = 25
 		ship_accuracy_add = 25
 	}
-	max_hitpoints = 20000
+	max_hitpoints = @fe_titan_hp # 20000
 	size_multiplier = 16
 	fleet_slot_size = 16
 	section_slots = { "mid" = { locator = "part1" } }
@@ -127,14 +169,17 @@ graygoo_mothership = {
 	is_space_station = no
 	# icon_frame = 6
 	icon = ship_size_military_16
+	use_shipnames_from = titan
 	class = shipclass_military
 	prerequisites = { "tech_nanite_ships" }
 	is_designable = yes
 
-	base_buildtime = @titan_build_time
+	base_buildtime = @titan_build_time # 1800
 
 	construction_type = starbase_shipyard
 	enable_default_design = no
+	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+
 	default_behavior = artillery
 
 	potential_construction = {
@@ -176,7 +221,7 @@ graygoo_mothership = {
 	resources = {
 		category = ships
 		cost = {
-			nanites = 100
+			nanites = 4000
 		}
 		upkeep = {
 			nanites = 4
@@ -198,6 +243,38 @@ graygoo_mothership = {
 	min_upgrade_cost = {
 		alloys = 24
 		nanites = 12
+	}
+
+	ai_ship_data = {
+		fraction = {
+			base = 0
+			modifier = {
+				add = 50
+				uses_standard_ship_sizes = yes
+			}
+			modifier = {
+				factor = 1.5
+				is_preferred_weapons = weapon_type_strike_craft
+			}
+			modifier = {
+				factor = 1.5
+				has_valid_civic = civic_hive_devouring_swarm
+			}
+			modifier = {
+				factor = 1.5
+				is_machine_empire = yes
+			}
+			modifier = {
+				factor = 1.5
+				has_valid_ai_personality = yes
+				OR = {
+					has_ai_personality = honorbound_warriors
+					has_ai_personality = hegemonic_imperialists
+					has_ai_personality = democratic_crusaders
+					has_ai_personality = became_the_crisis
+				}
+			}
+		}
 	}
 }
 
@@ -580,7 +657,6 @@ voidspawn = {
 	can_have_federation_design = no
 	enable_default_design = no
 	components_add_to_cost = no
-	enable_3dview_in_ship_browser = no # If yes, ship design will have a 3d view in the ship browser.
 	can_disable = no
 	default_behavior = artillery
 	is_designable = no ## TODO?
@@ -730,7 +806,7 @@ military_station_nanite_bulwark = {
 	is_civilian = no
 	# 	is_listed = no
 	enable_default_design = no	# If yes, countries will have an auto-generated design at start.
-	# 	components_add_to_cost = no
+	components_add_to_cost = no
 	can_disable = no # Only Starbases ? Using a Workaround
 	# flip_control_on_disable = no
 	prerequisites = { "tech_nanite_bulwark" }

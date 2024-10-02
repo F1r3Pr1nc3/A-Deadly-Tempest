@@ -145,12 +145,22 @@ create_gray_warship = {
 			}
 			effect = {
 				set_owner = prev
-				create_ship = {
-					name = "NAME_Gray"
-					design = "NAME_Gray_Warship"
-					prefix = no
-					upgradable = yes
-					# effect = { save_global_event_target_as = gray_warship_ship }
+				if = {
+					limit = { root = { has_country_flag = gray_queen_titan_active } }
+					create_ship = {
+						name = "NAME_Gray"
+						design = "NAME_Synth_Queen_Titan"
+						prefix = no
+						upgradable = yes
+					}
+				}
+				else = {
+					create_ship = {
+						name = "NAME_Gray"
+						design = "NAME_Gray_Warship"
+						prefix = no
+						upgradable = yes
+					}
 				}
 				set_fleet_flag = gray_fleet
 				save_global_event_target_as = gray_warship

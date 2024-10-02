@@ -867,16 +867,9 @@ fleet_event = {
 							find_closest_fleet = {
 								found_fleet = {
 									move_to = this
-									effect = {
-										id = a_deadly_tempest.39.1e
-										prev = {
-											queue_actions = {
-												merge_fleet = {
-													target = prev # event_target:assimilating_fleet # TODO "Malformed token"?
-													allow_ftl = yes
-												}
-											}
-										}
+									merge_fleet = {
+										target = event_target:assimilating_fleet # TODO "Malformed token"?
+										allow_ftl = yes
 									}
 								}
 							}
