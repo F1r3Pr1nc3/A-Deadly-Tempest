@@ -123,7 +123,7 @@ utility_component_template = {
 			factor = 0
 			# is_country_type_with_subjects = yes
 			# has_monthly_income = { resource = nanites value <= 0 }
-			# resource_stockpile_compare = { resource = nanites value < 100 }
+			# has_country_resource = { type = nanites amount < 100 }
 			no_resource_for_component = { RESOURCE = nanites }
 		}
 	}

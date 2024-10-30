@@ -1,0 +1,3 @@
+gatekeepers_nanite_countermeasure_sm = {
+	damage_vs_country_type_gray_goo_mult = 0.5
+}

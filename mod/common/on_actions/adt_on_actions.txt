@@ -1,6 +1,7 @@
 on_game_start = {
 	events = {
 		a_deadly_tempest.1
+		origin_gatekeepers.001 # Setup the capital system
 	}
 }
 

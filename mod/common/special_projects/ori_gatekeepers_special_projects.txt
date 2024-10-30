@@ -1,0 +1,11 @@
+special_project = {
+	key = "GATEKEEPERS_UNDERSTANDING_AR"
+	days_to_research = 400
+	tech_department = engineering_technology
+	event_scope = planet_event
+	on_success = {
+		owner = {
+			country_event = { id = origin_gatekeepers.101 }
+		}
+	}
+}

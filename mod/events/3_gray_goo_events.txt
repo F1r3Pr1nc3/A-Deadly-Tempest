@@ -238,8 +238,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = { exists = event_target:gray_owner }
-		is_ai = no
+		NOR = { exists = event_target:gray_owner is_ai = yes }
 	}
 	immediate = {
 		create_species = {

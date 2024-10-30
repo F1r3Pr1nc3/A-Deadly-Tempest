@@ -63,7 +63,7 @@ country_event = {
 		custom_tooltip = CmtTextKeepCurrent.tooltip
 	}
 	option = {
-		name = CrisisManagerMenu.4110a.name
+		name = "CrisisManagerMenu.4110a.title"
 		custom_tooltip = CrisisManagerMenu.4110a.tooltip
 		hidden_effect = {
 			set_global_flag = CmtFlagForbiddenPrethoryn
@@ -147,7 +147,7 @@ country_event = {
 		custom_tooltip = CmtTextKeepCurrent.tooltip
 	}
 	option = {
-		name = CrisisManagerMenu.4120a.name
+		name = "CrisisManagerMenu.4120a.title"
 		custom_tooltip = CrisisManagerMenu.4120a.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarPrethorynQueen value = 1 } } }
 	}
@@ -238,12 +238,12 @@ country_event = {
 		custom_tooltip = CmtTextKeepCurrent.tooltip
 	}
 	option = {
-		name = CrisisManagerMenu.4130a.name
+		name = "CrisisManagerMenu.4130a.title"
 		custom_tooltip = CrisisManagerMenu.4130a.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSentinelRise value = 1 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4130b.name
+		name = "CrisisManagerMenu.4130b.title"
 		custom_tooltip = CrisisManagerMenu.4130b.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSentinelRise value = 2 } } }
 	}
@@ -253,7 +253,7 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSentinelRise value = 3 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4130d.name
+		name = "CrisisManagerMenu.4130d.title"
 		custom_tooltip = CrisisManagerMenu.4130d.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSentinelRise value = 4 } } }
 	}
@@ -304,7 +304,7 @@ country_event = {
 		custom_tooltip = CmtTextKeepCurrent.tooltip
 	}
 	option = {
-		name = CrisisManagerMenu.4140a.name
+		name = "CrisisManagerMenu.4140a.title"
 		custom_tooltip = CrisisManagerMenu.4140a.tooltip
 		hidden_effect = { set_global_flag = CmtFlagForbiddenAnatomy }
 	}
@@ -534,7 +534,7 @@ country_event = {
 		custom_tooltip = CmtTextKeepCurrent.tooltip
 	}
 	option = {
-		name = CrisisManagerMenu.4210a.name
+		name = "CrisisManagerMenu.4210a.title"
 		custom_tooltip = CrisisManagerMenu.4210a.tooltip
 		hidden_effect = {
 			set_global_flag = CmtFlagForbiddenExds
@@ -726,7 +726,7 @@ country_event = {
 		hidden_effect = { set_country_flag = CmtFlagSpMenu }
 	}
 	option = {
-		name = CrisisManagerMenu.4230b.name
+		name = "CrisisManagerMenu.4230b.title"
 		custom_tooltip = CrisisManagerMenu.4230b.tooltip
 		hidden_effect = { set_global_flag = CmtFlagExdsChaserAnywhere }
 	}
@@ -742,7 +742,7 @@ country_event = {
 ### Less Reinforcement on Starbases Built.
 country_event = {
 	id = CrisisManagerMenu.4240
-	title = CrisisManagerMenu.4240.name
+	title = "CrisisManagerMenu.4240.title"
 	desc = {
 		text = CrisisManagerMenu.4240.desc1
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_OnExdAnchorBuilt value > 510 } } }
@@ -800,7 +800,7 @@ country_event = {
 		custom_tooltip = CmtTextKeepCurrent.tooltip
 	}
 	option = {
-		name = CrisisManagerMenu.4240a.name
+		name = "CrisisManagerMenu.4240a.title"
 		custom_tooltip = CrisisManagerMenu.4240a.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarReinforceCycle_OnExdAnchorBuilt value = 512 } } }
 	}
@@ -810,17 +810,17 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarReinforceCycle_OnExdAnchorBuilt value = 10 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4240c.name
+		name = "CrisisManagerMenu.4240c.title"
 		custom_tooltip = CrisisManagerMenu.4240c.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarReinforceCycle_OnExdAnchorBuilt value = 5 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4240d.name
+		name = "CrisisManagerMenu.4240d.title"
 		custom_tooltip = CrisisManagerMenu.4240d.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarReinforceCycle_OnExdAnchorBuilt value = 3 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4240e.name
+		name = "CrisisManagerMenu.4240e.title"
 		custom_tooltip = CrisisManagerMenu.4240e.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarReinforceCycle_OnExdAnchorBuilt value = 2 } } }
 	}
@@ -887,37 +887,37 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarExdsPortalStability value = @CmtConstPortalStability_V1 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4250.V2.name
+		name = "CrisisManagerMenu.4250.V2.title"
 		custom_tooltip = CrisisManagerMenu.4250.V2.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarExdsPortalStability value = @CmtConstPortalStability_V2 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4250.V3.name
+		name = "CrisisManagerMenu.4250.V3.title"
 		custom_tooltip = CrisisManagerMenu.4250.V3.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarExdsPortalStability value = @CmtConstPortalStability_V3 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4250.V4.name
+		name = "CrisisManagerMenu.4250.V4.title"
 		custom_tooltip = CrisisManagerMenu.4250.V4.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarExdsPortalStability value = @CmtConstPortalStability_V4 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4250.V5.name
+		name = "CrisisManagerMenu.4250.V5.title"
 		custom_tooltip = CrisisManagerMenu.4250.V5.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarExdsPortalStability value = @CmtConstPortalStability_V5 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4250.V6.name
+		name = "CrisisManagerMenu.4250.V6.title"
 		custom_tooltip = CrisisManagerMenu.4250.V6.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarExdsPortalStability value = @CmtConstPortalStability_V6 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4250.V7.name
+		name = "CrisisManagerMenu.4250.V7.title"
 		custom_tooltip = CrisisManagerMenu.4250.V7.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarExdsPortalStability value = @CmtConstPortalStability_V7 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4250.VA.name
+		name = "CrisisManagerMenu.4250.VA.title"
 		custom_tooltip = CrisisManagerMenu.4250.VA.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarExdsPortalStability value = @CmtConstPortalStability_VA } } }
 	}
@@ -1004,7 +1004,7 @@ country_event = {
 		custom_tooltip = CmtTextKeepCurrent.tooltip
 	}
 	option = {
-		name = CrisisManagerMenu.4310a.name
+		name = "CrisisManagerMenu.4310a.title"
 		custom_tooltip = CrisisManagerMenu.4310a.tooltip
 		hidden_effect = { set_global_flag = CmtFlagForbiddenContingency }
 	}
@@ -1172,7 +1172,7 @@ country_event = {
 		custom_tooltip = CmtTextKeepCurrent.tooltip
 	}
 	option = {
-		name = CrisisManagerMenu.4340a.name
+		name = "CrisisManagerMenu.4340a.title"
 		custom_tooltip = CrisisManagerMenu.4340a.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSynthTerrorEventSpeed value = 1 } } }
 	}
@@ -1332,7 +1332,7 @@ country_event = {
 		hidden_effect = { remove_global_flag = CmtFlagSynthTerrorAll }
 	}
 	option = {
-		name = CrisisManagerMenu.4360b.name
+		name = "CrisisManagerMenu.4360b.title"
 		custom_tooltip = CrisisManagerMenu.4360b.tooltip
 		hidden_effect = { set_global_flag = CmtFlagSynthTerrorAll }
 	}
@@ -1410,12 +1410,12 @@ country_event = {
 		hidden_effect = { remove_country_flag = CmtFlagConfigShowing4370 }
 	}
 	option = {
-		name = CrisisManagerMenu.4370a.name
+		name = "CrisisManagerMenu.4370a.title"
 		custom_tooltip = CrisisManagerMenu.4370a.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCybrexResurfacing value = 1 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4370b.name
+		name = "CrisisManagerMenu.4370b.title"
 		custom_tooltip = CrisisManagerMenu.4370b.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCybrexResurfacing value = 2 } } }
 	}
@@ -1425,7 +1425,7 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCybrexResurfacing value = 3 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4370d.name
+		name = "CrisisManagerMenu.4370d.title"
 		custom_tooltip = CrisisManagerMenu.4370d.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarCybrexResurfacing value = 4 } } }
 	}
@@ -1506,7 +1506,7 @@ country_event = {
 		hidden_effect = { remove_global_flag = CmtFlagAllowForcedEoc }
 	}
 	option = {
-		name = CrisisManagerMenu.4410b.name
+		name = "CrisisManagerMenu.4410b.title"
 		custom_tooltip = CrisisManagerMenu.4410b.tooltip
 		hidden_effect = { set_global_flag = CmtFlagAllowForcedEoc }
 	}
@@ -2058,27 +2058,27 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarDoubleGurdian value = 1 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4730a1.name
+		name = "CrisisManagerMenu.4730a1.title"
 		custom_tooltip = CrisisManagerMenu.4730a1.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarDoubleGurdian value = 1.1 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4730a2.name
+		name = "CrisisManagerMenu.4730a2.title"
 		custom_tooltip = CrisisManagerMenu.4730a2.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarDoubleGurdian value = 1.2 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4730b.name
+		name = "CrisisManagerMenu.4730b.title"
 		custom_tooltip = CrisisManagerMenu.4730b.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarDoubleGurdian value = 2 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4730c.name
+		name = "CrisisManagerMenu.4730c.title"
 		custom_tooltip = CrisisManagerMenu.4730c.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarDoubleGurdian value = 3 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4730d.name
+		name = "CrisisManagerMenu.4730d.title"
 		custom_tooltip = CrisisManagerMenu.4730d.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarDoubleGurdian value = 4 } } }
 	}
@@ -2145,7 +2145,7 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarGuardianWornOut value = 1 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.4740b.name
+		name = "CrisisManagerMenu.4740b.title"
 		custom_tooltip = CrisisManagerMenu.4740b.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarGuardianWornOut value = 2 } } }
 	}

@@ -340,7 +340,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = CrisisManagerMenu.7000.7142.name
+		name = "CrisisManagerMenu.7000.7140.A.name"
 		custom_tooltip = CrisisManagerMenu.7000.7142.tooltip
 		allow = { has_distar = yes }
 		trigger = {
@@ -356,7 +356,7 @@ country_event = {
 	#	name = CrisisManagerMenu.7000.7146.A.name
 	#	custom_tooltip = CrisisManagerMenu.7000.7146.A.tooltip
 	#	trigger = {
-	#		host_has_dlc = "Synthetic Dawn Story Pack"
+	#		has_synthetic_dawn = yes
 	#		has_global_flag = CmtFlagUprisingEdition
 	#		any_country = { CmtTriggerUprisingPotentialManually = yes }
 	#	}
@@ -366,7 +366,7 @@ country_event = {
 	#	name = CrisisManagerMenu.7000.7146.B.name
 	#	custom_tooltip = CrisisManagerMenu.7000.7146.B.tooltip
 	#	trigger = {
-	#		host_has_dlc = "Synthetic Dawn Story Pack"
+	#		has_synthetic_dawn = yes
 	#		has_global_flag = CmtFlagUprisingEdition
 	#		count_country = { limit = { CmtTriggerUprisingPotentialManually = yes } count = 0 }
 	#	}
@@ -417,7 +417,7 @@ country_event = {
 
 	### Terminate Mid/Eng-Game Crisis
 	option = {
-		name = CrisisManagerMenu.7000.7200.name
+		name = "CrisisManagerMenu.7200.title"
 		custom_tooltip = CrisisManagerMenu.7000.7200.tooltip
 		trigger = {
 			OR = { has_global_flag = CmtFlagEndGameEdition has_global_flag = CmtFlagMidGameEdition has_global_flag = CmtFlagSleeperEdition }
@@ -427,7 +427,7 @@ country_event = {
 
 	### Create Fleet for Sleeper
 	option = {
-		name = CrisisManagerMenu.7000.7400.A.name
+		name = "CrisisManagerMenu.7400.title"
 		custom_tooltip = CrisisManagerMenu.7000.7400.A.tooltip
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
@@ -447,7 +447,7 @@ country_event = {
 
 	### Create/Delete L-Gate
 	option = {
-		name = CrisisManagerMenu.7000.7500.name
+		name = "CrisisManagerMenu.7500.title"
 		custom_tooltip = CrisisManagerMenu.7000.7500.tooltip
 		trigger = { has_global_flag = CmtFlagMidGameEdition has_distar = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7500 } }
@@ -551,7 +551,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7110c2.name
-		custom_tooltip = CrisisManagerMenu.7110c2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7110b2.tooltip"
 		trigger = { has_global_flag = sentinels_founded }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7110 } }
 	}
@@ -565,7 +565,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7110d2.name
-		custom_tooltip = CrisisManagerMenu.7110d2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7110b2.tooltip"
 		trigger = { has_global_flag = CmtFlagExdsTriggered }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7110 } }
 	}
@@ -585,7 +585,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7110e2.name
-		custom_tooltip = CrisisManagerMenu.7110e2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7110b2.tooltip"
 		trigger = { has_global_flag = extradimensional_second_portal }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7110 } }
 	}
@@ -605,7 +605,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7110f2.name
-		custom_tooltip = CrisisManagerMenu.7110f2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7110b2.tooltip"
 		trigger = { has_global_flag = extradimensional_third_portal }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7110 } }
 	}
@@ -619,7 +619,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7110g2.name
-		custom_tooltip = CrisisManagerMenu.7110g2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7110b2.tooltip"
 		trigger = { has_global_flag = CmtFlagContingencyTriggerd }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7110 } }
 	}
@@ -639,7 +639,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7110h2.name
-		custom_tooltip = CrisisManagerMenu.7110h2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7110b2.tooltip"
 		trigger = { has_global_flag = cybrex_resurface }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7110 } }
 	}
@@ -653,7 +653,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7110i2.name
-		custom_tooltip = CrisisManagerMenu.7110i2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7110b2.tooltip"
 		trigger = { has_global_flag = CmtFlagForcedEocTriggered }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7110 } }
 	}
@@ -731,7 +731,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
@@ -778,7 +778,7 @@ country_event = {
 	picture = GFX_evt_physics_research
 	is_triggered_only = yes
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
@@ -849,7 +849,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
@@ -889,7 +889,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
@@ -929,7 +929,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
@@ -976,7 +976,7 @@ country_event = {
 	picture = GFX_evt_glitchy_matrix
 	is_triggered_only = yes
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
@@ -1051,7 +1051,7 @@ country_event = {
 	picture = GFX_evt_unspeakable_horror
 	is_triggered_only = yes
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
@@ -1259,8 +1259,7 @@ country_event = {
 					limit = {
 						# CmtTriggerIsAwakenableSleeper = yes
 						is_fallen_empire = yes
-						is_at_war = no
-						NOT = { is_same_empire = event_target:CmtTargetManualSleeperA }
+						NOR = { is_at_war = yes is_same_empire = event_target:CmtTargetManualSleeperA }
 					}
 					weights = { base = 1
 						modifier = { add = 2 CmtTriggerIsOrganicSleeper = yes }
@@ -1293,8 +1292,7 @@ country_event = {
 					limit = {
 						# CmtTriggerIsAwakenableSleeper = yes
 						is_fallen_empire = yes
-						is_at_war = no
-						NOT = { is_same_empire = event_target:CmtTargetManualSleeperA }
+						NOR = { is_at_war = yes is_same_empire = event_target:CmtTargetManualSleeperA }
 					}
 					weights = { base = 1
 						modifier = { add = 2 CmtTriggerIsOrganicSleeper = yes }
@@ -1308,7 +1306,7 @@ country_event = {
 	}
 
 	option = { # 1
-		name = CrisisManagerMenu.7136c1.name
+		name = "CmtProperNameSleeper1"
 		custom_tooltip = CrisisManagerMenu.7135c.tooltip
 		allow = {
 			event_target:CmtTargetManualSleeper1 = { CmtTriggerIsAwakenableSleeper = yes }
@@ -1333,7 +1331,7 @@ country_event = {
 		}
 	}
 	option = { # 2
-		name = CrisisManagerMenu.7136c2.name
+		name = "CmtProperNameSleeper2"
 		custom_tooltip = CrisisManagerMenu.7135c.tooltip
 		allow = {
 			event_target:CmtTargetManualSleeper2 = { CmtTriggerIsAwakenableSleeper = yes }
@@ -1358,7 +1356,7 @@ country_event = {
 		}
 	}
 	option = { # 3
-		name = CrisisManagerMenu.7136c3.name
+		name = "CmtProperNameSleeper3"
 		custom_tooltip = CrisisManagerMenu.7135c.tooltip
 		allow = {
 			event_target:CmtTargetManualSleeper3 = { CmtTriggerIsAwakenableSleeper = yes }
@@ -1383,7 +1381,7 @@ country_event = {
 		}
 	}
 	option = { # 4
-		name = CrisisManagerMenu.7136c4.name
+		name = "CmtProperNameSleeper4"
 		custom_tooltip = CrisisManagerMenu.7135c.tooltip
 		trigger = {
 			exists = event_target:CmtTargetManualSleeper4
@@ -1409,7 +1407,7 @@ country_event = {
 	}
 
 	option = { # 5 Machine / Custodian / Berserker only as 2nd option
-		name = CrisisManagerMenu.7136c5.name
+		name = "CmtProperNameSleeper5"
 		custom_tooltip = CrisisManagerMenu.7135c.tooltip
 		trigger = {
 			exists = event_target:CmtTargetManualSleeper5
@@ -1918,7 +1916,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = CrisisManagerMenu.7140c1.name
+		name = "graygoo.550.name"
 		custom_tooltip = CrisisManagerMenu.7140c.tooltip
 		trigger = { NOT = { has_global_flag = l_cluster_opened } }
 		hidden_effect = {
@@ -1936,7 +1934,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = CrisisManagerMenu.7140c3.name
+		name = "graygoo.120_title"
 		custom_tooltip = CrisisManagerMenu.7140c.tooltip
 		trigger = {
 			NAND = {
@@ -2104,7 +2102,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.7141a.name		# Back
+		name = "CrisisManagerMenu.7136a.name"		# Back
 		custom_tooltip = CrisisManagerMenu.7141a.tooltip
 		hidden_effect = {
 			event_target:CmtGlobalVar = {
@@ -2199,7 +2197,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = { has_global_flag = CmtFlagMidGameEdition has_global_flag = l_cluster_opened }
 	option = {
-		name = CrisisManagerMenu.7142a.name
+		name = "CrisisManagerMenu.7136a.name"
 		custom_tooltip = CrisisManagerMenu.7142a.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
@@ -2229,7 +2227,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 	}
@@ -2394,7 +2392,7 @@ country_event = {
 #	}
 #
 #	option = {
-#		name = CmtTextOK.name
+#		name = "graygoo.504.d"
 #		custom_tooltip = CmtTextOK.tooltip
 #		hidden_effect = { country_event = { id = CrisisManagerMenu.7000 } }
 #	}
@@ -2450,7 +2448,7 @@ country_event = {
 # 		}
 # 	}
 # 	option = {
-# 		name = CmtTextOK.name
+# 		name = "graygoo.504.d"
 # 		custom_tooltip = CmtTextOK.tooltip
 # 		trigger = { has_country_flag = CmtFlagSpMenu }
 # 		hidden_effect = {
@@ -2757,7 +2755,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CrisisManagerMenu.720xa.name
+		name = "CrisisManagerMenu.71xxa.name"
 		custom_tooltip = CrisisManagerMenu.720xa.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7200 } }
 	}
@@ -2785,7 +2783,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CrisisManagerMenu.720xa.name
+		name = "CrisisManagerMenu.71xxa.name"
 		custom_tooltip = CrisisManagerMenu.720xa.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7200 } }
 	}
@@ -2817,7 +2815,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CrisisManagerMenu.720xa.name
+		name = "CrisisManagerMenu.71xxa.name"
 		custom_tooltip = CrisisManagerMenu.720xa.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7200 } }
 	}
@@ -2882,7 +2880,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CrisisManagerMenu.720xa.name
+		name = "CrisisManagerMenu.71xxa.name"
 		custom_tooltip = CrisisManagerMenu.720xa.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7200 } }
 	}
@@ -2917,7 +2915,7 @@ country_event = {
 		country_event = { id = CrisisManagerMenu.7200 }
 	}
 
-	option = { name = CrisisManagerMenu.720xa.name custom_tooltip = CrisisManagerMenu.720xa.tooltip }
+	option = { name = "CrisisManagerMenu.71xxa.name" custom_tooltip = CrisisManagerMenu.720xa.tooltip }
 
 	option = {
 		name = CrisisManagerMenu.7205c1.name
@@ -3013,7 +3011,7 @@ country_event = {
 	after = {
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7200 } }
 	}
-	option = { name = CrisisManagerMenu.720xa.name custom_tooltip = CrisisManagerMenu.720xa.tooltip }
+	option = { name = "CrisisManagerMenu.71xxa.name" custom_tooltip = CrisisManagerMenu.720xa.tooltip }
 	option = {
 		name = CrisisManagerMenu.720xb.name
 		custom_tooltip = CrisisManagerMenu.720xb.tooltip
@@ -3097,7 +3095,7 @@ country_event = {
 		# }
 	}
 
-	option = { name = CrisisManagerMenu.720xa.name custom_tooltip = CrisisManagerMenu.720xa.tooltip }
+	option = { name = "CrisisManagerMenu.71xxa.name" custom_tooltip = CrisisManagerMenu.720xa.tooltip }
 	option = {
 		name = CrisisManagerMenu.7208b.name
 		custom_tooltip = CrisisManagerMenu.7208b.tooltip
@@ -3153,7 +3151,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CrisisManagerMenu.720xa.name
+		name = "CrisisManagerMenu.71xxa.name"
 		custom_tooltip = CrisisManagerMenu.720xa.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7200 } }
 	}
@@ -3210,7 +3208,7 @@ country_event = {
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7413 } }
 	}
 	option = {
-		name = CrisisManagerMenu.7400d.name
+		name = "SPECIES_MODIFICATION_APPLY_TEMPLATE"
 		custom_tooltip = CrisisManagerMenu.7400d.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.7419 } }
 	}
@@ -3286,7 +3284,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7411b2.name
-		custom_tooltip = CrisisManagerMenu.7411b2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7411b1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = { merg_is_fallen_empire = yes }
@@ -3424,7 +3422,7 @@ country_event = {
 	### Standard Creation
 	option = {
 		name = CrisisManagerMenu.7412b1.name
-		custom_tooltip = CrisisManagerMenu.7412b1.tooltip
+		custom_tooltip = "CrisisManagerMenu.7411b1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -3437,7 +3435,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7412b2.name
-		custom_tooltip = CrisisManagerMenu.7412b2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7411b1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -3450,7 +3448,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7412b3.name
-		custom_tooltip = CrisisManagerMenu.7412b3.tooltip
+		custom_tooltip = "CrisisManagerMenu.7411b1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -3535,7 +3533,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7412d2.name
-		custom_tooltip = CrisisManagerMenu.7412d2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7412d1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = { merg_is_fallen_empire = yes }
@@ -3554,7 +3552,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7412d3.name
-		custom_tooltip = CrisisManagerMenu.7412d3.tooltip
+		custom_tooltip = "CrisisManagerMenu.7412d1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = { merg_is_fallen_empire = yes }
@@ -3573,7 +3571,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7412d4.name
-		custom_tooltip = CrisisManagerMenu.7412d4.tooltip
+		custom_tooltip = "CrisisManagerMenu.7412d1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = { merg_is_fallen_empire = yes }
@@ -3592,7 +3590,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7412d5.name
-		custom_tooltip = CrisisManagerMenu.7412d5.tooltip
+		custom_tooltip = "CrisisManagerMenu.7412d1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = { merg_is_fallen_empire = yes }
@@ -3701,7 +3699,7 @@ country_event = {
 	### Standard Creation
 	option = {
 		name = CrisisManagerMenu.7413b1.name
-		custom_tooltip = CrisisManagerMenu.7413b1.tooltip
+		custom_tooltip = "CrisisManagerMenu.7411b1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -3714,7 +3712,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7413b2.name
-		custom_tooltip = CrisisManagerMenu.7413b2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7411b1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -3727,7 +3725,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7413b3.name
-		custom_tooltip = CrisisManagerMenu.7413b3.tooltip
+		custom_tooltip = "CrisisManagerMenu.7411b1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -3788,7 +3786,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7413d2.name
-		custom_tooltip = CrisisManagerMenu.7413d2.tooltip
+		custom_tooltip = "CrisisManagerMenu.7413d1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = { merg_is_fallen_empire = yes }
@@ -3807,7 +3805,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.7413d3.name
-		custom_tooltip = CrisisManagerMenu.7413d3.tooltip
+		custom_tooltip = "CrisisManagerMenu.7413d1.tooltip"
 		hidden_effect = {
 			every_country = {
 				limit = { merg_is_fallen_empire = yes }
@@ -4012,7 +4010,7 @@ country_event = {
 
 	### User Template
 	option = {
-		name = CrisisManagerMenu.7419b9.name
+		name = "CrisisManagerTemplate_SleeperInitializing.title"
 		custom_tooltip = CrisisManagerMenu.7419b9.tooltip
 		trigger = { always = @CmtT201_ConstSleeperFleet_Activate }
 		hidden_effect = { CmtEffectApplyTemplate201 = yes }
@@ -4165,7 +4163,7 @@ country_event = {
 
 	after = { hidden_effect = { country_event = { id = CrisisManagerMenu.7500 } } }
 
-	option = { name = CrisisManagerMenu.75xxb.name custom_tooltip = CrisisManagerMenu.75xxb.tooltip }
+	option = { name = "CrisisManagerMenu.71xxa.name" custom_tooltip = CrisisManagerMenu.75xxb.tooltip }
 	option = {
 		name = CrisisManagerMenu.75xxc.name
 		custom_tooltip = CrisisManagerMenu.75xxc.tooltip
@@ -4195,7 +4193,7 @@ country_event = {
 
 	after = { hidden_effect = { country_event = { id = CrisisManagerMenu.7500 } } }
 
-	option = { name = CrisisManagerMenu.75xxb.name custom_tooltip = CrisisManagerMenu.75xxb.tooltip }
+	option = { name = "CrisisManagerMenu.71xxa.name" custom_tooltip = CrisisManagerMenu.75xxb.tooltip }
 	option = {
 		name = CrisisManagerMenu.75xxc.name
 		custom_tooltip = CrisisManagerMenu.75xxc.tooltip
@@ -4218,7 +4216,7 @@ country_event = {
 
 	after = { hidden_effect = { country_event = { id = CrisisManagerMenu.7500 } } }
 
-	option = { name = CrisisManagerMenu.75xxb.name custom_tooltip = CrisisManagerMenu.75xxb.tooltip }
+	option = { name = "CrisisManagerMenu.71xxa.name" custom_tooltip = CrisisManagerMenu.75xxb.tooltip }
 	option = {
 		name = CrisisManagerMenu.75xxc.name
 		custom_tooltip = CrisisManagerMenu.75xxc.tooltip
@@ -4242,7 +4240,7 @@ country_event = {
 
 	after = { hidden_effect = { country_event = { id = CrisisManagerMenu.7500 } } }
 
-	option = { name = CrisisManagerMenu.75xxb.name custom_tooltip = CrisisManagerMenu.75xxb.tooltip }
+	option = { name = "CrisisManagerMenu.71xxa.name" custom_tooltip = CrisisManagerMenu.75xxb.tooltip }
 	option = {
 		name = CrisisManagerMenu.75xxc.name
 		custom_tooltip = CrisisManagerMenu.75xxc.tooltip
@@ -4285,10 +4283,10 @@ country_event = {
 		}
 	}
 
-	option = { name = CrisisManagerMenu.75xxb.name custom_tooltip = CrisisManagerMenu.75xxb.tooltip }
+	option = { name = "CrisisManagerMenu.71xxa.name" custom_tooltip = CrisisManagerMenu.75xxb.tooltip }
 
 	option = {
-		name = CrisisManagerMenu.7523d.name
+		name = "CrisisManagerMenu.7141d.name"
 		custom_tooltip = CrisisManagerMenu.7523d.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarManualLgate value > 8 } } }
 		hidden_effect = { set_country_flag = CmtFlagSpMenu }

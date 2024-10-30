@@ -16,7 +16,7 @@ tech_nanite_transmutation = {
 			factor = 0
 			count_planet_within_border = { limit = { has_resource = { type = nanites amount > 0 } } count = 0 }
 			# has_monthly_income = { resource = nanites value < 1  }
-			# resource_stockpile_compare = { resource = nanites value < 150 }
+			# has_country_resource = { type = nanites amount < 150 }
 		}
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech

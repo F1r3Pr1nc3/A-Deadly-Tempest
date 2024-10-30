@@ -58,7 +58,7 @@ event = {
 	# desc = CrisisManagerMenu.11.desc
 	# picture = GFX_evt_CmtMenuA
 	# option = {
-	# 	name = CmtTextOK.name
+	# 	name = "graygoo.504.d"
 	# 	custom_tooltip = CmtTextOK.tooltip
 	# }
 	trigger = {
@@ -428,7 +428,7 @@ country_event = {
 	# 	is_same_empire = event_target:goo_slayer
 	# }
 	# option = {
-	# 	name = CmtTextOK.name
+	# 	name = "graygoo.504.d"
 	# 	custom_tooltip = CmtTextOK.tooltip
 	# }
 	immediate = {
@@ -438,9 +438,7 @@ country_event = {
 				limit = {
 					# habitable_planet = yes
 					# is_artificial = no
-					is_asteroid = no
-					is_star = no
-					NOT = { is_planet_class = pc_gas_giant }
+					NOR = { is_asteroid = yes is_star = yes is_planet_class = pc_gas_giant }
 				}
 				create_ambient_object = {
 					type = explosion_particle_object
@@ -596,8 +594,7 @@ ship_event = {
 						limit = {
 							exists = owner # Idk why but it is needed.
 							any_owned_ship = { is_ship_class = shipclass_military }
-							NOR = { is_same_value = from.fleet is_same_value = event_target:assimilate_that_ship has_fleet_flag = assimilate_that_ship_flag_temp }
-							is_disabled = no
+							NOR = { is_same_value = from.fleet is_same_value = event_target:assimilate_that_ship has_fleet_flag = assimilate_that_ship_flag_temp is_disabled = yes }
 							fleet_power > 0 # This alone is not sure as some ships can be on escape!?
 							# has_fleet_flag = commands_merge_fleet_flag_temp
 							# OR = { is_owned_by = root.owner }
@@ -636,7 +633,7 @@ ship_event = {
 					if = {
 						limit = { exists = event_target:assimilating_fleet exists = event_target:assimilating_fleet.owner }
 						if = {
-							limit = { event_target:assimilating_fleet = { NOT = { is_same_value = prev } is_in_combat = no } }
+							limit = { event_target:assimilating_fleet = { NOR = { is_same_value = prev is_in_combat = yes } } }
 							set_owner = event_target:assimilating_fleet.owner
 							if = {
 								limit = { owner = { is_ai = no } }
@@ -1725,17 +1722,13 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		NOT = { has_global_flag = l_cluster_opened }
-		federation = {
-			any_member = { has_country_flag = encountered_first_lgate }
-		}
+		any_federation_ally = { has_country_flag = encountered_first_lgate }
 	}
 	immediate = {
 		from = { save_event_target_as = fed_joiner }
 		every_federation_ally = {
-			# federation = { every_member = {
 			limit = { NOT = { has_country_flag = encountered_first_lgate } }
 			country_event = { id = a_deadly_tempest.13080 days = 5 }
-			# }
 		}
 	}
 }

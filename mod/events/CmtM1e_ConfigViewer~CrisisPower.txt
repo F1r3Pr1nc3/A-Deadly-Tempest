@@ -52,7 +52,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
@@ -112,7 +112,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6000z.Endgame.name
-		custom_tooltip = CrisisManagerMenu.6000z.tooltip
+		custom_tooltip = "CrisisManagerMenu.6000n.title"
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
 			event_target:CmtGlobalVar = {
@@ -165,7 +165,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6000z.Midgame.name
-		custom_tooltip = CrisisManagerMenu.6000z.tooltip
+		custom_tooltip = "CrisisManagerMenu.6000n.title"
 		trigger = {
 			has_global_flag = CmtFlagMidGameEdition
 			event_target:CmtGlobalVar = {
@@ -189,7 +189,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.6100.xxx.name
-		custom_tooltip = CrisisManagerMenu.6100.xxx.tooltip
+		custom_tooltip = "CrisisManagerMenu.6x00a.desc"
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarFleetPower_Common value > 0.125 } }
@@ -198,7 +198,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6100.NA.name
-		custom_tooltip = CrisisManagerMenu.6100.NA.tooltip
+		custom_tooltip = "CrisisManagerMenu.6x00.NA.tooltip"
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarFleetPower_Common value < 0.125 } }
@@ -275,7 +275,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.6200.xxx.name
-		custom_tooltip = CrisisManagerMenu.6200.xxx.tooltip
+		custom_tooltip = "CrisisManagerMenu.6x00a.desc"
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarArmyPower_Common value > 0.125 } }
@@ -284,7 +284,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6200.NA.name
-		custom_tooltip = CrisisManagerMenu.6200.NA.tooltip
+		custom_tooltip = "CrisisManagerMenu.6x00.NA.tooltip"
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarArmyPower_Common value < 0.125 } } }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6200 } }
 	}
@@ -365,7 +365,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
@@ -389,7 +389,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.6300.xxx.name
-		custom_tooltip = CrisisManagerMenu.6300.xxx.tooltip
+		custom_tooltip = "CrisisManagerMenu.6x00a.desc"
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Common value > 0.125 } }
@@ -398,7 +398,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6300.NA.name
-		custom_tooltip = CrisisManagerMenu.6300.NA.tooltip
+		custom_tooltip = "CrisisManagerMenu.6x00.NA.tooltip"
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Common value < 0.125 } }
@@ -475,7 +475,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.6400.xxx.name
-		custom_tooltip = CrisisManagerMenu.6400.xxx.tooltip
+		custom_tooltip = "CrisisManagerMenu.6x00a.desc"
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarArmyNumber_Common value > 0.125 } }
@@ -484,7 +484,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6400.NA.name
-		custom_tooltip = CrisisManagerMenu.6400.NA.tooltip
+		custom_tooltip = "CrisisManagerMenu.6x00.NA.tooltip"
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarArmyNumber_Common value < 0.125 } }
@@ -568,7 +568,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
@@ -592,7 +592,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.6500.xxx.name
-		custom_tooltip = CrisisManagerMenu.6500.xxx.tooltip
+		custom_tooltip = "CrisisManagerMenu.6x00a.desc"
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Common value > 0.125 } }
@@ -601,7 +601,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6500.NA.name
-		custom_tooltip = CrisisManagerMenu.6500.NA.tooltip
+		custom_tooltip = "CrisisManagerMenu.6x00.NA.tooltip"
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarCombatFleetNumber_Common value < 0.125 } }

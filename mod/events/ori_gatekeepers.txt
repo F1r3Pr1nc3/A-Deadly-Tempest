@@ -1,0 +1,236 @@
+namespace = origin_gatekeepers
+## SETUP from "The Gatekeepers: L-Cluster Expanded" id=2482795906
+# on_game_start
+country_event = {
+	id = origin_gatekeepers.001
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = { has_origin = origin_gatekeepers }
+	immediate = {
+		add_research_option = tech_habitat_1
+		add_tech_progress = { tech = tech_habitat_1 progress = 0.7 }
+		if = {
+			limit = { is_lithoid_empire = no }
+			add_resource = { food = 200 }
+			give_technology = { tech = tech_eco_simulation message = no }
+			give_technology = { tech = tech_hydroponics message = no }
+		}
+		else = {
+			add_resource = { minerals = 200 }
+			give_technology = { tech = tech_powered_exoskeletons message = no }
+			give_technology = { tech = tech_space_mining_1 message = no }
+		}
+		capital_scope = {
+			while = { count = 20
+				create_pop = { species = owner_main_species }
+			}
+			set_planet_entity = { entity = "habitat_phase_03_entity" graphical_culture = root }
+			set_planet_size = 8
+			add_district_and_planet_size_if_needed_effect = { district = district_hab_housing }
+			add_district_and_planet_size_if_needed_effect = { district = district_hab_science }
+			add_district_and_planet_size_if_needed_effect = { district = district_hab_industrial }
+			add_district_and_planet_size_if_needed_effect = { district = district_hab_industrial }
+			add_district_and_planet_size_if_needed_effect = { district = district_hab_industrial }
+			add_district_and_planet_size_if_needed_effect = { district = district_hab_commercial }
+			add_district_and_planet_size_if_needed_effect = { district = district_hab_commercial }
+			add_building = building_hab_major_capital
+			if = {
+				limit = { owner = { is_lithoid_empire = no } }
+				add_building = building_bureaucratic_1
+				add_building = building_hydroponics_farm
+			}
+			else = { add_building = building_bureaucratic_1 add_building = building_holo_theatres }
+			add_deposit = d_arcane_replicator
+			solar_system = {
+				every_system_planet = {
+					limit = { is_star = yes exists = mining_station }
+					mining_station = { dismantle = yes }
+				}
+				every_system_planet = {
+					if = {
+						limit = { has_planet_flag = gatekeeper_home_mining_target }
+						create_mining_station = { owner = root }
+					}
+					if = {
+						limit = { has_planet_flag = gatekeeper_home_pulsar }
+						clear_deposits = yes
+						set_deposit = d_energy_8
+					}
+					if = {
+						limit = { has_planet_flag = gatekeeper_home_bh }
+						clear_deposits = yes
+						set_deposit = d_dark_matter_deposit_3
+					}
+					if = {
+						limit = { has_planet_flag = gatekeeper_story_planet }
+						save_event_target_as = gatekeepers_story_planet
+					}
+				}
+			}
+		}
+		# Start Event Chain
+		country_event = { id = origin_gatekeepers.100 days = 30 random = 30 }
+	}
+	after = {
+		set_origin = origin_void_dwellers
+		set_country_flag = origin_gatekeepers
+		random_owned_ship = {
+			limit = { fleet = { is_mobile = yes } }
+			weights = { base = 1 modifier = { add = 20 is_ship_size = science } }
+			ship_event = { id = apoc.3 scopes = { from = solar_system } }
+		}
+	}
+}
+
+## EVENT CHAIN
+## This first event gives the player a special project to research to understand the Arcane Generator on their habitat
+country_event = {
+	id = origin_gatekeepers.100
+	title = origin_gatekeepers.100.name
+	desc = origin_gatekeepers.100.desc
+	picture = GFX_evt_robot_assembly_plant
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = origin_gatekeepers.100.begin_research }
+	after = {
+		log = "Gatekeeper Arcane Replicator project given"
+		capital_scope = {
+			enable_special_project = { name = "GATEKEEPERS_UNDERSTANDING_AR" location = this owner = root }
+		}
+	}
+}
+
+## Called when special project is complete
+country_event = {
+	id = origin_gatekeepers.101
+	title = origin_gatekeepers.101.name
+	desc = origin_gatekeepers.101.desc
+	picture = GFX_evt_robot_assembly_plant
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = origin_gatekeepers.101.begin_digging }
+	after = {
+		log = "Gatekeeper Nanite Archeology Site Given"
+		event_target:gatekeepers_story_planet = { create_archaeological_site = ori_gatekeepers_digsite }
+	}
+}
+
+## Archelogical Site Events
+## Found suitable digsite location and now searching for functional nanites
+fleet_event = {
+	id = origin_gatekeepers.201
+	title = origin_gatekeepers.digsite.1.title
+	desc = origin_gatekeepers.digsite.1.desc
+	show_sound = event_wind_ruins
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	option = { name = origin_gatekeepers.digsite.1.next }
+}
+
+## Found nanites, looking for computer control systems
+fleet_event = {
+	id = origin_gatekeepers.202
+	title = origin_gatekeepers.digsite.2.title
+	desc = origin_gatekeepers.digsite.2.desc
+	show_sound = event_wind_ruins
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		owner = { generate_lcluster_clue = yes }
+	}
+	option = {
+		name = "colony.8006.a" # "Excellent!"
+		from.planet = { add_deposit = d_nanites_deposit add_deposit = d_nanites_deposit }
+	}
+}
+
+## Found computers, begin decyrption
+fleet_event = {
+	id = origin_gatekeepers.203
+	title = origin_gatekeepers.digsite.3.title
+	desc = origin_gatekeepers.digsite.3.desc
+	show_sound = event_wind_ruins
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	option = { name = origin_gatekeepers.digsite.3.next }
+}
+
+## Completed decryption, begin searching for information on nanites
+fleet_event = {
+	id = origin_gatekeepers.204
+	title = origin_gatekeepers.digsite.4.title
+	desc = origin_gatekeepers.digsite.4.desc
+	show_sound = event_wind_ruins
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		owner = { generate_lcluster_clue = yes }
+	}
+	option = {
+		name = "subject.107.a" # "Good news."
+		owner = {
+			give_technology = { tech = tech_decryption_1 message = yes }
+		}
+	}
+}
+
+## Discovered Nanite Transmutation
+fleet_event = {
+	id = origin_gatekeepers.205
+	title = origin_gatekeepers.digsite.5.title
+	desc = origin_gatekeepers.digsite.5.desc
+	show_sound = event_wind_ruins
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		owner = { generate_lcluster_clue = yes }
+	}
+	option = {
+		name = origin_gatekeepers.digsite.5.next
+		owner = { add_research_option = tech_nanite_transmutation }
+	}
+}
+
+## Discovered L-Gate activation
+fleet_event = {
+	id = origin_gatekeepers.206
+	title = l_cluster_chain_title
+	desc = origin_gatekeepers.digsite.6.desc
+	show_sound = event_wind_ruins
+	location = from
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		owner = { generate_lcluster_clue = yes }
+	}
+	option = {
+		name = origin_gatekeepers.digsite.6.next
+		owner = {
+			if = {
+				limit = { can_research_technology = tech_lgate_activation }
+				add_research_option = tech_lgate_activation
+			}
+			if = {
+				limit = { NOT = { has_modifier = gatekeepers_nanite_countermeasure_sm } }
+				add_modifier = { modifier = gatekeepers_nanite_countermeasure_sm }
+			}
+		}
+	}
+	after = {
+		hidden_effect = {
+			owner = { # DSO
+				if = {
+					limit = { has_global_flag = distar_overhaul_mod_active }
+					give_tech_no_error_effect = { TECH = tech_nanite_technology_mastery MESSAGE = yes }
+				}
+				set_country_flag = completed_nanite_technology_mastery_chain
+			}
+		}
+	}
+}

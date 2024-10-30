@@ -101,7 +101,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		country_event = { id = CrisisManagerMenu.9000 }
 	}
 }
@@ -110,7 +110,7 @@ country_event = {
 country_event = {
 	id = CrisisManagerMenu.9200
 	title = CrisisManagerMenu.9200.name
-	desc = CrisisManagerMenu.9200.desc
+	desc = "CrisisManagerMenu.9000.desc"
 	picture = GFX_evt_CmtMenuA
 	is_triggered_only = yes
 
@@ -226,7 +226,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.9310b.name
+		name = "CrisisManagerMenu.9340b.name"
 		event_target:CmtGlobalVar = {
 			set_variable = { which = GmtVarDebugCountTriggerPrethoryn value = 0 }
 			set_variable = { which = GmtVarDebugCountTriggerExds value = 0 }
@@ -297,7 +297,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.9320b.name
+		name = "CrisisManagerMenu.9340b.name"
 		event_target:CmtGlobalVar = {
 			set_variable = { which = GmtVarDebugCountSleeperAwakened value = 0 }
 			set_variable = { which = GmtVarDebugCountSleeperSleeping value = 0 }
@@ -355,7 +355,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.9330b.name
+		name = "CrisisManagerMenu.9340b.name"
 		event_target:CmtGlobalVar = {
 			set_variable = { which = GmtVarDebugCountAncientRivalOpposite value = 0 }
 			set_variable = { which = GmtVarDebugCountAncientRivalRandom value = 0 }

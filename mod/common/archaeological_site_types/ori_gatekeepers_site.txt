@@ -1,0 +1,62 @@
+ori_gatekeepers_digsite = {
+	desc = ori_gatekeepers_digsite_desc
+	picture = GFX_evt_gray_goo
+	stages = 6
+	max_instances = 1
+	allow = {
+		is_ship_class = shipclass_science_ship
+		exists = leader
+	}
+	visible = {
+		is_ai = no
+		default_site_visible_trigger = yes
+		OR = {
+			# has_origin = origin_gatekeepers
+			AND = { has_origin = origin_void_dwellers has_country_flag = origin_gatekeepers }
+			has_ascension_path = ap_emergency_calculation # UAP
+			has_ascension_path = ap_nano_drones # UAP
+			has_ascension_path = ap_nanotech # Nanite Expansion
+		}
+	}
+	# Stage 1: Search for proper digging site
+	stage = {
+		difficulty = 1
+		icon = GFX_archaeology_runes_C1
+		event = origin_gatekeepers.201
+	}
+	# Stage 2: Look for functioning nanites
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_C2
+		event = origin_gatekeepers.202
+	}
+	# Stage 3: Look for functioning computer systems
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_C3
+		event = origin_gatekeepers.203
+	}
+	# Stage 4: Decrypt information in computer systems
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_C4
+		event = origin_gatekeepers.204
+	}
+	# Stage 5: Find information on nanite use
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_C5
+		event = origin_gatekeepers.205
+	}
+	# Stage 6: Find information on L-Gate
+	stage = {
+		difficulty = 6
+		icon = GFX_archaeology_runes_C6
+		event = origin_gatekeepers.206
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}

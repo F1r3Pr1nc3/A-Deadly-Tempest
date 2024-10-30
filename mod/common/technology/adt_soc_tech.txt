@@ -34,7 +34,7 @@ tech_nanite_terraforming = {
 			factor = 0
 			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
 			has_monthly_income = { resource = nanites value < 1 }
-			resource_stockpile_compare = { resource = nanites value < 300 }
+			has_country_resource = { type = nanites amount < 300 }
 		}
 		modifier = { factor = @ap_technological_ascendancy_rare_tech has_ascension_perk = ap_technological_ascendancy }
 		modifier = {
@@ -80,7 +80,7 @@ tech_nano_dust = {
 			factor = 0
 			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
 			has_monthly_income = { resource = nanites value < 1 }
-			resource_stockpile_compare = { resource = nanites value < 300 }
+			has_country_resource = { type = nanites amount < 300 }
 		}
 	}
 }
@@ -109,7 +109,7 @@ tech_nano_scales = {
 			factor = 0
 			# NOT = { any_planet_within_border = { has_resource = { type = nanites amount > 0 } } }
 			has_monthly_income = { resource = nanites value < 1 }
-			resource_stockpile_compare = { resource = nanites value < 300 }
+			has_country_resource = { type = nanites amount < 300 }
 		}
 	}
 }

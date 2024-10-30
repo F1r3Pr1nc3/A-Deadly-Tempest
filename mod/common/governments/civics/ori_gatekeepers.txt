@@ -1,0 +1,41 @@
+# DSO
+# civic_gateway_worshiper = {
+# 	picture = GFX_origin_gateway_guardian
+# 	icon = "gfx/interface/icons/origins/origins_gateway.dds"
+# 	description = "civic_gateway_worshiper_effects"
+
+origin_gatekeepers = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_void_dwellers.dds"
+	picture = GFX_origin_void_dwellers
+	starting_colony = pc_habitat
+	# habitability_preference = pc_
+	max_once_global = yes
+	initializers = { gatekeepers_system_initializer civic_gateway_worshiper_system }
+	# preferred_planet_class_neighbor = no
+	playable = { has_distar = yes }
+	potential = {
+		authority = { NOT = { value = auth_corporate } }		# Corporate Megachurch does not make much sense...
+	}
+	possible = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		civics = {
+			NOT = { value = civic_agrarian_idyll }
+		}
+		species_archetype = { NOT = { value = MACHINE } }
+	}
+	non_colonizable_planet_class_neighbor = yes
+	modifier = { damage_vs_country_type_gray_goo_mult = 0.25 }
+	description = "origin_tooltip_gatekeepers_effects"
+	# traits = { trait = trait_dessanu_uplifted trait = trait_latent_psionic }
+	flags = {
+		custom_start_screen
+		encountered_first_lgate
+		dark_matter_found
+		completed_lcluster_chain
+	}
+	advanced_start = yes
+	random_weight = { base = 1 }
+}

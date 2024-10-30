@@ -51,7 +51,7 @@ tech_nanite_mega_construction = {
 			factor = 0
 			no_resource_for_component = { RESOURCE = nanites }
 			# has_monthly_income = { resource = nanites value < 1 } # count_planet_within_border = { limit = { has_resource = { type = nanites amount > 0 } count = 0 } }
-			# resource_stockpile_compare = { resource = nanites value < 200 }
+			# has_country_resource = { type = nanites amount < 200 }
 		}
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech
@@ -78,28 +78,43 @@ tech_nanite_mega_construction = {
 tech_nanite_bombardment = {
 	area = engineering
 	cost = @tier4cost2
-	tier = 5
+	tier = 4 # 5
 	is_rare = yes
-	category = { voidcraft }
-	# ai_update_type = military
+	category = { propulsion } # voidcraft?
+	ai_update_type = military
 	prerequisites = { "tech_nanite_torpedo" }
-	weight = @tier5weight2
-
+	weight = @tier4weight3 # @tier5weight2
 	prereqfor_desc = {
 		diplo_action = {
 			title = "TECH_UNLOCK_NANITE_BOMBARDMENT_TITLE"
 			desc = "TECH_UNLOCK_NANITE_BOMBARDMENT_DESC"
 		}
 	}
-
 	potential = {
-		has_global_flag = l_cluster_opened
-		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_country_flag = completed_nanite_technology_mastery_chain
+			AND = {
+				has_global_flag = l_cluster_opened
+				NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
+				OR = {
+					NOT = { has_global_flag = distar_overhaul_mod_active }
+					has_country_flag = completed_nanite_technology_mastery_chain
+				}
+			}
+			has_ascension_perk = ap_nanotech
 		}
 		has_country_resource = { type = nanites amount > 0 }
+	}
+	modifier = { description = tech_nanitebombard_bombardment_modifier_desc }
+	# weight_modifier = {
+	# 	modifier = { factor = 1.25 has_ethic = ethic_militarist }
+	# 	modifier = { factor = 1.5 has_ethic = ethic_fanatic_militarist }
+	# 	modifier = { factor = 1.25 has_trait_in_council = { TRAIT = leader_trait_expertise_propulsion } }
+	# }
+	ai_weight = {
+		factor = 2
+		modifier = { factor = 1.25 has_ethic = ethic_militarist }
+		modifier = { factor = 1.5 has_ethic = ethic_fanatic_militarist }
+		modifier = { factor = 1.25 has_trait_in_council = { TRAIT = leader_trait_expertise_propulsion } }
 	}
 }
 

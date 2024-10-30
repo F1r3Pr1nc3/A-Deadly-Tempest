@@ -345,9 +345,7 @@ country_event = {
 		if = {
 			limit = {
 				any_playable_country = {
-					is_ai = no
-					is_at_war = no
-					NOT = { is_hostile = root.owner }
+					NOR = { is_ai = yes is_at_war = yes is_hostile = root.owner }
 					any_owned_planet = {
 						NOT = { has_planet_flag = has_been_scanned }
 					}
@@ -357,9 +355,7 @@ country_event = {
 				limit = {
 					has_owner = yes
 					owner = {
-						is_ai = no
-						is_at_war = no
-						NOT = { is_hostile = root.owner }
+						NOR = { is_ai = yes is_at_war = yes is_hostile = root.owner }
 					}
 					any_system_colony = {
 						

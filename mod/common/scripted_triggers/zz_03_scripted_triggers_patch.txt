@@ -5,10 +5,12 @@
 # This = Satrapy
 is_subject_of_khan = {
 	is_subject = yes # exists = overlord
+	has_global_flag = marauder_crisis_started
+	merg_is_default_empire = yes
 	exists = event_target:raider_khanate
+	event_target:raider_khanate = { is_scope_valid = yes is_scope_type = country is_country_type = awakened_marauders }
 	# overlord = { is_same_empire = prevprev }
 	overlord = { is_same_empire = event_target:raider_khanate }
-	merg_is_default_empire = yes
 	# has_modifier = "satrapy_of_horde"
 	# OR = { # Only to be sure
 	# 	any_agreement = { agreement_preset = preset_machinesmith_satrapy }

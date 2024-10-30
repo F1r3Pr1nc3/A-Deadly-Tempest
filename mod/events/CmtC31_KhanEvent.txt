@@ -86,7 +86,6 @@ event = {
 						factor = 0
 						has_global_flag = CmtFlagKillDoubleBookingKhan
 					}
-					# set_global_flag = CmtFlagKhanTriggered
 					set_global_flag = marauder_crisis_started
 					set_timed_global_flag = { flag = CmtFlagKillDoubleBookingKhan days = 5 }
 					country_event = { id = marauder.500 days = 2 random = 358 }

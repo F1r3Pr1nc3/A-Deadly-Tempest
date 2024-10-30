@@ -63,7 +63,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
@@ -86,7 +86,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.4810a.name
+		name = "CrisisManagerMenu.4810a.title"
 		custom_tooltip = CrisisManagerMenu.4810a.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanMultiple value = 1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4810 FROM = 1026 } }
@@ -98,7 +98,7 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4810 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4810c.name
+		name = "CrisisManagerMenu.4810c.title"
 		custom_tooltip = CrisisManagerMenu.4810c.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanMultiple value = 3 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4810 FROM = 1026 } }
@@ -117,7 +117,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4810z.name
-		custom_tooltip = CrisisManagerMenu.4810z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				OR = {
@@ -189,14 +189,14 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.4822.V0.name
+		name = "CrisisManagerMenu.4822.V0.title"
 		custom_tooltip = CrisisManagerMenu.4822.V0.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanEarliestMgpy value < @CmtConstKhanEarliestMgpy_T1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4822 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4822.VC.name
-		custom_tooltip = CrisisManagerMenu.4822.VC.tooltip
+		name = "CrisisManagerMenu.4822.VC.title"
+		custom_tooltip = "CmtDescMgsy"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOR = {
@@ -213,7 +213,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4822.V6.name
-		custom_tooltip = CrisisManagerMenu.4822.VC.tooltip
+		custom_tooltip = "CmtDescMgsy"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarKhanEarliestMgpy value > @CmtConstKhanEarliestMgpy_T6 }
@@ -224,13 +224,13 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4822z.name
-		custom_tooltip = CrisisManagerMenu.4822z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = { always = no }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4822 FROM = 1026 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4822t.name
-		custom_tooltip = CrisisManagerMenu.4822t.tooltip
+		custom_tooltip = "CmtTextTemplateUnique.desc"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarKhanEarliestMgpy value > @CmtConstKhanEarliestMgpy_TA }
@@ -240,14 +240,14 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.4823.VA.name
+		name = "CrisisManagerMenu.4823.VA.title"
 		# custom_tooltip = CrisisManagerMenu.4823.VA.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanLatestEgpy value >= @CmtConstKhanLatestEgpy_VA } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4823 FROM = 1026 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4823.VC.name
-		custom_tooltip = CrisisManagerMenu.4823.VC.tooltip
+		custom_tooltip = "CmtDescEgsy"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOR = {
@@ -264,7 +264,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4823.V5.name
-		custom_tooltip = CrisisManagerMenu.4823.V5.tooltip
+		custom_tooltip = "CmtDescEgsy"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarKhanLatestEgpy value > @CmtConstKhanLatestEgpy_T5 }
@@ -275,13 +275,13 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4823z.name
-		custom_tooltip = CrisisManagerMenu.4823z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = { always = no }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4823 FROM = 1026 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4823t.name
-		custom_tooltip = CrisisManagerMenu.4823t.tooltip
+		custom_tooltip = "CmtTextTemplateUnique.desc"
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanLatestEgpy value < @CmtConstKhanLatestEgpy_T1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4823 FROM = 1026 } }
 	}
@@ -294,7 +294,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4831b.name
-		custom_tooltip = CrisisManagerMenu.4831b.tooltip
+		custom_tooltip = "CmtDescMtth"
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanTriggerProbability value = 2 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4831 FROM = 1026 } }
 	}
@@ -318,7 +318,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4831z.name
-		custom_tooltip = CrisisManagerMenu.4831z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				OR = {
@@ -355,14 +355,14 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4832 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4832e.name
+		name = "CrisisManagerMenu.4832e.title"
 		custom_tooltip = CrisisManagerMenu.4832e.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanVengeance value = 5 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4832 FROM = 1026 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4832z.name
-		custom_tooltip = CrisisManagerMenu.4832z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				OR = {
@@ -375,7 +375,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.4841a.name
+		name = "CrisisManagerMenu.4841a.title"
 		custom_tooltip = CrisisManagerMenu.4841a.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanResurgence value < -0.5 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4841 FROM = 1026 } }
@@ -392,7 +392,7 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4841 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4841c.name
+		name = "CrisisManagerMenu.4841c.title"
 		custom_tooltip = CrisisManagerMenu.4841c.tooltip
 		trigger = {
 			event_target:CmtGlobalVar = {
@@ -403,7 +403,7 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4841 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4841d.name
+		name = "CrisisManagerMenu.4841d.title"
 		custom_tooltip = CrisisManagerMenu.4841d.tooltip
 		trigger = {
 			event_target:CmtGlobalVar = {
@@ -414,14 +414,14 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4841 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4841e.name
+		name = "CrisisManagerMenu.4841e.title"
 		custom_tooltip = CrisisManagerMenu.4841e.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanResurgence value >= 510 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4841 FROM = 1026 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4841z.name
-		custom_tooltip = CrisisManagerMenu.4841z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOT = { check_variable = { which = CmtVarKhanResurgence value < 3.5 } }
@@ -432,7 +432,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4841z.name
-		custom_tooltip = CrisisManagerMenu.4841z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOT = { check_variable = { which = CmtVarKhanResurgence value < -0.5 } }
@@ -449,7 +449,7 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4842 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4842b.name
+		name = "CrisisManagerMenu.4842b.title"
 		custom_tooltip = CrisisManagerMenu.4842b.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanLifespan value = 2 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4842 FROM = 1026 } }
@@ -461,13 +461,13 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4842 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4842d.name
+		name = "CrisisManagerMenu.4842d.title"
 		custom_tooltip = CrisisManagerMenu.4842d.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanLifespan value = 4 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4842 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4842e.name
+		name = "CrisisManagerMenu.4842e.title"
 		custom_tooltip = CrisisManagerMenu.4842e.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanLifespan value = 5 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4842 FROM = 1026 } }
@@ -480,7 +480,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4842z.name
-		custom_tooltip = CrisisManagerMenu.4842z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				OR = {
@@ -518,7 +518,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4850z.name
-		custom_tooltip = CrisisManagerMenu.4850z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				OR = {
@@ -537,7 +537,7 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4860 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4860b.name
+		name = "CrisisManagerMenu.4860b.title"
 		custom_tooltip = CrisisManagerMenu.4860b.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanPostDeathSummary value = 2 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4860 FROM = 1026 } }
@@ -549,7 +549,7 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4860 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4860d.name
+		name = "CrisisManagerMenu.4860d.title"
 		custom_tooltip = CrisisManagerMenu.4860d.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanPostDeathSummary value = 4 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4860 FROM = 1026 } }
@@ -561,14 +561,14 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4860 FROM = 1026 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4860f.name
+		name = "CrisisManagerMenu.4860f.title"
 		custom_tooltip = CrisisManagerMenu.4860f.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarKhanPostDeathSummary value = 6 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4860 FROM = 1026 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4860z.name
-		custom_tooltip = CrisisManagerMenu.4860z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				OR = {
@@ -647,7 +647,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
@@ -702,7 +702,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4911z.name
-		custom_tooltip = CrisisManagerMenu.4911z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOR = {
@@ -721,7 +721,7 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4912 FROM = 1027 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4912b.name
+		name = "CrisisManagerMenu.4912b.title"
 		custom_tooltip = CrisisManagerMenu.4912b.tooltip
 		trigger = { has_global_flag = CmtFlagLgateSkipTech }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4912 FROM = 1027 } }
@@ -734,7 +734,7 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4913 FROM = 1027 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4913b.name
+		name = "CrisisManagerMenu.4913b.title"
 		custom_tooltip = CrisisManagerMenu.4913b.tooltip
 		trigger = { has_global_flag = CmtFlagLgateReqPlayer }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4913 FROM = 1027 } }
@@ -748,7 +748,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.4930a.name
-		custom_tooltip = CrisisManagerMenu.4930a.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931a.tooltip"
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateCycleCommon value = 1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4930 FROM = 1027 } }
 	}
@@ -766,7 +766,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4930d.name
-		custom_tooltip = CrisisManagerMenu.4930d.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931e.tooltip"
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateCycleCommon value = 4 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4930 FROM = 1027 } }
 	}
@@ -778,7 +778,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4930z.name
-		custom_tooltip = CrisisManagerMenu.4930z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOR = {
@@ -843,7 +843,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4931z.name
-		custom_tooltip = CrisisManagerMenu.4931z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOR = {
@@ -860,7 +860,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.4932a.name
-		custom_tooltip = CrisisManagerMenu.4932a.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931a.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleLdrake value = 1 }
@@ -872,7 +872,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4932c.name
-		custom_tooltip = CrisisManagerMenu.4932c.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931c.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleLdrake value = 3 }
@@ -884,7 +884,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4932d.name
-		custom_tooltip = CrisisManagerMenu.4932d.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931d.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleLdrake value = 4 }
@@ -896,7 +896,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4932e.name
-		custom_tooltip = CrisisManagerMenu.4932e.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931e.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleLdrake value = 5 }
@@ -908,7 +908,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4932z.name
-		custom_tooltip = CrisisManagerMenu.4932z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOR = {
@@ -925,7 +925,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.4933a.name
-		custom_tooltip = CrisisManagerMenu.4933a.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931a.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleDessanu value = 1 }
@@ -937,7 +937,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4933c.name
-		custom_tooltip = CrisisManagerMenu.4933c.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931c.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleDessanu value = 3 }
@@ -949,7 +949,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4933d.name
-		custom_tooltip = CrisisManagerMenu.4933d.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931d.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleDessanu value = 4 }
@@ -961,7 +961,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4933e.name
-		custom_tooltip = CrisisManagerMenu.4933e.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931e.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleDessanu value = 5 }
@@ -973,7 +973,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4933z.name
-		custom_tooltip = CrisisManagerMenu.4933z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOR = {
@@ -990,7 +990,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.4934a.name
-		custom_tooltip = CrisisManagerMenu.4934a.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931a.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleGraygoo value = 1 }
@@ -1002,7 +1002,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4934b.name
-		custom_tooltip = CrisisManagerMenu.4934b.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931b.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleGraygoo value = 2 }
@@ -1014,7 +1014,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4934c.name
-		custom_tooltip = CrisisManagerMenu.4934c.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931c.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleGraygoo value = 3 }
@@ -1026,7 +1026,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4934d.name
-		custom_tooltip = CrisisManagerMenu.4934d.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931d.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleGraygoo value = 4 }
@@ -1038,7 +1038,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4934e.name
-		custom_tooltip = CrisisManagerMenu.4934e.tooltip
+		custom_tooltip = "CrisisManagerMenu.4931e.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarLgateCycleGraygoo value = 5 }
@@ -1050,7 +1050,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4934z.name
-		custom_tooltip = CrisisManagerMenu.4934z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				OR = {
@@ -1064,7 +1064,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.4940a.name
+		name = "CrisisManagerMenu.4940a.title"
 		custom_tooltip = CrisisManagerMenu.4940a.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateAloneGrayCondition value = 1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4940 FROM = 1027 } }
@@ -1082,14 +1082,14 @@ country_event = {
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4940 FROM = 1027 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4940d.name
+		name = "CrisisManagerMenu.4940d.title"
 		custom_tooltip = CrisisManagerMenu.4940d.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateAloneGrayCondition value = 4 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4940 FROM = 1027 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4940z.name
-		custom_tooltip = CrisisManagerMenu.4940z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				OR = {
@@ -1102,13 +1102,13 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.4950a.name
+		name = "CrisisManagerMenu.4950a.title"
 		custom_tooltip = CrisisManagerMenu.4950a.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateDessanuGift value = 1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4950 FROM = 1027 } }
 	}
 	option = {
-		name = CrisisManagerMenu.4950b.name
+		name = "CrisisManagerMenu.4950b.title"
 		custom_tooltip = CrisisManagerMenu.4950b.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateDessanuGift value = 2 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4950 FROM = 1027 } }
@@ -1139,7 +1139,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4950z.name
-		custom_tooltip = CrisisManagerMenu.4950z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				OR = {
@@ -1202,7 +1202,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.4970a.name
+		name = "CrisisManagerMenu.4970a.title"
 		custom_tooltip = CrisisManagerMenu.4970a.tooltip
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4970 FROM = 1027 } }
@@ -1239,7 +1239,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4970z.name
-		custom_tooltip = CrisisManagerMenu.4970z.tooltip
+		custom_tooltip = "CmtTextErrUndefined.tooltip"
 		trigger = {
 			event_target:CmtGlobalVar = {
 				OR = {

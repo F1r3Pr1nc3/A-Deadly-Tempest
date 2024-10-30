@@ -49,7 +49,7 @@ country_event = {
 
 	### Configurations Viewer
 	option = {
-		name = CrisisManagerMenu.100.1000.name
+		name = "CrisisManagerMenu.1000.title"
 		custom_tooltip = CrisisManagerMenu.100.1000.tooltip
 		hidden_effect = {
 			if = { limit = { NOT = { has_active_event = { CrisisManagerMenu.1000 } } }
@@ -96,7 +96,7 @@ country_event = {
 
 	### Advanced Configurations
 	option = {
-		name = CrisisManagerMenu.100.4000.name
+		name = "CrisisManagerMenu.4000.title"
 		custom_tooltip = CrisisManagerMenu.100.4000.tooltip
 		hidden_effect = {
 			if = { limit = { NOT = { has_active_event = { CrisisManagerMenu.4000 } } }
@@ -108,7 +108,7 @@ country_event = {
 
 	### Crisis Power
 	option = {
-		name = CrisisManagerMenu.100.6000.name
+		name = "CrisisManagerMenu.6000.title"
 		custom_tooltip = CrisisManagerMenu.100.6000.tooltip
 		trigger = {
 			OR = {
@@ -134,7 +134,7 @@ country_event = {
 
 	### Manual Operations
 	option = {
-		name = CrisisManagerMenu.100.7000.name
+		name = "CrisisManagerMenu.7000.title"
 		custom_tooltip = CrisisManagerMenu.100.7000.tooltip
 		hidden_effect = {
 			if = { limit = { NOT = { has_active_event = { CrisisManagerMenu.7000 } } }
@@ -183,7 +183,7 @@ country_event = {
 	### Apply Configuration Template: Primacy Template
 	option = {
 		name = CrisisManagerTemplate_T001.name
-		custom_tooltip = CrisisManagerTemplate_T001.tooltip
+		custom_tooltip = "CrisisManagerTemplate_T101.tooltip"
 		trigger = {
 			CmtTriggerTemplateActivated_T001 = yes
 			OR = {

@@ -158,7 +158,7 @@ country_event = {
 
 	### Advanced Configurations
 	option = {
-		name = CrisisManagerMenu.6000y.name
+		name = "CrisisManagerMenu.6000y.title"
 		custom_tooltip = CrisisManagerMenu.6000y.tooltip
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = {
@@ -179,7 +179,7 @@ country_event = {
 		allow = { hidden_trigger = { always = no } }
 	}
 	option = {		## Additional Description
-		name = CrisisManagerMenu.6000.6001.name
+		name = "CrisisManagerMenu.6000.6001.title"
 		custom_tooltip = CrisisManagerMenu.6000.6001.tooltip
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = {
@@ -188,7 +188,7 @@ country_event = {
 		}
 	}
 	option = {		## Additional Description
-		name = CrisisManagerMenu.6000.6002.name
+		name = "CrisisManagerMenu.6000.6002.title"
 		custom_tooltip = CrisisManagerMenu.6000.6002.tooltip
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = {
@@ -250,7 +250,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6000 } }
 	}
@@ -279,7 +279,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.601xa.name
+		name = "CANCEL"
 		custom_tooltip = CrisisManagerMenu.601xa.tooltip
 	}
 	option = {
@@ -335,7 +335,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.601xa.name
+		name = "CANCEL"
 		custom_tooltip = CrisisManagerMenu.601xa.tooltip
 	}
 	option = {
@@ -391,7 +391,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.601xa.name
+		name = "CANCEL"
 		custom_tooltip = CrisisManagerMenu.601xa.tooltip
 	}
 	option = {
@@ -447,7 +447,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.601xa.name
+		name = "CANCEL"
 		custom_tooltip = CrisisManagerMenu.601xa.tooltip
 	}
 	option = {
@@ -503,7 +503,7 @@ country_event = {
 	}
 
 	option = {
-		name = CrisisManagerMenu.601xa.name
+		name = "CANCEL"
 		custom_tooltip = CrisisManagerMenu.601xa.tooltip
 	}
 	option = {
@@ -4343,7 +4343,7 @@ country_event = {
 
 country_event = {
 	id = CrisisManagerMenu.6500
-	title = CrisisManagerMenu.6500.name
+	title = "CrisisManagerMenu.6500.title"
 	desc = {
 		text = CrisisManagerMenu.6500.desc1
 		exclusive_trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarConstructorNumber_Common value > 0.125 } } }

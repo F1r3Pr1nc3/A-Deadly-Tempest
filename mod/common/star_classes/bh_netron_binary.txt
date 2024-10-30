@@ -1,0 +1,21 @@
+sc_bh_neutron = { # Black Hole with a Neutron
+	class = black_hole
+	planet = { key = pc_black_hole class = black_hole }
+	planet = { key = pc_neutron_star class = neutron_star }
+	spawn_odds		= 5
+	num_planets		= { min = 2 max = 8 }
+
+	pc_desert		= { spawn_odds = 0 }
+	pc_tropical		= { spawn_odds = 0 }
+	pc_arid			= { spawn_odds = 0 }
+	pc_continental	= { spawn_odds = 0 }
+	pc_ocean		= { spawn_odds = 0 }
+	pc_tundra		= { spawn_odds = 0 }
+	pc_arctic		= { spawn_odds = 0 }
+	pc_gaia			= { spawn_odds = 0 }
+	pc_alpine		= { spawn_odds = 0 }
+	pc_savannah		= { spawn_odds = 0 }
+
+	is_environmental_hazard = yes
+	modifier = { ship_disengage_chance_reduction = 0.5 ship_emergency_ftl_min_days_mult = 0.5 ship_speed_reduction = 0.5 }
+}

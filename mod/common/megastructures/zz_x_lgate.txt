@@ -31,10 +31,7 @@ lgate_base = {
 			fail_text = "requires_tech_lgate_construction"
 			from = { has_technology = tech_lgate_construction }
 		}
-		custom_tooltip = {
-			fail_text = "requires_inside_border"
-			is_inside_border = from
-		}
+		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }
 	}
 	placement_rules = {
 		# Those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
@@ -51,13 +48,13 @@ lgate_disabled = {
 	show_galactic_map_icon = no
 	show_in_outliner = no
 	bypass_type = lgate
-	build_time = 1500
+	build_time = 720 # 1500
 	resources = {
 		category = megastructures_gateways
 		cost = {
-			alloys = 2000
-			nanites = 300
+			nanites = 1000
 			energy = 1000
+			alloys = 1000
 			influence = 80
 		}
 		upkeep = { }
@@ -65,45 +62,31 @@ lgate_disabled = {
 	}
 	entity_offset = { x = 8 y = 8 }
 	construction_blocks_and_blocked_by = self_type
+	upgrade_from = { nanite_gateway } # REMOVEME in v3.14
 	prerequisites = { "tech_lgate_construction" }
-	potential = { has_technology = tech_lgate_construction }
+	potential = {
+		OR = {
+			has_global_flag = l_cluster_opened
+			# has_ascension_perk = ap_emergency_calculation
+			has_event_chain = l_cluster_chain
+		}
+		has_technology = tech_lgate_construction
+	}
 	# trigger, scope: galactic object, from: country
 	possible = {
 		exists = starbase
-		custom_tooltip = {
-			fail_text = "requires_inside_border"
-			is_inside_border = from
-		}
+		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }
 		custom_tooltip = {
 			fail_text = "requires_surveyed_system"
-			count_system_planet = {
-				limit = {
-					is_surveyed = {
-						who = prev.from
-						status = no
-					}
-				}
-				count = 0
-			}
+			count_system_planet = { limit = { is_surveyed = { who = prev.from status = no } } count = 0 }
 		}
-		custom_tooltip = {
-			fail_text = "lgate_requires_black_hole"
-			is_star_class = sc_black_hole
+		# custom_tooltip = { fail_text = "requires_black_hole"
+		custom_tooltip = { fail_text = "ap_emergency_calculation_req_5"
+			OR = { is_star_class = sc_black_hole is_star_class = sc_neutron_star is_star_class = sc_pulsar }
 		}
-		# custom_tooltip = {
-		# 	fail_text = "lgate_requires_no_neutron_star_pulsar"
-		# 	NOR = {
-		# 		is_star_class = sc_neutron_star
-		# 		is_star_class = sc_pulsar
-		# 	}
-		# }
 		custom_tooltip = {
 			fail_text = "requires_no_existing_gateway"
-			NOR = {
-				has_star_flag = lgate
-				has_megastructure = lgate_disabled
-				has_megastructure = lgate_base
-			}
+			NOR = { has_star_flag = lgate has_megastructure = lgate_disabled has_megastructure = lgate_base }
 		}
 		custom_tooltip = {
 			fail_text = "not_in_lcluster"
@@ -113,59 +96,29 @@ lgate_disabled = {
 			fail_text = "requires_tech_lgate_construction"
 			from = { has_technology = tech_lgate_construction }
 		}
-		custom_tooltip = {
-			fail_text = "requires_no_binary_trinary"
-			is_binary_star = no
-			is_trinary_star = no
-		}
+		custom_tooltip = { fail_text = "requires_no_binary_trinary" is_binary_star = no is_trinary_star = no }
 	}
 	# root = system
 	# from = country
 	placement_rules = {
 		planet_possible = {
-			custom_tooltip = {
-				fail_text = "must_build_around_star"
-				is_star = yes
-			}
-			custom_tooltip = {
-				fail_text = "requires_no_anomaly"
-				has_anomaly = no
-			}
+			custom_tooltip = { fail_text = "must_build_around_star" is_star = yes }
+			custom_tooltip = { fail_text = "requires_no_anomaly" has_anomaly = no }
 		}
 	}
 	# root = system
 	# from = country
 	ai_weight = {
 		factor = 2
-		modifier = {
-			factor = 0
-			starbase = {
-				NOT = { has_starbase_size >= starbase_starport }
+		modifier = { factor = 0
+			OR = {
+				starbase = { NOT = { has_starbase_size >= starbase_starport } }
+				any_neighbor_system = { has_star_flag = lgate }
 			}
 		}
-		modifier = {
-			factor = 0.1
-			starbase = {
-				NOT = { has_starbase_size >= starbase_starfortress }
-			}
-		}
-		modifier = {
-			factor = 0.1
-			any_neighbor_system = {
-				has_owner = yes
-				owner = {
-					NOT = { is_same_value = from }
-				}
-			}
-		}
-		modifier = {
-			factor = 0
-			any_neighbor_system = { has_star_flag = lgate }
-		}
-		modifier = {
-			factor = 3
-			is_star_class = sc_black_hole
-		}
+		modifier = { factor = 0.1 starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
+		modifier = { factor = 0.1 any_neighbor_system = { exists = owner owner = { NOT = { is_same_empire = from } } } }
+		modifier = { factor = 3 is_star_class = sc_black_hole }
 		# modifier = {
 		# 	factor = 0.2
 		# 	from = {
@@ -184,5 +137,25 @@ lgate_disabled = {
 			fromfrom = { CmtEffectOpenLgate = yes }
 		}
 		set_star_flag = lgate
+		# Notify
+		from = {
+			if = {
+				limit = { has_ascension_perk = ap_emergency_calculation }
+				country_event = { id = UniqueAscensionPerksEvents.8054 }
+			}
+			else = {
+				# _if = {
+				# limit = {
+				# 	has_global_flag = l_cluster_opened
+				# 	OR = {
+				# 		has_ascension_perk = ap_nano_to_nanite						# UAP
+				# 		has_technology = tech_nanite_gate
+				# 		has_technology = tech_lgate_construction					# ADT
+				# 	}
+				# 	NOT = { has_ascension_perk = ap_emergency_calculation }
+				# }
+				country_event = { id = UniqueAscensionPerksEvents.8003 }
+			}
+		}
 	}
 }

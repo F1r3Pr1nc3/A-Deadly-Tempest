@@ -13,7 +13,7 @@
 #	How to use: See ''ReadMe_for_making_template.txt''
 
 ################################
-###  Activation of Template  ###
+###- Activation of Template -###
 ################################
 
 ### Activate Template
@@ -82,7 +82,7 @@
 		### no : Disable Submarine Crisis (Default)
 
 #########################################################
-###  Configurations for Expansion of Crisis Factions  ###
+###- Configurations for Expansion of Crisis Factions -###
 #########################################################
 #
 #	Required for activating: Crisis Manager - End-Game Edition

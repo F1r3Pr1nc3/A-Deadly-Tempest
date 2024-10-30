@@ -62,14 +62,14 @@ country_event = {
 
 	### Prethoryn
 	option = {
-		name = CrisisManagerMenu.4000.4100.name
+		name = "CmtNameCrisisPrethoryn"
 		custom_tooltip = CrisisManagerMenu.4000.4100.tooltip
 		trigger = { CmtTriggerPrethorynConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4110 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4000.4100.fail.name
-		custom_tooltip = CrisisManagerMenu.4000.4100.fail.tooltip
+		custom_tooltip = "CrisisManagerMenu.4000.5100.fail.tooltip"
 		trigger = {
 			CmtTriggerPrethorynConfig = no
 			has_global_flag = CmtFlagEndGameEdition
@@ -79,14 +79,14 @@ country_event = {
 
 	### Extradimensionals
 	option = {
-		name = CrisisManagerMenu.4000.4200.name
+		name = "CmtNameCrisisExds"
 		custom_tooltip = CrisisManagerMenu.4000.4200.tooltip
 		trigger = { CmtTriggerExdsConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4210 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4000.4200.fail.name
-		custom_tooltip = CrisisManagerMenu.4000.4200.fail.tooltip
+		custom_tooltip = "CrisisManagerMenu.4000.5100.fail.tooltip"
 		trigger = {
 			CmtTriggerExdsConfig = no
 			has_global_flag = CmtFlagEndGameEdition
@@ -96,14 +96,14 @@ country_event = {
 
 	### Contingency
 	option = {
-		name = CrisisManagerMenu.4000.4300.name
+		name = "CmtNameCrisisContingency"
 		custom_tooltip = CrisisManagerMenu.4000.4300.tooltip
 		trigger = { CmtTriggerContingencyConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4310 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4000.4300.fail.name
-		custom_tooltip = CrisisManagerMenu.4000.4300.fail.tooltip
+		custom_tooltip = "CrisisManagerMenu.4000.5100.fail.tooltip"
 		trigger = {
 			CmtTriggerContingencyConfig = no
 			has_global_flag = CmtFlagEndGameEdition
@@ -113,14 +113,14 @@ country_event = {
 
 	### Forced End of the Cycle
 	option = {
-		name = CrisisManagerMenu.4000.4400.name
+		name = "CmtNameForcedEoc"
 		custom_tooltip = CrisisManagerMenu.4000.4400.tooltip
 		trigger = { CmtTriggerForcedEocConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4410 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4000.4400.fail.name
-		custom_tooltip = CrisisManagerMenu.4000.4400.fail.tooltip
+		custom_tooltip = "CrisisManagerMenu.4000.5100.fail.tooltip"
 		trigger = {
 			CmtTriggerForcedEocConfig = no
 			has_global_flag = CmtFlagEndGameEdition
@@ -157,7 +157,7 @@ country_event = {
 
 	### War in Heaven
 	option = {
-		name = CrisisManagerMenu.4000.4600.name
+		name = "mod_war_in_heaven"
 		custom_tooltip = CrisisManagerMenu.4000.4600.tooltip
 		trigger = { CmtTriggerHeavenConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4610 } }
@@ -192,7 +192,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4000.4700.fail.name
-		custom_tooltip = CrisisManagerMenu.4000.4700.fail.tooltip
+		custom_tooltip = "CrisisManagerMenu.4000.5100.fail.tooltip"
 		trigger = {
 			CmtTriggerGuardianFeConfig = no
 			has_global_flag = CmtFlagEndGameEdition
@@ -212,14 +212,14 @@ country_event = {
 
 	### Khan
 	option = {
-		name = CrisisManagerMenu.4000.4800.name
+		name = "CmtNameHordeCrisis"
 		custom_tooltip = CrisisManagerMenu.4000.4800.tooltip
 		trigger = { CmtTriggerKhanConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4810 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4000.4800.fail.name
-		custom_tooltip = CrisisManagerMenu.4000.4800.fail.tooltip
+		custom_tooltip = "CrisisManagerMenu.4000.5100.fail.tooltip"
 		trigger = {
 			CmtTriggerKhanConfig = no
 			has_global_flag = CmtFlagMidGameEdition
@@ -229,14 +229,14 @@ country_event = {
 
 	### L-gate
 	option = {
-		name = CrisisManagerMenu.4000.4900.name
+		name = "CmtNameLgateEvents"
 		custom_tooltip = CrisisManagerMenu.4000.4900.tooltip
 		trigger = { CmtTriggerLgateConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4911 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4000.4900.fail.name
-		custom_tooltip = CrisisManagerMenu.4000.4900.fail.tooltip
+		custom_tooltip = "CrisisManagerMenu.4000.5100.fail.tooltip"
 		trigger = {
 			CmtTriggerLgateConfig = no
 			has_global_flag = CmtFlagMidGameEdition
@@ -246,7 +246,7 @@ country_event = {
 
 	### Machine Uprising
 	# option = {
-	# 	name = CrisisManagerMenu.4000.5100.name
+	# 	name = "war_goal_wg_machine_uprising"
 	# 	custom_tooltip = CrisisManagerMenu.4000.5100.tooltip
 	# 	trigger = {
 	# 		CmtTriggerUprisingConfig = yes

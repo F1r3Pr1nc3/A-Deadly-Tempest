@@ -198,8 +198,7 @@ country_event = {
 	is_triggered_only = yes	# no?
 	trigger = {
 		has_country_flag = CmtFlagNowInMenu
-		NOT = { has_country_flag = CmtFlagNeverWarn14 }
-		is_ai = no
+		NOR = { has_country_flag = CmtFlagNeverWarn14 is_ai = yes }
 	}
 	option = {
 		name = "graygoo.504.d"

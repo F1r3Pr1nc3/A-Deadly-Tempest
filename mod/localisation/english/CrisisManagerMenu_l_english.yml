@@ -511,7 +511,7 @@
 
  ### Progress Speed of Opening Event Chain
  CrisisManagerMenu.3160.title: "Progress Speed of Opening Events"
- CrisisManagerMenu.3160.desc: "A configuration for progress speed of the crises opening event chains.\nSee also: ''$CrisisManagerMenu.3160y.name$''."
+ CrisisManagerMenu.3160.desc: "A configuration for progress speed of the crises opening event chains.\nSee also: '$fircon.2535.c$'."
  CrisisManagerMenu.3160a.title: "§MVery $GAME_SPEED_2$§!"
  CrisisManagerMenu.3160b.title: "§BRandomly $GAME_SPEED_2$§!"
  CrisisManagerMenu.3160c.title: "§GStandard§!"
@@ -519,7 +519,6 @@
  CrisisManagerMenu.3160e.title: "§HRandomly $GAME_SPEED_4$§!"
  CrisisManagerMenu.3160f.title: "§RFoxhound§!"		## Origin of the name: Mig-31, interceptor aircraft.
  CrisisManagerMenu.3160x.title: "Speed of Opening Event: "
- CrisisManagerMenu.3160y.name: "What does it mean?"
  CrisisManagerMenu.3160x.tooltip: "The time from crisis triggered to 1st attacking: "
  CrisisManagerMenu.3160a.tooltip: "$CrisisManagerMenu.3160x.tooltip$§YAbout 23 - 26 years§!"
  CrisisManagerMenu.3160b.tooltip: "$CrisisManagerMenu.3160x.tooltip$§YAbout 5 - 30 years§!"
@@ -527,7 +526,6 @@
  CrisisManagerMenu.3160d.tooltip: "$CrisisManagerMenu.3160x.tooltip$§Y4 - 5 years§!\nSimilar to $crisis.2010.name$"
  CrisisManagerMenu.3160e.tooltip: "$CrisisManagerMenu.3160x.tooltip$§Y About 3 - 8 years§!"
  CrisisManagerMenu.3160f.tooltip: "$CrisisManagerMenu.3160x.tooltip$§ROnly tens days§!"
- CrisisManagerMenu.3160y.tooltip: ""
  CrisisManagerMenu.3161.name: "About $CrisisManagerMenu.3160.title$ $CrisisManagerTitleC$"
  CrisisManagerMenu.3161.desc: "A configuration of the time from crisis triggered as internal processing, to the arrival of the first crisis fleets.\nIf slower option is set, there is long time to prepare for the war with the crisis.\n\nMost important effect of this configuration becomes tangible when ''$CrisisManagerMenu.3110e.title$'' is set in $CrisisManagerMenu.3110.title$.\nIn this case, fleets of every crises arrive the galaxy in brief period if ''non-randomly'' option is selected.\nOn other hand, fleets of each crises arrive the galaxy probably separately if ''randomly'' option is selected."
 

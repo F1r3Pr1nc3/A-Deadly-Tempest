@@ -99,7 +99,7 @@ country_event = {
 		custom_tooltip = CmtTextKeepCurrent.tooltip
 	}
 	option = {
-		name = CrisisManagerMenu.3110a.name
+		name = "CrisisManagerMenu.3110a.title"
 		custom_tooltip = CrisisManagerMenu.3110a.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarMultiple value = 1 } } }
 	}
@@ -126,7 +126,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.3110f.name
-		custom_tooltip = CrisisManagerMenu.3110f.tooltip
+		custom_tooltip = "CrisisManagerMenu.3110e.tooltip"
 		trigger = { has_global_flag = CmtFlagAllowForcedEoc }
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarMultiple value = 5 } } }
 	}
@@ -287,52 +287,52 @@ country_event = {
 		custom_tooltip = CmtTextKeepCurrent.tooltip
 	}
 	option = {
-		name = CrisisManagerMenu.3130.V9.name
-		custom_tooltip = CrisisManagerMenu.3130.V9.tooltip
+		name = "CrisisManagerMenu.3130.V9.title"
+		custom_tooltip = "CmtDescEgsy"
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEarliestEgpy value = @CmtConstTriggerEgpy_V9 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.3130.V8.name
-		custom_tooltip = CrisisManagerMenu.3130.V8.tooltip
+		name = "CrisisManagerMenu.3130.V8.title"
+		custom_tooltip = "CmtDescEgsy"
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEarliestEgpy value = @CmtConstTriggerEgpy_V8 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.3130.V7.name
-		custom_tooltip = CrisisManagerMenu.3130.V7.tooltip
+		custom_tooltip = "CmtDescEgsy"
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEarliestEgpy value = @CmtConstTriggerEgpy_V7 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.3130.V6.name
-		custom_tooltip = CrisisManagerMenu.3130.V6.tooltip
+		name = "CrisisManagerMenu.3130.V6.title"
+		custom_tooltip = "CmtDescEgsy"
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEarliestEgpy value = @CmtConstTriggerEgpy_V6 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.3130.V5.name
-		custom_tooltip = CrisisManagerMenu.3130.V5.tooltip
+		name = "CrisisManagerMenu.3130.V5.title"
+		custom_tooltip = "CmtDescEgsy"
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEarliestEgpy value = @CmtConstTriggerEgpy_V5 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.3130.V4.name
-		custom_tooltip = CrisisManagerMenu.3130.V4.tooltip
+		name = "CrisisManagerMenu.3130.V4.title"
+		custom_tooltip = "CmtDescEgsy"
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEarliestEgpy value = @CmtConstTriggerEgpy_V4 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.3130.V3.name
-		custom_tooltip = CrisisManagerMenu.3130.V3.tooltip
+		name = "CrisisManagerMenu.3130.V3.title"
+		custom_tooltip = "CmtDescEgsy"
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEarliestEgpy value = @CmtConstTriggerEgpy_V3 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.3130.V2.name
-		custom_tooltip = CrisisManagerMenu.3130.V2.tooltip
+		name = "CrisisManagerMenu.3130.V2.title"
+		custom_tooltip = "CmtDescEgsy"
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEarliestEgpy value = @CmtConstTriggerEgpy_V2 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.3130.V1.name
-		custom_tooltip = CrisisManagerMenu.3130.V1.tooltip
+		name = "CrisisManagerMenu.3130.V1.title"
+		custom_tooltip = "CmtDescEgsy"
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEarliestEgpy value = @CmtConstTriggerEgpy_V1 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.3130.V0.name
+		name = "CrisisManagerMenu.3130.V0.title"
 		custom_tooltip = CrisisManagerMenu.3130.V0.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEarliestEgpy value = @CmtConstTriggerEgpy_V0 } } }
 	}
@@ -508,12 +508,12 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEqualizingProbability value = 1 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.3150b.name
+		name = "CrisisManagerMenu.3150b.title"
 		custom_tooltip = CrisisManagerMenu.3150b.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEqualizingProbability value = 2 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.3150c.name
+		name = "CrisisManagerMenu.3150c.title"
 		custom_tooltip = CrisisManagerMenu.3150c.tooltip
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarEqualizingProbability value = 3 } } }
 	}
@@ -545,7 +545,7 @@ country_event = {
 #	is_triggered_only = yes
 #
 #	option = {
-#		name = CmtTextOK.name
+#		name = "graygoo.504.d"
 #		custom_tooltip = CmtTextOK.tooltip
 #		hidden_effect = { country_event = { id = CrisisManagerMenu.3150 } }
 #	}
@@ -653,8 +653,8 @@ country_event = {
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarOpeningEventSpeed value = 6 } } }
 	}
 	option = {
-		name = CrisisManagerMenu.3160y.name		## What dose it mean?
-		custom_tooltip = CrisisManagerMenu.3160y.tooltip
+		name = "fircon.2535.c"		## What dose it mean?
+		# custom_tooltip = CrisisManagerMenu.3160y.tooltip
 		hidden_effect = { set_country_flag = CmtFlagSpMenu }
 	}
 	option = {
@@ -675,7 +675,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = CmtTextOK.name
+		name = "graygoo.504.d"
 		custom_tooltip = CmtTextOK.tooltip
 		hidden_effect = { country_event = { id = CrisisManagerMenu.3160 } }
 	}
@@ -726,7 +726,7 @@ country_event = {
 		hidden_effect = { remove_global_flag = CmtFlagSubmarineCrisis }
 	}
 	option = {
-		name = CrisisManagerMenu.3170b.name
+		name = "CrisisManagerMenu.3170b.title"
 		custom_tooltip = CrisisManagerMenu.3170b.tooltip
 		hidden_effect = { set_global_flag = CmtFlagSubmarineCrisis }
 	}

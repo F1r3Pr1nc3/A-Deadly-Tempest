@@ -11,7 +11,6 @@
  feature_lgate_construction_desc: "Allows us to rebuild and construct §E$lgates$§!."
  lgate_construction: "L-Gate Construction"
  lgate_construction_desc: "Allows this empire to rebuild and construct §E$lgates$§!."
- lgate_requires_black_hole: "$TRIGGER_FAIL$Must be built near a black hole."
  requires_1_lgate: "§RRequires 1§! §YL-Gate§!"
  requires_3_lgate: "§RRequires 3§! §YL-Gates§!"
  requires_tech_lgate_construction: "$TRIGGER_FAIL$Requires technology £physics£ §Y$tech_lgate_construction$§!."

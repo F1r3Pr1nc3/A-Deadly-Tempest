@@ -1,0 +1,7 @@
+part = {
+	location = 0
+	localization = "START_SCREEN_GATEKEEPERS"
+	trigger = {
+		has_origin = origin_gatekeepers
+	}
+}

@@ -264,7 +264,7 @@ country_event = {
 		set_country_flag = declared_crisis
 		save_event_target_as = new_crisis
 		every_playable_country = {
-			limit = { is_ai = no NOT = { is_same_empire = root } }
+			limit = { NOR = { is_ai = yes is_same_empire = root } }
 			country_event = { id = crisis.4100 }
 		}
 		if = { limit = { is_galactic_community_formed = yes }

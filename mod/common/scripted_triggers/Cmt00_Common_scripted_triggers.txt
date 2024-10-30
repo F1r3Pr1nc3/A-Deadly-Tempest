@@ -310,13 +310,6 @@ CmtTriggerSleepersAwakingTriggered = {
 	}
 }
 
-# CmtTriggerKhanTriggered = {
-# 	OR = {
-# 		has_global_flag = marauder_crisis_started
-# 		has_global_flag = CmtFlagKhanTriggered
-# 	}
-# }
-
 # DEPRECATED (2 times usage)
 # CmtTriggerLgateEventTriggered = {
 # 	optimize_memory
@@ -480,7 +473,6 @@ CmtTriggerGuardianFeConfig = {
 CmtTriggerKhanConfig = {
 	optimize_memory
 	OR = {
-		# CmtTriggerKhanTriggered = no
 		NOT = { has_global_flag = marauder_crisis_started }
 		has_global_flag = CmtFlagDebugMode
 	}
