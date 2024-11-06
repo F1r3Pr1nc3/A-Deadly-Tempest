@@ -33,7 +33,17 @@ ai_should_restrict_system = {
 			exists = owner
 			owner = { merg_is_fallen_empire = yes }
 		}
-		# Spaceborne Civs Expanded
+		AND = {
+			root = { is_country_type = voidworms }
+			exists = owner
+			owner = {
+				OR = {
+					is_country_type = dormant_marauders
+					is_country_type = awakened_marauders
+					# is_country_type = awakened_marauders_ev # The Empty Vagrant
+				}
+			}
+		}
 		AND = {
 			root = {
 				OR = {
@@ -42,6 +52,7 @@ ai_should_restrict_system = {
 					is_country_type = marauder_raiders
 					is_country_type = caravaneer_fleet
 					# is_country_type = awakened_marauders_ev # The Empty Vagrant
+					is_country_type = voidworms
 				}
 			}
 			OR = {
@@ -64,7 +75,7 @@ ai_should_restrict_system = {
 		AND = {
 			root = {
 				OR = {
-					is_crisis_faction = yes
+					AND = { is_crisis_faction = yes is_blokkat_country_type = no }
 					merg_is_awakened_fe = yes
 				}
 			}
@@ -101,22 +112,23 @@ ai_should_restrict_system = {
 			has_global_flag = gray_goo_crisis_active
 		}
 		# Gigastructural Engineering & More
-		AND = {
-			has_global_flag = gigastructures_enabled
-			NOT = { has_global_flag = katzenartig_imperium_happened }
-			OR = {
-				has_global_flag = katzenartig_always
-				has_global_flag = katzenartig_deathwish
-				has_global_flag = katzenartig_stellarite
-				has_global_flag = katzenartig_improbable
-			}
-			has_star_flag = flusion_system
-			exists = event_target:gigaflusion
-			event_target:gigaflusion = {
-				exists = owner
-				owner = { is_primitive = yes }
-			}
-		}
+		giga_ai_should_restrict_system = yes
+		# AND = {
+		# 	has_global_flag = gigastructures_enabled
+		# 	NOT = { has_global_flag = katzenartig_imperium_happened }
+		# 	OR = {
+		# 		has_global_flag = katzenartig_always
+		# 		has_global_flag = katzenartig_deathwish
+		# 		has_global_flag = katzenartig_stellarite
+		# 		has_global_flag = katzenartig_improbable
+		# 	}
+		# 	has_star_flag = flusion_system
+		# 	exists = event_target:gigaflusion
+		# 	event_target:gigaflusion = {
+		# 		exists = owner
+		# 		owner = { is_primitive = yes }
+		# 	}
+		# }
 		# ACOT
 		AND = {
 			has_global_flag = acot_activated

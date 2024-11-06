@@ -75,8 +75,8 @@ planet_is_hostile_or_crisis = {
 
 is_fallen_empire = {
 	OR = {
-		merg_is_fallen_empire = yes # Hopefully not included is_fallen_empire itself
-		merg_is_awakened_fe = yes # is_country_type = awakened_fallen_empire
+		is_country_type = fallen_empire # merg_is_fallen_empire = yes # Hopefully not included is_fallen_empire itself
+		is_country_type = awakened_fallen_empire # merg_is_awakened_fe = yes
 		AND = {
 			has_global_flag = a_deadly_tempest_mod_active
 			is_country_type = awakened_gate_builders
@@ -84,27 +84,30 @@ is_fallen_empire = {
 	}
 }
 
-is_regular_empire = {
-	is_gestalt = no
-	OR = {
-		is_default_or_fallen = yes
-	# 	is_country_type = default
-	# 	is_fallen_empire = yes
-	# 	# Ethics & Civics Infinity
-	# 	# is_country_type = uo_une_member_active
-	# 	hfe_trigger_is_human_fallen = yes # is_country_type = hfe_fallen HFE mod compat. hack
-	# 	hfe_trigger_insane_admiral_trait = yes # is_country_type = hfe_pirate HFE mod compat. hack
-	# 	# Prevents these special countries from destroying their own buildings and districts in their colonies
-	# 	is_country_type = gate_builders
-		is_country_type = awakened_marauders
-	# 	# ZOFE
-	# 	is_zofe_country = yes # ZoFE mod compat. hack
-	# 	# # The Empty Vagrant
-	# 	# is_country_type = default_ev
-	# 	# is_country_type = fallen_empire_ev
-	# 	# is_country_type = awakened_fallen_empire_ev
-	}
-}
+# If you are using scripted triggers in scripted triggers: flatten your structure or pre init the inner scripted triggers before actual usage.
+# is_regular_empire = {
+# 	OR = {
+# 		# is_default_or_fallen = yes
+# 		is_country_type = default
+# 		# is_country_type = fallen_empire
+# 		# is_country_type = awakened_fallen_empire # for checks in buildings
+# 		is_fallen_empire = yes
+# 	# 	# Ethics & Civics Infinity
+# 	# 	# is_country_type = uo_une_member_active
+# 	# 	hfe_trigger_is_human_fallen = yes # is_country_type = hfe_fallen HFE mod compat. hack
+# 	# 	hfe_trigger_insane_admiral_trait = yes # is_country_type = hfe_pirate HFE mod compat. hack
+# 	# 	# Prevents these special countries from destroying their own buildings and districts in their colonies
+# 	# 	is_country_type = gate_builders
+# 		is_country_type = awakened_marauders
+# 	# 	# ZOFE
+# 	# 	is_zofe_country = yes # ZoFE mod compat. hack
+# 	# 	# # The Empty Vagrant
+# 	# 	# is_country_type = default_ev
+# 	# 	# is_country_type = fallen_empire_ev
+# 	# 	# is_country_type = awakened_fallen_empire_ev
+# 	}
+# 	NOT = { has_ethic = ethic_gestalt_consciousness } # is_gestalt = no
+# }
 
 is_pirate_system = {
 	any_fleet_in_system = {

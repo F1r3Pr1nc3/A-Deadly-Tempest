@@ -125,9 +125,9 @@ CmtEffectDestroyGraygoo = {
 
 	if = {
 		limit = { exists = event_target:CmtGlobalVar }
-		set_update_modifiers_batch = begin
 		# Only LCluster!?
 		event_target:CmtGlobalVar = {
+			set_update_modifiers_batch = begin
 			if = {
 				limit = {
 					OR = {
