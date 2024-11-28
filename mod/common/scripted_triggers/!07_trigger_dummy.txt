@@ -57,21 +57,22 @@ has_bug_branch = { always = no } # E&C Bug Branch
 has_life_engineering_installed = { always = no }
 
 merg_has_shroud_rising = { always = no } # has_global_flag = shroud_rising_active
+
 is_giga_crisis_faction = { always = no } # Gigastructural Engineering & More
+is_blokkat_country_type = { always = no } # Gigastructural Engineering & More
+giga_ai_should_restrict_system = { always = no } # Gigastructural Engineering & More
+giga_has_frameworld_origin = { always = no } # Gigastructural Engineering & More
 
-# Vanilla v3.13 trigger for backward compat. (REMOVEME in 3.14)
-is_democratic_authority = {
-	has_authority = auth_democratic
-}
+ssh_is_special_planet = { always = no }
 
-is_oligarchic_authority = {
-	has_authority = auth_oligarchic
-}
+# Ethics and Civics Classic
+merg_has_ethics_classic = { has_global_flag = ethic_civic_classic_active }
 
-is_imperial_authority = {
-	has_authority = auth_imperial
-}
+# Vanilla v3.13 trigger for backward compat. (REMOVEME at v4.0)
+is_democratic_authority = { has_authority = auth_democratic }
 
-is_dictatorial_authority = {
-	has_authority = auth_dictatorial
-}
+is_oligarchic_authority = { has_authority = auth_oligarchic }
+
+is_imperial_authority = { has_authority = auth_imperial }
+
+is_dictatorial_authority = { has_authority = auth_dictatorial }

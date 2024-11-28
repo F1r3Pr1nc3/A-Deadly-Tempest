@@ -134,8 +134,8 @@ gateway_0 = {
 			}
 		}
 	}
-	on_build_start = {  }
-	on_build_cancel = {  }
+	on_build_start = {}
+	on_build_cancel = { }
 	on_build_complete = {
 		from = { country_event = { id = apoc.14 } }
 	}
@@ -316,7 +316,7 @@ gateway_restored = {
 		if = {
 			limit = {
 				has_paragon_dlc = yes
-				exists = from  # Does not always exist when upgraded from script via "finish_upgrade = yes"
+				exists = from # Does not always exist when upgraded from script via "finish_upgrade = yes"
 				from = {
 					is_ai = no
 				}
@@ -386,7 +386,6 @@ gateway_derelict = {
 		activate_gateway = fromfrom
 	}
 }
-
 
 # v3.14
 # Disabled Gateway linked to Ness System

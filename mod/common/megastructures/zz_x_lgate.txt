@@ -115,7 +115,7 @@ lgate_disabled = {
 			}
 		}
 		modifier = { factor = 0.1 starbase = { NOT = { has_starbase_size >= starbase_starfortress } } }
-		modifier = { factor = 0.1 any_neighbor_system = { exists = owner owner = { NOT = { is_same_empire = from } } } }
+		modifier = { factor = 0.1 any_neighbor_system = { has_owner = yes owner = { NOT = { is_same_empire = from } } } }
 		modifier = { factor = 3 is_star_class = sc_black_hole }
 		# modifier = {
 		# 	factor = 0.2
@@ -136,23 +136,26 @@ lgate_disabled = {
 		}
 		set_star_flag = lgate
 		# Notify
-		from = {
-			if = {
-				limit = { has_ascension_perk = ap_emergency_calculation }
-				country_event = { id = UniqueAscensionPerksEvents.8054 }
-			}
-			else = {
-				# _if = {
-				# limit = {
-				# 	has_global_flag = l_cluster_opened
-				# 	OR = {
-				# 		has_ascension_perk = ap_nano_to_nanite						# UAP
-				# 		has_technology = tech_nanite_gate
-				# 		has_technology = tech_lgate_construction					# ADT
-				# 	}
-				# 	NOT = { has_ascension_perk = ap_emergency_calculation }
-				# }
-				country_event = { id = UniqueAscensionPerksEvents.8003 }
+		if = {
+			limit = { exists = from has_global_flag = has_uap_mod }
+			from = {
+				if = {
+					limit = { has_ascension_perk = ap_emergency_calculation }
+					country_event = { id = UniqueAscensionPerksEvents.8054 }
+				}
+				else = {
+					# _if = {
+					# limit = {
+					# 	has_global_flag = l_cluster_opened
+					# 	OR = {
+					# 		has_ascension_perk = ap_nano_to_nanite						# UAP
+					# 		has_technology = tech_nanite_gate
+					# 		has_technology = tech_lgate_construction					# ADT
+					# 	}
+					# 	NOT = { has_ascension_perk = ap_emergency_calculation }
+					# }
+					country_event = { id = UniqueAscensionPerksEvents.8003 }
+				}
 			}
 		}
 	}

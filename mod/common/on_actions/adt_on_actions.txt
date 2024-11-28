@@ -1,6 +1,10 @@
 on_game_start = {
 	events = {
 		a_deadly_tempest.1
+	}
+}
+on_game_start_country = {
+	events = {
 		origin_gatekeepers.001 # Setup the capital system
 	}
 }

@@ -12,7 +12,7 @@ namespace = distar
 #######################################################
 #######################################################
 
-# # Randomize L-Cluster outcome on_game_start
+## Randomize L-Cluster outcome on_game_start
 # event = {
 # 	id = distar.8000
 # 	hide_window = yes
@@ -53,12 +53,7 @@ country_event = {
 			}
 			# Enable project
 			if = {
-				limit = {
-					count_playable_country = {
-						limit = { has_country_flag = lcluster_opener }
-						count = 0
-					}
-				}
+				limit = { count_playable_country = { limit = { has_country_flag = lcluster_opener } count = 0 } }
 				country_event = { id = distar.10905 }
 			}
 		}
@@ -204,12 +199,7 @@ country_event = {
 			event_target:CmtTargetLgateOriginatingSystem = {
 				closest_system = {
 					min_steps = 3
-					limit = {
-						count_system_colony = {
-							# limit = { }
-							count = 0
-						}
-					}
+					limit = { count_system_colony = { limit = { } count = 0 } }
 					set_star_flag = dragon_point
 				}
 			}
@@ -268,8 +258,7 @@ country_event = {
 			if = {
 				# Flag prevents the Tempest from using this gate,
 				# Do not set the flag if there's only one l-gate system
-				limit = {
-					## 2 or more l-gates exist in galaxy
+				limit = {		## 2 or more l-gates exist in galaxy
 					any_system = {
 						has_star_flag = lgate
 						NOT = { is_same_value = prev }
@@ -384,14 +373,12 @@ event = {
 			}
 			NOT = { has_country_flag = lgate_warned }			# Warn only once for all for each related (each 120 - 240 days)
 			OR = {
-				AND = {
-					# dynamic
+				AND = { # dynamic
 					is_variable_set = CmtVarLgateReqClues
 					check_variable = { which = CmtVarLgateReqClues value > 0 }
 					check_variable = { which = num_lcluster_clues value > CmtVarLgateReqClues }					# 1 before
 				}
-				AND = {
-					# vanilla
+				AND = { # vanilla
 					NOT = { is_variable_set = CmtVarLgateReqClues }
 					check_variable = { which = num_lcluster_clues value > 5 }					# 1 before
 				}
@@ -409,14 +396,12 @@ event = {
 				}
 				NOT = { has_country_flag = lgate_warned }
 				OR = {
-					AND = {
-						# dynamic
+					AND = { # dynamic
 						is_variable_set = CmtVarLgateReqClues
 						check_variable = { which = CmtVarLgateReqClues value > 0 }
 						check_variable = { which = num_lcluster_clues value > CmtVarLgateReqClues }
 					}
-					AND = {
-						# vanilla
+					AND = { # vanilla
 						NOT = { is_variable_set = CmtVarLgateReqClues }
 						check_variable = { which = num_lcluster_clues value > 5 }
 					}
@@ -720,9 +705,7 @@ country_event = {
 						has_global_flag = has_guillis_planet_modifiers_mod
 						AND = {
 							exists = event_target:CmtGlobalVar
-							event_target:CmtGlobalVar = {
-								check_variable = { which = CmtVarLgateTerraformNanite value = 6 }
-							}
+							event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 6 } }
 							NOR = { has_global_flag = gray_goo_crisis_set has_global_flag = gray_goo_empire_set }
 						}
 					}
@@ -739,9 +722,7 @@ country_event = {
 					if = {
 						limit = {
 							exists = event_target:CmtGlobalVar
-							event_target:CmtGlobalVar = {
-								check_variable = { which = CmtVarLgateTerraformNanite value = 6 }
-							}
+							event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 6 } }
 							NOR = { has_global_flag = gray_goo_crisis_set has_global_flag = gray_goo_empire_set }
 						}
 						every_system_planet = {
@@ -750,8 +731,8 @@ country_event = {
 						}
 					}
 				}
-			}
-			## GUILLI END
+			} ## GUILLI END
+
 			# Add hyperlanes (extended randomization)
 			event_target:lcluster5 = {
 				add_hyperlane = { from = this to = event_target:lcluster4 }
@@ -856,7 +837,8 @@ country_event = {
 				}
 			}
 			15 = {
-				event_target:lcluster4 = { # Compare distance
+					event_target:lcluster4 = {
+						# Compare distance
 					export_trigger_value_to_variable = {
 						trigger = distance
 						parameters = { source = event_target:lcluster2 max_distance <= 300 type = euclidean }
@@ -905,9 +887,7 @@ country_event = {
 						limit = {
 							NOT = { has_hyperlane_to = event_target:lcluster4 }
 							check_variable = { which = system_distance_2 value > event_target:lcluster4.system_distance_3 }
-							event_target:lcluster4 = {
-								check_variable = { which = system_distance_3b value > system_distance_3 }
-							}
+								event_target:lcluster4 = { check_variable = { which = system_distance_3b value > system_distance_3 } }
 						}
 						add_hyperlane = { from = this to = event_target:lcluster4 }
 					}
@@ -917,9 +897,7 @@ country_event = {
 								has_hyperlane_to = event_target:lcluster4
 								has_hyperlane_to = event_target:lcluster2
 								check_variable = { which = system_distance_2 value > event_target:lcluster4.system_distance_3 }
-								event_target:lcluster4 = {
-									check_variable = { which = system_distance_2 value > system_distance_3 }
-								}
+									event_target:lcluster4 = { check_variable = { which = system_distance_2 value > system_distance_3 } }
 							}
 						}
 						add_hyperlane = { from = this to = event_target:lcluster2 }
@@ -1163,9 +1141,7 @@ country_event = {
 		}
 		### Notify 2 those without l-gate systems
 		every_playable_country = {
-			limit = {
-				count_system_within_border = { limit = { has_star_flag = lgate } count = 0 }
-			}
+			limit = { count_system_within_border = { limit = { has_star_flag = lgate } count = 0 } }
 			country_event = { id = distar.13011 }
 		}
 		country_event = { id = a_deadly_tempest.13006 days = 3 }
@@ -1182,9 +1158,7 @@ country_event = {
 	}
 	desc = {
 		text = distar.13010.desc.OtherOpened
-		trigger = {
-			NOT = { is_same_empire = from }
-		}
+		trigger = { NOT = { is_same_empire = from } }
 	}
 	picture = GFX_evt_space_dragon_young
 	location = event_target:dragons_current_system.star
@@ -1424,7 +1398,7 @@ country_event = {
 
 # on_system_survey
 # From = system
-# FromFrom = Fleet of the science ship that surveyed it, if any
+# fromfrom = Fleet of the science ship that surveyed it, if any
 country_event = {
 	id = distar.13080
 	title = "apoc.1.name"

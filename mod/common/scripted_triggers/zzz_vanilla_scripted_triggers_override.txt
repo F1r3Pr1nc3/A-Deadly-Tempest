@@ -90,7 +90,7 @@ is_fallen_empire = {
 # 		# is_default_or_fallen = yes
 # 		is_country_type = default
 # 		# is_country_type = fallen_empire
-# 		# is_country_type = awakened_fallen_empire # for checks in buildings
+# 		# is_country_type = awakened_fallen_empire # For checks in buildings
 # 		is_fallen_empire = yes
 # 	# 	# Ethics & Civics Infinity
 # 	# 	# is_country_type = uo_une_member_active

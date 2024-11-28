@@ -3,11 +3,11 @@ Ever wanted to be able to shut down access to the L-Cluster while an Awakened Em
 
 [img]//i.imgur.com/h6cFkn5.png[/img]
 [b]A Deadlier Tempest[/b]
-The Gray Tempest has been improved, not only do they now make use of the more higher end-ship technologies, but also once every two months their fleets will spawn a ship to replace the numbers that the fleet has lost in combat. However, if they do not have a mothership class within the fleet, then they have lost their spawning ability. [spoiler]How this works is that the fleets will keep spawning new ships, until they have reached a fleet size of 11. If it is the mid-game this changes to 21, and finally at the late-game, their fleets can reach a size of 41 ships in addition. Once at the late-game they have a very small chance to spawn a Mothership class instead of an Interdictor class. Additional fleets start spawning once the mid-game or late-game points are reached, meaning you in a race against time to end the threat quickly before it gets out of control. (Spawning chance is now ca. 57%, from vanilla around 36%. If you want more, take the Never Empty L-Cluster mod.)[/spoiler]
+The Gray Tempest has been improved, not only do they now make use of the higher end-ship technologies, but also once every two months their fleets will spawn a ship to replace the numbers that the fleet has lost in combat. However, if they do not have a mothership class within the fleet, then they have lost their spawning ability. [spoiler]How this works is that the fleets will keep spawning new ships, until they have reached a fleet size of 11. If it is the mid-game this changes to 21, and finally at the late-game, their fleets can reach a size of 41 ships in addition. Once at the late-game, they have a very small chance to spawn a Mothership class instead of an Interdictor class. Additional fleets start spawning once the mid-game or late-game points are reached, meaning you in a race against time to end the threat quickly before it gets out of control. (Spawning chance is now ca. 57%, from vanilla around 36%. If you want more, take the Never Empty L-Cluster mod.)[/spoiler]
 
 [b]Control Access to the L-Cluster[/b]
-Finally once you research the L-Cluster Access Control technology, you will get an unique decision, that allows you to close or open the access to the L-Cluster. However in order to do so you must have also the (Gateway Activation) technology researched and be in control of Terminal Egress. The decisions are at your capital.
-[spoiler]On the plus side, if there is ever a crisis you cannot beat, you now have a safe retreat while the galaxy burns behind you. (I recommend getting the Gigastructural Engineering mod to build all that population space your going to need for all those refugees or just your pops one or the other.)[/spoiler]
+Finally, once you research the L-Cluster Access Control technology, you will get a unique decision, that allows you to close or open the access to the L-Cluster. However, in order to do so, you must have also the (Gateway Activation) technology researched and be in control of Terminal Egress. The decisions are at your capital.
+[spoiler]On the plus side, if there is ever a crisis you cannot beat, you now have a safe retreat while the galaxy burns behind you. (I recommend getting the Gigastructural Engineering mod to build all that population space you're going to need for all those refugees or just your pops one or the other.)[/spoiler]
 ● Stand-alone mod: [url=//steamcommunity.com/workshop/filedetails/2047817384]L-Cluster Access[/url]
 
 [b]Buildable L-Gates[/b]
@@ -21,7 +21,7 @@ For your hard struggle against the now deadly Gray Tempest, not only do you get 
 Once researched you will be able to design and build Nanite ships. Now these ships do not have an upkeep, but their designs are somewhat inflexible, they still use up fleetcap and can only be build from starbases that have the Nanite Foundry building. [spoiler]This building is expensive and has a massive upkeep just to keep it running.[/spoiler]
 
 [b]Nanite Bombardment[/b]
-Once researched this bombardment stance works much in the same way as the Armageddon Bombardment stance, with the exception of a Tomb World the planet is instead turned into a Nanite World. [spoiler]The bombardment requires you to have researched the technology and have either the Indiscriminate or Armageddon Bombardment polices.[/spoiler]
+Once researched, this bombardment stance works much in the same way as the Armageddon Bombardment stance, except for a Tomb World, the planet is instead turned into a Nanite World. [spoiler]The bombardment requires you to have researched the technology and have either the Indiscriminate or Armageddon Bombardment polices.[/spoiler]
 
 [b]Terraformable Nanite Worlds[/b]
 Once researched you will be able to terraform Nanite Worlds into what ever world you wish.
@@ -39,24 +39,24 @@ With the help of some energy and Nanites you can build buildings that can create
 Are a little stronger and friendly to the Tempest [spoiler]as they have in vanilla only about 1/30 strength of an adult Ether Drake. (Spawning chance is now 100%, from vanilla around 21%) Some mechanical space guardians are neutral too.[/spoiler]. New matching [url=//stellaris.paradoxwikis.com/images/f/f1/Evt_space_dragon_young.png]event picture.[/url][spoiler]Buildable L-Drakes are green: WIP[/spoiler]
 
 [b]The Gray[/b]
-Has another kind of appearing chance (due the remove of the empty cluster outcome),[spoiler]so there is a small depending chance to get him anyway, if the cluster is not empty. Is also slightly strengthened as army and ship.[/spoiler] If you want the maximum spawn chance, you can get the [url=//steamcommunity.com/workshop/filedetails/2030416116]Never Empty L-Cluster[/url] or Crisis Manager - Mid-Game Edition. s.b.
+Has another kind of appearing chance (due to the removal of the empty cluster result), [spoiler]so there is a small chance to get him anyway, if the cluster is not empty. Is also slightly strengthened as army and ship.[/spoiler] If you want the maximum spawn chance, you can get the [url=//steamcommunity.com/workshop/filedetails/2030416116]Never Empty L-Cluster[/url] or Crisis Manager - Mid-Game Edition. s.b.
 
 [b]More…[/b]
 AFE Gatebuilder, Tempest can capture ships from mechanical enemies…
 
 [img]//i.imgur.com/m6bb49v.png[/img]
-Should be savegame compat, except parts of the build-in compat. for the [url=//steamcommunity.com/workshop/filedetails/2491573516]Crisis Manager[/url].
+Should be savegame compat, except parts of the built-in compat for the [url=//steamcommunity.com/workshop/filedetails/2491573516]Crisis Manager[/url].
 For more see [url=//steamcommunity.com/workshop/filedetails/discussion/2028826064/2152098711355881521/]this thread.[/url]
 
-If you remove this mod on an ongoing game – before the L-Cluster was opened – this could lead to inoperable deactivated L-Gates (if don't use L-Cluster Access instead).
+If you remove this mod on an ongoing game – before the L-Cluster was opened – this could lead to inoperable deactivated L-Gates (if not, use L-Cluster Access instead).
 
 [h3]Localisations[/h3]
 ● 🇺🇸 (fixes – Ragadad)
 ● 🇩🇪
 ● 🇪🇸 – Darh (also as fallback for braz/por)
 ● 🇨🇳 – LunarTraveller
-● 🇷🇺 – [url=//steamcommunity.com/workshop/filedetails/3038891668]Hann[/url] (21.Sep.2023)
-● 🇫🇷 – by Cerodan (29.Jun.2024)
+● 🇷🇺 – [url=//steamcommunity.com/workshop/filedetails/3038891668]Hann[/url] (21. Sep.2023)
+● 🇫🇷 – by Cerodan (29. Jun.2024)
 
 If you want to help with translation, check out GitHub s.b.
 
@@ -77,7 +77,6 @@ If you want to help with translation, check out GitHub s.b.
 ● [url=//steamcommunity.com/workshop/filedetails/2109438614]Mod Collection[/url]
 
 [hr]
-● [url=//steamcommunity.com/workshop/filedetails/2098226145]Legacy ADT 2.5–2.6[/url]
 [url=//github.com/F1r3Pr1nc3/A-Deadly-Tempest]● GitHub repository – ADT 2.7–3.*[/url]   
 
 [img]//i.imgur.com/r22m6gT.png[/img]
