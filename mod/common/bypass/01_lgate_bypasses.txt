@@ -16,7 +16,7 @@ lgate = {
 	animation_time = 1
 	ftl_ship_effect = "gateway_ftl_ship_effect_entity"
 	ftl_bypass_effect = "gateway_ftl_bypass_effect_entity"
-	can_bypass_be_locked = yes # v.3.10
+	can_bypass_be_locked = yes # v3.10
 	# prerequisites = { tech_lgate_activation }
 	on_pre_explore = {
 		# Fallback for defect savegames.

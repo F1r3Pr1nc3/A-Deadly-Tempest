@@ -90,7 +90,7 @@ merg_is_hab_ringworld = {
 	# }
 }
 
-# (upd v.3.4.3)
+# (upd v3.4.3)
 merg_is_hive_world = {
 	OR = {
 		is_planet_class = pc_hive

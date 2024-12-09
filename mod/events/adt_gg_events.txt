@@ -50,6 +50,43 @@ event = {
 }
 # on_single_player_save_game_load
 event = {
+	id = a_deadly_tempest.100
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = l_cluster_opened
+		has_global_flag = lgates_activated_globally
+		NOT = { has_global_flag = a_deadly_tempest_mod_updated }
+		any_system = {
+			has_star_flag = lgate
+			any_system_megastructure = { has_megastructure_flag = lgate_activated NOT = { is_megastructure_type = lgate_base } }
+		}
+	}
+	immediate = {
+		# Fix Ancient Empire incompat. (v3.14) REMOVEME on >3.15
+		every_system = {
+			limit = { has_star_flag = lgate any_megastructure = { has_megastructure_flag = lgate_activated NOT = { is_megastructure_type = lgate_base } } }
+			random_system_megastructure = {
+				limit = { has_megastructure_flag = lgate_activated NOT = { is_megastructure_type = lgate_base } }
+				prev = {
+					spawn_megastructure = {
+						type = lgate_base
+						owner = space_owner
+						coords_from = prev
+						init_effect = {
+							CmtEffectOpenLgate = yes
+							remove_megastructure = prevprev
+						}
+					}
+				}
+			}
+		}
+		set_global_flag = a_deadly_tempest_mod_updated
+	}
+}
+
+# on_single_player_save_game_load
+event = {
 	id = a_deadly_tempest.2
 	hide_window = yes
 	is_triggered_only = yes
@@ -89,7 +126,6 @@ event = {
 				event_target:global_event_country = { save_global_event_target_as = CmtGlobalVar }
 			}
 		}
-
 		# if = {
 		# 	limit = {
 		# 		has_global_flag = gray_goo_empire_set

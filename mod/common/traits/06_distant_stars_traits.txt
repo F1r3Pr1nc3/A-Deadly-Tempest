@@ -1,4 +1,4 @@
-## Modified leader_trait_governor_gray (only due entire file overwrite!?) v.3.11
+## Modified leader_trait_governor_gray (only due entire file overwrite!?) v3.11
 
 ####################
 # Brainslug Trait #

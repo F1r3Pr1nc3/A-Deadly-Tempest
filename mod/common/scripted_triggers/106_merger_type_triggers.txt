@@ -1,5 +1,5 @@
 # Overriddes the Merger of Rules.
-# v.3.7.2 snyc
+# v3.7.2 snyc
 # is_homicidal = {
 # 	OR = {
 # 		has_valid_civic = civic_fanatic_purifiers
@@ -139,7 +139,7 @@ is_crisis_faction = {
 		is_endgame_crisis = yes
 		is_country_type = gray_goo
 		is_country_type = awakened_marauders
-		# is_country_type = formless removed in v.3.12.3
+		# is_country_type = formless removed in v3.12.3
 		# is_cruel_abomination_country_type = yes # Cruel Conquerers
 		# is_country_type = darkness_country # Destiny: The Darkness Crisis
 		# Shroud Rising

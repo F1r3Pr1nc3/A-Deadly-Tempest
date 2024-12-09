@@ -38,11 +38,11 @@ country_event = {
 				has_global_flag = gray_goo_crisis_active
 				CmtTriggerIsGraygoo = yes
 				OR = {
-					event_target:CmtGlobalVar = {	# v.3.1
+					event_target:CmtGlobalVar = {	# v3.1
 						is_variable_set = CmtVarGrayGooCybrexLimit
 						check_variable = { which = CmtVarGrayGooCybrexLimit value < prev.trigger:num_fleets }
 					}
-					AND = {	# Pre v.3.1
+					AND = {	# Pre v3.1
 						NOT = { event_target:CmtGlobalVar = { is_variable_set = CmtVarGrayGooCybrexLimit } }
 						OR = {
 							num_fleets > 110
@@ -233,7 +233,7 @@ country_event = {
 	}
 }
 
-# (ADT) Fixed CDT v.3.11
+# (ADT) Fixed CDT v3.11
 # id = fallen_empires_awakening.3
 country_event = {
 	id = crisis.2003 # ADT only
@@ -287,7 +287,7 @@ country_event = {
 				save_event_target_as = gray_species
 			}
 		}
-		change_dominant_species = { species = last_created_species change_all = yes } # it's still broken do NOT use this # It will make the species right of the species to unchangeable # Stellaris v.3.0.1
+		change_dominant_species = { species = last_created_species change_all = yes } # it's still broken do NOT use this # It will make the species right of the species to unchangeable # Stellaris v3.0.1
 
 		set_government_cooldown = no
 		clear_ethos = yes

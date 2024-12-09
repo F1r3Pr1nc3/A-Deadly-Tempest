@@ -481,7 +481,7 @@ country_event = {
 	is_test_event = yes
 	trigger = { always = no }
 }
-# Removed in v.3.8 -vanilla removed in v.3.7
+# Removed in v3.8 -vanilla removed in v3.7
 # ship_event = {
 # 	id = tutorial.50
 # 	hide_window = yes
@@ -490,7 +490,7 @@ country_event = {
 # 	is_test_event = yes
 # 	trigger = { always = no }
 # }
-# Removed in v.3.8 - vanilla removed in v.3.7
+# Removed in v3.8 - vanilla removed in v3.7
 # country_event = {
 # 	id = tutorial.51
 # 	hide_window = yes

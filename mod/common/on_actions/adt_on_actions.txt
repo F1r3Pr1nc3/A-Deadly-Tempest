@@ -13,6 +13,7 @@ on_game_start_country = {
 on_single_player_save_game_load = {
 	events = {
 		a_deadly_tempest.2
+		a_deadly_tempest.100
 	}
 }
 

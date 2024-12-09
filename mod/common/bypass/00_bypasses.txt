@@ -120,7 +120,7 @@ wormhole = {
 	connection_type = one_to_one
 	ftl_ship_effect = "wormhole_ftl_ship_effect_entity"
 	ftl_bypass_effect = "wormhole_ftl_bypass_effect_entity"
-	can_bypass_be_locked = yes # v.3.10
+	can_bypass_be_locked = yes # v3.10
 	prerequisites = { tech_wormhole_stabilization }
 	potential = { always = yes }
 	# country_can_use = { removed in v3.13
@@ -209,7 +209,7 @@ quantum_catapult = {
 	remember_instances = no	# Whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
 	galactic_map_tooltip_header=quantum_catapult_BYPASS
 	galactic_map_tooltip_desc=quantum_catapult_BYPASS_DESC
-	connection_type = to_any_system # v.3.4
+	connection_type = to_any_system # v3.4
 	animation_time = 1
 	ftl_ship_effect = "gateway_ftl_ship_effect_entity"
 	ftl_bypass_effect = "gateway_ftl_bypass_effect_entity"
@@ -247,7 +247,7 @@ shroud_tunnel = {
 	galactic_map_tooltip_desc = SHROUD_TUNNEL_GALACTIC_DESC
 	system_view_tooltip_header = BYPASS_NAME_SHROUD_TUNNEL
 	connection_type = scripted_connection
-	can_bypass_be_locked = yes # v.3.10
+	can_bypass_be_locked = yes # v3.10
 
 	scripted_connection = {
 		node = { # System scope
@@ -281,7 +281,7 @@ shroud_tunnel = {
 	on_action = "on_entering_shroud_tunnel" # To be fired upon entering FTL into this bypass | this = fleet; from = system being jumped to; fromfrom = system being jumped from
 }
 
-# v.3.10
+# v3.10
 strange_wormhole = {
 	name = STRANGE_WORMHOLE
 	is_pathfind = yes
