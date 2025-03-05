@@ -528,12 +528,7 @@ distantstars_init_05b = {
 				count = 5
 				add_district = district_rw_science
 			}
-			while = {
-				count = 50
-				create_pop = {
-					species = owner_species
-				}
-			}
+			create_pop = { species = owner_species count = 50 }
 			# create_fallen_empire_starting_navy = yes
 
 			while = {
@@ -585,12 +580,7 @@ distantstars_init_05b = {
 				count = 5
 				add_district = district_rw_nexus
 			}
-			while = {
-				count = 30
-				create_pop = {
-					species = owner_species
-				}
-			}
+			create_pop = { species = owner_species count = 30 }
 		}
 	}
 	planet = {
@@ -627,12 +617,7 @@ distantstars_init_05b = {
 				count = 5
 				add_district = district_rw_generator
 			}
-			while = {
-				count = 22
-				create_pop = {
-					species = owner_species
-				}
-			}
+			create_pop = { species = owner_species count = 22 }
 		}
 	}
 	planet = {

@@ -17,11 +17,11 @@
 ################################
 
 ### Activate Template
-	@CmtT001_ConstActivatedEventEndgame = yes		##	For events of End-Game Crisis, Guardians of Galaxy.
-	@CmtT001_ConstActivatedEventMidgame = no		##	For events of Mid-Game Crisis (Khan, L-Gate)
+	@CmtT001_ConstActivatedEventEndgame = no		##	For events of End-Game Crisis, Guardians of Galaxy.
+	@CmtT001_ConstActivatedEventMidgame = yes		##	For events of Mid-Game Crisis (Khan, L-Gate)
 	@CmtT001_ConstActivatedEventSleeper = no		##	For events of Fallen Empire Awaking except Guarians of Galaxy.
-	@CmtT001_ConstActivatedPowerEndgame = yes		##	For military power of End-Game Crisis
-	@CmtT001_ConstActivatedPowerMidgame = no		##	For military power of Khan and Gray Tempest.
+	@CmtT001_ConstActivatedPowerEndgame = no		##	For military power of End-Game Crisis
+	@CmtT001_ConstActivatedPowerMidgame = yes		##	For military power of Khan and Gray Tempest.
 		### yes: this template is activated for specified parameters.
 		### no : this template is ignored for specified parameters.
 		### * No configurations exist for military power of Fallen/Awakened Empires.
@@ -441,7 +441,7 @@
 ### Interval of Khan Reigning
 	@CmtT001_ConstKhanInterval = 0
 		### Set in years
-		### It must be 0, 10, 25, 50, 75, 100 or 999 (Default = 0).
+		### It must be 0, 2-7, 10, 25, 50, 75, 100 or 999 (Default = 0).
 		### 999 means Template Unique Value (Beta Feature), set in ''common\scripted_variables\Cmt-xxx_Unique_scripted_variables.txt''.
 
 ### Khan to Reign at Earliest.
@@ -470,7 +470,7 @@
 		### High = 4, Do Vengeance at Any Cost = 5
 
 ### Resurgence of Khan
-	@CmtT001_ConstKhanResurgence = 1
+	@CmtT001_ConstKhanResurgence = 2
 		### Set the one of followings (Default = 1)
 		### -1: Never
 		### 1 ~ 509: Once, Twice, Thrice, ...

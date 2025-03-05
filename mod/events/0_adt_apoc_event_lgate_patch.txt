@@ -1,4 +1,3 @@
-
 # Apocalypse Event
 namespace = apoc
 

@@ -22,12 +22,19 @@ controls_lcluster = {
 	has_technology = tech_lcluster_access
 	OR = {
 		NOT = { has_global_flag = active_gray_goo }
-		AND = { # L-Cluster PLus
-			has_global_flag = l_cluster_origin
-			OR = {
-				has_origin = origin_lclusterplus_gatebuilders
-				has_origin = origin_lclusterplus_gatebuilders_advanced
+		inline_script = { # L-Cluster PLus 2293169684
+			script = merger_of_rules/toggled_code
+			code = "
+			AND = {
+				has_global_flag = l_cluster_origin
+				OR = {
+					has_origin = origin_lclusterplus_gatebuilders
+					has_origin = origin_lclusterplus_gatebuilders_advanced
+				}
 			}
+			"
+			toggle = @armor_nanite_8L # PENDING
 		}
+
 	}
 }

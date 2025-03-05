@@ -25,7 +25,7 @@ event = {
 	# 	is_country_type = global_event
 	# }
 	immediate = {
-		set_global_flag = a_deadly_tempest_mod_active
+		set_global_flag = a_deadly_tempest_mod_active # DEPRECATED: REMOVEME
 		if = {
 			limit = { NOT = { exists = event_target:CmtGlobalVar } }
 			if = {
@@ -33,7 +33,7 @@ event = {
 				event_target:global_event_country = { save_global_event_target_as = CmtGlobalVar }
 			}
 			else_if = {
-				limit = { NAND = { exists = this is_country_type = global_event } }
+				limit = { NAND = { is_scope_valid = yes is_country_type = global_event } }
 				event_target:global_event_country = { save_global_event_target_as = CmtGlobalVar }
 			}
 			else_if = {
@@ -111,7 +111,7 @@ event = {
 		}
 	}
 	immediate = {
-		set_global_flag = a_deadly_tempest_mod_active
+		set_global_flag = a_deadly_tempest_mod_active # DEPRECATED: REMOVEME
 		if = {
 			limit = { NOT = { exists = event_target:CmtGlobalVar } }
 			if = {
@@ -119,7 +119,7 @@ event = {
 				event_target:global_event_country = { save_global_event_target_as = CmtGlobalVar }
 			}
 			else_if = {
-				limit = { exists = this is_scope_type = country is_country_type = global_event }
+				limit = { is_scope_valid = yes is_scope_type = country is_country_type = global_event }
 				save_global_event_target_as = CmtGlobalVar
 			}
 			else = {
@@ -241,7 +241,7 @@ country_event = {
 	location = fromfromfrom
 	trigger = {
 		has_global_flag = l_cluster_opened
-		exists = this
+		is_scope_valid = yes
 		# OR = {
 		# 	is_ai = no
 		# 	is_country_type_with_subjects = yes
@@ -416,19 +416,6 @@ country_event = {
 			give_tech_option = {
 				TECH = tech_nanite_dragon
 				# INFO = no
-			}
-
-			fromfromfrom = {
-				create_ambient_object = {
-					type = explosion_particle_object
-					location = this
-					use_3d_location = yes
-					duration = 10
-					scale = 30
-				}
-				last_created_ambient_object = {
-					set_location = { target = prev distance = 110 angle = 110 }
-				}
 			}
 			# Support nhsc mod
 			if = {
@@ -611,7 +598,7 @@ ship_event = {
 	is_triggered_only = yes
 	location = fleet
 	trigger = {
-		exists = this
+		is_scope_valid = yes
 		is_scope_valid = yes
 		is_scope_type = ship
 		has_ship_flag = assimilate_that_robot_ship
@@ -731,7 +718,7 @@ fleet_event = {
 	is_triggered_only = yes
 	location = this
 	trigger = {
-		exists = this
+		is_scope_valid = yes
 		is_scope_valid = yes
 		is_scope_type = fleet
 		# exists = owner
@@ -772,7 +759,7 @@ fleet_event = {
 
 		if = {
 			limit = {
-				exists = this # Could be destroyd
+				is_scope_valid = yes # Could be destroyd
 				NAND = { exists = event_target:assimilating_fleet exists = event_target:assimilating_fleet.owner }
 			}
 			solar_system = {
@@ -804,7 +791,7 @@ fleet_event = {
 
 		if = {
 			limit = {
-				exists = this # Could be destroyd
+				is_scope_valid = yes # Could be destroyd
 				NAND = { exists = event_target:assimilate_that_ship exists = event_target:assimilate_that_ship.owner }
 			}
 			every_owned_ship = {
@@ -823,7 +810,7 @@ fleet_event = {
 		}
 		if = {
 			limit = {
-				exists = this
+				is_scope_valid = yes
 				is_scope_type = fleet
 				any_owned_ship = { is_disabled = yes }
 			}
@@ -1526,12 +1513,7 @@ country_event = {
 			# 	limit = { NOT = { exists = event_target:gray_species } }
 			# 	species = { save_global_event_target_as = gray_species }
 			# }
-			set_faction_hostility = {
-				target = prev
-				set_hostile = yes
-				set_neutral = no
-				set_friendly = no
-			}
+			set_faction_hostility = { target = prev set_hostile = yes }
 			add_resource = { minerals = 2000 energy = 12000 }
 			capital_scope = {
 				create_army = {
@@ -1658,8 +1640,6 @@ country_event = {
 				establish_communications_no_message = event_target:spawning_dragons
 				add_trust = { who = event_target:spawning_dragons amount = 2000 }
 				set_faction_hostility = {
-					set_hostile = no
-					# set_neutral = no
 					set_friendly = yes
 					target = event_target:spawning_dragons
 				}
@@ -1672,10 +1652,8 @@ country_event = {
 				establish_communications_no_message = event_target:graygoo_country
 				add_trust = { who = event_target:graygoo_country amount = 2000 }
 				set_faction_hostility = {
-					set_hostile = no
-					# set_neutral = no
-					set_friendly = yes
 					target = event_target:graygoo_country
+					set_friendly = yes
 				}
 				# country_event = { id = a_deadly_tempest.13007 days = 4 }
 			}

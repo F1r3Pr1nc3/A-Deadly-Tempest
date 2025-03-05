@@ -14,8 +14,9 @@ CmtEffectLgateClueComplete = {
 	set_country_flag = completed_lcluster_chain
 	if = {
 		limit = { has_global_flag = CmtFlagLgateSkipTech }
-		give_technology = { tech = tech_lgate_activation message = no }
-	} else = {
+		give_technology = { tech = tech_lgate_activation message = yes } # Trigger event distar.10900
+	}
+	else = {
 		# if = {
 		# 	limit = { has_lgate = yes }
 		# 	random_system_within_border = {
@@ -100,10 +101,7 @@ CmtEffectDestroyGraygoo = {
 	every_playable_country = {
 		limit = {
 			is_ai = no
-			NAND = {
-				exists = event_target:goo_slayer
-				is_same_empire = event_target:goo_slayer
-			}
+			NAND = { exists = event_target:goo_slayer is_same_empire = event_target:goo_slayer }
 		}
 		country_event = { id = graygoo.16 }
 
@@ -143,7 +141,8 @@ CmtEffectDestroyGraygoo = {
 						planet_event = { id = CrisisManagerControl.6211 days = 90 random = 450 }	## Auto-Terraform
 					}
 				}
-			} else_if = {
+			}
+			else_if = {
 				limit = { check_variable = { which = CmtVarLgateTerraformNanite value != 1 } }
 				every_system = {
 					limit = { has_star_flag = lcluster }
@@ -158,19 +157,20 @@ CmtEffectDestroyGraygoo = {
 		}
 	}
 
-	event_target:graygoo_country = {
-		every_owned_fleet = {
-			every_owned_ship = {
-				limit = { is_disabled = yes }
-				set_disable_at_health = -1
-				set_disabled = no
-				destroy_ship = this
+	if = {
+		limit = { exists = event_target:graygoo_country }
+		event_target:graygoo_country = {
+			every_owned_fleet = {
+				every_owned_ship = {
+					limit = { is_disabled = yes }
+					set_disable_at_health = -1
+					set_disabled = no
+					destroy_ship = this
+				}
+				destroy_fleet = this
 			}
-			destroy_fleet = this
+			destroy_country = yes
 		}
-		destroy_country = yes
-	}
-	if = { limit = { exists = event_target:graygoo_country }
 		clear_global_event_target = graygoo_country
 	}
 	clear_global_event_target = nanite_factory
@@ -180,10 +180,7 @@ CmtEffectDestroyGraygoo = {
 		limit = {
 			has_global_flag = cybrex_resurface
 			exists = event_target:cybrex
-			NOR = {
-				has_global_flag = cybrex_destroyed
-				has_global_flag = ai_invasion_ongoing
-			}
+			NOR = { has_global_flag = cybrex_destroyed has_global_flag = ai_invasion_ongoing }
 		}
 		# Cybrex Depart Galaxy
 		event_target:cybrex = { country_event = { id = crisis.2406 days = 360 random = 720 } }

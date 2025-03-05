@@ -22,9 +22,7 @@ country_event = {
 			give_technology = { tech = tech_space_mining_1 message = no }
 		}
 		capital_scope = {
-			while = { count = 20
-				create_pop = { species = owner_main_species }
-			}
+			create_pop = { species = owner_main_species count = 20  }
 			set_planet_entity = { entity = "habitat_phase_03_entity" graphical_culture = root }
 			set_planet_size = 8
 			add_district_and_planet_size_if_needed_effect = { district = district_hab_housing }
@@ -32,8 +30,8 @@ country_event = {
 			add_district_and_planet_size_if_needed_effect = { district = district_hab_industrial }
 			add_district_and_planet_size_if_needed_effect = { district = district_hab_industrial }
 			add_district_and_planet_size_if_needed_effect = { district = district_hab_industrial }
-			add_district_and_planet_size_if_needed_effect = { district = district_hab_commercial }
-			add_district_and_planet_size_if_needed_effect = { district = district_hab_commercial }
+			add_district_and_planet_size_if_needed_effect = { district = district_hab_energy }
+			add_district_and_planet_size_if_needed_effect = { district = district_hab_energy }
 			add_building = building_hab_major_capital
 			if = {
 				limit = { owner = { is_lithoid_empire = no } }
@@ -122,6 +120,7 @@ fleet_event = {
 	id = origin_gatekeepers.201
 	title = origin_gatekeepers.digsite.1.title
 	desc = origin_gatekeepers.digsite.1.desc
+	picture = GFX_evt_robot_assembly_plant # TODO: Change to something more fitting
 	show_sound = event_wind_ruins
 	location = from
 	archaeology = yes
@@ -134,6 +133,7 @@ fleet_event = {
 	id = origin_gatekeepers.202
 	title = origin_gatekeepers.digsite.2.title
 	desc = origin_gatekeepers.digsite.2.desc
+	picture = GFX_evt_robot_assembly_plant # TODO: Change to something more fitting
 	show_sound = event_wind_ruins
 	location = from
 	archaeology = yes
@@ -152,6 +152,7 @@ fleet_event = {
 	id = origin_gatekeepers.203
 	title = origin_gatekeepers.digsite.3.title
 	desc = origin_gatekeepers.digsite.3.desc
+	picture = GFX_evt_decryption
 	show_sound = event_wind_ruins
 	location = from
 	archaeology = yes
@@ -164,6 +165,7 @@ fleet_event = {
 	id = origin_gatekeepers.204
 	title = origin_gatekeepers.digsite.4.title
 	desc = origin_gatekeepers.digsite.4.desc
+	picture = GFX_evt_decryption
 	show_sound = event_wind_ruins
 	location = from
 	archaeology = yes
@@ -184,6 +186,7 @@ fleet_event = {
 	id = origin_gatekeepers.205
 	title = origin_gatekeepers.digsite.5.title
 	desc = origin_gatekeepers.digsite.5.desc
+	picture = GFX_evt_nanite_technology
 	show_sound = event_wind_ruins
 	location = from
 	archaeology = yes
@@ -202,6 +205,7 @@ fleet_event = {
 	id = origin_gatekeepers.206
 	title = l_cluster_chain_title
 	desc = origin_gatekeepers.digsite.6.desc
+	picture = GFX_evt_l-gateway
 	show_sound = event_wind_ruins
 	location = from
 	archaeology = yes
@@ -225,9 +229,10 @@ fleet_event = {
 	after = {
 		hidden_effect = {
 			owner = { # DSO
-				if = {
-					limit = { has_global_flag = distar_overhaul_mod_active }
-					give_tech_no_error_effect = { TECH = tech_nanite_technology_mastery MESSAGE = yes }
+				inline_script = { # Nanite Machine and Distant Stars Overhaul has_global_flag = distar_overhaul_mod_active
+					script = merger_of_rules/toggled_code
+					code = "give_tech_no_error_effect = { TECH = tech_nanite_technology_mastery MESSAGE = yes }"
+					toggle = @dso_pnm
 				}
 				set_country_flag = completed_nanite_technology_mastery_chain
 			}

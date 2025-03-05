@@ -5,19 +5,35 @@ country_event = {
 	id = distar.10905
 	title = "LCLUSTER_PROJECT" # "distar.10905.name" "lclusterplus.10905.name"
 	desc = "distar.10905.desc"
-	desc = {
-		text = "lclusterplus.10905.desc"
-		exclusive_trigger  = {
-			has_global_flag = l_cluster_origin
-			OR = {
-				has_origin = origin_lclusterplus_gatebuilders
-				has_origin = origin_lclusterplus_gatebuilders_advanced
+	inline_script = { # L-Cluster PLus 2293169684
+		script = merger_of_rules/toggled_code
+		code = "
+		desc = {
+			text = lclusterplus.10905.desc
+			exclusive_trigger  = {
+				has_global_flag = l_cluster_origin
+				OR = { has_origin = origin_lclusterplus_gatebuilders has_origin = origin_lclusterplus_gatebuilders_advanced }
 			}
 		}
+		picture = {
+			picture = GFX_evt_drifting_gateway
+			trigger = { has_global_flag = l_cluster_origin }
+		}
+		"
+		toggle = @armor_nanite_8L # PENDING
 	}
-	picture = {
-		picture = GFX_evt_drifting_gateway
-		trigger = { has_global_flag = l_cluster_origin }
+	trigger = {
+		NOR = {
+			has_active_event = { distar.10905 }
+			has_special_project = LCLUSTER_PROJECT
+			inline_script = { # L-Cluster PLus 2293169684
+				script = merger_of_rules/toggled_code
+				code = "
+			has_special_project = LCLUSTER_PROJECT_OVERWRITE
+				"
+				toggle = @armor_nanite_8L # PENDING
+			}
+		}
 	}
 	picture = {
 		picture = GFX_evt_l-gateway
@@ -38,16 +54,19 @@ country_event = {
 		name = "distar.10905.a"
 		event_target:candidate_gateway = {
 			# In fact needless PROJECT_OVERWRITE which causes a lot of additonal event PROJECT_OVERWRITEs with resulting of a lot more incompatiblity.
-			if = { limit = { has_global_flag = l_cluster_origin }
-				enable_special_project = {
-					name = LCLUSTER_PROJECT_OVERWRITE
-					location = this
-				}
-			} else = {
-				enable_special_project = {
-					name = LCLUSTER_PROJECT
-					location = this
-				}
+			inline_script = { # L-Cluster PLus 2293169684
+				script = merger_of_rules/toggled_code
+				code = "
+			if = {
+				limit = { has_global_flag = l_cluster_origin }
+				enable_special_project = { name = LCLUSTER_PROJECT_OVERWRITE location = this }
+			}
+				"
+				toggle = @armor_nanite_8L # PENDING
+			}
+			if = {
+				limit = { NOT = { has_global_flag = l_cluster_origin } }
+				enable_special_project = { name = LCLUSTER_PROJECT location = this }
 			}
 		}
 	}
@@ -61,7 +80,8 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = { limit = { has_global_flag = l_cluster_origin }
+		if = {
+			limit = { has_global_flag = l_cluster_origin }
 			set_global_flag = l_cluster_opened
 			# add_relic = r_nanite_artifact (will be fully implemented in the next update)
 			# Activate Terminal Egress L-Gate
@@ -83,13 +103,16 @@ country_event = {
 			}
 			set_global_flag = lgates_activated_globally
 			every_playable_country = {
-				if = { limit = { is_researching_technology = tech_lgate_activation }
+				if = {
+					limit = { is_researching_technology = tech_lgate_activation }
 					give_technology = { tech = tech_lgate_activation message = no }
 				}
 			}
 			country_event = { id = lclusterplus.10 }
-		} else = { country_event = { id = distar.10950 } }
-		if = { limit = { has_global_flag = CmtFlagLgatePreludeTriggered }
+		}
+		else = { country_event = { id = distar.10950 } }
+		if = {
+			limit = { has_global_flag = CmtFlagLgatePreludeTriggered }
 			remove_global_flag = CmtFlagLgatePreludeTriggered
 		}
 	}

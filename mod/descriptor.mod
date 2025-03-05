@@ -1,5 +1,4 @@
-version="3.14.159.0"
-name="A Deadly Tempest [3.14.☠]"
+version="3.14.15926.1"
 tags={
 	"Events"
 	"Gameplay"
@@ -15,6 +14,7 @@ dependencies={
 	"Guilli's Planet Modifiers and Features"
 	"Gray Tempest Shipset"
 }
+name="A Deadly Tempest [3.14.☠]"
 picture="thumbnail.png"
 supported_version="v3.14.*"
 remote_file_id="2028826064"

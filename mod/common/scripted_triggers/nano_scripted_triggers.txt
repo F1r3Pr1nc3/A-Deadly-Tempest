@@ -39,7 +39,13 @@ has_nhsc = {
 is_nanite_country = {
 	OR = {
 		is_country_type = gate_builders
-		is_country_type = awakened_gate_builders
+		inline_script = { # A Deadly Tempest
+			script = merger_of_rules/toggled_code
+			code = "
+				is_country_type = awakened_gate_builders
+			"
+			toggle = @has_a_deadly_tempest_mod
+		}
 		is_country_type = gray_goo
 		AND = {
 			exists = event_target:graygoo_country

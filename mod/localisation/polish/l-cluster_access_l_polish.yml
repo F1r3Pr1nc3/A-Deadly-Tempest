@@ -4,6 +4,8 @@
  TECH_UNLOCK_L_GATE_TACTICAL_USE_DESC: "Unlocks the ability to use our §E$lgates$§! while the §EL-Cluster§! is closed."
  TECH_UNLOCK_L_GATE_TACTICAL_USE_TITLE: "§HUnlocks Feature:§! $tech_tactical_lgate_use$"
  artifact_lgate_insight_cooldown_desc: "It will take some time to do this again."
+ casus_belli_cb_lgate_danger: "$lgate$ $opinion_threat$"
+ casus_belli_cb_lgate_danger_desc: "The §EL-Cluster§! poses a significant threat to the galaxy. We must act swiftly to prevent the §E$lgates$§! from being used to trigger a potential catastrophe."
  casus_belli_cb_lgate_port: "$lcluster_policy$"
  decision_close_lcluster: "Close L-Cluster"
  decision_close_lcluster_desc: "$lcluster_policy_closed_desc$"

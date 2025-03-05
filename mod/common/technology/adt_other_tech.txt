@@ -15,9 +15,10 @@ tech_nanite_mega_construction = {
 	potential = {
 		has_distar = yes
 		has_global_flag = l_cluster_opened
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_country_flag = completed_nanite_technology_mastery_chain
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_country_flag = completed_nanite_technology_mastery_chain"
+			toggle = @dso_pnm
 		}
 		has_country_resource = { type = nanites amount > 0 }
 	}
@@ -95,12 +96,17 @@ tech_nanite_bombardment = {
 			AND = {
 				has_global_flag = l_cluster_opened
 				NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-				OR = {
-					NOT = { has_global_flag = distar_overhaul_mod_active }
-					has_country_flag = completed_nanite_technology_mastery_chain
+				inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+					script = merger_of_rules/toggled_code
+					code = "has_country_flag = completed_nanite_technology_mastery_chain"
+					toggle = @dso_pnm
 				}
 			}
-			has_ascension_perk = ap_nanotech
+			inline_script = { # Mod Nanite Expansion
+				script = merger_of_rules/toggled_code
+				code = "has_ascension_perk = ap_nanotech"
+				toggle = @nanotier6cost1 # TODO Pending
+			}
 		}
 		has_country_resource = { type = nanites amount > 0 }
 	}

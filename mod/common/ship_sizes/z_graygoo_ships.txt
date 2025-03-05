@@ -1,4 +1,3 @@
-
 # Gray Goo Interdictor
 graygoo_interdictor = {
 	graphical_culture = no

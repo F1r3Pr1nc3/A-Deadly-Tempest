@@ -1,0 +1,303 @@
+## For compatibility: Dummy triggers - to be overwritten by their respective mods.
+merg_is_molten = { is_planet_class = pc_molten }
+merg_is_toxic = { is_planet_class = pc_toxic }
+merg_is_frozen = { is_planet_class = pc_frozen }
+merg_is_barren = { is_planet_class = pc_barren }
+merg_is_barren_cold = { is_planet_class = pc_barren_cold }
+merg_is_arctic = {
+	# OR = {
+	is_planet_class = pc_arctic
+	# 	# Planetary Diversity
+	# 	is_pd_arctic = yes
+	# 	# All These Worlds
+	# 	atw_is_arctic = yes
+	# }
+}
+merg_is_gaia_basic = {
+	optimize_memory
+	OR = {
+		is_planet_class = pc_gaia
+		# All These Worlds
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "atw_is_gaia = yes"
+			toggle = @has_atw_lite
+		}
+		# Planetary Diversity
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "pd_is_planet_class_gaia = yes"
+			toggle = @has_planetary_diversity
+		}
+		# Nanite Machine and Distant Stars Overhaul
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "is_nanite_gaia = yes"
+			toggle = @dso_pnm
+		}
+	}
+}
+
+merg_is_shielded_world = {
+	OR = {
+		is_planet_class = pc_habitat_shielded
+		is_planet_class = pc_ringworld_shielded
+		is_planet_class = pc_shielded
+		inline_script = { # Nanite Machine and Distant Stars Overhaul
+			script = merger_of_rules/toggled_code
+			code = "is_nanite_habitat_shielded = yes"
+			toggle = @dso_pnm
+		}
+	}
+}
+## Gigastructural Engineering & More
+# is_giga_habitat = { always = no }
+# is_pc_ringworld_hive = { always = no }
+# is_pc_ringworld_machine = { always = no }
+## Planetary Diversity
+# pd_is_planet_class_hive = { always = no }
+# pd_is_planet_class_machine = { always = no }
+# is_planetary_diversity_ringworld = { always = no }
+## Nanite Machine and Distant Stars Overhaul has_global_flag = distar_overhaul_mod_active
+# is_nanite_gaia =				{ always = no }
+# is_nanite_habitat_shielded =	{ always = no }
+# is_nanite_gas_giant = { always = no }
+is_dessanu_relic = { always = no }
+is_ds_skycatcher = { always = no }
+
+# Listing habitats
+merg_is_habitat = {
+	habitable_structure = yes  # Exlcude some entities is_artificial = yes
+	OR = {
+		is_planet_class = pc_habitat
+		# Acquisition of Technology
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "is_aot_habitat = yes"
+			toggle = @has_acquisition_of_tech
+		}
+		# DarkSpace
+		is_ds_skycatcher = yes
+		# Gigastructural Engineering & More
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "
+		giga_is_pc_giga_elysium = yes
+		giga_is_pc_giga_orbital = yes
+			"
+			toggle = @has_gigastructures
+		}
+		# Habitation
+		# has_planet_flag = hab_init
+		# Living Space
+		# has_planet_flag = stpg_planetary_habitat
+		# More Events Mod
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "is_pc_mem_vazuran_habitat = yes"
+			toggle = @has_more_events_mod
+		}
+		# Girls Frontline
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "is_planet_class = pc_GFnytp_habitis"
+			toggle = @gf_compatch_var
+		}
+		# StellarRegulator Array
+		# uses_district_set = SRA_city_world
+		# Twinks Atlantean
+		# uses_district_set = skypalace
+		# Wula Fallen Empire
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "is_planet_class = pc_fallen_empire_rogue_trader_habitat"
+			toggle = @wula_compatch_var
+		}
+		# ZOFE
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "is_planet_class = pc_utopian_habitat"
+			toggle = @has_zofe_vanilla
+		}
+		inline_script = { ## NSC2 Modjam Freebooters Origin
+			script = merger_of_rules/toggled_code
+			code = "uses_district_set = nsc_freebooter_habitat"
+			toggle = @has_nsc_freebooter_mod
+		}
+		uses_district_set = habitat  # Some mods use both as hack like Giga.
+		has_planet_flag = habitat
+		# has_planet_flag = advanced_habitat
+		# has_planet_flag = advanced_habitat_2
+		# has_ringworld_output_boost = no # There are mods which trigger habitats as ringworlds like Giga
+		# is_aot_habitat = yes ## Acquisition of Technology
+		# uses_district_set = BA_auto_habitat ## Blue Archive
+		# is_ds_skycatcher = yes ## DarkSpace
+		# is_giga_habitat = yes ## Gigastructural Engineering & More
+		# has_planet_flag = hab_init # Habitation
+		# has_planet_flag = stpg_planetary_habitat # # Living Space
+		# uses_district_set = GF_nyto_devil_furnace_world ## Nyto Species Pack
+		# uses_district_set = SRA_city_world ## StellarRegulator Array
+		# uses_district_set = skypalace ## Twinks Atlantean
+		# uses_district_set = fe_rogue_trader_habitat ## Wula Fallen Empire
+		# uses_district_set = utopian_habitat ## ZOFE
+		# is_planet_class = pc_interstellar_habitat ### (Mod) Gigastructural Engineering & More
+		# is_planet_class = pc_gigaorbital_ring ### (Mod) Gigastructural Engineering & More
+		# is_planet_class = pc_dm_habitat # Acquisition of Technology
+		# is_planet_class = pc_ae_habitat # Acquisition of Technology
+		# is_planet_class = pc_sigma_habitat # Acquisition of Technology
+		# is_planet_class = pc_sigma_deepspace_habitat # Acquisition of Technology
+		# is_planet_class = pc_habitat_robot # Plentiful Traditions
+		# uses_district_set = habitat # As some mods use both as hack like Giga.
+		# uses_district_set = starborn_start # Starborn: Improved Voidtouched
+		# uses_district_set = skypalace # Twinks Atlantean
+		# is_planet_class = pc_gigaorbital_ring ### (Mod) Gigastructural Engineering & More
+		# is_planet_class = pc_pd_toxic_hab # Giga Diversity
+		# is_planet_class = pc_GFnytp_habitis # Nyto Species Pack
+		# NOTE: evolved and merger are not compatible, so no issue if people use merger and this added check gets overwritten
+		# tec_is_habitat = yes
+	}
+}
+
+# List of all habitable ringworld sections.
+merg_is_hab_ringworld = {
+	habitable_structure = yes  # Exlcude some ringworld entities is_artificial = yes
+	has_ringworld_output_boost = yes
+	NOT = { is_planet_class = pc_habitat }
+	OR = {
+		is_colonizable = yes
+		is_colony = yes
+	}
+}
+
+# (upd v3.4.3)
+merg_is_hive_world = {
+	optimize_memory
+	OR = {
+		is_planet_class = pc_hive
+		uses_district_set = hive_world
+		# NOTE: evolved and merger are not compatible, so no issue if people use merger and this added check gets overwritten
+		# tec_is_hive_world = yes
+		# Gigastructural Engineering & More
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "giga_is_pc_ringworld_hive = yes"
+			toggle = @has_gigastructures
+		}
+		# Planetary Diversity
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "pd_is_pd_hive_world = yes"
+			toggle = @has_planetary_diversity_ascension_worlds
+		}
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "pd_is_planet_class_hive = yes"
+			toggle = @has_planetary_diversity
+		}
+		# ZOFE
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "
+		is_planet_class = pc_utopian_hive
+		is_planet_class = pc_utopian_hive_ringworld
+			"
+			toggle = @has_zofe_vanilla
+		}
+	}
+}
+
+merg_is_gas_giant = {
+	optimize_memory
+	OR = {
+		is_planet_class = pc_gas_giant
+		# All These Worlds
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = " atw_is_gas_giant = yes "
+			toggle = @has_atw_lite
+		}
+		# Astro's Stellaris Overhaul - Galaxy Generation
+		# is_aso_gg_ice_giant = yes TODO
+		# Azur Lane
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = " is_planet_class = pc_azur_gas_giant "
+			toggle = @azl_mod
+		}
+		# Nanite Machine and Distant Stars Overhaul
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = " is_nanite_gas_giant = yes "
+			toggle = @dso_pnm
+		}
+	}
+}
+
+merg_is_machine_world = {
+	optimize_memory
+	OR = {
+		is_planet_class = pc_machine
+		# Planetary Diversity
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = " pd_is_pd_machine_arc = yes "
+			toggle = @has_planetary_diversity_ascension_worlds
+		}
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = " pd_is_planet_class_machine = yes "
+			toggle = @has_planetary_diversity
+		}
+		# Gigastructural Engineering & More
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = " giga_is_pc_ringworld_machine = yes "
+			toggle = @has_gigastructures
+		}
+		# Maiden Frontier Gunstar Story Collection
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = " msgsc_GF_sf_machine = yes "
+			toggle = @GF_OGAS_leveled_thread_add_start_after_level
+		}
+		# Origin - F.C.S.S & M.C.S.S
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = " is_planet_class = pc_awaken_ai "
+			toggle = @fcss_mod
+		}
+		# ZOFE
+		inline_script = {
+			script = merger_of_rules/toggled_code
+			code = "
+		is_planet_class = pc_utopian_machine
+		is_planet_class = pc_utopian_machine_ringworld
+			"
+			toggle = @has_zofe_vanilla
+		}
+	}
+}
+
+merg_is_arcology = { is_planet_class = pc_city }
+
+merg_is_relic_world = {
+	OR = {
+		is_planet_class = pc_relic
+		inline_script = { # Nanite Machine and Distant Stars Overhaul
+			script = merger_of_rules/toggled_code
+			code = " is_dessanu_relic = yes "
+			toggle = @dso_pnm
+		}
+		# is_planet_class = pc_midas_relic # Midas
+	}
+}
+### Guilli's Planet Modifiers and Features
+gpm_is_planet_class_city = {
+	optimize_memory
+	OR = {
+		merg_is_arcology = yes # is_planet_class = pc_city
+		merg_is_relic_world = yes # is_planet_class = pc_relic
+		# is_planet_class = pc_matryoshka ### (Mod) Additional Mega Planets merged into Forgotten Queens
+		# is_planet_class = pc_hollow ### (Mod) Additional Mega Planets merged into Forgotten Queens
+	}
+}

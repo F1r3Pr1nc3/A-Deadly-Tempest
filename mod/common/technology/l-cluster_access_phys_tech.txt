@@ -19,9 +19,10 @@ tech_lcluster_access = {
 		has_global_flag = l_cluster_opened
 		NOT = { has_global_flag = gray_goo_crisis_active }
 		has_country_resource = { type = nanites amount > 0 }
-		OR = {
-			NOR = { has_global_flag = distar_overhaul_mod_active has_country_flag = distar_overhaul_insight_started_flag }
-			has_country_flag = completed_nanite_technology_mastery_chain
+		inline_script = { # Nanite Machine and Distant Stars Overhaul
+			script = merger_of_rules/toggled_code
+			code = "OR = { NOT = { has_country_flag = distar_overhaul_insight_started_flag } has_country_flag = completed_nanite_technology_mastery_chain }"
+			toggle = @dso_pnm
 		}
 		has_distar = yes
 	}
@@ -47,10 +48,18 @@ tech_lgate_construction = {
 	is_dangerous = yes
 	weight = @tier4weight1
 	icon = "tech_lcluster_access"
-	prerequisites = {
-		"tech_gateway_construction"
-		"tech_nanite_living_metal" # "tech_nanite_mega_construction" too high
-	}
+	prerequisites = { "tech_gateway_construction" }
+	# inline_script = { # NOT A Deadly Tempest
+	# 	script = merger_of_rules/toggled_code_inverse
+	#	code = " prerequisites = { \"tech_gateway_construction\" } "
+	# 	toggle = @has_a_deadly_tempest_mod
+	# }
+	# inline_script = { # A Deadly Tempest
+	# 	script = merger_of_rules/toggled_code
+	#	code = " prerequisites = { \"tech_gateway_construction\" \"tech_nanite_living_metal\" } "
+	# 	toggle = @has_a_deadly_tempest_mod
+	# }
+	# "tech_nanite_mega_construction" too high
 	# feature_flags = { lgate_construction }
 	prereqfor_desc = {
 		diplo_action = { title = "TECH_UNLOCK_L_GATE_TITLE" desc = "TECH_UNLOCK_L_GATE_DESC" }
@@ -59,11 +68,17 @@ tech_lgate_construction = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
-		OR = {
-			NOR = { has_global_flag = distar_overhaul_mod_active has_country_flag = distar_overhaul_insight_started_flag }
-			has_country_flag = completed_nanite_technology_mastery_chain
-		}
 		has_distar = yes
+		inline_script = { # Nanite Machine and Distant Stars Overhaul
+			script = merger_of_rules/toggled_code
+			code = "OR = { NOT = { has_country_flag = distar_overhaul_insight_started_flag } has_country_flag = completed_nanite_technology_mastery_chain }"
+			toggle = @dso_pnm
+		}
+		inline_script = { # A Deadly Tempest
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_nanite_living_metal"
+			toggle = @has_a_deadly_tempest_mod
+		}
 	}
 	feature_flags = { gateway_construction }
 

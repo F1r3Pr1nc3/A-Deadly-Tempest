@@ -28,6 +28,19 @@ is_pirate_country = {
 		is_country_type = dormant_marauders
 		is_country_type = ruined_marauders
 		is_pirate = yes # is_country_type = pirate
-		is_country_type = pirate_waves_country
+		inline_script = { # Realistic Pirates
+			script = merger_of_rules/toggled_code
+			code = "
+				is_country_type = pirate_waves_country
+			"
+			toggle = @has_realistic_pirates_mod
+		}
+		inline_script = { # Human Fallen Empires
+			script = merger_of_rules/toggled_code
+			code = "
+				is_country_type = hfe_pirate
+			"
+			toggle = @hfe_pirate_base_cost
+		}
 	}
 }

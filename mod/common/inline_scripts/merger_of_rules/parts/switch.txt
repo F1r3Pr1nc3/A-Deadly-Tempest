@@ -1,0 +1,8 @@
+# Dear Irony please fallback to simple parser
+
+# Combines a file name with a passed value
+# For use in other scripts which calculate a value from other inputs
+inline_script = {
+	script = $file$$value$
+	$params$
+}

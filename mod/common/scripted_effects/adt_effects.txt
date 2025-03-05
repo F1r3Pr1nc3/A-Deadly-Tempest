@@ -595,7 +595,7 @@ nanite_switch_country_scope = {
 # TODO is_designable = yes
 giveShipDesign = {
 	if = {
-		limit = { exists = this is_scope_type = country }
+		limit = { is_scope_valid = yes is_scope_type = country }
 		if = {
 			limit = { NOT = { has_existing_ship_design = $DESIGN$ } }
 			# design_name

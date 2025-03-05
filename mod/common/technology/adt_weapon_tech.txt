@@ -17,9 +17,10 @@ tech_adt_energymissiles = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_nanite_weaponry
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_nanite_weaponry"
+			toggle = @dso_pnm
 		}
 	}
 
@@ -58,9 +59,10 @@ tech_nanite_strike_craft = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_nanite_clouds
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_nanite_clouds"
+			toggle = @dso_pnm
 		}
 	}
 
@@ -86,9 +88,10 @@ tech_adt_gg_beam = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_nanite_lancers
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_nanite_lancers"
+			toggle = @dso_pnm
 		}
 	}
 
@@ -132,9 +135,10 @@ tech_nanite_torpedo = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_nanite_weaponry
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_nanite_weaponry"
+			toggle = @dso_pnm
 		}
 	}
 

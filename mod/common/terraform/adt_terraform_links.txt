@@ -55,12 +55,7 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
-				}
+				any_owned_species = { is_robotic = no }
 			}
 		}
 		modifier = {

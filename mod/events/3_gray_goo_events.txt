@@ -10,9 +10,7 @@ ship_event = {
 	title = "graygoo.400.name"
 	desc = {
 		trigger = {
-			owner = {
-				is_synthetic_empire = no
-			}
+			owner = { is_synthetic_empire = no }
 		}
 		text = "graygoo.400.a.desc"
 	}
@@ -56,11 +54,7 @@ country_event = {
 		text = "graygoo.401.b.desc"
 	}
 	diplomatic = yes
-	picture_event_data = {
-		portrait = root.species
-		planet_background = event_target:gray_homeworld
-		room = ship_room
-	}
+	picture_event_data = { portrait = root.species planet_background = event_target:gray_homeworld room = ship_room }
 	is_triggered_only = yes
 
 	after = {
@@ -70,23 +64,16 @@ country_event = {
 	}
 	option = {
 		name = graygoo.401.a
-		trigger = {
-			is_machine_empire = no
-			is_hive_empire = no
-		}
+		trigger = { is_machine_empire = no is_hive_empire = no }
 
 	}
 	option = {
 		name = graygoo.401.b
-		exclusive_trigger = {
-			is_machine_empire = yes
-		}
+		exclusive_trigger = { is_machine_empire = yes }
 	}
 	option = {
 		name = graygoo.401.c
-		exclusive_trigger = {
-			is_hive_empire = yes
-		}
+		exclusive_trigger = { is_hive_empire = yes }
 	}
 }
 
@@ -105,11 +92,7 @@ country_event = {
 
 	diplomatic = yes
 
-	picture_event_data = {
-		portrait = root.species
-		planet_background = event_target:gray_homeworld
-		room = ship_room
-	}
+	picture_event_data = { portrait = root.species planet_background = event_target:gray_homeworld room = ship_room }
 	is_triggered_only = yes
 
 	option = {
@@ -128,11 +111,7 @@ country_event = {
 
 	diplomatic = yes
 
-	picture_event_data = {
-		portrait = root.species
-		planet_background = event_target:gray_homeworld
-		room = ship_room
-	}
+	picture_event_data = { portrait = root.species planet_background = event_target:gray_homeworld room = ship_room }
 
 	is_triggered_only = yes
 
@@ -152,11 +131,7 @@ country_event = {
 
 	diplomatic = yes
 
-	picture_event_data = {
-		portrait = root.species
-		planet_background = event_target:gray_homeworld
-		room = ship_room
-	}
+	picture_event_data = { portrait = root.species planet_background = event_target:gray_homeworld room = ship_room }
 
 	is_triggered_only = yes
 
@@ -176,11 +151,7 @@ country_event = {
 
 	diplomatic = yes
 
-	picture_event_data = {
-		portrait = root.species
-		planet_background = event_target:gray_homeworld
-		room = ship_room
-	}
+	picture_event_data = { portrait = root.species planet_background = event_target:gray_homeworld room = ship_room }
 
 	is_triggered_only = yes
 
@@ -190,10 +161,7 @@ country_event = {
 			country_event = { id = graygoo.406 }
 		}
 	}
-	option = {
-		name = graygoo.405.b
-		response_text = graygoo.405.b.response
-	}
+	option = { name = graygoo.405.b response_text = graygoo.405.b.response }
 }
 
 # Gray 6
@@ -204,24 +172,12 @@ country_event = {
 
 	diplomatic = yes
 
-	picture_event_data = {
-		portrait = root.species
-		planet_background = event_target:gray_homeworld
-		room = ship_room
-	}
+	picture_event_data = { portrait = root.species planet_background = event_target:gray_homeworld room = ship_room }
 
 	is_triggered_only = yes
 
-	option = {
-		name = graygoo.406.a
-		response_text = graygoo.406.a.response
-		is_dialog_only = yes
-	}
-	option = {
-		name = graygoo.406.b
-		response_text = graygoo.406.b.response
-		is_dialog_only = yes
-	}
+	option = { name = graygoo.406.a response_text = graygoo.406.a.response is_dialog_only = yes }
+	option = { name = graygoo.406.b response_text = graygoo.406.b.response is_dialog_only = yes }
 	option = {
 		name = graygoo.406.c
 		response_text = graygoo.406.c.response
@@ -271,7 +227,7 @@ country_event = {
 			flag = {
 				icon= { category = "special" file = "gray_goo.dds" }
 				background= { category = "backgrounds" file = "sinus.dds" }
-				colors={ "grey" "dark_grey" "null" "null" }
+				colors = { "grey" "dark_grey" "null" "null" }
 			}
 			effect = {
 				save_global_event_target_as = graygoo_country
@@ -377,11 +333,7 @@ country_event = {
 
 	diplomatic = yes
 	picture = GFX_evt_mysterious_signal
-	picture_event_data = {
-		portrait = from.ruler
-		planet_background = root.capital_scope
-		room = "personality_nanite_room"
-	}
+	picture_event_data = { portrait = from.ruler planet_background = root.capital_scope room = "personality_nanite_room" }
 
 	is_triggered_only = yes
 
@@ -399,9 +351,7 @@ country_event = {
 		}
 	}
 
-	immediate = {
-		set_country_flag = gray_diplomacy_engaged
-	}
+	immediate = { set_country_flag = gray_diplomacy_engaged }
 
 	after = {
 		hidden_effect = { remove_country_flag = gray_diplomacy_engaged }
@@ -413,9 +363,7 @@ country_event = {
 		trigger = {
 			NOT = { has_country_flag = gray_governor_active }
 		}
-		hidden_effect = {
-			create_gray_official = yes
-		}
+		hidden_effect = { create_gray_official = yes }
 	}
 	option = { # Warship
 		name = graygoo.500.b
@@ -423,9 +371,7 @@ country_event = {
 		trigger = {
 			NOT = { has_country_flag = gray_warship_active }
 		}
-		hidden_effect = {
-			create_gray_warship = yes
-		}
+		hidden_effect = { create_gray_warship = yes }
 	}
 	option = { # Army
 		name = graygoo.500.c
@@ -433,14 +379,9 @@ country_event = {
 		trigger = {
 			NOT = { has_country_flag = gray_army_active }
 		}
-		hidden_effect = {
-			create_gray_army = yes
-		}
+		hidden_effect = { create_gray_army = yes }
 	}
-	option = {
-		name = graygoo.500.d
-		default_hide_option = yes
-	}
+	option = { name = graygoo.500.d default_hide_option = yes }
 }
 
 # Main Menu (Governor)
@@ -455,11 +396,7 @@ country_event = {
 	diplomatic = yes
 
 	picture = GFX_evt_busy_spaceport
-	picture_event_data = {
-		portrait = event_target:gray_governor
-		planet_background = event_target:gray_governor_planet
-		room = root
-	}
+	picture_event_data = { portrait = event_target:gray_governor planet_background = event_target:gray_governor_planet room = root }
 
 	is_triggered_only = yes
 
@@ -491,10 +428,12 @@ country_event = {
 				}
 				save_event_target_as = gray_governor_planet
 			}
-		} else_if = {
+		}
+		else_if = {
 			limit = { exists = capital_scope }
 			capital_scope = { save_event_target_as = gray_governor_planet }
-		} else_if = {
+		}
+		else_if = {
 			limit = { num_sectors > 0 }
 			ordered_owned_sector = {
 				position = 0
@@ -505,6 +444,7 @@ country_event = {
 				}
 			}
 		}
+		run_in_ai_mode = yes # TODO
 	}
 
 	after = {
@@ -517,9 +457,7 @@ country_event = {
 		allow = {
 			hidden_trigger = { exists = event_target:gray_governor } # To prevent exploit
 		}
-		hidden_effect = {
-			create_gray_warship = yes
-		}
+		hidden_effect = { create_gray_warship = yes }
 	}
 	option = { # Army
 		name = graygoo.500.c
@@ -527,14 +465,9 @@ country_event = {
 		allow = {
 			hidden_trigger = { exists = event_target:gray_governor }
 		}
-		hidden_effect = {
-			create_gray_army = yes
-		}
+		hidden_effect = { create_gray_army = yes }
 	}
-	option = {
-		name = graygoo.500.d
-		default_hide_option = yes
-	}
+	option = { name = graygoo.500.d default_hide_option = yes }
 }
 
 # Main Menu (Warship)
@@ -548,11 +481,7 @@ country_event = {
 
 	diplomatic = yes
 
-	picture_event_data = {
-		portrait = event_target:gray_warship.leader
-		planet_background = root.capital_scope
-		room = "personality_nanite_room"
-	}
+	picture_event_data = { portrait = event_target:gray_warship.leader planet_background = root.capital_scope room = "personality_nanite_room" }
 
 	is_triggered_only = yes
 
@@ -560,19 +489,13 @@ country_event = {
 		from = { is_country_type = gray }
 		is_same_empire = event_target:gray_owner
 		has_country_flag = gray_warship_active
-		NOR = {
-			has_country_flag = gray_reforming
-			has_country_flag = gray_diplomacy_engaged
-			has_country_flag = ban_commu_with_gray
-		}
+		NOR = { has_country_flag = gray_reforming has_country_flag = gray_diplomacy_engaged has_country_flag = ban_commu_with_gray }
 		exists = event_target:gray_warship
 		any_controlled_fleet = { is_same_value = event_target:gray_warship }
 		event_target:gray_warship = { num_ships > 0 }
 	}
 
-	immediate = {
-		set_country_flag = gray_diplomacy_engaged
-	}
+	immediate = { set_country_flag = gray_diplomacy_engaged }
 
 	after = {
 		hidden_effect = { remove_country_flag = gray_diplomacy_engaged }
@@ -591,12 +514,10 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+				event_target:gray_warship = { has_hp_percentage >= 0.97 }
 			}
 		}
-		hidden_effect = {
-			create_gray_official = yes
-		}
+		hidden_effect = { create_gray_official = yes }
 	}
 	option = {	# Queen's Titan
 		name = graygoo.502.b
@@ -653,17 +574,12 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = { NOT = { has_hp_percentage = 1 } }
+				event_target:gray_warship = { has_hp_percentage != 1 }
 			}
 		}
-		hidden_effect = {
-			create_gray_army = yes
-		}
+		hidden_effect = { create_gray_army = yes }
 	}
-	option = {
-		name = graygoo.500.d
-		default_hide_option = yes
-	}
+	option = { name = graygoo.500.d default_hide_option = yes }
 }
 
 # Main Menu (Army)
@@ -689,11 +605,7 @@ country_event = {
 		from = { is_country_type = gray }
 		is_same_empire = event_target:gray_owner
 		has_country_flag = gray_army_active
-		NOR = {
-			has_country_flag = gray_reforming
-			has_country_flag = gray_diplomacy_engaged
-			has_country_flag = ban_commu_with_gray
-		}
+		NOR = { has_country_flag = gray_reforming has_country_flag = gray_diplomacy_engaged has_country_flag = ban_commu_with_gray }
 		any_owned_army = {
 			army_type = gray_army
 			OR = {
@@ -705,9 +617,7 @@ country_event = {
 			}
 		}
 	}
-	immediate = {
-		set_country_flag = gray_diplomacy_engaged
-	}
+	immediate = { set_country_flag = gray_diplomacy_engaged }
 	after = {
 		hidden_effect = { remove_country_flag = gray_diplomacy_engaged }
 	}
@@ -744,9 +654,7 @@ country_event = {
 				}
 			}
 		}
-		hidden_effect = {
-			create_gray_official = yes
-		}
+		hidden_effect = { create_gray_official = yes }
 	}
 	option = { # Warship
 		name = graygoo.500.b
@@ -781,14 +689,9 @@ country_event = {
 				}
 			}
 		}
-		hidden_effect = {
-			create_gray_warship = yes
-		}
+		hidden_effect = { create_gray_warship = yes }
 	}
-	option = {
-		name = graygoo.500.d
-		default_hide_option = yes
-	}
+	option = { name = graygoo.500.d default_hide_option = yes }
 }
 
 # Main Menu (Gray Reforming)
@@ -799,9 +702,7 @@ country_event = {
 
 	diplomatic = yes
 
-	picture_event_data = {
-		room = no_video_feed_room
-	}
+	picture_event_data = { room = no_video_feed_room }
 
 	is_triggered_only = yes
 
@@ -812,9 +713,7 @@ country_event = {
 		NOT = { has_country_flag = ban_commu_with_gray }
 	}
 
-	option = {
-		name = OK
-	}
+	option = { name = OK }
 }
 
 # Gray destroyed or disbanded (on_monthly_pulse)
@@ -870,9 +769,7 @@ country_event = {
 	picture = GFX_evt_circuitry_modification
 	show_sound = event_radio_chatter
 	is_triggered_only = yes
-	option = {
-		name = graygoo.511.a
-	}
+	option = { name = graygoo.511.a }
 }
 
 # Gray Returns
@@ -890,14 +787,10 @@ country_event = {
 		room = "personality_nanite_room"
 	}
 	is_triggered_only = yes
-	trigger = {
-		has_country_flag = gray_reforming
-	}
+	trigger = { has_country_flag = gray_reforming }
 	immediate = {
 		if = {
-			limit = {
-				NOT = { exists = event_target:gray_country }
-			}
+			limit = { NOT = { exists = event_target:gray_country } }
 			random_country = {
 				limit = { is_country_type = gray }
 				save_global_event_target_as = gray_country
@@ -906,9 +799,7 @@ country_event = {
 		remove_country_flag = gray_reforming
 	}
 
-	option = {
-		name = graygoo.512.a
-	}
+	option = { name = graygoo.512.a }
 }
 
 # Vanilla fix (on_planet_surveyed, on_planet_transfer)
@@ -952,10 +843,7 @@ planet_event = {
 		# 	owner = from
 		# }
 	}
-	option = {
-		name = ANOMALY_VIEW_CLOSE
-		custom_tooltip = ANOMALY_LEAVE_BE_DESC
-	}
+	option = { name = ANOMALY_VIEW_CLOSE custom_tooltip = ANOMALY_LEAVE_BE_DESC }
 
 }
 

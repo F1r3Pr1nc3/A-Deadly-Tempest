@@ -23,9 +23,10 @@ tech_nanite_ships = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_nanites_assembler_factory
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_nanites_assembler_factory"
+			toggle = @dso_pnm
 		}
 	}
 	weight_modifier = {
@@ -51,9 +52,10 @@ tech_nanite_build_speed = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_nanite_clouds
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_nanite_clouds"
+			toggle = @dso_pnm
 		}
 	}
 	modifier = {
@@ -84,9 +86,10 @@ tech_nanite_hull = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_orbital_nanite_shipyard
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_orbital_nanite_shipyard"
+			toggle = @dso_pnm
 		}
 	}
 	modifier = {
@@ -118,9 +121,10 @@ tech_nanite_living_metal = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_nanite_clouds
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_nanite_clouds"
+			toggle = @dso_pnm
 		}
 	}
 	prereqfor_desc = {
@@ -164,9 +168,10 @@ tech_nanocrystals = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_nanite_clouds
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_nanite_clouds"
+			toggle = @dso_pnm
 		}
 	}
 	modifier = { weapon_type_explosive_weapon_damage_mult = 0.2 weapon_type_kinetic_weapon_damage_mult = 0.2 weapon_type_energy_weapon_damage_mult = 0.2 }
@@ -202,9 +207,10 @@ tech_nanite_bulwark = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 30 }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_nanite_clouds
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_nanite_clouds"
+			toggle = @dso_pnm
 		}
 		exists = event_target:goo_slayer
 	}
@@ -258,9 +264,10 @@ tech_nanite_modular_engineering = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_technology = tech_nanite_clouds
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_technology = tech_nanite_clouds"
+			toggle = @dso_pnm
 		}
 	}
 	modifier = {

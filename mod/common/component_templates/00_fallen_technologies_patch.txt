@@ -1,4 +1,3 @@
-
 ## Combat Computers & Thrusters Patch for dreadnought & scavenger_bot
 
 # Combat Computers

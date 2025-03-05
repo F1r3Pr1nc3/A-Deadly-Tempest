@@ -23,9 +23,10 @@ tech_nanite_terraforming = {
 			has_global_flag = l_cluster_opened
 		}
 		has_country_resource = { type = nanites amount > 0 }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_country_flag = completed_nanite_technology_mastery_chain
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_country_flag = completed_nanite_technology_mastery_chain"
+			toggle = @dso_pnm
 		}
 	}
 	weight_modifier = {
@@ -70,9 +71,10 @@ tech_nano_dust = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_country_flag = completed_nanite_technology_mastery_chain
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_country_flag = completed_nanite_technology_mastery_chain"
+			toggle = @dso_pnm
 		}
 	}
 	weight_modifier = {
@@ -99,9 +101,10 @@ tech_nano_scales = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		has_country_resource = { type = nanites amount > 0 }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_country_flag = completed_nanite_technology_mastery_chain
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_country_flag = completed_nanite_technology_mastery_chain"
+			toggle = @dso_pnm
 		}
 	}
 	weight_modifier = {
@@ -126,9 +129,10 @@ esc_tech_armor_nanite_1 = {
 	potential = {
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		has_country_resource = { type = nanites amount > 0 }
-		OR = {
-			NOT = { has_global_flag = distar_overhaul_mod_active }
-			has_country_flag = completed_nanite_technology_mastery_chain
+		inline_script = { # Nanite Machine and Distant Stars Overhaul - has_global_flag = distar_overhaul_mod_active
+			script = merger_of_rules/toggled_code
+			code = "has_country_flag = completed_nanite_technology_mastery_chain"
+			toggle = @dso_pnm
 		}
 	}
 	weight_modifier = {

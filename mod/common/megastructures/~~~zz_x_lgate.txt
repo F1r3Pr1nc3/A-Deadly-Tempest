@@ -1,4 +1,4 @@
-# See README.txt for example
+# Sorry for overwriting, please claim this to "Ancient Empire" 2389589691 :P
 # Active L-Gate
 lgate_base = {
 	entity = "gatebuilder_01_gateway_entity"
@@ -66,7 +66,11 @@ lgate_disabled = {
 	potential = {
 		OR = {
 			has_global_flag = l_cluster_opened
-			has_ascension_perk = ap_emergency_calculation
+			inline_script = { # Mod UAP
+				script = merger_of_rules/toggled_code
+				code = " has_ascension_perk = ap_emergency_calculation "
+				toggle = @has_uap_mod
+			}
 		}
 		has_technology = tech_lgate_construction
 	}
@@ -136,27 +140,42 @@ lgate_disabled = {
 		}
 		set_star_flag = lgate
 		# Notify
-		if = {
-			limit = { exists = from has_global_flag = has_uap_mod }
-			from = {
-				if = {
-					limit = { has_ascension_perk = ap_emergency_calculation }
-					country_event = { id = UniqueAscensionPerksEvents.8054 }
-				}
-				else = {
-					# _if = {
-					# limit = {
-					# 	has_global_flag = l_cluster_opened
-					# 	OR = {
-					# 		has_ascension_perk = ap_nano_to_nanite						# UAP
-					# 		has_technology = tech_nanite_gate
-					# 		has_technology = tech_lgate_construction					# ADT
-					# 	}
-					# 	NOT = { has_ascension_perk = ap_emergency_calculation }
-					# }
-					country_event = { id = UniqueAscensionPerksEvents.8003 }
-				}
+		from = {
+			inline_script = { # Mod UAP
+				script = merger_of_rules/toggled_code
+				code = "
+			if = {
+				limit = { has_ascension_perk = ap_emergency_calculation }
+				country_event = { id = UniqueAscensionPerksEvents.8054 }
+			}
+			else = {
+				country_event = { id = UniqueAscensionPerksEvents.8003 }
+			}
+				"
+				toggle = @has_uap_mod
 			}
 		}
+		# if = {
+		# 	limit = { exists = from has_global_flag = has_uap_mod }
+		# 	from = {
+		# 		if = {
+		# 			limit = { has_ascension_perk = ap_emergency_calculation }
+		# 			country_event = { id = UniqueAscensionPerksEvents.8054 }
+		# 		}
+		# 		else = {
+		# 			# _if = {
+		# 			# limit = {
+		# 			# 	has_global_flag = l_cluster_opened
+		# 			# 	OR = {
+		# 			# 		has_ascension_perk = ap_nano_to_nanite						# UAP
+		# 			# 		has_technology = tech_nanite_gate
+		# 			# 		has_technology = tech_lgate_construction					# ADT
+		# 			# 	}
+		# 			# 	NOT = { has_ascension_perk = ap_emergency_calculation }
+		# 			# }
+		# 			country_event = { id = UniqueAscensionPerksEvents.8003 }
+		# 		}
+		# 	}
+		# }
 	}
 }

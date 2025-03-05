@@ -1168,10 +1168,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}
@@ -1207,10 +1204,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}
@@ -1238,10 +1232,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}
@@ -1269,10 +1260,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}
@@ -1300,10 +1288,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}
@@ -1331,10 +1316,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}
@@ -1362,10 +1344,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}
@@ -1393,10 +1372,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}
@@ -1424,10 +1400,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}
@@ -1455,10 +1428,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}
@@ -1486,10 +1456,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}
@@ -1517,10 +1484,7 @@ terraform_link = {
 			factor = 0
 			from = {
 				any_owned_species = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
+					is_robotic = no
 					is_sapient = yes
 				}
 			}

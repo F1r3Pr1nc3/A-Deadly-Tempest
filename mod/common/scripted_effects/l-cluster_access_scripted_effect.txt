@@ -27,16 +27,12 @@ set_faction_neutral = {
 	if = {
 		limit = { exists = $TARGET$ }
 		set_faction_hostility = {
-			set_hostile = no
 			set_neutral = yes
-			# set_friendly = yes
 			target = $TARGET$
 		}
 		$TARGET$ = {
 			set_faction_hostility = {
-				set_hostile = no
 				set_neutral = yes
-				# set_friendly = yes
 				target = prev
 			}
 		}

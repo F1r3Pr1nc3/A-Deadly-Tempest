@@ -41,7 +41,6 @@ nanite_giga_guardian = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
-
 		planet = {
 			OR = {
 				is_capital = yes
@@ -115,6 +114,7 @@ nanite_giga_warform = {
 	}
 
 	show_tech_unlock_if = {
+		has_global_flag = l_cluster_opened
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		OR = {
 			is_machine_empire = yes
@@ -134,12 +134,11 @@ nanite_giga_warform = {
 		# }
 		NOT = { has_global_flag = ESC_weapons_nanite_forbidden }
 		planet = {
-			any_planet_army = {
-				is_defensive_army = yes
-				army_type = nanite_giga_guardian
+			OR = {
+				is_capital = yes
+				solar_system = { has_star_flag = lcluster }
 			}
 		}
-
 		# # custom_tooltip = {
 		# 	# 	text = titanic_troop_limit_tooltip
 		# planet = {
@@ -175,9 +174,9 @@ nanite_giga_warform = {
 			# text = titanic_troop_limit_tooltip
 			# planet = { has_planet_flag = }
 		planet = {
-			OR = {
-				is_capital = yes
-				solar_system = { has_star_flag = lcluster }
+			any_planet_army = {
+				is_defensive_army = yes
+				army_type = nanite_giga_guardian
 			}
 		}
 		owner = {

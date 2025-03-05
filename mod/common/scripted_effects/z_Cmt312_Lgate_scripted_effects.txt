@@ -223,20 +223,22 @@ CmtEffectDestroyGraygoo = {
 		}
 		country_event = { id = CrisisManagerControl.6202 }		## Open L-Gates
 	}
-
-	event_target:graygoo_country = {
-		every_owned_fleet = {
-			every_owned_ship = {
-				limit = { is_disabled = yes }
-				set_disable_at_health = -1
-				set_disabled = no
-				destroy_ship = this
+	if = {
+		limit = { exists = event_target:graygoo_country }
+		event_target:graygoo_country = {
+			every_owned_fleet = {
+				every_owned_ship = {
+					limit = { is_disabled = yes }
+					set_disable_at_health = -1
+					set_disabled = no
+					destroy_ship = this
+				}
+				destroy_fleet = this
 			}
-			destroy_fleet = this
+			destroy_country = yes
 		}
-		destroy_country = yes
+		clear_global_event_target = graygoo_country
 	}
-	clear_global_event_target = graygoo_country
 	clear_global_event_target = nanite_factory
 	clear_global_event_target = lcluster_factory_system
 }

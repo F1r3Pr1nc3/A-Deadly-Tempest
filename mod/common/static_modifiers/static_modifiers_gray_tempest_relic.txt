@@ -1,0 +1,5 @@
+dessanu_hostile = {
+	icon = "gfx/interface/icons/modifiers/mod_country_previous_deals.dds"
+	icon_frame = 1
+	damage_vs_country_type_gate_builders_mult = @ap_defender_of_the_galaxy_voidworm_dmg_mult # @ap_galactic_contender_dmg_mult
+}

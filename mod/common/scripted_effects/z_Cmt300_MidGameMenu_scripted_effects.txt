@@ -33,7 +33,7 @@ CmtEffectTriggerMarauderManually = {
 		}
 		random_owned_ship = {
 			limit = { is_ship_size = marauder_void_dwelling }
-			delete_ship = this
+			destroy_ship = this
 		}
 		set_country_flag = CmtFlagKhanVengeanceCountry
 		prev = { save_event_target_as = awakened_horde }

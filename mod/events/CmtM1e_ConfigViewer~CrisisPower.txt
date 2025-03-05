@@ -169,11 +169,9 @@ country_event = {
 		trigger = {
 			has_global_flag = CmtFlagMidGameEdition
 			event_target:CmtGlobalVar = {
-				NOR = {
-					check_variable = { which = CmtVarCrisisPower_Midgame value = 1 }
-					check_variable = { which = CmtVarCrisisPower_Midgame value = 2 }
-					check_variable = { which = CmtVarCrisisPower_Midgame value = 3 }
-					check_variable = { which = CmtVarCrisisPower_Midgame value = 4 }
+				OR = {
+					check_variable = { which = CmtVarCrisisPower_Midgame value < 1 }
+					check_variable = { which = CmtVarCrisisPower_Midgame value > 4 }
 				}
 			}
 		}

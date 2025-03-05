@@ -1790,7 +1790,7 @@ country_event = {
 					species =  event_target:satrapy_species
 					type = dormant_marauders
 					civics = { civic = civic_anarcho_tribalism civic = civic_warrior_culture }
-					# origin = "origin_default"
+					origin = "origin_khan_successor"
 					flag = {
 						icon = { category = "pirate" file = "flag_pirate_13.dds" }
 						background= { category = "backgrounds" file = "00_solid.dds" }
@@ -1808,7 +1808,6 @@ country_event = {
 						force_add_civic = civic_barbaric_despoilers
 						force_add_civic = civic_slaver_guilds
 						# shift_ethic = ethic_fanatic_spiritualist
-						set_origin = "origin_khan_successor"
 					}
 				}
 				last_created_country = {
@@ -3149,6 +3148,19 @@ country_event = {
 	desc = CrisisManagerMenu.7209.desc
 	picture = GFX_evt_gray_goo
 	is_triggered_only = yes
+
+	immediate = {
+		# Fallback (savegame comp.) re-save event_targets
+		if = {
+			limit = { NOT = { exists = event_target:nanite_factory } }
+			event_target:lcluster_factory_system = {
+				random_ship_in_system = {
+					limit = { is_ship_size = graygoo_factory }
+					save_global_event_target_as = nanite_factory
+				}
+			}
+		}
+	}
 
 	option = {
 		name = "CrisisManagerMenu.71xxa.name"

@@ -1,4 +1,3 @@
-
 nanite_yards = {
 	icon = "GFX_spaceport_module_nanite_yard"
 	construction_days = 720

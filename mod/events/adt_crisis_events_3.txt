@@ -574,9 +574,7 @@ country_event = {
 				add_deposit = d_natural_farmland
 				add_deposit = d_minerals_2
 
-				while = { count = 16
-					create_pop = { species = owner_species }
-				}
+				create_pop = { species = owner_species count = 16  }
 				while = { count = 2
 					add_district_and_planet_size_if_needed_effect = { district = district_city }
 				}

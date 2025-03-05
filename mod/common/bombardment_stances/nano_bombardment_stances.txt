@@ -1,4 +1,3 @@
-
 nanitebombard = { # subsumption
 	trigger = {
 		owner = {

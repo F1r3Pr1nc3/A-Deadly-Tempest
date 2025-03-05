@@ -292,7 +292,7 @@ tech_nanite_dragon = {
 		# }
 		# modifier = {
 		# 	factor = 0.1
-		# 	NOT = { years_passed > 50 }
+		# 	years_passed <= 50
 		# }
 		# modifier = {
 		# 	factor = 2
@@ -395,7 +395,11 @@ tech_nanite_voidspawn = {
 			}
 		}
 		OR = {
-			has_global_flag = distar_overhaul_mod_active
+			inline_script = { # Nanite Machine and Distant Stars Overhaul
+				script = merger_of_rules/toggled_code
+				code = "has_global_flag = distar_overhaul_mod_active"
+				toggle = @dso_pnm
+			}
 			is_gestalt = yes
 			has_technology = tech_pk_nanobots
 		}
