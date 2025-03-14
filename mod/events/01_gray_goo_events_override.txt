@@ -1882,7 +1882,7 @@ country_event = {
 								create_ship = { name = "leader_trait_warden" design = "NAME_Ancient_Warden" graphical_culture = "ancient" }
 							}
 							while = { count = 4
-								create_ship = { name = "Nanite $NAME_Defender$" design = "NAME_Ancient_Defender" graphical_culture = "ancient" }
+								create_ship = { name = "Nanite [NAME_Defender]" design = "NAME_Ancient_Defender" graphical_culture = "ancient" }
 							}
 							while = { count = 8
 								create_ship = { name = "NAME_Sentinel" design = "NAME_Ancient_Sentinel" graphical_culture = "ancient" }

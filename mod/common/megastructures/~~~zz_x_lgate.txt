@@ -68,7 +68,7 @@ lgate_disabled = {
 			has_global_flag = l_cluster_opened
 			inline_script = { # Mod UAP
 				script = merger_of_rules/toggled_code
-				code = " has_ascension_perk = ap_emergency_calculation "
+				code = " has_ascension_perk = ap_emergency_calculation"
 				toggle = @has_uap_mod
 			}
 		}
@@ -143,18 +143,18 @@ lgate_disabled = {
 		inline_script = { # Mod UAP has_global_flag = has_uap_mod
 			script = merger_of_rules/toggled_code
 			code = "
-		if = {
-			limit = { exists = from }
-			from = {
-				if = {
-					limit = { has_ascension_perk = ap_emergency_calculation }
-					country_event = { id = UniqueAscensionPerksEvents.8054 }
-				}
-				else = {
-					country_event = { id = UniqueAscensionPerksEvents.8003 }
+			if = {
+				limit = { exists = from }
+				from = {
+					if = {
+						limit = { has_ascension_perk = ap_emergency_calculation }
+						country_event = { id = UniqueAscensionPerksEvents.8054 }
+					}
+					else = {
+						country_event = { id = UniqueAscensionPerksEvents.8003 }
+					}
 				}
 			}
-		}
 			"
 			toggle = @has_uap_mod
 		}

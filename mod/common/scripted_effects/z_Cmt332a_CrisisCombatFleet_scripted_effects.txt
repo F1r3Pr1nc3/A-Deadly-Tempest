@@ -765,6 +765,8 @@ CmtEffectCreateFleet_DessanuRoamer = {
 #################
 
 ### Element
+# This = fleet
+# prev = country
 CmtEffectCreateElement_GraygooStandard = {
 	event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Graygoo } }
 	prev = { CmtEffectResetLoop = yes }

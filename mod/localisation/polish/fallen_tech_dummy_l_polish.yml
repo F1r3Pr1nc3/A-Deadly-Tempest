@@ -12,5 +12,5 @@
  LONG_RANGE_BEHAVIOR_DESC: "§HLong Range Tactics:§! The ship will stay far behind (§Y180§!) and support with its long range weapons."
  SNIPER_BEHAVIOR_DESC: "§HSniper Tactics:§! The ship will stay behind (§Y120§!) and snipe targets with its long range weapons."
  TITAN_LANCE_01: "$TITAN_LASER$"
- TITAN_LANCE_01_DESC: "An elegant weapon of pure energy, used in a more civilized age by civilized empires."
+ TITAN_LANCE_01_DESC: "$TITAN_LASER_DESC$"
  TITAN_LASER_DESC: "An elegant weapon of pure energy, used in a more civilized age by civilized empires."

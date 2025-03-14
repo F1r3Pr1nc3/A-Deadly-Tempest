@@ -392,6 +392,10 @@ country_event = {
 			NOT = { has_relic = r_gray_tempest_core }
 		}
 		add_relic = r_gray_tempest_core
+		if = {
+			limit = { NOT = { is_variable_set = gray_goo_usage } }
+			set_variable = { which = gray_goo_usage value = 0 }
+		}
 		# hidden_effect = {
 		# 	while = {
 		# 		limit = { check_variable = { which = picked_tech value < 2 } }
@@ -417,16 +421,25 @@ country_event = {
 				TECH = tech_nanite_dragon
 				# INFO = no
 			}
-			# Support nhsc mod
-			if = {
-				limit = {
-					has_nhsc = yes
-					NOR = { has_technology = esc_tech_synthetic_lifeform_studies has_tech_option = esc_tech_synthetic_lifeform_studies is_researching_technology = esc_tech_synthetic_lifeform_studies }
+			inline_script = { # Support NHSC/NSC mod has_nhsc = yes
+				script = merger_of_rules/toggled_code
+				code = "
+				if = {
+					limit = {
+						NOR = {
+							has_technology = esc_tech_synthetic_lifeform_studies
+							has_tech_option = esc_tech_synthetic_lifeform_studies
+							is_researching_technology = esc_tech_synthetic_lifeform_studies
+						}
+					}
+					give_technology = { tech = esc_tech_new_age_warfare message = no }
+					give_technology = { tech = esc_tech_advanced_materials message = no }
+					give_tech_option = { TECH = esc_tech_synthetic_lifeform_studies }
 				}
-				give_technology = { tech = esc_tech_new_age_warfare message = no }
-				give_technology = { tech = esc_tech_advanced_materials message = no }
-				give_tech_option = { TECH = esc_tech_synthetic_lifeform_studies }
+				"
+				toggle = @has_esc_next
 			}
+
 			# else = { # 	# give_tech_option = { TECH = tech_nanite_build_speed }
 			# 	# give_tech_option = { TECH = tech_nanite_modular_engineering }
 			# 	give_tech_option = { TECH = tech_nanite_mega_construction }
@@ -2194,17 +2207,16 @@ country_event = {
 	desc = "a_deadly_tempest.1015.desc"
 	picture = GFX_evt_gray_goo_ships
 	show_sound = event_mystic_reveal
+	location = capital_scope
 	is_triggered_only = yes
 	option = {
 		name = GOOD
 		hidden_effect = {
-			capital_scope = { CmtEffectCreateFleet_GraygooAttacker = yes }
-			if = {
-				limit = { NOT = { is_variable_set = gray_goo_usage } }
-				set_variable = { which = gray_goo_usage value = 1 }
-			}
-			else = {
-				change_variable = { which = gray_goo_usage value = 1 }
+			change_variable = { which = gray_goo_usage value = 1 }
+			capital_scope = {
+				owner = {
+					CmtEffectCreateFleet_GraygooAttacker = yes
+				}
 			}
 		}
 	}

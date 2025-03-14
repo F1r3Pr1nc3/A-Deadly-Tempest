@@ -569,7 +569,7 @@ defined_text = {
 	}
 	text = {
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarManualTemp value = 1 } } }
-		localization_key = CrisisManagerMenu.7140c1.name
+		localization_key = graygoo.550.name
 	}
 	text = {
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarManualTemp value = 2 } } }
@@ -577,7 +577,7 @@ defined_text = {
 	}
 	text = {
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarManualTemp value = 3 } } }
-		localization_key = CrisisManagerMenu.7140c3.name
+		localization_key = graygoo.120_title
 	}
 	text = {
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarManualTemp value = 4 } } }

@@ -2,7 +2,7 @@
  ESGO: "$DISTAR_NANO_CAT$"
  ESGO_compliment_01: "angel"
  ESGO_compliment_plural_01: "angels"
- ESGO_desc: "Species Class has no effect on your Empire, but $ESGO$ species may consider other $ESGO_plural$ to be less alien than other Species Classes."
+ ESGO_desc: "Species Class has no effect on your Empire, but $DISTAR_NANO_CAT$ species may consider other $ESGO_plural$ to be less alien than other Species Classes."
  ESGO_insult_01: "$HUM_insult_01$"
  ESGO_insult_plural_01: "$HUM_insult_plural_01$"
  ESGO_mouth: "$HUM_mouth$"
