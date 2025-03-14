@@ -5,7 +5,7 @@ namespace = CrisisManagerMenu
 #####										#####
 #####	Crisis Manager						#####
 #####										#####
-#####	Advanced Congigurations - Common	#####
+#####	Advanced Configurations - Common	#####
 #####										#####
 ##################################################
 ##################################################
@@ -63,7 +63,7 @@ country_event = {
 	### Prethoryn
 	option = {
 		name = "CmtNameCrisisPrethoryn"
-		custom_tooltip = CrisisManagerMenu.4000.4100.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { CmtTriggerPrethorynConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4110 } }
 	}
@@ -80,7 +80,7 @@ country_event = {
 	### Extradimensionals
 	option = {
 		name = "CmtNameCrisisExds"
-		custom_tooltip = CrisisManagerMenu.4000.4200.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { CmtTriggerExdsConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4210 } }
 	}
@@ -97,7 +97,7 @@ country_event = {
 	### Contingency
 	option = {
 		name = "CmtNameCrisisContingency"
-		custom_tooltip = CrisisManagerMenu.4000.4300.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { CmtTriggerContingencyConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4310 } }
 	}
@@ -114,7 +114,7 @@ country_event = {
 	### Forced End of the Cycle
 	option = {
 		name = "CmtNameForcedEoc"
-		custom_tooltip = CrisisManagerMenu.4000.4400.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { CmtTriggerForcedEocConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4410 } }
 	}
@@ -141,7 +141,7 @@ country_event = {
 	### Sleeper Awakening
 	option = {
 		name = CrisisManagerMenu.4000.4500.name
-		custom_tooltip = CrisisManagerMenu.4000.4500.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { CmtTriggerSleeperConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4510 } }
 	}
@@ -158,7 +158,7 @@ country_event = {
 	### War in Heaven
 	option = {
 		name = "mod_war_in_heaven"
-		custom_tooltip = CrisisManagerMenu.4000.4600.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { CmtTriggerHeavenConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4610 } }
 	}
@@ -186,7 +186,7 @@ country_event = {
 	### Guardians of Galaxy
 	option = {
 		name = CrisisManagerMenu.4000.4700.name
-		custom_tooltip = CrisisManagerMenu.4000.4700.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { CmtTriggerGuardianFeConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4710 } }
 	}
@@ -213,7 +213,7 @@ country_event = {
 	### Khan
 	option = {
 		name = "CmtNameHordeCrisis"
-		custom_tooltip = CrisisManagerMenu.4000.4800.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { CmtTriggerKhanConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4810 } }
 	}
@@ -230,7 +230,7 @@ country_event = {
 	### L-gate
 	option = {
 		name = "CmtNameLgateEvents"
-		custom_tooltip = CrisisManagerMenu.4000.4900.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { CmtTriggerLgateConfig = yes }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.4911 } }
 	}
@@ -247,7 +247,7 @@ country_event = {
 	### Machine Uprising
 	# option = {
 	# 	name = "war_goal_wg_machine_uprising"
-	# 	custom_tooltip = CrisisManagerMenu.4000.5100.tooltip
+	# 	custom_tooltip = BLANK_STRING
 	# 	trigger = {
 	# 		CmtTriggerUprisingConfig = yes
 	# 		has_global_flag = CmtFlagUprisingEdition
@@ -273,12 +273,11 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { country_event = { id = CrisisManagerMenu.100 } }
 	}
 	option = {
 		name = CmtTextExit.name
-		custom_tooltip = CmtTextExit.tooltip
 		CmtEffectExitMenu = yes
 	}
 	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }

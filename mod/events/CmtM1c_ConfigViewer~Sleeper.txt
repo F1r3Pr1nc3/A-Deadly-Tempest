@@ -5,7 +5,7 @@ namespace = CrisisManagerMenu
 #####										#####
 #####	Crisis Manager						#####
 #####										#####
-#####	Configutation Viewer				#####
+#####	Configuration Viewer				#####
 #####	For Awakening of Fallen Empires		#####
 #####										#####
 #################################################
@@ -43,7 +43,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoNextPage.name
-		custom_tooltip = CmtTextGoNextPage.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1024
@@ -61,7 +61,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1024
@@ -70,7 +70,7 @@ country_event = {
 	}
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1024
@@ -159,7 +159,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.4520.V0.name
-		custom_tooltip = CrisisManagerMenu.4520.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = {
@@ -174,7 +174,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4520.VC.name
-		custom_tooltip = CrisisManagerMenu.4520.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = {
@@ -192,7 +192,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextTemplateUnique.name
-		custom_tooltip = CrisisManagerMenu.4520.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = {
@@ -331,7 +331,7 @@ country_event = {
 
 	option = {
 		name = "CrisisManagerMenu.4550.V0.title"
-		custom_tooltip = CrisisManagerMenu.4550.V0.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarSleeperFleetPowerYoung value < @CmtConstSleeperFleetPowerYoung_T1 } }
@@ -358,7 +358,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4550.V5.name
-		custom_tooltip = CrisisManagerMenu.4550.V5.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = {
@@ -370,7 +370,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextTemplateUnique.name
-		custom_tooltip = CrisisManagerMenu.4550.Vt.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarSleeperFleetPowerYoung value > @CmtConstSleeperFleetPowerYoung_TA } }
@@ -429,7 +429,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.4570x.name
-		custom_tooltip = CrisisManagerMenu.4570x.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagSleeperEdition }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4570 FROM = 1024 } }
 	}
@@ -489,7 +489,7 @@ country_event = {
 
 	option = {
 		name = "CrisisManagerMenu.4610a.title"
-		custom_tooltip = CrisisManagerMenu.4610a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenProbability value = 1 } }
@@ -498,7 +498,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4610b.name
-		custom_tooltip = CrisisManagerMenu.4610b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenProbability value = 2 } }
@@ -507,7 +507,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4610c.name
-		custom_tooltip = CrisisManagerMenu.4610c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenProbability value = 3 } }
@@ -516,7 +516,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4610d.name
-		custom_tooltip = CrisisManagerMenu.4610d.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenProbability value = 4 } }
@@ -628,7 +628,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.4640a.name
-		custom_tooltip = CrisisManagerMenu.4640a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenIndomitableRival value = 1 } }
@@ -637,7 +637,7 @@ country_event = {
 	}
 	option = {
 		name = "CrisisManagerMenu.4640b.title"
-		custom_tooltip = CrisisManagerMenu.4640b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenIndomitableRival value = 2 } }
@@ -680,7 +680,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4650b.name
-		custom_tooltip = CrisisManagerMenu.4650b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenPreludeSpeed value = 2 } }
@@ -722,7 +722,7 @@ country_event = {
 
 	option = {
 		name = "CrisisManagerMenu.4660a.title"
-		custom_tooltip = CrisisManagerMenu.4660a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenNpcSubject value = 1 } }
@@ -740,7 +740,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4660c.name
-		custom_tooltip = CrisisManagerMenu.4660c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenNpcSubject value = 3 } }
@@ -800,7 +800,7 @@ country_event = {
 	}
 	option = {
 		name = "CrisisManagerMenu.4670c.title"
-		custom_tooltip = CrisisManagerMenu.4670c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenNpcLeague value = 3 } }
@@ -851,7 +851,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4680b.name
-		custom_tooltip = CrisisManagerMenu.4680b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagSleeperEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarHeavenExhaustion value = 2 } }
@@ -1087,7 +1087,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.4740a.name
-		custom_tooltip = CrisisManagerMenu.4740a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagEndGameEdition
 			event_target:CmtGlobalVar = { check_variable = { which = CmtVarGuardianWornOut value = 1 } }
@@ -1191,7 +1191,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBackViewerMenu.name
-		custom_tooltip = CmtTextGoBackViewerMenu.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 
 			has_country_flag = CmtFlagConfigViewerSeq

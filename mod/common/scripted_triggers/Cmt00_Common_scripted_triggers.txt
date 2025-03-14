@@ -27,8 +27,8 @@ CmtTriggerSpawnableSystem = {
 		has_star_flag = extradimensional_origin_system
 		has_star_flag = extradimensional_second_portal_system
 		has_star_flag = extradimensional_third_portal_system
-		has_star_flag = AI_hub		## Machiene World 1-4, cf. planet_flag = machine_world_1
-		has_star_flag = AI_lair		## Final MAchiene World, cf. Planet flag = machine_lair
+		has_star_flag = AI_hub		## Machine World 1-4, cf. planet_flag = machine_world_1
+		has_star_flag = AI_lair		## Final Machine World, cf. Planet flag = machine_lair
 		has_star_flag = cybrex_beta
 		has_star_flag = marauder_capital_1
 		has_star_flag = marauder_capital_2
@@ -122,12 +122,16 @@ CmtTriggerIsExpCrisisCountry = {
 CmtTriggerIsOrganicSleeper = {
 	## Change to CmtTriggerSleeperPotentialAwakening
 	merg_is_fallen_empire = yes # is_country_type = fallen_empire
-	OR = {
-		NOT = { has_global_flag = gigastructures_enabled }
-		NOR = {
+	# Gigastructural Engineering & More has_global_flag = gigastructures_enabled
+	inline_script = {
+		script = merger_of_rules/toggled_code
+		code = "
+		OR = {
 			has_ai_personality = fallen_empire_gamers
 			has_ai_personality = fallen_empire_pouchkinn
 		}
+		"
+		toggle = @has_gigastructures
 	}
 	OR = {
 		has_country_flag = holy_world_killed
@@ -166,6 +170,7 @@ CmtTriggerIsOrganicSleeper = {
 }
 
 ### Mid-Game Crises ###
+# DEPRECATED: use is_marauder instead
 CmtTriggerIsMarauder = {
 	OR = {
 		is_country_type = dormant_marauders
@@ -176,11 +181,6 @@ CmtTriggerIsMarauder = {
 	}
 }
 
-# DEPRECATED ## Scope = country
-# CmtTriggerIsSleepingMarauder = {
-# 	is_country_type = dormant_marauders
-# 	NOT = { has_country_flag = restored_marauders_flag }
-# }
 CmtTriggerIsKhanCountry = {
 	# OR = { is_country_type = awakened_marauders AND = {
 	exists = event_target:raider_khanate

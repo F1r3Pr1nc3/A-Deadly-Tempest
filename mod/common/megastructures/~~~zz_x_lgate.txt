@@ -140,42 +140,23 @@ lgate_disabled = {
 		}
 		set_star_flag = lgate
 		# Notify
-		from = {
-			inline_script = { # Mod UAP
-				script = merger_of_rules/toggled_code
-				code = "
-			if = {
-				limit = { has_ascension_perk = ap_emergency_calculation }
-				country_event = { id = UniqueAscensionPerksEvents.8054 }
-			}
-			else = {
-				country_event = { id = UniqueAscensionPerksEvents.8003 }
-			}
-				"
-				toggle = @has_uap_mod
+		inline_script = { # Mod UAP has_global_flag = has_uap_mod
+			script = merger_of_rules/toggled_code
+			code = "
+		if = {
+			limit = { exists = from }
+			from = {
+				if = {
+					limit = { has_ascension_perk = ap_emergency_calculation }
+					country_event = { id = UniqueAscensionPerksEvents.8054 }
+				}
+				else = {
+					country_event = { id = UniqueAscensionPerksEvents.8003 }
+				}
 			}
 		}
-		# if = {
-		# 	limit = { exists = from has_global_flag = has_uap_mod }
-		# 	from = {
-		# 		if = {
-		# 			limit = { has_ascension_perk = ap_emergency_calculation }
-		# 			country_event = { id = UniqueAscensionPerksEvents.8054 }
-		# 		}
-		# 		else = {
-		# 			# _if = {
-		# 			# limit = {
-		# 			# 	has_global_flag = l_cluster_opened
-		# 			# 	OR = {
-		# 			# 		has_ascension_perk = ap_nano_to_nanite						# UAP
-		# 			# 		has_technology = tech_nanite_gate
-		# 			# 		has_technology = tech_lgate_construction					# ADT
-		# 			# 	}
-		# 			# 	NOT = { has_ascension_perk = ap_emergency_calculation }
-		# 			# }
-		# 			country_event = { id = UniqueAscensionPerksEvents.8003 }
-		# 		}
-		# 	}
-		# }
+			"
+			toggle = @has_uap_mod
+		}
 	}
 }

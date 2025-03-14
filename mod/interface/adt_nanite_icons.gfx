@@ -98,26 +98,25 @@ spriteTypes = {
 			animationframes = { 1 2 3 }
 		}
 	}
-	# Nanite Core
+	# Nanite Gray Tempest Core
 	spriteType = {
-		name = "GFX_gray_tempest_core"
+		name = "GFX_relic_gray_tempest_core"
 		texturefile = "gfx/interface/icons/relics/r_gray_tempest_core.dds"
 		effectFile = "gfx/FX/buttonstate.shader"
 		animation = {
 			animationmaskfile = "gfx/interface/icons/relics/r_gray_tempest_core_shine.dds"
-			animationtexturefile = "gfx/interface/icons/relics/glow_overlay.dds"
-			animationrotation = 90.0
-			animationlooping = yes
-			animationtime = 11
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "rotating"
+			animationtexturefile = "gfx/interface/icons/relics/shine_overlay.dds"
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 8				# in seconds
+			animationdelay = 4				# in seconds
+			animationblendmode = "overlay"	# add, multiply, overlay
+			animationtype = "pulsing"		# scrolling, rotating, pulsing
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
 		legacy_lazy_load = no
 	}
-
 	# NSC
 	# spriteType = {
 	# 	name = "GFX_special_slot_multiphasic_sensors"

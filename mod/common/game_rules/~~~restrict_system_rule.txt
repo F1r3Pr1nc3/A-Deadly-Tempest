@@ -1,4 +1,4 @@
-# Sorry for overwriting, please claim this to "Ancient Empire" 2389589691 :P
+# Sorry for overwriting, please claim this to Ancient Empire 2389589691 :P
 # this = system
 # root = country
 # Determines if AI-controlled empires should restrict (and thus avoid) a system
@@ -13,7 +13,7 @@ ai_should_restrict_system = {
 					# Twinks Eternal Empire
 					inline_script = {
 						script = merger_of_rules/toggled_code
-						code = " is_country_type = eternal_empire "
+						code = " is_country_type = eternal_empire"
 						toggle = @has_eternal_empire
 					}
 				}
@@ -27,7 +27,7 @@ ai_should_restrict_system = {
 					# The Empty Vagrant
 					inline_script = {
 						script = merger_of_rules/toggled_code
-						code = " is_country_type = awakened_marauders_ev "
+						code = " is_country_type = awakened_marauders_ev"
 						toggle = @homeless_class_trait_weight
 					}
 				}
@@ -43,7 +43,7 @@ ai_should_restrict_system = {
 					# The Empty Vagrant
 					inline_script = {
 						script = merger_of_rules/toggled_code
-						code = " is_country_type = awakened_marauders_ev "
+						code = " is_country_type = awakened_marauders_ev"
 						toggle = @homeless_class_trait_weight
 					}
 				}
@@ -61,7 +61,7 @@ ai_should_restrict_system = {
 					# The Empty Vagrant
 					inline_script = {
 						script = merger_of_rules/toggled_code
-						code = " is_country_type = awakened_marauders_ev "
+						code = " is_country_type = awakened_marauders_ev"
 						toggle = @homeless_class_trait_weight
 					}
 				}
@@ -78,7 +78,7 @@ ai_should_restrict_system = {
 					# The Empty Vagrant
 					inline_script = {
 						script = merger_of_rules/toggled_code
-						code = " is_country_type = awakened_marauders_ev "
+						code = " is_country_type = awakened_marauders_ev"
 						toggle = @homeless_class_trait_weight
 					}
 				}
@@ -108,7 +108,7 @@ ai_should_restrict_system = {
 						# Gigastructural Engineering & More
 						inline_script = {
 							script = merger_of_rules/toggled_code
-							code = " is_blokkat_country_type = no "
+							code = " is_blokkat_country_type = no"
 							toggle = @has_gigastructures
 						}
 					}
@@ -150,7 +150,7 @@ ai_should_restrict_system = {
 		# Gigastructural Engineering & More
 		inline_script = {
 			script = merger_of_rules/toggled_code
-			code = " giga_ai_should_restrict_system = yes "
+			code = " giga_ai_should_restrict_system = yes"
 			toggle = @has_gigastructures
 		}
 		# Spaceborne Civs Expanded
@@ -164,7 +164,7 @@ ai_should_restrict_system = {
 					# The Empty Vagrant
 					inline_script = {
 						script = merger_of_rules/toggled_code
-						code = " is_country_type = awakened_marauders_ev "
+						code = " is_country_type = awakened_marauders_ev"
 						toggle = @homeless_class_trait_weight
 					}
 				}
@@ -217,16 +217,7 @@ ai_should_restrict_system = {
 			AND = {
 				root = {
 					OR = {
-						AND = {
-							is_crisis_faction = yes
-							inline_script = {
-								script = merger_of_rules/toggled_code
-								code = \"
-									is_blokkat_country_type = no
-								\"
-								toggle = @has_gigastructures
-							}
-						}
+						is_crisis_faction = yes
 						has_country_flag = pike_assisted_ai
 					}
 				}
@@ -249,11 +240,6 @@ ai_should_restrict_system = {
 						is_default_or_fallen = yes
 						is_crisis_faction = yes
 						is_country_type = ag_ancient_psi_guardian
-						inline_script = { # The Empty Vagrant
-							script = merger_of_rules/toggled_code
-							code = \" is_country_type = awakened_marauders_ev \"
-							toggle = @homeless_class_trait_weight
-						}
 					}
 				}
 			}

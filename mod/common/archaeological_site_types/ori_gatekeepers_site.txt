@@ -11,15 +11,21 @@ ori_gatekeepers_digsite = {
 		is_ai = no
 		default_site_visible_trigger = yes
 		OR = {
-			# has_origin = origin_gatekeepers
 			AND = { has_void_dweller_origin = yes has_country_flag = origin_gatekeepers }
-			AND = {
-				has_global_flag = has_uap_mod # UAP
-				OR = {
-					has_ascension_path = ap_emergency_calculation
-					has_ascension_path = ap_nano_drones
+			inline_script = { # Mod UAP
+				script = merger_of_rules/toggled_code
+				code = "
+				AND = {
+					has_global_flag = has_uap_mod # UAP
+					OR = {
+						has_ascension_path = ap_emergency_calculation
+						has_ascension_path = ap_nano_drones
+					}
 				}
+				"
+				toggle = @has_uap_mod
 			}
+
 			inline_script = { # Mod Nanite Expansion
 				script = merger_of_rules/toggled_code
 				code = "has_ascension_perk = ap_nanotech"

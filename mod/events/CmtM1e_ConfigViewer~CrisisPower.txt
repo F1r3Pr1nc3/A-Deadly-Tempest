@@ -5,7 +5,7 @@ namespace = CrisisManagerMenu
 #####							#####
 #####	Crisis Manager			#####
 #####							#####
-#####	Configutation Viewer	#####
+#####	Configuration Viewer	#####
 #####	For Crisis Power		#####
 #####							#####
 ######################################
@@ -30,7 +30,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoNextPage.name
-		custom_tooltip = CmtTextGoNextPage.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1031
@@ -39,7 +39,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1031
@@ -53,7 +53,7 @@ country_event = {
 	}
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1031
@@ -205,61 +205,61 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6101.xxx.name
-		custom_tooltip = CrisisManagerMenu.6101.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6101 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6102.xxx.name
-		custom_tooltip = CrisisManagerMenu.6102.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6102 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6103.xxx.name
-		custom_tooltip = CrisisManagerMenu.6103.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6103 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6104.xxx.name
-		custom_tooltip = CrisisManagerMenu.6104.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6104 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6105.xxx.name
-		custom_tooltip = CrisisManagerMenu.6105.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6105 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6106.xxx.name
-		custom_tooltip = CrisisManagerMenu.6106.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6106 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6107.xxx.name
-		custom_tooltip = CrisisManagerMenu.6107.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6107 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6111.xxx.name
-		custom_tooltip = CrisisManagerMenu.6111.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagMidGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6111 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6112.xxx.name
-		custom_tooltip = CrisisManagerMenu.6112.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagMidGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6112 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6113.xxx.name
-		custom_tooltip = CrisisManagerMenu.6113.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagMidGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6113 } }
 	}
@@ -288,19 +288,19 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6201.xxx.name
-		custom_tooltip = CrisisManagerMenu.6201.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6201 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6206.xxx.name
-		custom_tooltip = CrisisManagerMenu.6206.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6206 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6211.xxx.name
-		custom_tooltip = CrisisManagerMenu.6211.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagMidGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6211 } }
 	}
@@ -317,7 +317,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBackViewerMenu.name
-		custom_tooltip = CmtTextGoBackViewerMenu.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1023
@@ -346,7 +346,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoNextPage.name
-		custom_tooltip = CmtTextGoNextPage.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1032
@@ -355,7 +355,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1032
@@ -364,7 +364,7 @@ country_event = {
 	}
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1032
@@ -405,61 +405,61 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6301.xxx.name
-		custom_tooltip = CrisisManagerMenu.6301.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6301 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6302.xxx.name
-		custom_tooltip = CrisisManagerMenu.6302.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6302 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6303.xxx.name
-		custom_tooltip = CrisisManagerMenu.6303.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6303 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6304.xxx.name
-		custom_tooltip = CrisisManagerMenu.6304.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6304 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6305.xxx.name
-		custom_tooltip = CrisisManagerMenu.6305.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6305 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6306.xxx.name
-		custom_tooltip = CrisisManagerMenu.6306.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6306 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6307.xxx.name
-		custom_tooltip = CrisisManagerMenu.6307.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6307 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6311.xxx.name
-		custom_tooltip = CrisisManagerMenu.6311.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagMidGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6311 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6312.xxx.name
-		custom_tooltip = CrisisManagerMenu.6312.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagMidGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6312 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6313.xxx.name
-		custom_tooltip = CrisisManagerMenu.6313.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagMidGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6313 } }
 	}
@@ -491,19 +491,19 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6401.xxx.name
-		custom_tooltip = CrisisManagerMenu.6401.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6401 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6406.xxx.name
-		custom_tooltip = CrisisManagerMenu.6406.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6406 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6411.xxx.name
-		custom_tooltip = CrisisManagerMenu.6411.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagMidGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6411 } }
 	}
@@ -520,7 +520,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBackViewerMenu.name
-		custom_tooltip = CmtTextGoBackViewerMenu.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1023
@@ -549,7 +549,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoNextPage.name
-		custom_tooltip = CmtTextGoNextPage.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1033
@@ -558,7 +558,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1033
@@ -567,7 +567,7 @@ country_event = {
 	}
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1033
@@ -608,37 +608,37 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.6501.xxx.name
-		custom_tooltip = CrisisManagerMenu.6501.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6501 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6503.xxx.name
-		custom_tooltip = CrisisManagerMenu.6503.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6503 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6504.xxx.name
-		custom_tooltip = CrisisManagerMenu.6504.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6504 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6505.xxx.name
-		custom_tooltip = CrisisManagerMenu.6505.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6505 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6506.xxx.name
-		custom_tooltip = CrisisManagerMenu.6506.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagEndGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6506 } }
 	}
 	option = {
 		name = CrisisManagerMenu.6511.xxx.name
-		custom_tooltip = CrisisManagerMenu.6511.xxx.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagMidGameEdition }
 		hidden_effect = { country_event = { id = CrisisManagerMenu.6511 } }
 	}
@@ -655,7 +655,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBackViewerMenu.name
-		custom_tooltip = CmtTextGoBackViewerMenu.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1023

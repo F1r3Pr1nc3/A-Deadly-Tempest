@@ -5,7 +5,7 @@ namespace = CrisisManagerMenu
 #####							#####
 #####	Crisis Manager			#####
 #####							#####
-#####	Configutation Viewer	#####
+#####	Configuration Viewer	#####
 #####	For End-Game Crisis		#####
 #####							#####
 #####################################
@@ -35,7 +35,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoNextPage.name
-		custom_tooltip = CmtTextGoNextPage.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1010
@@ -44,7 +44,7 @@ country_event = {
 	}
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1010
 			if = {
@@ -124,7 +124,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.3120.V0.name
-		custom_tooltip = CrisisManagerMenu.3120.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarTriggerInterval value < @CmtConstCrisisInterval_T0 }
@@ -138,7 +138,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.3120.VC.name
-		custom_tooltip = CrisisManagerMenu.3120.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOR = {
@@ -155,7 +155,7 @@ country_event = {
 	}
 	option = {
 		name = "CmtTextTemplateUnique.name"
-		custom_tooltip = CrisisManagerMenu.3120.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			event_target:CmtGlobalVar = {
 				check_variable = { which = CmtVarTriggerInterval value > @CmtConstCrisisInterval_T5 }
@@ -183,7 +183,7 @@ country_event = {
 
 	option = {
 		name = "CrisisManagerMenu.3130.V0.title"
-		custom_tooltip = CrisisManagerMenu.3130.V0.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarEarliestEgpy value < @CmtConstTriggerEgpy_T1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3130 FROM = 1010 } }
 	}
@@ -236,7 +236,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.3140b.name
-		custom_tooltip = CrisisManagerMenu.3140b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarTriggerProbability value = 2 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3140 FROM = 1010 } }
 	}
@@ -280,19 +280,19 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.3150a.name
-		custom_tooltip = CrisisManagerMenu.3150a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarEqualizingProbability value = 1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3150 FROM = 1010 } }
 	}
 	option = {
 		name = "CrisisManagerMenu.3150b.title"
-		custom_tooltip = CrisisManagerMenu.3150b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarEqualizingProbability value = 2 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3150 FROM = 1010 } }
 	}
 	option = {
 		name = "CrisisManagerMenu.3150c.title"
-		custom_tooltip = CrisisManagerMenu.3150c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarEqualizingProbability value = 3 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3150 FROM = 1010 } }
 	}
@@ -330,7 +330,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.3160c.name
-		custom_tooltip = CrisisManagerMenu.3160c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarOpeningEventSpeed value = 3 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3160 FROM = 1010 } }
 	}
@@ -368,13 +368,13 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.3170a.name
-		custom_tooltip = CrisisManagerMenu.3170a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_global_flag = CmtFlagSubmarineCrisis } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3170 FROM = 1010 } }
 	}
 	option = {
 		name = "CrisisManagerMenu.3170b.title"
-		custom_tooltip = CrisisManagerMenu.3170b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagSubmarineCrisis }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3170 FROM = 1010 } }
 	}
@@ -431,7 +431,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.3220a.name
-		custom_tooltip = CrisisManagerMenu.3220a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			OR = {
 				NOT = { has_global_flag = CmtFlagTotalWarPatch }
@@ -537,31 +537,31 @@ country_event = {
 	}
 	option = {
 		name = "CrisisManagerMenu.3232b.title"
-		custom_tooltip = CrisisManagerMenu.3232b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarPurgeSpeed value = 2 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3232 FROM = 1010 } }
 	}
 	option = {
 		name = "CrisisManagerMenu.3232c.title"
-		custom_tooltip = CrisisManagerMenu.3232c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarPurgeSpeed value = 3 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3232 FROM = 1010 } }
 	}
 	option = {
 		name = "CrisisManagerMenu.3232d.title"
-		custom_tooltip = CrisisManagerMenu.3232d.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarPurgeSpeed value = 4 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3232 FROM = 1010 } }
 	}
 	option = {
 		name = "CrisisManagerMenu.3232e.title"
-		custom_tooltip = CrisisManagerMenu.3232e.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarPurgeSpeed value = 5 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3232 FROM = 1010 } }
 	}
 	option = {
 		name = "CrisisManagerMenu.3232f.title"
-		custom_tooltip = CrisisManagerMenu.3232f.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarPurgeSpeed value = 6 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3232 FROM = 1010 } }
 	}
@@ -587,7 +587,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.3240a.name
-		custom_tooltip = CrisisManagerMenu.3240a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarFasterCombatFleet_Common value = 1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3240 FROM = 1010 } }
 	}
@@ -631,7 +631,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.3250a.name
-		custom_tooltip = "CrisisManagerMenu.3240a.tooltip"
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarFasterConstructor_Common value = 1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 3250 FROM = 1010 } }
 	}
@@ -723,7 +723,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBackViewerMenu.name
-		custom_tooltip = CmtTextGoBackViewerMenu.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1010
@@ -757,7 +757,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoNextPage.name
-		custom_tooltip = CmtTextGoNextPage.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1021
@@ -766,7 +766,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1021
@@ -775,7 +775,7 @@ country_event = {
 	}
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1021
@@ -804,7 +804,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4110b.name
-		custom_tooltip = CrisisManagerMenu.4110b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			NOR = {
 				has_global_flag = CmtFlagForbiddenPrethoryn
@@ -907,38 +907,38 @@ country_event = {
 
 	option = {
 		name = "CrisisManagerMenu.4140a.title"
-		custom_tooltip = CrisisManagerMenu.4140a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagForbiddenAnatomy }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4140 FROM = 1021 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4140b.name
-		custom_tooltip = CrisisManagerMenu.4140b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_global_flag = CmtFlagForbiddenAnatomy } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4140 FROM = 1021 } }
 	}
 
 	option = {
 		name = CrisisManagerMenu.4150a.name
-		custom_tooltip = CrisisManagerMenu.4150a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarFeralPrethoryn value = 1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4150 FROM = 1021 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4150b.name
-		custom_tooltip = CrisisManagerMenu.4150b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarFeralPrethoryn value = 2 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4150 FROM = 1021 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4150c.name
-		custom_tooltip = CrisisManagerMenu.4150c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarFeralPrethoryn value = 3 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4150 FROM = 1021 } }
 	}
 	option = {
 		name = CrisisManagerMenu.4150d.name
-		custom_tooltip = CrisisManagerMenu.4150d.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarFeralPrethoryn value = 4 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4150 FROM = 1021 } }
 	}
@@ -957,7 +957,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4160a.name
-		custom_tooltip = CrisisManagerMenu.4160a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_global_flag = CmtFlagPrethorynUnlimitedFlavor } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4160 FROM = 1021 } }
 	}
@@ -980,7 +980,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBackViewerMenu.name
-		custom_tooltip = CmtTextGoBackViewerMenu.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1021
@@ -1022,7 +1022,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoNextPage.name
-		custom_tooltip = CmtTextGoNextPage.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1022
@@ -1031,7 +1031,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1022
@@ -1040,7 +1040,7 @@ country_event = {
 	}
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1022
@@ -1147,20 +1147,20 @@ country_event = {
 	}
 	option = {
 		name = "CrisisManagerMenu.4230b.title"
-		custom_tooltip = CrisisManagerMenu.4230b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagExdsChaserAnywhere }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4230 FROM = 1022 } }
 	}
 
 	option = {
 		name = "CrisisManagerMenu.4240a.title"
-		custom_tooltip = CrisisManagerMenu.4240a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarReinforceCycle_OnExdAnchorBuilt value > 510 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4240 FROM = 1022 } }
 	}
 	option = {
 		name = "CrisisManagerMenu.4240n.title"
-		custom_tooltip = CrisisManagerMenu.4240n.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOT = { check_variable = { which = CmtVarReinforceCycle_OnExdAnchorBuilt value > 510 } }
@@ -1171,7 +1171,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4240f.name
-		custom_tooltip = CrisisManagerMenu.4240f.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			event_target:CmtGlobalVar = {
 				NOT = { check_variable = { which = CmtVarReinforceCycle_OnExdAnchorBuilt value > 1.5 } }
@@ -1234,13 +1234,13 @@ country_event = {
 	### Forced End of the Cycle.
 	option = {
 		name = CrisisManagerMenu.4410a.name
-		custom_tooltip = CrisisManagerMenu.4410a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_global_flag = CmtFlagAllowForcedEoc } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4410 FROM = 1022 } }
 	}
 	option = {
 		name = "CrisisManagerMenu.4410b.title"
-		custom_tooltip = CrisisManagerMenu.4410b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagAllowForcedEoc }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4410 FROM = 1022 } }
 	}
@@ -1253,7 +1253,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4420b.name
-		custom_tooltip = CrisisManagerMenu.4420b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarForcedEocTargetPlayer value = 2 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4420 FROM = 1022 } }
 	}
@@ -1372,7 +1372,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBackViewerMenu.name
-		custom_tooltip = CmtTextGoBackViewerMenu.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1022
@@ -1406,7 +1406,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoNextPage.name
-		custom_tooltip = CmtTextGoNextPage.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1023
@@ -1415,7 +1415,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1023
@@ -1424,7 +1424,7 @@ country_event = {
 	}
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagConfigViewerSeq } }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1023
@@ -1453,14 +1453,14 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4310b.name
-		custom_tooltip = CrisisManagerMenu.4310b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_global_flag = CmtFlagForbiddenContingency } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4310 FROM = 1023 } }
 	}
 
 	option = {
 		name = CrisisManagerMenu.4330a.name
-		custom_tooltip = CrisisManagerMenu.4330a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarGhostStrength value = 1 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4330 FROM = 1023 } }
 	}
@@ -1472,7 +1472,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4330c.name
-		custom_tooltip = CrisisManagerMenu.4330c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarGhostStrength value = 3 } } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4330 FROM = 1023 } }
 	}
@@ -1592,7 +1592,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.4360a.name
-		custom_tooltip = CrisisManagerMenu.4360a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_global_flag = CmtFlagSynthTerrorAll } }
 		hidden_effect = { CmtEffectTryCallEvent = { CALL = 4360 FROM = 1023 } }
 	}
@@ -1659,7 +1659,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBackViewerMenu.name
-		custom_tooltip = CmtTextGoBackViewerMenu.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_country_flag = CmtFlagConfigViewerSeq }
 		hidden_effect = {
 			remove_country_flag = CmtFlagConfigViewerShowing1023

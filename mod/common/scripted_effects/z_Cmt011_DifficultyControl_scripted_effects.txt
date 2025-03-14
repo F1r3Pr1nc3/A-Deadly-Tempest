@@ -49,7 +49,7 @@ CmtEffectApplyDifficulty_Midgame = {
 }
 
 ###################################
-### Apply Common Strenght Value ###
+### Apply Common strength Value ###
 ###################################
 
 ### Fleet Power

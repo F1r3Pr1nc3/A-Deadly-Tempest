@@ -183,7 +183,7 @@ country_event = {
 	### Apply Configuration Template: Primacy Template
 	option = {
 		name = CrisisManagerTemplate_T001.name
-		custom_tooltip = "CrisisManagerTemplate_T101.tooltip"
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T001 = yes
 			OR = {
@@ -202,10 +202,10 @@ country_event = {
 		}
 	}
 
-	### Other Configuration Templetes
+	### Other Configuration Templates
 	option = {
 		name = CrisisManagerMenu.100.2100.name
-		custom_tooltip = CrisisManagerMenu.100.2100.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			OR = {
 				CmtTriggerAnyManagedEventTriggered = no
@@ -265,7 +265,6 @@ country_event = {
 	### Exit Menu
 	option = {
 		name = CmtTextExit.name
-		custom_tooltip = CmtTextExit.tooltip
 		CmtEffectExitMenu = yes
 	}
 	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }

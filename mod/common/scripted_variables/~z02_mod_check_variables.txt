@@ -234,6 +234,9 @@
 # Reworked Avanced Ascension 1199002146
 @aar_svar_mod = 0
 
+# Powerful & Realistic Orbital Bombardments 2584335328
+@has_prob_mod = 0
+
 # Sartek TAP Merger - Ascension Path Fusion 2979443893
 @sartek_afusion_mod_active = 0
 

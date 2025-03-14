@@ -90,7 +90,8 @@ CmtEffectVersionUp = {
 					if = {
 						limit = { check_variable = { which = CmtVarLgateCycleCommon value > 0 } }
 						set_variable = { which = CmtVarLgateCycleSilence value = CmtVarLgateCycleCommon }
-					} else = { set_variable = { which = CmtVarLgateCycleSilence value = 4 } }
+					}
+					else = { set_variable = { which = CmtVarLgateCycleSilence value = 4 } }
 				}
 				if = {
 					limit = { check_variable = { which = CmtVarLgateCycleDessanu value = 0 } }
@@ -107,7 +108,8 @@ CmtEffectVersionUp = {
 				if = {
 					limit = { check_variable = { which = CmtVarLgateTerraformNanite value = 2 } }
 					set_variable = { which = CmtVarLgateTerraformNanite value = 4 }
-				} else_if = {
+				}
+				else_if = {
 					limit = {
 						OR = {
 							check_variable = { which = CmtVarLgateTerraformNanite value = 0 }
@@ -139,7 +141,8 @@ CmtEffectVersionUp = {
 					}
 					set_variable = { which = CmtVarPlanetOccupy value = 4 }
 					set_variable = { which = CmtVarPurgeSpeed value = 7 }
-				} else_if = {
+				}
+				else_if = {
 					limit = { check_variable = { which = CmtVarPurgeSpeed value = 0 } }
 					set_variable = { which = CmtVarPurgeSpeed value = 1 }
 				}
@@ -200,16 +203,11 @@ CmtEffectChangeAwakenerCivic = {
 	if = {
 		limit = { is_hive_empire = yes has_global_flag = has_FEE_mod }
 		change_government = {
-			civics = {
-				civic = civic_invigorated_coalescence
-				civic = civic_rejuvenated_drones
-			}
-		} else = {
+			civics = { civic = civic_invigorated_coalescence civic = civic_rejuvenated_drones }
+		}
+		else = {
 			change_government = {
-				civics = {
-					civic = civic_revanchist_fervor
-					civic = civic_ancient_caches_of_technology
-				}
+				civics = { civic = civic_revanchist_fervor civic = civic_ancient_caches_of_technology }
 			}
 		}
 	}

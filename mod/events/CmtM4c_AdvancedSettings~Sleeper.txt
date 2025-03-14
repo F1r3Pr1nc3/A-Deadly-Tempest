@@ -5,7 +5,7 @@ namespace = CrisisManagerMenu
 #####										#####
 #####	Crisis Manager						#####
 #####										#####
-#####	Advanced Congigurations				#####
+#####	Advanced Configurations				#####
 #####	For Awakening of Fallen Empires		#####
 #####										#####
 #################################################
@@ -81,7 +81,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = "CrisisManagerMenu.4510a.title"
@@ -110,7 +110,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -164,36 +164,36 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.4520.V5.name
-		custom_tooltip = CrisisManagerMenu.4520.V5.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperInterval value = @CmtConstSleeperInterval_V5 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4520.V4.name
-		custom_tooltip = CrisisManagerMenu.4520.V4.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperInterval value = @CmtConstSleeperInterval_V4 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4520.V3.name
-		custom_tooltip = CrisisManagerMenu.4520.V3.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperInterval value = @CmtConstSleeperInterval_V3 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4520.V2.name
-		custom_tooltip = CrisisManagerMenu.4520.V2.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperInterval value = @CmtConstSleeperInterval_V2 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4520.V1.name
-		custom_tooltip = CrisisManagerMenu.4520.V1.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperInterval value = @CmtConstSleeperInterval_V1 } } }
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -253,7 +253,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = "CrisisManagerMenu.4530.V9.title"
@@ -307,7 +307,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -367,7 +367,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.4540a.name
@@ -396,7 +396,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -448,61 +448,61 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.4550.V9.name
-		custom_tooltip = CrisisManagerMenu.4550.V9.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperFleetPowerYoung value = @CmtConstSleeperFleetPowerYoung_V9 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4550.V8.name
-		custom_tooltip = CrisisManagerMenu.4550.V8.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperFleetPowerYoung value = @CmtConstSleeperFleetPowerYoung_V8 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4550.V7.name
-		custom_tooltip = CrisisManagerMenu.4550.V7.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperFleetPowerYoung value = @CmtConstSleeperFleetPowerYoung_V7 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4550.V6.name
-		custom_tooltip = CrisisManagerMenu.4550.V6.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperFleetPowerYoung value = @CmtConstSleeperFleetPowerYoung_V6 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4550.V5.name
-		custom_tooltip = CrisisManagerMenu.4550.V5.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperFleetPowerYoung value = @CmtConstSleeperFleetPowerYoung_V5 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4550.V4.name
-		custom_tooltip = CrisisManagerMenu.4550.V4.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperFleetPowerYoung value = @CmtConstSleeperFleetPowerYoung_V4 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4550.V3.name
-		custom_tooltip = CrisisManagerMenu.4550.V3.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperFleetPowerYoung value = @CmtConstSleeperFleetPowerYoung_V3 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4550.V2.name
-		custom_tooltip = CrisisManagerMenu.4550.V2.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperFleetPowerYoung value = @CmtConstSleeperFleetPowerYoung_V2 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4550.V1.name
-		custom_tooltip = CrisisManagerMenu.4550.V1.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperFleetPowerYoung value = @CmtConstSleeperFleetPowerYoung_V1 } } }
 	}
 	option = {
 		name = "CrisisManagerMenu.4550.V0.title"
-		custom_tooltip = CrisisManagerMenu.4550.V0.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarSleeperFleetPowerYoung value = @CmtConstSleeperFleetPowerYoung_V0 } } }
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -554,7 +554,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.4560.V9.name
@@ -608,7 +608,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -650,7 +650,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoNextConfig.name
-		custom_tooltip = CmtTextGoNextConfig.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			NOT = { has_country_flag = CmtFlagIndividual }
 			NAND = {
@@ -663,7 +663,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_country_flag = CmtFlagIndividual
 			NAND = {
@@ -677,7 +677,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.4570a1.name
-		custom_tooltip = CrisisManagerMenu.4570a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_global_flag = CmtFlagSleeperForbidMaterialist } }
 		hidden_effect = {
 			set_global_flag = CmtFlagSleeperForbidMaterialist
@@ -686,7 +686,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4570a2.name
-		custom_tooltip = CrisisManagerMenu.4570a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagSleeperForbidMaterialist }
 		hidden_effect = {
 			remove_global_flag = CmtFlagSleeperForbidMaterialist
@@ -695,7 +695,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4570b1.name
-		custom_tooltip = CrisisManagerMenu.4570b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_global_flag = CmtFlagSleeperForbidSpiritualist } }
 		hidden_effect = {
 			set_global_flag = CmtFlagSleeperForbidSpiritualist
@@ -704,7 +704,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4570b2.name
-		custom_tooltip = CrisisManagerMenu.4570b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagSleeperForbidSpiritualist }
 		hidden_effect = {
 			remove_global_flag = CmtFlagSleeperForbidSpiritualist
@@ -713,7 +713,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4570c1.name
-		custom_tooltip = CrisisManagerMenu.4570c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_global_flag = CmtFlagSleeperForbidXenophile } }
 		hidden_effect = {
 			set_global_flag = CmtFlagSleeperForbidXenophile
@@ -722,7 +722,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4570c2.name
-		custom_tooltip = CrisisManagerMenu.4570c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagSleeperForbidXenophile }
 		hidden_effect = {
 			remove_global_flag = CmtFlagSleeperForbidXenophile
@@ -731,7 +731,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4570d1.name
-		custom_tooltip = CrisisManagerMenu.4570d.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_global_flag = CmtFlagSleeperForbidXenophobe } }
 		hidden_effect = {
 			set_global_flag = CmtFlagSleeperForbidXenophobe
@@ -740,7 +740,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4570d2.name
-		custom_tooltip = CrisisManagerMenu.4570d.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagSleeperForbidXenophobe }
 		hidden_effect = {
 			remove_global_flag = CmtFlagSleeperForbidXenophobe
@@ -750,7 +750,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			NOT = { has_country_flag = CmtFlagIndividual }
 			NAND = {
@@ -817,7 +817,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = "CrisisManagerMenu.4580a.title"
@@ -836,7 +836,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -913,26 +913,26 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = "CrisisManagerMenu.4610a.title"
-		custom_tooltip = CrisisManagerMenu.4610a.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarHeavenProbability value = 1 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4610b.name
-		custom_tooltip = CrisisManagerMenu.4610b.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarHeavenProbability value = 2 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4610c.name
-		custom_tooltip = CrisisManagerMenu.4610c.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarHeavenProbability value = 3 } } }
 	}
 	option = {
 		name = CrisisManagerMenu.4610d.name
-		custom_tooltip = CrisisManagerMenu.4610d.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarHeavenProbability value = 4 } } }
 	}
 	option = {
@@ -942,7 +942,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -1002,7 +1002,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.4620a.name
@@ -1031,7 +1031,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -1072,7 +1072,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoNextConfig.name
-		custom_tooltip = CmtTextGoNextConfig.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			NOT = { has_country_flag = CmtFlagIndividual }
 			NAND = {
@@ -1086,7 +1086,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_country_flag = CmtFlagIndividual
 			NAND = {
@@ -1101,7 +1101,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerMenu.4630n1.name
-		custom_tooltip = CrisisManagerMenu.4630n1.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_global_flag = CmtFlagHeavenForbidIndependently } }
 		hidden_effect = {
 			set_global_flag = CmtFlagHeavenForbidIndependently
@@ -1119,7 +1119,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4630a1.name
-		custom_tooltip = CrisisManagerMenu.4630a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagHeavenForbidIndependently
 			NOT = { has_global_flag = CmtFlagHeavenForbidMaterialist }
@@ -1131,7 +1131,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4630a2.name
-		custom_tooltip = CrisisManagerMenu.4630a.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagHeavenForbidIndependently
 			has_global_flag = CmtFlagHeavenForbidMaterialist
@@ -1143,7 +1143,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4630b1.name
-		custom_tooltip = CrisisManagerMenu.4630b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagHeavenForbidIndependently
 			NOT = { has_global_flag = CmtFlagHeavenForbidSpiritualist }
@@ -1155,7 +1155,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4630b2.name
-		custom_tooltip = CrisisManagerMenu.4630b.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagHeavenForbidIndependently
 			has_global_flag = CmtFlagHeavenForbidSpiritualist
@@ -1167,7 +1167,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4630c1.name
-		custom_tooltip = CrisisManagerMenu.4630c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagHeavenForbidIndependently
 			NOT = { has_global_flag = CmtFlagHeavenForbidXenophile }
@@ -1179,7 +1179,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4630c2.name
-		custom_tooltip = CrisisManagerMenu.4630c.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagHeavenForbidIndependently
 			has_global_flag = CmtFlagHeavenForbidXenophile
@@ -1191,7 +1191,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4630d1.name
-		custom_tooltip = CrisisManagerMenu.4630d.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagHeavenForbidIndependently
 			NOT = { has_global_flag = CmtFlagHeavenForbidXenophobe }
@@ -1203,7 +1203,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4630d2.name
-		custom_tooltip = CrisisManagerMenu.4630d.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			has_global_flag = CmtFlagHeavenForbidIndependently
 			has_global_flag = CmtFlagHeavenForbidXenophobe
@@ -1216,7 +1216,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			NOT = { has_country_flag = CmtFlagIndividual }
 			NAND = {
@@ -1278,16 +1278,16 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.4640a.name
-		custom_tooltip = CrisisManagerMenu.4640a.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarHeavenIndomitableRival value = 1 } } }
 	}
 	option = {
 		name = "CrisisManagerMenu.4640b.title"
-		custom_tooltip = CrisisManagerMenu.4640b.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarHeavenIndomitableRival value = 2 } } }
 	}
 	option = {
@@ -1297,7 +1297,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -1353,7 +1353,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.4650a.name
@@ -1362,7 +1362,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4650b.name
-		custom_tooltip = CrisisManagerMenu.4650b.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarHeavenPreludeSpeed value = 2 } } }
 	}
 	option = {
@@ -1377,7 +1377,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -1437,11 +1437,11 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = "CrisisManagerMenu.4660a.title"
-		custom_tooltip = CrisisManagerMenu.4660a.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarHeavenNpcSubject value = 1 } } }
 	}
 	option = {
@@ -1451,7 +1451,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4660c.name
-		custom_tooltip = CrisisManagerMenu.4660c.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarHeavenNpcSubject value = 3 } } }
 	}
 	option = {
@@ -1466,7 +1466,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -1526,7 +1526,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = "CrisisManagerMenu.4670a.title"
@@ -1540,7 +1540,7 @@ country_event = {
 	}
 	option = {
 		name = "CrisisManagerMenu.4670c.title"
-		custom_tooltip = CrisisManagerMenu.4670c.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarHeavenNpcLeague value = 3 } } }
 	}
 	option = {
@@ -1555,7 +1555,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -1615,7 +1615,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.4680a.name
@@ -1624,7 +1624,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerMenu.4680b.name
-		custom_tooltip = CrisisManagerMenu.4680b.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarHeavenExhaustion value = 2 } } }
 	}
 	option = {
@@ -1644,7 +1644,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}

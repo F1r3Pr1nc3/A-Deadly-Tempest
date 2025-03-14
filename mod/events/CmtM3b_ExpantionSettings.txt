@@ -70,7 +70,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagTotalWarPatch }
 	}
 	option = {
@@ -92,7 +92,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -159,12 +159,12 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { has_global_flag = CmtFlagTotalWarPatch }
 	}
 	option = {
 		name = CrisisManagerMenu.3220a.name
-		custom_tooltip = CrisisManagerMenu.3220a.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarTotalWarAutoBuild value = 1 } } }
 	}
 	option = {
@@ -181,7 +181,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -257,7 +257,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.3231a.name
@@ -296,7 +296,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -369,7 +369,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.3232a.name
@@ -378,27 +378,27 @@ country_event = {
 	}
 	option = {
 		name = "CrisisManagerMenu.3232b.title"
-		custom_tooltip = CrisisManagerMenu.3232b.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarPurgeSpeed value = 2 } } }
 	}
 	option = {
 		name = "CrisisManagerMenu.3232c.title"
-		custom_tooltip = CrisisManagerMenu.3232c.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarPurgeSpeed value = 3 } } }
 	}
 	option = {
 		name = "CrisisManagerMenu.3232d.title"
-		custom_tooltip = CrisisManagerMenu.3232d.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarPurgeSpeed value = 4 } } }
 	}
 	option = {
 		name = "CrisisManagerMenu.3232e.title"
-		custom_tooltip = CrisisManagerMenu.3232e.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarPurgeSpeed value = 5 } } }
 	}
 	option = {
 		name = "CrisisManagerMenu.3232f.title"
-		custom_tooltip = CrisisManagerMenu.3232f.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarPurgeSpeed value = 6 } } }
 	}
 	option = {
@@ -408,7 +408,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -546,11 +546,11 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.3240a.name
-		custom_tooltip = CrisisManagerMenu.3240a.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFasterCombatFleet_Common value = 1 } } }
 	}
 	option = {
@@ -575,7 +575,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -698,11 +698,11 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.3250a.name
-		custom_tooltip = "CrisisManagerMenu.3240a.tooltip"
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { event_target:CmtGlobalVar = { set_variable = { which = CmtVarFasterConstructor_Common value = 1 } } }
 	}
 	option = {
@@ -727,7 +727,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
@@ -786,7 +786,7 @@ country_event = {
 
 	option = {
 		name = CmtTextKeepCurrent.name
-		custom_tooltip = CmtTextKeepCurrent.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.3260a.name
@@ -810,7 +810,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = { NOT = { has_country_flag = CmtFlagIndividual } }
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}

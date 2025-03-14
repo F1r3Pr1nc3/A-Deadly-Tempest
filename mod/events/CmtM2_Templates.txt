@@ -25,7 +25,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 
 	## Separator
@@ -46,7 +46,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerTemplate_T101.name
-		custom_tooltip = CrisisManagerTemplate_T101.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T101 = yes
 			OR = {
@@ -61,7 +61,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T102.name
-		custom_tooltip = CrisisManagerTemplate_T102.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T102 = yes
 			OR = {
@@ -76,7 +76,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T103.name
-		custom_tooltip = CrisisManagerTemplate_T103.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T103 = yes
 			OR = {
@@ -91,7 +91,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T104.name
-		custom_tooltip = CrisisManagerTemplate_T104.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T104 = yes
 			OR = {
@@ -123,7 +123,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerTemplate_T105.name
-		custom_tooltip = CrisisManagerTemplate_T105.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T105 = yes
 			OR = {
@@ -138,7 +138,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T106.name
-		custom_tooltip = CrisisManagerTemplate_T106.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T106 = yes
 			OR = {
@@ -153,7 +153,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T107.name
-		custom_tooltip = CrisisManagerTemplate_T107.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T107 = yes
 			OR = {
@@ -168,7 +168,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T108.name
-		custom_tooltip = CrisisManagerTemplate_T108.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T108 = yes
 			OR = {
@@ -200,7 +200,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerTemplate_T109.name
-		custom_tooltip = CrisisManagerTemplate_T109.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T109 = yes
 			OR = {
@@ -215,7 +215,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T110.name
-		custom_tooltip = CrisisManagerTemplate_T110.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T110 = yes
 			OR = {
@@ -230,7 +230,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T111.name
-		custom_tooltip = CrisisManagerTemplate_T111.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T111 = yes
 			OR = {
@@ -245,7 +245,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T112.name
-		custom_tooltip = CrisisManagerTemplate_T112.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T112 = yes
 			OR = {
@@ -277,7 +277,7 @@ country_event = {
 
 	option = {
 		name = CrisisManagerTemplate_T113.name
-		custom_tooltip = CrisisManagerTemplate_T113.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T113 = yes
 			OR = {
@@ -292,7 +292,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T114.name
-		custom_tooltip = CrisisManagerTemplate_T114.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T114 = yes
 			OR = {
@@ -307,7 +307,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T115.name
-		custom_tooltip = CrisisManagerTemplate_T115.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T115 = yes
 			OR = {
@@ -322,7 +322,7 @@ country_event = {
 	}
 	option = {
 		name = CrisisManagerTemplate_T116.name
-		custom_tooltip = CrisisManagerTemplate_T116.tooltip
+		custom_tooltip = BLANK_STRING
 		trigger = {
 			CmtTriggerTemplateActivated_T116 = yes
 			OR = {

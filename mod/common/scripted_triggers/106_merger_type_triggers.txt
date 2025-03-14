@@ -1,5 +1,4 @@
-# Overriddes the Merger of Rules.
-# v3.7.2 snyc
+# Overrides the Merger of Rules.
 # is_homicidal = {
 # 	OR = {
 # 		has_valid_civic = civic_fanatic_purifiers

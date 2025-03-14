@@ -1,6 +1,6 @@
 r_gray_tempest_core = {
 	activation_duration = 3600 # @triumph_duration
-	portrait = "GFX_gray_tempest_core"
+	portrait = "GFX_relic_gray_tempest_core"
 	sound = "relic_activation_isolated_contingency_core"
 
 	resources = {

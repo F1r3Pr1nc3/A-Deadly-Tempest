@@ -204,7 +204,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { country_event = { id = CrisisManagerMenu.9000 } }
 	}
 }
@@ -246,7 +246,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 
@@ -314,7 +314,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 
@@ -373,7 +373,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 
@@ -428,7 +428,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { set_country_flag = CmtFlagGoBack }
 	}
 
@@ -458,7 +458,7 @@ country_event = {
 
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { country_event = { id = CrisisManagerMenu.9000 } }
 	}
 }
@@ -580,7 +580,7 @@ country_event = {
 	}
 	option = {
 		name = CmtTextGoBack.name
-		custom_tooltip = CmtTextGoBack.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { country_event = { id = CrisisManagerMenu.9000 } }
 	}
 }

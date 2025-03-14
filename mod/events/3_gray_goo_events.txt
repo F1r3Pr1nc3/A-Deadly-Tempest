@@ -713,7 +713,7 @@ country_event = {
 		NOT = { has_country_flag = ban_commu_with_gray }
 	}
 
-	option = { name = OK }
+	option = { name = graygoo.504.d }
 }
 
 # Gray destroyed or disbanded (on_monthly_pulse)

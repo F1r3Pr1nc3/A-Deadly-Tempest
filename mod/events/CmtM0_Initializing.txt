@@ -63,7 +63,7 @@ event = {
 	id = CrisisManagerMenu.2
 	hide_window = yes
 	is_triggered_only = yes
-	# Dayly MTTH for fire_only_once event is a big waste of performance, but there is still no other way.
+	# Daily MTTH for fire_only_once event is a big waste of performance, but there is still no other way.
 	trigger = {
 		NOT = { has_global_flag = CmtFlagActivated }
 		# is_country_type = global_event
@@ -127,7 +127,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
 		CmtEffectExitMenu = yes
 	}
 	after = {
@@ -155,7 +154,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
 		CmtEffectExitMenu = yes
 	}
 }
@@ -173,7 +171,7 @@ country_event = {
 	}
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.13b.name
@@ -202,11 +200,11 @@ country_event = {
 	}
 	option = {
 		name = "graygoo.504.d"
-		custom_tooltip = CmtTextOK.tooltip
+		custom_tooltip = BLANK_STRING
 	}
 	option = {
 		name = CrisisManagerMenu.14b.name
-		custom_tooltip = CrisisManagerMenu.14b.tooltip
+		custom_tooltip = BLANK_STRING
 		hidden_effect = { set_country_flag = CmtFlagNeverWarn14 }
 	}
 }

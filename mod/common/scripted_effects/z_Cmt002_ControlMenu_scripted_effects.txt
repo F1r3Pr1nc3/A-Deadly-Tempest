@@ -14,6 +14,7 @@
 
 CmtEffectExitMenu = {
 	optimize_memory
+	custom_tooltip = BLANK_STRING
 	hidden_effect = {
 		remove_global_flag = CmtFlagTemplateAppliedNow
 		every_playable_country = {

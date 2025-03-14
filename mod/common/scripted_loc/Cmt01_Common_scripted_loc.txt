@@ -279,54 +279,54 @@ defined_text = {
 	}
 }
 
-### Uprisable Exploitee
-defined_text = {
-	name = GetCurrentSetting_UprisingSynth
-	text = {
-		trigger = { has_global_flag = CmtFlagUprisingForbidSynthetic }
-		localization_key = CmtTextListedNone
-	}
-	text = {
-		trigger = { NOT = { has_global_flag = CmtFlagUprisingForbidSynthetic } }
-		localization_key = CrisisManagerMenu.5112a.title
-	}
-}
+# ### Uprisable Exploitee TODO
+# defined_text = {
+# 	name = GetCurrentSetting_UprisingSynth
+# 	text = {
+# 		trigger = { has_global_flag = CmtFlagUprisingForbidSynthetic }
+# 		localization_key = CmtTextListedNone
+# 	}
+# 	text = {
+# 		trigger = { NOT = { has_global_flag = CmtFlagUprisingForbidSynthetic } }
+# 		localization_key = CrisisManagerMenu.5112a.title
+# 	}
+# }
 
-defined_text = {
-	name = GetCurrentSetting_UprisingDroid
-	text = {
-		trigger = { NOT = { has_global_flag = CmtFlagUprisingAllowDroid } }
-		localization_key = CmtTextListedNone
-	}
-	text = {
-		trigger = { has_global_flag = CmtFlagUprisingAllowDroid }
-		localization_key = CrisisManagerMenu.5112b.title
-	}
-}
+# defined_text = {
+# 	name = GetCurrentSetting_UprisingDroid
+# 	text = {
+# 		trigger = { NOT = { has_global_flag = CmtFlagUprisingAllowDroid } }
+# 		localization_key = CmtTextListedNone
+# 	}
+# 	text = {
+# 		trigger = { has_global_flag = CmtFlagUprisingAllowDroid }
+# 		localization_key = CrisisManagerMenu.5112b.title
+# 	}
+# }
 
-defined_text = {
-	name = GetCurrentSetting_UprisingOrgSlave
-	text = {
-		trigger = { NOT = { has_global_flag = CmtFlagUprisingAllowOrgSlave } }
-		localization_key = CmtTextListedNone
-	}
-	text = {
-		trigger = { has_global_flag = CmtFlagUprisingAllowOrgSlave }
-		localization_key = CrisisManagerMenu.5112c.title
-	}
-}
+# defined_text = {
+# 	name = GetCurrentSetting_UprisingOrgSlave
+# 	text = {
+# 		trigger = { NOT = { has_global_flag = CmtFlagUprisingAllowOrgSlave } }
+# 		localization_key = CmtTextListedNone
+# 	}
+# 	text = {
+# 		trigger = { has_global_flag = CmtFlagUprisingAllowOrgSlave }
+# 		localization_key = CrisisManagerMenu.5112c.title
+# 	}
+# }
 
-defined_text = {
-	name = GetCurrentSetting_UprisingBiotrophy
-	text = {
-		trigger = { NOT = { has_global_flag = CmtFlagUprisingAllowBiotrophy } }
-		localization_key = CmtTextListedNone
-	}
-	text = {
-		trigger = { has_global_flag = CmtFlagUprisingAllowBiotrophy }
-		localization_key = CrisisManagerMenu.5112d.title
-	}
-}
+# defined_text = {
+# 	name = GetCurrentSetting_UprisingBiotrophy
+# 	text = {
+# 		trigger = { NOT = { has_global_flag = CmtFlagUprisingAllowBiotrophy } }
+# 		localization_key = CmtTextListedNone
+# 	}
+# 	text = {
+# 		trigger = { has_global_flag = CmtFlagUprisingAllowBiotrophy }
+# 		localization_key = CrisisManagerMenu.5112d.title
+# 	}
+# }
 
 ######################
 ###- Crisis Power -###

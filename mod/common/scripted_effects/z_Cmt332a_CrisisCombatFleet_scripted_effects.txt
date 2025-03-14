@@ -700,7 +700,6 @@ CmtEffectCreateFleet_KhanSubReinforcement5 = {
 # 						}
 # 					}
 # 				}
-
 # 				CmtFleetSetAuxParam_KhanEncourager = yes
 # 			}
 # 			settings = {
