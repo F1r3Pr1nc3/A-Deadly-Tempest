@@ -4,6 +4,7 @@
 ## Shared with: The Great Khan Expanded, A Deadly Tempest, Unique Ascension Perks, Crisis Managers
 # from = target country
 has_total_war_cb = {
+	optimize_memory
 	exists = from
 	OR = {
 		# Attacker checks
@@ -68,6 +69,7 @@ has_total_war_cb = {
 
 # Sync with Merger
 planet_is_hostile_or_crisis = {
+	optimize_memory
 	exists = owner
 	owner = {
 		OR = {
@@ -90,6 +92,7 @@ planet_is_hostile_or_crisis = {
 }
 
 is_fallen_empire = {
+	optimize_memory
 	OR = {
 		merg_is_fallen_empire = yes # Hopefully not included is_fallen_empire itself
 		merg_is_awakened_fe = yes
@@ -122,6 +125,7 @@ is_fallen_empire = {
 # }
 
 is_pirate_system = {
+	optimize_memory
 	any_fleet_in_system = {
 		is_mobile = no
 		is_ship_class = shipclass_military_station
@@ -138,6 +142,7 @@ is_pirate_system = {
 # Root: Great Khan's Horde (Country)
 # Note: system_within_border caching is quite funky at a time like this when many borders are changing hands. The starbase ownership is checked to be extra sure, since it is not cached (unlike system ownership - though that probably would have worked too)
 is_potential_diadochi_system = {
+	optimize_memory
 	has_owner = yes
 	exists = space_owner
 	space_owner = { is_same_empire = root }

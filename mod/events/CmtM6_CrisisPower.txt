@@ -217,7 +217,7 @@ country_event = {
 	abort_effect = { CmtEffectExitMenu = yes }
 }
 
-### Additional Descriptoption 1
+### Additional Descript-option 1
 country_event = {
 	id = CrisisManagerMenu.6001
 	title = CrisisManagerMenu.6001.name
@@ -239,7 +239,7 @@ country_event = {
 	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
 }
 
-### Additional Descriptoption 2
+### Additional Descript-option 2
 country_event = {
 	id = CrisisManagerMenu.6002
 	title = CrisisManagerMenu.6002.name

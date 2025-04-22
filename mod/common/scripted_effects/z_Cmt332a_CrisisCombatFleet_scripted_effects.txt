@@ -105,6 +105,7 @@ CmtEffectCreateFleet_Khan2ndFleet = {	### Exception: Leader = exiled_khan
 ### Consorts of Khan
 # Prev = planet
 CmtEffectCreateFleet_KhanStandard = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderStandard = yes
 	create_fleet = {
 		effect = {
@@ -140,6 +141,7 @@ CmtEffectCreateFleet_KhanStandard = {
 ### Mercenaries
 # Prev = planet
 CmtEffectCreateFleet_KhanArmadaVoidborn = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderStandard = yes
 	create_fleet = {
 		name = "NAME_Armada_of_the_Voidborn"
@@ -179,6 +181,7 @@ CmtEffectCreateFleet_KhanArmadaVoidborn = {
 
 # Prev = planet
 CmtEffectCreateFleet_KhanStarRiderFlotilla = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderStandard = yes
 	create_fleet = {
 		name = "NAME_Star_Rider_Flotilla"
@@ -217,6 +220,7 @@ CmtEffectCreateFleet_KhanStarRiderFlotilla = {
 
 # Prev = planet
 CmtEffectCreateFleet_KhanFirstStormWing = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderStandard = yes
 	create_fleet = {
 		name = "NAME_First_Storm_Wing"
@@ -254,6 +258,7 @@ CmtEffectCreateFleet_KhanFirstStormWing = {
 
 # Prev = planet
 CmtEffectCreateFleet_KhanDwamakBashers = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderStandard = yes
 	create_fleet = {
 		name = "NAME_234th_Dwamak_Bashers"
@@ -292,6 +297,7 @@ CmtEffectCreateFleet_KhanDwamakBashers = {
 
 # Prev = planet
 CmtEffectCreateFleet_KhanUnhingedScreamerFlotilla = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderStandard = yes
 	create_fleet = {
 		name = "NAME_Unhinged_Screamer_Flotilla"
@@ -330,6 +336,7 @@ CmtEffectCreateFleet_KhanUnhingedScreamerFlotilla = {
 
 # Prev = planet
 CmtEffectCreateFleet_KhanFrenziedVolunteerSquadron = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderStandard = yes
 	create_fleet = {
 		name = "NAME_Frenzied_Volunteer_Squadron"
@@ -367,6 +374,7 @@ CmtEffectCreateFleet_KhanFrenziedVolunteerSquadron = {
 
 # Prev = planet
 CmtEffectCreateFleet_KhanHerChosenChampions = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderStandard = yes
 	create_fleet = {
 		name = "NAME_Her_Chosen_Champions"
@@ -405,6 +413,7 @@ CmtEffectCreateFleet_KhanHerChosenChampions = {
 
 # Prev = planet
 CmtEffectCreateFleet_KhanOrderEternalNight = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderStandard = yes
 	create_fleet = {
 		name = "NAME_Order_of_Eternal_Night"
@@ -442,6 +451,7 @@ CmtEffectCreateFleet_KhanOrderEternalNight = {
 
 # Prev = planet
 CmtEffectCreateFleet_KhanTwilightCongregation = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderStandard = yes
 	create_fleet = {
 		name = "NAME_Twilight_Congregation"
@@ -481,6 +491,7 @@ CmtEffectCreateFleet_KhanTwilightCongregation = {
 #  This = CmtGlobalVar
 #  Prev = Khan
 CmtEffectCreateFleet_KhanSubReinforcement1 = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderEncourager = yes
 	create_fleet = {
 		name = { key = "NAME_Horde_Auxiliary_Fleet" variable_string = "\\[satrapy_species.GetName\\]" }
@@ -518,6 +529,7 @@ CmtEffectCreateFleet_KhanSubReinforcement1 = {
 }
 
 CmtEffectCreateFleet_KhanSubReinforcement2 = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderEncourager = yes
 	create_fleet = {
 		name = { key = "NAME_Horde_Auxiliary_Fleet" variable_string = "\\[satrapy_species.GetName\\]" }
@@ -558,6 +570,7 @@ CmtEffectCreateFleet_KhanSubReinforcement2 = {
 }
 
 CmtEffectCreateFleet_KhanSubReinforcement3 = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderEncourager = yes
 	create_fleet = {
 		name = { key = "NAME_Horde_Auxiliary_Fleet" variable_string = "\\[satrapy_species.GetName\\]" }
@@ -598,6 +611,7 @@ CmtEffectCreateFleet_KhanSubReinforcement3 = {
 }
 
 CmtEffectCreateFleet_KhanSubReinforcement4 = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderEncourager = yes
 	create_fleet = {
 		name = { key = "NAME_Horde_Auxiliary_Fleet" variable_string = "\\[satrapy_species.GetName\\]" }
@@ -638,6 +652,7 @@ CmtEffectCreateFleet_KhanSubReinforcement4 = {
 }
 
 CmtEffectCreateFleet_KhanSubReinforcement5 = {
+	optimize_memory
 	CmtEffectCreateAdmiral_MarauderEncourager = yes
 	create_fleet = {
 		name = { key = "NAME_Horde_Auxiliary_Fleet" variable_string = "\\[satrapy_species.GetName\\]" }
@@ -716,6 +731,7 @@ CmtEffectCreateFleet_KhanSubReinforcement5 = {
 
 ### Element
 CmtEffectCreateElement_DessanuStandard = {
+	optimize_memory
 	event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Dessanu } }
 	prev = { CmtEffectResetLoop = yes }
 	while = {
@@ -737,6 +753,7 @@ CmtEffectCreateElement_DessanuStandard = {
 
 ### Fleet
 CmtEffectCreateFleet_DessanuGarryson = {
+	optimize_memory
 	CmtEffectCreateAdmiral_OwnerStandard = yes
 	create_fleet = {
 		name = "NAME_Dessanu_Fleet"
@@ -752,6 +769,7 @@ CmtEffectCreateFleet_DessanuGarryson = {
 }
 
 CmtEffectCreateFleet_DessanuRoamer = {
+	optimize_memory
 	CmtEffectCreateAdmiral_OwnerStandard = yes
 	create_fleet = {
 		name = "NAME_Dessanu_Fleet_2"
@@ -768,6 +786,7 @@ CmtEffectCreateFleet_DessanuRoamer = {
 # This = fleet
 # prev = country
 CmtEffectCreateElement_GraygooStandard = {
+	optimize_memory
 	event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlShip value = CmtVarFleetPower_Graygoo } }
 	prev = { CmtEffectResetLoop = yes }
 	while = {
@@ -788,6 +807,7 @@ CmtEffectCreateElement_GraygooStandard = {
 
 ### Fleet, Scope = graygoo_country
 CmtEffectCreateFleet_GraygooGarryson = {
+	optimize_memory
 	create_fleet = {
 		name = "NAME_Tempest_Fleet"
 		effect = {
@@ -801,6 +821,7 @@ CmtEffectCreateFleet_GraygooGarryson = {
 }
 
 CmtEffectCreateFleet_GraygooAttacker = {
+	optimize_memory
 	create_fleet = {
 		name = "NAME_Tempest_Fleet"
 		effect = {

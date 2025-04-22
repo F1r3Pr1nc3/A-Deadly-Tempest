@@ -14,6 +14,7 @@
 
 ### Overwriting Cmt001
 CmtEffectDetectMidGameEdition = {
+	optimize_memory
 	set_global_flag = CmtFlagMidGameEdition
 }
 
@@ -23,11 +24,12 @@ CmtEffectDetectMidGameEdition = {
 
 ### Scope: this = marauder country, prev = trigger country
 CmtEffectTriggerMarauderManually = {
+	optimize_memory
 	if = {
 		limit = {
 			count_owned_fleet = {
-				limit = { is_ship_size = marauder_void_dwelling }
 				count > 1
+				limit = { is_ship_size = marauder_void_dwelling }
 			}
 			can_generate_trade_value = yes
 		}
@@ -44,6 +46,7 @@ CmtEffectTriggerMarauderManually = {
 
 ### Scope: this = stellar system with L-Gate
 CmtEffectDeleteLgateInSystem = {
+	optimize_memory
 	remove_star_flag = lgate
 	every_system_megastructure = {
 		limit = { is_megastructure_type = lgate_base }

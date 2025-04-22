@@ -271,7 +271,7 @@ country_event = {
 	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
 }
 
-### Anatomy Files: Controled by Also CrisisManagerMenu.4130 (Previous Event)
+### Anatomy Files: Also controlled by CrisisManagerMenu.4130 (Previous Event)
 country_event = {
 	id = CrisisManagerMenu.4140
 	title = CrisisManagerMenu.4140.name
@@ -677,7 +677,7 @@ country_event = {
 	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
 }
 
-### Location of opeing 2nd/3rd portal: Controled by Also CrisisManagerMenu.4220 (Previous Event)
+### Location of opeing 2nd/3rd portal: Also controlled by CrisisManagerMenu.4220 (Previous Event)
 country_event = {
 	id = CrisisManagerMenu.4230
 	title = CrisisManagerMenu.4230.name

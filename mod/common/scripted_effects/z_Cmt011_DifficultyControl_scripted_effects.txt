@@ -13,6 +13,7 @@
 #################################
 
 CmtEffectApplyDifficulty_Endgame = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarCrisisPower_Endgame value = 1 } }
@@ -31,6 +32,7 @@ CmtEffectApplyDifficulty_Endgame = {
 }
 
 CmtEffectApplyDifficulty_Midgame = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarCrisisPower_Midgame value = 1 } }
@@ -54,11 +56,13 @@ CmtEffectApplyDifficulty_Midgame = {
 
 ### Fleet Power
 CmtEffectApplyCommonPower_FleetPower = {
+	optimize_memory
 	CmtEffectApplyCommonPowerEndgame_FleetPower = yes
 	CmtEffectApplyCommonPowerMidgame_FleetPower = yes
 }
 
 CmtEffectApplyCommonPowerEndgame_FleetPower = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarFleetPower_Common value > 0.125 } }
@@ -75,6 +79,7 @@ CmtEffectApplyCommonPowerEndgame_FleetPower = {
 }
 
 CmtEffectApplyCommonPowerMidgame_FleetPower = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarFleetPower_Common value > 0.125 } }
@@ -86,11 +91,13 @@ CmtEffectApplyCommonPowerMidgame_FleetPower = {
 
 ### Army Power
 CmtEffectApplyCommonPower_ArmyPower = {
+	optimize_memory
 	CmtEffectApplyCommonPowerEndgame_ArmyPower = yes
 	CmtEffectApplyCommonPowerMidgame_ArmyPower = yes
 }
 
 CmtEffectApplyCommonPowerEndgame_ArmyPower = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarArmyPower_Common value > 0.125 } }
@@ -100,6 +107,7 @@ CmtEffectApplyCommonPowerEndgame_ArmyPower = {
 	}
 }
 CmtEffectApplyCommonPowerMidgame_ArmyPower = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarArmyPower_Common value > 0.125 } }
@@ -110,11 +118,13 @@ CmtEffectApplyCommonPowerMidgame_ArmyPower = {
 
 ### Number of Combat Fleets
 CmtEffectApplyCommonPower_CombatFleetNumber = {
+	optimize_memory
 	CmtEffectApplyCommonPowerEndgame_CombatFleetNumber = yes
 	CmtEffectApplyCommonPowerMidgame_CombatFleetNumber = yes
 }
 
 CmtEffectApplyCommonPowerEndgame_CombatFleetNumber = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarCombatFleetNumber_Common value > 0.125 } }
@@ -130,6 +140,7 @@ CmtEffectApplyCommonPowerEndgame_CombatFleetNumber = {
 }
 
 CmtEffectApplyCommonPowerMidgame_CombatFleetNumber = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarCombatFleetNumber_Common value > 0.125 } }
@@ -141,11 +152,13 @@ CmtEffectApplyCommonPowerMidgame_CombatFleetNumber = {
 
 ### Number of Army Fleets
 CmtEffectApplyCommonPower_ArmyNumber = {
+	optimize_memory
 	CmtEffectApplyCommonPowerEndgame_ArmyNumber = yes
 	CmtEffectApplyCommonPowerMidgame_ArmyNumber = yes
 }
 
 CmtEffectApplyCommonPowerEndgame_ArmyNumber = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarArmyPower_Common value > 0.125 } }
@@ -156,6 +169,7 @@ CmtEffectApplyCommonPowerEndgame_ArmyNumber = {
 }
 
 CmtEffectApplyCommonPowerMidgame_ArmyNumber = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarArmyPower_Common value > 0.125 } }
@@ -166,11 +180,13 @@ CmtEffectApplyCommonPowerMidgame_ArmyNumber = {
 
 ### Number of Constructor
 CmtEffectApplyCommonPower_ConstructorNumber = {
+	optimize_memory
 	CmtEffectApplyCommonPowerEndgame_ConstructorNumber = yes
 	CmtEffectApplyCommonPowerMidgame_ConstructorNumber = yes
 }
 
 CmtEffectApplyCommonPowerEndgame_ConstructorNumber = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarConstructorNumber_Common value > 0.125 } }
@@ -184,6 +200,7 @@ CmtEffectApplyCommonPowerEndgame_ConstructorNumber = {
 }
 
 CmtEffectApplyCommonPowerMidgame_ConstructorNumber = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarConstructorNumber_Common value > 0.125 } }
@@ -197,6 +214,7 @@ CmtEffectApplyCommonPowerMidgame_ConstructorNumber = {
 ##########################
 
 CmtEffectResetCrisisPowerCommon = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		set_variable = { which = CmtVarFleetPower_Common		value = 0 }
 		set_variable = { which = CmtVarArmyPower_Common			value = 0 }

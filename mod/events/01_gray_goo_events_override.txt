@@ -1200,8 +1200,8 @@ country_event = {
 					limit = { exists = orbit orbit = { is_scope_type = planet has_planet_flag = has_megastructure } }
 					orbit = { remove_planet_flag = has_megastructure }
 				}
-				spawn_habitat_cracker_effect = yes # remove_planet = yes
 				spawn_habitat_nanobot_effect = yes
+				spawn_habitat_cracker_effect = yes # remove_planet = yes
 			}
 			else_if = {
 				limit = {

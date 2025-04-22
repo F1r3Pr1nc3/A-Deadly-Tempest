@@ -24,6 +24,7 @@
 ##############
 
 CmtEffectCreateShip_Outrider = {
+	optimize_memory
 	create_ship = {
 		name = random
 		design = "NAME_Outrider"
@@ -34,6 +35,7 @@ CmtEffectCreateShip_Outrider = {
 }
 
 CmtEffectCreateShip_Lancer = {
+	optimize_memory
 	create_ship = {
 		name = random
 		design = "NAME_Lancer"
@@ -44,6 +46,7 @@ CmtEffectCreateShip_Lancer = {
 }
 
 CmtEffectCreateShip_VoidChampion = {
+	optimize_memory
 	create_ship = {
 		name = random
 		design = "NAME_Void_Champion"
@@ -54,6 +57,7 @@ CmtEffectCreateShip_VoidChampion = {
 }
 
 CmtEffectCreateShip_AncestralGlory = {
+	optimize_memory
 	create_ship = {
 		name = random
 		design = "NAME_Ancestral_Glory"
@@ -64,6 +68,7 @@ CmtEffectCreateShip_AncestralGlory = {
 }
 
 CmtEffectCreateShip_KhanArmy = {
+	optimize_memory
 	create_army_transport = {
 		ship_name = "NAME_Pirate_Transport"
 		graphical_culture = "mammalian_01"
@@ -77,6 +82,7 @@ CmtEffectCreateShip_KhanArmy = {
 #################
 
 CmtEffectCreateShip_DessanuMother = {
+	optimize_memory
 	create_ship = {
 		name = random
 		design = "NAME_Dessanu_Mothership"
@@ -86,6 +92,7 @@ CmtEffectCreateShip_DessanuMother = {
 }
 
 CmtEffectCreateShip_DessanuInterdictor = {
+	optimize_memory
 	create_ship = {
 		name = random
 		design = "NAME_Dessanu_Interdictor"
@@ -99,6 +106,7 @@ CmtEffectCreateShip_DessanuInterdictor = {
 #################
 
 CmtEffectCreateShip_GraygooMother = {
+	optimize_memory
 	create_ship = {
 		name = random
 		design = "NAME_Nanite_Mothership"
@@ -108,6 +116,7 @@ CmtEffectCreateShip_GraygooMother = {
 }
 
 CmtEffectCreateShip_GraygooInterdictor = {
+	optimize_memory
 	create_ship = {
 		name = random
 		design = "NAME_Nanite_Interdictor"

@@ -33,12 +33,35 @@ event = {
 				event_target:global_event_country = { save_global_event_target_as = CmtGlobalVar }
 			}
 			else_if = {
-				limit = { NAND = { is_scope_valid = yes is_country_type = global_event } }
-				event_target:global_event_country = { save_global_event_target_as = CmtGlobalVar }
+				limit = {
+					NAND = {
+						is_scope_valid = yes
+						is_scope_type = country
+						is_country_type = global_event
+					}
+					any_country = { is_country_type = global_event }
+				}
+				random_country = {
+					limit = { is_country_type = global_event }
+					save_global_event_target_as = CmtGlobalVar
+				}
 			}
 			else_if = {
-				limit = { is_scope_type = country }
+				limit = {
+					is_scope_valid = yes
+					is_scope_type = country
+					is_country_type = global_event
+				}
 				save_global_event_target_as = CmtGlobalVar
+			}
+			else = {
+				create_country = {
+					name = "global_event_country"
+					type = global_event
+					effect = {
+						save_global_event_target_as = CmtGlobalVar
+					}
+				}
 			}
 		}
 		# Support nhsc mod

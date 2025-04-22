@@ -2371,7 +2371,7 @@ country_event = {
 # 	abort_trigger = { NOT = { has_country_flag = CmtFlagNowInMenu } }
 # }
 
-# ### Machines to Uprise at Earliest.
+# ### Machines to Upraise at Earliest.
 # country_event = {
 # 	id = CrisisManagerMenu.5120
 # 	title = CrisisManagerMenu.5120.name
@@ -2391,7 +2391,7 @@ country_event = {
 # 		}
 # 	}
 # 	desc = {
-# 		text = CrisisManagerMenu.5120.desct
+# 		text = CrisisManagerMenu.5120.desc
 # 		exclusive_trigger = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarUprisingEarliestMgpy value > @CmtConstUprisingEarliestMgpy_TA } } }
 # 	}
 # 	picture = GFX_evt_organic_oppression

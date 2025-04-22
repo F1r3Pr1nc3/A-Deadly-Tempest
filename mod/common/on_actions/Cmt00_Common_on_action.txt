@@ -10,8 +10,14 @@
 
 on_game_start = {
 	events = {
-		CrisisManagerMenu.1		## Calling menu
+		CrisisManagerMenu.1			## Init vars
 		## crisis_trigger.0001 		## For only debugging
+	}
+}
+
+on_game_start_country = {
+	events = {
+		CrisisManagerMenu.99 		## Calling host menu
 	}
 }
 

@@ -88,6 +88,7 @@
 # This = planet
 # Prev = event_target:raider_khanate
 CmtEffectCreateAdmiralty_KhanStarterPack = {
+	optimize_memory
 	prev = {
 		get_marauder_species = { PLANET = prev }
 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Khan } }
@@ -115,6 +116,7 @@ CmtEffectCreateAdmiralty_KhanStarterPack = {
 
 ### Mercenaries
 CmtEffectCreateAdmiralty_KhanMercenaries1 = {
+	optimize_memory
 	event_target:raider_khanate = {
 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Khan } }
 		while = {
@@ -143,6 +145,7 @@ CmtEffectCreateAdmiralty_KhanMercenaries1 = {
 }
 
 CmtEffectCreateAdmiralty_KhanMercenaries2 = {
+	optimize_memory
 	event_target:raider_khanate = {
 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Khan } }
 		while = {
@@ -171,6 +174,7 @@ CmtEffectCreateAdmiralty_KhanMercenaries2 = {
 }
 
 CmtEffectCreateAdmiralty_KhanMercenaries3 = {
+	optimize_memory
 	event_target:raider_khanate = {
 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Khan } }
 		while = {
@@ -404,6 +408,7 @@ CmtEffectCreateAdmiralty_KhanMercenaries3 = {
 
 # Dynamic Fleet Limit (country)
 CmtEffectInitFleetUpperLimit = {
+	optimize_memory
 	set_variable = { which = CmtGraygooFleetNumberUpperLimit value = @CmtConstGraygooFleetNumberUpperLimit }
 	switch = {
 		trigger = galaxy_size
@@ -457,6 +462,7 @@ CmtEffectInitFleetUpperLimit = {
 #################
 
 CmtEffectCreateAdmiralty_DessanuCapitalDefence = {
+	optimize_memory
 	owner = {
 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu } }
 		CmtEffectInitFleetUpperLimit = yes
@@ -480,6 +486,7 @@ CmtEffectCreateAdmiralty_DessanuCapitalDefence = {
 }
 
 CmtEffectCreateAdmiralty_DessanuGarryson = {
+	optimize_memory
 	owner = {
 	# event_target:gate_builders = {
 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Dessanu } }
@@ -503,6 +510,7 @@ CmtEffectCreateAdmiralty_DessanuGarryson = {
 }
 
 CmtEffectCreateAdmiralty_DessanuRoamer = {
+	optimize_memory
 	owner = {
 		CmtEffectCreateFleet_DessanuRoamer = yes
 		event_target:lcluster1 = {
@@ -631,6 +639,7 @@ CmtEffectCreateAdmiralty_DessanuRoamer = {
 #################
 
 CmtEffectCreateAdmiralty_GraygooCapitalDefence = {
+	optimize_memory
 	owner = {
 	# event_target:graygoo_country = {
 		event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo } }
@@ -656,6 +665,7 @@ CmtEffectCreateAdmiralty_GraygooCapitalDefence = {
 }
 
 CmtEffectCreateAdmiralty_GraygooGarryson = {
+	optimize_memory
 	# event_target:graygoo_country = {
 	event_target:CmtGlobalVar = { set_variable = { which = CmtVarWhileControlFleet value = CmtVarCombatFleetNumber_Graygoo } }
 	if = {
@@ -815,6 +825,7 @@ CmtEffectCreateAdmiralty_GraygooRoamer = {
 }
 
 CmtEffectCreateAdmiralty_GraygooAttackerA = {
+	optimize_memory
 	event_target:graygoo_country = {
 		if = {
 			limit = {
@@ -844,6 +855,7 @@ CmtEffectCreateAdmiralty_GraygooAttackerA = {
 }
 
 CmtEffectCreateAdmiralty_GraygooAttackerB = {
+	optimize_memory
 	event_target:graygoo_country = {
 		if = {
 			limit = {

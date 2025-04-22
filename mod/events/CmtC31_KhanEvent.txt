@@ -65,21 +65,21 @@ event = {
 					modifier = {
 						factor = 0.67
 						count_country = {
+							count = 2
 							limit = {
 								is_country_type = dormant_marauders
 								NOT = { has_country_flag = restored_marauders_flag }
 							}
-							count = 2
 						}
 					}
 					modifier = {
 						factor = 0.5
 						count_country = {
+							count > 2
 							limit = {
 								is_country_type = dormant_marauders
 								NOT = { has_country_flag = restored_marauders_flag }
 							}
-							count > 2
 						}
 					}
 					modifier = {

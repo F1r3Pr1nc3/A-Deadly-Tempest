@@ -28,33 +28,6 @@ event = {
 				country_event = { id = CrisisManagerMenu.21 }
 			}
 		}
-		## Main Menu
-		if = {
-			limit = {
-				NOR = {
-					has_global_flag = CmtFlagNoCall
-					any_playable_country = { is_ai = no has_country_flag = CmtFlagNowInMenu }
-				}
-			}
-			if = { limit = { is_scope_type = country is_ai = no }
-				if = {
-					limit = { NOT = { has_active_event = { CrisisManagerMenu.100 } } }
-					country_event = { id = CrisisManagerMenu.100 }
-				}
-				# log="Cmt Game started is_scope_type = country"
-			} else = {
-				random_playable_country = {
-					limit = {
-						is_ai = no
-						NOT = { has_active_event = { CrisisManagerMenu.100 } }
-					}
-					country_event = { id = CrisisManagerMenu.100 }
-					# log="Cmt Game started random_playable_country"
-				}
-			}
-			log="Cmt Game started 1 without CmtFlagNoCall"
-		}
-		# log="Cmt Game started 1"
 	}
 }
 
@@ -256,6 +229,23 @@ country_event = {
 				set_variable = { which = CmtVarGrayGooCybrexLimit value = 110 }
 			}
 		}
+	}
+}
+
+# Game Host Start (multiplayer support)
+country_event = {
+	id = CrisisManagerMenu.99
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			is_ai = yes
+			has_global_flag = CmtFlagNoCall
+		}
+	}
+	immediate = {
+		country_event = { id = CrisisManagerMenu.100 }
 	}
 }
 

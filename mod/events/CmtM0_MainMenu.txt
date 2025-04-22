@@ -32,7 +32,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		is_ai = no
-		exists = event_target:CmtGlobalVar
+		# exists = event_target:CmtGlobalVar
 	}
 
 	immediate = {

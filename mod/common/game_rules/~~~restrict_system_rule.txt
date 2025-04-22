@@ -101,6 +101,16 @@ ai_should_restrict_system = {
 			}
 		}
 		AND = {
+			OR = {
+				has_star_flag = pike_star_flag_banned_system # ACE
+				AND = {
+					has_star_flag = guardian
+					any_fleet_in_system = {
+						exists = owner
+						owner = { is_country_type = guardian_fortress }
+					}
+				}
+			}
 			root = {
 				OR = {
 					AND = {
@@ -108,17 +118,13 @@ ai_should_restrict_system = {
 						# Gigastructural Engineering & More
 						inline_script = {
 							script = merger_of_rules/toggled_code
-							code = " is_blokkat_country_type = no"
+							code = " is_blokkat_country_type = no "
 							toggle = @has_gigastructures
 						}
 					}
 					merg_is_awakened_fe = yes
+					has_country_flag = pike_assisted_ai # ACE
 				}
-			}
-			has_star_flag = guardian
-			any_fleet_in_system = {
-				exists = owner
-				owner = { is_country_type = guardian_fortress }
 			}
 		}
 		# SirBlackAxe's Unofficial Bug Patch
@@ -150,7 +156,7 @@ ai_should_restrict_system = {
 		# Gigastructural Engineering & More
 		inline_script = {
 			script = merger_of_rules/toggled_code
-			code = " giga_ai_should_restrict_system = yes"
+			code = " giga_ai_should_restrict_system = yes "
 			toggle = @has_gigastructures
 		}
 		# Spaceborne Civs Expanded
@@ -185,8 +191,7 @@ ai_should_restrict_system = {
 				}
 			}
 		}
-		# SOFE seems very similar to SBTG (or the same?) and another extension for ACOT?
-		# TODO # # Ancient Cache of Technologies : Secrets Beyond The Gates 1481972266 merg_has_sofe = { has_global_flag = sofe_activated }
+		# ACOT STBG TODO # # Ancient Cache of Technologies : Secrets Beyond The Gates 1481972266 merg_has_sofe = { has_global_flag = sofe_activated }
 		# inline_script = {
 		# 	script = merger_of_rules/toggled_code
 		# 	code = "
@@ -211,21 +216,29 @@ ai_should_restrict_system = {
 		# 	toggle = @has_sbtg_mod
 		# }
 		# General restriction flag (introduced by OldEnt, used by A Deadly Tempest)
-		inline_script = {
-			script = merger_of_rules/toggled_code
-			code = "
-			AND = {
-				root = {
-					OR = {
-						is_crisis_faction = yes
-						has_country_flag = pike_assisted_ai
-					}
-				}
-				has_star_flag = pike_star_flag_banned_system
-			}
-			"
-			toggle = @has_a_deadly_tempest_mod
-		}
+		# inline_script = {
+		# 	script = merger_of_rules/toggled_code
+		# 	code = "
+		# 	AND = {
+		# 		root = {
+		# 			OR = {
+		# 				AND = {
+		# 					is_crisis_faction = yes
+		# 					inline_script = {
+		# 						script = merger_of_rules/toggled_code
+		# 						code = \" is_blokkat_country_type = no \"
+		# 						toggle = @has_gigastructures
+		# 					}
+		# 				}
+		# 				has_country_flag = pike_assisted_ai
+		# 			}
+		# 		}
+		# 		has_star_flag = pike_star_flag_banned_system
+		# 	}
+		# 	"
+		# 	toggle = @has_a_deadly_tempest_mod
+		# }
+		# SOFE seems very similar to SBTG (or the same?) and another extension for ACOT?
 		# Ancient Empire (古代帝国) 2389589691
 		inline_script = {
 			script = merger_of_rules/toggled_code
@@ -279,10 +292,9 @@ ai_should_restrict_system = {
 			"
 			toggle = @harvester_beamcage_ship_count # TODO
 		}
-
 		# Scripted Triggers Undercoat
-		# has_star_flag = stu_ai_restrict_system@root
-		# The Sleeper
+		# has_star_flag = stu_ai_restrict_system@root TODO with var?
+		# The Sleeper # Stop FEs from just killing The Sleeper
 		inline_script = {
 			script = merger_of_rules/toggled_code
 			code = "
@@ -323,11 +335,11 @@ ai_should_restrict_system = {
 				root = { merg_is_fallen_empire = yes }
 				OR = {
 					owner = { is_marauder = yes }
-					any_fleet_in_system = { # Stop FEs FROM just killing the Sleeper
+					any_fleet_in_system = { 
 						exists = owner
 						owner = { is_country_type = berserker_awoken_hive }
 					}
-					AND = { # Stop FEs FROM just killing the Sleeper
+					AND = {
 						owner = { is_country_type = the_sleeper_fallen }
 						has_star_flag = sleeper_system
 					}

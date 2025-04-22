@@ -22,6 +22,7 @@
 ##############
 
 CmtFleetSetAuxParam_KhanCombat = {
+	optimize_memory
 	set_location = {
 		target = prevprev
 		distance = 45
@@ -72,6 +73,7 @@ CmtFleetSetAuxParam_KhanCombat = {
 # }
 
 CmtFleetSetAuxParam_KhanAuxiliary = {
+	optimize_memory
 	set_location = {
 		target = prevprev
 		distance = 20
@@ -84,6 +86,7 @@ CmtFleetSetAuxParam_KhanAuxiliary = {
 #################
 
 CmtFleetSetAuxParam_DessanuGarryson = {
+	optimize_memory
 	set_formation_scale = 2
 	set_fleet_stance = aggressive
 	set_aggro_range_measure_from = self
@@ -96,6 +99,7 @@ CmtFleetSetAuxParam_DessanuGarryson = {
 }
 
 CmtFleetSetAuxParam_DessanuRoamerCommon = {
+	optimize_memory
 	set_formation_scale = 2
 	set_fleet_stance = aggressive
 	set_aggro_range_measure_from = self
@@ -109,6 +113,7 @@ CmtFleetSetAuxParam_DessanuRoamerCommon = {
 
 ### For Roamers: 			set_location = event_target:start_x (x = \d)
 CmtFleetSetAuxParam_DessanuRoamer = {
+	optimize_memory
 	random_system_planet = {
 		limit = {
 			OR = {
@@ -186,6 +191,7 @@ CmtFleetSetAuxParam_DessanuRoamer = {
 #################
 
 CmtFleetSetAuxParam_GraygooGarryson = {
+	optimize_memory
 	set_formation_scale = 2
 	set_fleet_stance = aggressive
 	set_aggro_range_measure_from = self
@@ -198,6 +204,7 @@ CmtFleetSetAuxParam_GraygooGarryson = {
 }
 
 CmtFleetSetAuxParam_GraygooAttacker = {
+	optimize_memory
 	set_formation_scale = 2
 	set_fleet_stance = aggressive
 	set_aggro_range_measure_from = self
@@ -211,6 +218,7 @@ CmtFleetSetAuxParam_GraygooAttacker = {
 
 ### For Roamers: 	set_location = event_target:start_x (x = \d)
 CmtFleetSetAuxParam_GraygooRoamer = {
+	optimize_memory
 	random_system_planet = {
 		limit = { is_planet_class = pc_gray_goo }
 		last_created_fleet = {
@@ -263,6 +271,7 @@ CmtFleetSetAuxParam_GraygooRoamer = {
 }
 
 CmtFleetSetAuxParam_Roamer = {
+	optimize_memory
 	# set_location = prev
 	queue_actions = {
 		repeat = {

@@ -6,8 +6,7 @@ planet_event = {
 	id = a_deadly_tempest.81
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		# planet_devastation > 99
+	trigger = {	# planet_devastation > 99
 		OR = {
 			has_orbital_bombardment_stance = nanitebombard
 			has_planet_flag = flag_nanite_bombardment
@@ -40,7 +39,8 @@ planet_event = {
 	immediate = {
 		change_variable = { which = nanite_bomb_counter value = 1 }
 		# Only if certain amount of days
-		if = { limit = { check_variable = { which = nanite_bomb_counter value > 15 } }
+		if = {
+			limit = { check_variable = { which = nanite_bomb_counter value > 15 } }
 			planet_event = { id = a_deadly_tempest.84 }
 		}
 	}
@@ -58,15 +58,11 @@ country_event = {
 	show_sound = event_ghost_town
 	location = from
 	is_triggered_only = yes
-	immediate = {
-		# log="[from.from.GetName] 82ff" # Victim
+	immediate = {	# log="[from.from.GetName] 82ff" # Victim
 		add_opinion_modifier = { modifier = opinion_converted_my_world who = fromfromfrom }
 	}
 
-	option = {
-		name = action.82.a
-		custom_tooltip = bombed_to_nanite_world
-	}
+	option = { name = action.82.a custom_tooltip = bombed_to_nanite_world }
 }
 
 # Planet is turned into Nanite World by Nanite Bombing stance (bombarder)
@@ -100,16 +96,14 @@ country_event = {
 				# }
 			}
 			add_opinion_modifier = { modifier = opinion_converted_a_world who = root }
-			if = { limit = { is_ai = no }
+			if = {
+				limit = { is_ai = no }
 				from = { planet_event = { id = a_deadly_tempest.85 } }
 			}
 		}
 	}
 
-	option = {
-		name = EXCELLENT
-		custom_tooltip = bombed_to_nanite_world
-	}
+	option = { name = EXCELLENT custom_tooltip = bombed_to_nanite_world }
 }
 
 # Colony Bombarded
@@ -140,7 +134,8 @@ planet_event = {
 				}
 				CmtEffectCreateShip_GraygooMother = yes
 			}
-		} else_if = {
+		}
+		else_if = {
 			limit = {
 				OR = {
 					merg_is_habitat = yes
@@ -170,11 +165,7 @@ planet_event = {
 				if = {
 					limit = { is_at_war_with = fromfrom }
 					# isn't the case when the crisis bombards planets, for instance
-					add_static_war_exhaustion = {
-						attacker = fromfrom
-						location = root
-						value_for_planet_destruction = 0.7
-					}
+					add_static_war_exhaustion = { attacker = fromfrom location = root value_for_planet_destruction = 0.7 }
 				}
 			}
 		}
@@ -193,21 +184,29 @@ planet_event = {
 			limit = { has_ringworld_output_boost = yes }
 			change_pc = pc_ringworld_habitable_damaged
 			spawn_ringworld_nanobot_effect = yes
-		} else_if = {
+		}
+		else_if = {
 			limit = { merg_is_habitat = yes }
 			if = { limit = { exists = planet planet = { has_planet_flag = has_megastructure } }
 				planet = { remove_planet_flag = has_megastructure }
-			} else_if = { limit = { exists = orbit orbit = { has_planet_flag = has_megastructure } }
+			}
+			else_if = {
+				limit = {
+					exists = orbit
+					orbit = {
+						is_scope_valid = yes
+						is_scope_type = planet # Since v3.14 log gives also astral_rift!?
+						has_planet_flag = has_megastructure
+					}
+				}
 				orbit = { remove_planet_flag = has_megastructure }
 			}
 			spawn_habitat_nanobot_effect = yes
-			remove_planet = yes # ariphaos_patch_remove_habitat = yes
+			spawn_habitat_cracker_effect = yes # ariphaos_patch_remove_habitat = yes
 			break = yes
-		} else_if = {
-			limit = {
-				is_artificial = no
-				habitable_planet = yes
-			}
+		}
+		else_if = {
+			limit = { is_artificial = no habitable_planet = yes }
 			change_pc = pc_gray_goo
 			# Reset only removes real static modifiers? (2.7.2)
 			# TODO which from 08_static_modifiers_megacorp.txt
@@ -226,7 +225,8 @@ planet_event = {
 			remove_modifier = "atmospheric_hallucinogen"
 			remove_modifier = "lush_planet"
 			remove_modifier = "dangerous_wildlife"
-			if = { limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 4 } } }
+			if = {
+				limit = { event_target:CmtGlobalVar = { check_variable = { which = CmtVarLgateTerraformNanite value = 4 } } }
 				add_modifier = { modifier = terraforming_candidate months = 1 }
 			}
 			random_list = {

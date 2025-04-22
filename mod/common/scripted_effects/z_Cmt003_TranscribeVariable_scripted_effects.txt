@@ -13,6 +13,7 @@
 ###############
 
 CmtEffectTransferAll = {
+	optimize_memory
 	CmtEffectTransferCrisisPower = yes
 	CmtEffectTransferKhanPostDeath = yes
 	CmtEffectTransferLgateCycle = yes
@@ -44,6 +45,7 @@ CmtEffectTransferAll = {
 
 ### Future of Horde
 CmtEffectTransferKhanPostDeath = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarKhanPostDeathSummary value = 2 } }
@@ -83,6 +85,7 @@ CmtEffectTransferKhanPostDeath = {
 ################
 
 CmtEffectTransferLgateCycle = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		if = {
 			limit = { check_variable = { which = CmtVarLgateCycleCommon value = 1 } }
@@ -151,6 +154,7 @@ CmtEffectTransferLgateCycle = {
 ####################
 
 CmtEffectTransferCrisisPower = {
+	optimize_memory
 	event_target:CmtGlobalVar = {
 		set_variable = { which = CmtVarColonizerNumber_Prethoryn value = CmtVarConstructorNumber_Prethoryn }
 		if = {

@@ -6,7 +6,7 @@
 #########################################
 namespace = action
 
-# Fix (Vanilla) splitted system can lead to unserveyable: https://forum.paradoxplaza.com/forum/threads/stellaris-system-with-dual-planets-ownership-and-no-starbases-are-stuck.1508942/# post-28052496
+# Fix (Vanilla) split system can lead to Inability to be surveyed: https://forum.paradoxplaza.com/forum/threads/stellaris-system-with-dual-planets-ownership-and-no-starbases-are-stuck.1508942/# post-28052496
 # on_monthly_pulse
 # Compare action.85		# Flip planets to starbase owner
 # Compare marauder.515	# Marauder planet liberated

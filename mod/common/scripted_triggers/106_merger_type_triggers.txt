@@ -17,6 +17,7 @@
 
 # Expanded version of country_type = default
 merg_is_default_empire = {
+	optimize_memory
 	OR = {
 		is_country_type = default
 		# Darkspace
@@ -57,6 +58,7 @@ merg_is_default_empire = {
 # Extended Merger of Rules with Nomads: The wondering Void Farers
 # These triggers are also meant as a library for modders who want to reuse them in their own mods.
 is_default_or_fallen = {
+	optimize_memory
 	OR = {
 		is_country_type = default
 		is_fallen_empire = yes
@@ -96,6 +98,7 @@ is_default_or_fallen = {
 
 # List of dormant/standard Fallen Empires
 merg_is_fallen_empire = {
+	optimize_memory
 	OR = {
 		is_country_type = fallen_empire
 		# Human Fallen Empire
@@ -143,6 +146,7 @@ merg_is_fallen_empire = {
 
 # List of awakened Fallen Empires.
 merg_is_awakened_fe = {
+	optimize_memory
 	OR = {
 		is_country_type = awakened_fallen_empire
 		# SW:KUAT ANCIENT EMPIRE
@@ -191,6 +195,7 @@ merg_is_awakened_fe = {
 
 ### Mid-Game Crises general trigger ###
 is_marauder = {
+	optimize_memory
 	OR = {
 		is_country_type = dormant_marauders
 		is_country_type = ruined_marauders
@@ -205,6 +210,7 @@ is_marauder = {
 }
 # Scripted undercoat
 is_endgame_crisis = {
+	optimize_memory
 	OR = {
 		is_country_type = extradimensional
 		is_country_type = extradimensional_2
@@ -229,6 +235,7 @@ is_endgame_crisis = {
 
 # FOR CUSTODIAN
 is_crisis_faction = {
+	optimize_memory
 	OR = {
 		is_endgame_crisis = yes
 		is_country_type = gray_goo
