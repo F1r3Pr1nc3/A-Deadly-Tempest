@@ -47,7 +47,6 @@ create_gray_official = {
 			set_leader_flag = legendary_leader
 			set_leader_flag = immune_to_negative_traits
 			set_leader_flag = gray_leader
-			# set_leader_flag = "灰风领袖"
 		}
 	}
 	# random_owned_leader = {
@@ -137,7 +136,7 @@ create_gray_warship = {
 			name = "NAME_Gray"
 			settings = {
 				can_upgrade = no
-				can_change_composition = no
+				can_change_composition = yes # v3.14
 				can_disband = no
 				can_change_leader = no
 				uses_naval_capacity = no

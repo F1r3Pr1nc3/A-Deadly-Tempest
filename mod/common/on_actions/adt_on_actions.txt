@@ -196,8 +196,16 @@ on_starbase_destroyed = {
 # from = Former Owner (Country)
 on_starbase_transfer = {
 	events = {
-		# action.223
 		a_deadly_tempest.224
+	}
+}
+
+# From = system
+# FromFrom = country (previous owner)
+# This = country (new owner)
+on_system_gained = {
+	events = {
+		a_deadly_tempest.1001
 	}
 }
 

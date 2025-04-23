@@ -1384,13 +1384,17 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_global_flag = a_deadly_tempest_mod_active }
-				give_technology = { tech = tech_nanite_guardians message = no }
+				random = { chance = 80
+					give_technology = { tech = tech_nanite_guardians message = no }
+				}
 			}
-			random_playable_country = {
-				limit = { is_ai = no }
-				weights = { base = 1 modifier = { add = 24 NOT = { is_same_empire = root } } }
-				# Chance Spawn Gray
-				country_event = { id = a_deadly_tempest.1000 days = 16 random = 8 }
+			# Chance Spawn Gray
+			random = { chance = 60
+				random_playable_country = {
+					limit = { NOR = { is_ai = yes has_country_flag = disco_gray } }
+					weights = { base = 1 modifier = { add = 24 NOT = { is_same_empire = root } } }
+					country_event = { id = a_deadly_tempest.1000 days = 16 random = 8 }
+				}
 			}
 		}
 	}

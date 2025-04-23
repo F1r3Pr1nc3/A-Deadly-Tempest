@@ -141,7 +141,7 @@
  CrisisManagerMenu.100.T0xx.name: "Aplicar plantilla de configuración: "
  CrisisManagerMenu.100.desc1: "$CmtTextTransitionalBetaFull$Aquí puedes configurar los parámetros de las crisis.\nLa mayoría de las configuraciones se pueden cambiar hasta que sucedan los eventos correspondientes.\n\n$CmtDescTooltipInfo$"
  CrisisManagerMenu.100.desc2: "§HTodos los eventos controlados por este mod ya se han activado.§!\nPor lo tanto, algunas de las configuraciones ya no se pueden cambiar.\n\n$CmtDescTooltipInfo$"
- CrisisManagerMenu.100.desc3: "$CrisisManagerMenu.0100.desc1$\n\n§WEsta plantilla fue aplicada: [CmtGlobalVar.GetName_LastAppliedTemplate]§!"
+ CrisisManagerMenu.100.desc3: "$CrisisManagerMenu.100.desc1$\n\n§WEsta plantilla fue aplicada: [CmtGlobalVar.GetName_LastAppliedTemplate]§!"
  CrisisManagerMenu.100.name: "$CrisisManagerTitleB$ Menú"
  CrisisManagerMenu.1000.1010.name: "Configuraciones comunes para crisis"
  CrisisManagerMenu.1000.1022.name: "$CmtNameExds$, $CmtNameForcedEoc$"

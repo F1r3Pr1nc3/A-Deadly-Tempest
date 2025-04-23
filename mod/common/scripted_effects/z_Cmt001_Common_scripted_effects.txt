@@ -205,10 +205,10 @@ CmtEffectChangeAwakenerCivic = {
 		change_government = {
 			civics = { civic = civic_invigorated_coalescence civic = civic_rejuvenated_drones }
 		}
-		else = {
-			change_government = {
-				civics = { civic = civic_revanchist_fervor civic = civic_ancient_caches_of_technology }
-			}
+	}
+	else = {
+		change_government = {
+			civics = { civic = civic_revanchist_fervor civic = civic_ancient_caches_of_technology }
 		}
 	}
 }

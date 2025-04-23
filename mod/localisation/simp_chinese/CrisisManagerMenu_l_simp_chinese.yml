@@ -141,7 +141,7 @@
  CrisisManagerMenu.100.T0xx.name: "应用配置模板："
  CrisisManagerMenu.100.desc1: "$CmtTextTransitionalBetaFull$你可以在这里配置危机参数。\n大部分配置都可以更改，直到相应事件发生。\n\n$CmtDescTooltipInfo$"
  CrisisManagerMenu.100.desc2: "§H这个mod控制的某事件已经触发。§!\n因此部分配置将不可更改。\n\n$CmtDescTooltipInfo$"
- CrisisManagerMenu.100.desc3: "$CrisisManagerMenu.0100.desc1$\n\n§W该模板应用于：[CmtGlobalVar.GetName_LastAppliedTemplate]§!"
+ CrisisManagerMenu.100.desc3: "$CrisisManagerMenu.100.desc1$\n\n§W该模板应用于：[CmtGlobalVar.GetName_LastAppliedTemplate]§!"
  CrisisManagerMenu.100.name: "$CrisisManagerTitleB$菜单"
  CrisisManagerMenu.1000.1010.name: "危机通用配置"
  CrisisManagerMenu.1000.1022.name: "$CmtNameExds$, $CmtNameForcedEoc$"

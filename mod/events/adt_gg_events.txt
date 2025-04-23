@@ -263,16 +263,11 @@ country_event = {
 	show_sound = event_celebration	# event_ship_explosion
 	location = fromfromfrom
 	trigger = {
-		has_global_flag = l_cluster_opened
 		is_scope_valid = yes
-		# OR = {
-		# 	is_ai = no
-		# 	is_country_type_with_subjects = yes
-		# }
+		has_global_flag = l_cluster_opened
+		is_country_type_with_subjects = yes
 		OR = {
 			AND = { exists = event_target:goo_slayer is_same_empire = event_target:goo_slayer }
-			# NOT = { exists = event_target:gray_owner }
-			# has_country_flag = gray_owner
 			AND = { exists = event_target:gray_owner is_same_empire = event_target:gray_owner }
 		}
 	}
@@ -296,8 +291,8 @@ country_event = {
 		if = {
 			limit = {
 				is_ai = no
-				exists = event_target:lcluster_factory_system
 				is_subject = no
+				exists = event_target:lcluster_factory_system
 				no_scope = { is_difficulty > 3 }
 				OR = {
 					has_federation = yes
@@ -2143,39 +2138,55 @@ planet_event = {
 	}
 }
 
-# Spawn Gray
+# Spawn Gray (1. Taming L-Dragon chance, 2. Destroying Nanite Factory, 3. owning complete L-Cluster)
 country_event = {
 	id = a_deadly_tempest.1000
-	hide_window = yes
+	# hide_window = yes
+	title = disco_gray_cat
+	desc = disco_gray_cat_desc
+	location = event_target:gray_homeworld
+	picture = GFX_evt_ship_in_orbit_2
+	fire_only_once = yes
 	is_triggered_only = yes
-	# title = disco_gray_cat
-	# desc = disco_gray_cat_desc
 	trigger = {
 		has_global_flag = l_cluster_opened # L-Cluster exists
-		NOR = { is_ai = yes has_country_flag = gray_owner has_country_flag = disco_gray }
-		# controls_lcluster = yes
+		NOR = {
+			is_ai = yes
+			has_country_flag = disco_gray
+		}
 		NAND = {
 			exists = event_target:graygoo_country
 			event_target:graygoo_country = { is_country_type = gray_goo }
-			any_country = { is_country_type = gray_goo }
+			# any_country = { is_country_type = gray_goo }
 		}
 		NAND = {
 			exists = event_target:gray_owner
-			# exists = event_target:gray_country
-			# event_target:gray_country = { is_country_type = gray }
-			any_country = { is_country_type = gray }
+			exists = event_target:gray_country
+			event_target:gray_country = { is_country_type = gray }
+			# any_country = { is_country_type = gray }
 		}
 		any_system = {
 			has_star_flag = lcluster
 			NOT = { has_star_flag = lcluster1 }
 			any_system_planet = {
 				OR = { is_planet_class = pc_gray_goo is_planet_class = pc_gaia }
-				is_colony = no
-				has_anomaly = no
-				is_preventing_anomaly = no
+				NOR = {
+					is_colony = yes
+					has_anomaly = yes
+					is_preventing_anomaly = yes
+				}
 			}
 		}
-		NOT = {
+		NOR = {
+			has_active_event = {
+				graygoo.400
+				graygoo.401
+				graygoo.402
+				graygoo.403
+				graygoo.404
+				graygoo.405
+				graygoo.406
+			}
 			any_system = {
 				has_star_flag = lcluster
 				NAND = { exists = owner is_owned_by = root }
@@ -2190,37 +2201,73 @@ country_event = {
 		}
 	}
 	immediate = {
-		# random_system_within_border = {
 		random_system = {
 			limit = {
 				has_star_flag = lcluster
 				NOT = { has_star_flag = lcluster1 }
 				any_system_planet = {
 					OR = { is_planet_class = pc_gray_goo is_planet_class = pc_gaia }
-					is_colony = no
-					has_anomaly = no
-					is_preventing_anomaly = no
+					NOR = {
+						is_colony = yes
+						has_anomaly = yes
+						is_preventing_anomaly = yes
+					}
 				}
 			}
 			random_system_planet = {
 				limit = {
 					OR = { is_planet_class = pc_gray_goo is_planet_class = pc_gaia }
-					is_colony = no
-					has_anomaly = no
-					is_preventing_anomaly = no
+					NOR = {
+						is_colony = yes
+						has_anomaly = yes
+						is_preventing_anomaly = yes
+					}
 				}
 				weights = { base = 1 modifier = { add = 40 is_moon = yes } }
 				random = { chance = 40
 					set_planet_flag = hatchling_egg
 					random = { chance = 40 set_planet_flag = hatchling_will_trigger }
 				}
-				set_surveyed = { surveyed = no surveyor = prevprev } # Was bugged in 3.0
-				add_anomaly = { category = disco_gray_cat target = prevprev }
+				# set_surveyed = { surveyed = no surveyor = prevprev } # Was bugged in v3.0
+				add_anomaly = { category = disco_gray_cat target = root }
+				save_event_target_as = gray_homeworld
 				prevprev = { set_country_flag = disco_gray }
 			}
 		}
 	}
-	# option = { name = PECULIAR }
+	option = { name = PECULIAR }
+}
+
+# on_system_gained (complete L-Cluster owning)
+country_event = {
+	id = a_deadly_tempest.1001
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_global_flag = l_cluster_opened
+		controls_lcluster = yes
+		NOR = {
+			has_country_flag = disco_gray
+			exists = event_target:gray_country
+			any_system_within_border = {
+				has_star_flag = lcluster
+				NOT = { has_star_flag = lcluster1 }
+				any_system_planet = {
+					OR = { is_planet_class = pc_gray_goo is_planet_class = pc_gaia }
+					has_anomaly = yes
+				}
+			}
+			any_system = {
+				has_star_flag = lcluster
+				NAND = { has_owner = yes is_owned_by = root }
+			}
+		}
+	}
+	immediate = {
+		country_event = { id = a_deadly_tempest.1000 days = 16 random = 8 } # Spawn Gray
+	}
 }
 
 # Gray Goo Relic Fleet

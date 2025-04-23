@@ -141,7 +141,7 @@
  CrisisManagerMenu.100.T0xx.name: "Применить шаблон конфигурации: "
  CrisisManagerMenu.100.desc1: "$CmtTextTransitionalBetaFull$Здесь вы можете настроить параметры кризисов.\nБольшинство конфигураций могут быть изменены, пока не произойдут соответствующие события.\n\n$CmtDescTooltipInfo$"
  CrisisManagerMenu.100.desc2: "§HВсе события, контролируемые этим модом, уже запущены.§!\nТаким образом, некоторые конфигурации не могут быть изменены.\n\n$CmtDescTooltipInfo$"
- CrisisManagerMenu.100.desc3: "$CrisisManagerMenu.0100.desc1$\n\n§WЭтот шаблон был применен: [CmtGlobalVar.GetName_LastAppliedTemplate]§!"
+ CrisisManagerMenu.100.desc3: "$CrisisManagerMenu.100.desc1$\n\n§WЭтот шаблон был применен: [CmtGlobalVar.GetName_LastAppliedTemplate]§!"
  CrisisManagerMenu.100.name: "$CrisisManagerTitleB$ Меню"
  CrisisManagerMenu.1000.1010.name: "Общие конфигурации для кризисов"
  CrisisManagerMenu.1000.1022.name: "$CmtNameExds$, $CmtNameForcedEoc$"
